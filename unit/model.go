@@ -1,7 +1,7 @@
-package gear
+package unit
 
-// Gear represents a gear model
-type Gear struct {
+// Model represents the stats for any game model.
+type Model struct {
 	Model     string
 	SubModel  string
 	TV        uint
@@ -18,4 +18,5 @@ type Gear struct {
 	Traits    []interface{}
 	Type      string
 	Height    float32
+	Upgrades  []interface{}
 }

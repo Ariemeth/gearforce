@@ -1,7 +1,7 @@
 package roster
 
 import (
-	"github.com/Ariemeth/gearforce/gear"
+	"github.com/Ariemeth/gearforce/unit"
 )
 
 // ForceOrg contains the information needed to represent a heavy gear army roster.
@@ -24,6 +24,6 @@ type Unit struct {
 }
 
 type SelectedModel struct {
-	Gear     gear.Gear
+	Model    unit.Model
 	Upgrades []interface{}
 }
