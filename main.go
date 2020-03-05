@@ -1,21 +1,104 @@
 package main
 
 import (
-	"fmt"
+	"fyne.io/fyne"
+	"fyne.io/fyne/app"
+	"fyne.io/fyne/widget"
+)
 
-	"github.com/Ariemeth/gearforce/roster"
-	"github.com/Ariemeth/gearforce/unit"
+const (
+	windowTitle    = "Heavy Gear Blitz 3.0 Force Builder"
+	startingWidth  = 600
+	startingHeight = 400
 )
 
 func main() {
 
-	m1 := roster.SelectedModel{Model: unit.Hunter}
-	u1 := roster.Unit{Models: []roster.SelectedModel{m1}}
-	cg1 := roster.CombatGroup{Primary: u1}
+	a := app.New()
+	a.Settings()
 
-	r := roster.ForceOrg{
-		Faction:     "North",
-		CombatGroup: []roster.CombatGroup{cg1},
+	w := a.NewWindow(windowTitle)
+	w.Resize(fyne.NewSize(startingWidth, startingHeight))
+	w.CenterOnScreen()
+	w.SetContent(buildMainWindow(a))
+
+	w.ShowAndRun()
+
+}
+
+func buildMainWindow(app fyne.App) fyne.CanvasObject {
+
+	subfactionSelect := widget.NewSelect([]string{}, func(string) {})
+	subfactionSelect.PlaceHolder = "Select faction sub-list"
+
+	factionSelect := widget.NewSelect(factionList(), func(s string) {
+		subfactionSelect.Options = getSubLists(s)
+		subfactionSelect.SetSelected("")
+	})
+	factionSelect.PlaceHolder = "Select Faction"
+
+	w := widget.NewVBox(
+		widget.NewForm(widget.NewFormItem("Player Name:", widget.NewEntry())),
+		widget.NewForm(
+			widget.NewFormItem("Force Name:", widget.NewEntry()),
+			widget.NewFormItem("Faction:", factionSelect),
+			widget.NewFormItem("Sub-list:", subfactionSelect)),
+		widget.NewButton("Quit", func() {
+			app.Quit()
+		}),
+	)
+
+	return w
+}
+
+func factionList() []string {
+	return []string{
+		"North",
+		"South",
+		"Peace River",
 	}
-	fmt.Println(r)
+}
+
+func getSubLists(faction string) []string {
+	switch faction {
+	case "North":
+		return northSubLists()
+	case "South":
+		return southSubLists()
+	case "Peace River":
+		return peaceRiverSubLists()
+	}
+	return []string{}
+}
+
+func northSubLists() []string {
+	return []string{
+		"",
+		"Northern Guard",
+		"Western Frontier Protectorate",
+		"United Mercantile Federation",
+		"Northern Lights Confederacy",
+	}
+}
+
+func southSubLists() []string {
+	return []string{
+		"",
+		"MILitary Intervention and Counter Insurgency Army",
+		"Southern Republic Army",
+		"Mekong Dominion",
+		"Eastern Sun Emirates",
+		"Humanist Alliance Protection Force",
+	}
+}
+
+func peaceRiverSubLists() []string {
+	return []string{
+		"",
+		"Peace River Defense Force",
+		"Peace Officer Corps",
+		"Home Guard Security Forces",
+		"Combined Task Force",
+		"Protectorate Sponsored Badlands Militia",
+	}
 }
