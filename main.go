@@ -15,7 +15,6 @@ const (
 func main() {
 
 	a := app.New()
-	a.Settings()
 
 	w := a.NewWindow(windowTitle)
 	w.Resize(fyne.NewSize(startingWidth, startingHeight))
@@ -38,9 +37,11 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 	factionSelect.PlaceHolder = "Select Faction"
 
 	w := widget.NewVBox(
-		widget.NewForm(widget.NewFormItem("Player Name:", widget.NewEntry())),
 		widget.NewForm(
+			widget.NewFormItem("Player Name:", widget.NewEntry()),
 			widget.NewFormItem("Force Name:", widget.NewEntry()),
+		),
+		widget.NewForm(
 			widget.NewFormItem("Faction:", factionSelect),
 			widget.NewFormItem("Sub-list:", subfactionSelect)),
 		widget.NewButton("Quit", func() {
