@@ -35,23 +35,18 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 	})
 	factionSelect.PlaceHolder = "Select Faction"
 
-	tv := widget.NewLabel("0")
+	sublistItem := widget.NewFormItem("Sub-list:", subfactionSelect)
 
 	w := widget.NewVBox(
 		widget.NewForm(
 			widget.NewFormItem("Player Name:", widget.NewEntry()),
 			widget.NewFormItem("Force Name:", widget.NewEntry()),
 		),
-		widget.NewHBox(
-			widget.NewForm(
-				widget.NewFormItem("Faction:", factionSelect),
-				widget.NewFormItem("Sub-list:", subfactionSelect)),
-			widget.NewVBox(
-				widget.NewForm(
-					widget.NewFormItem("TV:", tv),
-				),
-			),
+		widget.NewForm(
+			widget.NewFormItem("Faction:", factionSelect),
+			sublistItem,
 		),
+		//		widget.NewHBox(
 		widget.NewButton("Quit", func() {
 			app.Quit()
 		}),
