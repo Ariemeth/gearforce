@@ -37,6 +37,8 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 
 	sublistItem := widget.NewFormItem("Sub-list:", subfactionSelect)
 
+	combatGroupList := widget.NewGroupWithScroller("Combat Groups")
+
 	w := widget.NewVBox(
 		widget.NewForm(
 			widget.NewFormItem("Player Name:", widget.NewEntry()),
@@ -46,13 +48,22 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 			widget.NewFormItem("Faction:", factionSelect),
 			sublistItem,
 		),
-		//		widget.NewHBox(
+		widget.NewHBox(widget.NewButton("Add Combat Group", func() { combatGroupList.Append(buildCombatGroupDisplay()) })),
+		widget.NewHBox(combatGroupList),
 		widget.NewButton("Quit", func() {
 			app.Quit()
 		}),
 	)
 
 	return w
+}
+
+func buildCombatGroupDisplay() fyne.CanvasObject {
+
+	return widget.NewForm(
+		widget.NewFormItem("CG", widget.NewLabel("test")),
+		widget.NewFormItem("field2", widget.NewLabel("test2")),
+	)
 }
 
 func factionList() []string {
