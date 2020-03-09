@@ -1,10 +1,14 @@
 package main
 
 import (
+	"fmt"
+
 	"fyne.io/fyne"
 	"fyne.io/fyne/app"
 	"fyne.io/fyne/layout"
 	"fyne.io/fyne/widget"
+
+	"github.com/Ariemeth/gearforce/unit"
 )
 
 const (
@@ -67,10 +71,13 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 }
 
 func buildCombatGroupDisplay() fyne.CanvasObject {
+	g := unit.Hunter
 
 	f := widget.NewForm(
-		widget.NewFormItem("CG", widget.NewLabel("test")),
-		widget.NewFormItem("field2", widget.NewLabel("test2")),
+		widget.NewFormItem("Model:", widget.NewLabel(fmt.Sprintf("%s %s", g.Model, g.SubModel))),
+		widget.NewFormItem("TV:", widget.NewLabel(fmt.Sprintf("%d", g.TV))),
+		widget.NewFormItem("Armor:", widget.NewLabel(fmt.Sprintf("%d", g.Armor))),
+		widget.NewFormItem("H/S:", widget.NewLabel(fmt.Sprintf("%d/%d", g.Hull, g.Structure))),
 	)
 
 	return f
