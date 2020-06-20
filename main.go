@@ -36,7 +36,7 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 
 	factionSelect := widget.NewSelect(factionList(), func(s string) {
 		subfactionSelect.Options = getSubLists(s)
-		subfactionSelect.SetSelected("")
+		subfactionSelect.ClearSelected()
 	})
 	factionSelect.PlaceHolder = "Select Faction"
 
@@ -105,7 +105,6 @@ func getSubLists(faction string) []string {
 
 func northSubLists() []string {
 	return []string{
-		"",
 		"Northern Guard",
 		"Western Frontier Protectorate",
 		"United Mercantile Federation",
@@ -115,7 +114,6 @@ func northSubLists() []string {
 
 func southSubLists() []string {
 	return []string{
-		"",
 		"MILitary Intervention and Counter Insurgency Army",
 		"Southern Republic Army",
 		"Mekong Dominion",
@@ -126,7 +124,6 @@ func southSubLists() []string {
 
 func peaceRiverSubLists() []string {
 	return []string{
-		"",
 		"Peace River Defense Force",
 		"Peace Officer Corps",
 		"Home Guard Security Forces",
