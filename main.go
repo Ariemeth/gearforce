@@ -8,7 +8,7 @@ import (
 	"fyne.io/fyne/layout"
 	"fyne.io/fyne/widget"
 
-	"github.com/Ariemeth/gearforce/unit"
+	"github.com/Ariemeth/gearforce/notifier"
 )
 
 const (
@@ -31,25 +31,36 @@ func main() {
 
 func buildMainWindow(app fyne.App) fyne.CanvasObject {
 
-	subfactionSelect := widget.NewSelect([]string{}, func(string) {})
-	subfactionSelect.PlaceHolder = "Select faction sub-list"
-
+	faction := notifier.String{}
+	// Configure the Faction select
 	factionSelect := widget.NewSelect(factionList(), func(s string) {
-		subfactionSelect.Options = getSubLists(s)
-		subfactionSelect.ClearSelected()
+		faction.Set(s)
 	})
 	factionSelect.PlaceHolder = "Select Faction"
 
+	// Configure the subfaction select
+	subfactionSelect := widget.NewSelect([]string{}, func(s string) {
+
+	})
+	subfactionSelect.PlaceHolder = "Select faction sub-list"
+	subfactionUpdate := make(chan string)
+	go func() {
+		for {
+			select {
+			case factionName := <-subfactionUpdate:
+				subfactionSelect.Options = getSubLists(factionName)
+				subfactionSelect.ClearSelected()
+			}
+		}
+	}()
+	faction.Subscribe("subfaction-update", subfactionUpdate)
+
 	sublistItem := widget.NewFormItem("Sub-list:", subfactionSelect)
 
-	// consider creating a custom widget for the combat groups
-	cgLayout := layout.NewGridLayoutWithColumns(4)
-	combatGroupList := fyne.NewContainerWithLayout(cgLayout)
-	combatGroupBox := widget.NewHBox()
-	combatGroupBox.Append(widget.NewButton("Add Combat Group", func() {
-		combatGroupList.AddObject(buildCombatGroupDisplay())
-		combatGroupBox.Refresh()
-	}))
+	// Create combat group display
+	forceDisplay := buildForceDisplay()
+
+	pointsDisplay := widget.NewLabel("0")
 
 	w := widget.NewVBox(
 		widget.NewForm(
@@ -60,27 +71,46 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 			widget.NewFormItem("Faction:", factionSelect),
 			sublistItem,
 		),
-		combatGroupBox,
-		combatGroupList,
+		widget.NewForm(
+			widget.NewFormItem("Points:", pointsDisplay),
+		),
+		forceDisplay,
 		widget.NewButton("Quit", func() {
 			app.Quit()
-		}),
-	)
+		}))
 
 	return w
 }
 
-func buildCombatGroupDisplay() fyne.CanvasObject {
-	g := unit.Hunter
+func buildForceDisplay() fyne.CanvasObject {
 
-	f := widget.NewForm(
-		widget.NewFormItem("Model:", widget.NewLabel(fmt.Sprintf("%s %s", g.Model, g.SubModel))),
-		widget.NewFormItem("TV:", widget.NewLabel(fmt.Sprintf("%d", g.TV))),
-		widget.NewFormItem("Armor:", widget.NewLabel(fmt.Sprintf("%d", g.Armor))),
-		widget.NewFormItem("H/S:", widget.NewLabel(fmt.Sprintf("%d/%d", g.Hull, g.Structure))),
-	)
+	w := widget.NewVBox()
 
-	return f
+	tabMenu := widget.NewTabContainer(widget.NewTabItem("CG1", buildCombatGroup()))
+	addCombatGroupButton := widget.NewButton("Add CG", func() {
+		tabMenu.Append(widget.NewTabItem(fmt.Sprintf("CG%d", len(tabMenu.Items)+1), buildCombatGroup()))
+	})
+
+	w.Append(widget.NewHBox(addCombatGroupButton))
+	w.Append(tabMenu)
+
+	return w
+}
+
+func buildCombatGroup() fyne.CanvasObject {
+
+	w := widget.NewVBox()
+
+	primaryInfoText := widget.NewLabel("Primary")
+	primaryUAText := widget.NewLabel("UA")
+	primaryUASelection := widget.NewSelect(uaLists(), func(string) {})
+	primaryInfo := widget.NewVBox(primaryInfoText, widget.NewHBox(primaryUAText, widget.NewHBox(primaryUASelection)))
+	primaryUnits := widget.NewHScrollContainer(widget.NewHBox())
+	primary := widget.NewHBox(primaryInfo, fyne.NewContainerWithLayout(layout.NewAdaptiveGridLayout(4), primaryUnits))
+
+	w.Append(primary)
+
+	return w
 }
 
 func factionList() []string {
@@ -101,6 +131,20 @@ func getSubLists(faction string) []string {
 		return peaceRiverSubLists()
 	}
 	return []string{}
+}
+
+func uaLists() []string {
+	return []string{
+		"GP",
+		"SK",
+		"FS",
+		"RC",
+		"SF",
+		"PT",
+		"VL",
+		"AIR",
+		"FORT",
+	}
 }
 
 func northSubLists() []string {
