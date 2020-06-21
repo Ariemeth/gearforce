@@ -12,13 +12,17 @@ type String struct {
 }
 
 func (n *String) Get() string {
+	fmt.Println("locking")
 	n.lock.Lock()
+	defer fmt.Println("unlocking")
 	defer n.lock.Unlock()
 	return n.value
 }
 
 func (n *String) Set(value string) {
+	fmt.Println("locking")
 	n.lock.Lock()
+	defer fmt.Println("unlocking")
 	defer n.lock.Unlock()
 
 	n.value = value
@@ -28,7 +32,9 @@ func (n *String) Set(value string) {
 }
 
 func (n *String) Subscribe(name string, sub chan string) error {
+	fmt.Println("locking")
 	n.lock.Lock()
+	defer fmt.Println("unlocking")
 	defer n.lock.Unlock()
 
 	if n.subscribers == nil {
@@ -45,7 +51,9 @@ func (n *String) Subscribe(name string, sub chan string) error {
 }
 
 func (n *String) UnSubscribe(name string) {
+	fmt.Println("locking")
 	n.lock.Lock()
+	defer fmt.Println("unlocking")
 	defer n.lock.Unlock()
 
 	delete(n.subscribers, name)

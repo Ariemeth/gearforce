@@ -101,14 +101,31 @@ func buildCombatGroup() fyne.CanvasObject {
 
 	w := widget.NewVBox()
 
-	primaryInfoText := widget.NewLabel("Primary")
-	primaryUAText := widget.NewLabel("UA")
 	primaryUASelection := widget.NewSelect(uaLists(), func(string) {})
-	primaryInfo := widget.NewVBox(primaryInfoText, widget.NewHBox(primaryUAText, widget.NewHBox(primaryUASelection)))
+	primaryUAPoints := widget.NewLabel("0")
+	primaryUAActions := widget.NewLabel("0")
+	primaryInfo := widget.NewVBox(
+		//		widget.NewLabel("Primary"),
+		widget.NewHBox(widget.NewLabel("UA"), widget.NewHBox(primaryUASelection)),
+		widget.NewHBox(widget.NewLabel("Points"), primaryUAPoints),
+		widget.NewHBox(widget.NewLabel("Actions"), primaryUAActions),
+	)
 	primaryUnits := widget.NewHScrollContainer(widget.NewHBox())
-	primary := widget.NewHBox(primaryInfo, fyne.NewContainerWithLayout(layout.NewAdaptiveGridLayout(4), primaryUnits))
+	primary := widget.NewGroup("Primary", primaryInfo, fyne.NewContainerWithLayout(layout.NewAdaptiveGridLayout(4), primaryUnits))
+
+	secondaryUASelection := widget.NewSelect(uaLists(), func(string) {})
+	secondaryUAPoints := widget.NewLabel("0")
+	secondaryUAActions := widget.NewLabel("0")
+	secondaryInfo := widget.NewVBox(
+		widget.NewHBox(widget.NewLabel("UA"), widget.NewHBox(secondaryUASelection)),
+		widget.NewHBox(widget.NewLabel("Points"), secondaryUAPoints),
+		widget.NewHBox(widget.NewLabel("Actions"), secondaryUAActions),
+	)
+	secondaryUnits := widget.NewHScrollContainer(widget.NewHBox())
+	secondary := widget.NewGroup("Secondary", secondaryInfo, fyne.NewContainerWithLayout(layout.NewAdaptiveGridLayout(4), secondaryUnits))
 
 	w.Append(primary)
+	w.Append(secondary)
 
 	return w
 }
