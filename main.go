@@ -9,6 +9,7 @@ import (
 	"fyne.io/fyne/widget"
 
 	"github.com/Ariemeth/gearforce/notifier"
+	"github.com/Ariemeth/gearforce/unit"
 )
 
 const (
@@ -105,7 +106,6 @@ func buildCombatGroup() fyne.CanvasObject {
 	primaryUAPoints := widget.NewLabel("0")
 	primaryUAActions := widget.NewLabel("0")
 	primaryInfo := widget.NewVBox(
-		//		widget.NewLabel("Primary"),
 		widget.NewHBox(widget.NewLabel("UA"), widget.NewHBox(primaryUASelection)),
 		widget.NewHBox(widget.NewLabel("Points"), primaryUAPoints),
 		widget.NewHBox(widget.NewLabel("Actions"), primaryUAActions),
@@ -121,13 +121,30 @@ func buildCombatGroup() fyne.CanvasObject {
 		widget.NewHBox(widget.NewLabel("Points"), secondaryUAPoints),
 		widget.NewHBox(widget.NewLabel("Actions"), secondaryUAActions),
 	)
-	secondaryUnits := widget.NewHScrollContainer(widget.NewHBox())
-	secondary := widget.NewGroup("Secondary", secondaryInfo, fyne.NewContainerWithLayout(layout.NewAdaptiveGridLayout(4), secondaryUnits))
+	//secondaryUnits := widget.NewHScrollContainer(widget.NewHBox(buildUnitCard(), buildUnitCard(), buildUnitCard(), buildUnitCard()))
+	s2 := fyne.NewContainerWithLayout(layout.NewHBoxLayout(), widget.NewHBox(buildUnitCard(), buildUnitCard(), buildUnitCard(), buildUnitCard()))
+	scrolls2 := widget.NewHScrollContainer(s2)
+	secondary := widget.NewGroup("Secondary", secondaryInfo, scrolls2)
 
 	w.Append(primary)
 	w.Append(secondary)
 
 	return w
+}
+
+func buildUnitCard() fyne.CanvasObject {
+	g := unit.Hunter
+
+	f := widget.NewForm(
+		widget.NewFormItem("CG", widget.NewLabel("test")),
+		widget.NewFormItem("field2", widget.NewLabel("test2")),
+		widget.NewFormItem("Model:", widget.NewLabel(fmt.Sprintf("%s %s", g.Model, g.SubModel))),
+		widget.NewFormItem("TV:", widget.NewLabel(fmt.Sprintf("%d", g.TV))),
+		widget.NewFormItem("Armor:", widget.NewLabel(fmt.Sprintf("%d", g.Armor))),
+		widget.NewFormItem("H/S:", widget.NewLabel(fmt.Sprintf("%d/%d", g.Hull, g.Structure))),
+	)
+
+	return f
 }
 
 func factionList() []string {
