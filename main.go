@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"fyne.io/fyne"
 	"fyne.io/fyne/app"
@@ -14,7 +15,7 @@ import (
 
 const (
 	windowTitle    = "Heavy Gear Blitz 3.0 Force Builder"
-	startingWidth  = 600
+	startingWidth  = 700
 	startingHeight = 400
 )
 
@@ -59,7 +60,7 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 	sublistItem := widget.NewFormItem("Sub-list:", subfactionSelect)
 
 	// Create combat group display
-	forceDisplay := buildForceDisplay()
+	forceDisplay := buildForceDisplay(&faction)
 
 	pointsDisplay := widget.NewLabel("0")
 
@@ -83,13 +84,13 @@ func buildMainWindow(app fyne.App) fyne.CanvasObject {
 	return w
 }
 
-func buildForceDisplay() fyne.CanvasObject {
+func buildForceDisplay(faction notifier.ReadOnlyString) fyne.CanvasObject {
 
 	w := widget.NewVBox()
 
-	tabMenu := widget.NewTabContainer(widget.NewTabItem("CG1", buildCombatGroup()))
+	tabMenu := widget.NewTabContainer(widget.NewTabItem("CG1", buildCombatGroup(faction)))
 	addCombatGroupButton := widget.NewButton("Add CG", func() {
-		tabMenu.Append(widget.NewTabItem(fmt.Sprintf("CG%d", len(tabMenu.Items)+1), buildCombatGroup()))
+		tabMenu.Append(widget.NewTabItem(fmt.Sprintf("CG%d", len(tabMenu.Items)+1), buildCombatGroup(faction)))
 	})
 
 	w.Append(widget.NewHBox(addCombatGroupButton))
@@ -98,20 +99,43 @@ func buildForceDisplay() fyne.CanvasObject {
 	return w
 }
 
-func buildCombatGroup() fyne.CanvasObject {
+func buildCombatGroup(faction notifier.ReadOnlyString) fyne.CanvasObject {
 
-	w := widget.NewVBox()
+	cg := widget.NewVBox()
 
 	primaryUASelection := widget.NewSelect(uaLists(), func(string) {})
 	primaryUAPoints := widget.NewLabel("0")
 	primaryUAActions := widget.NewLabel("0")
+	primaryUnits := widget.NewHBox()
 	primaryInfo := widget.NewVBox(
 		widget.NewHBox(widget.NewLabel("UA"), widget.NewHBox(primaryUASelection)),
 		widget.NewHBox(widget.NewLabel("Points"), primaryUAPoints),
 		widget.NewHBox(widget.NewLabel("Actions"), primaryUAActions),
+		widget.NewHBox(widget.NewButton("Add Unit",
+			func() {
+				w := fyne.CurrentApp().NewWindow("Units")
+				fmt.Printf("Getting units for %s\n", faction.Get())
+				units := unit.GetFactionUnits(faction.Get())
+
+				primaryUnits.Append(buildUnitCard(units[0]))
+				w.SetContent(primaryUnits)
+				w.CenterOnScreen()
+				w.Show()
+			})),
 	)
-	primaryUnits := widget.NewHScrollContainer(widget.NewHBox())
-	primary := widget.NewGroup("Primary", primaryInfo, fyne.NewContainerWithLayout(layout.NewAdaptiveGridLayout(4), primaryUnits))
+
+	primary := widget.NewGroup(
+		"Primary",
+		fyne.NewContainerWithLayout(
+			layout.NewBorderLayout(
+				nil,
+				nil,
+				primaryInfo,
+				nil,
+			),
+			primaryInfo,
+			widget.NewHScrollContainer(primaryUnits),
+		))
 
 	secondaryUASelection := widget.NewSelect(uaLists(), func(string) {})
 	secondaryUAPoints := widget.NewLabel("0")
@@ -121,22 +145,33 @@ func buildCombatGroup() fyne.CanvasObject {
 		widget.NewHBox(widget.NewLabel("Points"), secondaryUAPoints),
 		widget.NewHBox(widget.NewLabel("Actions"), secondaryUAActions),
 	)
-	//secondaryUnits := widget.NewHScrollContainer(widget.NewHBox(buildUnitCard(), buildUnitCard(), buildUnitCard(), buildUnitCard()))
-	s2 := fyne.NewContainerWithLayout(layout.NewHBoxLayout(), widget.NewHBox(buildUnitCard(), buildUnitCard(), buildUnitCard(), buildUnitCard()))
-	scrolls2 := widget.NewHScrollContainer(s2)
-	secondary := widget.NewGroup("Secondary", secondaryInfo, scrolls2)
 
-	w.Append(primary)
-	w.Append(secondary)
+	secondaryUnits := widget.NewHScrollContainer(widget.NewHBox())
 
-	return w
+	secondary := widget.NewGroup(
+		"Secondary",
+		fyne.NewContainerWithLayout(
+			layout.NewBorderLayout(
+				nil,
+				nil,
+				secondaryInfo,
+				nil,
+			),
+			secondaryInfo,
+			secondaryUnits,
+		))
+
+	cg.Append(primary)
+	cg.Append(secondary)
+
+	return cg
 }
 
-func buildUnitCard() fyne.CanvasObject {
+func buildUnitCard(u unit.Model) fyne.CanvasObject {
 	g := unit.Hunter
 
 	f := widget.NewForm(
-		widget.NewFormItem("CG", widget.NewLabel("test")),
+		widget.NewFormItem("UA", widget.NewLabel(strings.Join(u.UA, ","))),
 		widget.NewFormItem("field2", widget.NewLabel("test2")),
 		widget.NewFormItem("Model:", widget.NewLabel(fmt.Sprintf("%s %s", g.Model, g.SubModel))),
 		widget.NewFormItem("TV:", widget.NewLabel(fmt.Sprintf("%d", g.TV))),
@@ -144,24 +179,24 @@ func buildUnitCard() fyne.CanvasObject {
 		widget.NewFormItem("H/S:", widget.NewLabel(fmt.Sprintf("%d/%d", g.Hull, g.Structure))),
 	)
 
-	return f
+	return widget.NewVBox(f)
 }
 
 func factionList() []string {
 	return []string{
-		"North",
-		"South",
-		"Peace River",
+		unit.North,
+		unit.South,
+		unit.PeaceRiver,
 	}
 }
 
 func getSubLists(faction string) []string {
 	switch faction {
-	case "North":
+	case unit.North:
 		return northSubLists()
-	case "South":
+	case unit.South:
 		return southSubLists()
-	case "Peace River":
+	case unit.PeaceRiver:
 		return peaceRiverSubLists()
 	}
 	return []string{}
