@@ -117,8 +117,8 @@ func buildCombatGroup(faction notifier.ReadOnlyString) fyne.CanvasObject {
 				fmt.Printf("Getting units for %s\n", faction.Get())
 				units := unit.GetFactionUnits(faction.Get())
 
-				primaryUnits.Append(buildUnitCard(units[0]))
-				w.SetContent(primaryUnits)
+				unitDisplay :=(buildUnitCard(units[0]))
+				w.SetContent(unitDisplay)
 				w.CenterOnScreen()
 				w.Show()
 			})),
