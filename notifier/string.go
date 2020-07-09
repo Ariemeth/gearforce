@@ -5,12 +5,14 @@ import (
 	"sync"
 )
 
+// String provides an observable wrapper around a string.  This allows a subscriber to be notified when the value has changed.
 type String struct {
 	value       string
 	subscribers map[string]chan string
 	lock        sync.Mutex
 }
 
+// Get returns the value of the string.
 func (n *String) Get() string {
 	fmt.Println("locking")
 	n.lock.Lock()
@@ -19,6 +21,7 @@ func (n *String) Get() string {
 	return n.value
 }
 
+// Set replaces the existing value with the new value and notifies subscribers of the change.
 func (n *String) Set(value string) {
 	fmt.Println("locking")
 	n.lock.Lock()
@@ -31,6 +34,7 @@ func (n *String) Set(value string) {
 	}
 }
 
+// Subscribe is used to request future changes of the string value.
 func (n *String) Subscribe(name string, sub chan string) error {
 	fmt.Println("locking")
 	n.lock.Lock()
@@ -50,6 +54,7 @@ func (n *String) Subscribe(name string, sub chan string) error {
 	return nil
 }
 
+// UnSubscribe will remove the indicated subscriber from recieving future updates.
 func (n *String) UnSubscribe(name string) {
 	fmt.Println("locking")
 	n.lock.Lock()

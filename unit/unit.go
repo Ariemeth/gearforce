@@ -1,10 +1,6 @@
 package unit
 
-const (
-	North      = "North"
-	South      = "South"
-	PeaceRiver = "Peace River"
-)
+import "github.com/Ariemeth/gearforce/faction"
 
 // Model represents the stats for any game model.
 type Model struct {
@@ -29,15 +25,29 @@ type Model struct {
 
 type Models []Model
 
-func GetFactionUnits(faction string) Models {
+func GetFactionUnits(factionName string) Models {
 
-	switch faction {
-	case North:
+	switch factionName {
+	case faction.North:
 		return NorthernUnits()
-	case South:
+	case faction.South:
 		return SoutherUnits()
-	case PeaceRiver:
+	case faction.PeaceRiver:
 		return PeaceRiverUnits()
 	}
 	return nil
+}
+
+func UALists() []string {
+	return []string{
+		"GP",
+		"SK",
+		"FS",
+		"RC",
+		"SF",
+		"PT",
+		"VL",
+		"AIR",
+		"FORT",
+	}
 }
