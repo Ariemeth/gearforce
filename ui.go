@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 
 	"fyne.io/fyne"
 	"fyne.io/fyne/layout"
@@ -108,13 +107,11 @@ func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
 		),
 		widget.NewHBox(widget.NewButton("Add Unit",
 			func() {
-				units, err := unit.GetFactionUnits(faction.Get())
+				unitDisplay, err := buildUnitSelectionWindow(faction.Get())
 				if err != nil {
-					fmt.Println(err)
+					fmt.Print(err)
 					return
 				}
-
-				unitDisplay := buildUnitCard(units[0])
 				w := fyne.CurrentApp().NewWindow("Units")
 				w.SetContent(unitDisplay)
 				w.CenterOnScreen()
@@ -139,8 +136,19 @@ func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
 }
 
 func buildUnitSelectionWindow(faction string) (fyne.CanvasObject, error) {
+	units, err := unit.GetFactionUnits(faction)
+	if err != nil {
+		return nil, err
+	}
+	main := widget.NewVBox()
 
-	return nil, nil
+	for _, unit := range units {
+		main.Append(widget.NewHBox(
+			widget.NewLabel(fmt.Sprintf("%s %s", unit.SubModel, unit.Model)),
+		))
+	}
+
+	return main, nil
 }
 
 func buildSecondaryUA(faction notifier.ReadOnlyString) *widget.Group {
@@ -170,19 +178,4 @@ func buildSecondaryUA(faction notifier.ReadOnlyString) *widget.Group {
 			secondaryUnits,
 		))
 	return secondary
-}
-
-func buildUnitCard(u unit.Model) fyne.CanvasObject {
-	g := unit.Hunter
-
-	f := widget.NewForm(
-		widget.NewFormItem("UA", widget.NewLabel(strings.Join(u.UA, ","))),
-		widget.NewFormItem("field2", widget.NewLabel("test2")),
-		widget.NewFormItem("Model:", widget.NewLabel(fmt.Sprintf("%s %s", g.Model, g.SubModel))),
-		widget.NewFormItem("TV:", widget.NewLabel(fmt.Sprintf("%d", g.TV))),
-		widget.NewFormItem("Armor:", widget.NewLabel(fmt.Sprintf("%d", g.Armor))),
-		widget.NewFormItem("H/S:", widget.NewLabel(fmt.Sprintf("%d/%d", g.Hull, g.Structure))),
-	)
-
-	return widget.NewVBox(f)
 }
