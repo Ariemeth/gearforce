@@ -3,8 +3,6 @@ package main
 import (
 	"fyne.io/fyne"
 	"fyne.io/fyne/app"
-
-	"github.com/Ariemeth/gearforce/ui"
 )
 
 const (
@@ -20,7 +18,7 @@ func main() {
 	w := a.NewWindow(windowTitle)
 	w.Resize(fyne.NewSize(startingWidth, startingHeight))
 	w.CenterOnScreen()
-	w.SetContent(ui.BuildMainWindow(a))
+	w.SetContent(buildMainWindow(a))
 
 	w.ShowAndRun()
 }

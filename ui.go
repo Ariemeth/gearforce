@@ -1,4 +1,4 @@
-package ui
+package main
 
 import (
 	"fmt"
@@ -13,8 +13,8 @@ import (
 	"github.com/Ariemeth/gearforce/unit"
 )
 
-// BuildMainWindow creates the main application window.
-func BuildMainWindow(app fyne.App) fyne.CanvasObject {
+// buildMainWindow creates the main application window.
+func buildMainWindow(app fyne.App) fyne.CanvasObject {
 
 	selectedFaction := notifier.String{}
 	// Configure the Faction select
@@ -86,6 +86,16 @@ func buildCombatGroup(faction notifier.ReadOnlyString) fyne.CanvasObject {
 
 	cg := widget.NewVBox()
 
+	primary := buildPrimaryUA(faction)
+	secondary := buildSecondaryUA(faction)
+
+	cg.Append(primary)
+	cg.Append(secondary)
+
+	return cg
+}
+
+func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
 	primaryUASelection := widget.NewSelect(unit.UALists(), func(string) {})
 	primaryUAPoints := widget.NewLabel("0")
 	primaryUAActions := widget.NewLabel("0")
@@ -100,7 +110,7 @@ func buildCombatGroup(faction notifier.ReadOnlyString) fyne.CanvasObject {
 				fmt.Printf("Getting units for %s\n", faction.Get())
 				units := unit.GetFactionUnits(faction.Get())
 
-				unitDisplay := (buildUnitCard(units[0]))
+				unitDisplay := buildUnitCard(units[0])
 				w.SetContent(unitDisplay)
 				w.CenterOnScreen()
 				w.Show()
@@ -120,6 +130,10 @@ func buildCombatGroup(faction notifier.ReadOnlyString) fyne.CanvasObject {
 			widget.NewHScrollContainer(primaryUnits),
 		))
 
+	return primary
+}
+
+func buildSecondaryUA(faction notifier.ReadOnlyString) *widget.Group {
 	secondaryUASelection := widget.NewSelect(unit.UALists(), func(string) {})
 	secondaryUAPoints := widget.NewLabel("0")
 	secondaryUAActions := widget.NewLabel("0")
@@ -143,11 +157,7 @@ func buildCombatGroup(faction notifier.ReadOnlyString) fyne.CanvasObject {
 			secondaryInfo,
 			secondaryUnits,
 		))
-
-	cg.Append(primary)
-	cg.Append(secondary)
-
-	return cg
+	return secondary
 }
 
 func buildUnitCard(u unit.Model) fyne.CanvasObject {
