@@ -101,16 +101,21 @@ func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
 	primaryUAActions := widget.NewLabel("0")
 	primaryUnits := widget.NewHBox()
 	primaryInfo := widget.NewVBox(
-		widget.NewHBox(widget.NewLabel("UA"), widget.NewHBox(primaryUASelection)),
-		widget.NewHBox(widget.NewLabel("Points"), primaryUAPoints),
-		widget.NewHBox(widget.NewLabel("Actions"), primaryUAActions),
+		widget.NewForm(
+			widget.NewFormItem("UA", widget.NewHBox(primaryUASelection)),
+			widget.NewFormItem("Points", primaryUAPoints),
+			widget.NewFormItem("Actions", primaryUAActions),
+		),
 		widget.NewHBox(widget.NewButton("Add Unit",
 			func() {
-				w := fyne.CurrentApp().NewWindow("Units")
-				fmt.Printf("Getting units for %s\n", faction.Get())
-				units := unit.GetFactionUnits(faction.Get())
+				units, err := unit.GetFactionUnits(faction.Get())
+				if err != nil {
+					fmt.Println(err)
+					return
+				}
 
 				unitDisplay := buildUnitCard(units[0])
+				w := fyne.CurrentApp().NewWindow("Units")
 				w.SetContent(unitDisplay)
 				w.CenterOnScreen()
 				w.Show()
@@ -133,14 +138,21 @@ func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
 	return primary
 }
 
+func buildUnitSelectionWindow(faction string) (fyne.CanvasObject, error) {
+
+	return nil, nil
+}
+
 func buildSecondaryUA(faction notifier.ReadOnlyString) *widget.Group {
 	secondaryUASelection := widget.NewSelect(unit.UALists(), func(string) {})
 	secondaryUAPoints := widget.NewLabel("0")
 	secondaryUAActions := widget.NewLabel("0")
 	secondaryInfo := widget.NewVBox(
-		widget.NewHBox(widget.NewLabel("UA"), widget.NewHBox(secondaryUASelection)),
-		widget.NewHBox(widget.NewLabel("Points"), secondaryUAPoints),
-		widget.NewHBox(widget.NewLabel("Actions"), secondaryUAActions),
+		widget.NewForm(
+			widget.NewFormItem("UA", widget.NewHBox(secondaryUASelection)),
+			widget.NewFormItem("Points", secondaryUAPoints),
+			widget.NewFormItem("Actions", secondaryUAActions),
+		),
 	)
 
 	secondaryUnits := widget.NewHScrollContainer(widget.NewHBox())

@@ -1,6 +1,10 @@
 package unit
 
-import "github.com/Ariemeth/gearforce/faction"
+import (
+	"fmt"
+
+	"github.com/Ariemeth/gearforce/faction"
+)
 
 // Model represents the stats for any game model.
 type Model struct {
@@ -25,19 +29,21 @@ type Model struct {
 
 type Models []Model
 
-func GetFactionUnits(factionName string) Models {
+// GetFactionUnits returns a list of models available to a specific faction.
+func GetFactionUnits(factionName string) (Models, error) {
 
 	switch factionName {
 	case faction.North:
-		return NorthernUnits()
+		return NorthernUnits(), nil
 	case faction.South:
-		return SoutherUnits()
+		return SoutherUnits(), nil
 	case faction.PeaceRiver:
-		return PeaceRiverUnits()
+		return PeaceRiverUnits(), nil
 	}
-	return nil
+	return nil, fmt.Errorf("Unknown faction [%s]", factionName)
 }
 
+// UALists returns a list of all UA types.
 func UALists() []string {
 	return []string{
 		"GP",
