@@ -95,7 +95,11 @@ func buildCombatGroup(faction notifier.ReadOnlyString) fyne.CanvasObject {
 }
 
 func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
-	primaryUASelection := widget.NewSelect(unit.UALists(), func(string) {})
+	selectedUA := notifier.String{}
+	primaryUASelection := widget.NewSelect(unit.UALists(), func(ua string) {
+		selectedUA.Set(ua)
+	})
+
 	primaryUAPoints := widget.NewLabel("0")
 	primaryUAActions := widget.NewLabel("0")
 	primaryUnits := widget.NewHBox()
@@ -107,7 +111,10 @@ func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
 		),
 		widget.NewHBox(widget.NewButton("Add Unit",
 			func() {
-				unitDisplay, err := buildUnitSelectionWindow(faction.Get())
+				// TODO: Update to allow only 1 unit select window to be opened at at time.
+				ua := primaryUASelection.Selected
+				fmt.Printf("UA selected: %s\n", ua)
+				unitDisplay, err := buildUnitSelectionWindow(faction.Get(), &selectedUA)
 				if err != nil {
 					fmt.Print(err)
 					return
@@ -135,17 +142,23 @@ func buildPrimaryUA(faction notifier.ReadOnlyString) *widget.Group {
 	return primary
 }
 
-func buildUnitSelectionWindow(faction string) (fyne.CanvasObject, error) {
+func buildUnitSelectionWindow(faction string, selectedUA notifier.ReadOnlyString) (fyne.CanvasObject, error) {
 	units, err := unit.GetFactionUnits(faction)
 	if err != nil {
 		return nil, err
 	}
 	main := widget.NewVBox()
 
-	for _, unit := range units {
+	ua := selectedUA.Get()
+
+	for _, unit := range units.FilterByUA(ua) {
 		main.Append(widget.NewHBox(
 			widget.NewLabel(fmt.Sprintf("%s %s", unit.SubModel, unit.Model)),
 		))
+	}
+
+	if len(main.Children) == 0 {
+		main.Append(widget.NewLabel(fmt.Sprintf("No Units available for %s", ua)))
 	}
 
 	return main, nil
