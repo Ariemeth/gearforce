@@ -1,21 +1,24 @@
 package main
 
 import (
-	"fmt"
+	"fyne.io/fyne"
+	"fyne.io/fyne/app"
+)
 
-	"github.com/Ariemeth/gearforce/roster"
-	"github.com/Ariemeth/gearforce/unit"
+const (
+	windowTitle    = "Heavy Gear Blitz 3.0 Force Builder"
+	startingWidth  = 700
+	startingHeight = 400
 )
 
 func main() {
 
-	m1 := roster.SelectedModel{Model: unit.Hunter}
-	u1 := roster.Unit{Models: []roster.SelectedModel{m1}}
-	cg1 := roster.CombatGroup{Primary: u1}
+	a := app.New()
 
-	r := roster.ForceOrg{
-		Faction:     "North",
-		CombatGroup: []roster.CombatGroup{cg1},
-	}
-	fmt.Println(r)
+	w := a.NewWindow(windowTitle)
+	w.Resize(fyne.NewSize(startingWidth, startingHeight))
+	w.CenterOnScreen()
+	w.SetContent(buildMainWindow(a))
+
+	w.ShowAndRun()
 }
