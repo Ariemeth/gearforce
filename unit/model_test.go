@@ -151,3 +151,61 @@ func TestModels_FilterByUA(t *testing.T) {
 		})
 	}
 }
+
+func Test_load(t *testing.T) {
+	type args struct {
+		filename string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    Model
+		wantErr bool
+	}{
+		{
+			name: "load test",
+			args: args{filename: "../data/units/test.yaml"},
+			want: Model{
+				Model:     "Test",
+				SubModel:  "",
+				TV:        6,
+				UA:        []string{"GP+", "SK", "FS"},
+				Movement:  []interface{}{"W/G:6"},
+				Actions:   1,
+				Armor:     6,
+				Hull:      4,
+				Structure: 2,
+				Gunnery:   4,
+				Piloting:  4,
+				EW:        6,
+				Weapons:   []interface{}{"LAC (Arm)", "LRP", "LAPGL", "LPZ", "LVB (Arm)"},
+				Traits:    []interface{}{"Arms"},
+				Type:      "gear",
+				Height:    1.5,
+			},
+			wantErr: false,
+		},
+		{
+			name:    "file does not exist",
+			args:    args{filename: "nofile"},
+			wantErr: true,
+		},
+		{
+			name:    "bad file",
+			args:    args{filename: "../data/units/bad_test.yaml"},
+			wantErr: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := load(tt.args.filename)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("load() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("load() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
