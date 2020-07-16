@@ -1,7 +1,7 @@
 package unit
 
-func NorthernUnits() Models{
-	return Models{
-		Hunter,
+func northernUnits() []string {
+	return []string{
+		"hunter.yaml",
 	}
 }
