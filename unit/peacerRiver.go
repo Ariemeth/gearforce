@@ -1,7 +1,7 @@
 package unit
 
-func PeaceRiverUnits() Models {
-	return Models{
-		warrior,
+func peaceRiverUnits() []string {
+	return []string{
+		"warrior.yaml",
 	}
 }

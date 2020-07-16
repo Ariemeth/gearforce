@@ -1,7 +1,7 @@
 package unit
 
-func SoutherUnits() Models{
-	return Models{
-		jager,
+func southernUnits() []string {
+	return []string{
+		"jager.yaml",
 	}
 }

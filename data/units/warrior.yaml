@@ -1,0 +1,26 @@
+model: "Warrior"
+sub: ""
+tv: 7
+ua:
+  - "GP+"
+  - "SK"
+  - "FS"
+movement:
+  - "W/G:6"
+actions: 1
+armor: 6
+hull: 4
+structure: 2
+gunnery: 4
+piloting: 4
+ew: 5
+weapons:
+  - "LAC (Arm)"
+  - "LRP"
+  - "LAPGL"
+  - "LVB (Arm)"
+traits:
+  - "Arms"
+  - "ECM"
+type: "gear"
+height: 1.5
