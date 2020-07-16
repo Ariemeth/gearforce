@@ -1,0 +1,26 @@
+model: "Test"
+sub: ""
+tv: 6
+ua:
+  - "GP+"
+  - "SK"
+  - "FS"
+movement:
+  - "W/G:6"
+actions: 1
+armor: 6
+hull: 4
+structure: 2
+gunnery: 4
+piloting: 4
+ew: 6
+weapons:
+  - "LAC (Arm)"
+  - "LRP"
+  - "LAPGL"
+  - "LPZ"
+  - "LVB (Arm)"
+traits:
+  - "Arms"
+type: "gear"
+height: 1.5

@@ -31,7 +31,7 @@ func GetFactionUnits(factionName string) (Models, error) {
 		if m, err := load(fmt.Sprintf("%s/%s", dataDirectory, file)); err == nil {
 			models = append(models, m)
 		} else {
-			fmt.Printf("Unable to load %s, %w\n", file, err)
+			fmt.Printf("Unable to load %s, %s\n", file, err)
 		}
 	}
 	return models, nil
