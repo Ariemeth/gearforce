@@ -151,17 +151,51 @@ func buildUnitSelectionWindow(faction string, selectedUA notifier.ReadOnlyString
 
 	ua := selectedUA.Get()
 
-	for _, unit := range units.FilterByUA(ua) {
-		main.Append(widget.NewHBox(
-			widget.NewLabel(fmt.Sprintf("%s %s", unit.SubModel, unit.Model)),
-		))
-	}
+	main.Append(widget.NewHBox(
+		widget.NewLabel("Model"),
+		widget.NewLabel("TV"),
+		widget.NewLabel("UA"),
+		widget.NewLabel("Move"),
+		widget.NewLabel("Armor"),
+		widget.NewLabel("Hull"),
+		widget.NewLabel("Structure"),
+		widget.NewLabel("Actions"),
+		widget.NewLabel("Gunnery"),
+		widget.NewLabel("Piloting"),
+		widget.NewLabel("EW"),
+		widget.NewLabel("Weapons"),
+		widget.NewLabel("Traits"),
+		widget.NewLabel("Type"),
+		widget.NewLabel("Height"),
+	))
 
-	if len(main.Children) == 0 {
-		main.Append(widget.NewLabel(fmt.Sprintf("No Units available for %s", ua)))
+	for _, unit := range units.FilterByUA(ua) {
+		main.Append(buildUnitSelectionRow(unit))
 	}
 
 	return main, nil
+}
+
+func buildUnitSelectionRow(u unit.Model) fyne.CanvasObject {
+	wrapper := widget.NewHBox(
+		widget.NewLabel(fmt.Sprintf("%s %s", u.SubModel, u.Model)),
+		widget.NewLabel(fmt.Sprintf("%d", u.TV)),
+		widget.NewLabel(""), // UA
+		widget.NewLabel(""), // Move
+		widget.NewLabel(fmt.Sprintf("%d", u.Armor)),
+		widget.NewLabel(fmt.Sprintf("%d", u.Hull)),
+		widget.NewLabel(fmt.Sprintf("%d", u.Structure)),
+		widget.NewLabel(fmt.Sprintf("%d", u.Actions)),
+		widget.NewLabel(fmt.Sprintf("%d", u.Gunnery)),
+		widget.NewLabel(fmt.Sprintf("%d", u.Piloting)),
+		widget.NewLabel(fmt.Sprintf("%d", u.EW)),
+		widget.NewLabel(""), // Weapons
+		widget.NewLabel(""), // Trait
+		widget.NewLabel(u.Type),
+		widget.NewLabel(fmt.Sprintf("%.1f", u.Height)),
+	)
+
+	return wrapper
 }
 
 func buildSecondaryUA(faction notifier.ReadOnlyString) *widget.Group {
