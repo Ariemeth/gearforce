@@ -1,4 +1,4 @@
-package main
+package fyneui
 
 import (
 	"fmt"
@@ -12,8 +12,8 @@ import (
 	"github.com/Ariemeth/gearforce/unit"
 )
 
-// buildMainWindow creates the main application window.
-func buildMainWindow(app fyne.App) fyne.CanvasObject {
+// BuildMainWindow creates the main application window.
+func BuildMainWindow(app fyne.App) fyne.CanvasObject {
 
 	selectedFaction := notifier.String{}
 	// Configure the Faction select

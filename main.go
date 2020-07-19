@@ -2,7 +2,10 @@ package main
 
 import (
 	"fyne.io/fyne"
-	"fyne.io/fyne/app"
+	fapp "fyne.io/fyne/app"
+	gapp "gioui.org/ui/app"
+
+	"github.com/Ariemeth/gearforce/ui/fyneui"
 )
 
 const (
@@ -12,13 +15,26 @@ const (
 )
 
 func main() {
+	runGioApp()
+}
 
-	a := app.New()
+func runGioApp() {
+	go func() {
+		w := gapp.NewWindow()
+		for range w.Events() {
+		}
+	}()
+
+	gapp.Main()
+}
+
+func runFyneApp() {
+	a := fapp.New()
 
 	w := a.NewWindow(windowTitle)
 	w.Resize(fyne.NewSize(startingWidth, startingHeight))
 	w.CenterOnScreen()
-	w.SetContent(buildMainWindow(a))
+	w.SetContent(fyneui.BuildMainWindow(a))
 
 	w.ShowAndRun()
 }
