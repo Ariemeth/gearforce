@@ -1,5 +1,5 @@
 name: gearforce
-description: "A Heavy Gear force builder"
+description: "A Heavy Gear force constructor."
 
 # Prevent accidental publishing to pub.dev.
 publish_to: "none"
