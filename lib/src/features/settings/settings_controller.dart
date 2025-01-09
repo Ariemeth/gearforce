@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:gearforce/src/settings/settings_service.dart';
+import 'package:gearforce/src/features/settings/settings_service.dart';
 
 /// A class that many Widgets can interact with to read user settings, update
 /// user settings, or listen to user settings changes.

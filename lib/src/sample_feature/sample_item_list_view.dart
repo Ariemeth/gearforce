@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:gearforce/src/settings/settings_view.dart';
+import 'package:gearforce/src/features/settings/settings_view.dart';
 import 'package:gearforce/src/sample_feature/sample_item.dart';
 import 'package:gearforce/src/sample_feature/sample_item_details_view.dart';
 

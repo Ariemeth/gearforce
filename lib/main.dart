@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:gearforce/src/gearforce.dart';
-import 'package:gearforce/src/settings/settings_controller.dart';
-import 'package:gearforce/src/settings/settings_service.dart';
+import 'package:gearforce/src/features/settings/settings_controller.dart';
+import 'package:gearforce/src/features/settings/settings_service.dart';
 
 void main() async {
   // Set up the SettingsController, which will glue user settings to multiple

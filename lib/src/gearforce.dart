@@ -4,10 +4,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:gearforce/src/sample_feature/sample_item_details_view.dart';
 import 'package:gearforce/src/sample_feature/sample_item_list_view.dart';
-import 'package:gearforce/src/settings/settings_controller.dart';
-import 'package:gearforce/src/settings/settings_view.dart';
+import 'package:gearforce/src/features/settings/settings_controller.dart';
+import 'package:gearforce/src/features/settings/settings_view.dart';
 
-/// The Widget that configures your application.
 class Gearforce extends StatelessWidget {
   const Gearforce({
     super.key,
@@ -18,10 +17,6 @@ class Gearforce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Glue the SettingsController to the MaterialApp.
-    //
-    // The ListenableBuilder Widget listens to the SettingsController for changes.
-    // Whenever the user updates their settings, the MaterialApp is rebuilt.
     return ListenableBuilder(
       listenable: settingsController,
       builder: (BuildContext context, Widget? child) {
@@ -31,10 +26,7 @@ class Gearforce extends StatelessWidget {
           // returns to the app after it has been killed while running in the
           // background.
           restorationScopeId: 'app',
-
-          // Provide the generated AppLocalizations to the MaterialApp. This
-          // allows descendant Widgets to display the correct translations
-          // depending on the user's locale.
+          debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
@@ -44,12 +36,6 @@ class Gearforce extends StatelessWidget {
           supportedLocales: const [
             Locale('en', ''), // English, no country code
           ],
-
-          // Use AppLocalizations to configure the correct application title
-          // depending on the user's locale.
-          //
-          // The appTitle is defined in .arb files found in the localization
-          // directory.
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
 

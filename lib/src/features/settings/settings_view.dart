@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:gearforce/src/settings/settings_controller.dart';
+import 'package:gearforce/src/features/settings/settings_controller.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
