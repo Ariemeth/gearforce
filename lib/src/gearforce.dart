@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gearforce/src/features/settings/settings_state.dart';
 
-import 'package:gearforce/src/sample_feature/sample_item_details_view.dart';
-import 'package:gearforce/src/sample_feature/sample_item_list_view.dart';
-import 'package:gearforce/src/features/settings/settings_controller.dart';
 import 'package:gearforce/src/features/settings/settings_view.dart';
+import 'package:gearforce/src/features/settings/settings_bloc.dart';
 
 class Gearforce extends StatelessWidget {
-  const Gearforce({
-    super.key,
-    required this.settingsController,
-  });
-
-  final SettingsController settingsController;
+  const Gearforce({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListenableBuilder(
-      listenable: settingsController,
-      builder: (BuildContext context, Widget? child) {
+    return BlocBuilder<SettingsBloc, SettingsState>(
+      builder: (context, state) {
         return MaterialApp(
           // Providing a restorationScopeId allows the Navigator built by the
           // MaterialApp to restore the navigation stack when a user leaves and
@@ -44,7 +38,7 @@ class Gearforce extends StatelessWidget {
           // SettingsController to display the correct theme.
           theme: ThemeData(),
           darkTheme: ThemeData.dark(),
-          themeMode: settingsController.themeMode,
+          themeMode: state.themeMode,
 
           // Define a function to handle named routes in order to support
           // Flutter web url navigation and deep linking.
@@ -54,12 +48,23 @@ class Gearforce extends StatelessWidget {
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
-                    return SettingsView(controller: settingsController);
-                  case SampleItemDetailsView.routeName:
-                    return const SampleItemDetailsView();
-                  case SampleItemListView.routeName:
+                    return SettingsView();
                   default:
-                    return const SampleItemListView();
+                    return Scaffold(
+                      appBar: AppBar(
+                        title: Text(AppLocalizations.of(context)!.appTitle),
+                        actions: [
+                          IconButton(
+                            icon: const Icon(Icons.settings),
+                            onPressed: () {
+                              Navigator.restorablePushNamed(
+                                  context, SettingsView.routeName);
+                            },
+                          ),
+                        ],
+                      ),
+                      body: Center(child: const Text('Gearforce')),
+                    );
                 }
               },
             );
