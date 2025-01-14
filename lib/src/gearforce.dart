@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/features/settings/settings_state.dart';
 
-import 'package:gearforce/src/features/settings/settings_view.dart';
-import 'package:gearforce/src/features/settings/settings_bloc.dart';
+import 'package:gearforce/src/pages/primary/primary_view.dart';
+import 'package:gearforce/src/pages/settings/settings_state.dart';
+import 'package:gearforce/src/pages/settings/settings_view.dart';
+import 'package:gearforce/src/pages/settings/settings_bloc.dart';
 
 class Gearforce extends StatelessWidget {
   const Gearforce({super.key});
@@ -50,21 +51,7 @@ class Gearforce extends StatelessWidget {
                   case SettingsView.routeName:
                     return SettingsView();
                   default:
-                    return Scaffold(
-                      appBar: AppBar(
-                        title: Text(AppLocalizations.of(context)!.appTitle),
-                        actions: [
-                          IconButton(
-                            icon: const Icon(Icons.settings),
-                            onPressed: () {
-                              Navigator.restorablePushNamed(
-                                  context, SettingsView.routeName);
-                            },
-                          ),
-                        ],
-                      ),
-                      body: Center(child: const Text('Gearforce')),
-                    );
+                    return PrimaryView();
                 }
               },
             );
