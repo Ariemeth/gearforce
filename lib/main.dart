@@ -6,6 +6,8 @@ import 'package:gearforce/src/pages/settings/settings_service.dart';
 import 'package:gearforce/src/pages/settings/settings_bloc.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   final settingsBloc = SettingsBloc(SettingsService());
 
   // Load the user's preferred theme while the splash screen is displayed.

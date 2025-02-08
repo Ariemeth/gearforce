@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:gearforce/src/pages/settings/settings_service.dart';
 import 'package:gearforce/src/pages/settings/settings_state.dart';
-import 'package:gearforce/src/pages/settings/settings_event.dart';
+import 'package:gearforce/src/pages/settings/settings_events.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final SettingsService settingsService;
