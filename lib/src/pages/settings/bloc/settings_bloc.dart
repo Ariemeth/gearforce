@@ -20,4 +20,8 @@ class SettingsBloc extends Bloc<SettingsEvents, SettingsState> {
     final themeMode = await _settingsProvider.themeMode();
     add(UpdateThemeMode(themeMode));
   }
+
+  void changeThemeMode(ThemeMode newThemeMode) {
+    add(UpdateThemeMode(newThemeMode));
+  }
 }

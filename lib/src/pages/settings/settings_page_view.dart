@@ -23,9 +23,7 @@ class SettingsPageView extends StatelessWidget {
             return DropdownButton<ThemeMode>(
               value: state.themeMode,
               onChanged: (newThemeMode) {
-                context
-                    .read<SettingsBloc>()
-                    .add(UpdateThemeMode(newThemeMode!));
+                context.read<SettingsBloc>().changeThemeMode(newThemeMode!);
               },
               items: const [
                 DropdownMenuItem(
