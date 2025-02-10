@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// A service that stores and retrieves user settings.
-class SettingsService {
+/// A provider that stores and retrieves user settings.
+class SettingsProvider {
   static const String _themeModeKey = 'themeMode';
+
+  SettingsProvider() {
+    WidgetsFlutterBinding.ensureInitialized();
+  }
 
   /// Loads the User's preferred ThemeMode from local storage.
   Future<ThemeMode> themeMode() async {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:gearforce/src/pages/settings/settings_bloc.dart';
-import 'package:gearforce/src/pages/settings/settings_events.dart';
-import 'package:gearforce/src/pages/settings/settings_state.dart';
+import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
+import 'package:gearforce/src/pages/settings/bloc/settings_events.dart';
+import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
 
-class SettingsView extends StatelessWidget {
-  const SettingsView({super.key});
+class SettingsPageView extends StatelessWidget {
+  const SettingsPageView({super.key});
 
   static const routeName = '/settings';
 

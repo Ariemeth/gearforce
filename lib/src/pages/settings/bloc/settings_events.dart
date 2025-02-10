@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-abstract class SettingsEvent {}
+abstract class SettingsEvents {}
 
-class UpdateThemeMode extends SettingsEvent {
+class UpdateThemeMode extends SettingsEvents {
   final ThemeMode themeMode;
 
   UpdateThemeMode(this.themeMode);

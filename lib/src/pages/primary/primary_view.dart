@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:gearforce/src/pages/settings/settings_view.dart';
+import 'package:gearforce/src/pages/settings/settings_page_view.dart';
 
 class PrimaryView extends StatelessWidget {
   const PrimaryView({
@@ -18,7 +18,8 @@ class PrimaryView extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              Navigator.restorablePushNamed(context, SettingsView.routeName);
+              Navigator.restorablePushNamed(
+                  context, SettingsPageView.routeName);
             },
           ),
         ],
