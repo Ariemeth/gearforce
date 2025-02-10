@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
-import 'package:gearforce/src/pages/settings/bloc/settings_events.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
 
 class SettingsPageView extends StatelessWidget {
