@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gearforce/src/pages/settings/settings_page_view.dart';
+import 'package:gearforce/src/widgets/responsive_size.dart';
 
-class PrimaryView extends StatelessWidget {
-  const PrimaryView({
+class HomePageView extends StatelessWidget {
+  const HomePageView({
     super.key,
   });
 
@@ -24,12 +25,17 @@ class PrimaryView extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Center(child: const Text('Gearforce')),
-        ],
-      ),
+      body: LayoutBuilder(builder: (context, constraints) {
+        final screenSize = ResponsiveSize.getScreenSize(constraints.maxWidth);
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Center(
+                child: Text(
+                    'Gearforce W:${constraints.minWidth}/${constraints.maxWidth}, H:${constraints.minHeight}/${constraints.maxHeight}')),
+          ],
+        );
+      }),
     );
   }
 }

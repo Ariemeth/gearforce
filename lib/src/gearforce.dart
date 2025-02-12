@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:gearforce/src/pages/primary/primary_view.dart';
+import 'package:gearforce/src/pages/home/home_page_view.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
 import 'package:gearforce/src/pages/settings/settings_page_view.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
@@ -51,7 +51,7 @@ class Gearforce extends StatelessWidget {
                   case SettingsPageView.routeName:
                     return SettingsPageView();
                   default:
-                    return PrimaryView();
+                    return HomePageView();
                 }
               },
             );
