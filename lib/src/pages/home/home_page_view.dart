@@ -25,17 +25,44 @@ class HomePageView extends StatelessWidget {
           ),
         ],
       ),
-      body: LayoutBuilder(builder: (context, constraints) {
-        final screenSize = ResponsiveSize.getScreenSize(constraints.maxWidth);
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final screenSize = ResponsiveSize.getScreenSize(constraints.maxWidth);
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Center(
+                  child: Text(
+                      'Gearforce W:${constraints.minWidth}/${constraints.maxWidth}, H:${constraints.minHeight}/${constraints.maxHeight}')),
+            ],
+          );
+        },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            Center(
-                child: Text(
-                    'Gearforce W:${constraints.minWidth}/${constraints.maxWidth}, H:${constraints.minHeight}/${constraints.maxHeight}')),
+            SizedBox(
+              height: 50,
+              child: DrawerHeader(
+                padding: const EdgeInsets.all(4.0),
+                decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                ),
+                child: Center(
+                  child: Text(AppLocalizations.of(context)!.appTitle),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: AboutListTile(
+                applicationName: AppLocalizations.of(context)!.appTitle,
+              ),
+            ),
           ],
-        );
-      }),
+        ),
+      ),
     );
   }
 }
