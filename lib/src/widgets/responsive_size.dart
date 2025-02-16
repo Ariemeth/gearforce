@@ -6,7 +6,7 @@ enum ScreenSize {
 }
 
 class ResponsiveSize {
-  static const int smallBreakpoint = 1000;
+  static const int smallBreakpoint = 600;
 
   static ScreenSize getScreenSize(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
