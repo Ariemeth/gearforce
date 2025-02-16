@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A provider that stores and retrieves user settings.
-class SettingsProvider {
+class SettingsRepository {
   static const String _themeModeKey = 'themeMode';
 
-  SettingsProvider() {
+  SettingsRepository() {
     WidgetsFlutterBinding.ensureInitialized();
   }
 

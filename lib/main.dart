@@ -8,10 +8,10 @@ import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
 void main() async {
   runApp(
     RepositoryProvider(
-      create: (context) => SettingsProvider(),
+      create: (context) => SettingsRepository(),
       child: BlocProvider(
         create: (context) =>
-            SettingsBloc(RepositoryProvider.of<SettingsProvider>(context))
+            SettingsBloc(RepositoryProvider.of<SettingsRepository>(context))
               ..loadSettings(),
         child: Gearforce(),
       ),

@@ -6,7 +6,7 @@ import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_events.dart';
 
 class SettingsBloc extends Bloc<SettingsEvents, SettingsState> {
-  final SettingsProvider _settingsProvider;
+  final SettingsRepository _settingsProvider;
 
   SettingsBloc(this._settingsProvider)
       : super(SettingsInitial(ThemeMode.system)) {
@@ -19,9 +19,5 @@ class SettingsBloc extends Bloc<SettingsEvents, SettingsState> {
   Future<void> loadSettings() async {
     final themeMode = await _settingsProvider.themeMode();
     add(UpdateThemeMode(themeMode));
-  }
-
-  void changeThemeMode(ThemeMode newThemeMode) {
-    add(UpdateThemeMode(newThemeMode));
   }
 }

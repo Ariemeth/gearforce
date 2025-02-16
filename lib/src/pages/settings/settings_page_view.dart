@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
+import 'package:gearforce/src/pages/settings/bloc/settings_events.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
 
 class SettingsPageView extends StatelessWidget {
@@ -22,7 +23,9 @@ class SettingsPageView extends StatelessWidget {
             return DropdownButton<ThemeMode>(
               value: state.themeMode,
               onChanged: (newThemeMode) {
-                context.read<SettingsBloc>().changeThemeMode(newThemeMode!);
+                context
+                    .read<SettingsBloc>()
+                    .add(UpdateThemeMode(newThemeMode!));
               },
               items: const [
                 DropdownMenuItem(
