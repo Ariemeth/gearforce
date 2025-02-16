@@ -15,7 +15,7 @@ class HomePageDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
-            height: 50,
+            height: 60,
             child: DrawerHeader(
               padding: const EdgeInsets.all(4.0),
               decoration: BoxDecoration(
