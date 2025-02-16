@@ -27,8 +27,8 @@ class HomePageView extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          final screenSize = ResponsiveSize.getScreenSize(constraints.maxWidth);
-          return Column(
+          final screenSize = ResponsiveSize.getScreenSize(context);
+          final rosterMetaData = Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Center(
@@ -36,6 +36,22 @@ class HomePageView extends StatelessWidget {
                       'Gearforce W:${constraints.minWidth}/${constraints.maxWidth}, H:${constraints.minHeight}/${constraints.maxHeight}')),
             ],
           );
+
+          switch (screenSize) {
+            case ScreenSize.small:
+              return rosterMetaData;
+            case ScreenSize.large:
+              return Row(
+                children: [
+                  rosterMetaData,
+                  Expanded(
+                    child: Container(
+                      color: Colors.blueGrey,
+                    ),
+                  ),
+                ],
+              );
+          }
         },
       ),
       drawer: Drawer(
