@@ -43,3 +43,18 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignore generated localizations files
+/lib/src/generated/i18n
+
+# Android build files
+/android/.gradle/
+/android/.idea/
+/android/local.properties
+/android/app/build/
+/android/build/
+/android/app/.cxx/
+/android/gradle.properties
+/android/gradlew
+/android/gradlew.bat
+/android/settings.gradle

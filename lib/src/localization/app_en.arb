@@ -1,6 +1,15 @@
 {
+  "@@locale": "en",
   "appTitle": "Gearforce",
   "@appTitle": {
     "description": "The title of the application"
+  },
+  "rosterNameField": "Roster Name",
+  "@rosterNameField": {
+    "description": "Label for the roster name text field"
+  },
+  "rosterNameInputFieldHint": "Enter roster name",
+  "@rosterNameInputFieldHint": {
+    "description": "Hint text for the roster name text input field"
   }
 }

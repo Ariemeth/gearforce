@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:gearforce/src/pages/home/home_page_view.dart';
+import 'package:gearforce/src/generated/i18n/app_localizations.dart';
+import 'package:gearforce/src/pages/roster/roster_page_view.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
 import 'package:gearforce/src/pages/settings/settings_page_view.dart';
@@ -36,9 +35,11 @@ class Gearforce extends StatelessWidget {
 
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
-          // Settings Bloc to display the correct theme.
+          // SettingsController to display the correct theme.
           theme: ThemeData.from(
-              colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)),
+              colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.blue,
+          )),
           darkTheme: ThemeData.dark(),
           themeMode: state.themeMode,
 
@@ -52,7 +53,7 @@ class Gearforce extends StatelessWidget {
                   case SettingsPageView.routeName:
                     return SettingsPageView();
                   default:
-                    return HomePageView();
+                    return RosterPageView();
                 }
               },
             );
