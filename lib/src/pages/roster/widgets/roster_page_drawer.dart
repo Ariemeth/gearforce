@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gearforce/src/theme/app_theme.dart';
 
-class HomePageDrawer extends StatelessWidget {
-  const HomePageDrawer({
+final _drawerHeaderHeight = 60.0;
+
+class RosterPageDrawer extends StatelessWidget {
+  const RosterPageDrawer({
     super.key,
     required this.title,
   });
@@ -12,12 +15,12 @@ class HomePageDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.zero,
+        padding: AppTheme.drawerPadding,
         children: [
           SizedBox(
-            height: 60,
+            height: _drawerHeaderHeight,
             child: DrawerHeader(
-              padding: const EdgeInsets.all(4.0),
+              padding: AppTheme.drawerHeaderPadding,
               decoration: BoxDecoration(
                 color: Theme.of(context).primaryColor,
               ),
@@ -26,11 +29,8 @@ class HomePageDrawer extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: AboutListTile(
-              applicationName: title,
-            ),
+          AboutListTile(
+            applicationName: title,
           ),
         ],
       ),
