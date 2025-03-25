@@ -8,8 +8,16 @@
   "@rosterNameField": {
     "description": "Label for the roster name text field"
   },
-  "rosterNameInputFieldHint": "Enter roster name",
+  "rosterNameInputFieldHint": "Enter a roster name",
   "@rosterNameInputFieldHint": {
     "description": "Hint text for the roster name text input field"
+  },
+  "factionSelectDropdownHint": "Select a Faction",
+  "@factionSelectDropdownHint": {
+    "description": "Hint text on the faction selection dropdown sugggesting that a faction needs to be selected"
+  },
+  "subfactionSelectDropdownHint": "Select a Subfaction",
+  "@subfactionSelectDropdownHint": {
+    "description": "Hint text on the subfaction selection dropdown sugggesting that a subfaction needs to be selected"
   }
 }

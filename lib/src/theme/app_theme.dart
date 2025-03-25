@@ -19,15 +19,28 @@ class AppTheme {
 
   static const TextStyle rosterNameTextStyle = titleStyle;
 
-  static TextStyle textInputStyle = TextStyle(
+  static TextStyle textHintStyle = TextStyle(
     fontSize: bodyStyle.fontSize,
     fontWeight: bodyStyle.fontWeight,
     fontStyle: FontStyle.italic,
   );
 
+  static const TextStyle dropdownHintTextStyle = TextStyle(
+      fontSize: 12, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic);
+
   // Paddings
-  static const EdgeInsets defaultPadding = EdgeInsets.all(2);
+  static const EdgeInsets defaultPadding = EdgeInsets.all(0);
   static const EdgeInsets listTilePadding = defaultPadding;
+
+  static const EdgeInsets rosterNameSectionPadding =
+      EdgeInsets.symmetric(vertical: 2.0, horizontal: 5.0);
+
+  static const EdgeInsets dropdownTextPadding =
+      EdgeInsets.fromLTRB(5.0, 1.0, 1.0, 1.0);
+
+  static const EdgeInsets factionSelectorPadding = EdgeInsets.only(left: 5.0);
+  static const EdgeInsets subfactionSelectorPadding =
+      EdgeInsets.only(left: 5.0);
 
   static const EdgeInsets drawerHeaderPadding = EdgeInsets.all(4.0);
   static const EdgeInsets drawerPadding = EdgeInsets.all(4.0);
