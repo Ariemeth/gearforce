@@ -35,3 +35,15 @@ class AddUnit extends RosterEvent {
 
   AddUnit(this.combatGroupId, this.squadId, this.unit);
 }
+
+class UpdateFactionEvent extends RosterEvent {
+  final Faction faction;
+
+  UpdateFactionEvent(this.faction);
+}
+
+class UpdateSubfactionEvent extends RosterEvent {
+  final Subfaction subfaction;
+
+  UpdateSubfactionEvent(this.subfaction);
+}

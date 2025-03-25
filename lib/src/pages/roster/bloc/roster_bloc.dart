@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/pages/roster/models/combat_group.dart';
 import 'package:gearforce/src/pages/roster/models/squad.dart';
+import 'package:gearforce/src/pages/roster/models/subfaction.dart';
 import 'package:gearforce/src/pages/roster/models/unit.dart';
 import 'package:meta/meta.dart';
+import 'package:gearforce/src/pages/roster/models/faction.dart';
 
 part 'roster_event.dart';
 part 'roster_state.dart';
@@ -17,6 +19,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
           state.playerName,
           state.rosterName,
           updatedCombatGroups,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: state.selectedSubfaction,
         ),
       );
     });
@@ -27,6 +31,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
           event.playerName,
           state.rosterName,
           state.combatGroups,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: state.selectedSubfaction,
         ),
       );
     });
@@ -37,6 +43,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
           state.playerName,
           event.rosterName,
           state.combatGroups,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: state.selectedSubfaction,
         ),
       );
     });
@@ -55,6 +63,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
           state.playerName,
           state.rosterName,
           updatedCombatGroups,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: state.selectedSubfaction,
         ),
       );
     });
@@ -81,6 +91,32 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
           state.playerName,
           state.rosterName,
           updatedCombatGroups,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: state.selectedSubfaction,
+        ),
+      );
+    });
+
+    on<UpdateFactionEvent>((event, emit) {
+      emit(
+        RosterUpdated(
+          state.playerName,
+          state.rosterName,
+          state.combatGroups,
+          selectedFaction: event.faction,
+          selectedSubfaction: null, // Reset subfaction when faction changes
+        ),
+      );
+    });
+
+    on<UpdateSubfactionEvent>((event, emit) {
+      emit(
+        RosterUpdated(
+          state.playerName,
+          state.rosterName,
+          state.combatGroups,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: event.subfaction,
         ),
       );
     });
