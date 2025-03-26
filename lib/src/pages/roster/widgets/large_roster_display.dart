@@ -23,8 +23,10 @@ class LargeRosterDisplay extends StatelessWidget {
           width: _leftPanelMinWidth,
           child: Column(
             children: [
-              SquadDisplay(
-                squads: state.squads,
+              Expanded(
+                child: SquadDisplay(
+                  squads: state.squads,
+                ),
               ),
               rosterMetaData,
             ],
