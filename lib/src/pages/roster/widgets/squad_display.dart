@@ -5,7 +5,7 @@ import 'package:gearforce/src/pages/roster/models/squad.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/pages/roster/models/role.dart';
-import 'package:gearforce/src/pages/roster/widgets/squad_role_selectors.dart';
+import 'package:gearforce/src/pages/roster/widgets/squad_details_screen.dart';
 
 class SquadDisplay extends StatelessWidget {
   final List<Squad> squads;
@@ -29,41 +29,47 @@ class SquadDisplay extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final squad = squads[index];
 
-                    return ExpansionTile(
+                    return ListTile(
                       title: Text(
-                        'Squad ${index + 1}', // Display squad name as title
+                        squad.name, // Use name instead of id
                         style: AppTheme.subtitleStyle,
                       ),
-                      children: [
-                        SquadRoleSelectors(squad: squad),
-                        ...squad.units.map((unit) {
-                          return ListTile(
-                            title: Text(
-                              'Unit: ${unit.name}',
-                              style: AppTheme.bodyStyle,
-                            ),
-                            subtitle: Text(
-                              'Chassis: ${unit.chassisType}, TV: ${unit.threatValue}',
-                            ),
-                            contentPadding: AppTheme.listTilePadding,
-                          );
-                        }),
-                      ],
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                SquadDetailsScreen(squad: squad),
+                          ),
+                        );
+                      },
                     );
                   },
                 ),
         ),
         ElevatedButton(
           onPressed: () {
+            int squadNumber = squads.length + 1;
+            String newSquadName;
+
+            // Ensure the squad name is unique
+            do {
+              newSquadName = 'Squad $squadNumber';
+              squadNumber++;
+            } while (squads.any((squad) => squad.name == newSquadName));
+
             final newSquad = Squad(
-              id: DateTime.now().toString(), // Generate a unique ID
-              primaryRole: Role.gp, // Default to General Purpose
+              name: newSquadName,
+              primaryRole: Role.gp,
               secondaryRole: null,
               units: [],
             );
             context.read<RosterBloc>().add(AddSquad(newSquad));
           },
-          child: Text(AppLocalizations.of(context)!.addSquadButtonText),
+          child: Text(
+            AppLocalizations.of(context)!.addSquadButtonText,
+            style: AppTheme.buttonTextStyle,
+          ),
         ),
       ],
     );

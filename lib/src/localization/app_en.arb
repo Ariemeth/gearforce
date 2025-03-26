@@ -39,5 +39,13 @@
   "squadRoleNoneText": "None",
   "@squadRoleNoneText": {
     "description": "Text for the 'None' option in the role dropdown"
+  },
+  "squadAddUnitButtonText": "Add a unit to the squad",
+  "@squadAddUnitButtonText": {
+    "description": "Text for the button that adds a new unit to the squad"
+  },
+  "squadDetailsTitleText": "Squad Details",
+  "@squadDetailsTitleText": {
+    "description": "Title for the squad details card"
   }
 }

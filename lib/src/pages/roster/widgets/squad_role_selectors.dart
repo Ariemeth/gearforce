@@ -22,8 +22,15 @@ class SquadRoleSelectors extends StatelessWidget {
             allowNone: false, // Disallow "None" for primary role
             onChanged: (Role? newPrimaryRole) {
               if (newPrimaryRole != null) {
-                final updatedSquad =
-                    squad.copyWith(primaryRole: newPrimaryRole);
+                final updatedSquad = squad.copyWith(
+                  primaryRole: newPrimaryRole,
+                  secondaryRole: newPrimaryRole == squad.secondaryRole
+                      ? null
+                      : squad
+                          .secondaryRole, // Reset secondary role if it matches the new primary role
+                  allowSecondaryRoleToBeNull:
+                      newPrimaryRole == squad.secondaryRole,
+                );
                 context.read<RosterBloc>().add(UpdateSquad(updatedSquad));
               }
             },
@@ -36,13 +43,17 @@ class SquadRoleSelectors extends StatelessWidget {
             label: AppLocalizations.of(context)!.squadSecondaryRoleLabelText,
             allowNone: true,
             onChanged: (Role? newSecondaryRole) {
-              final updatedSquad = squad.copyWith(
-                secondaryRole: newSecondaryRole,
-                allowSecondaryRoleToBeNull:
-                    newSecondaryRole == null, // Updated parameter name
-              );
-              context.read<RosterBloc>().add(UpdateSquad(updatedSquad));
+              if (newSecondaryRole != squad.primaryRole) {
+                final updatedSquad = squad.copyWith(
+                  secondaryRole: newSecondaryRole,
+                  allowSecondaryRoleToBeNull: newSecondaryRole == null,
+                );
+                context.read<RosterBloc>().add(UpdateSquad(updatedSquad));
+              }
             },
+            roles: Role.values
+                .where((role) => role != squad.primaryRole)
+                .toList(), // Exclude primary role
           ),
         ),
       ],

@@ -17,6 +17,11 @@ class AppTheme {
     fontWeight: FontWeight.normal,
   );
 
+  static const TextStyle buttonTextStyle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+  );
+
   static const TextStyle rosterNameTextStyle = titleStyle;
 
   static TextStyle textHintStyle = TextStyle(

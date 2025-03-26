@@ -4,27 +4,27 @@ import 'package:gearforce/src/pages/roster/models/unit.dart';
 
 @immutable
 class Squad {
-  final String id;
+  final String name;
   final Role primaryRole;
   final Role? secondaryRole;
   final List<Unit> units;
 
   const Squad({
-    required this.id,
+    required this.name,
     this.primaryRole = Role.gp,
     this.secondaryRole,
     required this.units,
   });
 
   Squad copyWith({
-    String? id,
+    String? name,
     Role? primaryRole,
     Role? secondaryRole,
     bool allowSecondaryRoleToBeNull = false,
     List<Unit>? units,
   }) {
     return Squad(
-      id: id ?? this.id,
+      name: name ?? this.name,
       primaryRole: primaryRole ?? this.primaryRole,
       secondaryRole: allowSecondaryRoleToBeNull
           ? null
