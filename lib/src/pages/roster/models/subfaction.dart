@@ -1,248 +1,68 @@
-import 'package:gearforce/src/pages/roster/models/faction.dart';
-
 enum Subfaction {
   // North
-  norguard,
-  westernFrontierProtectorate,
-  unitedMercantileFederation,
-  northernLightsConfederacy,
+  norguard('Norguard', 'NG'),
+  westernFrontierProtectorate('Western Frontier Protectorate', 'WP'),
+  unitedMercantileFederation('United Mercantile Federation', 'UMF'),
+  northernLightsConfederacy('Northern Lights Confederacy', 'NLC'),
 
   // South
-  southernRepublic,
-  milicia,
-  mekongDominion,
-  easternSunEmirates,
-  humanistAlliance,
+  southernRepublic('Southern Republic', 'SR'),
+  milicia('Military Intervention and Counter Insurgency Army ', 'MILICIA'),
+  mekongDominion('Mekong Dominion', 'MD'),
+  easternSunEmirates('Eastern Sun Emirates', 'ESE'),
+  humanistAlliance('Humanist Alliance', 'HA'),
 
   // NuCoal
-  nuCoalSelfDefenseForce,
-  portArthurKorps,
-  khayrAdDin,
-  templeHeights,
-  hardScrabbledCityStates,
+  nuCoalSelfDefenseForce('NuCoal Self Defense Force', 'NSDF'),
+  portArthurKorps('Port Arthur Korps', 'PAK'),
+  khayrAdDin('Khayr ad-Din', 'KAD'),
+  templeHeights('Temple Heights', 'TH'),
+  hardScrabbledCityStates('Hard Scrabbled City-States', 'HSCS'),
 
   // Peace River
-  peaceRiverDefenseForce,
-  peaceOfficerCorps,
-  paxtonPrivateSecurities,
+  peaceRiverDefenseForce('Peace River Defense Force', 'PRDF'),
+  peaceOfficerCorps('Peace Officer Corps', 'POC'),
+  paxtonPrivateSecurities('Paxton Private Securities', 'PPS'),
 
   // Black Talons
-  talonReconTeam,
-  talonInsertionTeam,
-  talonAssaultTeam,
-  talonStrikeTeam,
+  talonReconTeam('Talon Recon Team', 'TRT'),
+  talonInsertionTeam('Talon Insertion Team', 'TIT'),
+  talonAssaultTeam('Talon Assault Team', 'TAT'),
+  talonStrikeTeam('Talon Strike Team', 'TST'),
 
   // CEF
-  expeditionaryForce,
-  garrisonForce,
-  earthAdministrationZone,
-  rebelForce,
+  expeditionaryForce('Expeditionary Force', 'EF'),
+  garrisonForce('Garrison Force', 'GF'),
+  earthAdministrationZone('Earth Administration Zone', 'EAZ'),
+  rebelForce('Rebel Force', 'RF'),
 
   // Caprice
-  hakkarSecurity,
-  costaMoreiaSecurity,
-  corporatiSecurity,
-  liberatiMilitia,
+  hakkarSecurity('Hakkar Security', 'HS'),
+  costaMoreiaSecurity('Costa Moreia Security', 'CMS'),
+  corporatiSecurity('Corporati Security', 'CS'),
+  liberatiMilitia('Liberati Militia', 'LM'),
 
   // Utopia
-  unitedRepublicOfSteelgate,
-  industrialStatesOfKogland,
-  greenwayAlliance,
-  independentStates,
-  iAutoP,
+  unitedRepublicOfSteelgate('United Republic of Steelgate', 'URS'),
+  industrialStatesOfKogland('Industrial States Of Kogland', 'ISK'),
+  greenwayAlliance('Greenway Alliance', 'GA'),
+  independentStates('Independent States', 'IS'),
+  iAutoP('I-Auto-P', 'IAP'),
 
   // Eden
-  seiathEmpire,
-  auduuthKingdom,
-  muratCorsairs,
-  nobleShareholders,
-  adHocKingdomOrConsortium,
+  seiathEmpire('Seiath Empire', 'SE'),
+  auduuthKingdom('Audu’uth Kingdom', 'AK'),
+  muratCorsairs('Murat Corsairs', 'MC'),
+  nobleShareholders('Noble Shareholders', 'NS'),
+  adHocKingdomOrConsortium('Ad-Hoc Kingdom or Consortium', 'AHKC'),
 
   // New Jerusalem
-  orderOfSaintMichael,
-  orderOfSaintGeorge,
-  orderOfSaintJoshua,
-}
+  orderOfSaintMichael('Order of Saint Michael', 'OSM'),
+  orderOfSaintGeorge('Order of Saint George', 'OSG'),
+  orderOfSaintJoshua('Order of Saint Joshua', 'OSJ');
 
-extension SubfactionExtension on Subfaction {
-  String get displayName {
-    switch (this) {
-      // North
-      case Subfaction.norguard:
-        return 'Norguard (NG)';
-      case Subfaction.westernFrontierProtectorate:
-        return 'Western Frontier Protectorate (WP)';
-      case Subfaction.unitedMercantileFederation:
-        return 'United Mercantile Federation (UMF)';
-      case Subfaction.northernLightsConfederacy:
-        return 'Northern Lights Confederacy (NLC)';
+  final String displayName;
+  final String abbreviation;
 
-      // South
-      case Subfaction.southernRepublic:
-        return 'Southern Republic (SR)';
-      case Subfaction.milicia:
-        return 'MILICIA';
-      case Subfaction.mekongDominion:
-        return 'Mekong Dominion (MD)';
-      case Subfaction.easternSunEmirates:
-        return 'Eastern Sun Emirates (ESE)';
-      case Subfaction.humanistAlliance:
-        return 'Humanist Alliance (HA)';
-
-      // NuCoal
-      case Subfaction.nuCoalSelfDefenseForce:
-        return 'NuCoal Self Defense Force (NSDF)';
-      case Subfaction.portArthurKorps:
-        return 'Port Arthur Korps (PAK)';
-      case Subfaction.khayrAdDin:
-        return 'Khayr ad-Din (KAD)';
-      case Subfaction.templeHeights:
-        return 'Temple Heights (TH)';
-      case Subfaction.hardScrabbledCityStates:
-        return 'Hard Scrabbled City-States (HSCS)';
-
-      // Peace River
-      case Subfaction.peaceRiverDefenseForce:
-        return 'Peace River Defense Force (PRDF)';
-      case Subfaction.peaceOfficerCorps:
-        return 'Peace Officer Corps (POC)';
-      case Subfaction.paxtonPrivateSecurities:
-        return 'Paxton Private Securities (PPS)';
-
-      // Black Talons
-      case Subfaction.talonReconTeam:
-        return 'Talon Recon Team (TRT)';
-      case Subfaction.talonInsertionTeam:
-        return 'Talon Insertion Team (TIT)';
-      case Subfaction.talonAssaultTeam:
-        return 'Talon Assault Team (TAT)';
-      case Subfaction.talonStrikeTeam:
-        return 'Talon Strike Team (TST)';
-
-      // CEF
-      case Subfaction.expeditionaryForce:
-        return 'Expeditionary Force (EF)';
-      case Subfaction.garrisonForce:
-        return 'Garrison Force (GF)';
-      case Subfaction.earthAdministrationZone:
-        return 'Earth Administration Zone (EAZ)';
-      case Subfaction.rebelForce:
-        return 'Rebel Force (RF)';
-
-      // Caprice
-      case Subfaction.hakkarSecurity:
-        return 'Hakkar Security (HS)';
-      case Subfaction.costaMoreiaSecurity:
-        return 'Costa Moreia Security (CMS)';
-      case Subfaction.corporatiSecurity:
-        return 'Corporati Security (CS)';
-      case Subfaction.liberatiMilitia:
-        return 'Liberati Militia (LM)';
-
-      // Utopia
-      case Subfaction.unitedRepublicOfSteelgate:
-        return 'United Republic of Steelgate (URS)';
-      case Subfaction.industrialStatesOfKogland:
-        return 'Industrial States Of Kogland (ISK)';
-      case Subfaction.greenwayAlliance:
-        return 'Greenway Alliance (GA)';
-      case Subfaction.independentStates:
-        return 'Independent States (IS)';
-      case Subfaction.iAutoP:
-        return 'I-Auto-P (IAP)';
-
-      // Eden
-      case Subfaction.seiathEmpire:
-        return 'Seiath Empire (SE)';
-      case Subfaction.auduuthKingdom:
-        return 'Audu’uth Kingdom (AK)';
-      case Subfaction.muratCorsairs:
-        return 'Murat Corsairs (MC)';
-      case Subfaction.nobleShareholders:
-        return 'Noble Shareholders (NS)';
-      case Subfaction.adHocKingdomOrConsortium:
-        return 'Ad-Hoc Kingdom or Consortium (AHKC)';
-
-      // New Jerusalem
-      case Subfaction.orderOfSaintMichael:
-        return 'Order of Saint Michael (OSM)';
-      case Subfaction.orderOfSaintGeorge:
-        return 'Order of Saint George (OSG)';
-      case Subfaction.orderOfSaintJoshua:
-        return 'Order of Saint Joshua (OSJ)';
-    }
-  }
-}
-
-extension FactionSubfactions on Faction {
-  List<Subfaction> get subfactions {
-    switch (this) {
-      case Faction.north:
-        return [
-          Subfaction.norguard,
-          Subfaction.westernFrontierProtectorate,
-          Subfaction.unitedMercantileFederation,
-          Subfaction.northernLightsConfederacy,
-        ];
-      case Faction.south:
-        return [
-          Subfaction.southernRepublic,
-          Subfaction.milicia,
-          Subfaction.mekongDominion,
-          Subfaction.easternSunEmirates,
-          Subfaction.humanistAlliance,
-        ];
-      case Faction.nuCoal:
-        return [
-          Subfaction.nuCoalSelfDefenseForce,
-          Subfaction.portArthurKorps,
-          Subfaction.khayrAdDin,
-          Subfaction.templeHeights,
-          Subfaction.hardScrabbledCityStates,
-        ];
-      case Faction.peaceRiver:
-        return [
-          Subfaction.peaceRiverDefenseForce,
-          Subfaction.peaceOfficerCorps,
-          Subfaction.paxtonPrivateSecurities,
-        ];
-      case Faction.blackTalons:
-        return [
-          Subfaction.talonReconTeam,
-          Subfaction.talonInsertionTeam,
-          Subfaction.talonAssaultTeam,
-          Subfaction.talonStrikeTeam,
-        ];
-      case Faction.cef:
-        return [
-          Subfaction.expeditionaryForce,
-          Subfaction.garrisonForce,
-          Subfaction.earthAdministrationZone,
-          Subfaction.rebelForce,
-        ];
-      case Faction.caprice:
-        return [
-          Subfaction.hakkarSecurity,
-          Subfaction.costaMoreiaSecurity,
-          Subfaction.corporatiSecurity,
-          Subfaction.liberatiMilitia,
-        ];
-      case Faction.utopia:
-        return [
-          Subfaction.unitedRepublicOfSteelgate,
-          Subfaction.industrialStatesOfKogland,
-          Subfaction.greenwayAlliance,
-          Subfaction.independentStates,
-          Subfaction.iAutoP,
-        ];
-      case Faction.eden:
-        return [
-          Subfaction.seiathEmpire,
-          Subfaction.auduuthKingdom,
-          Subfaction.muratCorsairs,
-          Subfaction.nobleShareholders,
-          Subfaction.adHocKingdomOrConsortium,
-        ];
-    }
-  }
+  const Subfaction(this.displayName, this.abbreviation);
 }

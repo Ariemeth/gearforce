@@ -1,36 +1,66 @@
-enum Faction {
-  blackTalons,
-  cef,
-  caprice,
-  eden,
-  north,
-  nuCoal,
-  peaceRiver,
-  south,
-  utopia,
-}
+import 'package:gearforce/src/pages/roster/models/subfaction.dart';
 
-extension FactionExtension on Faction {
-  String get displayName {
-    switch (this) {
-      case Faction.blackTalons:
-        return 'Black Talons';
-      case Faction.cef:
-        return 'CEF';
-      case Faction.caprice:
-        return 'Caprice';
-      case Faction.eden:
-        return 'Eden';
-      case Faction.north:
-        return 'North';
-      case Faction.nuCoal:
-        return 'NuCoal';
-      case Faction.peaceRiver:
-        return 'Peace River';
-      case Faction.south:
-        return 'South';
-      case Faction.utopia:
-        return 'Utopia';
-    }
-  }
+enum Faction {
+  blackTalons('Black Talons', [
+    Subfaction.talonReconTeam,
+    Subfaction.talonInsertionTeam,
+    Subfaction.talonAssaultTeam,
+    Subfaction.talonStrikeTeam,
+  ]),
+  cef('CEF', [
+    Subfaction.expeditionaryForce,
+    Subfaction.garrisonForce,
+    Subfaction.earthAdministrationZone,
+    Subfaction.rebelForce,
+  ]),
+  caprice('Caprice', [
+    Subfaction.hakkarSecurity,
+    Subfaction.costaMoreiaSecurity,
+    Subfaction.corporatiSecurity,
+    Subfaction.liberatiMilitia,
+  ]),
+  eden('Eden', [
+    Subfaction.seiathEmpire,
+    Subfaction.auduuthKingdom,
+    Subfaction.muratCorsairs,
+    Subfaction.nobleShareholders,
+    Subfaction.adHocKingdomOrConsortium,
+  ]),
+  north('North', [
+    Subfaction.norguard,
+    Subfaction.westernFrontierProtectorate,
+    Subfaction.unitedMercantileFederation,
+    Subfaction.northernLightsConfederacy,
+  ]),
+  nuCoal('NuCoal', [
+    Subfaction.nuCoalSelfDefenseForce,
+    Subfaction.portArthurKorps,
+    Subfaction.khayrAdDin,
+    Subfaction.templeHeights,
+    Subfaction.hardScrabbledCityStates,
+  ]),
+  peaceRiver('Peace River', [
+    Subfaction.peaceRiverDefenseForce,
+    Subfaction.peaceOfficerCorps,
+    Subfaction.paxtonPrivateSecurities,
+  ]),
+  south('South', [
+    Subfaction.southernRepublic,
+    Subfaction.milicia,
+    Subfaction.mekongDominion,
+    Subfaction.easternSunEmirates,
+    Subfaction.humanistAlliance,
+  ]),
+  utopia('Utopia', [
+    Subfaction.unitedRepublicOfSteelgate,
+    Subfaction.industrialStatesOfKogland,
+    Subfaction.greenwayAlliance,
+    Subfaction.independentStates,
+    Subfaction.iAutoP,
+  ]);
+
+  final String displayName;
+  final List<Subfaction> subfactions;
+
+  const Faction(this.displayName, this.subfactions);
 }
