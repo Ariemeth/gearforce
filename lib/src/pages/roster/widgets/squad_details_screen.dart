@@ -5,7 +5,7 @@ import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/models/role.dart';
 import 'package:gearforce/src/pages/roster/models/skill_attribute.dart';
 import 'package:gearforce/src/pages/roster/models/squad.dart';
-import 'package:gearforce/src/pages/roster/models/unit.dart';
+import 'package:gearforce/src/pages/roster/models/core_unit.dart';
 import 'package:gearforce/src/pages/roster/widgets/squad_role_selectors.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 import 'package:gearforce/src/pages/roster/models/movement.dart';
@@ -54,7 +54,7 @@ class SquadDetailsScreen extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  final newUnit = Unit(
+                  final newUnit = CoreUnit(
                     name: 'New Unit',
                     chassisType: 'Default Chassis',
                     threatValue: 0,
@@ -72,7 +72,8 @@ class SquadDetailsScreen extends StatelessWidget {
                     ew: SkillAttribute(0),
                   );
                   final updatedSquadWithNewUnit = updatedSquad.copyWith(
-                    units: List<Unit>.from(updatedSquad.units)..add(newUnit),
+                    units: List<CoreUnit>.from(updatedSquad.units)
+                      ..add(newUnit),
                   );
                   context
                       .read<RosterBloc>()

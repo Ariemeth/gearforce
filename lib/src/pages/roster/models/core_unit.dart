@@ -6,9 +6,10 @@ import 'package:gearforce/src/pages/roster/models/movement.dart';
 import 'package:gearforce/src/pages/roster/models/model_actions.dart';
 import 'package:gearforce/src/pages/roster/models/role.dart';
 import 'package:gearforce/src/pages/roster/models/skill_attribute.dart';
+import 'package:gearforce/src/pages/roster/models/trait.dart';
 
 @immutable
-class Unit {
+class CoreUnit {
   final String name;
   final String chassisType;
   final int threatValue;
@@ -20,9 +21,10 @@ class Unit {
   final SkillAttribute gu;
   final SkillAttribute pi;
   final SkillAttribute ew;
+  final List<Trait> traits;
   final double height;
 
-  const Unit({
+  const CoreUnit({
     required this.name,
     required this.chassisType,
     required this.threatValue,
@@ -34,10 +36,11 @@ class Unit {
     required this.gu,
     required this.pi,
     required this.ew,
+    this.traits = const [],
     required this.height,
   });
 
-  Unit copyWith({
+  CoreUnit copyWith({
     String? name,
     String? chassisType,
     int? threatValue,
@@ -49,9 +52,10 @@ class Unit {
     SkillAttribute? gu,
     SkillAttribute? pi,
     SkillAttribute? ew,
+    List<Trait>? traits,
     double? height,
   }) {
-    return Unit(
+    return CoreUnit(
       name: name ?? this.name,
       chassisType: chassisType ?? this.chassisType,
       threatValue: threatValue ?? this.threatValue,
@@ -63,6 +67,7 @@ class Unit {
       gu: gu ?? this.gu,
       pi: pi ?? this.pi,
       ew: ew ?? this.ew,
+      traits: traits ?? this.traits,
       height: height ?? this.height,
     );
   }

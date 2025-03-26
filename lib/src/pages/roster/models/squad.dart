@@ -1,14 +1,14 @@
 import 'package:meta/meta.dart';
 
 import 'package:gearforce/src/pages/roster/models/role.dart';
-import 'package:gearforce/src/pages/roster/models/unit.dart';
+import 'package:gearforce/src/pages/roster/models/core_unit.dart';
 
 @immutable
 class Squad {
   final String name;
   final Role primaryRole;
   final Role? secondaryRole;
-  final List<Unit> units;
+  final List<CoreUnit> units;
 
   const Squad({
     required this.name,
@@ -22,7 +22,7 @@ class Squad {
     Role? primaryRole,
     Role? secondaryRole,
     bool allowSecondaryRoleToBeNull = false,
-    List<Unit>? units,
+    List<CoreUnit>? units,
   }) {
     return Squad(
       name: name ?? this.name,
