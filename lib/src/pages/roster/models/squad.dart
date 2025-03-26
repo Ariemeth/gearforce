@@ -1,5 +1,6 @@
-import 'package:gearforce/src/pages/roster/models/role.dart';
 import 'package:meta/meta.dart';
+
+import 'package:gearforce/src/pages/roster/models/role.dart';
 import 'package:gearforce/src/pages/roster/models/unit.dart';
 
 @immutable
