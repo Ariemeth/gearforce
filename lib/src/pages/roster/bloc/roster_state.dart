@@ -4,14 +4,14 @@ part of 'roster_bloc.dart';
 abstract class RosterState {
   final String playerName;
   final String rosterName;
-  final List<CombatGroup> combatGroups;
+  final List<Squad> squads;
   final Faction? selectedFaction;
   final Subfaction? selectedSubfaction;
 
   const RosterState(
     this.playerName,
     this.rosterName,
-    this.combatGroups, {
+    this.squads, {
     this.selectedFaction,
     this.selectedSubfaction,
   });
@@ -25,7 +25,7 @@ class RosterUpdated extends RosterState {
   const RosterUpdated(
     super.playerName,
     super.rosterName,
-    super.combatGroups, {
+    super.squads, {
     super.selectedFaction,
     super.selectedSubfaction,
   });

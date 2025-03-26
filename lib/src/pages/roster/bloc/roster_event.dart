@@ -3,12 +3,6 @@ part of 'roster_bloc.dart';
 @immutable
 abstract class RosterEvent {}
 
-class AddCombatGroup extends RosterEvent {
-  final CombatGroup combatGroup;
-
-  AddCombatGroup(this.combatGroup);
-}
-
 class UpdatePlayerName extends RosterEvent {
   final String playerName;
 
@@ -22,18 +16,16 @@ class UpdateRosterName extends RosterEvent {
 }
 
 class AddSquad extends RosterEvent {
-  final String combatGroupId;
   final Squad squad;
 
-  AddSquad(this.combatGroupId, this.squad);
+  AddSquad(this.squad);
 }
 
 class AddUnit extends RosterEvent {
-  final String combatGroupId;
   final String squadId;
   final Unit unit;
 
-  AddUnit(this.combatGroupId, this.squadId, this.unit);
+  AddUnit(this.squadId, this.unit);
 }
 
 class UpdateFactionEvent extends RosterEvent {
@@ -46,4 +38,16 @@ class UpdateSubfactionEvent extends RosterEvent {
   final Subfaction subfaction;
 
   UpdateSubfactionEvent(this.subfaction);
+}
+
+class UpdateSquads extends RosterEvent {
+  final List<Squad> squads;
+
+  UpdateSquads(this.squads);
+}
+
+class UpdateSquad extends RosterEvent {
+  final Squad updatedSquad;
+
+  UpdateSquad(this.updatedSquad);
 }
