@@ -7,6 +7,7 @@ class SquadRoleSelector extends StatelessWidget {
   final String label;
   final bool allowNone;
   final ValueChanged<Role?> onChanged;
+  final List<Role> roles; // Custom list of roles to display
 
   const SquadRoleSelector({
     super.key,
@@ -14,6 +15,7 @@ class SquadRoleSelector extends StatelessWidget {
     required this.label,
     this.allowNone = false,
     required this.onChanged,
+    this.roles = Role.values, // Default to all roles
   });
 
   @override
@@ -25,7 +27,7 @@ class SquadRoleSelector extends StatelessWidget {
           value: selectedRole,
           items: [
             if (allowNone) null, // Include "None" as null
-            ...Role.values,
+            ...roles,
           ]
               .map(
                 (role) => DropdownMenuItem(

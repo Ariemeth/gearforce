@@ -49,7 +49,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
     on<AddUnit>((event, emit) {
       final updatedSquads = state.squads.map((squad) {
-        if (squad.id == event.squadId) {
+        if (squad.name == event.squadName) {
+          // Use squadName instead of squadId
           return squad.copyWith(
             units: List<Unit>.from(squad.units)..add(event.unit),
           );
@@ -105,7 +106,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
     on<UpdateSquad>((event, emit) {
       final updatedSquads = state.squads.map((squad) {
-        if (squad.id == event.updatedSquad.id) {
+        if (squad.name == event.updatedSquad.name) {
+          // Use name instead of id
           return event.updatedSquad;
         }
         return squad;
