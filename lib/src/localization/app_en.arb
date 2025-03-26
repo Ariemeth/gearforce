@@ -19,5 +19,25 @@
   "subfactionSelectDropdownHint": "Select a Subfaction",
   "@subfactionSelectDropdownHint": {
     "description": "Hint text on the subfaction selection dropdown sugggesting that a subfaction needs to be selected"
+  },
+  "addSquadButtonText": "Add Squad",
+  "@addSquadButtonText": {
+    "description": "Text for the button that adds a new squad to the roster"
+  },
+  "noSquadsText": "There are no squads in the combat group.",
+  "@noSquadsText": {
+    "description": "Text displayed when there are no squads in the combat group"
+  },
+  "squadPrimaryRoleLabelText": "Primary Role",
+  "@squadPrimaryRoleLabelText": {
+    "description": "Label for the primary role dropdown in the squad card"
+  },
+  "squadSecondaryRoleLabelText": "Secondary Role",
+  "@squadSecondaryRoleLabelText": {
+    "description": "Label for the secondary role dropdown in the squad card"
+  },
+  "squadRoleNoneText": "None",
+  "@squadRoleNoneText": {
+    "description": "Text for the 'None' option in the role dropdown"
   }
 }

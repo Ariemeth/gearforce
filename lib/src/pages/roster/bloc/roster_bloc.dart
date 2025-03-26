@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/pages/roster/models/combat_group.dart';
 import 'package:gearforce/src/pages/roster/models/squad.dart';
 import 'package:gearforce/src/pages/roster/models/subfaction.dart';
 import 'package:gearforce/src/pages/roster/models/unit.dart';
@@ -11,26 +10,12 @@ part 'roster_state.dart';
 
 class RosterBloc extends Bloc<RosterEvent, RosterState> {
   RosterBloc() : super(RosterInitial()) {
-    on<AddCombatGroup>((event, emit) {
-      final updatedCombatGroups = List<CombatGroup>.from(state.combatGroups)
-        ..add(event.combatGroup);
-      emit(
-        RosterUpdated(
-          state.playerName,
-          state.rosterName,
-          updatedCombatGroups,
-          selectedFaction: state.selectedFaction,
-          selectedSubfaction: state.selectedSubfaction,
-        ),
-      );
-    });
-
     on<UpdatePlayerName>((event, emit) {
       emit(
         RosterUpdated(
           event.playerName,
           state.rosterName,
-          state.combatGroups,
+          state.squads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
         ),
@@ -42,7 +27,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         RosterUpdated(
           state.playerName,
           event.rosterName,
-          state.combatGroups,
+          state.squads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
         ),
@@ -50,19 +35,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     });
 
     on<AddSquad>((event, emit) {
-      final updatedCombatGroups = state.combatGroups.map((cg) {
-        if (cg.id == event.combatGroupId) {
-          return cg.copyWith(
-            squads: List<Squad>.from(cg.squads)..add(event.squad),
-          );
-        }
-        return cg;
-      }).toList();
+      final updatedSquads = List<Squad>.from(state.squads)..add(event.squad);
       emit(
         RosterUpdated(
           state.playerName,
           state.rosterName,
-          updatedCombatGroups,
+          updatedSquads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
         ),
@@ -70,27 +48,19 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     });
 
     on<AddUnit>((event, emit) {
-      final updatedCombatGroups = state.combatGroups.map((cg) {
-        if (cg.id == event.combatGroupId) {
-          final updatedSquads = cg.squads.map(
-            (squad) {
-              if (squad.id == event.squadId) {
-                return squad.copyWith(
-                  units: List<Unit>.from(squad.units)..add(event.unit),
-                );
-              }
-              return squad;
-            },
-          ).toList();
-          return cg.copyWith(squads: updatedSquads);
+      final updatedSquads = state.squads.map((squad) {
+        if (squad.id == event.squadId) {
+          return squad.copyWith(
+            units: List<Unit>.from(squad.units)..add(event.unit),
+          );
         }
-        return cg;
+        return squad;
       }).toList();
       emit(
         RosterUpdated(
           state.playerName,
           state.rosterName,
-          updatedCombatGroups,
+          updatedSquads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
         ),
@@ -102,7 +72,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         RosterUpdated(
           state.playerName,
           state.rosterName,
-          state.combatGroups,
+          state.squads,
           selectedFaction: event.faction,
           selectedSubfaction: null, // Reset subfaction when faction changes
         ),
@@ -114,9 +84,40 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         RosterUpdated(
           state.playerName,
           state.rosterName,
-          state.combatGroups,
+          state.squads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: event.subfaction,
+        ),
+      );
+    });
+
+    on<UpdateSquads>((event, emit) {
+      emit(
+        RosterUpdated(
+          state.playerName,
+          state.rosterName,
+          event.squads,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: state.selectedSubfaction,
+        ),
+      );
+    });
+
+    on<UpdateSquad>((event, emit) {
+      final updatedSquads = state.squads.map((squad) {
+        if (squad.id == event.updatedSquad.id) {
+          return event.updatedSquad;
+        }
+        return squad;
+      }).toList();
+
+      emit(
+        RosterUpdated(
+          state.playerName,
+          state.rosterName,
+          updatedSquads,
+          selectedFaction: state.selectedFaction,
+          selectedSubfaction: state.selectedSubfaction,
         ),
       );
     });
