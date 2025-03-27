@@ -9,11 +9,11 @@ class Weapon {
   final String code;
   final String name;
   final WeaponRange range;
-  final Map<WeaponSize, int> damageBySize;
-  final List<WeaponMode> modes; // Updated to support multiple modes
-  final List<Trait> _primaryTraits; // Private to enforce immutability
-  final List<Trait>? _secondaryTraits; // Private to enforce immutability
-  final bool isReact; // Indicates if the weapon is a react weapon
+  final Map<WeaponSize, int> _damageBySize;
+  final List<WeaponMode> modes;
+  final List<Trait> _primaryTraits;
+  final List<Trait>? _secondaryTraits;
+  final bool isReact;
 
   /// A map to define custom level adjustments for primary traits based on weapon size.
   /// Structure:
@@ -41,14 +41,15 @@ class Weapon {
     required this.code,
     required this.name,
     required this.range,
-    required this.damageBySize,
-    required List<WeaponMode> modes, // Updated to accept multiple modes
+    required Map<WeaponSize, int> damageBySize,
+    required List<WeaponMode> modes,
     List<Trait> primaryTraits = const [],
     List<Trait>? secondaryTraits,
     Map<String, Map<WeaponSize, int>>? primaryAdjustLevel,
     Map<String, Map<WeaponSize, int>>? secondaryAdjustLevel,
     this.isReact = false,
-  })  : modes = List.unmodifiable(modes), // Ensure immutability
+  })  : _damageBySize = Map.unmodifiable(damageBySize),
+        modes = List.unmodifiable(modes),
         _primaryAdjustLevel = primaryAdjustLevel,
         _secondaryAdjustLevel = secondaryAdjustLevel,
         _primaryTraits = List.unmodifiable(primaryTraits),
@@ -66,7 +67,7 @@ class Weapon {
 
   String get weaponType => code.substring(1).toUpperCase();
 
-  int get damage => damageBySize[size]!;
+  int get damage => _damageBySize[size]!;
 
   /// Returns an unmodifiable view of the primary traits.
   List<Trait> get primaryTraits => _primaryTraits.toList();
@@ -117,7 +118,7 @@ class Weapon {
       code: code ?? this.code,
       name: name ?? this.name,
       range: range ?? this.range,
-      damageBySize: damageBySize ?? this.damageBySize,
+      damageBySize: damageBySize ?? _damageBySize,
       modes: modes ?? this.modes,
       primaryTraits: primaryTraits ?? this.primaryTraits,
       secondaryTraits: secondaryTraits ?? this.secondaryTraits,
