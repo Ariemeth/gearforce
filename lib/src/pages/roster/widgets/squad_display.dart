@@ -62,7 +62,7 @@ class SquadDisplay extends StatelessWidget {
               name: newSquadName,
               primaryRole: Role.gp,
               secondaryRole: null,
-              units: [],
+              models: [],
             );
             context.read<RosterBloc>().add(AddSquad(newSquad));
           },

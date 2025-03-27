@@ -1,20 +1,20 @@
 import 'package:meta/meta.dart';
 
 import 'package:gearforce/src/pages/roster/models/role.dart';
-import 'package:gearforce/src/pages/roster/models/unit_core.dart';
+import 'package:gearforce/src/pages/roster/models/unit/model.dart';
 
 @immutable
 class Squad {
   final String name;
   final Role primaryRole;
   final Role? secondaryRole;
-  final List<UnitCore> units;
+  final List<Model> models;
 
   const Squad({
     required this.name,
     this.primaryRole = Role.gp,
     this.secondaryRole,
-    required this.units,
+    required this.models,
   });
 
   Squad copyWith({
@@ -22,7 +22,7 @@ class Squad {
     Role? primaryRole,
     Role? secondaryRole,
     bool allowSecondaryRoleToBeNull = false,
-    List<UnitCore>? units,
+    List<Model>? models,
   }) {
     return Squad(
       name: name ?? this.name,
@@ -30,7 +30,7 @@ class Squad {
       secondaryRole: allowSecondaryRoleToBeNull
           ? null
           : (secondaryRole ?? this.secondaryRole),
-      units: units ?? this.units,
+      models: models ?? this.models,
     );
   }
 }

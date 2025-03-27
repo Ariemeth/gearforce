@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/pages/roster/models/squad.dart';
 import 'package:gearforce/src/pages/roster/models/subfaction.dart';
-import 'package:gearforce/src/pages/roster/models/unit_core.dart';
+import 'package:gearforce/src/pages/roster/models/unit/model.dart';
 import 'package:meta/meta.dart';
 import 'package:gearforce/src/pages/roster/models/faction.dart';
 
@@ -47,12 +47,11 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       );
     });
 
-    on<AddUnit>((event, emit) {
+    on<AddModel>((event, emit) {
       final updatedSquads = state.squads.map((squad) {
         if (squad.name == event.squadName) {
-          // Use squadName instead of squadId
           return squad.copyWith(
-            units: List<UnitCore>.from(squad.units)..add(event.unit),
+            models: List<Model>.from(squad.models)..add(event.model),
           );
         }
         return squad;
@@ -75,7 +74,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
           state.rosterName,
           state.squads,
           selectedFaction: event.faction,
-          selectedSubfaction: null, // Reset subfaction when faction changes
+          selectedSubfaction: null,
         ),
       );
     });
@@ -107,7 +106,6 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<UpdateSquad>((event, emit) {
       final updatedSquads = state.squads.map((squad) {
         if (squad.name == event.updatedSquad.name) {
-          // Use name instead of id
           return event.updatedSquad;
         }
         return squad;
