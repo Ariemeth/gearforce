@@ -3,17 +3,25 @@ enum WeaponSize {
   medium,
   large;
 
-  static WeaponSize fromCode(String code) {
-    switch (code[0].toUpperCase()) {
-      case 'S':
-        return WeaponSize.small;
-      case 'M':
-        return WeaponSize.medium;
-      case 'L':
-        return WeaponSize.large;
-      default:
-        throw ArgumentError(
-            'Invalid weapon code: $code. Size must be S, M, or L.');
+  static const Map<WeaponSize, String> _prefixes = {
+    WeaponSize.small: 'S',
+    WeaponSize.medium: 'M',
+    WeaponSize.large: 'L',
+  };
+
+  String get prefix => _prefixes[this]!;
+
+  static WeaponSize fromCode(String weaponCode) {
+    if (weaponCode.isEmpty) {
+      throw ArgumentError('Weapon code cannot be empty.');
     }
+    final prefix = weaponCode[0].toUpperCase();
+    return _prefixes.entries
+        .firstWhere(
+          (entry) => entry.value == prefix,
+          orElse: () => throw ArgumentError(
+              'Invalid weapon code: $weaponCode. Size must be ${_prefixes[WeaponSize.small]}, ${_prefixes[WeaponSize.medium]}, or ${_prefixes[WeaponSize.large]}.'),
+        )
+        .key;
   }
 }

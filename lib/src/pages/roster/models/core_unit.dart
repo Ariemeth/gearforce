@@ -21,10 +21,10 @@ class CoreUnit {
   final SkillAttribute gu;
   final SkillAttribute pi;
   final SkillAttribute ew;
-  final List<Trait> traits;
+  final Set<Trait> traits;
   final double height;
 
-  const CoreUnit({
+  CoreUnit({
     required this.name,
     required this.chassisType,
     required this.threatValue,
@@ -36,10 +36,9 @@ class CoreUnit {
     required this.gu,
     required this.pi,
     required this.ew,
-    this.traits = const [],
+    Set<Trait> traits = const {},
     required this.height,
-  });
-
+  }) : traits = Set.unmodifiable(traits);
   CoreUnit copyWith({
     String? name,
     String? chassisType,
@@ -52,7 +51,7 @@ class CoreUnit {
     SkillAttribute? gu,
     SkillAttribute? pi,
     SkillAttribute? ew,
-    List<Trait>? traits,
+    Set<Trait>? traits,
     double? height,
   }) {
     return CoreUnit(
