@@ -102,6 +102,8 @@ class Trait {
         return TraitFactory.haywire(isAux: isAux);
       case 'hi-tech':
         return TraitFactory.hiTech(isAux: isAux);
+      case 'immobilize':
+        return TraitFactory.immobilize(isAux: isAux);
       case 'init+':
         return TraitFactory.initPlus(isAux: isAux);
       case 'jetpack':

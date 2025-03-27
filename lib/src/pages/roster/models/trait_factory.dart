@@ -401,6 +401,14 @@ class TraitFactory {
     );
   }
 
+  static Trait immobilize({bool isAux = false}) {
+    return Trait(
+      name: 'Immobilize',
+      description: 'Causes the immobilized status on a successful attack. ',
+      isAux: isAux,
+    );
+  }
+
   static Trait initPlus({bool isAux = false}) {
     return Trait(
       name: 'Init+',
