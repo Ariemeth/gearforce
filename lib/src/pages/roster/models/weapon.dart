@@ -1,55 +1,8 @@
+import 'package:gearforce/src/pages/roster/models/weapon_mode.dart';
+import 'package:gearforce/src/pages/roster/models/weapon_range.dart';
+import 'package:gearforce/src/pages/roster/models/weapon_size.dart';
 import 'package:meta/meta.dart';
 import 'package:gearforce/src/pages/roster/models/trait.dart';
-
-enum WeaponSize {
-  small,
-  medium,
-  large;
-
-  static WeaponSize fromCode(String code) {
-    switch (code[0].toUpperCase()) {
-      case 'S':
-        return WeaponSize.small;
-      case 'M':
-        return WeaponSize.medium;
-      case 'L':
-        return WeaponSize.large;
-      default:
-        throw ArgumentError(
-            'Invalid weapon code: $code. Size must be S, M, or L.');
-    }
-  }
-}
-
-enum WeaponMode { direct, indirect }
-
-@immutable
-class WeaponRange {
-  final int? minOptimal;
-  final int? maxOptimal;
-  final int? max;
-
-  const WeaponRange({
-    this.minOptimal,
-    this.maxOptimal,
-    this.max,
-  })  : assert(minOptimal == null || minOptimal >= 0,
-            'Minimum range must be null or 0 or positive'),
-        assert(
-            maxOptimal == null ||
-                (minOptimal == null || maxOptimal >= minOptimal),
-            'Normal range must be greater than or equal to minimum range if both are provided'),
-        assert(max == null || (maxOptimal != null && max >= maxOptimal),
-            'Max range must be greater than or equal to normal range if provided');
-
-  @override
-  String toString() {
-    final minOptimalStr = minOptimal != null ? 'Min: $minOptimal, ' : '';
-    final maxOptimalStr = maxOptimal != null ? 'Normal: $maxOptimal, ' : '';
-    final maxStr = max != null ? 'Max: $max' : '';
-    return '$minOptimalStr$maxOptimalStr$maxStr'.trim();
-  }
-}
 
 @immutable
 class Weapon {
@@ -148,6 +101,32 @@ class Weapon {
   /// Returns a string representation of the weapon modes.
   String get modesDescription => modes.map((mode) => mode.name).join(' , ');
 
+  Weapon copyWith({
+    String? code,
+    String? name,
+    WeaponRange? range,
+    Map<WeaponSize, int>? damageBySize,
+    List<WeaponMode>? modes,
+    List<Trait>? primaryTraits,
+    List<Trait>? secondaryTraits,
+    Map<String, Map<WeaponSize, int>>? primaryAdjustLevel,
+    Map<String, Map<WeaponSize, int>>? secondaryAdjustLevel,
+    bool? isReact,
+  }) {
+    return Weapon(
+      code: code ?? this.code,
+      name: name ?? this.name,
+      range: range ?? this.range,
+      damageBySize: damageBySize ?? this.damageBySize,
+      modes: modes ?? this.modes,
+      primaryTraits: primaryTraits ?? this.primaryTraits,
+      secondaryTraits: secondaryTraits ?? this.secondaryTraits,
+      primaryAdjustLevel: primaryAdjustLevel ?? _primaryAdjustLevel,
+      secondaryAdjustLevel: secondaryAdjustLevel ?? _secondaryAdjustLevel,
+      isReact: isReact ?? this.isReact,
+    );
+  }
+
   @override
   String toString() {
     final primaryTraitsDescription =
@@ -162,7 +141,7 @@ class Weapon {
 
   factory Weapon.aam() {
     return Weapon(
-      code: 'MAAM',
+      code: 'AAM',
       name: 'Anti-Air Missile',
       range: const WeaponRange(minOptimal: 6, maxOptimal: 36, max: 72),
       damageBySize: {
@@ -177,13 +156,49 @@ class Weapon {
       ],
     );
   }
-}
 
-extension WeaponListExtensions on List<Weapon> {
-  /// Returns all weapons where `isReact` is true.
-  List<Weapon> get reactWeapons => where((weapon) => weapon.isReact).toList();
+  factory Weapon.ac() {
+    return Weapon(
+        code: 'AC',
+        name: 'Autocannon',
+        range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
+        damageBySize: {
+          WeaponSize.small: 6,
+          WeaponSize.medium: 7,
+          WeaponSize.large: 8,
+        },
+        modes: [
+          WeaponMode.direct
+        ],
+        primaryTraits: [
+          Trait.burst(level: 1)
+        ],
+        secondaryTraits: [
+          Trait.precise()
+        ]);
+  }
 
-  /// Returns all weapons where `isReact` is false (mounted weapons).
-  List<Weapon> get mountedWeapons =>
-      where((weapon) => !weapon.isReact).toList();
+  factory Weapon.ag() {
+    return Weapon(
+      code: 'AG',
+      name: 'Artillery Gun',
+      range: const WeaponRange(minOptimal: 12, maxOptimal: 48, max: 96),
+      damageBySize: {
+        WeaponSize.small: 8,
+        WeaponSize.medium: 9,
+        WeaponSize.large: 10,
+      },
+      modes: [WeaponMode.indirect],
+      primaryTraits: [
+        Trait.aoe(level: 3),
+        Trait.blast(),
+        Trait.ap(level: 1),
+      ],
+      secondaryTraits: [
+        Trait.aoe(level: 3),
+        Trait.blast(),
+        Trait.demo(level: 2),
+      ],
+    );
+  }
 }

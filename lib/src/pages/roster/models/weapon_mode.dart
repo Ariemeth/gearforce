@@ -1,0 +1,1 @@
+enum WeaponMode { direct, indirect }
