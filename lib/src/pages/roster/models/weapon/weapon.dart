@@ -1,9 +1,7 @@
-// ignore_for_file: unnecessary_type_check
-
-import 'package:gearforce/src/pages/roster/models/weapon_mode.dart';
-import 'package:gearforce/src/pages/roster/models/weapon_range.dart';
+import 'package:gearforce/src/pages/roster/models/weapon/weapon_mode.dart';
+import 'package:gearforce/src/pages/roster/models/weapon/weapon_range.dart';
 import 'package:meta/meta.dart';
-import 'package:gearforce/src/pages/roster/models/trait.dart';
+import 'package:gearforce/src/pages/roster/models/trait/trait.dart';
 
 @immutable
 class Weapon {
@@ -31,6 +29,32 @@ class Weapon {
         primaryTraits = List.unmodifiable(primaryTraits),
         secondaryTraits =
             secondaryTraits != null ? List.unmodifiable(secondaryTraits) : null;
+
+  Weapon copyWith({
+    String? name,
+    WeaponRange? range,
+    int? damage,
+    List<Trait>? primaryTraits,
+    List<Trait>? secondaryTraits,
+    bool? isReact,
+    bool replacePrimaryTraits = false,
+    bool replaceSecondaryTraits = false,
+  }) {
+    return Weapon(
+      code: code,
+      name: name ?? this.name,
+      range: range ?? this.range,
+      damage: damage ?? this.damage,
+      modes: modes,
+      primaryTraits: replacePrimaryTraits
+          ? (primaryTraits ?? [])
+          : [...this.primaryTraits, ...(primaryTraits ?? [])],
+      secondaryTraits: replaceSecondaryTraits
+          ? secondaryTraits
+          : [...(this.secondaryTraits ?? []), ...(secondaryTraits ?? [])],
+      isReact: isReact ?? this.isReact,
+    );
+  }
 
   @override
   String toString() {

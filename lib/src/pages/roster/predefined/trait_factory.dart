@@ -1,5 +1,8 @@
-import 'package:gearforce/src/pages/roster/models/trait.dart';
-import 'package:gearforce/src/pages/roster/models/trait_type.dart';
+import 'package:gearforce/src/pages/roster/models/trait/trait.dart';
+import 'package:gearforce/src/pages/roster/models/trait/trait_type.dart';
+
+// regular expression to match against a traits level and type
+final RegExp _levelAndTypeRegex = RegExp(r':(\d+)(?:\s+(\w+))?$');
 
 const Set<TraitType> _validTransportAndOccupancyTypes = {
   TraitType.drones,
@@ -910,5 +913,181 @@ class TraitFactory {
       isAux: isAux,
       type: type,
     );
+  }
+
+  static TraitType? _parseTraitType(String? typeString) {
+    if (typeString == null) return null;
+    return TraitType.values.firstWhere(
+      (t) => t.value.toLowerCase() == typeString.toLowerCase(),
+      orElse: () => throw ArgumentError('Unknown trait type: $typeString'),
+    );
+  }
+
+  static Trait traitFromString(String name) {
+    final isAux = name.toLowerCase().contains('(aux)');
+    final levelAndTypeMatch = _levelAndTypeRegex.firstMatch(name);
+    final level = levelAndTypeMatch != null
+        ? int.parse(levelAndTypeMatch.group(1)!)
+        : null;
+    final typeString = levelAndTypeMatch?.group(2);
+    final type = _parseTraitType(typeString);
+    final cleanName = name
+        .replaceAll(RegExp(r'\s*\(aux\)', caseSensitive: false), '')
+        .replaceAll(_levelAndTypeRegex, '')
+        .trim();
+
+    switch (cleanName.toLowerCase()) {
+      case 'agile':
+        return agile(isAux: isAux);
+      case 'hands':
+        return hands(isAux: isAux);
+      case 'aa':
+        return aa(isAux: isAux);
+      case 'ap':
+        return ap(isAux: isAux, level: level);
+      case 'ai':
+        return ai(isAux: isAux);
+      case 'airdrop':
+        return airdrop(isAux: isAux);
+      case 'amphib':
+        return amphib(isAux: isAux);
+      case 'ams':
+        return ams(isAux: isAux);
+      case 'aoe':
+        return aoe(isAux: isAux, level: level);
+      case 'apex':
+        return apex(isAux: isAux);
+      case 'auto':
+        return auto(isAux: isAux);
+      case 'aux':
+        return aux(isAux: isAux);
+      case 'b':
+        return b(isAux: isAux);
+      case 'blast':
+        return blast(isAux: isAux);
+      case 'brawl':
+        return brawl(isAux: isAux, level: level);
+      case 'burst':
+        return burst(isAux: isAux, level: level);
+      case 'climb':
+        return climb(isAux: isAux);
+      case 'corrosion':
+        return corrosion(isAux: isAux);
+      case 'demo':
+        return demo(isAux: isAux, level: level);
+      case 'e-comms':
+        return eComms(isAux: isAux);
+      case 'ecm':
+        return ecm(isAux: isAux);
+      case 'ecm+':
+        return ecmPlus(isAux: isAux);
+      case 'eccm':
+        return eccm(isAux: isAux);
+      case 'eccm+':
+        return eccmPlus(isAux: isAux);
+      case 'fire':
+        return fire(isAux: isAux, level: level);
+      case 'frag':
+        return frag(isAux: isAux);
+      case 'guided':
+        return guided(isAux: isAux);
+      case 'haywire':
+        return haywire(isAux: isAux);
+      case 'hi-tech':
+        return hiTech(isAux: isAux);
+      case 'immobilize':
+        return immobilize(isAux: isAux);
+      case 'init+':
+        return initPlus(isAux: isAux);
+      case 'jetpack':
+        return jetpack(isAux: isAux, level: level);
+      case 'jump':
+        return jump(isAux: isAux, level: level);
+      case 'la':
+        return la(isAux: isAux, level: level);
+      case 'linked':
+        return linked(isAux: isAux);
+      case 'lo-tech':
+        return loTech(isAux: isAux);
+      case 'lumbering':
+        return lumbering(isAux: isAux);
+      case 'medic':
+        return medic(isAux: isAux, level: level);
+      case 'occupancy':
+        if (type == null) {
+          throw ArgumentError('Trait.occupancy requires a non-null type.');
+        }
+        return occupancy(isAux: isAux, level: level, type: type);
+      case 'offroad':
+        return offroad(isAux: isAux);
+      case 'open top':
+        return openTop(isAux: isAux);
+      case 'precise':
+        return precise(isAux: isAux);
+      case 'precise+':
+        return precisePlus(isAux: isAux);
+      case 'proximity':
+        return proximity(isAux: isAux);
+      case 'r':
+        return r(isAux: isAux);
+      case 'reach':
+        return reach(isAux: isAux, level: level);
+      case 'react':
+        return react(isAux: isAux);
+      case 'react+':
+        return reactPlus(isAux: isAux);
+      case 'reflex':
+        return reflex(isAux: isAux);
+      case 'repair':
+        return repair(isAux: isAux, level: level);
+      case 'resist':
+        return resist(isAux: isAux, type: type);
+      case 'satup':
+        return satUp(isAux: isAux);
+      case 'sensor boom':
+        return sensorBoom(isAux: isAux);
+      case 'sensor':
+        return sensor(isAux: isAux, level: level);
+      case 'shield':
+        return shield(isAux: isAux);
+      case 'silent':
+        return silent(isAux: isAux);
+      case 'smoke':
+        return smoke(isAux: isAux);
+      case 'sp':
+        return sp1(isAux: isAux);
+      case 'spray':
+        return spray(isAux: isAux);
+      case 'stable':
+        return stable(isAux: isAux);
+      case 'stationary':
+        return stationary(isAux: isAux);
+      case 'stealth':
+        return stealth(isAux: isAux);
+      case 'sub':
+        return sub(isAux: isAux);
+      case 'supply':
+        return supply(isAux: isAux);
+      case 'td':
+        return td(isAux: isAux);
+      case 'towed':
+        return towed(isAux: isAux);
+      case 'transport':
+        if (type == null) {
+          throw ArgumentError('Trait.transport requires a non-null type.');
+        }
+        return transport(isAux: isAux, level: level, type: type);
+      case 't':
+        return t(isAux: isAux);
+      case 'vtol':
+        return vtol(isAux: isAux);
+      case 'vuln':
+        if (type == null) {
+          throw ArgumentError('Trait.vuln requires a non-null type.');
+        }
+        return vuln(isAux: isAux, type: type);
+      default:
+        throw ArgumentError('Unknown trait name: $cleanName');
+    }
   }
 }

@@ -38,14 +38,14 @@ class CombatGroupDisplay extends StatelessWidget {
                 'Secondary Role: ${squad.secondaryRole ?? 'None'}',
                 style: AppTheme.bodyStyle,
               ),
-              children: squad.units.map((unit) {
+              children: squad.models.map((unit) {
                 return ListTile(
                   title: Text(
                     'Unit: ${unit.name}',
                     style: AppTheme.bodyStyle,
                   ),
                   subtitle: Text(
-                    'Chassis: ${unit.chassisType}, TV: ${unit.threatValue}',
+                    'TV: ${unit.tv}',
                   ),
                   contentPadding: AppTheme.listTilePadding,
                 );

@@ -1,4 +1,4 @@
-import 'package:gearforce/src/pages/roster/models/weapon.dart';
+import 'package:gearforce/src/pages/roster/models/weapon/weapon.dart';
 
 extension WeaponListExtensions on List<Weapon> {
   /// Returns all weapons where `isReact` is true.
@@ -7,4 +7,9 @@ extension WeaponListExtensions on List<Weapon> {
   /// Returns all weapons where `isReact` is false (mounted weapons).
   List<Weapon> get mountedWeapons =>
       where((weapon) => !weapon.isReact).toList();
+
+  /// Returns a deep copy of the list of weapons.
+  List<Weapon> copyWith() {
+    return map((weapon) => weapon.copyWith()).toList();
+  }
 }

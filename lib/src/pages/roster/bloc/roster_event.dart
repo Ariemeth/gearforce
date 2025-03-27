@@ -21,11 +21,11 @@ class AddSquad extends RosterEvent {
   AddSquad(this.squad);
 }
 
-class AddUnit extends RosterEvent {
-  final String squadName; // Renamed from squadId to squadName
-  final UnitCore unit;
+class AddModel extends RosterEvent {
+  final String squadName;
+  final Model model;
 
-  AddUnit(this.squadName, this.unit); // Updated parameter name
+  AddModel(this.squadName, this.model);
 }
 
 class UpdateFactionEvent extends RosterEvent {
