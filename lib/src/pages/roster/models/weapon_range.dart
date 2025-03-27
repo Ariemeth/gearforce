@@ -16,7 +16,7 @@ class WeaponRange {
             maxOptimal == null ||
                 (minOptimal == null || maxOptimal >= minOptimal),
             'Normal range must be greater than or equal to minimum range if both are provided'),
-        assert(max == null || (maxOptimal != null && max >= maxOptimal),
+        assert(max == null || (maxOptimal != null && max > maxOptimal),
             'Max range must be greater than or equal to normal range if provided');
 
   @override

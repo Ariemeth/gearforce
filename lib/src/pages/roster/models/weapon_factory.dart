@@ -158,7 +158,7 @@ class WeaponFactory {
     return Weapon(
       code: '${size.prefix}Bomb',
       name: 'Bomb',
-      range: const WeaponRange(minOptimal: 0, maxOptimal: null, max: null),
+      range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
       damage: {
         WeaponSize.small: 8,
         WeaponSize.medium: 9,
@@ -182,7 +182,7 @@ class WeaponFactory {
     return Weapon(
       code: '${size.prefix}Napalm',
       name: 'Napalm Bomb',
-      range: const WeaponRange(minOptimal: 0, maxOptimal: null, max: null),
+      range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
       damage: {
         WeaponSize.small: 7,
         WeaponSize.medium: 8,
