@@ -1,14 +1,30 @@
 import 'package:meta/meta.dart';
+import 'package:gearforce/src/pages/roster/models/trait_type.dart';
 
 // regular expression to match against a traits level and type
 final RegExp _levelAndTypeRegex = RegExp(r':(\d+)(?:\s+(\w+))?$');
+
+const Set<TraitType> _validTransportAndOccupancyTypes = {
+  TraitType.drones,
+  TraitType.nKIDUs,
+  TraitType.armigers,
+  TraitType.cadres,
+  TraitType.teams,
+  TraitType.gears,
+};
+
+const Set<TraitType> _validVulnTypes = {
+  TraitType.h,
+  TraitType.c,
+  TraitType.f,
+};
 
 @immutable
 class Trait {
   final String name;
   final String? description;
   final int? level;
-  final String? type;
+  final TraitType? type;
   final bool isAux;
 
   const Trait({
@@ -20,29 +36,6 @@ class Trait {
   });
 
   // Factory methods for predefined traits
-  factory Trait.agile({bool isAux = false}) {
-    return Trait(
-      name: 'Agile',
-      description:
-          'Attacks targeting this unit will miss on a Margin Of Success of Zero (MOS:0).',
-      isAux: isAux,
-    );
-  }
-
-  factory Trait.hands({bool isAux = false}) {
-    return Trait(
-      name: 'Hands',
-      description: 'This unit has hands or at least some fancy manipulators. '
-          'As the game revolves around robotic humanoids you can imagine how this trait is a key ingredient for a few features.\n\n'
-          '- Hands will allow units to Climb. Units with the Climb trait can climb faster. However, just having Hands can allow you to efficiently get over smaller obstacles or buildings, etc. While not something you may do often, don’t forget you can. See Climbing for more specific details on climbing.\n'
-          '- Units with Hands will be able to pick things up and put them down much easier than other units. This is why Gears and Striders have certain additional customization options past other type of units. They can easily put one handheld weapon down and pick up a different one.\n'
-          '- With some exceptions, handheld weapons are typically considered Reaction Weapons. This is more of a built-in feature than something you have to remember while playing. '
-          'However, it’s useful to remember that during CG construction any upgrades that provide a handheld weapon are able to be used for Reactions unless explained otherwise. '
-          'The main exception is HGs and PZs, which are not normally considered Reaction/Retaliation-based weapons.',
-      isAux: isAux,
-    );
-  }
-
   factory Trait.aa({bool isAux = false}) {
     return Trait(
       name: 'AA',
@@ -53,25 +46,11 @@ class Trait {
     );
   }
 
-  factory Trait.ap({bool isAux = false, int? level}) {
+  factory Trait.agile({bool isAux = false}) {
     return Trait(
-      name: 'AP',
+      name: 'Agile',
       description:
-          'Armor piercing weapons, or AP Weapons, are able to do damage '
-          'on a successful attack even when the Damage does not beat the enemy’s Armor. '
-          'For many weapons, this AP:X trait is the only way for it to damage heavily armored '
-          'enemy units, such as a Visigoth main battle tank. See Armor Piercing (AP:X) Chapter.',
-      isAux: isAux,
-      level: level,
-    );
-  }
-
-  factory Trait.ai({bool isAux = false}) {
-    return Trait(
-      name: 'AI',
-      description:
-          'Weapons with the AI trait add +1 to the result rolled (+1 R) '
-          'against Infantry and Cavalry.',
+          'Attacks targeting this unit will miss on a Margin Of Success of Zero (MOS:0).',
       isAux: isAux,
     );
   }
@@ -82,6 +61,16 @@ class Trait {
       description:
           'Squads composed entirely of units with the Airdrop trait may '
           'deploy using the Airdrop Special Deployment option. See Airdrop Deployment.',
+      isAux: isAux,
+    );
+  }
+
+  factory Trait.ai({bool isAux = false}) {
+    return Trait(
+      name: 'AI',
+      description:
+          'Weapons with the AI trait add +1 to the result rolled (+1 R) '
+          'against Infantry and Cavalry.',
       isAux: isAux,
     );
   }
@@ -123,6 +112,19 @@ class Trait {
           '- If the attack is centered on one model, then that unit becomes the primary target.\n'
           '  - All other models within the area are considered secondary targets.\n'
           '- Attack rolls against secondary targets have a -1D6 modifier.',
+      isAux: isAux,
+      level: level,
+    );
+  }
+
+  factory Trait.ap({bool isAux = false, int? level}) {
+    return Trait(
+      name: 'AP',
+      description:
+          'Armor piercing weapons, or AP Weapons, are able to do damage '
+          'on a successful attack even when the Damage does not beat the enemy’s Armor. '
+          'For many weapons, this AP:X trait is the only way for it to damage heavily armored '
+          'enemy units, such as a Visigoth main battle tank. See Armor Piercing (AP:X) Chapter.',
       isAux: isAux,
       level: level,
     );
@@ -371,6 +373,20 @@ class Trait {
     );
   }
 
+  factory Trait.hands({bool isAux = false}) {
+    return Trait(
+      name: 'Hands',
+      description: 'This unit has hands or at least some fancy manipulators. '
+          'As the game revolves around robotic humanoids you can imagine how this trait is a key ingredient for a few features.\n\n'
+          '- Hands will allow units to Climb. Units with the Climb trait can climb faster. However, just having Hands can allow you to efficiently get over smaller obstacles or buildings, etc. While not something you may do often, don’t forget you can. See Climbing for more specific details on climbing.\n'
+          '- Units with Hands will be able to pick things up and put them down much easier than other units. This is why Gears and Striders have certain additional customization options past other type of units. They can easily put one handheld weapon down and pick up a different one.\n'
+          '- With some exceptions, handheld weapons are typically considered Reaction Weapons. This is more of a built-in feature than something you have to remember while playing. '
+          'However, it’s useful to remember that during CG construction any upgrades that provide a handheld weapon are able to be used for Reactions unless explained otherwise. '
+          'The main exception is HGs and PZs, which are not normally considered Reaction/Retaliation-based weapons.',
+      isAux: isAux,
+    );
+  }
+
   factory Trait.haywire({bool isAux = false}) {
     return Trait(
       name: 'Haywire',
@@ -525,7 +541,10 @@ class Trait {
     );
   }
 
-  factory Trait.occupancy({bool isAux = false, int? level, String? type}) {
+  factory Trait.occupancy(
+      {bool isAux = false, int? level, required TraitType type}) {
+    assert(_validTransportAndOccupancyTypes.contains(type),
+        'Invalid type for Trait.occupancy. Allowed types are: drones, nKIDUs, armigers, cadres, teams, gears.');
     return Trait(
       name: 'Occupancy',
       description:
@@ -665,7 +684,7 @@ class Trait {
     );
   }
 
-  factory Trait.resist({bool isAux = false, String? type}) {
+  factory Trait.resist({bool isAux = false, TraitType? type}) {
     return Trait(
       name: 'Resist',
       description:
@@ -847,7 +866,10 @@ class Trait {
     );
   }
 
-  factory Trait.transport({bool isAux = false, int? level, String? type}) {
+  factory Trait.transport(
+      {bool isAux = false, int? level, required TraitType type}) {
+    assert(_validTransportAndOccupancyTypes.contains(type),
+        'Invalid type for Trait.transport. Allowed types are: drones, nKIDUs, armigers, cadres, teams, gears.');
     return Trait(
       name: 'Transport',
       description: 'This unit may transport or carry other units.\n\n'
@@ -883,7 +905,9 @@ class Trait {
     );
   }
 
-  factory Trait.vuln({bool isAux = false, String? type}) {
+  factory Trait.vuln({bool isAux = false, required TraitType type}) {
+    assert(_validVulnTypes.contains(type),
+        'Invalid type for Trait.vuln. Allowed types are: H, C, F.');
     return Trait(
       name: 'Vuln',
       description:
@@ -899,13 +923,22 @@ class Trait {
     );
   }
 
+  static TraitType? _parseTraitType(String? typeString) {
+    if (typeString == null) return null;
+    return TraitType.values.firstWhere(
+      (t) => t.value.toLowerCase() == typeString.toLowerCase(),
+      orElse: () => throw ArgumentError('Unknown trait type: $typeString'),
+    );
+  }
+
   factory Trait.fromName(String name) {
     final isAux = name.toLowerCase().contains('(aux)');
     final levelAndTypeMatch = _levelAndTypeRegex.firstMatch(name);
     final level = levelAndTypeMatch != null
         ? int.parse(levelAndTypeMatch.group(1)!)
         : null;
-    final type = levelAndTypeMatch?.group(2);
+    final typeString = levelAndTypeMatch?.group(2);
+    final type = _parseTraitType(typeString);
     final cleanName = name
         .replaceAll(RegExp(r'\s*\(aux\)', caseSensitive: false), '')
         .replaceAll(_levelAndTypeRegex, '')
@@ -987,6 +1020,9 @@ class Trait {
       case 'medic':
         return Trait.medic(isAux: isAux, level: level);
       case 'occupancy':
+        if (type == null) {
+          throw ArgumentError('Trait.occupancy requires a non-null type.');
+        }
         return Trait.occupancy(isAux: isAux, level: level, type: type);
       case 'offroad':
         return Trait.offroad(isAux: isAux);
@@ -1043,12 +1079,18 @@ class Trait {
       case 'towed':
         return Trait.towed(isAux: isAux);
       case 'transport':
+        if (type == null) {
+          throw ArgumentError('Trait.transport requires a non-null type.');
+        }
         return Trait.transport(isAux: isAux, level: level, type: type);
       case 't':
         return Trait.t(isAux: isAux);
       case 'vtol':
         return Trait.vtol(isAux: isAux);
       case 'vuln':
+        if (type == null) {
+          throw ArgumentError('Trait.vuln requires a non-null type.');
+        }
         return Trait.vuln(isAux: isAux, type: type);
       default:
         throw ArgumentError('Unknown trait name: $cleanName');
@@ -1058,7 +1100,7 @@ class Trait {
   Trait copyWith({
     String? name,
     int? level,
-    String? type,
+    TraitType? type,
     bool? isAux,
   }) {
     return Trait(
@@ -1073,7 +1115,7 @@ class Trait {
   @override
   String toString() {
     final levelString = level != null ? ':$level' : '';
-    final typeString = type != null ? ' $type' : '';
+    final typeString = type != null ? ' ${type?.value}' : '';
     final auxString = isAux ? ' (Aux)' : '';
     return '$name$levelString$typeString$auxString';
   }
