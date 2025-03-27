@@ -23,7 +23,7 @@ class AddSquad extends RosterEvent {
 
 class AddUnit extends RosterEvent {
   final String squadName; // Renamed from squadId to squadName
-  final CoreUnit unit;
+  final UnitCore unit;
 
   AddUnit(this.squadName, this.unit); // Updated parameter name
 }

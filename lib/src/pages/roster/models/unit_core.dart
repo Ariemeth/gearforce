@@ -9,7 +9,7 @@ import 'package:gearforce/src/pages/roster/models/skill_attribute.dart';
 import 'package:gearforce/src/pages/roster/models/trait.dart';
 
 @immutable
-class CoreUnit {
+class UnitCore {
   final String name;
   final String chassisType;
   final int threatValue;
@@ -21,10 +21,10 @@ class CoreUnit {
   final SkillAttribute gu;
   final SkillAttribute pi;
   final SkillAttribute ew;
-  final List<Trait> traits;
+  final Set<Trait> traits;
   final double height;
 
-  const CoreUnit({
+  UnitCore({
     required this.name,
     required this.chassisType,
     required this.threatValue,
@@ -36,11 +36,10 @@ class CoreUnit {
     required this.gu,
     required this.pi,
     required this.ew,
-    this.traits = const [],
+    Set<Trait> traits = const {},
     required this.height,
-  });
-
-  CoreUnit copyWith({
+  }) : traits = Set.unmodifiable(traits);
+  UnitCore copyWith({
     String? name,
     String? chassisType,
     int? threatValue,
@@ -52,10 +51,10 @@ class CoreUnit {
     SkillAttribute? gu,
     SkillAttribute? pi,
     SkillAttribute? ew,
-    List<Trait>? traits,
+    Set<Trait>? traits,
     double? height,
   }) {
-    return CoreUnit(
+    return UnitCore(
       name: name ?? this.name,
       chassisType: chassisType ?? this.chassisType,
       threatValue: threatValue ?? this.threatValue,

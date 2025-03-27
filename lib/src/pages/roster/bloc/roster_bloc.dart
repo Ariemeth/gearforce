@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/pages/roster/models/squad.dart';
 import 'package:gearforce/src/pages/roster/models/subfaction.dart';
-import 'package:gearforce/src/pages/roster/models/core_unit.dart';
+import 'package:gearforce/src/pages/roster/models/unit_core.dart';
 import 'package:meta/meta.dart';
 import 'package:gearforce/src/pages/roster/models/faction.dart';
 
@@ -52,7 +52,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         if (squad.name == event.squadName) {
           // Use squadName instead of squadId
           return squad.copyWith(
-            units: List<CoreUnit>.from(squad.units)..add(event.unit),
+            units: List<UnitCore>.from(squad.units)..add(event.unit),
           );
         }
         return squad;
