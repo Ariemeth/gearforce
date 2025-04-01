@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
-import 'package:gearforce/src/pages/roster/models/role.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 
 class SquadRoleSelector extends StatelessWidget {
   final Role? selectedRole;

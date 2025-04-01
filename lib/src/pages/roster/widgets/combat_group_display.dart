@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gearforce/src/pages/roster/models/combat_group.dart';
+import 'package:gearforce/src/models/roster/combat_group.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class CombatGroupDisplay extends StatelessWidget {
