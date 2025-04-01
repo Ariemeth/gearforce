@@ -2,20 +2,21 @@ import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/trait/trait_list_extensions.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/level.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/model_attribute.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role_set_extensions.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
+import 'package:gearforce/src/models/roster/unit/command.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_list_extensions.dart';
-import 'package:meta/meta.dart';
 
-@immutable
 class Model {
+  // Fields
   final String _name;
   final int _tv;
   final Set<Role> _roles;
@@ -29,11 +30,14 @@ class Model {
   final List<Weapon> _weapons;
   final List<Trait> _traits;
   final double _height;
+  Level level;
+  Command command;
   final List<Upgrade> _upgrades = [];
 
   // Instance-level Set to track active getAttribute calls
   final Set<ModelAttribute> _activeAttributes = {};
 
+  // Constructor
   Model({
     required String name,
     required int tv,
@@ -48,6 +52,8 @@ class Model {
     List<Weapon> weapons = const [],
     List<Trait> traits = const [],
     required double height,
+    this.level = Level.regular,
+    this.command = Command.none,
   })  : _name = name,
         _tv = tv,
         _roles = Set.unmodifiable(roles),
@@ -76,6 +82,7 @@ class Model {
   List<Weapon> get weapons => getAttribute(ModelAttribute.weapons);
   List<Trait> get traits => getAttribute(ModelAttribute.traits);
 
+  // Methods
   Model copyWith({
     String? name,
     int? threatValue,
@@ -90,9 +97,10 @@ class Model {
     List<Weapon>? weapons,
     List<Trait>? traits,
     List<Upgrade>? upgrades,
+    Level? level,
+    Command? command,
     bool replaceUpgrades = false,
   }) {
-    // Perform a deep copy
     return Model(
       name: name ?? _name,
       tv: threatValue ?? _tv,
@@ -107,6 +115,8 @@ class Model {
       weapons: weapons?.copyWith() ?? _weapons.copyWith(),
       traits: traits?.copyWith() ?? _traits.copyWith(),
       height: _height,
+      command: command ?? this.command,
+      level: level ?? this.level,
     ).._upgrades.addAll(
         replaceUpgrades
             ? (upgrades ?? [])
@@ -132,13 +142,11 @@ class Model {
     String? excludeUpgradeId,
     String? upToUpgradeId,
   }) {
-    // Check if the attribute is already being processed for this instance
     if (_activeAttributes.contains(attribute)) {
       throw StateError(
           'Recursive call detected for getAttribute with $attribute');
     }
 
-    // Mark the attribute as being processed
     _activeAttributes.add(attribute);
 
     try {
@@ -217,7 +225,6 @@ class Model {
         upToUpgradeId: upToUpgradeId,
       );
     } finally {
-      // Remove the attribute from the active set after processing
       _activeAttributes.remove(attribute);
     }
   }
@@ -237,12 +244,12 @@ class Model {
     var value = initialValue;
     for (final upgrade in _upgrades) {
       if (excludeUpgradeId != null && upgrade.id == excludeUpgradeId) {
-        continue; // Skip the mod if its ID matches excludeUpgradeId
+        continue;
       }
       final context = UpgradeContext(this, upgrade);
       value = modFunction(upgrade, value, context);
       if (upToUpgradeId != null && upgrade.id == upToUpgradeId) {
-        break; // Stop applying mods once upToUpgradeId is reached
+        break;
       }
     }
     return value;
