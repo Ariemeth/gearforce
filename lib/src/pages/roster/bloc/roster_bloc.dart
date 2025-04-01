@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/pages/roster/models/squad.dart';
-import 'package:gearforce/src/pages/roster/models/subfaction.dart';
-import 'package:gearforce/src/pages/roster/models/unit/model.dart';
+import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/subfaction.dart';
+import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:meta/meta.dart';
-import 'package:gearforce/src/pages/roster/models/faction.dart';
+import 'package:gearforce/src/models/roster/faction.dart';
 
 part 'roster_event.dart';
 part 'roster_state.dart';
