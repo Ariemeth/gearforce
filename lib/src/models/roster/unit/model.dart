@@ -1,12 +1,10 @@
-import 'package:meta/meta.dart';
-
-import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/trait/trait_list_extensions.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/model_attribute.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role_set_extensions.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
@@ -14,6 +12,7 @@ import 'package:gearforce/src/models/roster/unit/upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_list_extensions.dart';
+import 'package:meta/meta.dart';
 
 @immutable
 class Model {

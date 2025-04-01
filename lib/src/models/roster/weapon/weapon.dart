@@ -1,7 +1,7 @@
+import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_mode.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_range.dart';
 import 'package:meta/meta.dart';
-import 'package:gearforce/src/models/roster/trait/trait.dart';
 
 @immutable
 class Weapon {

@@ -1,9 +1,8 @@
-import 'package:meta/meta.dart';
-
 import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/unit_base.dart';
+import 'package:gearforce/src/models/roster/unit/upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
+import 'package:meta/meta.dart';
 
 @immutable
 class Unit {
