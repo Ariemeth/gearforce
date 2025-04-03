@@ -338,6 +338,16 @@ class TraitFactory {
     );
   }
 
+  static Trait green() {
+    return const Trait(
+      name: 'Green',
+      description:
+          'This unit is -1 to all Skills when out of formation with a friendly Commander. '
+          'This unit may not select Regular, Veteran or Elite Upgrades. '
+          'This unit may not be a Commander or a Duelist.',
+    );
+  }
+
   static Trait guided({bool isAux = false}) {
     return Trait(
       name: 'Guided',
@@ -989,6 +999,8 @@ class TraitFactory {
         return fire(isAux: isAux, level: level);
       case 'frag':
         return frag(isAux: isAux);
+      case 'green':
+        return green();
       case 'guided':
         return guided(isAux: isAux);
       case 'haywire':
