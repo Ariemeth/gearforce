@@ -1,7 +1,7 @@
 import 'package:gearforce/src/models/roster/faction.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
-import 'package:gearforce/src/predefined/units/north_models.dart';
-import 'package:gearforce/src/predefined/units/south_models.dart';
+import 'package:gearforce/src/predefined/units/north/north_units.dart';
+import 'package:gearforce/src/predefined/units/south/south_units.dart';
 
 class UnitFactory {
   static List<Unit> getUnitsForFaction(Faction faction) {
@@ -15,13 +15,13 @@ class UnitFactory {
       case Faction.eden:
         return [];
       case Faction.north:
-        return NorthUnits.getUnits();
+        return getNorthUnits();
       case Faction.nuCoal:
         return [];
       case Faction.peaceRiver:
         return [];
       case Faction.south:
-        return SouthUnits.getUnits();
+        return getSouthUnits();
       case Faction.utopia:
         return [];
     }

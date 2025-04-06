@@ -7,6 +7,7 @@ abstract class RosterState {
   final List<Squad> squads;
   final Faction? selectedFaction;
   final Subfaction? selectedSubfaction;
+  final RuleSet? ruleSet;
 
   const RosterState(
     this.playerName,
@@ -14,6 +15,7 @@ abstract class RosterState {
     this.squads, {
     this.selectedFaction,
     this.selectedSubfaction,
+    this.ruleSet,
   });
 }
 
@@ -28,5 +30,6 @@ class RosterUpdated extends RosterState {
     super.squads, {
     super.selectedFaction,
     super.selectedSubfaction,
+    super.ruleSet,
   });
 }

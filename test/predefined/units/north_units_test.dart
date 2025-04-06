@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gearforce/src/predefined/units/north_models.dart';
+import 'package:gearforce/src/predefined/units/north/north_units.dart';
 
 void main() {
   group('North Units', () {
     test('should have unique IDs for all units, upgrades, and variants', () {
-      final units = NorthUnits.getUnits();
+      final units = getNorthUnits();
 
       // Check that all unit IDs are unique
       final unitIds = units.map((unit) => unit.id).toList();

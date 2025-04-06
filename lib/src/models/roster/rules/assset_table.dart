@@ -1,4 +1,4 @@
-class AssetTables {
+class AssetTable {
   final int? greenSquads;
   final int? regularSquads;
   final int? veteranSquads;
@@ -8,7 +8,7 @@ class AssetTables {
   final int? artillerySupport;
   final int? droneSupport;
 
-  const AssetTables({
+  const AssetTable({
     this.greenSquads,
     this.regularSquads,
     this.veteranSquads,
