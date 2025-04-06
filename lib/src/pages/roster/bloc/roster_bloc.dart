@@ -15,11 +15,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<UpdatePlayerName>((event, emit) {
       emit(
         RosterUpdated(
-          event.playerName,
-          state.rosterName,
-          state.squads,
+          playerName: event.playerName,
+          rosterName: state.rosterName,
+          squads: state.squads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
+          ruleSet: state.ruleSet,
         ),
       );
     });
@@ -27,11 +28,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<UpdateRosterName>((event, emit) {
       emit(
         RosterUpdated(
-          state.playerName,
-          event.rosterName,
-          state.squads,
+          playerName: state.playerName,
+          rosterName: event.rosterName,
+          squads: state.squads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
+          ruleSet: state.ruleSet,
         ),
       );
     });
@@ -40,11 +42,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       final updatedSquads = List<Squad>.from(state.squads)..add(event.squad);
       emit(
         RosterUpdated(
-          state.playerName,
-          state.rosterName,
-          updatedSquads,
+          playerName: state.playerName,
+          rosterName: state.rosterName,
+          squads: updatedSquads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
+          ruleSet: state.ruleSet,
         ),
       );
     });
@@ -60,11 +63,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       }).toList();
       emit(
         RosterUpdated(
-          state.playerName,
-          state.rosterName,
-          updatedSquads,
+          playerName: state.playerName,
+          rosterName: state.rosterName,
+          squads: updatedSquads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
+          ruleSet: state.ruleSet,
         ),
       );
     });
@@ -74,15 +78,15 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         // No change in faction, do not emit a new state
         return;
       }
-      final subfaction = event.faction.subfactions.firstOrNull;
+      final subfaction = event.faction.subfactions.first;
       emit(
         RosterUpdated(
-          state.playerName,
-          state.rosterName,
-          state.squads,
+          playerName: state.playerName,
+          rosterName: state.rosterName,
+          squads: state.squads,
           selectedFaction: event.faction,
           selectedSubfaction: subfaction,
-          ruleSet: subfaction != null ? getSubfactionRuleSet(subfaction) : null,
+          ruleSet: getSubfactionRuleSet(subfaction),
         ),
       );
     });
@@ -94,9 +98,9 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       }
       emit(
         RosterUpdated(
-          state.playerName,
-          state.rosterName,
-          state.squads,
+          playerName: state.playerName,
+          rosterName: state.rosterName,
+          squads: state.squads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: event.subfaction,
           ruleSet: getSubfactionRuleSet(event.subfaction),
@@ -107,11 +111,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<UpdateSquads>((event, emit) {
       emit(
         RosterUpdated(
-          state.playerName,
-          state.rosterName,
-          event.squads,
+          playerName: state.playerName,
+          rosterName: state.rosterName,
+          squads: event.squads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
+          ruleSet: state.ruleSet,
         ),
       );
     });
@@ -126,11 +131,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
       emit(
         RosterUpdated(
-          state.playerName,
-          state.rosterName,
-          updatedSquads,
+          playerName: state.playerName,
+          rosterName: state.rosterName,
+          squads: updatedSquads,
           selectedFaction: state.selectedFaction,
           selectedSubfaction: state.selectedSubfaction,
+          ruleSet: state.ruleSet,
         ),
       );
     });

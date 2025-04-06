@@ -19,22 +19,20 @@ class SubFactionSelector extends StatelessWidget {
       padding: AppTheme.subfactionSelectorPadding,
       child: DropdownButton<Subfaction>(
         value: state.selectedSubfaction,
-        items: state.selectedFaction != null
-            ? state.selectedFaction!.subfactions
-                .map(
-                  (subfaction) => DropdownMenuItem(
-                    value: subfaction,
-                    child: Padding(
-                      padding: AppTheme.dropdownTextPadding,
-                      child: Text(
-                        subfaction.displayName,
-                        style: AppTheme.subtitleStyle,
-                      ),
-                    ),
+        items: state.selectedFaction.subfactions
+            .map(
+              (subfaction) => DropdownMenuItem(
+                value: subfaction,
+                child: Padding(
+                  padding: AppTheme.dropdownTextPadding,
+                  child: Text(
+                    subfaction.displayName,
+                    style: AppTheme.subtitleStyle,
                   ),
-                )
-                .toList()
-            : [],
+                ),
+              ),
+            )
+            .toList(),
         onChanged: (Subfaction? newSubfaction) {
           if (newSubfaction != null) {
             context
