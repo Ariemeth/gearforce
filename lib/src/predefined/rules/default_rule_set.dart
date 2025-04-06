@@ -1,13 +1,12 @@
 import 'package:gearforce/src/models/roster/rules/assset_table.dart';
 import 'package:gearforce/src/models/roster/rules/rule_set.dart';
+import 'package:gearforce/src/models/roster/unit/unit.dart';
 
-/// DefaultRuleSet is a predefined RuleSet that can be used when no specific rules are required.
-/// Eventually this ruleset no longer be used once subfaction rule sets are implemented for each faction.
+/// DefaultRuleSet is a predefined base RuleSet.
 class DefaultRuleSet extends RuleSet {
   DefaultRuleSet()
       : super(
           name: 'Default Rule Set',
-          description: 'The default rule set with no special rules.',
           rules: [],
           assetTable: AssetTable(
             greenSquads: 1,
@@ -22,4 +21,9 @@ class DefaultRuleSet extends RuleSet {
 
   @override
   String toString() => 'DefaultRuleSet';
+
+  @override
+  List<Unit> getAvailableUnits() {
+    return const [];
+  }
 }

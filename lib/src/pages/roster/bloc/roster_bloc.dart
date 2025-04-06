@@ -83,7 +83,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         RosterUpdated(
           playerName: state.playerName,
           rosterName: state.rosterName,
-          squads: state.squads,
+          squads: const [],
           selectedFaction: event.faction,
           selectedSubfaction: subfaction,
           ruleSet: getSubfactionRuleSet(subfaction),

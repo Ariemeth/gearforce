@@ -1,6 +1,7 @@
 import 'package:gearforce/src/models/roster/rules/rule_set.dart';
 import 'package:gearforce/src/models/roster/subfaction.dart';
 import 'package:gearforce/src/predefined/rules/default_rule_set.dart';
+import 'package:gearforce/src/predefined/rules/north/north_rule_set.dart';
 
 /// Factory to generate a RuleSet for a given subfaction.
 /// Defaults all subfactions to the DefaultRuleSet.
@@ -8,6 +9,7 @@ RuleSet getSubfactionRuleSet(Subfaction subfaction) {
   switch (subfaction) {
     // North subfactions.
     case Subfaction.northDefault:
+      return NorthRuleSet();
     case Subfaction.norguard:
     case Subfaction.westernFrontierProtectorate:
     case Subfaction.unitedMercantileFederation:
