@@ -42,6 +42,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
       ),
       body: SingleChildScrollView(
         child: ExpansionPanelList(
+          expandedHeaderPadding: EdgeInsets.all(0),
           expansionCallback: (index, isExpanded) {
             setState(() {
               _expandedStates[index] = isExpanded;
@@ -54,7 +55,6 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
               headerBuilder: (context, isExpanded) {
                 return ListTile(
                   contentPadding: EdgeInsets.all(0),
-                  horizontalTitleGap: 0,
                   titleAlignment: ListTileTitleAlignment.center,
                   title: Center(
                     child: Text(
