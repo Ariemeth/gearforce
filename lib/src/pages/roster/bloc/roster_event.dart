@@ -22,10 +22,10 @@ class AddSquad extends RosterEvent {
 }
 
 class AddModel extends RosterEvent {
-  final String squadName;
+  final Squad squad;
   final Model model;
 
-  AddModel(this.squadName, this.model);
+  AddModel(this.squad, this.model);
 }
 
 class UpdateFactionEvent extends RosterEvent {

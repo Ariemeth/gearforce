@@ -14,63 +14,27 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   RosterBloc() : super(RosterInitial()) {
     on<UpdatePlayerName>((event, emit) {
       emit(
-        RosterUpdated(
-          playerName: event.playerName,
-          rosterName: state.rosterName,
-          squads: state.squads,
-          selectedFaction: state.selectedFaction,
-          selectedSubfaction: state.selectedSubfaction,
-          ruleSet: state.ruleSet,
-        ),
+        state.copyWith(playerName: event.playerName),
       );
     });
 
     on<UpdateRosterName>((event, emit) {
-      emit(
-        RosterUpdated(
-          playerName: state.playerName,
-          rosterName: event.rosterName,
-          squads: state.squads,
-          selectedFaction: state.selectedFaction,
-          selectedSubfaction: state.selectedSubfaction,
-          ruleSet: state.ruleSet,
-        ),
-      );
+      emit(state.copyWith(rosterName: event.rosterName));
     });
 
     on<AddSquad>((event, emit) {
       final updatedSquads = List<Squad>.from(state.squads)..add(event.squad);
-      emit(
-        RosterUpdated(
-          playerName: state.playerName,
-          rosterName: state.rosterName,
-          squads: updatedSquads,
-          selectedFaction: state.selectedFaction,
-          selectedSubfaction: state.selectedSubfaction,
-          ruleSet: state.ruleSet,
-        ),
-      );
+      emit(state.copyWith(squads: updatedSquads));
     });
 
     on<AddModel>((event, emit) {
       final updatedSquads = state.squads.map((squad) {
-        if (squad.name == event.squadName) {
-          return squad.copyWith(
-            models: List<Model>.from(squad.models)..add(event.model),
-          );
+        if (squad == event.squad) {
+          return squad.copyWith(models: [...squad.models, event.model]);
         }
         return squad;
       }).toList();
-      emit(
-        RosterUpdated(
-          playerName: state.playerName,
-          rosterName: state.rosterName,
-          squads: updatedSquads,
-          selectedFaction: state.selectedFaction,
-          selectedSubfaction: state.selectedSubfaction,
-          ruleSet: state.ruleSet,
-        ),
-      );
+      emit(state.copyWith(squads: updatedSquads));
     });
 
     on<UpdateFactionEvent>((event, emit) {
@@ -80,9 +44,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       }
       final subfaction = event.faction.subfactions.first;
       emit(
-        RosterUpdated(
-          playerName: state.playerName,
-          rosterName: state.rosterName,
+        state.copyWith(
           squads: const [],
           selectedFaction: event.faction,
           selectedSubfaction: subfaction,
@@ -97,11 +59,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         return;
       }
       emit(
-        RosterUpdated(
-          playerName: state.playerName,
-          rosterName: state.rosterName,
-          squads: state.squads,
-          selectedFaction: state.selectedFaction,
+        state.copyWith(
           selectedSubfaction: event.subfaction,
           ruleSet: getSubfactionRuleSet(event.subfaction),
         ),
@@ -110,14 +68,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
     on<UpdateSquads>((event, emit) {
       emit(
-        RosterUpdated(
-          playerName: state.playerName,
-          rosterName: state.rosterName,
-          squads: event.squads,
-          selectedFaction: state.selectedFaction,
-          selectedSubfaction: state.selectedSubfaction,
-          ruleSet: state.ruleSet,
-        ),
+        state.copyWith(squads: event.squads),
       );
     });
 
@@ -128,16 +79,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         }
         return squad;
       }).toList();
-
       emit(
-        RosterUpdated(
-          playerName: state.playerName,
-          rosterName: state.rosterName,
-          squads: updatedSquads,
-          selectedFaction: state.selectedFaction,
-          selectedSubfaction: state.selectedSubfaction,
-          ruleSet: state.ruleSet,
-        ),
+        state.copyWith(squads: updatedSquads),
       );
     });
   }

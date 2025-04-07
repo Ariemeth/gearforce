@@ -17,6 +17,24 @@ abstract class RosterState {
     required this.selectedSubfaction,
     required this.ruleSet,
   });
+
+  RosterState copyWith({
+    String? playerName,
+    String? rosterName,
+    List<Squad>? squads,
+    Faction? selectedFaction,
+    Subfaction? selectedSubfaction,
+    RuleSet? ruleSet,
+  }) {
+    return RosterUpdated(
+      playerName: playerName ?? this.playerName,
+      rosterName: rosterName ?? this.rosterName,
+      squads: squads ?? this.squads,
+      selectedFaction: selectedFaction ?? this.selectedFaction,
+      selectedSubfaction: selectedSubfaction ?? this.selectedSubfaction,
+      ruleSet: ruleSet ?? this.ruleSet,
+    );
+  }
 }
 
 class RosterInitial extends RosterState {

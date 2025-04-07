@@ -31,6 +31,7 @@ class SquadRoleSelectors extends StatelessWidget {
                   allowSecondaryRoleToBeNull:
                       newPrimaryRole == squad.secondaryRole,
                 );
+                // TODO consider changing this to be more specific so the units in the squad can be checked to see if they can still be in the squad
                 context.read<RosterBloc>().add(UpdateSquad(updatedSquad));
               }
             },
@@ -48,6 +49,7 @@ class SquadRoleSelectors extends StatelessWidget {
                   secondaryRole: newSecondaryRole,
                   allowSecondaryRoleToBeNull: newSecondaryRole == null,
                 );
+                // TODO consider changing this to be more specific so the units in the squad can be checked to see if they can still be in the squad
                 context.read<RosterBloc>().add(UpdateSquad(updatedSquad));
               }
             },

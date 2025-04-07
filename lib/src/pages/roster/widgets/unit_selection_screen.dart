@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/unit/unit_list_extensions.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
+import 'package:gearforce/src/predefined/filters/unit_filters.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class UnitSelectionScreen extends StatefulWidget {
@@ -23,11 +25,21 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
   Widget build(BuildContext context) {
     final rosterState = context.read<RosterBloc>().state;
 
+    final squadRoles = {
+      widget.updatedSquad.primaryRole,
+      if (widget.updatedSquad.secondaryRole != null)
+        widget.updatedSquad.secondaryRole!,
+    };
+
     // Fetch available units from the rule set
-    final availableUnits = rosterState.ruleSet.getAvailableUnits();
+    final availableUnits = rosterState.ruleSet
+        .getAvailableUnits()
+        .filterBy(UnitFilters.matchByRoles(squadRoles))
+        .toList();
 
     // Initialize expanded states
-    if (_expandedStates.isEmpty) {
+    if (_expandedStates.isEmpty ||
+        _expandedStates.length != availableUnits.length) {
       _expandedStates.addAll(List<bool>.filled(availableUnits.length, false));
     }
 
@@ -86,7 +98,13 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                           },
                           child: GestureDetector(
                             onTap: () {
-                              print('Adding variant: ${variant.name}');
+                              final model =
+                                  unit.createModelFromVariant(variant);
+
+                              context
+                                  .read<RosterBloc>()
+                                  .add(AddModel(widget.updatedSquad, model));
+
                               Navigator.pop(context);
                             },
                             child: Container(
