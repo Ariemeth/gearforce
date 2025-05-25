@@ -12,11 +12,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
   meta: ^1.16.0
-  shared_preferences: ^2.5.2
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
