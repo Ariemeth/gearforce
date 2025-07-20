@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  FLUTTER_VERSION: 3.29.2 # Replace with the desired Flutter version
+  FLUTTER_VERSION: 3.32.5
 
 jobs:
   format:
