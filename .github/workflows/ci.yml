@@ -89,8 +89,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # os: [windows-latest, ubuntu-latest]
-        # target: [windows, android, web]
         include:
           - os: windows-latest
             target: windows
@@ -102,6 +100,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Java JDK
+        if: matrix.target == 'android'
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'  # Use the Eclipse Temurin distribution
+          java-version: '21'       # Set Java version to 21
+          cache: 'gradle'          # Cache Gradle dependencies
 
       - name: Cache Flutter SDK
         uses: actions/cache@v3
