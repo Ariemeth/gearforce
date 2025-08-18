@@ -8,8 +8,8 @@ import 'package:gearforce/src/models/roster/trait/trait.dart';
 
 typedef WeaponsMod = List<Weapon> Function(List<Weapon>, UpgradeContext);
 typedef IntMod = int Function(int, UpgradeContext);
-typedef HullStructureMod = HullStructure Function(
-    HullStructure, UpgradeContext);
+typedef HullStructureMod =
+    HullStructure Function(HullStructure, UpgradeContext);
 typedef SkillMod = Skill Function(Skill, UpgradeContext);
 typedef TraitsMod = List<Trait> Function(List<Trait>, UpgradeContext);
 
@@ -27,8 +27,10 @@ WeaponsMod createSwapWeaponsFromOptionsMod(
     final newWeaponCode = context.upgrade.upgradeOption!.selectedOption!;
 
     try {
-      final newWeapon =
-          WeaponParser.parseWeaponString(newWeaponCode, hasReact: hasReact);
+      final newWeapon = WeaponParser.parseWeaponString(
+        newWeaponCode,
+        hasReact: hasReact,
+      );
 
       final index = weapons.indexWhere((w) => w.code == oldWeaponCode);
       final updatedWeapons = List<Weapon>.from(weapons);

@@ -13,8 +13,11 @@ void main() {
       // Assert
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
       expect(weapon.code, 'LAC', reason: 'Weapon code should match input');
-      expect(weapon.name, 'Autocannon',
-          reason: 'Weapon name should be correct');
+      expect(
+        weapon.name,
+        'Autocannon',
+        reason: 'Weapon name should be correct',
+      );
     });
 
     test('should parse a weapon string with traits', () {
@@ -27,12 +30,21 @@ void main() {
       // Assert
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
       expect(weapon.code, 'LAC', reason: 'Weapon code should match input');
-      expect(weapon.primaryTraits.length, greaterThan(0),
-          reason: 'Weapon should have primary traits');
-      expect(weapon.primaryTraits.any((trait) => trait.name == 'Precise'), true,
-          reason: 'Weapon should have the "Precise" trait');
-      expect(weapon.primaryTraits.any((trait) => trait.name == 'LA'), true,
-          reason: 'Weapon should have the "LA" trait');
+      expect(
+        weapon.primaryTraits.length,
+        greaterThan(0),
+        reason: 'Weapon should have primary traits',
+      );
+      expect(
+        weapon.primaryTraits.any((trait) => trait.name == 'Precise'),
+        true,
+        reason: 'Weapon should have the "Precise" trait',
+      );
+      expect(
+        weapon.primaryTraits.any((trait) => trait.name == 'LA'),
+        true,
+        reason: 'Weapon should have the "LA" trait',
+      );
     });
 
     test('should parse a weapon string with "2 x" prefix', () {
@@ -45,8 +57,11 @@ void main() {
       // Assert
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
       expect(weapon.code, 'LAC', reason: 'Weapon code should match input');
-      expect(weapon.name, 'Autocannon',
-          reason: 'Weapon name should be correct');
+      expect(
+        weapon.name,
+        'Autocannon',
+        reason: 'Weapon name should be correct',
+      );
     });
 
     test('should throw ArgumentError for an invalid weapon code', () {
@@ -70,11 +85,16 @@ void main() {
 
       // Assert
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
-      expect(weapon.secondaryTraits, isNotNull,
-          reason: 'Weapon should have secondary traits');
       expect(
-          weapon.secondaryTraits!.any((trait) => trait.name == 'Precise'), true,
-          reason: 'Weapon should have the "Precise" secondary trait');
+        weapon.secondaryTraits,
+        isNotNull,
+        reason: 'Weapon should have secondary traits',
+      );
+      expect(
+        weapon.secondaryTraits!.any((trait) => trait.name == 'Precise'),
+        true,
+        reason: 'Weapon should have the "Precise" secondary trait',
+      );
     });
 
     test('should handle a weapon string with no traits', () {
@@ -87,8 +107,11 @@ void main() {
       // Assert
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
       expect(weapon.code, 'MAC', reason: 'Weapon code should match input');
-      expect(weapon.name, 'Autocannon',
-          reason: 'Weapon name should be correct');
+      expect(
+        weapon.name,
+        'Autocannon',
+        reason: 'Weapon name should be correct',
+      );
     });
 
     test('should parse a weapon with secondary traits', () {
@@ -101,13 +124,21 @@ void main() {
       // Assert
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
       expect(weapon.code, 'LAC', reason: 'Weapon code should match input');
-      expect(weapon.secondaryTraits, isNotNull,
-          reason: 'Weapon should have secondary traits');
       expect(
-          weapon.secondaryTraits!.any((trait) => trait.name == 'Precise'), true,
-          reason: 'Weapon should have the "Precise" secondary trait');
-      expect(weapon.secondaryTraits!.any((trait) => trait.name == 'LA'), true,
-          reason: 'Weapon should have the "LA" secondary trait');
+        weapon.secondaryTraits,
+        isNotNull,
+        reason: 'Weapon should have secondary traits',
+      );
+      expect(
+        weapon.secondaryTraits!.any((trait) => trait.name == 'Precise'),
+        true,
+        reason: 'Weapon should have the "Precise" secondary trait',
+      );
+      expect(
+        weapon.secondaryTraits!.any((trait) => trait.name == 'LA'),
+        true,
+        reason: 'Weapon should have the "LA" secondary trait',
+      );
     });
   });
 }

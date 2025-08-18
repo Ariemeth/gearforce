@@ -7,10 +7,7 @@ import 'package:gearforce/src/predefined/filters/unit_filters.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class UnitSelectionScreen extends StatefulWidget {
-  const UnitSelectionScreen({
-    super.key,
-    required this.updatedSquad,
-  });
+  const UnitSelectionScreen({super.key, required this.updatedSquad});
 
   final Squad updatedSquad;
 
@@ -46,10 +43,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: const Text(
-            'Select a Unit',
-            style: AppTheme.titleStyle,
-          ),
+          child: const Text('Select a Unit', style: AppTheme.titleStyle),
         ),
       ),
       body: Padding(
@@ -71,10 +65,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                     contentPadding: EdgeInsets.all(0),
                     titleAlignment: ListTileTitleAlignment.center,
                     title: Center(
-                      child: Text(
-                        unit.name,
-                        style: AppTheme.subtitleStyle,
-                      ),
+                      child: Text(unit.name, style: AppTheme.subtitleStyle),
                     ),
                   );
                 },
@@ -100,28 +91,32 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                             },
                             child: GestureDetector(
                               onTap: () {
-                                final model =
-                                    unit.createModelFromVariant(variant);
+                                final model = unit.createModelFromVariant(
+                                  variant,
+                                );
 
-                                context
-                                    .read<RosterBloc>()
-                                    .add(AddModel(widget.updatedSquad, model));
+                                context.read<RosterBloc>().add(
+                                  AddModel(widget.updatedSquad, model),
+                                );
 
                                 Navigator.pop(context);
                               },
                               child: Container(
                                 color: isHovered
                                     ? Theme.of(context)
-                                        .colorScheme
-                                        .secondaryContainer
-                                        .withAlpha(90)
+                                          .colorScheme
+                                          .secondaryContainer
+                                          .withAlpha(90)
                                     : Colors.transparent,
                                 padding: const EdgeInsets.symmetric(
-                                    vertical: 4.0, horizontal: 3.0),
+                                  vertical: 4.0,
+                                  horizontal: 3.0,
+                                ),
                                 child: Text(
                                   variant.name,
-                                  style: AppTheme.bodyStyle
-                                      .copyWith(fontWeight: FontWeight.bold),
+                                  style: AppTheme.bodyStyle.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),

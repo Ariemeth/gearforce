@@ -19,13 +19,11 @@ void main() async {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => SettingsBloc(
-              RepositoryProvider.of<SettingsRepository>(context),
-            )..loadSettings(),
+            create: (context) =>
+                SettingsBloc(RepositoryProvider.of<SettingsRepository>(context))
+                  ..loadSettings(),
           ),
-          BlocProvider(
-            create: (context) => RosterBloc(),
-          ),
+          BlocProvider(create: (context) => RosterBloc()),
           // Add other BlocProviders here if needed
         ],
         child: Gearforce(),

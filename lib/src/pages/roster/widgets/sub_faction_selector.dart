@@ -6,10 +6,7 @@ import 'package:gearforce/src/models/roster/subfaction.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class SubFactionSelector extends StatelessWidget {
-  const SubFactionSelector({
-    super.key,
-    required this.state,
-  });
+  const SubFactionSelector({super.key, required this.state});
 
   final RosterState state;
 
@@ -36,9 +33,9 @@ class SubFactionSelector extends StatelessWidget {
             .toList(),
         onChanged: (Subfaction? newSubfaction) {
           if (newSubfaction != null) {
-            context
-                .read<RosterBloc>()
-                .add(UpdateSubfactionEvent(newSubfaction));
+            context.read<RosterBloc>().add(
+              UpdateSubfactionEvent(newSubfaction),
+            );
           }
         },
         hint: Padding(

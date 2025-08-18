@@ -63,7 +63,7 @@ Unit createHunter() {
           WeaponFactory.createAC(WeaponSize.light, hasReact: true),
           WeaponFactory.createMW(WeaponSize.medium, hasReact: true),
           WeaponFactory.createRP(WeaponSize.light),
-          WeaponFactory.createAPGL(WeaponSize.light)
+          WeaponFactory.createAPGL(WeaponSize.light),
         ],
         traits: [TraitFactory.climb()],
       ),
@@ -95,15 +95,17 @@ Unit createHunter() {
         tvMod: createIntAdjustmentMod(1),
         hullStructureMod: createHullStructureSetMod(h: 6, s: 2),
       ),
-      Upgrade('Spearhead',
-          id: '1',
-          tvMod: createIntAdjustmentMod(1),
-          traitsMod: createAddTraitsMod([
-            TraitFactory.satUp(),
-            TraitFactory.eccm(),
-            TraitFactory.initPlus(),
-            TraitFactory.vuln(type: TraitType.h),
-          ])),
+      Upgrade(
+        'Spearhead',
+        id: '1',
+        tvMod: createIntAdjustmentMod(1),
+        traitsMod: createAddTraitsMod([
+          TraitFactory.satUp(),
+          TraitFactory.eccm(),
+          TraitFactory.initPlus(),
+          TraitFactory.vuln(type: TraitType.h),
+        ]),
+      ),
       Upgrade(
         'Swap1',
         id: '2',
@@ -119,7 +121,8 @@ Unit createHunter() {
         tvMod: createIntAdjustmentMod(1),
         weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
         upgradeOption: UpgradeOption(
-            optionsGenerator: () => ['MAC', 'MRF', 'LGL', 'MBZ', 'LRBZ']),
+          optionsGenerator: () => ['MAC', 'MRF', 'LGL', 'MBZ', 'LRBZ'],
+        ),
       ),
       Upgrade(
         'Swap3',
@@ -127,16 +130,18 @@ Unit createHunter() {
         description: 'Swap the LAC for one of the following weapons:',
         tvMod: createIntAdjustmentMod(2),
         weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
-        upgradeOption:
-            UpgradeOption(optionsGenerator: () => ['HAC', 'MSC', 'MGL']),
+        upgradeOption: UpgradeOption(
+          optionsGenerator: () => ['HAC', 'MSC', 'MGL'],
+        ),
       ),
       Upgrade(
         'Add LBZ',
         id: '5',
         description: 'Add the following weapon: LBZ',
         tvMod: createIntAdjustmentMod(1),
-        weaponsMod:
-            createAddWeaponsMod([WeaponFactory.createBZ(WeaponSize.light)]),
+        weaponsMod: createAddWeaponsMod([
+          WeaponFactory.createBZ(WeaponSize.light),
+        ]),
       ),
       Upgrade(
         'Swap4',
@@ -159,14 +164,17 @@ Unit createHunter() {
         id: '8',
         description: 'Add the following weapon: HIM',
         tvMod: createIntAdjustmentMod(1),
-        weaponsMod:
-            createAddWeaponsMod([WeaponFactory.createIM(WeaponSize.heavy)]),
+        weaponsMod: createAddWeaponsMod([
+          WeaponFactory.createIM(WeaponSize.heavy),
+        ]),
       ),
-      Upgrade('Add Supply',
-          id: '9',
-          description: 'Add the following trait: Supply',
-          tvMod: createIntAdjustmentMod(1),
-          traitsMod: createAddTraitsMod([TraitFactory.supply()]))
+      Upgrade(
+        'Add Supply',
+        id: '9',
+        description: 'Add the following trait: Supply',
+        tvMod: createIntAdjustmentMod(1),
+        traitsMod: createAddTraitsMod([TraitFactory.supply()]),
+      ),
     ],
   );
 }

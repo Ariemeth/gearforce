@@ -40,32 +40,33 @@ void main() {
 
     test('should retrieve attribute with mods applied', () {
       // Arrange
-      final model = Model(
-        name: 'Test Model',
-        tv: 10,
-        roles: {Role.gp},
-        movement: Movement([MovementType.walker], 6),
-        armor: Armor(5),
-        hullStructure: HullStructure(hull: 4, structure: 3),
-        actions: UnitActions(2),
-        gu: Skill(4),
-        pi: Skill(5),
-        ew: Skill(6),
-        weapons: [],
-        traits: [],
-        height: 1.5,
-      ).addUpgrade(
-        Upgrade(
-          'Test Mod',
-          id: 'mod-001',
-          nameMod: (name, context) => 'Modified $name',
-          tvMod: (tv, context) => tv + 5,
-          rolesMod: (roles, context) => {...roles, Role.sk},
-          movementMod: (movement, context) =>
-              Movement([MovementType.ground], 8),
-          armorMod: (armor, context) => Armor(6),
-        ),
-      );
+      final model =
+          Model(
+            name: 'Test Model',
+            tv: 10,
+            roles: {Role.gp},
+            movement: Movement([MovementType.walker], 6),
+            armor: Armor(5),
+            hullStructure: HullStructure(hull: 4, structure: 3),
+            actions: UnitActions(2),
+            gu: Skill(4),
+            pi: Skill(5),
+            ew: Skill(6),
+            weapons: [],
+            traits: [],
+            height: 1.5,
+          ).addUpgrade(
+            Upgrade(
+              'Test Mod',
+              id: 'mod-001',
+              nameMod: (name, context) => 'Modified $name',
+              tvMod: (tv, context) => tv + 5,
+              rolesMod: (roles, context) => {...roles, Role.sk},
+              movementMod: (movement, context) =>
+                  Movement([MovementType.ground], 8),
+              armorMod: (armor, context) => Armor(6),
+            ),
+          );
 
       // Act & Assert
       expect(model.getAttribute(ModelAttribute.name), 'Modified Test Model');
@@ -93,29 +94,28 @@ void main() {
         height: 1.5,
       );
       model.addUpgrade(
-        Upgrade(
-          'Mod 1',
-          id: 'mod-001',
-          tvMod: (tv, context) => tv + 5,
-        ),
+        Upgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
       );
       model.addUpgrade(
-        Upgrade(
-          'Mod 2',
-          id: 'mod-002',
-          tvMod: (tv, context) => tv + 3,
-        ),
+        Upgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
       );
 
       // Act & Assert
-      expect(model.getAttribute(ModelAttribute.tv), 18,
-          reason: 'Both mods applied'); // Both mods applied
-      expect(model.getAttribute(ModelAttribute.tv, excludeUpgradeId: 'mod-001'),
-          13,
-          reason: 'Only Mod 2 applied');
-      expect(model.getAttribute(ModelAttribute.tv, excludeUpgradeId: 'mod-002'),
-          15,
-          reason: 'Only Mod 1 applied');
+      expect(
+        model.getAttribute(ModelAttribute.tv),
+        18,
+        reason: 'Both mods applied',
+      ); // Both mods applied
+      expect(
+        model.getAttribute(ModelAttribute.tv, excludeUpgradeId: 'mod-001'),
+        13,
+        reason: 'Only Mod 2 applied',
+      );
+      expect(
+        model.getAttribute(ModelAttribute.tv, excludeUpgradeId: 'mod-002'),
+        15,
+        reason: 'Only Mod 1 applied',
+      );
     });
 
     test('should retrieve attribute applying mods up to a specific mod', () {
@@ -136,27 +136,23 @@ void main() {
         height: 1.5,
       );
       model.addUpgrade(
-        Upgrade(
-          'Mod 1',
-          id: 'mod-001',
-          tvMod: (tv, context) => tv + 5,
-        ),
+        Upgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
       );
       model.addUpgrade(
-        Upgrade(
-          'Mod 2',
-          id: 'mod-002',
-          tvMod: (tv, context) => tv + 3,
-        ),
+        Upgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
       );
 
       // Act & Assert
       expect(
-          model.getAttribute(ModelAttribute.tv, upToUpgradeId: 'mod-001'), 15,
-          reason: 'Only Mod 1 applied');
+        model.getAttribute(ModelAttribute.tv, upToUpgradeId: 'mod-001'),
+        15,
+        reason: 'Only Mod 1 applied',
+      );
       expect(
-          model.getAttribute(ModelAttribute.tv, upToUpgradeId: 'mod-002'), 18,
-          reason: 'Both mods applied');
+        model.getAttribute(ModelAttribute.tv, upToUpgradeId: 'mod-002'),
+        18,
+        reason: 'Both mods applied',
+      );
     });
   });
   group('Model getAttribute Recursive Detection', () {
@@ -193,11 +189,13 @@ void main() {
           model.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
           model.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
         },
-        throwsA(isA<StateError>().having(
-          (e) => e.message,
-          'message',
-          contains('Recursive call detected for getAttribute'),
-        )),
+        throwsA(
+          isA<StateError>().having(
+            (e) => e.message,
+            'message',
+            contains('Recursive call detected for getAttribute'),
+          ),
+        ),
       );
     });
   });

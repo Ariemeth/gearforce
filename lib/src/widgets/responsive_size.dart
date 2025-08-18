@@ -1,9 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-enum ScreenSize {
-  small,
-  large,
-}
+enum ScreenSize { small, large }
 
 class ResponsiveSize {
   static const int smallBreakpoint = 600;

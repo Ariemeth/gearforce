@@ -6,10 +6,7 @@ import 'package:gearforce/src/models/roster/faction.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class FactionSelector extends StatelessWidget {
-  const FactionSelector({
-    super.key,
-    required this.state,
-  });
+  const FactionSelector({super.key, required this.state});
 
   final RosterState state;
 

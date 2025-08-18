@@ -14,9 +14,7 @@ class SettingsPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('App Settings'),
-      ),
+      appBar: AppBar(title: const Text('App Settings')),
       body: Padding(
         padding: _pagePadding,
         child: BlocBuilder<SettingsBloc, SettingsState>(
@@ -25,9 +23,9 @@ class SettingsPageView extends StatelessWidget {
               initialValue: state.themeMode,
               onChanged: (newThemeMode) {
                 if (newThemeMode != null && newThemeMode != state.themeMode) {
-                  context
-                      .read<SettingsBloc>()
-                      .add(UpdateThemeMode(newThemeMode));
+                  context.read<SettingsBloc>().add(
+                    UpdateThemeMode(newThemeMode),
+                  );
                 }
               },
               decoration: const InputDecoration(
@@ -40,14 +38,8 @@ class SettingsPageView extends StatelessWidget {
                   value: ThemeMode.system,
                   child: Text('System'),
                 ),
-                DropdownMenuItem(
-                  value: ThemeMode.light,
-                  child: Text('Light'),
-                ),
-                DropdownMenuItem(
-                  value: ThemeMode.dark,
-                  child: Text('Dark'),
-                )
+                DropdownMenuItem(value: ThemeMode.light, child: Text('Light')),
+                DropdownMenuItem(value: ThemeMode.dark, child: Text('Dark')),
               ],
             );
           },

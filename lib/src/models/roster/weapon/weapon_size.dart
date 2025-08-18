@@ -20,7 +20,8 @@ enum WeaponSize {
         .firstWhere(
           (entry) => entry.value == upperPrefix,
           orElse: () => throw ArgumentError(
-              'Invalid prefix: $prefix. Size must be ${_prefixes[WeaponSize.light]}, ${_prefixes[WeaponSize.medium]}, or ${_prefixes[WeaponSize.heavy]}.'),
+            'Invalid prefix: $prefix. Size must be ${_prefixes[WeaponSize.light]}, ${_prefixes[WeaponSize.medium]}, or ${_prefixes[WeaponSize.heavy]}.',
+          ),
         )
         .key;
   }

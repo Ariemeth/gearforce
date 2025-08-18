@@ -23,12 +23,13 @@ class Weapon {
     List<Trait> primaryTraits = const [],
     List<Trait>? secondaryTraits,
     this.isReact = false,
-  })  : assert(damage >= 0, 'Damage must be 0 or greater'),
-        assert(modes.isNotEmpty, 'Weapon must have at least one mode'),
-        modes = Set.unmodifiable(modes),
-        primaryTraits = List.unmodifiable(primaryTraits),
-        secondaryTraits =
-            secondaryTraits != null ? List.unmodifiable(secondaryTraits) : null;
+  }) : assert(damage >= 0, 'Damage must be 0 or greater'),
+       assert(modes.isNotEmpty, 'Weapon must have at least one mode'),
+       modes = Set.unmodifiable(modes),
+       primaryTraits = List.unmodifiable(primaryTraits),
+       secondaryTraits = secondaryTraits != null
+           ? List.unmodifiable(secondaryTraits)
+           : null;
 
   Weapon copyWith({
     String? name,
@@ -58,8 +59,9 @@ class Weapon {
 
   @override
   String toString() {
-    final primaryTraitsDescription =
-        primaryTraits.map((trait) => trait.description).join(' | ');
+    final primaryTraitsDescription = primaryTraits
+        .map((trait) => trait.description)
+        .join(' | ');
     final secondaryTraitsDescription = secondaryTraits != null
         ? secondaryTraits!.map((trait) => trait.description).join(' | ')
         : 'None';

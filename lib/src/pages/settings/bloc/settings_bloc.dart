@@ -9,7 +9,7 @@ class SettingsBloc extends Bloc<SettingsEvents, SettingsState> {
   final SettingsRepository _settingsProvider;
 
   SettingsBloc(this._settingsProvider)
-      : super(SettingsInitial(ThemeMode.system)) {
+    : super(SettingsInitial(ThemeMode.system)) {
     on<UpdateThemeMode>((event, emit) async {
       await _settingsProvider.updateThemeMode(event.themeMode);
       emit(SettingsUpdated(event.themeMode));

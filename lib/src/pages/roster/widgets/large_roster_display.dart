@@ -7,10 +7,7 @@ import 'package:gearforce/src/widgets/display_layout_constraints.dart';
 const _leftPanelMinWidth = 400.0;
 
 class LargeRosterDisplay extends StatelessWidget {
-  const LargeRosterDisplay({
-    super.key,
-    required this.rosterMetaData,
-  });
+  const LargeRosterDisplay({super.key, required this.rosterMetaData});
 
   final DisplayLayoutConstraints rosterMetaData;
 
@@ -23,20 +20,12 @@ class LargeRosterDisplay extends StatelessWidget {
           width: _leftPanelMinWidth,
           child: Column(
             children: [
-              Expanded(
-                child: SquadDisplay(
-                  squads: state.squads,
-                ),
-              ),
+              Expanded(child: SquadDisplay(squads: state.squads)),
               rosterMetaData,
             ],
           ),
         ),
-        Expanded(
-          child: Container(
-            color: Colors.blueGrey,
-          ),
-        ),
+        Expanded(child: Container(color: Colors.blueGrey)),
       ],
     );
   }

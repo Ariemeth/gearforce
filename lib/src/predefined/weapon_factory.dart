@@ -16,10 +16,7 @@ class WeaponFactory {
         WeaponSize.heavy: 9,
       }[size]!,
       modes: {WeaponMode.direct, WeaponMode.indirect},
-      primaryTraits: [
-        TraitFactory.aa(),
-        TraitFactory.guided(),
-      ],
+      primaryTraits: [TraitFactory.aa(), TraitFactory.guided()],
       isReact: hasReact,
     );
   }
@@ -35,12 +32,8 @@ class WeaponFactory {
         WeaponSize.heavy: 8,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 1),
-      ],
-      secondaryTraits: [
-        TraitFactory.precise(),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 1)],
+      secondaryTraits: [TraitFactory.precise()],
       isReact: hasReact,
     );
   }
@@ -129,10 +122,7 @@ class WeaponFactory {
         WeaponSize.heavy: 9,
       }[size]!,
       modes: {WeaponMode.direct, WeaponMode.indirect},
-      primaryTraits: [
-        TraitFactory.aoe(level: 3),
-        TraitFactory.demo(level: 2),
-      ],
+      primaryTraits: [TraitFactory.aoe(level: 3), TraitFactory.demo(level: 2)],
       isReact: hasReact,
     );
   }
@@ -150,11 +140,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct, WeaponMode.indirect},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
         TraitFactory.guided(),
       ],
       isReact: hasReact,
@@ -202,11 +193,12 @@ class WeaponFactory {
         TraitFactory.blast(),
         TraitFactory.ai(),
         TraitFactory.fire(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -225,16 +217,14 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
       ],
-      secondaryTraits: [
-        TraitFactory.aoe(level: 2),
-        TraitFactory.blast(),
-      ],
+      secondaryTraits: [TraitFactory.aoe(level: 2), TraitFactory.blast()],
       isReact: hasReact,
     );
   }
@@ -252,11 +242,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
         TraitFactory.burst(level: 1),
       ],
       isReact: hasReact,
@@ -277,16 +268,14 @@ class WeaponFactory {
       primaryTraits: [
         TraitFactory.precise(),
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
       ],
-      secondaryTraits: [
-        TraitFactory.frag(),
-        TraitFactory.ai(),
-      ],
+      secondaryTraits: [TraitFactory.frag(), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -302,17 +291,15 @@ class WeaponFactory {
         WeaponSize.heavy: 10,
       }[size]!,
       modes: {WeaponMode.direct, WeaponMode.indirect},
-      primaryTraits: [
-        TraitFactory.aoe(level: 3),
-        TraitFactory.blast(),
-      ],
+      primaryTraits: [TraitFactory.aoe(level: 3), TraitFactory.blast()],
       secondaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 3,
-          WeaponSize.medium: 4,
-          WeaponSize.heavy: 5,
-        }[size]!),
+          level: {
+            WeaponSize.light: 3,
+            WeaponSize.medium: 4,
+            WeaponSize.heavy: 5,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -332,11 +319,12 @@ class WeaponFactory {
       primaryTraits: [
         TraitFactory.ai(),
         TraitFactory.fire(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
         TraitFactory.burst(level: 1),
         TraitFactory.spray(),
       ],
@@ -357,11 +345,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -385,11 +374,12 @@ class WeaponFactory {
       ],
       secondaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -410,11 +400,12 @@ class WeaponFactory {
         TraitFactory.aoe(level: 3),
         TraitFactory.blast(),
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
         TraitFactory.ai(),
       ],
       isReact: hasReact,
@@ -434,11 +425,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct, WeaponMode.indirect},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
         TraitFactory.guided(),
       ],
       isReact: hasReact,
@@ -463,11 +455,12 @@ class WeaponFactory {
       ],
       secondaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -484,14 +477,8 @@ class WeaponFactory {
         WeaponSize.heavy: 7,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 1),
-        TraitFactory.ai(),
-      ],
-      secondaryTraits: [
-        TraitFactory.precise(),
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 1), TraitFactory.ai()],
+      secondaryTraits: [TraitFactory.precise(), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -507,10 +494,7 @@ class WeaponFactory {
         WeaponSize.heavy: 7,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.precise(),
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.precise(), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -551,10 +535,7 @@ class WeaponFactory {
         WeaponSize.heavy: 6,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 2),
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 2), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -570,9 +551,7 @@ class WeaponFactory {
         WeaponSize.heavy: 7,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -588,10 +567,7 @@ class WeaponFactory {
         WeaponSize.heavy: 6,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.precise(),
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.precise(), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -623,14 +599,8 @@ class WeaponFactory {
         WeaponSize.heavy: 6,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 1),
-        TraitFactory.ai(),
-      ],
-      secondaryTraits: [
-        TraitFactory.precise(),
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 1), TraitFactory.ai()],
+      secondaryTraits: [TraitFactory.precise(), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -646,9 +616,7 @@ class WeaponFactory {
         WeaponSize.heavy: 9,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.precise(),
-      ],
+      primaryTraits: [TraitFactory.precise()],
       isReact: hasReact,
     );
   }
@@ -709,9 +677,7 @@ class WeaponFactory {
         WeaponSize.heavy: 8,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.demo(level: 4),
-      ],
+      primaryTraits: [TraitFactory.demo(level: 4)],
       isReact: hasReact,
     );
   }
@@ -727,9 +693,7 @@ class WeaponFactory {
         WeaponSize.heavy: 8,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.precise(),
-      ],
+      primaryTraits: [TraitFactory.precise()],
       isReact: hasReact,
     );
   }
@@ -745,10 +709,7 @@ class WeaponFactory {
         WeaponSize.heavy: 9,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.haywire(),
-        TraitFactory.precise(),
-      ],
+      primaryTraits: [TraitFactory.haywire(), TraitFactory.precise()],
       isReact: hasReact,
     );
   }
@@ -766,11 +727,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.fire(
-            level: {
-          WeaponSize.light: 4,
-          WeaponSize.medium: 5,
-          WeaponSize.heavy: 6,
-        }[size]!),
+          level: {
+            WeaponSize.light: 4,
+            WeaponSize.medium: 5,
+            WeaponSize.heavy: 6,
+          }[size]!,
+        ),
       ],
       secondaryTraits: [
         TraitFactory.ai(),
@@ -792,17 +754,16 @@ class WeaponFactory {
         WeaponSize.heavy: 9,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 1),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 1)],
       secondaryTraits: [
         TraitFactory.apex(),
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 1,
-          WeaponSize.medium: 2,
-          WeaponSize.heavy: 3,
-        }[size]!),
+          level: {
+            WeaponSize.light: 1,
+            WeaponSize.medium: 2,
+            WeaponSize.heavy: 3,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -821,11 +782,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -842,10 +804,7 @@ class WeaponFactory {
         WeaponSize.heavy: 8,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 2),
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 2), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -861,9 +820,7 @@ class WeaponFactory {
         WeaponSize.heavy: 8,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.precise(),
-      ],
+      primaryTraits: [TraitFactory.precise()],
       isReact: hasReact,
     );
   }
@@ -882,11 +839,12 @@ class WeaponFactory {
       primaryTraits: [
         TraitFactory.precisePlus(),
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 3,
-          WeaponSize.medium: 4,
-          WeaponSize.heavy: 5,
-        }[size]!),
+          level: {
+            WeaponSize.light: 3,
+            WeaponSize.medium: 4,
+            WeaponSize.heavy: 5,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -903,10 +861,7 @@ class WeaponFactory {
         WeaponSize.heavy: 9,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 2),
-        TraitFactory.ai(),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 2), TraitFactory.ai()],
       isReact: hasReact,
     );
   }
@@ -922,10 +877,7 @@ class WeaponFactory {
         WeaponSize.heavy: 9,
       }[size]!,
       modes: {WeaponMode.direct, WeaponMode.indirect},
-      primaryTraits: [
-        TraitFactory.aoe(level: 3),
-        TraitFactory.ap(level: 1),
-      ],
+      primaryTraits: [TraitFactory.aoe(level: 3), TraitFactory.ap(level: 1)],
       isReact: hasReact,
     );
   }
@@ -944,11 +896,12 @@ class WeaponFactory {
       primaryTraits: [
         TraitFactory.precise(),
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
         TraitFactory.demo(level: 3),
       ],
       isReact: hasReact,
@@ -968,11 +921,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
         TraitFactory.demo(level: 4),
       ],
       isReact: hasReact,
@@ -992,11 +946,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 3,
-          WeaponSize.medium: 4,
-          WeaponSize.heavy: 5,
-        }[size]!),
+          level: {
+            WeaponSize.light: 3,
+            WeaponSize.medium: 4,
+            WeaponSize.heavy: 5,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );
@@ -1013,12 +968,8 @@ class WeaponFactory {
         WeaponSize.heavy: 7,
       }[size]!,
       modes: {WeaponMode.direct},
-      primaryTraits: [
-        TraitFactory.burst(level: 2),
-      ],
-      secondaryTraits: [
-        TraitFactory.precise(),
-      ],
+      primaryTraits: [TraitFactory.burst(level: 2)],
+      secondaryTraits: [TraitFactory.precise()],
       isReact: hasReact,
     );
   }
@@ -1036,17 +987,15 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 3,
-          WeaponSize.medium: 4,
-          WeaponSize.heavy: 5,
-        }[size]!),
+          level: {
+            WeaponSize.light: 3,
+            WeaponSize.medium: 4,
+            WeaponSize.heavy: 5,
+          }[size]!,
+        ),
         TraitFactory.demo(level: 2),
       ],
-      secondaryTraits: [
-        TraitFactory.aoe(level: 2),
-        TraitFactory.blast(),
-      ],
+      secondaryTraits: [TraitFactory.aoe(level: 2), TraitFactory.blast()],
       isReact: hasReact,
     );
   }
@@ -1064,11 +1013,12 @@ class WeaponFactory {
       modes: {WeaponMode.direct},
       primaryTraits: [
         TraitFactory.ap(
-            level: {
-          WeaponSize.light: 2,
-          WeaponSize.medium: 3,
-          WeaponSize.heavy: 4,
-        }[size]!),
+          level: {
+            WeaponSize.light: 2,
+            WeaponSize.medium: 3,
+            WeaponSize.heavy: 4,
+          }[size]!,
+        ),
       ],
       isReact: hasReact,
     );

@@ -39,14 +39,14 @@ abstract class RosterState {
 
 class RosterInitial extends RosterState {
   RosterInitial()
-      : super(
-          playerName: '',
-          rosterName: '',
-          squads: const [],
-          selectedFaction: Faction.blackTalons,
-          selectedSubfaction: Faction.blackTalons.subfactions.first,
-          ruleSet: getSubfactionRuleSet(Faction.blackTalons.subfactions.first),
-        );
+    : super(
+        playerName: '',
+        rosterName: '',
+        squads: const [],
+        selectedFaction: Faction.blackTalons,
+        selectedSubfaction: Faction.blackTalons.subfactions.first,
+        ruleSet: getSubfactionRuleSet(Faction.blackTalons.subfactions.first),
+      );
 }
 
 class RosterUpdated extends RosterState {

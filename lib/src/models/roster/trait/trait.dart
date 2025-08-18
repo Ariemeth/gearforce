@@ -18,12 +18,7 @@ class Trait {
     this.isAux = false,
   });
 
-  Trait copyWith({
-    String? name,
-    int? level,
-    TraitType? type,
-    bool? isAux,
-  }) {
+  Trait copyWith({String? name, int? level, TraitType? type, bool? isAux}) {
     return Trait(
       name: name ?? this.name,
       description: description,

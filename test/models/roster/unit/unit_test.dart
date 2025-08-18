@@ -51,20 +51,8 @@ void main() {
         manufacturer: unitManufacturer,
         description: unitDescription,
         variants: [
-          Variant(
-            variant1Name,
-            id: variant1Id,
-            tv: 1,
-            weapons: [],
-            traits: [],
-          ),
-          Variant(
-            variant2Name,
-            id: variant2Id,
-            tv: 2,
-            weapons: [],
-            traits: [],
-          ),
+          Variant(variant1Name, id: variant1Id, tv: 1, weapons: [], traits: []),
+          Variant(variant2Name, id: variant2Id, tv: 2, weapons: [], traits: []),
         ],
       );
 

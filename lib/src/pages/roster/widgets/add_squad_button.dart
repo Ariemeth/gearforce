@@ -7,10 +7,7 @@ import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class AddSquadButton extends StatelessWidget {
-  const AddSquadButton({
-    super.key,
-    required this.squads,
-  });
+  const AddSquadButton({super.key, required this.squads});
 
   final List<Squad> squads;
 

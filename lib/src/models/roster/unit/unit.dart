@@ -27,11 +27,13 @@ class Unit {
     this.description,
     List<Variant> variants = const [],
     List<Upgrade> upgrades = const [],
-  })  : assert(
-            name.trim().isNotEmpty, 'Name must not be empty or all whitespace'),
-        assert(id.trim().isNotEmpty, 'Id must not be empty or all whitespace'),
-        variants = List.unmodifiable(variants),
-        upgrades = List.unmodifiable(upgrades);
+  }) : assert(
+         name.trim().isNotEmpty,
+         'Name must not be empty or all whitespace',
+       ),
+       assert(id.trim().isNotEmpty, 'Id must not be empty or all whitespace'),
+       variants = List.unmodifiable(variants),
+       upgrades = List.unmodifiable(upgrades);
 
   Model createModelFromVariant(Variant variant) {
     if (!variants.any((v) => v.name == variant.name)) {

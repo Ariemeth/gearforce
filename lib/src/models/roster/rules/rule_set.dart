@@ -7,11 +7,7 @@ abstract class RuleSet {
   final AssetTable assetTable;
   final List<Rule> rules;
 
-  RuleSet({
-    required this.name,
-    required this.rules,
-    required this.assetTable,
-  });
+  RuleSet({required this.name, required this.rules, required this.assetTable});
 
   List<Unit> getAvailableUnits();
 }

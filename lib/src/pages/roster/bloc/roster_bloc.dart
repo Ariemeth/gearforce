@@ -13,9 +13,7 @@ part 'roster_state.dart';
 class RosterBloc extends Bloc<RosterEvent, RosterState> {
   RosterBloc() : super(RosterInitial()) {
     on<UpdatePlayerName>((event, emit) {
-      emit(
-        state.copyWith(playerName: event.playerName),
-      );
+      emit(state.copyWith(playerName: event.playerName));
     });
 
     on<UpdateRosterName>((event, emit) {
@@ -67,9 +65,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     });
 
     on<UpdateSquads>((event, emit) {
-      emit(
-        state.copyWith(squads: event.squads),
-      );
+      emit(state.copyWith(squads: event.squads));
     });
 
     on<UpdateSquad>((event, emit) {
@@ -79,9 +75,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         }
         return squad;
       }).toList();
-      emit(
-        state.copyWith(squads: updatedSquads),
-      );
+      emit(state.copyWith(squads: updatedSquads));
     });
   }
 }

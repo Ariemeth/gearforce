@@ -20,8 +20,9 @@ class SquadDetailsScreen extends StatelessWidget {
       body: BlocBuilder<RosterBloc, RosterState>(
         builder: (context, state) {
           // Find the updated squad from the state
-          final updatedSquad =
-              state.squads.firstWhere((s) => s.name == squad.name);
+          final updatedSquad = state.squads.firstWhere(
+            (s) => s.name == squad.name,
+          );
 
           return Padding(
             padding: AppTheme.defaultPagePadding,
@@ -38,9 +39,7 @@ class SquadDetailsScreen extends StatelessWidget {
                           'Unit: ${unit.name}',
                           style: AppTheme.bodyStyle,
                         ),
-                        subtitle: Text(
-                          'TV: ${unit.tv}',
-                        ),
+                        subtitle: Text('TV: ${unit.tv}'),
                         contentPadding: AppTheme.listTilePadding,
                       );
                     },

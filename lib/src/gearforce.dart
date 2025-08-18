@@ -37,9 +37,8 @@ class Gearforce extends StatelessWidget {
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
           theme: ThemeData.from(
-              colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.blue,
-          )),
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
+          ),
           darkTheme: ThemeData.dark(),
           themeMode: state.themeMode,
 

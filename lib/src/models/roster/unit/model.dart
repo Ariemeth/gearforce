@@ -54,19 +54,19 @@ class Model {
     required double height,
     this.level = Level.regular,
     this.command = Command.none,
-  })  : _name = name,
-        _tv = tv,
-        _roles = Set.unmodifiable(roles),
-        _movement = movement,
-        _armor = armor,
-        _hullStructure = hullStructure,
-        _actions = actions,
-        _gu = gu,
-        _pi = pi,
-        _ew = ew,
-        _weapons = List.unmodifiable(weapons),
-        _traits = List.unmodifiable(traits),
-        _height = height;
+  }) : _name = name,
+       _tv = tv,
+       _roles = Set.unmodifiable(roles),
+       _movement = movement,
+       _armor = armor,
+       _hullStructure = hullStructure,
+       _actions = actions,
+       _gu = gu,
+       _pi = pi,
+       _ew = ew,
+       _weapons = List.unmodifiable(weapons),
+       _traits = List.unmodifiable(traits),
+       _height = height;
 
   // Getters
   String get name => getAttribute(ModelAttribute.name);
@@ -102,27 +102,28 @@ class Model {
     bool replaceUpgrades = false,
   }) {
     return Model(
-      name: name ?? _name,
-      tv: threatValue ?? _tv,
-      roles: roles != null ? roles.copyWith() : _roles.copyWith(),
-      movement: movement ?? _movement.copyWith(),
-      armor: armor ?? _armor.copyWith(),
-      hullStructure: hullStructure ?? _hullStructure.copyWith(),
-      actions: actions ?? _actions.copyWith(),
-      gu: gu ?? _gu.copyWith(),
-      pi: pi ?? _pi.copyWith(),
-      ew: ew ?? _ew.copyWith(),
-      weapons: weapons?.copyWith() ?? _weapons.copyWith(),
-      traits: traits?.copyWith() ?? _traits.copyWith(),
-      height: _height,
-      command: command ?? this.command,
-      level: level ?? this.level,
-    ).._upgrades.addAll(
+        name: name ?? _name,
+        tv: threatValue ?? _tv,
+        roles: roles != null ? roles.copyWith() : _roles.copyWith(),
+        movement: movement ?? _movement.copyWith(),
+        armor: armor ?? _armor.copyWith(),
+        hullStructure: hullStructure ?? _hullStructure.copyWith(),
+        actions: actions ?? _actions.copyWith(),
+        gu: gu ?? _gu.copyWith(),
+        pi: pi ?? _pi.copyWith(),
+        ew: ew ?? _ew.copyWith(),
+        weapons: weapons?.copyWith() ?? _weapons.copyWith(),
+        traits: traits?.copyWith() ?? _traits.copyWith(),
+        height: _height,
+        command: command ?? this.command,
+        level: level ?? this.level,
+      )
+      .._upgrades.addAll(
         replaceUpgrades
             ? (upgrades ?? [])
             : [
                 ..._upgrades.map((upgrade) => upgrade.copyWith()),
-                ...(upgrades ?? [])
+                ...(upgrades ?? []),
               ],
       );
   }
@@ -144,7 +145,8 @@ class Model {
   }) {
     if (_activeAttributes.contains(attribute)) {
       throw StateError(
-          'Recursive call detected for getAttribute with $attribute');
+        'Recursive call detected for getAttribute with $attribute',
+      );
     }
 
     _activeAttributes.add(attribute);

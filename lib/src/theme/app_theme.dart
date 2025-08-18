@@ -33,7 +33,10 @@ class AppTheme {
   static TextStyle textInputFieldStyle = TextStyle(fontSize: 14);
 
   static const TextStyle dropdownHintTextStyle = TextStyle(
-      fontSize: 12, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic);
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+    fontStyle: FontStyle.italic,
+  );
 
   // Paddings
   static const EdgeInsets defaultPadding = EdgeInsets.all(0);
@@ -41,15 +44,22 @@ class AppTheme {
 
   static const EdgeInsets defaultPagePadding = EdgeInsets.fromLTRB(5, 3, 5, 3);
 
-  static const EdgeInsets rosterNameSectionPadding =
-      EdgeInsets.symmetric(vertical: 2.0, horizontal: 5.0);
+  static const EdgeInsets rosterNameSectionPadding = EdgeInsets.symmetric(
+    vertical: 2.0,
+    horizontal: 5.0,
+  );
 
-  static const EdgeInsets dropdownTextPadding =
-      EdgeInsets.fromLTRB(5.0, 1.0, 1.0, 1.0);
+  static const EdgeInsets dropdownTextPadding = EdgeInsets.fromLTRB(
+    5.0,
+    1.0,
+    1.0,
+    1.0,
+  );
 
   static const EdgeInsets factionSelectorPadding = EdgeInsets.only(left: 5.0);
-  static const EdgeInsets subfactionSelectorPadding =
-      EdgeInsets.only(left: 5.0);
+  static const EdgeInsets subfactionSelectorPadding = EdgeInsets.only(
+    left: 5.0,
+  );
 
   static const EdgeInsets drawerHeaderPadding = EdgeInsets.all(4.0);
   static const EdgeInsets drawerPadding = EdgeInsets.all(4.0);

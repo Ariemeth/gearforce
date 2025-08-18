@@ -5,10 +5,7 @@ import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class RosterNameInputDisplay extends StatelessWidget {
-  const RosterNameInputDisplay({
-    super.key,
-    required this.rosterNameController,
-  });
+  const RosterNameInputDisplay({super.key, required this.rosterNameController});
 
   final TextEditingController rosterNameController;
 
@@ -29,8 +26,9 @@ class RosterNameInputDisplay extends StatelessWidget {
               child: TextField(
                 controller: rosterNameController,
                 decoration: InputDecoration(
-                  hintText:
-                      AppLocalizations.of(context)!.rosterNameInputFieldHint,
+                  hintText: AppLocalizations.of(
+                    context,
+                  )!.rosterNameInputFieldHint,
                   border: OutlineInputBorder(),
                   isDense: false,
                   hintStyle: AppTheme.textHintStyle,

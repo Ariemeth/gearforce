@@ -21,7 +21,8 @@ class DisplayLayoutConstraints extends StatelessWidget {
         children: [
           Center(
             child: Text(
-                'W:${maxScreenWidth.floor()} | H:${maxScreenHeight.floor()}'),
+              'W:${maxScreenWidth.floor()} | H:${maxScreenHeight.floor()}',
+            ),
           ),
         ],
       ),

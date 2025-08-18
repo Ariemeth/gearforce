@@ -38,10 +38,12 @@ class UnitBase {
     required List<Weapon> weapons,
     required List<Trait> traits,
     required this.height,
-  })  : assert(
-            name.trim().isNotEmpty, 'Name must not be empty or all whitespace'),
-        assert(tv >= 0, 'TV must be 0 or positive'),
-        roles = Set.unmodifiable(roles),
-        weapons = List.unmodifiable(weapons),
-        traits = List.unmodifiable(traits);
+  }) : assert(
+         name.trim().isNotEmpty,
+         'Name must not be empty or all whitespace',
+       ),
+       assert(tv >= 0, 'TV must be 0 or positive'),
+       roles = Set.unmodifiable(roles),
+       weapons = List.unmodifiable(weapons),
+       traits = List.unmodifiable(traits);
 }

@@ -34,7 +34,7 @@ Unit createDarkWarrior() {
         WeaponFactory.createLC(WeaponSize.light, hasReact: true),
         WeaponFactory.createFC(WeaponSize.light, hasReact: true),
         WeaponFactory.createRP(WeaponSize.light, hasReact: false),
-        WeaponFactory.createAPGL(WeaponSize.light, hasReact: false)
+        WeaponFactory.createAPGL(WeaponSize.light, hasReact: false),
       ],
       traits: [TraitFactory.hands(), TraitFactory.stealth(isAux: true)],
       height: 1.5,
@@ -48,14 +48,16 @@ Unit createDarkWarrior() {
         'Talon commanders have noticed a need to have the option to at least hold territory for extended periods of time. So, they looked at more mass produced option so that they can get the numbers needed to hold positions without utilizing some of their higher end assets. The Dark Warrior does this in spades.',
     variants: [Variant('Stock', id: '0', tv: 0)],
     upgrades: [
-      Upgrade('Spectre',
-          id: '0',
-          tvMod: createIntAdjustmentMod(1),
-          ewMod: createSkillAdjustmentMod(4),
-          traitsMod: createAddTraitsMod([
-            TraitFactory.ecm(),
-            TraitFactory.sensor(isAux: true, level: 24),
-          ])),
+      Upgrade(
+        'Spectre',
+        id: '0',
+        tvMod: createIntAdjustmentMod(1),
+        ewMod: createSkillAdjustmentMod(4),
+        traitsMod: createAddTraitsMod([
+          TraitFactory.ecm(),
+          TraitFactory.sensor(isAux: true, level: 24),
+        ]),
+      ),
       Upgrade(
         'Flak Jacket',
         id: '1',
@@ -77,7 +79,8 @@ Unit createDarkWarrior() {
         tvMod: createIntAdjustmentMod(1),
         weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
         upgradeOption: UpgradeOption(
-            optionsGenerator: () => ['MAC', 'MRF', 'LGL', 'MBZ', 'LRBZ']),
+          optionsGenerator: () => ['MAC', 'MRF', 'LGL', 'MBZ', 'LRBZ'],
+        ),
       ),
       Upgrade(
         'Swap3',
@@ -85,16 +88,18 @@ Unit createDarkWarrior() {
         description: 'Swap the LAC for one of the following weapons:',
         tvMod: createIntAdjustmentMod(2),
         weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
-        upgradeOption:
-            UpgradeOption(optionsGenerator: () => ['HAC', 'MSC', 'MGL']),
+        upgradeOption: UpgradeOption(
+          optionsGenerator: () => ['HAC', 'MSC', 'MGL'],
+        ),
       ),
       Upgrade(
         'Add LBZ',
         id: '5',
         description: 'Add the following weapon: LBZ',
         tvMod: createIntAdjustmentMod(1),
-        weaponsMod:
-            createAddWeaponsMod([WeaponFactory.createBZ(WeaponSize.light)]),
+        weaponsMod: createAddWeaponsMod([
+          WeaponFactory.createBZ(WeaponSize.light),
+        ]),
       ),
       Upgrade(
         'Swap4',
@@ -117,14 +122,17 @@ Unit createDarkWarrior() {
         id: '8',
         description: 'Add the following weapon: HIM',
         tvMod: createIntAdjustmentMod(1),
-        weaponsMod:
-            createAddWeaponsMod([WeaponFactory.createIM(WeaponSize.heavy)]),
+        weaponsMod: createAddWeaponsMod([
+          WeaponFactory.createIM(WeaponSize.heavy),
+        ]),
       ),
-      Upgrade('Add Supply',
-          id: '9',
-          description: 'Add the following trait: Supply',
-          tvMod: createIntAdjustmentMod(1),
-          traitsMod: createAddTraitsMod([TraitFactory.supply()]))
+      Upgrade(
+        'Add Supply',
+        id: '9',
+        description: 'Add the following trait: Supply',
+        tvMod: createIntAdjustmentMod(1),
+        traitsMod: createAddTraitsMod([TraitFactory.supply()]),
+      ),
     ],
   );
 }

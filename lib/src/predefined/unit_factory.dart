@@ -30,8 +30,9 @@ class UnitFactory {
 
   static Unit? getUnitByName(Faction faction, String unitName) {
     final unitList = getUnitsForFaction(faction);
-    if (unitList
-        .any((unit) => unit.name.toLowerCase() == unitName.toLowerCase())) {
+    if (unitList.any(
+      (unit) => unit.name.toLowerCase() == unitName.toLowerCase(),
+    )) {
       return null;
     }
     return unitList.firstWhere(

@@ -14,8 +14,8 @@ typedef IntMod = int Function(int, UpgradeContext);
 typedef RolesMod = Set<Role> Function(Set<Role>, UpgradeContext);
 typedef MovementMod = Movement Function(Movement, UpgradeContext);
 typedef ArmorMod = Armor Function(Armor, UpgradeContext);
-typedef HullStructureMod = HullStructure Function(
-    HullStructure, UpgradeContext);
+typedef HullStructureMod =
+    HullStructure Function(HullStructure, UpgradeContext);
 typedef UnitActionsMod = UnitActions Function(UnitActions, UpgradeContext);
 typedef SkillMod = Skill Function(Skill, UpgradeContext);
 typedef WeaponsMod = List<Weapon> Function(List<Weapon>, UpgradeContext);
@@ -115,16 +115,20 @@ class Upgrade {
       value;
   static Armor _defaultArmorMod(Armor value, UpgradeContext context) => value;
   static HullStructure _defaultHullStructureMod(
-          HullStructure value, UpgradeContext context) =>
-      value;
+    HullStructure value,
+    UpgradeContext context,
+  ) => value;
   static UnitActions _defaultUnitActionsMod(
-          UnitActions value, UpgradeContext context) =>
-      value;
+    UnitActions value,
+    UpgradeContext context,
+  ) => value;
   static Skill _defaultSkillMod(Skill value, UpgradeContext context) => value;
   static List<Weapon> _defaultWeaponsMod(
-          List<Weapon> value, UpgradeContext context) =>
-      value;
+    List<Weapon> value,
+    UpgradeContext context,
+  ) => value;
   static List<Trait> _defaultTraitsMod(
-          List<Trait> value, UpgradeContext context) =>
-      value;
+    List<Trait> value,
+    UpgradeContext context,
+  ) => value;
 }

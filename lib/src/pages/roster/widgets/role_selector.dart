@@ -25,19 +25,21 @@ class SquadRoleSelector extends StatelessWidget {
         Text('$label: '),
         DropdownButton<Role?>(
           value: selectedRole,
-          items: [
-            if (allowNone) null, // Include "None" as null
-            ...roles,
-          ]
-              .map(
-                (role) => DropdownMenuItem(
-                  value: role,
-                  child: Text(role?.abbreviation ??
-                      AppLocalizations.of(context)!
-                          .squadRoleNoneText), // Display "None" for null
-                ),
-              )
-              .toList(),
+          items:
+              [
+                    if (allowNone) null, // Include "None" as null
+                    ...roles,
+                  ]
+                  .map(
+                    (role) => DropdownMenuItem(
+                      value: role,
+                      child: Text(
+                        role?.abbreviation ??
+                            AppLocalizations.of(context)!.squadRoleNoneText,
+                      ), // Display "None" for null
+                    ),
+                  )
+                  .toList(),
           onChanged: onChanged,
         ),
       ],

@@ -27,7 +27,7 @@ class SquadRoleSelectors extends StatelessWidget {
                   secondaryRole: newPrimaryRole == squad.secondaryRole
                       ? null
                       : squad
-                          .secondaryRole, // Reset secondary role if it matches the new primary role
+                            .secondaryRole, // Reset secondary role if it matches the new primary role
                   allowSecondaryRoleToBeNull:
                       newPrimaryRole == squad.secondaryRole,
                 );

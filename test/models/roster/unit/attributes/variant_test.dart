@@ -28,24 +28,30 @@ void main() {
       const emptyId = '';
       const variantName = 'Test Variant';
       const tv = 1;
-      expect(() => Variant(variantName, id: emptyId, tv: tv),
-          throwsAssertionError);
+      expect(
+        () => Variant(variantName, id: emptyId, tv: tv),
+        throwsAssertionError,
+      );
     });
 
     test('should throw assertion error for empty name', () {
       const variantId = 'variant-001';
       const emptyName = '';
       const tv = 1;
-      expect(() => Variant(emptyName, id: variantId, tv: tv),
-          throwsAssertionError);
+      expect(
+        () => Variant(emptyName, id: variantId, tv: tv),
+        throwsAssertionError,
+      );
     });
 
     test('should throw assertion error for negative TV', () {
       const variantId = 'variant-001';
       const variantName = 'Test Variant';
       const invalidTV = -1;
-      expect(() => Variant(variantName, id: variantId, tv: invalidTV),
-          throwsAssertionError);
+      expect(
+        () => Variant(variantName, id: variantId, tv: invalidTV),
+        throwsAssertionError,
+      );
     });
   });
 }

@@ -42,8 +42,9 @@ class RosterPageView extends StatelessWidget {
               builder: (context, constraints) {
                 final screenSize = ResponsiveSize.getScreenSize(context);
                 final rosterMetaData = DisplayLayoutConstraints(
-                    maxScreenWidth: constraints.maxWidth,
-                    maxScreenHeight: constraints.maxHeight);
+                  maxScreenWidth: constraints.maxWidth,
+                  maxScreenHeight: constraints.maxHeight,
+                );
 
                 switch (screenSize) {
                   case ScreenSize.small:
