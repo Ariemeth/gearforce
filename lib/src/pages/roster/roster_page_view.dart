@@ -9,6 +9,8 @@ import 'package:gearforce/src/widgets/display_layout_constraints.dart';
 import 'package:gearforce/src/widgets/responsive_size.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 
+const _pagePadding = EdgeInsets.fromLTRB(3, 2, 3, 2);
+
 class RosterPageView extends StatelessWidget {
   const RosterPageView({super.key});
 
@@ -34,23 +36,23 @@ class RosterPageView extends StatelessWidget {
       ),
       body: BlocBuilder<RosterBloc, RosterState>(
         builder: (context, state) {
-          return LayoutBuilder(
-            builder: (context, constraints) {
-              final screenSize = ResponsiveSize.getScreenSize(context);
-              final rosterMetaData = DisplayLayoutConstraints(
-                minScreenWidth: constraints.minWidth,
-                maxScreenWidth: constraints.maxWidth,
-                minScreenHeight: constraints.minHeight,
-                maxScreenHeight: constraints.maxHeight,
-              );
+          return Padding(
+            padding: _pagePadding,
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final screenSize = ResponsiveSize.getScreenSize(context);
+                final rosterMetaData = DisplayLayoutConstraints(
+                    maxScreenWidth: constraints.maxWidth,
+                    maxScreenHeight: constraints.maxHeight);
 
-              switch (screenSize) {
-                case ScreenSize.small:
-                  return SmallRosterDisplay(rosterMetaData: rosterMetaData);
-                case ScreenSize.large:
-                  return LargeRosterDisplay(rosterMetaData: rosterMetaData);
-              }
-            },
+                switch (screenSize) {
+                  case ScreenSize.small:
+                    return SmallRosterDisplay(rosterMetaData: rosterMetaData);
+                  case ScreenSize.large:
+                    return LargeRosterDisplay(rosterMetaData: rosterMetaData);
+                }
+              },
+            ),
           );
         },
       ),

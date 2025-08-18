@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_events.dart';
 import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
+
+const _pagePadding = EdgeInsets.all(16);
 
 class SettingsPageView extends StatelessWidget {
   const SettingsPageView({super.key});
@@ -14,31 +15,38 @@ class SettingsPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: const Text('App Settings'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: _pagePadding,
         child: BlocBuilder<SettingsBloc, SettingsState>(
           builder: (context, state) {
-            return DropdownButton<ThemeMode>(
-              value: state.themeMode,
+            return DropdownButtonFormField<ThemeMode>(
+              initialValue: state.themeMode,
               onChanged: (newThemeMode) {
-                context
-                    .read<SettingsBloc>()
-                    .add(UpdateThemeMode(newThemeMode!));
+                if (newThemeMode != null && newThemeMode != state.themeMode) {
+                  context
+                      .read<SettingsBloc>()
+                      .add(UpdateThemeMode(newThemeMode!));
+                }
               },
+              decoration: const InputDecoration(
+                labelText: 'Theme',
+                helperText: 'Choose how the app looks',
+                border: OutlineInputBorder(),
+              ),
               items: const [
                 DropdownMenuItem(
                   value: ThemeMode.system,
-                  child: Text('System Theme'),
+                  child: Text('System'),
                 ),
                 DropdownMenuItem(
                   value: ThemeMode.light,
-                  child: Text('Light Theme'),
+                  child: Text('Light'),
                 ),
                 DropdownMenuItem(
                   value: ThemeMode.dark,
-                  child: Text('Dark Theme'),
+                  child: Text('Dark'),
                 )
               ],
             );

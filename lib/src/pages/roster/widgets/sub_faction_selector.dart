@@ -18,6 +18,7 @@ class SubFactionSelector extends StatelessWidget {
     return Padding(
       padding: AppTheme.subfactionSelectorPadding,
       child: DropdownButton<Subfaction>(
+        isExpanded: true,
         value: state.selectedSubfaction,
         items: state.selectedFaction.subfactions
             .map(

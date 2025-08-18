@@ -23,29 +23,32 @@ class SquadDetailsScreen extends StatelessWidget {
           final updatedSquad =
               state.squads.firstWhere((s) => s.name == squad.name);
 
-          return Column(
-            children: [
-              SquadRoleSelectors(squad: updatedSquad),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: updatedSquad.models.length,
-                  itemBuilder: (context, index) {
-                    final unit = updatedSquad.models[index];
-                    return ListTile(
-                      title: Text(
-                        'Unit: ${unit.name}',
-                        style: AppTheme.bodyStyle,
-                      ),
-                      subtitle: Text(
-                        'TV: ${unit.tv}',
-                      ),
-                      contentPadding: AppTheme.listTilePadding,
-                    );
-                  },
+          return Padding(
+            padding: AppTheme.defaultPagePadding,
+            child: Column(
+              children: [
+                SquadRoleSelectors(squad: updatedSquad),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: updatedSquad.models.length,
+                    itemBuilder: (context, index) {
+                      final unit = updatedSquad.models[index];
+                      return ListTile(
+                        title: Text(
+                          'Unit: ${unit.name}',
+                          style: AppTheme.bodyStyle,
+                        ),
+                        subtitle: Text(
+                          'TV: ${unit.tv}',
+                        ),
+                        contentPadding: AppTheme.listTilePadding,
+                      );
+                    },
+                  ),
                 ),
-              ),
-              SelectModelButton(updatedSquad: updatedSquad),
-            ],
+                SelectModelButton(updatedSquad: updatedSquad),
+              ],
+            ),
           );
         },
       ),

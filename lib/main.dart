@@ -7,6 +7,7 @@ import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MultiRepositoryProvider(
       providers: [

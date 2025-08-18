@@ -52,86 +52,89 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: ExpansionPanelList(
-          expandedHeaderPadding: EdgeInsets.all(0),
-          expansionCallback: (index, isExpanded) {
-            setState(() {
-              _expandedStates[index] = isExpanded;
-            });
-          },
-          children: availableUnits.map((unit) {
-            final index = availableUnits.indexOf(unit);
-            return ExpansionPanel(
-              canTapOnHeader: true,
-              headerBuilder: (context, isExpanded) {
-                return ListTile(
-                  contentPadding: EdgeInsets.all(0),
-                  titleAlignment: ListTileTitleAlignment.center,
-                  title: Center(
-                    child: Text(
-                      unit.name,
-                      style: AppTheme.subtitleStyle,
+      body: Padding(
+        padding: AppTheme.defaultPagePadding,
+        child: SingleChildScrollView(
+          child: ExpansionPanelList(
+            expandedHeaderPadding: EdgeInsets.all(0),
+            expansionCallback: (index, isExpanded) {
+              setState(() {
+                _expandedStates[index] = isExpanded;
+              });
+            },
+            children: availableUnits.map((unit) {
+              final index = availableUnits.indexOf(unit);
+              return ExpansionPanel(
+                canTapOnHeader: true,
+                headerBuilder: (context, isExpanded) {
+                  return ListTile(
+                    contentPadding: EdgeInsets.all(0),
+                    titleAlignment: ListTileTitleAlignment.center,
+                    title: Center(
+                      child: Text(
+                        unit.name,
+                        style: AppTheme.subtitleStyle,
+                      ),
                     ),
-                  ),
-                );
-              },
-              body: Align(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: unit.variants.map((variant) {
-                    bool isHovered = false;
-                    return StatefulBuilder(
-                      builder: (context, setState) {
-                        return MouseRegion(
-                          onEnter: (_) {
-                            setState(() {
-                              isHovered = true;
-                            });
-                          },
-                          onExit: (_) {
-                            setState(() {
-                              isHovered = false;
-                            });
-                          },
-                          child: GestureDetector(
-                            onTap: () {
-                              final model =
-                                  unit.createModelFromVariant(variant);
-
-                              context
-                                  .read<RosterBloc>()
-                                  .add(AddModel(widget.updatedSquad, model));
-
-                              Navigator.pop(context);
+                  );
+                },
+                body: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: unit.variants.map((variant) {
+                      bool isHovered = false;
+                      return StatefulBuilder(
+                        builder: (context, setState) {
+                          return MouseRegion(
+                            onEnter: (_) {
+                              setState(() {
+                                isHovered = true;
+                              });
                             },
-                            child: Container(
-                              color: isHovered
-                                  ? Theme.of(context)
-                                      .colorScheme
-                                      .secondaryContainer
-                                      .withAlpha(90)
-                                  : Colors.transparent,
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 4.0),
-                              child: Text(
-                                variant.name,
-                                style: AppTheme.bodyStyle
-                                    .copyWith(fontWeight: FontWeight.bold),
+                            onExit: (_) {
+                              setState(() {
+                                isHovered = false;
+                              });
+                            },
+                            child: GestureDetector(
+                              onTap: () {
+                                final model =
+                                    unit.createModelFromVariant(variant);
+
+                                context
+                                    .read<RosterBloc>()
+                                    .add(AddModel(widget.updatedSquad, model));
+
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                color: isHovered
+                                    ? Theme.of(context)
+                                        .colorScheme
+                                        .secondaryContainer
+                                        .withAlpha(90)
+                                    : Colors.transparent,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 4.0, horizontal: 3.0),
+                                child: Text(
+                                  variant.name,
+                                  style: AppTheme.bodyStyle
+                                      .copyWith(fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      },
-                    );
-                  }).toList(),
+                          );
+                        },
+                      );
+                    }).toList(),
+                  ),
                 ),
-              ),
-              isExpanded: _expandedStates[index],
-            );
-          }).toList(),
+                isExpanded: _expandedStates[index],
+              );
+            }).toList(),
+          ),
         ),
       ),
     );

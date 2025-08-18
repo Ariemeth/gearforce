@@ -33,10 +33,12 @@ class RosterNameInputDisplay extends StatelessWidget {
                       AppLocalizations.of(context)!.rosterNameInputFieldHint,
                   border: OutlineInputBorder(),
                   isDense: false,
-                  contentPadding: AppTheme.defaultPadding,
+                  hintStyle: AppTheme.textHintStyle,
+                  // contentPadding: AppTheme.defaultPadding,
                 ),
                 textAlign: TextAlign.center,
-                style: AppTheme.textHintStyle,
+                textAlignVertical: TextAlignVertical.bottom,
+                style: AppTheme.textInputFieldStyle,
                 onSubmitted: (newName) {
                   context.read<RosterBloc>().add(UpdateRosterName(newName));
                 },
