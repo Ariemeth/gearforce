@@ -1,5 +1,6 @@
 import 'package:gearforce/src/models/roster/faction.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
+import 'package:gearforce/src/predefined/units/blackTalons/units.dart';
 import 'package:gearforce/src/predefined/units/north/north_units.dart';
 import 'package:gearforce/src/predefined/units/south/south_units.dart';
 
@@ -7,7 +8,7 @@ class UnitFactory {
   static List<Unit> getUnitsForFaction(Faction faction) {
     switch (faction) {
       case Faction.blackTalons:
-        return [];
+        return getBlackTalonUnits();
       case Faction.caprice:
         return [];
       case Faction.cef:
