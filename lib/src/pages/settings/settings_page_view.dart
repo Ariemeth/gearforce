@@ -27,7 +27,7 @@ class SettingsPageView extends StatelessWidget {
                 if (newThemeMode != null && newThemeMode != state.themeMode) {
                   context
                       .read<SettingsBloc>()
-                      .add(UpdateThemeMode(newThemeMode!));
+                      .add(UpdateThemeMode(newThemeMode));
                 }
               },
               decoration: const InputDecoration(
