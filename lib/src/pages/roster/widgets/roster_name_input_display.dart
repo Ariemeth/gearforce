@@ -17,9 +17,13 @@ class RosterNameInputDisplay extends StatelessWidget {
         height: 30,
         child: Row(
           children: [
-            Text(
-              AppLocalizations.of(context)!.rosterNameField,
-              style: AppTheme.titleStyle,
+            SizedBox(
+              width: 90,
+              child: Text(
+                AppLocalizations.of(context)!.rosterNameField,
+                style: AppTheme.subtitleStyle,
+                textAlign: TextAlign.right,
+              ),
             ),
             const SizedBox(width: 8),
             Expanded(

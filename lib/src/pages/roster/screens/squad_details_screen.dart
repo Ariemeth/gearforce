@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/select_model_button.dart';
 import 'package:gearforce/src/pages/roster/widgets/squad_role_selectors.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
+
+const _pagePadding = EdgeInsets.fromLTRB(8, 5, 8, 5);
 
 class SquadDetailsScreen extends StatelessWidget {
   final Squad squad;
@@ -25,7 +27,7 @@ class SquadDetailsScreen extends StatelessWidget {
           );
 
           return Padding(
-            padding: AppTheme.defaultPagePadding,
+            padding: _pagePadding,
             child: Column(
               children: [
                 SquadRoleSelectors(squad: updatedSquad),

@@ -14,35 +14,52 @@ class FactionSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: AppTheme.factionSelectorPadding,
-      child: DropdownButton<Faction>(
-        value: state.selectedFaction,
-        isExpanded: true,
-        items: Faction.values
-            .map(
-              (faction) => DropdownMenuItem(
-                value: faction,
-                child: Padding(
-                  padding: AppTheme.dropdownTextPadding,
-                  child: Text(
-                    faction.displayName,
-                    style: AppTheme.subtitleStyle,
-                  ),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 90,
+            child: Text(
+              'Faction: ',
+              style: AppTheme.subtitleStyle,
+              textAlign: TextAlign.right,
+            ),
+          ),
+          SizedBox(width: 6),
+          Expanded(
+            child: DropdownButton<Faction>(
+              value: state.selectedFaction,
+              isExpanded: true,
+              items: Faction.values
+                  .map(
+                    (faction) => DropdownMenuItem(
+                      value: faction,
+                      child: Padding(
+                        padding: AppTheme.dropdownTextPadding,
+                        child: Text(
+                          faction.displayName,
+                          style: AppTheme.subtitleStyle,
+                        ),
+                      ),
+                    ),
+                  )
+                  .toList(),
+              onChanged: (Faction? newFaction) {
+                if (newFaction != null) {
+                  context.read<RosterBloc>().add(
+                    UpdateFaction(faction: newFaction),
+                  );
+                }
+              },
+              hint: Padding(
+                padding: AppTheme.factionSelectorPadding,
+                child: Text(
+                  AppLocalizations.of(context)!.factionSelectDropdownHint,
+                  style: AppTheme.dropdownHintTextStyle,
                 ),
               ),
-            )
-            .toList(),
-        onChanged: (Faction? newFaction) {
-          if (newFaction != null) {
-            context.read<RosterBloc>().add(UpdateFaction(faction: newFaction));
-          }
-        },
-        hint: Padding(
-          padding: AppTheme.factionSelectorPadding,
-          child: Text(
-            AppLocalizations.of(context)!.factionSelectDropdownHint,
-            style: AppTheme.dropdownHintTextStyle,
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
