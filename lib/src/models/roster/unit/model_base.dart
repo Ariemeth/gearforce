@@ -9,7 +9,7 @@ import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:meta/meta.dart';
 
 @immutable
-class UnitBase {
+class ModelBase {
   final String name;
   final int tv;
   final Set<Role> roles;
@@ -24,7 +24,7 @@ class UnitBase {
   final List<Trait> traits;
   final double height;
 
-  UnitBase(
+  ModelBase(
     this.name, {
     required this.tv,
     required Set<Role> roles,

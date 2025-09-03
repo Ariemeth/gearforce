@@ -7,8 +7,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/movement_type.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
+import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
-import 'package:gearforce/src/models/roster/unit/unit_base.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 
 void main() {
@@ -26,7 +26,7 @@ void main() {
       const variant2Id = 'variant-002';
       const variant2Name = 'Variant 2';
 
-      final unitBase = UnitBase(
+      final baseModel = ModelBase(
         unitName,
         tv: unitTV,
         roles: {Role.gp, Role.sk},
@@ -43,7 +43,7 @@ void main() {
       );
 
       final unit = Unit(
-        unitBase,
+        baseModel,
         name: unitName,
         id: unitId,
         classification: unitClassification,

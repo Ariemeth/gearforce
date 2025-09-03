@@ -6,7 +6,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/movement_type.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
-import 'package:gearforce/src/models/roster/unit/unit_base.dart';
+import 'package:gearforce/src/models/roster/unit/model_base.dart';
 
 void main() {
   group('UnitBase', () {
@@ -23,7 +23,7 @@ void main() {
       const ew = Skill(6);
       const height = 1.5;
 
-      final unitBase = UnitBase(
+      final baseModel = ModelBase(
         unitName,
         tv: tv,
         roles: roles,
@@ -39,18 +39,18 @@ void main() {
         height: height,
       );
 
-      expect(unitBase.name, unitName);
-      expect(unitBase.tv, tv);
-      expect(unitBase.roles, roles);
-      expect(unitBase.movement.value, movement.value);
-      expect(unitBase.armor.value, armor.value);
-      expect(unitBase.hullStructure.hull, hullStructure.hull);
-      expect(unitBase.hullStructure.structure, hullStructure.structure);
-      expect(unitBase.actions.value, actions.value);
-      expect(unitBase.gu.value, gu.value);
-      expect(unitBase.pi.value, pi.value);
-      expect(unitBase.ew.value, ew.value);
-      expect(unitBase.height, height);
+      expect(baseModel.name, unitName);
+      expect(baseModel.tv, tv);
+      expect(baseModel.roles, roles);
+      expect(baseModel.movement.value, movement.value);
+      expect(baseModel.armor.value, armor.value);
+      expect(baseModel.hullStructure.hull, hullStructure.hull);
+      expect(baseModel.hullStructure.structure, hullStructure.structure);
+      expect(baseModel.actions.value, actions.value);
+      expect(baseModel.gu.value, gu.value);
+      expect(baseModel.pi.value, pi.value);
+      expect(baseModel.ew.value, ew.value);
+      expect(baseModel.height, height);
     });
   });
 }

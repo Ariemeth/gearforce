@@ -1,5 +1,5 @@
 import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
-import 'package:gearforce/src/models/roster/unit/unit_base.dart';
+import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
@@ -13,7 +13,7 @@ class Unit {
   final Classification classification;
   final String? manufacturer;
   final String? description;
-  final UnitBase base;
+  final ModelBase base;
   final List<Variant> variants;
   final List<Upgrade> upgrades;
 
@@ -35,7 +35,7 @@ class Unit {
        variants = List.unmodifiable(variants),
        upgrades = List.unmodifiable(upgrades);
 
-  Model createModelFromVariant(Variant variant) {
+  Model buildModel(Variant variant) {
     if (!variants.any((v) => v.name == variant.name)) {
       throw ArgumentError('Variant ${variant.name} is not a variant of $name.');
     }

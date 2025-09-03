@@ -91,9 +91,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                             },
                             child: GestureDetector(
                               onTap: () {
-                                final model = unit.createModelFromVariant(
-                                  variant,
-                                );
+                                final model = unit.buildModel(variant);
 
                                 context.read<RosterBloc>().add(
                                   AddModel(widget.updatedSquad, model),

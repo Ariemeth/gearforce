@@ -7,7 +7,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/movement_type.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
-import 'package:gearforce/src/models/roster/unit/unit_base.dart';
+import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
@@ -18,27 +18,29 @@ import 'package:gearforce/src/predefined/units/blackTalons/unit_ids.dart';
 import 'package:gearforce/src/predefined/weapon_factory.dart';
 
 Unit createDarkWarrior() {
+  final base = ModelBase(
+    'Dark Warrior',
+    tv: 7,
+    roles: {Role.gp, Role.sk, Role.fs},
+    movement: Movement([MovementType.walker, MovementType.ground], 6),
+    armor: Armor(6),
+    hullStructure: HullStructure(hull: 4, structure: 2),
+    actions: UnitActions(1),
+    gu: Skill(4),
+    pi: Skill(4),
+    ew: Skill(5),
+    weapons: [
+      WeaponFactory.createLC(WeaponSize.light, hasReact: true),
+      WeaponFactory.createFC(WeaponSize.light, hasReact: true),
+      WeaponFactory.createRP(WeaponSize.light, hasReact: false),
+      WeaponFactory.createAPGL(WeaponSize.light, hasReact: false),
+    ],
+    traits: [TraitFactory.hands(), TraitFactory.stealth(isAux: true)],
+    height: 1.5,
+  );
+
   return Unit(
-    UnitBase(
-      'Dark Warrior',
-      tv: 7,
-      roles: {Role.gp, Role.sk, Role.fs},
-      movement: Movement([MovementType.walker, MovementType.ground], 6),
-      armor: Armor(6),
-      hullStructure: HullStructure(hull: 4, structure: 2),
-      actions: UnitActions(1),
-      gu: Skill(4),
-      pi: Skill(4),
-      ew: Skill(6),
-      weapons: [
-        WeaponFactory.createLC(WeaponSize.light, hasReact: true),
-        WeaponFactory.createFC(WeaponSize.light, hasReact: true),
-        WeaponFactory.createRP(WeaponSize.light, hasReact: false),
-        WeaponFactory.createAPGL(WeaponSize.light, hasReact: false),
-      ],
-      traits: [TraitFactory.hands(), TraitFactory.stealth(isAux: true)],
-      height: 1.5,
-    ),
+    base,
     name: 'Dark Warrior',
     id: darkWarriorId,
     classification: Classification.gear,
@@ -71,67 +73,6 @@ Unit createDarkWarrior() {
         tvMod: createIntAdjustmentMod(0),
         weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
         upgradeOption: UpgradeOption(optionsGenerator: () => ['MFC', 'LSMG']),
-      ),
-      Upgrade(
-        'Swap2',
-        id: '3',
-        description: 'Swap the LAC for one of the following weapons:',
-        tvMod: createIntAdjustmentMod(1),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
-        upgradeOption: UpgradeOption(
-          optionsGenerator: () => ['MAC', 'MRF', 'LGL', 'MBZ', 'LRBZ'],
-        ),
-      ),
-      Upgrade(
-        'Swap3',
-        id: '4',
-        description: 'Swap the LAC for one of the following weapons:',
-        tvMod: createIntAdjustmentMod(2),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
-        upgradeOption: UpgradeOption(
-          optionsGenerator: () => ['HAC', 'MSC', 'MGL'],
-        ),
-      ),
-      Upgrade(
-        'Add LBZ',
-        id: '5',
-        description: 'Add the following weapon: LBZ',
-        tvMod: createIntAdjustmentMod(1),
-        weaponsMod: createAddWeaponsMod([
-          WeaponFactory.createBZ(WeaponSize.light),
-        ]),
-      ),
-      Upgrade(
-        'Swap4',
-        id: '6',
-        description: 'Swap the LRP for the following weapon:',
-        tvMod: createIntAdjustmentMod(1),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LRP', false),
-        upgradeOption: UpgradeOption(optionsGenerator: () => ['MRP']),
-      ),
-      Upgrade(
-        'Swap5',
-        id: '7',
-        description: 'Swap the LRP for the following weapon:',
-        tvMod: createIntAdjustmentMod(2),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LRP', false),
-        upgradeOption: UpgradeOption(optionsGenerator: () => ['LATM (LA:2)']),
-      ),
-      Upgrade(
-        'Add HIM',
-        id: '8',
-        description: 'Add the following weapon: HIM',
-        tvMod: createIntAdjustmentMod(1),
-        weaponsMod: createAddWeaponsMod([
-          WeaponFactory.createIM(WeaponSize.heavy),
-        ]),
-      ),
-      Upgrade(
-        'Add Supply',
-        id: '9',
-        description: 'Add the following trait: Supply',
-        tvMod: createIntAdjustmentMod(1),
-        traitsMod: createAddTraitsMod([TraitFactory.supply()]),
       ),
     ],
   );
