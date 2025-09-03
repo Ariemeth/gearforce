@@ -45,12 +45,6 @@ class Squad {
 
   /// Validates and filters units in a squad based on primary and secondary roles
   static Squad filterValidSquadUnits(Squad squad) {
-    // final validModels = squad.models.where((model) {
-    //   final unitRoles = model.roles;
-    //   return unitRoles.contains(squad.primaryRole) ||
-    //       (squad.secondaryRole != null &&
-    //           unitRoles.contains(squad.secondaryRole));
-    // }).toList();
     final validModels = squad.models
         .where(
           (model) => model.roles.any(
