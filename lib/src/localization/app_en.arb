@@ -40,7 +40,7 @@
   "@squadRoleNoneText": {
     "description": "Text for the 'None' option in the role dropdown"
   },
-  "squadAddUnitButtonText": "Add a unit to the squad",
+  "squadAddUnitButtonText": "Add a unit",
   "@squadAddUnitButtonText": {
     "description": "Text for the button that adds a new unit to the squad"
   },

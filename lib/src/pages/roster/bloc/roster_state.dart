@@ -43,9 +43,10 @@ class RosterInitial extends RosterState {
         playerName: '',
         rosterName: '',
         squads: const [],
-        selectedFaction: Faction.blackTalons,
-        selectedSubfaction: Faction.blackTalons.subfactions.first,
-        ruleSet: getSubfactionRuleSet(Faction.blackTalons.subfactions.first),
+        // TODO Set this back to blacktalons when everything is ready
+        selectedFaction: Faction.north,
+        selectedSubfaction: Faction.north.subfactions.first,
+        ruleSet: getSubfactionRuleSet(Faction.north.subfactions.first),
       );
 }
 

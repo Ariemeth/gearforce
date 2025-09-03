@@ -7,5 +7,4 @@ Things to do next
   * Make them single weapons?
   * Make upgrades and any other feature that can modify weapons handle 2 weapons?
 * Update Dark Warrior upgrades
-* Check if the asset table needs all the fields as nullable
-* Changing squad role should remove units from a squad that no longer fit the role filter
+* Should Loadouts and Upgrades be different types

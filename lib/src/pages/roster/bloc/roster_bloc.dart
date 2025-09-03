@@ -1,11 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gearforce/src/models/roster/faction.dart';
 import 'package:gearforce/src/models/roster/rules/rule_set.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
 import 'package:gearforce/src/models/roster/subfaction.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
-import 'package:meta/meta.dart';
-import 'package:gearforce/src/models/roster/faction.dart';
 import 'package:gearforce/src/predefined/rules/get_subfaction_rule_set.dart';
+import 'package:meta/meta.dart';
 
 part 'roster_event.dart';
 part 'roster_state.dart';
@@ -35,7 +36,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       emit(state.copyWith(squads: updatedSquads));
     });
 
-    on<UpdateFactionEvent>((event, emit) {
+    on<UpdateFaction>((event, emit) {
       if (event.faction == state.selectedFaction) {
         // No change in faction, do not emit a new state
         return;
@@ -51,7 +52,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       );
     });
 
-    on<UpdateSubfactionEvent>((event, emit) {
+    on<UpdateSubfaction>((event, emit) {
       if (event.subfaction == state.selectedSubfaction) {
         // No change in subfaction, do not emit a new state
         return;
@@ -75,6 +76,27 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         }
         return squad;
       }).toList();
+      emit(state.copyWith(squads: updatedSquads));
+    });
+
+    on<UpdateSquadRoles>((event, emit) {
+      // Create updated squad with new roles
+      final updatedSquad = event.squad.copyWith(
+        primaryRole: event.primaryRole,
+        secondaryRole: event.secondaryRole,
+        allowSecondaryRoleToBeNull: event.secondaryRole == null,
+      );
+
+      // Validate and filter units based on new roles
+      final validatedSquad = Squad.filterValidSquadUnits(updatedSquad);
+
+      final updatedSquads = state.squads.map((squad) {
+        if (squad.name == event.squad.name) {
+          return validatedSquad;
+        }
+        return squad;
+      }).toList();
+
       emit(state.copyWith(squads: updatedSquads));
     });
   }

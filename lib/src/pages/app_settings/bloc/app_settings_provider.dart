@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// A provider that stores and retrieves user settings.
-class SettingsRepository {
+/// A provider that stores and retrieves user app_settings.
+class AppSettingsRepository {
   static const String _themeModeKey = 'themeMode';
   static const _themeModeDark = 'dark';
   static const _themeModeLight = 'light';
   static const _themeModeSystem = 'system';
 
-  SettingsRepository();
+  AppSettingsRepository();
 
   /// Loads the User's preferred ThemeMode from local storage.
   Future<ThemeMode> themeMode() async {
