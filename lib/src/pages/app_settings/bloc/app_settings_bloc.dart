@@ -4,10 +4,10 @@ import 'package:gearforce/src/pages/app_settings/bloc/app_settings_events.dart';
 import 'package:gearforce/src/pages/app_settings/bloc/app_settings_provider.dart';
 import 'package:gearforce/src/pages/app_settings/bloc/app_settings_state.dart';
 
-class SettingsBloc extends Bloc<AppSettingsEvents, AppSettingsState> {
+class AppSettingsBloc extends Bloc<AppSettingsEvents, AppSettingsState> {
   final AppSettingsRepository _settingsProvider;
 
-  SettingsBloc(this._settingsProvider)
+  AppSettingsBloc(this._settingsProvider)
     : super(SettingsInitial(ThemeMode.system)) {
     on<UpdateThemeMode>((event, emit) async {
       await _settingsProvider.updateThemeMode(event.themeMode);

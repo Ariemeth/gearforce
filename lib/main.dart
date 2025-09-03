@@ -18,7 +18,7 @@ void main() async {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => SettingsBloc(
+            create: (context) => AppSettingsBloc(
               RepositoryProvider.of<AppSettingsRepository>(context),
             )..loadSettings(),
           ),

@@ -12,7 +12,7 @@ class Gearforce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SettingsBloc, AppSettingsState>(
+    return BlocBuilder<AppSettingsBloc, AppSettingsState>(
       builder: (context, state) {
         return MaterialApp(
           // Providing a restorationScopeId allows the Navigator built by the

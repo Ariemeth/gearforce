@@ -20,13 +20,13 @@ class AppSettingScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: _pagePadding,
-        child: BlocBuilder<SettingsBloc, AppSettingsState>(
+        child: BlocBuilder<AppSettingsBloc, AppSettingsState>(
           builder: (context, state) {
             return DropdownButtonFormField<ThemeMode>(
               initialValue: state.themeMode,
               onChanged: (newThemeMode) {
                 if (newThemeMode != null && newThemeMode != state.themeMode) {
-                  context.read<SettingsBloc>().add(
+                  context.read<AppSettingsBloc>().add(
                     UpdateThemeMode(themeMode: newThemeMode),
                   );
                 }
