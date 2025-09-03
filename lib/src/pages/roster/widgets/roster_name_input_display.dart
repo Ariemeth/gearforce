@@ -38,7 +38,9 @@ class RosterNameInputDisplay extends StatelessWidget {
                 textAlignVertical: TextAlignVertical.bottom,
                 style: AppTheme.textInputFieldStyle,
                 onSubmitted: (newName) {
-                  context.read<RosterBloc>().add(UpdateRosterName(newName));
+                  context.read<RosterBloc>().add(
+                    UpdateRosterName(rosterName: newName),
+                  );
                 },
               ),
             ),

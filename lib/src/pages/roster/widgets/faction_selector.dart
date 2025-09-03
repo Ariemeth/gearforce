@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
-import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/models/roster/faction.dart';
+import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class FactionSelector extends StatelessWidget {
@@ -33,7 +33,7 @@ class FactionSelector extends StatelessWidget {
             .toList(),
         onChanged: (Faction? newFaction) {
           if (newFaction != null) {
-            context.read<RosterBloc>().add(UpdateFactionEvent(newFaction));
+            context.read<RosterBloc>().add(UpdateFaction(faction: newFaction));
           }
         },
         hint: Padding(

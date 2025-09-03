@@ -32,7 +32,7 @@ class AddSquadButton extends StatelessWidget {
               secondaryRole: null,
               models: [],
             );
-            context.read<RosterBloc>().add(AddSquad(newSquad));
+            context.read<RosterBloc>().add(AddSquad(squad: newSquad));
           },
           child: Text(
             AppLocalizations.of(context)!.addSquadButtonText,

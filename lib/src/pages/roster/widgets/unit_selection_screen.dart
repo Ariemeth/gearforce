@@ -96,7 +96,10 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                                 );
 
                                 context.read<RosterBloc>().add(
-                                  AddModel(widget.updatedSquad, model),
+                                  AddModel(
+                                    squad: widget.updatedSquad,
+                                    model: model,
+                                  ),
                                 );
 
                                 Navigator.pop(context);

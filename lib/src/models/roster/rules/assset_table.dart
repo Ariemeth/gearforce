@@ -1,3 +1,10 @@
+import 'package:flutter/cupertino.dart';
+
+///
+/// The AssetTable indicates the available asset types a ruleset or faction has
+/// available.  A null value indicates it is unlimited.
+///
+@immutable
 class AssetTable {
   final int? greenSquads;
   final int? regularSquads;

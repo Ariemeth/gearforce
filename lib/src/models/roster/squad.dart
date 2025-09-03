@@ -1,9 +1,8 @@
 import 'package:gearforce/src/models/roster/unit/attribute/level.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
-import 'package:meta/meta.dart';
-
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
+import 'package:gearforce/src/models/roster/unit/upgrade.dart';
+import 'package:meta/meta.dart';
 
 @immutable
 class Squad {
@@ -42,5 +41,29 @@ class Squad {
       models: models ?? this.models,
       upgrades: upgrades ?? this.upgrades,
     );
+  }
+
+  /// Validates and filters units in a squad based on primary and secondary roles
+  static Squad filterValidSquadUnits(Squad squad) {
+    // final validModels = squad.models.where((model) {
+    //   final unitRoles = model.roles;
+    //   return unitRoles.contains(squad.primaryRole) ||
+    //       (squad.secondaryRole != null &&
+    //           unitRoles.contains(squad.secondaryRole));
+    // }).toList();
+    final validModels = squad.models
+        .where(
+          (model) => model.roles.any(
+            (role) => role == squad.primaryRole || role == squad.secondaryRole,
+          ),
+        )
+        .toList();
+
+    // Only update if models were filtered out
+    if (validModels.length != squad.models.length) {
+      return squad.copyWith(models: validModels);
+    }
+
+    return squad;
   }
 }
