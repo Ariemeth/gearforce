@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
+import 'package:gearforce/src/pages/app_settings/app_settings_page_view.dart';
+import 'package:gearforce/src/pages/app_settings/bloc/app_settings_bloc.dart';
+import 'package:gearforce/src/pages/app_settings/bloc/app_settings_state.dart';
 import 'package:gearforce/src/pages/roster/roster_page_view.dart';
-import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
-import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
-import 'package:gearforce/src/pages/settings/settings_page_view.dart';
 
 class Gearforce extends StatelessWidget {
   const Gearforce({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SettingsBloc, SettingsState>(
+    return BlocBuilder<SettingsBloc, AppSettingsState>(
       builder: (context, state) {
         return MaterialApp(
           // Providing a restorationScopeId allows the Navigator built by the
@@ -49,8 +49,8 @@ class Gearforce extends StatelessWidget {
               settings: routeSettings,
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
-                  case SettingsPageView.routeName:
-                    return SettingsPageView();
+                  case AppSettingsPageView.routeName:
+                    return AppSettingsPageView();
                   default:
                     return RosterPageView();
                 }

@@ -12,6 +12,11 @@ class AppTheme {
     fontWeight: FontWeight.w600,
   );
 
+  static const TextStyle menuStyle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+  );
+
   static const TextStyle bodyStyle = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.normal,

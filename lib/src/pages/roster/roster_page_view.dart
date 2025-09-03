@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
+import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/large_roster_display.dart';
-import 'package:gearforce/src/pages/roster/widgets/small_roster_display.dart';
 import 'package:gearforce/src/pages/roster/widgets/roster_page_drawer.dart';
-import 'package:gearforce/src/pages/settings/settings_page_view.dart';
+import 'package:gearforce/src/pages/roster/widgets/small_roster_display.dart';
 import 'package:gearforce/src/widgets/display_layout_constraints.dart';
 import 'package:gearforce/src/widgets/responsive_size.dart';
-import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 
 const _pagePadding = EdgeInsets.fromLTRB(3, 2, 3, 2);
 
@@ -26,11 +25,10 @@ class RosterPageView extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              Navigator.restorablePushNamed(
-                context,
-                SettingsPageView.routeName,
-              );
+              // TODO add roster settings
+              print('Roster settings clicked');
             },
+            tooltip: 'Roster Settings',
           ),
         ],
       ),
