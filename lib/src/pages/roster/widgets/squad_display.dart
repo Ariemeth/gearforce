@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/pages/roster/screens/squad_details_screen.dart';
 import 'package:gearforce/src/pages/roster/widgets/add_squad_button.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
-import 'package:gearforce/src/pages/roster/widgets/squad_details_screen.dart';
 
 class SquadDisplay extends StatelessWidget {
   final List<Squad> squads;

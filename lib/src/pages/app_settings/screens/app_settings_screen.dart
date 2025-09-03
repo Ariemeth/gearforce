@@ -7,8 +7,8 @@ import 'package:gearforce/src/pages/app_settings/bloc/app_settings_state.dart';
 
 const _pagePadding = EdgeInsets.all(16);
 
-class AppSettingsPageView extends StatelessWidget {
-  const AppSettingsPageView({super.key});
+class AppSettingScreen extends StatelessWidget {
+  const AppSettingScreen({super.key});
 
   static const routeName = '/app_settings';
 

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
-import 'package:gearforce/src/pages/app_settings/app_settings_page_view.dart';
 import 'package:gearforce/src/pages/app_settings/bloc/app_settings_bloc.dart';
 import 'package:gearforce/src/pages/app_settings/bloc/app_settings_state.dart';
-import 'package:gearforce/src/pages/roster/roster_page_view.dart';
+import 'package:gearforce/src/pages/app_settings/screens/app_settings_screen.dart';
+import 'package:gearforce/src/pages/roster/screens/roster_screen.dart';
 
 class Gearforce extends StatelessWidget {
   const Gearforce({super.key});
@@ -49,10 +49,10 @@ class Gearforce extends StatelessWidget {
               settings: routeSettings,
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
-                  case AppSettingsPageView.routeName:
-                    return AppSettingsPageView();
+                  case AppSettingScreen.routeName:
+                    return AppSettingScreen();
                   default:
-                    return RosterPageView();
+                    return RosterScreen();
                 }
               },
             );

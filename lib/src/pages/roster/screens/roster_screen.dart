@@ -10,8 +10,8 @@ import 'package:gearforce/src/widgets/responsive_size.dart';
 
 const _pagePadding = EdgeInsets.fromLTRB(3, 2, 3, 2);
 
-class RosterPageView extends StatelessWidget {
-  const RosterPageView({super.key});
+class RosterScreen extends StatelessWidget {
+  const RosterScreen({super.key});
 
   static const routeName = '/roster';
 
