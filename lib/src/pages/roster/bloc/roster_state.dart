@@ -1,10 +1,10 @@
 part of 'roster_bloc.dart';
 
 @immutable
-abstract class RosterState {
+sealed class RosterState {
   final String playerName;
   final String rosterName;
-  final List<Squad> squads;
+  final SquadState squadState;
   final Faction selectedFaction;
   final Subfaction selectedSubfaction;
   final RuleSet ruleSet;
@@ -12,7 +12,7 @@ abstract class RosterState {
   const RosterState({
     required this.playerName,
     required this.rosterName,
-    required this.squads,
+    required this.squadState,
     required this.selectedFaction,
     required this.selectedSubfaction,
     required this.ruleSet,
@@ -21,7 +21,7 @@ abstract class RosterState {
   RosterState copyWith({
     String? playerName,
     String? rosterName,
-    List<Squad>? squads,
+    SquadState? squadState,
     Faction? selectedFaction,
     Subfaction? selectedSubfaction,
     RuleSet? ruleSet,
@@ -29,12 +29,14 @@ abstract class RosterState {
     return RosterUpdated(
       playerName: playerName ?? this.playerName,
       rosterName: rosterName ?? this.rosterName,
-      squads: squads ?? this.squads,
+      squadState: squadState ?? this.squadState,
       selectedFaction: selectedFaction ?? this.selectedFaction,
       selectedSubfaction: selectedSubfaction ?? this.selectedSubfaction,
       ruleSet: ruleSet ?? this.ruleSet,
     );
   }
+
+  List<Squad> get squads => squadState.squads;
 }
 
 class RosterInitial extends RosterState {
@@ -42,7 +44,7 @@ class RosterInitial extends RosterState {
     : super(
         playerName: '',
         rosterName: '',
-        squads: const [],
+        squadState: const SquadState(squads: []),
         // TODO Set this back to blacktalons when everything is ready
         selectedFaction: Faction.north,
         selectedSubfaction: Faction.north.subfactions.first,
@@ -54,7 +56,7 @@ class RosterUpdated extends RosterState {
   const RosterUpdated({
     required super.playerName,
     required super.rosterName,
-    required super.squads,
+    required super.squadState,
     required super.selectedFaction,
     required super.selectedSubfaction,
     required super.ruleSet,

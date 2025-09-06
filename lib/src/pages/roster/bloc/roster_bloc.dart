@@ -5,11 +5,13 @@ import 'package:gearforce/src/models/roster/squad.dart';
 import 'package:gearforce/src/models/roster/subfaction.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
+import 'package:gearforce/src/pages/roster/bloc/squad_state.dart';
 import 'package:gearforce/src/predefined/rules/get_subfaction_rule_set.dart';
 import 'package:meta/meta.dart';
 
 part 'roster_event.dart';
 part 'roster_state.dart';
+part 'squad_event.dart';
 
 class RosterBloc extends Bloc<RosterEvent, RosterState> {
   RosterBloc() : super(RosterInitial()) {
@@ -22,18 +24,24 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     });
 
     on<AddSquad>((event, emit) {
-      final updatedSquads = List<Squad>.from(state.squads)..add(event.squad);
-      emit(state.copyWith(squads: updatedSquads));
+      final updatedSquadState = state.squadState.addSquad(event.squad);
+      emit(state.copyWith(squadState: updatedSquadState));
+    });
+
+    on<RemoveSquad>((event, emit) {
+      final updatedSquadState = state.squadState.removeSquad(event.squad);
+      emit(state.copyWith(squadState: updatedSquadState));
     });
 
     on<AddModel>((event, emit) {
-      final updatedSquads = state.squads.map((squad) {
-        if (squad == event.squad) {
-          return squad.copyWith(models: [...squad.models, event.model]);
-        }
-        return squad;
-      }).toList();
-      emit(state.copyWith(squads: updatedSquads));
+      final updatedSquad = event.squad.copyWith(
+        models: [...event.squad.models, event.model],
+      );
+      final updatedSquadState = state.squadState.updateSquad(
+        event.squad,
+        updatedSquad,
+      );
+      emit(state.copyWith(squadState: updatedSquadState));
     });
 
     on<UpdateFaction>((event, emit) {
@@ -44,7 +52,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       final subfaction = event.faction.subfactions.first;
       emit(
         state.copyWith(
-          squads: const [],
+          squadState: const SquadState(squads: []), // Clear squads
           selectedFaction: event.faction,
           selectedSubfaction: subfaction,
           ruleSet: getSubfactionRuleSet(subfaction),
@@ -66,17 +74,16 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     });
 
     on<UpdateSquads>((event, emit) {
-      emit(state.copyWith(squads: event.squads));
+      final updatedSquadState = state.squadState.copyWith(squads: event.squads);
+      emit(state.copyWith(squadState: updatedSquadState));
     });
 
     on<UpdateSquad>((event, emit) {
-      final updatedSquads = state.squads.map((squad) {
-        if (squad.name == event.updatedSquad.name) {
-          return event.updatedSquad;
-        }
-        return squad;
-      }).toList();
-      emit(state.copyWith(squads: updatedSquads));
+      final updatedSquadState = state.squadState.updateSquadByName(
+        event.updatedSquad.name,
+        event.updatedSquad,
+      );
+      emit(state.copyWith(squadState: updatedSquadState));
     });
 
     on<UpdateSquadRoles>((event, emit) {
@@ -89,15 +96,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
       // Validate and filter units based on new roles
       final validatedSquad = Squad.filterValidSquadUnits(updatedSquad);
+      final updatedSquadState = state.squadState.updateSquadByName(
+        event.squad.name,
+        validatedSquad,
+      );
 
-      final updatedSquads = state.squads.map((squad) {
-        if (squad.name == event.squad.name) {
-          return validatedSquad;
-        }
-        return squad;
-      }).toList();
-
-      emit(state.copyWith(squads: updatedSquads));
+      emit(state.copyWith(squadState: updatedSquadState));
     });
   }
 }
