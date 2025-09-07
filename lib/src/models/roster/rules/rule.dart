@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:gearforce/src/models/roster/modifiers/common_modifiers.dart'
     show RequirementCheck, CommonModifiers;
 
+@immutable
 class Rule {
   final String name;
   final String id;

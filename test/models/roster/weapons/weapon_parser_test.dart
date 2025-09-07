@@ -91,7 +91,7 @@ void main() {
         reason: 'Weapon should have secondary traits',
       );
       expect(
-        weapon.secondaryTraits!.any((trait) => trait.name == 'Precise'),
+        weapon.secondaryTraits.any((trait) => trait.name == 'Precise'),
         true,
         reason: 'Weapon should have the "Precise" secondary trait',
       );
@@ -116,7 +116,7 @@ void main() {
 
     test('should parse a weapon with secondary traits', () {
       // Arrange
-      const input = 'LAC (Precise, LA:2)';
+      const input = 'LAC (AA, LA:2)';
 
       // Act
       final weapon = WeaponParser.parseWeaponString(input);
@@ -129,15 +129,21 @@ void main() {
         isNotNull,
         reason: 'Weapon should have secondary traits',
       );
+      // Precise should come from the base LAC as a secondary trait
       expect(
-        weapon.secondaryTraits!.any((trait) => trait.name == 'Precise'),
+        weapon.secondaryTraits.any((trait) => trait.name == 'Precise'),
         true,
         reason: 'Weapon should have the "Precise" secondary trait',
       );
       expect(
-        weapon.secondaryTraits!.any((trait) => trait.name == 'LA'),
+        weapon.secondaryTraits.any((trait) => trait.name == 'LA'),
         true,
         reason: 'Weapon should have the "LA" secondary trait',
+      );
+      expect(
+        weapon.secondaryTraits.any((trait) => trait.name == 'AA'),
+        true,
+        reason: 'Weapon should have the "AA" secondary trait',
       );
     });
   });
