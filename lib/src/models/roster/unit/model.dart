@@ -10,8 +10,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/role_set_extensions.d
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/command.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_list_extensions.dart';
 
@@ -32,7 +32,7 @@ class Model {
   final double _height;
   Level level;
   Command command;
-  final List<Upgrade> _upgrades = [];
+  final List<UnitUpgrade> _upgrades = [];
 
   // Instance-level Set to track active getAttribute calls
   final Set<ModelAttribute> _activeAttributes = {};
@@ -96,7 +96,7 @@ class Model {
     Skill? ew,
     List<Weapon>? weapons,
     List<Trait>? traits,
-    List<Upgrade>? upgrades,
+    List<UnitUpgrade>? upgrades,
     Level? level,
     Command? command,
     bool replaceUpgrades = false,
@@ -128,12 +128,12 @@ class Model {
       );
   }
 
-  Model addUpgrade(Upgrade upgrade) {
+  Model addUpgrade(UnitUpgrade upgrade) {
     _upgrades.add(upgrade);
     return this;
   }
 
-  Model removeUpgrade(Upgrade upgrade) {
+  Model removeUpgrade(UnitUpgrade upgrade) {
     _upgrades.remove(upgrade);
     return this;
   }
@@ -234,7 +234,8 @@ class Model {
   // Private Helper Methods
   T _applyMods<T>(
     T initialValue,
-    T Function(Upgrade mod, T value, UpgradeContext context) modFunction, {
+    T Function(UnitUpgrade mod, T value, UnitUpgradeContext context)
+    modFunction, {
     String? excludeUpgradeId,
     String? upToUpgradeId,
   }) {
@@ -248,7 +249,7 @@ class Model {
       if (excludeUpgradeId != null && upgrade.id == excludeUpgradeId) {
         continue;
       }
-      final context = UpgradeContext(this, upgrade);
+      final context = UnitUpgradeContext(this, upgrade);
       value = modFunction(upgrade, value, context);
       if (upToUpgradeId != null && upgrade.id == upToUpgradeId) {
         break;

@@ -9,7 +9,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model_base.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
@@ -90,13 +90,13 @@ Unit createHunter() {
       ),
     ],
     upgrades: [
-      Upgrade(
+      UnitUpgrade(
         'Flak Jacket',
         id: '0',
         tvMod: createIntAdjustmentMod(1),
         hullStructureMod: createHullStructureSetMod(h: 6, s: 2),
       ),
-      Upgrade(
+      UnitUpgrade(
         'Spearhead',
         id: '1',
         tvMod: createIntAdjustmentMod(1),
@@ -107,7 +107,7 @@ Unit createHunter() {
           TraitFactory.vuln(type: TraitType.h),
         ]),
       ),
-      Upgrade(
+      UnitUpgrade(
         'Swap1',
         id: '2',
         description: 'Swap the LAC for one of the following weapons:',

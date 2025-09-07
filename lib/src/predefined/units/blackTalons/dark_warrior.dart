@@ -8,7 +8,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model_base.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
@@ -50,7 +50,7 @@ Unit createDarkWarrior() {
         'Talon commanders have noticed a need to have the option to at least hold territory for extended periods of time. So, they looked at more mass produced option so that they can get the numbers needed to hold positions without utilizing some of their higher end assets. The Dark Warrior does this in spades.',
     variants: [Variant('Stock', id: '0', tv: 0)],
     upgrades: [
-      Upgrade(
+      UnitUpgrade(
         'Spectre',
         id: '0',
         tvMod: createIntAdjustmentMod(1),
@@ -60,13 +60,13 @@ Unit createDarkWarrior() {
           TraitFactory.sensor(isAux: true, level: 24),
         ]),
       ),
-      Upgrade(
+      UnitUpgrade(
         'Flak Jacket',
         id: '1',
         tvMod: createIntAdjustmentMod(1),
         hullStructureMod: createHullStructureSetMod(h: 6, s: 2),
       ),
-      Upgrade(
+      UnitUpgrade(
         'Swap1',
         id: '2',
         description: 'Swap the LAC for one of the following weapons:',

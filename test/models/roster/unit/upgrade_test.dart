@@ -8,8 +8,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_mode.dart';
@@ -35,7 +35,7 @@ void main() {
         height: 1.5,
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Test Upgrade',
         id: 'upgrade-001',
         description: 'A test upgrade',
@@ -66,7 +66,7 @@ void main() {
         ],
       );
 
-      final context = UpgradeContext(initialModel, upgrade);
+      final context = UnitUpgradeContext(initialModel, upgrade);
 
       // Assert
       expect(
@@ -122,13 +122,13 @@ void main() {
         height: 1.5,
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'No-Op Upgrade',
         id: 'upgrade-002',
         description: 'A no-op upgrade',
       );
 
-      final context = UpgradeContext(initialModel, upgrade);
+      final context = UnitUpgradeContext(initialModel, upgrade);
 
       // Assert
       expect(upgrade.nameMod(initialModel.name, context), initialModel.name);
@@ -167,7 +167,7 @@ void main() {
         selectedOption: 'Option 1',
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Test Upgrade with Option',
         id: 'upgrade-003',
         upgradeOption: modOption,
@@ -184,7 +184,7 @@ void main() {
 
     test('should create a modified copy using copyWith', () {
       // Arrange
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Original Upgrade',
         id: 'upgrade-004',
         description: 'Original description',
@@ -205,7 +205,7 @@ void main() {
       expect(
         updatedUpgrade.tvMod(
           10,
-          UpgradeContext(
+          UnitUpgradeContext(
             Model(
               name: 'Test Model',
               tv: 10,
@@ -235,7 +235,7 @@ void main() {
         selectedOption: 'Option 1',
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Upgrade with Option',
         id: 'upgrade-005',
         upgradeOption: modOption,

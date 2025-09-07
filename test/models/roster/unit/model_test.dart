@@ -8,7 +8,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 
 void main() {
   group('Model getAttribute', () {
@@ -56,7 +56,7 @@ void main() {
             traits: [],
             height: 1.5,
           ).addUpgrade(
-            Upgrade(
+            UnitUpgrade(
               'Test Mod',
               id: 'mod-001',
               nameMod: (name, context) => 'Modified $name',
@@ -94,10 +94,10 @@ void main() {
         height: 1.5,
       );
       model.addUpgrade(
-        Upgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
+        UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
       );
       model.addUpgrade(
-        Upgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
       );
 
       // Act & Assert
@@ -136,10 +136,10 @@ void main() {
         height: 1.5,
       );
       model.addUpgrade(
-        Upgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
+        UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
       );
       model.addUpgrade(
-        Upgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
       );
 
       // Act & Assert
@@ -175,7 +175,7 @@ void main() {
       );
 
       model.addUpgrade(
-        Upgrade(
+        UnitUpgrade(
           'Test Mod',
           id: 'mod-001',
           nameMod: (name, context) => 'Modified ${context.model.name}',

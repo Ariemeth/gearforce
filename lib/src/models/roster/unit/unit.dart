@@ -1,6 +1,6 @@
 import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
 import 'package:gearforce/src/models/roster/unit/model_base.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:meta/meta.dart';
@@ -15,7 +15,7 @@ class Unit {
   final String? description;
   final ModelBase base;
   final List<Variant> variants;
-  final List<Upgrade> upgrades;
+  final List<UnitUpgrade> upgrades;
 
   Unit(
     this.base, {
@@ -26,7 +26,7 @@ class Unit {
     this.manufacturer,
     this.description,
     List<Variant> variants = const [],
-    List<Upgrade> upgrades = const [],
+    List<UnitUpgrade> upgrades = const [],
   }) : assert(
          name.trim().isNotEmpty,
          'Name must not be empty or all whitespace',
