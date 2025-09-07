@@ -4,10 +4,7 @@ class UpgradeOption {
   final UpgradeOptionGenerator optionsGenerator;
   final String? selectedOption;
 
-  UpgradeOption({
-    required this.optionsGenerator,
-    this.selectedOption,
-  });
+  UpgradeOption({required this.optionsGenerator, this.selectedOption});
 
   UpgradeOption copyWith({
     UpgradeOptionGenerator? optionsGenerator,

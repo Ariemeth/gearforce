@@ -4,9 +4,8 @@ import 'package:meta/meta.dart';
 class Armor {
   final int value;
 
-  const Armor(
-    this.value,
-  ) : assert(value >= 0, 'Armor value must be 0 or positive');
+  const Armor(this.value)
+    : assert(value >= 0, 'Armor value must be 0 or positive');
 
   Armor copyWith({int? value}) {
     return Armor(value ?? this.value);

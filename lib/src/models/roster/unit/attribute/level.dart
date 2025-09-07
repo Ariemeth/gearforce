@@ -1,5 +1,1 @@
-enum Level {
-  regular,
-  veteran,
-  elite,
-}
+enum Level { regular, veteran, elite }

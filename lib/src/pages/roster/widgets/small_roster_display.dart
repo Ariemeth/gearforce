@@ -8,18 +8,16 @@ import 'package:gearforce/src/widgets/display_layout_constraints.dart';
 import 'package:gearforce/src/pages/roster/widgets/squad_display.dart';
 
 class SmallRosterDisplay extends StatelessWidget {
-  const SmallRosterDisplay({
-    super.key,
-    required this.rosterMetaData,
-  });
+  const SmallRosterDisplay({super.key, required this.rosterMetaData});
 
   final DisplayLayoutConstraints rosterMetaData;
 
   @override
   Widget build(BuildContext context) {
     final state = context.read<RosterBloc>().state;
-    final TextEditingController rosterNameController =
-        TextEditingController(text: state.rosterName);
+    final TextEditingController rosterNameController = TextEditingController(
+      text: state.rosterName,
+    );
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,9 +25,7 @@ class SmallRosterDisplay extends StatelessWidget {
         RosterNameInputDisplay(rosterNameController: rosterNameController),
         FactionSelector(state: state),
         SubFactionSelector(state: state),
-        Expanded(
-          child: SquadDisplay(squads: state.squads),
-        ),
+        Expanded(child: SquadDisplay(squads: state.squads)),
         rosterMetaData,
       ],
     );

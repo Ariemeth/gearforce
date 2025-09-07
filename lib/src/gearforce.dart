@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
-import 'package:gearforce/src/pages/roster/roster_page_view.dart';
-import 'package:gearforce/src/pages/settings/bloc/settings_bloc.dart';
-import 'package:gearforce/src/pages/settings/bloc/settings_state.dart';
-import 'package:gearforce/src/pages/settings/settings_page_view.dart';
+import 'package:gearforce/src/pages/app_settings/bloc/app_settings_bloc.dart';
+import 'package:gearforce/src/pages/app_settings/bloc/app_settings_state.dart';
+import 'package:gearforce/src/pages/app_settings/screens/app_settings_screen.dart';
+import 'package:gearforce/src/pages/roster/screens/roster_screen.dart';
 
 class Gearforce extends StatelessWidget {
   const Gearforce({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SettingsBloc, SettingsState>(
+    return BlocBuilder<AppSettingsBloc, AppSettingsState>(
       builder: (context, state) {
         return MaterialApp(
           // Providing a restorationScopeId allows the Navigator built by the
@@ -37,9 +37,8 @@ class Gearforce extends StatelessWidget {
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
           theme: ThemeData.from(
-              colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.blue,
-          )),
+            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
+          ),
           darkTheme: ThemeData.dark(),
           themeMode: state.themeMode,
 
@@ -50,10 +49,10 @@ class Gearforce extends StatelessWidget {
               settings: routeSettings,
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
-                  case SettingsPageView.routeName:
-                    return SettingsPageView();
+                  case AppSettingScreen.routeName:
+                    return AppSettingScreen();
                   default:
-                    return RosterPageView();
+                    return RosterScreen();
                 }
               },
             );

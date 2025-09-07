@@ -8,8 +8,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_mode.dart';
@@ -35,7 +35,7 @@ void main() {
         height: 1.5,
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Test Upgrade',
         id: 'upgrade-001',
         description: 'A test upgrade',
@@ -66,34 +66,42 @@ void main() {
         ],
       );
 
-      final context = UpgradeContext(initialModel, upgrade);
+      final context = UnitUpgradeContext(initialModel, upgrade);
 
       // Assert
       expect(
-          upgrade.nameMod(initialModel.name, context), 'Modified Test Model');
+        upgrade.nameMod(initialModel.name, context),
+        'Modified Test Model',
+      );
       expect(upgrade.tvMod(initialModel.tv, context), 15);
       expect(upgrade.rolesMod(initialModel.roles, context), {Role.gp, Role.sk});
       expect(upgrade.movementMod(initialModel.movement, context).value, 8);
-      expect(upgrade.movementMod(initialModel.movement, context).types,
-          [MovementType.ground]);
+      expect(upgrade.movementMod(initialModel.movement, context).types, [
+        MovementType.ground,
+      ]);
       expect(upgrade.armorMod(initialModel.armor, context).value, 6);
-      expect(upgrade.hullStructureMod(initialModel.hullStructure, context).hull,
-          5);
       expect(
-          upgrade
-              .hullStructureMod(initialModel.hullStructure, context)
-              .structure,
-          4);
+        upgrade.hullStructureMod(initialModel.hullStructure, context).hull,
+        5,
+      );
+      expect(
+        upgrade.hullStructureMod(initialModel.hullStructure, context).structure,
+        4,
+      );
       expect(upgrade.actionsMod(initialModel.actions, context).value, 3);
       expect(upgrade.guMod(initialModel.gu, context).value, 5);
       expect(upgrade.piMod(initialModel.pi, context).value, 6);
       expect(upgrade.ewMod(initialModel.ew, context).value, 7);
       expect(upgrade.weaponsMod(initialModel.weapons, context).length, 1);
-      expect(upgrade.weaponsMod(initialModel.weapons, context).first.name,
-          'Test Weapon');
+      expect(
+        upgrade.weaponsMod(initialModel.weapons, context).first.name,
+        'Test Weapon',
+      );
       expect(upgrade.traitsMod(initialModel.traits, context).length, 1);
-      expect(upgrade.traitsMod(initialModel.traits, context).first.name,
-          'Test Trait');
+      expect(
+        upgrade.traitsMod(initialModel.traits, context).first.name,
+        'Test Trait',
+      );
     });
 
     test('should not modify fields if no modifications are provided', () {
@@ -114,32 +122,42 @@ void main() {
         height: 1.5,
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'No-Op Upgrade',
         id: 'upgrade-002',
         description: 'A no-op upgrade',
       );
 
-      final context = UpgradeContext(initialModel, upgrade);
+      final context = UnitUpgradeContext(initialModel, upgrade);
 
       // Assert
       expect(upgrade.nameMod(initialModel.name, context), initialModel.name);
       expect(upgrade.tvMod(initialModel.tv, context), initialModel.tv);
       expect(upgrade.rolesMod(initialModel.roles, context), initialModel.roles);
-      expect(upgrade.movementMod(initialModel.movement, context),
-          initialModel.movement);
+      expect(
+        upgrade.movementMod(initialModel.movement, context),
+        initialModel.movement,
+      );
       expect(upgrade.armorMod(initialModel.armor, context), initialModel.armor);
-      expect(upgrade.hullStructureMod(initialModel.hullStructure, context),
-          initialModel.hullStructure);
-      expect(upgrade.actionsMod(initialModel.actions, context),
-          initialModel.actions);
+      expect(
+        upgrade.hullStructureMod(initialModel.hullStructure, context),
+        initialModel.hullStructure,
+      );
+      expect(
+        upgrade.actionsMod(initialModel.actions, context),
+        initialModel.actions,
+      );
       expect(upgrade.guMod(initialModel.gu, context), initialModel.gu);
       expect(upgrade.piMod(initialModel.pi, context), initialModel.pi);
       expect(upgrade.ewMod(initialModel.ew, context), initialModel.ew);
-      expect(upgrade.weaponsMod(initialModel.weapons, context),
-          initialModel.weapons);
       expect(
-          upgrade.traitsMod(initialModel.traits, context), initialModel.traits);
+        upgrade.weaponsMod(initialModel.weapons, context),
+        initialModel.weapons,
+      );
+      expect(
+        upgrade.traitsMod(initialModel.traits, context),
+        initialModel.traits,
+      );
     });
 
     test('should handle modOption correctly', () {
@@ -149,7 +167,7 @@ void main() {
         selectedOption: 'Option 1',
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Test Upgrade with Option',
         id: 'upgrade-003',
         upgradeOption: modOption,
@@ -157,14 +175,16 @@ void main() {
 
       // Assert
       expect(upgrade.upgradeOption, isNotNull);
-      expect(
-          upgrade.upgradeOption!.optionsGenerator(), ['Option 1', 'Option 2']);
+      expect(upgrade.upgradeOption!.optionsGenerator(), [
+        'Option 1',
+        'Option 2',
+      ]);
       expect(upgrade.upgradeOption!.selectedOption, 'Option 1');
     });
 
     test('should create a modified copy using copyWith', () {
       // Arrange
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Original Upgrade',
         id: 'upgrade-004',
         description: 'Original description',
@@ -183,26 +203,29 @@ void main() {
       expect(updatedUpgrade.id, 'upgrade-004'); // ID should remain unchanged
       expect(updatedUpgrade.description, 'Updated description');
       expect(
-          updatedUpgrade.tvMod(
-              10,
-              UpgradeContext(
-                  Model(
-                    name: 'Test Model',
-                    tv: 10,
-                    roles: {Role.gp},
-                    movement: Movement([MovementType.walker], 6),
-                    armor: Armor(5),
-                    hullStructure: HullStructure(hull: 4, structure: 3),
-                    actions: UnitActions(2),
-                    gu: Skill(4),
-                    pi: Skill(5),
-                    ew: Skill(6),
-                    weapons: [],
-                    traits: [],
-                    height: 1.5,
-                  ),
-                  updatedUpgrade)),
-          15); // Updated tvMod logic
+        updatedUpgrade.tvMod(
+          10,
+          UnitUpgradeContext(
+            Model(
+              name: 'Test Model',
+              tv: 10,
+              roles: {Role.gp},
+              movement: Movement([MovementType.walker], 6),
+              armor: Armor(5),
+              hullStructure: HullStructure(hull: 4, structure: 3),
+              actions: UnitActions(2),
+              gu: Skill(4),
+              pi: Skill(5),
+              ew: Skill(6),
+              weapons: [],
+              traits: [],
+              height: 1.5,
+            ),
+            updatedUpgrade,
+          ),
+        ),
+        15,
+      ); // Updated tvMod logic
     });
 
     test('should create a modified copy with updated modOption', () {
@@ -212,7 +235,7 @@ void main() {
         selectedOption: 'Option 1',
       );
 
-      final upgrade = Upgrade(
+      final upgrade = UnitUpgrade(
         'Upgrade with Option',
         id: 'upgrade-005',
         upgradeOption: modOption,
@@ -225,8 +248,10 @@ void main() {
 
       // Assert
       expect(updatedUpgrade.upgradeOption!.selectedOption, 'Option 2');
-      expect(updatedUpgrade.upgradeOption!.optionsGenerator(),
-          ['Option 1', 'Option 2']);
+      expect(updatedUpgrade.upgradeOption!.optionsGenerator(), [
+        'Option 1',
+        'Option 2',
+      ]);
     });
   });
 }

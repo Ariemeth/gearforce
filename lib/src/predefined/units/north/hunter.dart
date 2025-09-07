@@ -8,34 +8,35 @@ import 'package:gearforce/src/models/roster/unit/attribute/movement_type.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
-import 'package:gearforce/src/models/roster/unit/unit_base.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/model_base.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
 import 'package:gearforce/src/predefined/trait_factory.dart';
-import 'package:gearforce/src/predefined/units/north/unit_ids.dart'
-    show hunterId;
+import 'package:gearforce/src/predefined/units/north/unit_ids.dart';
 import 'package:gearforce/src/predefined/weapon_factory.dart';
 
 Unit createHunter() {
+  final baseModel = ModelBase(
+    'Hunter',
+    tv: 6,
+    roles: const {Role.gp, Role.sk, Role.fs},
+    movement: const Movement([MovementType.walker, MovementType.ground], 6),
+    armor: const Armor(6),
+    hullStructure: const HullStructure(hull: 4, structure: 2),
+    actions: const UnitActions(1),
+    gu: const Skill(4),
+    pi: const Skill(4),
+    ew: const Skill(6),
+    weapons: const [],
+    traits: [TraitFactory.hands()],
+    height: 1.5,
+  );
+
   return Unit(
-    UnitBase(
-      'Hunter',
-      tv: 6,
-      roles: {Role.gp, Role.sk, Role.fs},
-      movement: Movement([MovementType.walker, MovementType.ground], 6),
-      armor: Armor(6),
-      hullStructure: HullStructure(hull: 4, structure: 2),
-      actions: UnitActions(1),
-      gu: Skill(4),
-      pi: Skill(4),
-      ew: Skill(6),
-      weapons: const [],
-      traits: [TraitFactory.hands()],
-      height: 1.5,
-    ),
+    baseModel,
     name: 'Hunter',
     id: hunterId,
     classification: Classification.gear,
@@ -63,7 +64,7 @@ Unit createHunter() {
           WeaponFactory.createAC(WeaponSize.light, hasReact: true),
           WeaponFactory.createMW(WeaponSize.medium, hasReact: true),
           WeaponFactory.createRP(WeaponSize.light),
-          WeaponFactory.createAPGL(WeaponSize.light)
+          WeaponFactory.createAPGL(WeaponSize.light),
         ],
         traits: [TraitFactory.climb()],
       ),
@@ -89,23 +90,24 @@ Unit createHunter() {
       ),
     ],
     upgrades: [
-      Upgrade(
-        'Armored Jacket',
+      UnitUpgrade(
+        'Flak Jacket',
         id: '0',
         tvMod: createIntAdjustmentMod(1),
         hullStructureMod: createHullStructureSetMod(h: 6, s: 2),
       ),
-      Upgrade('Spearhead',
-          id: '1',
-          tvMod: createIntAdjustmentMod(2),
-          ewMod: createSkillAdjustmentMod(5),
-          traitsMod: createAddTraitsMod([
-            TraitFactory.satUp(),
-            TraitFactory.eccm(),
-            TraitFactory.initPlus(),
-            TraitFactory.vuln(type: TraitType.h),
-          ])),
-      Upgrade(
+      UnitUpgrade(
+        'Spearhead',
+        id: '1',
+        tvMod: createIntAdjustmentMod(1),
+        traitsMod: createAddTraitsMod([
+          TraitFactory.satUp(),
+          TraitFactory.eccm(),
+          TraitFactory.initPlus(),
+          TraitFactory.vuln(type: TraitType.h),
+        ]),
+      ),
+      UnitUpgrade(
         'Swap1',
         id: '2',
         description: 'Swap the LAC for one of the following weapons:',
@@ -113,53 +115,67 @@ Unit createHunter() {
         weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
         upgradeOption: UpgradeOption(optionsGenerator: () => ['MFC', 'LSMG']),
       ),
-      Upgrade(
-        'Swap2',
-        id: '3',
-        description: 'Swap the LAC for one of the following weapons:',
-        tvMod: createIntAdjustmentMod(1),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
-        upgradeOption: UpgradeOption(
-            optionsGenerator: () => ['MAC', 'MRF', 'LGL', 'MBZ', 'LRBZ']),
-      ),
-      Upgrade(
-        'Swap3',
-        id: '4',
-        description: 'Swap the LAC for one of the following weapons:',
-        tvMod: createIntAdjustmentMod(2),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
-        upgradeOption:
-            UpgradeOption(optionsGenerator: () => ['HAC', 'MSC', 'MGL']),
-      ),
-      Upgrade(
-        'Swap4',
-        id: '5',
-        description: 'Swap the LRP for one of the following weapons:',
-        tvMod: createIntAdjustmentMod(2),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LRP', false),
-        upgradeOption: UpgradeOption(optionsGenerator: () => ['MRP']),
-      ),
-      Upgrade(
-        'Swap5',
-        id: '6',
-        description: 'Swap the LRP for one of the following weapons:',
-        tvMod: createIntAdjustmentMod(2),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LRP', false),
-        upgradeOption: UpgradeOption(optionsGenerator: () => ['LATM (LA:2)']),
-      ),
-      Upgrade(
-        'Add HIM',
-        id: '7',
-        description: 'Add the following weapon: HIM',
-        tvMod: createIntAdjustmentMod(1),
-        weaponsMod:
-            createAddWeaponsMod([WeaponFactory.createIM(WeaponSize.heavy)]),
-      ),
-      Upgrade('Add Supply',
-          id: '8',
-          description: 'Add the following trait: Supply',
-          tvMod: createIntAdjustmentMod(1),
-          traitsMod: createAddTraitsMod([TraitFactory.supply()]))
+      // Upgrade(
+      //   'Swap2',
+      //   id: '3',
+      //   description: 'Swap the LAC for one of the following weapons:',
+      //   tvMod: createIntAdjustmentMod(1),
+      //   weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
+      //   upgradeOption: UpgradeOption(
+      //     optionsGenerator: () => ['MAC', 'MRF', 'LGL', 'MBZ', 'LRBZ'],
+      //   ),
+      // ),
+      // Upgrade(
+      //   'Swap3',
+      //   id: '4',
+      //   description: 'Swap the LAC for one of the following weapons:',
+      //   tvMod: createIntAdjustmentMod(2),
+      //   weaponsMod: createSwapWeaponsFromOptionsMod('LAC', true),
+      //   upgradeOption: UpgradeOption(
+      //     optionsGenerator: () => ['HAC', 'MSC', 'MGL'],
+      //   ),
+      // ),
+      // Upgrade(
+      //   'Add LBZ',
+      //   id: '5',
+      //   description: 'Add the following weapon: LBZ',
+      //   tvMod: createIntAdjustmentMod(1),
+      //   weaponsMod: createAddWeaponsMod([
+      //     WeaponFactory.createBZ(WeaponSize.light),
+      //   ]),
+      // ),
+      // Upgrade(
+      //   'Swap4',
+      //   id: '6',
+      //   description: 'Swap the LRP for the following weapon:',
+      //   tvMod: createIntAdjustmentMod(1),
+      //   weaponsMod: createSwapWeaponsFromOptionsMod('LRP', false),
+      //   upgradeOption: UpgradeOption(optionsGenerator: () => ['MRP']),
+      // ),
+      // Upgrade(
+      //   'Swap5',
+      //   id: '7',
+      //   description: 'Swap the LRP for the following weapon:',
+      //   tvMod: createIntAdjustmentMod(2),
+      //   weaponsMod: createSwapWeaponsFromOptionsMod('LRP', false),
+      //   upgradeOption: UpgradeOption(optionsGenerator: () => ['LATM (LA:2)']),
+      // ),
+      // Upgrade(
+      //   'Add HIM',
+      //   id: '8',
+      //   description: 'Add the following weapon: HIM',
+      //   tvMod: createIntAdjustmentMod(1),
+      //   weaponsMod: createAddWeaponsMod([
+      //     WeaponFactory.createIM(WeaponSize.heavy),
+      //   ]),
+      // ),
+      // Upgrade(
+      //   'Add Supply',
+      //   id: '9',
+      //   description: 'Add the following trait: Supply',
+      //   tvMod: createIntAdjustmentMod(1),
+      //   traitsMod: createAddTraitsMod([TraitFactory.supply()]),
+      // ),
     ],
   );
 }

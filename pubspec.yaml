@@ -7,28 +7,28 @@ publish_to: "none"
 version: 2.0.0+1
 
 environment:
-  sdk: ^3.6.0
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
   meta: ^1.16.0
-  shared_preferences: ^2.5.2
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true
 
   # Disable the generation of the synthetic packages as part of the migration.
-  generate: false
+  generate: true
 
   assets:
     # Add assets from the images directory to the application.

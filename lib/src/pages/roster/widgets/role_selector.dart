@@ -20,24 +20,30 @@ class SquadRoleSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final validSelectedRole = !roles.contains(selectedRole)
+        ? null
+        : selectedRole;
+
     return Row(
       children: [
         Text('$label: '),
         DropdownButton<Role?>(
-          value: selectedRole,
-          items: [
-            if (allowNone) null, // Include "None" as null
-            ...roles,
-          ]
-              .map(
-                (role) => DropdownMenuItem(
-                  value: role,
-                  child: Text(role?.abbreviation ??
-                      AppLocalizations.of(context)!
-                          .squadRoleNoneText), // Display "None" for null
-                ),
-              )
-              .toList(),
+          value: validSelectedRole,
+          items:
+              [
+                    if (allowNone) null, // Include "None" as null
+                    ...roles,
+                  ]
+                  .map(
+                    (role) => DropdownMenuItem(
+                      value: role,
+                      child: Text(
+                        role?.abbreviation ??
+                            AppLocalizations.of(context)!.squadRoleNoneText,
+                      ), // Display "None" for null
+                    ),
+                  )
+                  .toList(),
           onChanged: onChanged,
         ),
       ],

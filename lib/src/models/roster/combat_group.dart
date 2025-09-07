@@ -9,9 +9,6 @@ class CombatGroup {
   const CombatGroup({required this.id, required this.squads});
 
   CombatGroup copyWith({List<Squad>? squads}) {
-    return CombatGroup(
-      id: id,
-      squads: squads ?? this.squads,
-    );
+    return CombatGroup(id: id, squads: squads ?? this.squads);
   }
 }

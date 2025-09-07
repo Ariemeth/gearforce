@@ -40,13 +40,8 @@ class CombatGroupDisplay extends StatelessWidget {
               ),
               children: squad.models.map((unit) {
                 return ListTile(
-                  title: Text(
-                    'Unit: ${unit.name}',
-                    style: AppTheme.bodyStyle,
-                  ),
-                  subtitle: Text(
-                    'TV: ${unit.tv}',
-                  ),
+                  title: Text('Unit: ${unit.name}', style: AppTheme.bodyStyle),
+                  subtitle: Text('TV: ${unit.tv}'),
                   contentPadding: AppTheme.listTilePadding,
                 );
               }).toList(),

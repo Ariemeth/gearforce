@@ -1,53 +1,65 @@
 part of 'roster_bloc.dart';
 
 @immutable
-abstract class RosterEvent {}
+sealed class RosterEvent {}
 
 class UpdatePlayerName extends RosterEvent {
   final String playerName;
 
-  UpdatePlayerName(this.playerName);
+  UpdatePlayerName({required this.playerName});
 }
 
 class UpdateRosterName extends RosterEvent {
   final String rosterName;
 
-  UpdateRosterName(this.rosterName);
+  UpdateRosterName({required this.rosterName});
 }
 
-class AddSquad extends RosterEvent {
-  final Squad squad;
+// class AddSquad extends RosterEvent {
+//   final Squad squad;
+//
+//   AddSquad({required this.squad});
+// }
+//
+// class AddModel extends RosterEvent {
+//   final Squad squad;
+//   final Model model;
+//
+//   AddModel({required this.squad, required this.model});
+// }
 
-  AddSquad(this.squad);
-}
-
-class AddModel extends RosterEvent {
-  final String squadName;
-  final Model model;
-
-  AddModel(this.squadName, this.model);
-}
-
-class UpdateFactionEvent extends RosterEvent {
+class UpdateFaction extends RosterEvent {
   final Faction faction;
 
-  UpdateFactionEvent(this.faction);
+  UpdateFaction({required this.faction});
 }
 
-class UpdateSubfactionEvent extends RosterEvent {
+class UpdateSubfaction extends RosterEvent {
   final Subfaction subfaction;
 
-  UpdateSubfactionEvent(this.subfaction);
+  UpdateSubfaction({required this.subfaction});
 }
 
-class UpdateSquads extends RosterEvent {
-  final List<Squad> squads;
-
-  UpdateSquads(this.squads);
-}
-
-class UpdateSquad extends RosterEvent {
-  final Squad updatedSquad;
-
-  UpdateSquad(this.updatedSquad);
-}
+// class UpdateSquads extends RosterEvent {
+//   final List<Squad> squads;
+//
+//   UpdateSquads({required this.squads});
+// }
+//
+// class UpdateSquad extends RosterEvent {
+//   final Squad updatedSquad;
+//
+//   UpdateSquad({required this.updatedSquad});
+// }
+//
+// class UpdateSquadRoles extends RosterEvent {
+//   final Squad squad;
+//   final Role primaryRole;
+//   final Role? secondaryRole;
+//
+//   UpdateSquadRoles({
+//     required this.squad,
+//     required this.primaryRole,
+//     this.secondaryRole,
+//   });
+// }

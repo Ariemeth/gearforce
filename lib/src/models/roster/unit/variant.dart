@@ -38,11 +38,13 @@ class Variant {
     this.ew,
     List<Weapon>? weapons,
     List<Trait>? traits,
-  })  : assert(id.trim().isNotEmpty, 'ID must not be empty or all whitespace'),
-        assert(
-            name.trim().isNotEmpty, 'Name must not be empty or all whitespace'),
-        assert(tv >= 0, 'TV must be 0 or positive'),
-        roles = roles != null ? Set.unmodifiable(roles) : null,
-        weapons = weapons != null ? List.unmodifiable(weapons) : null,
-        traits = traits != null ? List.unmodifiable(traits) : null;
+  }) : assert(id.trim().isNotEmpty, 'ID must not be empty or all whitespace'),
+       assert(
+         name.trim().isNotEmpty,
+         'Name must not be empty or all whitespace',
+       ),
+       assert(tv >= 0, 'TV must be 0 or positive'),
+       roles = roles != null ? Set.unmodifiable(roles) : null,
+       weapons = weapons != null ? List.unmodifiable(weapons) : null,
+       traits = traits != null ? List.unmodifiable(traits) : null;
 }

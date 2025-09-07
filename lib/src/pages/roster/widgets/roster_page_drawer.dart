@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gearforce/src/pages/app_settings/screens/app_settings_screen.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 final _drawerHeaderHeight = 60.0;
 
 class RosterPageDrawer extends StatelessWidget {
-  const RosterPageDrawer({
-    super.key,
-    required this.title,
-  });
+  const RosterPageDrawer({super.key, required this.title});
 
   final String title;
 
@@ -21,16 +19,23 @@ class RosterPageDrawer extends StatelessWidget {
             height: _drawerHeaderHeight,
             child: DrawerHeader(
               padding: AppTheme.drawerHeaderPadding,
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-              ),
-              child: Center(
-                child: Text(title),
-              ),
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+              child: Center(child: Text(title)),
             ),
+          ),
+          ListTile(
+            leading: Text('$title Settings', style: AppTheme.menuStyle),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.restorablePushNamed(
+                context,
+                AppSettingScreen.routeName,
+              );
+            },
           ),
           AboutListTile(
             applicationName: title,
+            child: Text('About $title', style: AppTheme.menuStyle),
           ),
         ],
       ),

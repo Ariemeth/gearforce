@@ -6,8 +6,10 @@ void main() {
     test('should create HullStructure with valid values', () {
       const validHull = 4;
       const validStructure = 3;
-      const hullStructure =
-          HullStructure(hull: validHull, structure: validStructure);
+      const hullStructure = HullStructure(
+        hull: validHull,
+        structure: validStructure,
+      );
       expect(hullStructure.hull, validHull);
       expect(hullStructure.structure, validStructure);
     });
@@ -18,10 +20,14 @@ void main() {
       const validHull = 4;
       const invalidStructure = -1;
 
-      expect(() => HullStructure(hull: invalidHull, structure: validStructure),
-          throwsAssertionError);
-      expect(() => HullStructure(hull: validHull, structure: invalidStructure),
-          throwsAssertionError);
+      expect(
+        () => HullStructure(hull: invalidHull, structure: validStructure),
+        throwsAssertionError,
+      );
+      expect(
+        () => HullStructure(hull: validHull, structure: invalidStructure),
+        throwsAssertionError,
+      );
     });
   });
 }

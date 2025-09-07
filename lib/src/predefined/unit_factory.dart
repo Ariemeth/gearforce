@@ -1,13 +1,14 @@
 import 'package:gearforce/src/models/roster/faction.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
-import 'package:gearforce/src/predefined/units/north_models.dart';
-import 'package:gearforce/src/predefined/units/south_models.dart';
+import 'package:gearforce/src/predefined/units/blackTalons/units.dart';
+import 'package:gearforce/src/predefined/units/north/north_units.dart';
+import 'package:gearforce/src/predefined/units/south/south_units.dart';
 
 class UnitFactory {
   static List<Unit> getUnitsForFaction(Faction faction) {
     switch (faction) {
       case Faction.blackTalons:
-        return [];
+        return getBlackTalonUnits();
       case Faction.caprice:
         return [];
       case Faction.cef:
@@ -15,13 +16,13 @@ class UnitFactory {
       case Faction.eden:
         return [];
       case Faction.north:
-        return NorthUnits.getUnits();
+        return getNorthUnits();
       case Faction.nuCoal:
         return [];
       case Faction.peaceRiver:
         return [];
       case Faction.south:
-        return SouthUnits.getUnits();
+        return getSouthUnits();
       case Faction.utopia:
         return [];
     }
@@ -29,8 +30,9 @@ class UnitFactory {
 
   static Unit? getUnitByName(Faction faction, String unitName) {
     final unitList = getUnitsForFaction(faction);
-    if (unitList
-        .any((unit) => unit.name.toLowerCase() == unitName.toLowerCase())) {
+    if (unitList.any(
+      (unit) => unit.name.toLowerCase() == unitName.toLowerCase(),
+    )) {
       return null;
     }
     return unitList.firstWhere(

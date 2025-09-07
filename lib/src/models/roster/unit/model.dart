@@ -10,8 +10,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/role_set_extensions.d
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/command.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade.dart';
-import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_list_extensions.dart';
 
@@ -32,7 +32,7 @@ class Model {
   final double _height;
   Level level;
   Command command;
-  final List<Upgrade> _upgrades = [];
+  final List<UnitUpgrade> _upgrades = [];
 
   // Instance-level Set to track active getAttribute calls
   final Set<ModelAttribute> _activeAttributes = {};
@@ -54,19 +54,19 @@ class Model {
     required double height,
     this.level = Level.regular,
     this.command = Command.none,
-  })  : _name = name,
-        _tv = tv,
-        _roles = Set.unmodifiable(roles),
-        _movement = movement,
-        _armor = armor,
-        _hullStructure = hullStructure,
-        _actions = actions,
-        _gu = gu,
-        _pi = pi,
-        _ew = ew,
-        _weapons = List.unmodifiable(weapons),
-        _traits = List.unmodifiable(traits),
-        _height = height;
+  }) : _name = name,
+       _tv = tv,
+       _roles = Set.unmodifiable(roles),
+       _movement = movement,
+       _armor = armor,
+       _hullStructure = hullStructure,
+       _actions = actions,
+       _gu = gu,
+       _pi = pi,
+       _ew = ew,
+       _weapons = List.unmodifiable(weapons),
+       _traits = List.unmodifiable(traits),
+       _height = height;
 
   // Getters
   String get name => getAttribute(ModelAttribute.name);
@@ -96,43 +96,44 @@ class Model {
     Skill? ew,
     List<Weapon>? weapons,
     List<Trait>? traits,
-    List<Upgrade>? upgrades,
+    List<UnitUpgrade>? upgrades,
     Level? level,
     Command? command,
     bool replaceUpgrades = false,
   }) {
     return Model(
-      name: name ?? _name,
-      tv: threatValue ?? _tv,
-      roles: roles != null ? roles.copyWith() : _roles.copyWith(),
-      movement: movement ?? _movement.copyWith(),
-      armor: armor ?? _armor.copyWith(),
-      hullStructure: hullStructure ?? _hullStructure.copyWith(),
-      actions: actions ?? _actions.copyWith(),
-      gu: gu ?? _gu.copyWith(),
-      pi: pi ?? _pi.copyWith(),
-      ew: ew ?? _ew.copyWith(),
-      weapons: weapons?.copyWith() ?? _weapons.copyWith(),
-      traits: traits?.copyWith() ?? _traits.copyWith(),
-      height: _height,
-      command: command ?? this.command,
-      level: level ?? this.level,
-    ).._upgrades.addAll(
+        name: name ?? _name,
+        tv: threatValue ?? _tv,
+        roles: roles != null ? roles.copyWith() : _roles.copyWith(),
+        movement: movement ?? _movement.copyWith(),
+        armor: armor ?? _armor.copyWith(),
+        hullStructure: hullStructure ?? _hullStructure.copyWith(),
+        actions: actions ?? _actions.copyWith(),
+        gu: gu ?? _gu.copyWith(),
+        pi: pi ?? _pi.copyWith(),
+        ew: ew ?? _ew.copyWith(),
+        weapons: weapons?.copyWith() ?? _weapons.copyWith(),
+        traits: traits?.copyWith() ?? _traits.copyWith(),
+        height: _height,
+        command: command ?? this.command,
+        level: level ?? this.level,
+      )
+      .._upgrades.addAll(
         replaceUpgrades
             ? (upgrades ?? [])
             : [
                 ..._upgrades.map((upgrade) => upgrade.copyWith()),
-                ...(upgrades ?? [])
+                ...(upgrades ?? []),
               ],
       );
   }
 
-  Model addUpgrade(Upgrade upgrade) {
+  Model addUpgrade(UnitUpgrade upgrade) {
     _upgrades.add(upgrade);
     return this;
   }
 
-  Model removeUpgrade(Upgrade upgrade) {
+  Model removeUpgrade(UnitUpgrade upgrade) {
     _upgrades.remove(upgrade);
     return this;
   }
@@ -144,7 +145,8 @@ class Model {
   }) {
     if (_activeAttributes.contains(attribute)) {
       throw StateError(
-          'Recursive call detected for getAttribute with $attribute');
+        'Recursive call detected for getAttribute with $attribute',
+      );
     }
 
     _activeAttributes.add(attribute);
@@ -232,7 +234,8 @@ class Model {
   // Private Helper Methods
   T _applyMods<T>(
     T initialValue,
-    T Function(Upgrade mod, T value, UpgradeContext context) modFunction, {
+    T Function(UnitUpgrade mod, T value, UnitUpgradeContext context)
+    modFunction, {
     String? excludeUpgradeId,
     String? upToUpgradeId,
   }) {
@@ -246,7 +249,7 @@ class Model {
       if (excludeUpgradeId != null && upgrade.id == excludeUpgradeId) {
         continue;
       }
-      final context = UpgradeContext(this, upgrade);
+      final context = UnitUpgradeContext(this, upgrade);
       value = modFunction(upgrade, value, context);
       if (upToUpgradeId != null && upgrade.id == upToUpgradeId) {
         break;

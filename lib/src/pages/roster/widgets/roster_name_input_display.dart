@@ -5,10 +5,7 @@ import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 class RosterNameInputDisplay extends StatelessWidget {
-  const RosterNameInputDisplay({
-    super.key,
-    required this.rosterNameController,
-  });
+  const RosterNameInputDisplay({super.key, required this.rosterNameController});
 
   final TextEditingController rosterNameController;
 
@@ -20,25 +17,34 @@ class RosterNameInputDisplay extends StatelessWidget {
         height: 30,
         child: Row(
           children: [
-            Text(
-              AppLocalizations.of(context)!.rosterNameField,
-              style: AppTheme.titleStyle,
+            SizedBox(
+              width: 90,
+              child: Text(
+                AppLocalizations.of(context)!.rosterNameField,
+                style: AppTheme.subtitleStyle,
+                textAlign: TextAlign.right,
+              ),
             ),
             const SizedBox(width: 8),
             Expanded(
               child: TextField(
                 controller: rosterNameController,
                 decoration: InputDecoration(
-                  hintText:
-                      AppLocalizations.of(context)!.rosterNameInputFieldHint,
+                  hintText: AppLocalizations.of(
+                    context,
+                  )!.rosterNameInputFieldHint,
                   border: OutlineInputBorder(),
                   isDense: false,
-                  contentPadding: AppTheme.defaultPadding,
+                  hintStyle: AppTheme.textHintStyle,
+                  // contentPadding: AppTheme.defaultPadding,
                 ),
                 textAlign: TextAlign.center,
-                style: AppTheme.textHintStyle,
+                textAlignVertical: TextAlignVertical.bottom,
+                style: AppTheme.textInputFieldStyle,
                 onSubmitted: (newName) {
-                  context.read<RosterBloc>().add(UpdateRosterName(newName));
+                  context.read<RosterBloc>().add(
+                    UpdateRosterName(rosterName: newName),
+                  );
                 },
               ),
             ),

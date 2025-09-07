@@ -10,8 +10,10 @@ void main() {
       const hasReact = false;
 
       // Act
-      final weapon =
-          WeaponFactory.getWeaponByCode(weaponCode, hasReact: hasReact);
+      final weapon = WeaponFactory.getWeaponByCode(
+        weaponCode,
+        hasReact: hasReact,
+      );
 
       // Assert
       expect(weapon, isNotNull);
@@ -25,8 +27,10 @@ void main() {
       const hasReact = true;
 
       // Act
-      final weapon =
-          WeaponFactory.getWeaponByCode(weaponCode, hasReact: hasReact);
+      final weapon = WeaponFactory.getWeaponByCode(
+        weaponCode,
+        hasReact: hasReact,
+      );
 
       // Assert
       expect(weapon, isNotNull);

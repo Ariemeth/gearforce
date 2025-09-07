@@ -7,19 +7,11 @@ class Movement {
   final List<MovementType> types;
   final int value;
 
-  const Movement(
-    this.types,
-    this.value,
-  ) : assert(value >= 0, 'Movement value must be 0 or positive');
+  const Movement(this.types, this.value)
+    : assert(value >= 0, 'Movement value must be 0 or positive');
 
-  Movement copyWith({
-    List<MovementType>? types,
-    int? value,
-  }) {
-    return Movement(
-      types ?? this.types,
-      value ?? this.value,
-    );
+  Movement copyWith({List<MovementType>? types, int? value}) {
+    return Movement(types ?? this.types, value ?? this.value);
   }
 
   @override

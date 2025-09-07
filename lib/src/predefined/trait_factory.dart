@@ -13,17 +13,14 @@ const Set<TraitType> _validTransportAndOccupancyTypes = {
   TraitType.gears,
 };
 
-const Set<TraitType> _validVulnTypes = {
-  TraitType.h,
-  TraitType.c,
-  TraitType.f,
-};
+const Set<TraitType> _validVulnTypes = {TraitType.h, TraitType.c, TraitType.f};
 
 class TraitFactory {
   static Trait aa({bool isAux = false}) {
     return Trait(
       name: 'AA',
-      description: 'Weapons with the AA trait receive +1D6 for ranged attacks '
+      description:
+          'Weapons with the AA trait receive +1D6 for ranged attacks '
           'against elevated VTOLs and airstrike counters. This unit may retaliate '
           'against an airstrike counter when they perform an airstrike.',
       isAux: isAux,
@@ -62,7 +59,8 @@ class TraitFactory {
   static Trait amphib({bool isAux = false}) {
     return Trait(
       name: 'Amphib',
-      description: 'This unit may move over water terrain at its full MR. '
+      description:
+          'This unit may move over water terrain at its full MR. '
           'Note: When this unit moves, it is considered to be moving on the surface of the water.',
       isAux: isAux,
     );
@@ -142,7 +140,8 @@ class TraitFactory {
   static Trait aux({bool isAux = true}) {
     return Trait(
       name: 'Aux',
-      description: 'Aux, or auxiliary, implies a more delicate Trait.\n\n'
+      description:
+          'Aux, or auxiliary, implies a more delicate Trait.\n\n'
           '- Traits with – (Aux) – next to them are unavailable when this unit is Critical.',
       isAux: isAux,
     );
@@ -338,6 +337,16 @@ class TraitFactory {
     );
   }
 
+  static Trait green() {
+    return const Trait(
+      name: 'Green',
+      description:
+          'This unit is -1 to all Skills when out of formation with a friendly Commander. '
+          'This unit may not select Regular, Veteran or Elite Upgrades. '
+          'This unit may not be a Commander or a Duelist.',
+    );
+  }
+
   static Trait guided({bool isAux = false}) {
     return Trait(
       name: 'Guided',
@@ -360,7 +369,8 @@ class TraitFactory {
   static Trait hands({bool isAux = false}) {
     return Trait(
       name: 'Hands',
-      description: 'This unit has hands or at least some fancy manipulators. '
+      description:
+          'This unit has hands or at least some fancy manipulators. '
           'As the game revolves around robotic humanoids you can imagine how this trait is a key ingredient for a few features.\n\n'
           '- Hands will allow units to Climb. Units with the Climb trait can climb faster. However, just having Hands can allow you to efficiently get over smaller obstacles or buildings, etc. While not something you may do often, don’t forget you can. See Climbing for more specific details on climbing.\n'
           '- Units with Hands will be able to pick things up and put them down much easier than other units. This is why Gears and Striders have certain additional customization options past other type of units. They can easily put one handheld weapon down and pick up a different one.\n'
@@ -395,7 +405,8 @@ class TraitFactory {
   static Trait hiTech({bool isAux = false}) {
     return Trait(
       name: 'Hi-Tech',
-      description: 'Hi-Tech is a trait you’ll find on Automatons or Drones.\n\n'
+      description:
+          'Hi-Tech is a trait you’ll find on Automatons or Drones.\n\n'
           'Units with Hi-Tech can receive unit upgrades as any unit would (as opposed to units with the Lo-Tech trait, which are treated like Green units and have limited upgrade options past their profile). '
           'They can even become duelists.\n\n'
           'It’s the opposite of Lo-Tech. Some Automatons and Drones will have this on their Profile instead of Lo-Tech. '
@@ -533,10 +544,15 @@ class TraitFactory {
     );
   }
 
-  static Trait occupancy(
-      {bool isAux = false, int? level, required TraitType type}) {
-    assert(_validTransportAndOccupancyTypes.contains(type),
-        'Invalid type for Trait.occupancy. Allowed types are: drones, nKIDUs, armigers, cadres, teams, gears.');
+  static Trait occupancy({
+    bool isAux = false,
+    int? level,
+    required TraitType type,
+  }) {
+    assert(
+      _validTransportAndOccupancyTypes.contains(type),
+      'Invalid type for Trait.occupancy. Allowed types are: drones, nKIDUs, armigers, cadres, teams, gears.',
+    );
     return Trait(
       name: 'Occupancy',
       description:
@@ -638,7 +654,8 @@ class TraitFactory {
   static Trait react({bool isAux = false}) {
     return Trait(
       name: 'React',
-      description: 'React Weapons can be used for Retaliations.\n\n'
+      description:
+          'React Weapons can be used for Retaliations.\n\n'
           'Normally, React Weapons are just weapons found in the React column of your unit’s profile. '
           'You may encounter an upgrade that specifically declares that a weapon is a React Weapon. This is just to let you know it would go into the React Column if it were on the unit’s profile.',
       isAux: isAux,
@@ -648,7 +665,8 @@ class TraitFactory {
   static Trait reactPlus({bool isAux = false}) {
     return Trait(
       name: 'React+',
-      description: 'Units with the React+ trait have a special ability:\n\n'
+      description:
+          'Units with the React+ trait have a special ability:\n\n'
           '- This unit may perform 1 Reaction per Round without spending an Action point.\n'
           '- You may also Focus this Reaction by paying 1 Action point.',
       isAux: isAux,
@@ -695,7 +713,8 @@ class TraitFactory {
   static Trait satUp({bool isAux = false}) {
     return Trait(
       name: 'SatUp',
-      description: 'SatUps help secure your unit’s communications.\n\n'
+      description:
+          'SatUps help secure your unit’s communications.\n\n'
           'Note: SatUps are only useful to units that already come with the E-Comms trait. This is because they are related to the E-Comms modifier of +1D6 for Issuing Orders and performing Forward Observations (FOs).\n\n'
           '- The E-Comms trait provides the +1D6 modifier only for Unopposed Rolls.\n'
           '- The SatUp trait allows this unit’s E-Comms bonus to also take effect during Opposed Rolls.\n\n'
@@ -718,7 +737,8 @@ class TraitFactory {
   static Trait sensor({bool isAux = false, int? level}) {
     return Trait(
       name: 'Sensor',
-      description: 'Sensor:X provides this unit with 3 features:\n\n'
+      description:
+          'Sensor:X provides this unit with 3 features:\n\n'
           '1 This unit has a sensor range of “X” inches.\n'
           '2 This unit may share any Targeting Locks it has with units In-Formation with it. This does not cost an Action point or require a Roll. It’s considered constant as long as the units are In-Formation.\n'
           '3 Only units with the Sensor:X trait may be used to initiate Counterstrikes. This is because a unit is required to have the Sensor:X trait in order to acquire a Counter-Battery Sensor Lock (CBS Lock).\n\n'
@@ -793,7 +813,8 @@ class TraitFactory {
   static Trait stationary({bool isAux = false}) {
     return Trait(
       name: 'Stationary',
-      description: 'This unit is a building.\n\n'
+      description:
+          'This unit is a building.\n\n'
           'Buildings:\n'
           '- Are always braced,\n'
           '- Cannot move or turn,\n'
@@ -816,7 +837,8 @@ class TraitFactory {
   static Trait sub({bool isAux = false}) {
     return Trait(
       name: 'Sub',
-      description: 'This unit uses its full MR through Water.\n\n'
+      description:
+          'This unit uses its full MR through Water.\n\n'
           'When in water, this unit is assumed to be traveling just below the surface.\n'
           '- While in water, this unit has Partial Cover.\n\n'
           'Units with the Sub trait may use the Submerged Special Deployment option. See Submerged Deployment.',
@@ -858,13 +880,19 @@ class TraitFactory {
     );
   }
 
-  static Trait transport(
-      {bool isAux = false, int? level, required TraitType type}) {
-    assert(_validTransportAndOccupancyTypes.contains(type),
-        'Invalid type for Trait.transport. Allowed types are: drones, nKIDUs, armigers, cadres, teams, gears.');
+  static Trait transport({
+    bool isAux = false,
+    int? level,
+    required TraitType type,
+  }) {
+    assert(
+      _validTransportAndOccupancyTypes.contains(type),
+      'Invalid type for Trait.transport. Allowed types are: drones, nKIDUs, armigers, cadres, teams, gears.',
+    );
     return Trait(
       name: 'Transport',
-      description: 'This unit may transport or carry other units.\n\n'
+      description:
+          'This unit may transport or carry other units.\n\n'
           'For example, an APC might have the trait Transport: 2 Cadres. This is simply letting you know that APC can carry 2 Cadres of Infantry. '
           'There are often substitutions allowed, especially for infantry as they can be organized into Cadres or Teams.\n\n'
           'See Transports in the Movement section for more details on how to use Transports.',
@@ -891,15 +919,18 @@ class TraitFactory {
   static Trait vtol({bool isAux = false}) {
     return Trait(
       name: 'VTOL',
-      description: 'This unit can take to the sky or get low via NOE.\n\n'
+      description:
+          'This unit can take to the sky or get low via NOE.\n\n'
           'See VTOLs for specific details on how to use the VTOL trait when moving.',
       isAux: isAux,
     );
   }
 
   static Trait vuln({bool isAux = false, required TraitType type}) {
-    assert(_validVulnTypes.contains(type),
-        'Invalid type for Trait.vuln. Allowed types are: H, C, F.');
+    assert(
+      _validVulnTypes.contains(type),
+      'Invalid type for Trait.vuln. Allowed types are: H, C, F.',
+    );
     return Trait(
       name: 'Vuln',
       description:
@@ -989,6 +1020,8 @@ class TraitFactory {
         return fire(isAux: isAux, level: level);
       case 'frag':
         return frag(isAux: isAux);
+      case 'green':
+        return green();
       case 'guided':
         return guided(isAux: isAux);
       case 'haywire':

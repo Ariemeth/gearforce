@@ -1,17 +1,17 @@
 import 'dart:developer';
-import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
+import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_parser.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/trait/trait.dart';
 
-typedef WeaponsMod = List<Weapon> Function(List<Weapon>, UpgradeContext);
-typedef IntMod = int Function(int, UpgradeContext);
-typedef HullStructureMod = HullStructure Function(
-    HullStructure, UpgradeContext);
-typedef SkillMod = Skill Function(Skill, UpgradeContext);
-typedef TraitsMod = List<Trait> Function(List<Trait>, UpgradeContext);
+typedef WeaponsMod = List<Weapon> Function(List<Weapon>, UnitUpgradeContext);
+typedef IntMod = int Function(int, UnitUpgradeContext);
+typedef HullStructureMod =
+    HullStructure Function(HullStructure, UnitUpgradeContext);
+typedef SkillMod = Skill Function(Skill, UnitUpgradeContext);
+typedef TraitsMod = List<Trait> Function(List<Trait>, UnitUpgradeContext);
 
 /// Mod function to swap weapons based on upgrade options.
 WeaponsMod createSwapWeaponsFromOptionsMod(
@@ -27,8 +27,10 @@ WeaponsMod createSwapWeaponsFromOptionsMod(
     final newWeaponCode = context.upgrade.upgradeOption!.selectedOption!;
 
     try {
-      final newWeapon =
-          WeaponParser.parseWeaponString(newWeaponCode, hasReact: hasReact);
+      final newWeapon = WeaponParser.parseWeaponString(
+        newWeaponCode,
+        hasReact: hasReact,
+      );
 
       final index = weapons.indexWhere((w) => w.code == oldWeaponCode);
       final updatedWeapons = List<Weapon>.from(weapons);
