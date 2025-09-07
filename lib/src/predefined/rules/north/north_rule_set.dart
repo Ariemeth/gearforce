@@ -4,8 +4,12 @@ import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/predefined/units/north/north_units.dart';
 
 class NorthRuleSet extends RuleSet {
-  NorthRuleSet()
-    : super(name: 'North', rules: [], assetTable: const AssetTable.unlimited());
+  const NorthRuleSet()
+    : super(
+        name: 'North',
+        rules: const [],
+        assetTable: const AssetTable.unlimited(),
+      );
 
   @override
   String toString() => 'NorthRuleSet';

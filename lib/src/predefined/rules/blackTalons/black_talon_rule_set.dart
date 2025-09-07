@@ -4,10 +4,10 @@ import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/predefined/units/blackTalons/units.dart';
 
 class BlackTalonRuleSet extends RuleSet {
-  BlackTalonRuleSet()
+  const BlackTalonRuleSet()
     : super(
         name: 'Black Talon',
-        rules: [],
+        rules: const [],
         assetTable: const AssetTable.unlimited(),
       );
 
