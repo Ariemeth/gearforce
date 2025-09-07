@@ -1,3 +1,4 @@
+import 'package:gearforce/src/models/roster/squad.dart' show Squad;
 import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
@@ -8,6 +9,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_context.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
+import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart'
+    show RosterState;
 
 typedef StringMod = String Function(String, UpgradeContext);
 typedef IntMod = int Function(int, UpgradeContext);
@@ -21,6 +24,7 @@ typedef SkillMod = Skill Function(Skill, UpgradeContext);
 typedef WeaponsMod = List<Weapon> Function(List<Weapon>, UpgradeContext);
 typedef TraitsMod = List<Trait> Function(List<Trait>, UpgradeContext);
 typedef NameGenerator = String Function();
+typedef RequirementCheck = bool Function(RosterState, Squad);
 
 class Upgrade {
   final String _name;
@@ -40,6 +44,7 @@ class Upgrade {
   final WeaponsMod weaponsMod;
   final TraitsMod traitsMod;
   final UpgradeOption? upgradeOption;
+  final RequirementCheck requirementCheck;
 
   const Upgrade(
     String name, {
@@ -59,6 +64,7 @@ class Upgrade {
     this.weaponsMod = _defaultWeaponsMod,
     this.traitsMod = _defaultTraitsMod,
     this.upgradeOption,
+    this.requirementCheck = _defaultRequirementCheck,
   }) : _name = name;
 
   String get name => nameGenerator?.call() ?? _name;
@@ -82,6 +88,7 @@ class Upgrade {
     TraitsMod? traitsMod,
     UpgradeOption? upgradeOption,
     bool replaceModOption = false,
+    RequirementCheck? requirementCheck,
   }) {
     return Upgrade(
       name ?? this.name,
@@ -103,6 +110,7 @@ class Upgrade {
       upgradeOption: replaceModOption
           ? upgradeOption
           : (upgradeOption ?? this.upgradeOption),
+      requirementCheck: requirementCheck ?? this.requirementCheck,
     );
   }
 
@@ -131,4 +139,5 @@ class Upgrade {
     List<Trait> value,
     UpgradeContext context,
   ) => value;
+  static bool _defaultRequirementCheck(RosterState roster, Squad squad) => true;
 }

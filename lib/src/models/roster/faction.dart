@@ -1,7 +1,7 @@
 import 'package:gearforce/src/models/roster/subfaction.dart';
 
 enum Faction {
-  blackTalons('Black Talons', 'F1', [
+  blackTalons('Black Talon', 'F1', [
     Subfaction.talonDefault,
     Subfaction.talonReconTeam,
     Subfaction.talonInsertionTeam,

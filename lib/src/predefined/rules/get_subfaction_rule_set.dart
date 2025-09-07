@@ -1,5 +1,6 @@
 import 'package:gearforce/src/models/roster/rules/rule_set.dart';
 import 'package:gearforce/src/models/roster/subfaction.dart';
+import 'package:gearforce/src/predefined/rules/blackTalons/black_talon_rule_set.dart';
 import 'package:gearforce/src/predefined/rules/default_rule_set.dart';
 import 'package:gearforce/src/predefined/rules/north/north_rule_set.dart';
 
@@ -33,8 +34,9 @@ RuleSet getSubfactionRuleSet(Subfaction subfaction) {
     case Subfaction.peaceRiverDefenseForce:
     case Subfaction.peaceOfficerCorps:
     case Subfaction.paxtonPrivateSecurities:
-    // Black Talons subfactions.
+    // Black Talon subfactions.
     case Subfaction.talonDefault:
+      return BlackTalonRuleSet();
     case Subfaction.talonReconTeam:
     case Subfaction.talonInsertionTeam:
     case Subfaction.talonAssaultTeam:

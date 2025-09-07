@@ -1,4 +1,4 @@
-import 'package:gearforce/src/models/roster/rules/assset_table.dart';
+import 'package:gearforce/src/models/roster/rules/asset_table.dart';
 import 'package:gearforce/src/models/roster/rules/rule_set.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
 

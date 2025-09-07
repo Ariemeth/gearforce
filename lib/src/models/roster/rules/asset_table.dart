@@ -25,4 +25,15 @@ class AssetTable {
     this.artillerySupport,
     this.droneSupport,
   });
+
+  // Named constructor for unlimited assets
+  const AssetTable.unlimited()
+    : greenSquads = null,
+      regularSquads = null,
+      veteranSquads = null,
+      eliteSquads = null,
+      duelistOrAces = null,
+      airSupport = null,
+      artillerySupport = null,
+      droneSupport = null;
 }
