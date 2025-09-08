@@ -1,3 +1,4 @@
+import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/trait/trait_type.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
@@ -14,7 +15,6 @@ import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
-import 'package:gearforce/src/predefined/trait_factory.dart';
 import 'package:gearforce/src/predefined/units/north/unit_ids.dart';
 import 'package:gearforce/src/predefined/weapon_factory.dart';
 
@@ -31,7 +31,7 @@ Unit createHunter() {
     pi: const Skill(4),
     ew: const Skill(6),
     weapons: const [],
-    traits: [TraitFactory.hands()],
+    traits: [Trait.hands()],
     height: 1.5,
   );
 
@@ -66,7 +66,7 @@ Unit createHunter() {
           WeaponFactory.createRP(WeaponSize.light),
           WeaponFactory.createAPGL(WeaponSize.light),
         ],
-        traits: [TraitFactory.climb()],
+        traits: [Trait.climb()],
       ),
       Variant(
         'Pathfinder',
@@ -77,7 +77,7 @@ Unit createHunter() {
           WeaponFactory.createAC(WeaponSize.light, hasReact: true),
           WeaponFactory.createVB(WeaponSize.light, hasReact: true),
         ],
-        traits: [TraitFactory.sensor(level: 24)],
+        traits: [Trait.sensor(level: 24)],
       ),
       Variant(
         'Assault',
@@ -101,10 +101,10 @@ Unit createHunter() {
         id: '1',
         tvMod: createIntAdjustmentMod(1),
         traitsMod: createAddTraitsMod([
-          TraitFactory.satUp(),
-          TraitFactory.eccm(),
-          TraitFactory.initPlus(),
-          TraitFactory.vuln(type: TraitType.h),
+          Trait.satUp(),
+          Trait.eccm(),
+          Trait.initPlus(),
+          Trait.vuln(type: TraitType.h),
         ]),
       ),
       UnitUpgrade(
@@ -174,7 +174,7 @@ Unit createHunter() {
       //   id: '9',
       //   description: 'Add the following trait: Supply',
       //   tvMod: createIntAdjustmentMod(1),
-      //   traitsMod: createAddTraitsMod([TraitFactory.supply()]),
+      //   traitsMod: createAddTraitsMod([Trait.supply()]),
       // ),
     ],
   );

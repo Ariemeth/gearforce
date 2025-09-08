@@ -1,3 +1,4 @@
+import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
@@ -13,7 +14,6 @@ import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
-import 'package:gearforce/src/predefined/trait_factory.dart';
 import 'package:gearforce/src/predefined/units/blackTalons/unit_ids.dart';
 import 'package:gearforce/src/predefined/weapon_factory.dart';
 
@@ -35,7 +35,7 @@ Unit createDarkWarrior() {
       WeaponFactory.createRP(WeaponSize.light, hasReact: false),
       WeaponFactory.createAPGL(WeaponSize.light, hasReact: false),
     ],
-    traits: [TraitFactory.hands(), TraitFactory.stealth(isAux: true)],
+    traits: [Trait.hands(), Trait.stealth(isAux: true)],
     height: 1.5,
   );
 
@@ -56,8 +56,8 @@ Unit createDarkWarrior() {
         tvMod: createIntAdjustmentMod(1),
         ewMod: createSkillAdjustmentMod(4),
         traitsMod: createAddTraitsMod([
-          TraitFactory.ecm(),
-          TraitFactory.sensor(isAux: true, level: 24),
+          Trait.ecm(),
+          Trait.sensor(isAux: true, level: 24),
         ]),
       ),
       UnitUpgrade(

@@ -40,6 +40,7 @@ class Weapon {
     Set<WeaponMode>? weaponModes,
     List<Trait>? primaryTraits,
     List<Trait>? alternateTraits,
+    List<Trait>? customTraits,
     bool? isReact,
   }) {
     return Weapon(
@@ -48,8 +49,16 @@ class Weapon {
       range: range ?? this.range,
       damage: damage ?? this.damage,
       modes: weaponModes ?? modes,
-      primaryTraits: primaryTraits ?? this.primaryTraits,
-      alternateTraits: alternateTraits ?? this.alternateTraits,
+      primaryTraits: [
+        ...primaryTraits ?? this.primaryTraits,
+        ...customTraits ?? const [],
+      ],
+      alternateTraits: [
+        ...alternateTraits ?? this.alternateTraits,
+        ...(this.alternateTraits.isNotEmpty && customTraits != null
+            ? customTraits
+            : const []),
+      ],
 
       isReact: isReact ?? this.isReact,
     );
