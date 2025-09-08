@@ -38,14 +38,14 @@ class WeaponParser {
       throw ArgumentError('Invalid weapon code: $code');
     }
 
-    final newSecondaryTraits = baseWeapon.secondaryTraits.isNotEmpty
-        ? [...baseWeapon.secondaryTraits, ...additionalTraits]
+    final newSecondaryTraits = baseWeapon.alternateTraits.isNotEmpty
+        ? [...baseWeapon.alternateTraits, ...additionalTraits]
         : const [];
 
     // Add additional traits to the weapon
     return baseWeapon.copyWith(
       primaryTraits: [...baseWeapon.primaryTraits, ...additionalTraits],
-      secondaryTraits: [...newSecondaryTraits],
+      alternateTraits: [...newSecondaryTraits],
     );
   }
 }

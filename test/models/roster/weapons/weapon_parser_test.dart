@@ -76,7 +76,7 @@ void main() {
       );
     });
 
-    test('should parse a weapon string with secondary traits', () {
+    test('should parse a weapon string with alternate traits', () {
       // Arrange
       const input = 'LAC (Precise, LA:2)';
 
@@ -86,14 +86,14 @@ void main() {
       // Assert
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
       expect(
-        weapon.secondaryTraits,
+        weapon.alternateTraits,
         isNotNull,
-        reason: 'Weapon should have secondary traits',
+        reason: 'Weapon should have alternate traits',
       );
       expect(
-        weapon.secondaryTraits.any((trait) => trait.name == 'Precise'),
+        weapon.alternateTraits.any((trait) => trait.name == 'Precise'),
         true,
-        reason: 'Weapon should have the "Precise" secondary trait',
+        reason: 'Weapon should have the "Precise" alternate trait',
       );
     });
 
@@ -114,7 +114,7 @@ void main() {
       );
     });
 
-    test('should parse a weapon with secondary traits', () {
+    test('should parse a weapon with alternate traits', () {
       // Arrange
       const input = 'LAC (AA, LA:2)';
 
@@ -125,25 +125,25 @@ void main() {
       expect(weapon, isNotNull, reason: 'Weapon should not be null');
       expect(weapon.code, 'LAC', reason: 'Weapon code should match input');
       expect(
-        weapon.secondaryTraits,
+        weapon.alternateTraits,
         isNotNull,
-        reason: 'Weapon should have secondary traits',
+        reason: 'Weapon should have alternate traits',
       );
-      // Precise should come from the base LAC as a secondary trait
+      // Precise should come from the base LAC as a alternate trait
       expect(
-        weapon.secondaryTraits.any((trait) => trait.name == 'Precise'),
+        weapon.alternateTraits.any((trait) => trait.name == 'Precise'),
         true,
-        reason: 'Weapon should have the "Precise" secondary trait',
-      );
-      expect(
-        weapon.secondaryTraits.any((trait) => trait.name == 'LA'),
-        true,
-        reason: 'Weapon should have the "LA" secondary trait',
+        reason: 'Weapon should have the "Precise" alternate trait',
       );
       expect(
-        weapon.secondaryTraits.any((trait) => trait.name == 'AA'),
+        weapon.alternateTraits.any((trait) => trait.name == 'LA'),
         true,
-        reason: 'Weapon should have the "AA" secondary trait',
+        reason: 'Weapon should have the "LA" alternate trait',
+      );
+      expect(
+        weapon.alternateTraits.any((trait) => trait.name == 'AA'),
+        true,
+        reason: 'Weapon should have the "AA" alternate trait',
       );
     });
   });

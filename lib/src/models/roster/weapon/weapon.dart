@@ -11,7 +11,7 @@ class Weapon {
   final int damage;
   final Set<WeaponMode> modes;
   final List<Trait> primaryTraits;
-  final List<Trait> secondaryTraits;
+  final List<Trait> alternateTraits;
   final bool isReact;
 
   Weapon({
@@ -24,14 +24,14 @@ class Weapon {
     /// primaryTraits represent the base traits of this weapon
     List<Trait> primaryTraits = const [],
 
-    /// secondaryTraits are an optional set of traits that can be used instead of the primary traits
-    List<Trait> secondaryTraits = const [],
+    /// alternateTraits are an optional set of traits that can be used instead of the primary traits
+    List<Trait> alternateTraits = const [],
     this.isReact = false,
   }) : assert(damage >= 0, 'Damage must be 0 or greater'),
        assert(modes.isNotEmpty, 'Weapon must have at least one mode'),
        modes = Set.unmodifiable(modes),
        primaryTraits = List.unmodifiable(primaryTraits),
-       secondaryTraits = List.unmodifiable(secondaryTraits);
+       alternateTraits = List.unmodifiable(alternateTraits);
 
   Weapon copyWith({
     String? name,
@@ -39,7 +39,7 @@ class Weapon {
     int? damage,
     Set<WeaponMode>? weaponModes,
     List<Trait>? primaryTraits,
-    List<Trait>? secondaryTraits,
+    List<Trait>? alternateTraits,
     bool? isReact,
   }) {
     return Weapon(
@@ -49,22 +49,24 @@ class Weapon {
       damage: damage ?? this.damage,
       modes: weaponModes ?? modes,
       primaryTraits: primaryTraits ?? this.primaryTraits,
-      secondaryTraits: secondaryTraits ?? this.secondaryTraits,
+      alternateTraits: alternateTraits ?? this.alternateTraits,
 
       isReact: isReact ?? this.isReact,
     );
   }
+
+  bool get hasAlternateTraits => alternateTraits.isNotEmpty;
 
   @override
   String toString() {
     final primaryTraitsDescription = primaryTraits
         .map((trait) => trait.description)
         .join(' | ');
-    final secondaryTraitsDescription = secondaryTraits
+    final alternateTraitsDescription = alternateTraits
         .map((trait) => trait.description)
         .join(' | ');
     final reactStatus = isReact ? 'React Weapon' : 'Non-React Weapon';
     return '$name ($code): Damage: $damage, Range: $range, Modes: ${modes.join(', ')}, '
-        'Primary Traits: $primaryTraitsDescription, Secondary Traits: $secondaryTraitsDescription, $reactStatus';
+        'Primary Traits: $primaryTraitsDescription, Alternate Traits: $alternateTraitsDescription, $reactStatus';
   }
 }
