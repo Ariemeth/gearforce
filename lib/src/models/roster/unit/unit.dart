@@ -7,7 +7,6 @@ import 'package:meta/meta.dart';
 
 @immutable
 class Unit {
-  final String name;
   final String id;
   final String subtype;
   final Classification classification;
@@ -19,7 +18,6 @@ class Unit {
 
   Unit(
     this.base, {
-    required this.name,
     required this.id,
     required this.classification,
     required this.subtype,
@@ -27,13 +25,11 @@ class Unit {
     this.description,
     List<Variant> variants = const [],
     List<UnitUpgrade> upgrades = const [],
-  }) : assert(
-         name.trim().isNotEmpty,
-         'Name must not be empty or all whitespace',
-       ),
-       assert(id.trim().isNotEmpty, 'Id must not be empty or all whitespace'),
+  }) : assert(id.trim().isNotEmpty, 'Id must not be empty or all whitespace'),
        variants = List.unmodifiable(variants),
        upgrades = List.unmodifiable(upgrades);
+
+  String get name => base.name;
 
   Model buildModel(Variant variant) {
     if (!variants.any((v) => v.name == variant.name)) {

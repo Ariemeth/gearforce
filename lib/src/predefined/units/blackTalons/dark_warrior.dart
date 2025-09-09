@@ -42,7 +42,6 @@ Unit createDarkWarrior() {
 
   return Unit(
     base,
-    name: 'Dark Warrior',
     id: darkWarriorId,
     classification: Classification.gear,
     subtype: 'Trooper Gear',

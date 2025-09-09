@@ -44,7 +44,6 @@ void main() {
 
       final unit = Unit(
         baseModel,
-        name: unitName,
         id: unitId,
         classification: unitClassification,
         subtype: unitSubtype,

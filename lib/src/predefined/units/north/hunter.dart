@@ -38,7 +38,6 @@ Unit createHunter() {
 
   return Unit(
     baseModel,
-    name: 'Hunter',
     id: hunterId,
     classification: Classification.gear,
     subtype: 'Trooper Gear',
