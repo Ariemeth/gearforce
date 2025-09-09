@@ -5,7 +5,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:meta/meta.dart';
 
 @immutable
@@ -20,7 +20,7 @@ class ModelBase {
   final Skill gu;
   final Skill pi;
   final Skill ew;
-  final List<Weapon> weapons;
+  final List<WeaponSpec> weapons;
   final List<Trait> traits;
   final double height;
 
@@ -35,7 +35,7 @@ class ModelBase {
     required this.gu,
     required this.pi,
     required this.ew,
-    required List<Weapon> weapons,
+    required List<WeaponSpec> weapons,
     required List<Trait> traits,
     required this.height,
   }) : assert(

@@ -70,7 +70,7 @@ void main() {
     test('ComboWeaponSpec creation no custom traits', () {
       // Arrange
       var w1 = Weapon.ac(WeaponSize.light);
-      var w2 = Weapon.atm(WeaponSize.light);
+      var w2 = Weapon.atmL();
       var ws = ComboWeaponSpec(weapon1: w1, weapon2: w2);
 
       // Act & Assert
@@ -96,7 +96,7 @@ void main() {
     test('ComboWeaponSpec creation with custom traits', () {
       // Arrange
       var w1 = Weapon.ac(WeaponSize.light);
-      var w2 = Weapon.atm(WeaponSize.light);
+      var w2 = Weapon.atmL();
       var t1 = const Trait.aa();
       var ws = ComboWeaponSpec(weapon1: w1, weapon2: w2, customTraits: [t1]);
 

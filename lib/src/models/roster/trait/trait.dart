@@ -117,7 +117,7 @@ class Trait {
         level: level,
       );
 
-  const Trait.ap({bool isAux = false, int? level})
+  const Trait.ap({bool isAux = false, required int level})
     : this(
         name: 'AP',
         description:

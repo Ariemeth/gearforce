@@ -1,12 +1,13 @@
 import 'dart:developer';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_parser.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/trait/trait.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 
-typedef WeaponsMod = List<Weapon> Function(List<Weapon>, UnitUpgradeContext);
+typedef WeaponsMod =
+    List<WeaponSpec> Function(List<WeaponSpec>, UnitUpgradeContext);
 typedef IntMod = int Function(int, UnitUpgradeContext);
 typedef HullStructureMod =
     HullStructure Function(HullStructure, UnitUpgradeContext);
@@ -33,7 +34,7 @@ WeaponsMod createSwapWeaponsFromOptionsMod(
       );
 
       final index = weapons.indexWhere((w) => w.code == oldWeaponCode);
-      final updatedWeapons = List<Weapon>.from(weapons);
+      final updatedWeapons = List<WeaponSpec>.from(weapons);
       updatedWeapons[index] = newWeapon;
       return updatedWeapons;
     } catch (e, stackTrace) {
@@ -69,6 +70,6 @@ TraitsMod createAddTraitsMod(List<Trait> traitsToAdd) {
 }
 
 /// Mod function to add weapons to a list.
-WeaponsMod createAddWeaponsMod(List<Weapon> weaponsToAdd) {
+WeaponsMod createAddWeaponsMod(List<WeaponSpec> weaponsToAdd) {
   return (weapons, context) => [...weapons, ...weaponsToAdd];
 }

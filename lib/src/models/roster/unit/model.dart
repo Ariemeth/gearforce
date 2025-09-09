@@ -12,8 +12,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/command.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon_list_extensions.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec_list_extensions.dart';
 
 class Model {
   // Fields
@@ -27,7 +27,7 @@ class Model {
   final Skill _gu;
   final Skill _pi;
   final Skill _ew;
-  final List<Weapon> _weapons;
+  final List<WeaponSpec> _weapons;
   final List<Trait> _traits;
   final double _height;
   Level level;
@@ -49,7 +49,7 @@ class Model {
     required Skill gu,
     required Skill pi,
     required Skill ew,
-    List<Weapon> weapons = const [],
+    List<WeaponSpec> weapons = const [],
     List<Trait> traits = const [],
     required double height,
     this.level = Level.regular,
@@ -79,7 +79,7 @@ class Model {
   Skill get gu => getAttribute(ModelAttribute.gu);
   Skill get pi => getAttribute(ModelAttribute.pi);
   Skill get ew => getAttribute(ModelAttribute.ew);
-  List<Weapon> get weapons => getAttribute(ModelAttribute.weapons);
+  List<WeaponSpec> get weapons => getAttribute(ModelAttribute.weapons);
   List<Trait> get traits => getAttribute(ModelAttribute.traits);
 
   // Methods
@@ -94,7 +94,7 @@ class Model {
     Skill? gu,
     Skill? pi,
     Skill? ew,
-    List<Weapon>? weapons,
+    List<WeaponSpec>? weapons,
     List<Trait>? traits,
     List<UnitUpgrade>? upgrades,
     Level? level,
@@ -218,7 +218,8 @@ class Model {
             case ModelAttribute.ew:
               return upgrade.ewMod(value as Skill, context) as T;
             case ModelAttribute.weapons:
-              return upgrade.weaponsMod(value as List<Weapon>, context) as T;
+              return upgrade.weaponsMod(value as List<WeaponSpec>, context)
+                  as T;
             case ModelAttribute.traits:
               return upgrade.traitsMod(value as List<Trait>, context) as T;
           }

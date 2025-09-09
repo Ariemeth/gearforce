@@ -6,7 +6,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 
 // Shared typedefs
 typedef StringMod = String Function(String, UnitUpgradeContext);
@@ -18,7 +18,8 @@ typedef HullStructureMod =
     HullStructure Function(HullStructure, UnitUpgradeContext);
 typedef UnitActionsMod = UnitActions Function(UnitActions, UnitUpgradeContext);
 typedef SkillMod = Skill Function(Skill, UnitUpgradeContext);
-typedef WeaponsMod = List<Weapon> Function(List<Weapon>, UnitUpgradeContext);
+typedef WeaponsMod =
+    List<WeaponSpec> Function(List<WeaponSpec>, UnitUpgradeContext);
 typedef TraitsMod = List<Trait> Function(List<Trait>, UnitUpgradeContext);
 
 // default implementations
@@ -46,8 +47,8 @@ class UnitModifiers {
   ) => value;
   static Skill defaultSkillMod(Skill value, UnitUpgradeContext context) =>
       value;
-  static List<Weapon> defaultWeaponsMod(
-    List<Weapon> value,
+  static List<WeaponSpec> defaultWeaponsMod(
+    List<WeaponSpec> value,
     UnitUpgradeContext context,
   ) => value;
   static List<Trait> defaultTraitsMod(

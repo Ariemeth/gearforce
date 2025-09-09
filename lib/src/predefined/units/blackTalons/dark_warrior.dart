@@ -14,6 +14,7 @@ import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart' show Weapon;
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
 import 'package:gearforce/src/predefined/units/blackTalons/unit_ids.dart';
 
@@ -21,21 +22,21 @@ Unit createDarkWarrior() {
   final base = ModelBase(
     'Dark Warrior',
     tv: 7,
-    roles: {Role.gp, Role.sk, Role.fs},
-    movement: Movement([MovementType.walker, MovementType.ground], 6),
-    armor: Armor(6),
-    hullStructure: HullStructure(hull: 4, structure: 2),
-    actions: UnitActions(1),
-    gu: Skill(4),
-    pi: Skill(4),
-    ew: Skill(5),
-    weapons: [
-      Weapon.lc(WeaponSize.light, hasReact: true),
-      Weapon.fc(WeaponSize.light, hasReact: true),
-      Weapon.rp(WeaponSize.light, hasReact: false),
-      Weapon.apgl(WeaponSize.light, hasReact: false),
+    roles: const {Role.gp, Role.sk, Role.fs},
+    movement: const Movement([MovementType.walker, MovementType.ground], 6),
+    armor: const Armor(6),
+    hullStructure: const HullStructure(hull: 4, structure: 2),
+    actions: const UnitActions(1),
+    gu: const Skill(4),
+    pi: const Skill(4),
+    ew: const Skill(5),
+    weapons: const [
+      SingleWeaponSpec(weapon: Weapon.lc(WeaponSize.light, hasReact: true)),
+      SingleWeaponSpec(weapon: Weapon.fcL(hasReact: true)),
+      SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light, hasReact: false)),
+      SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light, hasReact: false)),
     ],
-    traits: [Trait.hands(), Trait.stealth(isAux: true)],
+    traits: const [Trait.hands(), Trait.stealth(isAux: true)],
     height: 1.5,
   );
 

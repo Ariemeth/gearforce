@@ -16,17 +16,24 @@ abstract class WeaponSpec {
   List<Weapon> get weapons;
 
   bool get isCombo;
+
+  String get code;
 }
 
 @immutable
 final class SingleWeaponSpec extends WeaponSpec {
-  final Weapon _weapon;
+  final Weapon weapon;
 
-  const SingleWeaponSpec({required Weapon weapon, super.customTraits})
-    : _weapon = weapon;
+  const SingleWeaponSpec({required this.weapon, super.customTraits});
 
   @override
-  List<Weapon> get weapons => [_weapon.copyWith(customTraits: customTraits)];
+  List<Weapon> get weapons => [weapon.copyWith(customTraits: customTraits)];
+
+  @override
+  bool get isCombo => false;
+
+  @override
+  String get code => weapon.code;
 
   @override
   T when<T>({
@@ -38,34 +45,44 @@ final class SingleWeaponSpec extends WeaponSpec {
 
   @override
   String toString() {
-    var code = _weapon.code;
+    var code = weapon.code;
     if (customTraits.isNotEmpty) {
       code = '$code (${customTraits.join(' ')})';
     }
     return code;
   }
 
-  @override
-  bool get isCombo => false;
+  // Creates a new instance with selectively replaced fields.
+  SingleWeaponSpec copyWith({Weapon? weapon, List<Trait>? customTraits}) {
+    return SingleWeaponSpec(
+      weapon: weapon ?? this.weapon,
+      customTraits: customTraits ?? this.customTraits,
+    );
+  }
 }
 
 @immutable
 final class ComboWeaponSpec extends WeaponSpec {
-  final Weapon _weapon1;
-  final Weapon _weapon2;
+  final Weapon weapon1;
+  final Weapon weapon2;
 
   const ComboWeaponSpec({
-    required Weapon weapon1,
-    required Weapon weapon2,
+    required this.weapon1,
+    required this.weapon2,
     super.customTraits,
-  }) : _weapon2 = weapon2,
-       _weapon1 = weapon1;
+  });
 
   @override
   List<Weapon> get weapons => [
-    _weapon1.copyWith(customTraits: customTraits),
-    _weapon2.copyWith(customTraits: customTraits),
+    weapon1.copyWith(customTraits: customTraits),
+    weapon2.copyWith(customTraits: customTraits),
   ];
+
+  @override
+  bool get isCombo => true;
+
+  @override
+  String get code => '${weapon1.code}/${weapon2.code}';
 
   @override
   T when<T>({
@@ -77,13 +94,23 @@ final class ComboWeaponSpec extends WeaponSpec {
 
   @override
   String toString() {
-    var code = '${_weapon1.code}/${_weapon2.code}';
+    var code = '${weapon1.code}/${weapon2.code}';
     if (customTraits.isNotEmpty) {
       code = '$code (${customTraits.join(' ')})';
     }
     return code;
   }
 
-  @override
-  bool get isCombo => true;
+  // Creates a new instance with selectively replaced fields.
+  ComboWeaponSpec copyWith({
+    Weapon? weapon1,
+    Weapon? weapon2,
+    List<Trait>? customTraits,
+  }) {
+    return ComboWeaponSpec(
+      weapon1: weapon1 ?? this.weapon1,
+      weapon2: weapon2 ?? this.weapon2,
+      customTraits: customTraits ?? this.customTraits,
+    );
+  }
 }

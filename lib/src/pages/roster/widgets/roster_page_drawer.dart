@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gearforce/src/pages/app_settings/screens/app_settings_screen.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
-final _drawerHeaderHeight = 60.0;
+const _drawerHeaderHeight = 60.0;
 
 class RosterPageDrawer extends StatelessWidget {
   const RosterPageDrawer({super.key, required this.title});

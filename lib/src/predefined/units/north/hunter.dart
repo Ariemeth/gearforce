@@ -15,6 +15,7 @@ import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart' show Weapon;
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
 import 'package:gearforce/src/predefined/units/north/unit_ids.dart';
 
@@ -31,7 +32,7 @@ Unit createHunter() {
     pi: const Skill(4),
     ew: const Skill(6),
     weapons: const [],
-    traits: [Trait.hands()],
+    traits: const [Trait.hands()],
     height: 1.5,
   );
 
@@ -49,43 +50,45 @@ Unit createHunter() {
         'Stock',
         id: '0',
         tv: 0,
-        weapons: [
-          Weapon.ac(WeaponSize.light, hasReact: true),
-          Weapon.vb(WeaponSize.light, hasReact: true),
-          Weapon.rp(WeaponSize.light),
-          Weapon.apgl(WeaponSize.light),
+        weapons: const [
+          SingleWeaponSpec(weapon: Weapon.ac(WeaponSize.light, hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vbL(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light)),
+          SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light)),
         ],
       ),
       Variant(
         'Mountain',
         id: '1',
         tv: 1,
-        weapons: [
-          Weapon.ac(WeaponSize.light, hasReact: true),
-          Weapon.mw(WeaponSize.medium, hasReact: true),
-          Weapon.rp(WeaponSize.light),
-          Weapon.apgl(WeaponSize.light),
+        weapons: const [
+          SingleWeaponSpec(weapon: Weapon.ac(WeaponSize.light, hasReact: true)),
+          SingleWeaponSpec(
+            weapon: Weapon.mw(WeaponSize.medium, hasReact: true),
+          ),
+          SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light)),
+          SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light)),
         ],
-        traits: [Trait.climb()],
+        traits: const [Trait.climb()],
       ),
       Variant(
         'Pathfinder',
         id: '2',
         tv: 1,
-        ew: Skill(5),
-        weapons: [
-          Weapon.ac(WeaponSize.light, hasReact: true),
-          Weapon.vb(WeaponSize.light, hasReact: true),
+        ew: const Skill(5),
+        weapons: const [
+          SingleWeaponSpec(weapon: Weapon.ac(WeaponSize.light, hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vbL(hasReact: true)),
         ],
-        traits: [Trait.sensor(level: 24)],
+        traits: const [Trait.sensor(level: 24)],
       ),
       Variant(
         'Assault',
         id: '3',
         tv: 1,
-        weapons: [
-          Weapon.sc(WeaponSize.medium, hasReact: true),
-          Weapon.vb(WeaponSize.light, hasReact: true),
+        weapons: const [
+          SingleWeaponSpec(weapon: Weapon.scM(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vbL(hasReact: true)),
         ],
       ),
     ],
