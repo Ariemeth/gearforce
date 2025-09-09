@@ -24,10 +24,10 @@ class ModelBase {
   final List<Trait> traits;
   final double height;
 
-  ModelBase(
+  const ModelBase(
     this.name, {
     required this.tv,
-    required Set<Role> roles,
+    required this.roles,
     required this.movement,
     required this.armor,
     required this.hullStructure,
@@ -35,15 +35,9 @@ class ModelBase {
     required this.gu,
     required this.pi,
     required this.ew,
-    required List<WeaponSpec> weapons,
-    required List<Trait> traits,
+    required this.weapons,
+    required this.traits,
     required this.height,
-  }) : assert(
-         name.trim().isNotEmpty,
-         'Name must not be empty or all whitespace',
-       ),
-       assert(tv >= 0, 'TV must be 0 or positive'),
-       roles = Set.unmodifiable(roles),
-       weapons = List.unmodifiable(weapons),
-       traits = List.unmodifiable(traits);
+  }) : assert(name.length > 0, 'Name must not be empty or all whitespace'),
+       assert(tv >= 0, 'TV must be 0 or positive');
 }

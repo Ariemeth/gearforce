@@ -19,77 +19,77 @@ class WeaponFactory {
         return Weapon.ar(size, hasReact: hasReact);
       case 'ATM':
         return switch (size) {
-          WeaponSize.light => Weapon.atmL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.atmM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.atmH(hasReact: hasReact),
+          WeaponSize.light => Weapon.atmLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.atmMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.atmHeavy(hasReact: hasReact),
         };
       case 'Bomb':
         return Weapon.bomb(size, hasReact: hasReact);
       case 'Napalm':
         return switch (size) {
-          WeaponSize.light => Weapon.napalmL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.napalmM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.napalmH(hasReact: hasReact),
+          WeaponSize.light => Weapon.napalmLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.napalmMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.napalmHeavy(hasReact: hasReact),
         };
       case 'BZ':
         return switch (size) {
-          WeaponSize.light => Weapon.bzL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.bzM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.bzH(hasReact: hasReact),
+          WeaponSize.light => Weapon.bzLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.bzMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.bzHeavy(hasReact: hasReact),
         };
       case 'RBZ':
         return switch (size) {
-          WeaponSize.light => Weapon.rbzL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.rbzM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.rbzH(hasReact: hasReact),
+          WeaponSize.light => Weapon.rbzLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.rbzMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.rbzHeavy(hasReact: hasReact),
         };
       case 'FC':
         return switch (size) {
-          WeaponSize.light => Weapon.fcL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.fcM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.fcH(hasReact: hasReact),
+          WeaponSize.light => Weapon.fcLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.fcMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.fcHeavy(hasReact: hasReact),
         };
       case 'FG':
         return switch (size) {
-          WeaponSize.light => Weapon.fgL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.fgM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.fgH(hasReact: hasReact),
+          WeaponSize.light => Weapon.fgLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.fgMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.fgHeavy(hasReact: hasReact),
         };
       case 'FL':
         return switch (size) {
-          WeaponSize.light => Weapon.flL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.flM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.flH(hasReact: hasReact),
+          WeaponSize.light => Weapon.flLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.flMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.flHeavy(hasReact: hasReact),
         };
       case 'GG':
         return switch (size) {
-          WeaponSize.light => Weapon.ggL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.ggM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.ggH(hasReact: hasReact),
+          WeaponSize.light => Weapon.ggLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.ggMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.ggHeavy(hasReact: hasReact),
         };
       case 'GL':
         return switch (size) {
-          WeaponSize.light => Weapon.glL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.glM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.glH(hasReact: hasReact),
+          WeaponSize.light => Weapon.glLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.glMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.glHeavy(hasReact: hasReact),
         };
       case 'HG':
         return switch (size) {
-          WeaponSize.light => Weapon.hgL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.hgM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.hgH(hasReact: hasReact),
+          WeaponSize.light => Weapon.hgLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.hgMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.hgHeavy(hasReact: hasReact),
         };
       case 'IATM':
         return switch (size) {
-          WeaponSize.light => Weapon.iatmL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.iatmM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.iatmH(hasReact: hasReact),
+          WeaponSize.light => Weapon.iatmLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.iatmMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.iatmHeavy(hasReact: hasReact),
         };
       case 'IGL':
         return switch (size) {
-          WeaponSize.light => Weapon.iglL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.iglM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.iglH(hasReact: hasReact),
+          WeaponSize.light => Weapon.iglLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.iglMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.iglHeavy(hasReact: hasReact),
         };
       case 'ILW':
         return Weapon.ilw(size, hasReact: hasReact);
@@ -121,21 +121,21 @@ class WeaponFactory {
         return Weapon.pa(size, hasReact: hasReact);
       case 'PC':
         return switch (size) {
-          WeaponSize.light => Weapon.pcL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.pcM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.pcH(hasReact: hasReact),
+          WeaponSize.light => Weapon.pcLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.pcMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.pcHeavy(hasReact: hasReact),
         };
       case 'PL':
         return switch (size) {
-          WeaponSize.light => Weapon.plL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.plM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.plH(hasReact: hasReact),
+          WeaponSize.light => Weapon.plLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.plMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.plHeavy(hasReact: hasReact),
         };
       case 'PZ':
         return switch (size) {
-          WeaponSize.light => Weapon.pzL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.pzM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.pzH(hasReact: hasReact),
+          WeaponSize.light => Weapon.pzLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.pzMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.pzHeavy(hasReact: hasReact),
         };
       case 'RC':
         return Weapon.rc(size, hasReact: hasReact);
@@ -143,9 +143,9 @@ class WeaponFactory {
         return Weapon.rf(size, hasReact: hasReact);
       case 'RG':
         return switch (size) {
-          WeaponSize.light => Weapon.rgL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.rgM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.rgH(hasReact: hasReact),
+          WeaponSize.light => Weapon.rgLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.rgMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.rgHeavy(hasReact: hasReact),
         };
       case 'RL':
         return Weapon.rl(size, hasReact: hasReact);
@@ -153,35 +153,35 @@ class WeaponFactory {
         return Weapon.rp(size, hasReact: hasReact);
       case 'SC':
         return switch (size) {
-          WeaponSize.light => Weapon.scL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.scM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.scH(hasReact: hasReact),
+          WeaponSize.light => Weapon.scLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.scMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.scHeavy(hasReact: hasReact),
         };
       case 'SE':
         return switch (size) {
-          WeaponSize.light => Weapon.seL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.seM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.seH(hasReact: hasReact),
+          WeaponSize.light => Weapon.seLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.seMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.seHeavy(hasReact: hasReact),
         };
       case 'SG':
         return switch (size) {
-          WeaponSize.light => Weapon.sgL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.sgM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.sgH(hasReact: hasReact),
+          WeaponSize.light => Weapon.sgLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.sgMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.sgHeavy(hasReact: hasReact),
         };
       case 'SMG':
         return Weapon.smg(size, hasReact: hasReact);
       case 'TG':
         return switch (size) {
-          WeaponSize.light => Weapon.tgL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.tgM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.tgH(hasReact: hasReact),
+          WeaponSize.light => Weapon.tgLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.tgMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.tgHeavy(hasReact: hasReact),
         };
       case 'VB':
         return switch (size) {
-          WeaponSize.light => Weapon.vbL(hasReact: hasReact),
-          WeaponSize.medium => Weapon.vbM(hasReact: hasReact),
-          WeaponSize.heavy => Weapon.vbH(hasReact: hasReact),
+          WeaponSize.light => Weapon.vbLight(hasReact: hasReact),
+          WeaponSize.medium => Weapon.vbMedium(hasReact: hasReact),
+          WeaponSize.heavy => Weapon.vbHeavy(hasReact: hasReact),
         };
       default:
         return null; // Return null if no matching weapon is found

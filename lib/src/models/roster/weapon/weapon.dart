@@ -33,7 +33,6 @@ class Weapon {
     this.alternateTraits = const [],
     this.isReact = false,
   }) : _code = code;
-  // assert(modes.isNotEmpty, 'Weapon must have at least one mode');
 
   bool get hasAlternateTraits => alternateTraits.isNotEmpty;
   int get damage {
@@ -186,7 +185,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.atmL({bool hasReact = false})
+  const Weapon.atmLight({bool hasReact = false})
     : this(
         code: 'ATM',
         name: 'Anti-Tank Missile',
@@ -198,7 +197,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.atmM({bool hasReact = false})
+  const Weapon.atmMedium({bool hasReact = false})
     : this(
         code: 'ATM',
         name: 'Anti-Tank Missile',
@@ -210,7 +209,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.atmH({bool hasReact = false})
+  const Weapon.atmHeavy({bool hasReact = false})
     : this(
         code: 'ATM',
         name: 'Anti-Tank Missile',
@@ -239,7 +238,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.napalmL({bool hasReact = false})
+  const Weapon.napalmLight({bool hasReact = false})
     : this(
         code: 'Napalm',
         name: 'Napalm Bomb',
@@ -256,7 +255,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.napalmM({bool hasReact = false})
+  const Weapon.napalmMedium({bool hasReact = false})
     : this(
         code: 'Napalm',
         name: 'Napalm Bomb',
@@ -273,7 +272,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.napalmH({bool hasReact = false})
+  const Weapon.napalmHeavy({bool hasReact = false})
     : this(
         code: 'Napalm',
         name: 'Napalm Bomb',
@@ -290,7 +289,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.bzL({bool hasReact = false})
+  const Weapon.bzLight({bool hasReact = false})
     : this(
         code: 'BZ',
         name: 'Bazooka',
@@ -303,7 +302,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.bzM({bool hasReact = false})
+  const Weapon.bzMedium({bool hasReact = false})
     : this(
         code: 'BZ',
         name: 'Bazooka',
@@ -316,7 +315,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.bzH({bool hasReact = false})
+  const Weapon.bzHeavy({bool hasReact = false})
     : this(
         code: 'BZ',
         name: 'Bazooka',
@@ -329,7 +328,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.rbzL({bool hasReact = false})
+  const Weapon.rbzLight({bool hasReact = false})
     : this(
         code: 'RBZ',
         name: 'Rapid Fire Bazooka',
@@ -341,7 +340,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.rbzM({bool hasReact = false})
+  const Weapon.rbzMedium({bool hasReact = false})
     : this(
         code: 'RBZ',
         name: 'Rapid Fire Bazooka',
@@ -353,7 +352,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.rbzH({bool hasReact = false})
+  const Weapon.rbzHeavy({bool hasReact = false})
     : this(
         code: 'RBZ',
         name: 'Rapid Fire Bazooka',
@@ -365,7 +364,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.fcL({bool hasReact = false})
+  const Weapon.fcLight({bool hasReact = false})
     : this(
         code: 'FC',
         name: 'Frag Cannon',
@@ -378,7 +377,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.fcM({bool hasReact = false})
+  const Weapon.fcMedium({bool hasReact = false})
     : this(
         code: 'FC',
         name: 'Frag Cannon',
@@ -391,7 +390,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.fcH({bool hasReact = false})
+  const Weapon.fcHeavy({bool hasReact = false})
     : this(
         code: 'FC',
         name: 'Frag Cannon',
@@ -404,7 +403,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.fgL({bool hasReact = false})
+  const Weapon.fgLight({bool hasReact = false})
     : this(
         code: 'FG',
         name: 'Field Gun',
@@ -417,7 +416,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.fgM({bool hasReact = false})
+  const Weapon.fgMedium({bool hasReact = false})
     : this(
         code: 'FG',
         name: 'Field Gun',
@@ -430,7 +429,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.fgH({bool hasReact = false})
+  const Weapon.fgHeavy({bool hasReact = false})
     : this(
         code: 'FG',
         name: 'Field Gun',
@@ -443,7 +442,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.flL({bool hasReact = false})
+  const Weapon.flLight({bool hasReact = false})
     : this(
         code: 'FL',
         name: 'Flamer',
@@ -460,7 +459,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.flM({bool hasReact = false})
+  const Weapon.flMedium({bool hasReact = false})
     : this(
         code: 'FL',
         name: 'Flamer',
@@ -477,7 +476,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.flH({bool hasReact = false})
+  const Weapon.flHeavy({bool hasReact = false})
     : this(
         code: 'FL',
         name: 'Flamer',
@@ -494,7 +493,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.ggL({bool hasReact = false})
+  const Weapon.ggLight({bool hasReact = false})
     : this(
         code: 'GG',
         name: 'Grappling Gun',
@@ -506,7 +505,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.ggM({bool hasReact = false})
+  const Weapon.ggMedium({bool hasReact = false})
     : this(
         code: 'GG',
         name: 'Grappling Gun',
@@ -518,7 +517,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.ggH({bool hasReact = false})
+  const Weapon.ggHeavy({bool hasReact = false})
     : this(
         code: 'GG',
         name: 'Grappling Gun',
@@ -530,7 +529,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.glL({bool hasReact = false})
+  const Weapon.glLight({bool hasReact = false})
     : this(
         code: 'GL',
         name: 'Grenade Launcher',
@@ -543,7 +542,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.glM({bool hasReact = false})
+  const Weapon.glMedium({bool hasReact = false})
     : this(
         code: 'GL',
         name: 'Grenade Launcher',
@@ -556,7 +555,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.glH({bool hasReact = false})
+  const Weapon.glHeavy({bool hasReact = false})
     : this(
         code: 'GL',
         name: 'Grenade Launcher',
@@ -569,7 +568,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.hgL({bool hasReact = false})
+  const Weapon.hgLight({bool hasReact = false})
     : this(
         code: 'HG',
         name: 'Hand Grenade',
@@ -586,7 +585,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.hgM({bool hasReact = false})
+  const Weapon.hgMedium({bool hasReact = false})
     : this(
         code: 'HG',
         name: 'Hand Grenade',
@@ -603,7 +602,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.hgH({bool hasReact = false})
+  const Weapon.hgHeavy({bool hasReact = false})
     : this(
         code: 'HG',
         name: 'Hand Grenade',
@@ -620,7 +619,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.iatmL({bool hasReact = false})
+  const Weapon.iatmLight({bool hasReact = false})
     : this(
         code: 'IATM',
         name: 'Infantry ATM',
@@ -632,7 +631,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.iatmM({bool hasReact = false})
+  const Weapon.iatmMedium({bool hasReact = false})
     : this(
         code: 'IATM',
         name: 'Infantry ATM',
@@ -644,7 +643,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.iatmH({bool hasReact = false})
+  const Weapon.iatmHeavy({bool hasReact = false})
     : this(
         code: 'IATM',
         name: 'Infantry ATM',
@@ -656,7 +655,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.iglL({bool hasReact = false})
+  const Weapon.iglLight({bool hasReact = false})
     : this(
         code: 'IGL',
         name: 'Infantry Grenade Launcher',
@@ -669,7 +668,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.iglM({bool hasReact = false})
+  const Weapon.iglMedium({bool hasReact = false})
     : this(
         code: 'IGL',
         name: 'Infantry Grenade Launcher',
@@ -682,7 +681,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.iglH({bool hasReact = false})
+  const Weapon.iglHeavy({bool hasReact = false})
     : this(
         code: 'IGL',
         name: 'Infantry Grenade Launcher',
@@ -879,7 +878,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.pcL({bool hasReact = false})
+  const Weapon.pcLight({bool hasReact = false})
     : this(
         code: 'PC',
         name: 'Plasma Cannon',
@@ -892,7 +891,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.pcM({bool hasReact = false})
+  const Weapon.pcMedium({bool hasReact = false})
     : this(
         code: 'PC',
         name: 'Plasma Cannon',
@@ -905,7 +904,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.pcH({bool hasReact = false})
+  const Weapon.pcHeavy({bool hasReact = false})
     : this(
         code: 'PC',
         name: 'Plasma Cannon',
@@ -918,7 +917,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.plL({bool hasReact = false})
+  const Weapon.plLight({bool hasReact = false})
     : this(
         code: 'PL',
         name: 'Pulse Laser',
@@ -931,7 +930,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.plM({bool hasReact = false})
+  const Weapon.plMedium({bool hasReact = false})
     : this(
         code: 'PL',
         name: 'Pulse Laser',
@@ -944,7 +943,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.plH({bool hasReact = false})
+  const Weapon.plHeavy({bool hasReact = false})
     : this(
         code: 'PL',
         name: 'Pulse Laser',
@@ -957,7 +956,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.pzL({bool hasReact = false})
+  const Weapon.pzLight({bool hasReact = false})
     : this(
         code: 'PZ',
         name: 'Panzerfaust',
@@ -969,7 +968,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.pzM({bool hasReact = false})
+  const Weapon.pzMedium({bool hasReact = false})
     : this(
         code: 'PZ',
         name: 'Panzerfaust',
@@ -981,7 +980,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.pzH({bool hasReact = false})
+  const Weapon.pzHeavy({bool hasReact = false})
     : this(
         code: 'PZ',
         name: 'Panzerfaust',
@@ -1017,7 +1016,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.rgL({bool hasReact = false})
+  const Weapon.rgLight({bool hasReact = false})
     : this(
         code: 'RG',
         name: 'Railgun',
@@ -1029,7 +1028,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.rgM({bool hasReact = false})
+  const Weapon.rgMedium({bool hasReact = false})
     : this(
         code: 'RG',
         name: 'Railgun',
@@ -1041,7 +1040,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.rgH({bool hasReact = false})
+  const Weapon.rgHeavy({bool hasReact = false})
     : this(
         code: 'RG',
         name: 'Railgun',
@@ -1077,7 +1076,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.scL({bool hasReact = false})
+  const Weapon.scLight({bool hasReact = false})
     : this(
         code: 'SC',
         name: 'Snub Cannon',
@@ -1093,7 +1092,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.scM({bool hasReact = false})
+  const Weapon.scMedium({bool hasReact = false})
     : this(
         code: 'SC',
         name: 'Snub Cannon',
@@ -1109,7 +1108,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.scH({bool hasReact = false})
+  const Weapon.scHeavy({bool hasReact = false})
     : this(
         code: 'SC',
         name: 'Snub Cannon',
@@ -1125,7 +1124,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.seL({bool hasReact = false})
+  const Weapon.seLight({bool hasReact = false})
     : this(
         code: 'SE',
         name: 'Shaped Explosive',
@@ -1137,7 +1136,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.seM({bool hasReact = false})
+  const Weapon.seMedium({bool hasReact = false})
     : this(
         code: 'SE',
         name: 'Shaped Explosive',
@@ -1149,7 +1148,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.seH({bool hasReact = false})
+  const Weapon.seHeavy({bool hasReact = false})
     : this(
         code: 'SE',
         name: 'Shaped Explosive',
@@ -1161,7 +1160,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.sgL({bool hasReact = false})
+  const Weapon.sgLight({bool hasReact = false})
     : this(
         code: 'SG',
         name: 'Spike Gun',
@@ -1173,7 +1172,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.sgM({bool hasReact = false})
+  const Weapon.sgMedium({bool hasReact = false})
     : this(
         code: 'SG',
         name: 'Spike Gun',
@@ -1185,7 +1184,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.sgH({bool hasReact = false})
+  const Weapon.sgHeavy({bool hasReact = false})
     : this(
         code: 'SG',
         name: 'Spike Gun',
@@ -1210,7 +1209,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.tgL({bool hasReact = false})
+  const Weapon.tgLight({bool hasReact = false})
     : this(
         code: 'TG',
         name: 'Tank Gun',
@@ -1223,7 +1222,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.tgM({bool hasReact = false})
+  const Weapon.tgMedium({bool hasReact = false})
     : this(
         code: 'TG',
         name: 'Tank Gun',
@@ -1236,7 +1235,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.tgH({bool hasReact = false})
+  const Weapon.tgHeavy({bool hasReact = false})
     : this(
         code: 'TG',
         name: 'Tank Gun',
@@ -1249,7 +1248,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.vbL({bool hasReact = false})
+  const Weapon.vbLight({bool hasReact = false})
     : this(
         code: 'VB',
         name: 'Vibro Blade',
@@ -1261,7 +1260,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.vbM({bool hasReact = false})
+  const Weapon.vbMedium({bool hasReact = false})
     : this(
         code: 'VB',
         name: 'Vibro Blade',
@@ -1273,7 +1272,7 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.vbH({bool hasReact = false})
+  const Weapon.vbHeavy({bool hasReact = false})
     : this(
         code: 'VB',
         name: 'Vibro Blade',

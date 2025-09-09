@@ -20,19 +20,19 @@ import 'package:gearforce/src/predefined/mod_functions.dart';
 import 'package:gearforce/src/predefined/units/north/unit_ids.dart';
 
 Unit createHunter() {
-  final baseModel = ModelBase(
+  const baseModel = ModelBase(
     'Hunter',
     tv: 6,
-    roles: const {Role.gp, Role.sk, Role.fs},
-    movement: const Movement([MovementType.walker, MovementType.ground], 6),
-    armor: const Armor(6),
-    hullStructure: const HullStructure(hull: 4, structure: 2),
-    actions: const UnitActions(1),
-    gu: const Skill(4),
-    pi: const Skill(4),
-    ew: const Skill(6),
-    weapons: const [],
-    traits: const [Trait.hands()],
+    roles: {Role.gp, Role.sk, Role.fs},
+    movement: Movement([MovementType.walker, MovementType.ground], 6),
+    armor: Armor(6),
+    hullStructure: HullStructure(hull: 4, structure: 2),
+    actions: UnitActions(1),
+    gu: Skill(4),
+    pi: Skill(4),
+    ew: Skill(6),
+    weapons: [],
+    traits: [Trait.hands()],
     height: 1.5,
   );
 
@@ -52,7 +52,7 @@ Unit createHunter() {
         tv: 0,
         weapons: const [
           SingleWeaponSpec(weapon: Weapon.ac(WeaponSize.light, hasReact: true)),
-          SingleWeaponSpec(weapon: Weapon.vbL(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vbLight(hasReact: true)),
           SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light)),
           SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light)),
         ],
@@ -78,7 +78,7 @@ Unit createHunter() {
         ew: const Skill(5),
         weapons: const [
           SingleWeaponSpec(weapon: Weapon.ac(WeaponSize.light, hasReact: true)),
-          SingleWeaponSpec(weapon: Weapon.vbL(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vbLight(hasReact: true)),
         ],
         traits: const [Trait.sensor(level: 24)],
       ),
@@ -87,8 +87,8 @@ Unit createHunter() {
         id: '3',
         tv: 1,
         weapons: const [
-          SingleWeaponSpec(weapon: Weapon.scM(hasReact: true)),
-          SingleWeaponSpec(weapon: Weapon.vbL(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.scMedium(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vbLight(hasReact: true)),
         ],
       ),
     ],
@@ -104,10 +104,10 @@ Unit createHunter() {
         id: '1',
         tvMod: createIntAdjustmentMod(1),
         traitsMod: createAddTraitsMod([
-          Trait.satUp(),
-          Trait.eccm(),
-          Trait.initPlus(),
-          Trait.vuln(type: TraitType.h),
+          const Trait.satUp(),
+          const Trait.eccm(),
+          const Trait.initPlus(),
+          const Trait.vuln(type: TraitType.h),
         ]),
       ),
       UnitUpgrade(
