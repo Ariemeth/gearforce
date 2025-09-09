@@ -11,9 +11,11 @@ import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
+import 'package:gearforce/src/models/roster/weapon/damage_size_bands.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_mode.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_range.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
 
 void main() {
   group('Upgrade', () {
@@ -55,8 +57,9 @@ void main() {
           Weapon(
             code: 'W001',
             name: 'Test Weapon',
+            size: WeaponSize.light,
             range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-            damage: 10,
+            damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
             modes: {WeaponMode.direct},
           ),
         ],

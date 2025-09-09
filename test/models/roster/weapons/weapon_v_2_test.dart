@@ -1,16 +1,16 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/src/models/roster/trait/trait.dart' show Trait;
+import 'package:gearforce/src/models/roster/weapon/weapon.dart' show Weapon;
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart'
     show WeaponSize;
-import 'package:gearforce/src/models/roster/weapon/weapon_v_2.dart'
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart'
     show SingleWeaponSpec, ComboWeaponSpec;
-import 'package:gearforce/src/predefined/weapon_factory.dart';
 
 void main() {
   group('WeaponV2.SingleWeaponSpec', () {
     test('SingleWeaponSpec creation no custom traits', () {
       // Arrange
-      var w1 = WeaponFactory.createAC(WeaponSize.light);
+      var w1 = Weapon.ac(WeaponSize.light);
       var ws = SingleWeaponSpec(weapon: w1);
 
       // Act & Assert
@@ -33,7 +33,7 @@ void main() {
     });
     test('SingleWeaponSpec creation with custom traits', () {
       // Arrange
-      var w1 = WeaponFactory.createAC(WeaponSize.light);
+      var w1 = Weapon.ac(WeaponSize.light);
       var t1 = const Trait.aa();
       var ws = SingleWeaponSpec(weapon: w1, customTraits: [t1]);
 
@@ -69,8 +69,8 @@ void main() {
   group('WeaponV2.ComboWeaponSpec', () {
     test('ComboWeaponSpec creation no custom traits', () {
       // Arrange
-      var w1 = WeaponFactory.createAC(WeaponSize.light);
-      var w2 = WeaponFactory.createATM(WeaponSize.light);
+      var w1 = Weapon.ac(WeaponSize.light);
+      var w2 = Weapon.atm(WeaponSize.light);
       var ws = ComboWeaponSpec(weapon1: w1, weapon2: w2);
 
       // Act & Assert
@@ -95,8 +95,8 @@ void main() {
     });
     test('ComboWeaponSpec creation with custom traits', () {
       // Arrange
-      var w1 = WeaponFactory.createAC(WeaponSize.light);
-      var w2 = WeaponFactory.createATM(WeaponSize.light);
+      var w1 = Weapon.ac(WeaponSize.light);
+      var w2 = Weapon.atm(WeaponSize.light);
       var t1 = const Trait.aa();
       var ws = ComboWeaponSpec(weapon1: w1, weapon2: w2, customTraits: [t1]);
 

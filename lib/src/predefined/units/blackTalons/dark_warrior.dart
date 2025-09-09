@@ -12,10 +12,10 @@ import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon.dart' show Weapon;
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
 import 'package:gearforce/src/predefined/units/blackTalons/unit_ids.dart';
-import 'package:gearforce/src/predefined/weapon_factory.dart';
 
 Unit createDarkWarrior() {
   final base = ModelBase(
@@ -30,10 +30,10 @@ Unit createDarkWarrior() {
     pi: Skill(4),
     ew: Skill(5),
     weapons: [
-      WeaponFactory.createLC(WeaponSize.light, hasReact: true),
-      WeaponFactory.createFC(WeaponSize.light, hasReact: true),
-      WeaponFactory.createRP(WeaponSize.light, hasReact: false),
-      WeaponFactory.createAPGL(WeaponSize.light, hasReact: false),
+      Weapon.lc(WeaponSize.light, hasReact: true),
+      Weapon.fc(WeaponSize.light, hasReact: true),
+      Weapon.rp(WeaponSize.light, hasReact: false),
+      Weapon.apgl(WeaponSize.light, hasReact: false),
     ],
     traits: [Trait.hands(), Trait.stealth(isAux: true)],
     height: 1.5,

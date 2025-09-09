@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon.dart' show Weapon;
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
 import 'package:gearforce/src/predefined/weapon_factory.dart';
 
@@ -55,7 +56,7 @@ void main() {
 
       // Act
       final weapon = WeaponFactory.getWeaponByCode(weaponCode);
-      final expectedWeapon = WeaponFactory.createAC(WeaponSize.heavy);
+      final expectedWeapon = Weapon.ac(WeaponSize.heavy);
 
       // Assert
       expect(weapon, isNotNull);

@@ -13,10 +13,10 @@ import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon.dart' show Weapon;
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
 import 'package:gearforce/src/predefined/units/north/unit_ids.dart';
-import 'package:gearforce/src/predefined/weapon_factory.dart';
 
 Unit createHunter() {
   final baseModel = ModelBase(
@@ -50,10 +50,10 @@ Unit createHunter() {
         id: '0',
         tv: 0,
         weapons: [
-          WeaponFactory.createAC(WeaponSize.light, hasReact: true),
-          WeaponFactory.createVB(WeaponSize.light, hasReact: true),
-          WeaponFactory.createRP(WeaponSize.light),
-          WeaponFactory.createAPGL(WeaponSize.light),
+          Weapon.ac(WeaponSize.light, hasReact: true),
+          Weapon.vb(WeaponSize.light, hasReact: true),
+          Weapon.rp(WeaponSize.light),
+          Weapon.apgl(WeaponSize.light),
         ],
       ),
       Variant(
@@ -61,10 +61,10 @@ Unit createHunter() {
         id: '1',
         tv: 1,
         weapons: [
-          WeaponFactory.createAC(WeaponSize.light, hasReact: true),
-          WeaponFactory.createMW(WeaponSize.medium, hasReact: true),
-          WeaponFactory.createRP(WeaponSize.light),
-          WeaponFactory.createAPGL(WeaponSize.light),
+          Weapon.ac(WeaponSize.light, hasReact: true),
+          Weapon.mw(WeaponSize.medium, hasReact: true),
+          Weapon.rp(WeaponSize.light),
+          Weapon.apgl(WeaponSize.light),
         ],
         traits: [Trait.climb()],
       ),
@@ -74,8 +74,8 @@ Unit createHunter() {
         tv: 1,
         ew: Skill(5),
         weapons: [
-          WeaponFactory.createAC(WeaponSize.light, hasReact: true),
-          WeaponFactory.createVB(WeaponSize.light, hasReact: true),
+          Weapon.ac(WeaponSize.light, hasReact: true),
+          Weapon.vb(WeaponSize.light, hasReact: true),
         ],
         traits: [Trait.sensor(level: 24)],
       ),
@@ -84,8 +84,8 @@ Unit createHunter() {
         id: '3',
         tv: 1,
         weapons: [
-          WeaponFactory.createSC(WeaponSize.medium, hasReact: true),
-          WeaponFactory.createVB(WeaponSize.light, hasReact: true),
+          Weapon.sc(WeaponSize.medium, hasReact: true),
+          Weapon.vb(WeaponSize.light, hasReact: true),
         ],
       ),
     ],
