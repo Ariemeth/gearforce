@@ -11,9 +11,12 @@ import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
+import 'package:gearforce/src/models/roster/weapon/damage_size_bands.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_mode.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_range.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 
 void main() {
   group('Upgrade', () {
@@ -52,12 +55,15 @@ void main() {
         ewMod: (ew, context) => Skill(7),
         weaponsMod: (weapons, context) => [
           ...weapons,
-          Weapon(
-            code: 'W001',
-            name: 'Test Weapon',
-            range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-            damage: 10,
-            modes: {WeaponMode.direct},
+          SingleWeaponSpec(
+            weapon: Weapon(
+              code: 'W001',
+              name: 'Test Weapon',
+              size: WeaponSize.light,
+              range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
+              damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
+              modes: {WeaponMode.direct},
+            ),
           ),
         ],
         traitsMod: (traits, context) => [
@@ -94,7 +100,7 @@ void main() {
       expect(upgrade.ewMod(initialModel.ew, context).value, 7);
       expect(upgrade.weaponsMod(initialModel.weapons, context).length, 1);
       expect(
-        upgrade.weaponsMod(initialModel.weapons, context).first.name,
+        upgrade.weaponsMod(initialModel.weapons, context).first.weapons[0].name,
         'Test Weapon',
       );
       expect(upgrade.traitsMod(initialModel.traits, context).length, 1);

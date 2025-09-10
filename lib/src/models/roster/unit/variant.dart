@@ -5,7 +5,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:meta/meta.dart';
 
 @immutable
@@ -21,14 +21,14 @@ class Variant {
   final Skill? gu;
   final Skill? pi;
   final Skill? ew;
-  final List<Weapon>? weapons;
+  final List<WeaponSpec>? weapons;
   final List<Trait>? traits;
 
-  Variant(
+  const Variant(
     this.name, {
     required this.id,
     required this.tv,
-    Set<Role>? roles,
+    this.roles,
     this.movement,
     this.armor,
     this.hullStructure,
@@ -36,15 +36,9 @@ class Variant {
     this.gu,
     this.pi,
     this.ew,
-    List<Weapon>? weapons,
-    List<Trait>? traits,
-  }) : assert(id.trim().isNotEmpty, 'ID must not be empty or all whitespace'),
-       assert(
-         name.trim().isNotEmpty,
-         'Name must not be empty or all whitespace',
-       ),
-       assert(tv >= 0, 'TV must be 0 or positive'),
-       roles = roles != null ? Set.unmodifiable(roles) : null,
-       weapons = weapons != null ? List.unmodifiable(weapons) : null,
-       traits = traits != null ? List.unmodifiable(traits) : null;
+    this.weapons,
+    this.traits,
+  }) : assert(id.length > 0, 'ID must not be empty or all whitespace'),
+       assert(name.length > 0, 'Name must not be empty or all whitespace'),
+       assert(tv >= 0, 'TV must be 0 or positive');
 }

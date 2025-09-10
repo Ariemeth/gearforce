@@ -5,7 +5,7 @@ import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 
 enum ModelAttribute<T> {
   name<String>(),
@@ -18,7 +18,7 @@ enum ModelAttribute<T> {
   gu<Skill>(),
   pi<Skill>(),
   ew<Skill>(),
-  weapons<List<Weapon>>(),
+  weapons<List<WeaponSpec>>(),
   traits<List<Trait>>();
 
   const ModelAttribute();

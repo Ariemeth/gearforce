@@ -26,7 +26,7 @@ void main() {
       const variant2Id = 'variant-002';
       const variant2Name = 'Variant 2';
 
-      final baseModel = ModelBase(
+      const baseModel = ModelBase(
         unitName,
         tv: unitTV,
         roles: {Role.gp, Role.sk},
@@ -44,7 +44,6 @@ void main() {
 
       final unit = Unit(
         baseModel,
-        name: unitName,
         id: unitId,
         classification: unitClassification,
         subtype: unitSubtype,

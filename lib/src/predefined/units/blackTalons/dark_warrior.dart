@@ -1,3 +1,4 @@
+import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
@@ -11,37 +12,36 @@ import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon.dart' show Weapon;
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
+import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:gearforce/src/predefined/mod_functions.dart';
-import 'package:gearforce/src/predefined/trait_factory.dart';
 import 'package:gearforce/src/predefined/units/blackTalons/unit_ids.dart';
-import 'package:gearforce/src/predefined/weapon_factory.dart';
 
 Unit createDarkWarrior() {
   final base = ModelBase(
     'Dark Warrior',
     tv: 7,
-    roles: {Role.gp, Role.sk, Role.fs},
-    movement: Movement([MovementType.walker, MovementType.ground], 6),
-    armor: Armor(6),
-    hullStructure: HullStructure(hull: 4, structure: 2),
-    actions: UnitActions(1),
-    gu: Skill(4),
-    pi: Skill(4),
-    ew: Skill(5),
-    weapons: [
-      WeaponFactory.createLC(WeaponSize.light, hasReact: true),
-      WeaponFactory.createFC(WeaponSize.light, hasReact: true),
-      WeaponFactory.createRP(WeaponSize.light, hasReact: false),
-      WeaponFactory.createAPGL(WeaponSize.light, hasReact: false),
+    roles: const {Role.gp, Role.sk, Role.fs},
+    movement: const Movement([MovementType.walker, MovementType.ground], 6),
+    armor: const Armor(6),
+    hullStructure: const HullStructure(hull: 4, structure: 2),
+    actions: const UnitActions(1),
+    gu: const Skill(4),
+    pi: const Skill(4),
+    ew: const Skill(5),
+    weapons: const [
+      SingleWeaponSpec(weapon: Weapon.lc(WeaponSize.light, hasReact: true)),
+      SingleWeaponSpec(weapon: Weapon.fcLight(hasReact: true)),
+      SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light, hasReact: false)),
+      SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light, hasReact: false)),
     ],
-    traits: [TraitFactory.hands(), TraitFactory.stealth(isAux: true)],
+    traits: const [Trait.hands(), Trait.stealth(isAux: true)],
     height: 1.5,
   );
 
   return Unit(
     base,
-    name: 'Dark Warrior',
     id: darkWarriorId,
     classification: Classification.gear,
     subtype: 'Trooper Gear',
@@ -56,8 +56,8 @@ Unit createDarkWarrior() {
         tvMod: createIntAdjustmentMod(1),
         ewMod: createSkillAdjustmentMod(4),
         traitsMod: createAddTraitsMod([
-          TraitFactory.ecm(),
-          TraitFactory.sensor(isAux: true, level: 24),
+          Trait.ecm(),
+          Trait.sensor(isAux: true, level: 24),
         ]),
       ),
       UnitUpgrade(
