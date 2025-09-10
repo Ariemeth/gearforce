@@ -1,4 +1,3 @@
-import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 
 extension WeaponSpecListExtensions on List<WeaponSpec> {
@@ -10,15 +9,8 @@ extension WeaponSpecListExtensions on List<WeaponSpec> {
     final copied = <WeaponSpec>[];
     for (final spec in this) {
       final clone = spec.when(
-        single: (s) => SingleWeaponSpec(
-          weapon: s.weapon.copyWith(),
-          customTraits: List<Trait>.from(s.customTraits),
-        ),
-        combo: (c) => ComboWeaponSpec(
-          weapon1: c.weapon1.copyWith(),
-          weapon2: c.weapon2.copyWith(),
-          customTraits: List<Trait>.from(c.customTraits),
-        ),
+        single: (s) => s.copyWith(),
+        combo: (c) => c.copyWith(),
       );
       copied.add(clone);
     }

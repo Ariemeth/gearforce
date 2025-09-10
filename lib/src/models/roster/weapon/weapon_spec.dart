@@ -1,4 +1,5 @@
 import 'package:gearforce/src/models/roster/trait/trait.dart' show Trait;
+import 'package:gearforce/src/models/roster/trait/trait_list_extensions.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:meta/meta.dart' show immutable;
 
@@ -55,8 +56,8 @@ final class SingleWeaponSpec extends WeaponSpec {
   // Creates a new instance with selectively replaced fields.
   SingleWeaponSpec copyWith({Weapon? weapon, List<Trait>? customTraits}) {
     return SingleWeaponSpec(
-      weapon: weapon ?? this.weapon,
-      customTraits: customTraits ?? this.customTraits,
+      weapon: weapon ?? this.weapon.copyWith(),
+      customTraits: customTraits ?? this.customTraits.copyWith(),
     );
   }
 }
@@ -108,9 +109,9 @@ final class ComboWeaponSpec extends WeaponSpec {
     List<Trait>? customTraits,
   }) {
     return ComboWeaponSpec(
-      weapon1: weapon1 ?? this.weapon1,
-      weapon2: weapon2 ?? this.weapon2,
-      customTraits: customTraits ?? this.customTraits,
+      weapon1: weapon1 ?? this.weapon1.copyWith(),
+      weapon2: weapon2 ?? this.weapon2.copyWith(),
+      customTraits: customTraits ?? this.customTraits.copyWith(),
     );
   }
 }
