@@ -32,7 +32,7 @@ class TraitFactory {
       case 'aa':
         return Trait.aa(isAux: isAux);
       case 'ap':
-        return Trait.ap(isAux: isAux, level: level!);
+        return Trait.ap(isAux: isAux, level: level ?? 0);
       case 'ai':
         return Trait.ai(isAux: isAux);
       case 'airdrop':

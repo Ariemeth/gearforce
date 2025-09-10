@@ -45,8 +45,8 @@ class Trait {
     : this(
         name: 'AA',
         description:
-            'Weapons with the AA trait receive +1D6 for ranged attacks ' +
-            'against elevated VTOLs and airstrike counters. This unit may retaliate ' +
+            'Weapons with the AA trait receive +1D6 for ranged attacks '
+            'against elevated VTOLs and airstrike counters. This unit may retaliate '
             'against an airstrike counter when they perform an airstrike.',
         isAux: isAux,
       );
