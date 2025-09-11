@@ -34,7 +34,10 @@ class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
 
   DataTable _buildTable() {
     return DataTable(
-      columnSpacing: 1.0,
+      columnSpacing: 5.0,
+      dataRowMinHeight: 20,
+      dataRowMaxHeight: 25,
+      headingRowHeight: 22,
       columns: [
         DataColumn(
           label: Text('Name'),
