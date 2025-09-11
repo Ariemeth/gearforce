@@ -51,7 +51,7 @@ Unit createHunter() {
         tv: 0,
         weapons: const [
           SingleWeaponSpec(weapon: Weapon.ac(WeaponSize.light, hasReact: true)),
-          SingleWeaponSpec(weapon: Weapon.vbLight(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vb(WeaponSize.light, hasReact: true)),
           SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light)),
           SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light)),
         ],
@@ -77,7 +77,7 @@ Unit createHunter() {
         ew: const Skill(5),
         weapons: const [
           SingleWeaponSpec(weapon: Weapon.ac(WeaponSize.light, hasReact: true)),
-          SingleWeaponSpec(weapon: Weapon.vbLight(hasReact: true)),
+          SingleWeaponSpec(weapon: Weapon.vb(WeaponSize.light, hasReact: true)),
         ],
         traits: const [Trait.sensor(level: 24)],
       ),
@@ -86,8 +86,10 @@ Unit createHunter() {
         id: '3',
         tv: 1,
         weapons: const [
-          SingleWeaponSpec(weapon: Weapon.scMedium(hasReact: true)),
-          SingleWeaponSpec(weapon: Weapon.vbLight(hasReact: true)),
+          SingleWeaponSpec(
+            weapon: Weapon.sc(WeaponSize.medium, hasReact: true),
+          ),
+          SingleWeaponSpec(weapon: Weapon.vb(WeaponSize.light, hasReact: true)),
         ],
       ),
     ],

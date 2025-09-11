@@ -1,5 +1,6 @@
 import 'package:gearforce/src/models/roster/trait/trait.dart';
-import 'package:gearforce/src/models/roster/weapon/damage_size_bands.dart';
+import 'package:gearforce/src/models/roster/weapon/size_bands.dart'
+    show DamageSizeBands, TraitSizeBands;
 import 'package:gearforce/src/models/roster/weapon/weapon_mode.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_range.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_size.dart';
@@ -11,32 +12,47 @@ class Weapon {
   final String name;
   final WeaponRange range;
   final Set<WeaponMode> modes;
-  final List<Trait> primaryTraits;
-  final List<Trait> alternateTraits;
-  final bool isReact;
+  final List<Trait> _primaryTraits;
+  final List<Trait> _alternateTraits;
+  final TraitSizeBands primaryTraitBands;
+  final TraitSizeBands alternateTraitBands;
   final DamageSizeBands damageBands;
   final WeaponSize size;
+  final bool isReact;
 
   const Weapon({
     required String code,
     required this.name,
     required this.range,
-
     required this.modes,
-    required this.damageBands,
-    required this.size,
 
     /// primaryTraits represent the base traits of this weapon
-    this.primaryTraits = const [],
+    List<Trait> primaryTraits = const [],
 
     /// alternateTraits are an optional set of traits that can be used instead of the primary traits
-    this.alternateTraits = const [],
+    List<Trait> alternateTraits = const [],
+
+    this.primaryTraitBands = const TraitSizeBands(),
+    this.alternateTraitBands = const TraitSizeBands(),
+    required this.damageBands,
+    required this.size,
     this.isReact = false,
-  }) : _code = code;
+  }) : _code = code,
+       _primaryTraits = primaryTraits,
+       _alternateTraits = alternateTraits;
+
+  List<Trait> get primaryTraits => [
+    ..._primaryTraits,
+    ...primaryTraitBands.getValue(size),
+  ];
+  List<Trait> get alternateTraits => [
+    ..._alternateTraits,
+    ...alternateTraitBands.getValue(size),
+  ];
 
   bool get hasAlternateTraits => alternateTraits.isNotEmpty;
   int get damage {
-    return damageBands.damage(size);
+    return damageBands.getValue(size);
   }
 
   String get code => '${size.prefix}$_code';
@@ -185,39 +201,20 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.atmLight({bool hasReact = false})
+  const Weapon.atm(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'ATM',
         name: 'Anti-Tank Missile',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 24, max: 48),
         damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
         modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.ap(level: 2), Trait.guided()],
-        isReact: hasReact,
-      );
-
-  const Weapon.atmMedium({bool hasReact = false})
-    : this(
-        code: 'ATM',
-        name: 'Anti-Tank Missile',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 24, max: 48),
-        damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.ap(level: 3), Trait.guided()],
-        isReact: hasReact,
-      );
-
-  const Weapon.atmHeavy({bool hasReact = false})
-    : this(
-        code: 'ATM',
-        name: 'Anti-Tank Missile',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 24, max: 48),
-        damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.ap(level: 4), Trait.guided()],
+        primaryTraits: const [Trait.guided()],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         isReact: hasReact,
       );
 
@@ -238,459 +235,195 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.napalmLight({bool hasReact = false})
+  const Weapon.napalm(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'Napalm',
         name: 'Napalm Bomb',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.aoe(level: 3),
-          Trait.blast(),
-          Trait.ai(),
-          Trait.fire(level: 1),
-        ],
+        primaryTraits: const [Trait.aoe(level: 3), Trait.blast(), Trait.ai()],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.fire(level: 1)],
+          m: [Trait.fire(level: 2)],
+          h: [Trait.fire(level: 3)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.napalmMedium({bool hasReact = false})
-    : this(
-        code: 'Napalm',
-        name: 'Napalm Bomb',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.aoe(level: 3),
-          Trait.blast(),
-          Trait.ai(),
-          Trait.fire(level: 2),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.napalmHeavy({bool hasReact = false})
-    : this(
-        code: 'Napalm',
-        name: 'Napalm Bomb',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.aoe(level: 3),
-          Trait.blast(),
-          Trait.ai(),
-          Trait.fire(level: 3),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.bzLight({bool hasReact = false})
+  const Weapon.bz(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'BZ',
         name: 'Bazooka',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 2)],
+        primaryTraits: const [],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         alternateTraits: const [Trait.aoe(level: 2), Trait.blast()],
         isReact: hasReact,
       );
 
-  const Weapon.bzMedium({bool hasReact = false})
-    : this(
-        code: 'BZ',
-        name: 'Bazooka',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3)],
-        alternateTraits: const [Trait.aoe(level: 2), Trait.blast()],
-        isReact: hasReact,
-      );
-
-  const Weapon.bzHeavy({bool hasReact = false})
-    : this(
-        code: 'BZ',
-        name: 'Bazooka',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 4)],
-        alternateTraits: const [Trait.aoe(level: 2), Trait.blast()],
-        isReact: hasReact,
-      );
-
-  const Weapon.rbzLight({bool hasReact = false})
+  const Weapon.rbz(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'RBZ',
         name: 'Rapid Fire Bazooka',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 2), Trait.burst(level: 1)],
+        primaryTraits: const [Trait.burst(level: 1)],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.rbzMedium({bool hasReact = false})
-    : this(
-        code: 'RBZ',
-        name: 'Rapid Fire Bazooka',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3), Trait.burst(level: 1)],
-        isReact: hasReact,
-      );
-
-  const Weapon.rbzHeavy({bool hasReact = false})
-    : this(
-        code: 'RBZ',
-        name: 'Rapid Fire Bazooka',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 4), Trait.burst(level: 1)],
-        isReact: hasReact,
-      );
-
-  const Weapon.fcLight({bool hasReact = false})
+  const Weapon.fc(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'FC',
         name: 'Frag Cannon',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
         damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.precise(), Trait.ap(level: 1)],
+        primaryTraits: const [Trait.precise()],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 1)],
+          m: [Trait.ap(level: 2)],
+          h: [Trait.ap(level: 3)],
+        ),
         alternateTraits: const [Trait.frag(), Trait.ai()],
         isReact: hasReact,
       );
 
-  const Weapon.fcMedium({bool hasReact = false})
-    : this(
-        code: 'FC',
-        name: 'Frag Cannon',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.precise(), Trait.ap(level: 2)],
-        alternateTraits: const [Trait.frag(), Trait.ai()],
-        isReact: hasReact,
-      );
-
-  const Weapon.fcHeavy({bool hasReact = false})
-    : this(
-        code: 'FC',
-        name: 'Frag Cannon',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.precise(), Trait.ap(level: 3)],
-        alternateTraits: const [Trait.frag(), Trait.ai()],
-        isReact: hasReact,
-      );
-
-  const Weapon.fgLight({bool hasReact = false})
+  const Weapon.fg(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'FG',
         name: 'Field Gun',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 24, max: 48),
         damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
         modes: const {WeaponMode.direct, WeaponMode.indirect},
         primaryTraits: const [Trait.aoe(level: 3), Trait.blast()],
-        alternateTraits: const [Trait.ap(level: 3)],
+        alternateTraits: const [],
+        alternateTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 3)],
+          m: [Trait.ap(level: 4)],
+          h: [Trait.ap(level: 5)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.fgMedium({bool hasReact = false})
-    : this(
-        code: 'FG',
-        name: 'Field Gun',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 24, max: 48),
-        damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.aoe(level: 3), Trait.blast()],
-        alternateTraits: const [Trait.ap(level: 4)],
-        isReact: hasReact,
-      );
-
-  const Weapon.fgHeavy({bool hasReact = false})
-    : this(
-        code: 'FG',
-        name: 'Field Gun',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 24, max: 48),
-        damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.aoe(level: 3), Trait.blast()],
-        alternateTraits: const [Trait.ap(level: 5)],
-        isReact: hasReact,
-      );
-
-  const Weapon.flLight({bool hasReact = false})
+  const Weapon.fl(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'FL',
         name: 'Flamer',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
         damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.ai(),
-          Trait.fire(level: 1),
-          Trait.burst(level: 1),
-          Trait.spray(),
-        ],
+        primaryTraits: const [Trait.ai(), Trait.burst(level: 1), Trait.spray()],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.fire(level: 1)],
+          m: [Trait.fire(level: 2)],
+          h: [Trait.fire(level: 3)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.flMedium({bool hasReact = false})
-    : this(
-        code: 'FL',
-        name: 'Flamer',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.ai(),
-          Trait.fire(level: 2),
-          Trait.burst(level: 1),
-          Trait.spray(),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.flHeavy({bool hasReact = false})
-    : this(
-        code: 'FL',
-        name: 'Flamer',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.ai(),
-          Trait.fire(level: 3),
-          Trait.burst(level: 1),
-          Trait.spray(),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.ggLight({bool hasReact = false})
+  const Weapon.gg(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'GG',
         name: 'Grappling Gun',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 10, max: null),
         damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 1)],
+        primaryTraits: const [],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 1)],
+          m: [Trait.ap(level: 2)],
+          h: [Trait.ap(level: 3)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.ggMedium({bool hasReact = false})
-    : this(
-        code: 'GG',
-        name: 'Grappling Gun',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 10, max: null),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 2)],
-        isReact: hasReact,
-      );
-
-  const Weapon.ggHeavy({bool hasReact = false})
-    : this(
-        code: 'GG',
-        name: 'Grappling Gun',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 10, max: null),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3)],
-        isReact: hasReact,
-      );
-
-  const Weapon.glLight({bool hasReact = false})
+  const Weapon.gl(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'GL',
         name: 'Grenade Launcher',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
         damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
         modes: const {WeaponMode.direct, WeaponMode.indirect},
         primaryTraits: const [Trait.aoe(level: 2), Trait.blast(), Trait.ai()],
-        alternateTraits: const [Trait.ap(level: 2)],
+        alternateTraits: const [],
+        alternateTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.glMedium({bool hasReact = false})
-    : this(
-        code: 'GL',
-        name: 'Grenade Launcher',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.aoe(level: 2), Trait.blast(), Trait.ai()],
-        alternateTraits: const [Trait.ap(level: 3)],
-        isReact: hasReact,
-      );
-
-  const Weapon.glHeavy({bool hasReact = false})
-    : this(
-        code: 'GL',
-        name: 'Grenade Launcher',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.aoe(level: 2), Trait.blast(), Trait.ai()],
-        alternateTraits: const [Trait.ap(level: 4)],
-        isReact: hasReact,
-      );
-
-  const Weapon.hgLight({bool hasReact = false})
+  const Weapon.hg(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'HG',
         name: 'Hand Grenade',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 3, maxOptimal: 6, max: 12),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [
-          Trait.aoe(level: 3),
-          Trait.blast(),
-          Trait.ap(level: 1),
-          Trait.ai(),
-        ],
+        primaryTraits: const [Trait.aoe(level: 3), Trait.blast(), Trait.ai()],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 1)],
+          m: [Trait.ap(level: 2)],
+          h: [Trait.ap(level: 3)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.hgMedium({bool hasReact = false})
-    : this(
-        code: 'HG',
-        name: 'Hand Grenade',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 6, max: 12),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [
-          Trait.aoe(level: 3),
-          Trait.blast(),
-          Trait.ap(level: 2),
-          Trait.ai(),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.hgHeavy({bool hasReact = false})
-    : this(
-        code: 'HG',
-        name: 'Hand Grenade',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 6, max: 12),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [
-          Trait.aoe(level: 3),
-          Trait.blast(),
-          Trait.ap(level: 3),
-          Trait.ai(),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.iatmLight({bool hasReact = false})
+  const Weapon.iatm(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'IATM',
         name: 'Infantry ATM',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
         damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.ap(level: 1), Trait.guided()],
+        primaryTraits: const [Trait.guided()],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 1)],
+          m: [Trait.ap(level: 2)],
+          h: [Trait.ap(level: 3)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.iatmMedium({bool hasReact = false})
-    : this(
-        code: 'IATM',
-        name: 'Infantry ATM',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.ap(level: 2), Trait.guided()],
-        isReact: hasReact,
-      );
-
-  const Weapon.iatmHeavy({bool hasReact = false})
-    : this(
-        code: 'IATM',
-        name: 'Infantry ATM',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.ap(level: 3), Trait.guided()],
-        isReact: hasReact,
-      );
-
-  const Weapon.iglLight({bool hasReact = false})
+  const Weapon.igl(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'IGL',
         name: 'Infantry Grenade Launcher',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 3, maxOptimal: 9, max: 18),
         damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct, WeaponMode.indirect},
         primaryTraits: const [Trait.aoe(level: 2), Trait.blast(), Trait.ai()],
-        alternateTraits: const [Trait.ap(level: 1)],
-        isReact: hasReact,
-      );
-
-  const Weapon.iglMedium({bool hasReact = false})
-    : this(
-        code: 'IGL',
-        name: 'Infantry Grenade Launcher',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.aoe(level: 2), Trait.blast(), Trait.ai()],
-        alternateTraits: const [Trait.ap(level: 2)],
-        isReact: hasReact,
-      );
-
-  const Weapon.iglHeavy({bool hasReact = false})
-    : this(
-        code: 'IGL',
-        name: 'Infantry Grenade Launcher',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct, WeaponMode.indirect},
-        primaryTraits: const [Trait.aoe(level: 2), Trait.blast(), Trait.ai()],
-        alternateTraits: const [Trait.ap(level: 3)],
+        alternateTraits: const [],
+        alternateTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 1)],
+          m: [Trait.ap(level: 2)],
+          h: [Trait.ap(level: 3)],
+        ),
         isReact: hasReact,
       );
 
@@ -878,117 +611,56 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.pcLight({bool hasReact = false})
+  const Weapon.pc(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'PC',
         name: 'Plasma Cannon',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
         damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.fire(level: 4)],
+        primaryTraits: const [],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.fire(level: 4)],
+          m: [Trait.fire(level: 5)],
+          h: [Trait.fire(level: 6)],
+        ),
         alternateTraits: const [Trait.ai(), Trait.frag(), Trait.fire(level: 2)],
         isReact: hasReact,
       );
 
-  const Weapon.pcMedium({bool hasReact = false})
-    : this(
-        code: 'PC',
-        name: 'Plasma Cannon',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.fire(level: 5)],
-        alternateTraits: const [Trait.ai(), Trait.frag(), Trait.fire(level: 2)],
-        isReact: hasReact,
-      );
-
-  const Weapon.pcHeavy({bool hasReact = false})
-    : this(
-        code: 'PC',
-        name: 'Plasma Cannon',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.fire(level: 6)],
-        alternateTraits: const [Trait.ai(), Trait.frag(), Trait.fire(level: 2)],
-        isReact: hasReact,
-      );
-
-  const Weapon.plLight({bool hasReact = false})
+  const Weapon.pl(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'PL',
         name: 'Pulse Laser',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct},
         primaryTraits: const [Trait.burst(level: 1)],
-        alternateTraits: const [Trait.apex(), Trait.ap(level: 1)],
+        alternateTraits: const [Trait.apex()],
+        alternateTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 1)],
+          m: [Trait.ap(level: 2)],
+          h: [Trait.ap(level: 3)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.plMedium({bool hasReact = false})
-    : this(
-        code: 'PL',
-        name: 'Pulse Laser',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.burst(level: 1)],
-        alternateTraits: const [Trait.apex(), Trait.ap(level: 2)],
-        isReact: hasReact,
-      );
-
-  const Weapon.plHeavy({bool hasReact = false})
-    : this(
-        code: 'PL',
-        name: 'Pulse Laser',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.burst(level: 1)],
-        alternateTraits: const [Trait.apex(), Trait.ap(level: 3)],
-        isReact: hasReact,
-      );
-
-  const Weapon.pzLight({bool hasReact = false})
+  const Weapon.pz(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'PZ',
         name: 'Panzerfaust',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 3, maxOptimal: 6, max: 12),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 2)],
-        isReact: hasReact,
-      );
-
-  const Weapon.pzMedium({bool hasReact = false})
-    : this(
-        code: 'PZ',
-        name: 'Panzerfaust',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 6, max: 12),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3)],
-        isReact: hasReact,
-      );
-
-  const Weapon.pzHeavy({bool hasReact = false})
-    : this(
-        code: 'PZ',
-        name: 'Panzerfaust',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 6, max: 12),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 4)],
+        primaryTraits: const [],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         isReact: hasReact,
       );
 
@@ -1016,39 +688,20 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.rgLight({bool hasReact = false})
+  const Weapon.rg(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'RG',
         name: 'Railgun',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 6, maxOptimal: 48, max: 96),
         damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.precisePlus(), Trait.ap(level: 3)],
-        isReact: hasReact,
-      );
-
-  const Weapon.rgMedium({bool hasReact = false})
-    : this(
-        code: 'RG',
-        name: 'Railgun',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 48, max: 96),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.precisePlus(), Trait.ap(level: 4)],
-        isReact: hasReact,
-      );
-
-  const Weapon.rgHeavy({bool hasReact = false})
-    : this(
-        code: 'RG',
-        name: 'Railgun',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 48, max: 96),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.precisePlus(), Trait.ap(level: 5)],
+        primaryTraits: const [Trait.precisePlus()],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 3)],
+          m: [Trait.ap(level: 4)],
+          h: [Trait.ap(level: 5)],
+        ),
         isReact: hasReact,
       );
 
@@ -1076,123 +729,54 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.scLight({bool hasReact = false})
+  const Weapon.sc(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'SC',
         name: 'Snub Cannon',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 3, maxOptimal: 12, max: 24),
         damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.precise(),
-          Trait.ap(level: 2),
-          Trait.demo(level: 3),
-        ],
+        primaryTraits: const [Trait.precise(), Trait.demo(level: 3)],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.scMedium({bool hasReact = false})
-    : this(
-        code: 'SC',
-        name: 'Snub Cannon',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.precise(),
-          Trait.ap(level: 3),
-          Trait.demo(level: 3),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.scHeavy({bool hasReact = false})
-    : this(
-        code: 'SC',
-        name: 'Snub Cannon',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 12, max: 24),
-        damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [
-          Trait.precise(),
-          Trait.ap(level: 4),
-          Trait.demo(level: 3),
-        ],
-        isReact: hasReact,
-      );
-
-  const Weapon.seLight({bool hasReact = false})
+  const Weapon.se(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'SE',
         name: 'Shaped Explosive',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 2), Trait.demo(level: 4)],
+        primaryTraits: const [Trait.demo(level: 4)],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         isReact: hasReact,
       );
 
-  const Weapon.seMedium({bool hasReact = false})
-    : this(
-        code: 'SE',
-        name: 'Shaped Explosive',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3), Trait.demo(level: 4)],
-        isReact: hasReact,
-      );
-
-  const Weapon.seHeavy({bool hasReact = false})
-    : this(
-        code: 'SE',
-        name: 'Shaped Explosive',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 4), Trait.demo(level: 4)],
-        isReact: hasReact,
-      );
-
-  const Weapon.sgLight({bool hasReact = false})
+  const Weapon.sg(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'SG',
         name: 'Spike Gun',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
         damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3)],
-        isReact: hasReact,
-      );
-
-  const Weapon.sgMedium({bool hasReact = false})
-    : this(
-        code: 'SG',
-        name: 'Spike Gun',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 4)],
-        isReact: hasReact,
-      );
-
-  const Weapon.sgHeavy({bool hasReact = false})
-    : this(
-        code: 'SG',
-        name: 'Spike Gun',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 5)],
+        primaryTraits: const [],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 3)],
+          m: [Trait.ap(level: 4)],
+          h: [Trait.ap(level: 5)],
+        ),
         isReact: hasReact,
       );
 
@@ -1209,78 +793,38 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.tgLight({bool hasReact = false})
+  const Weapon.tg(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'TG',
         name: 'Tank Gun',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 12, maxOptimal: 36, max: 72),
         damageBands: const DamageSizeBands(l: 9, m: 10, h: 11),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3), Trait.demo(level: 2)],
+        primaryTraits: const [Trait.demo(level: 2)],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 3)],
+          m: [Trait.ap(level: 4)],
+          h: [Trait.ap(level: 5)],
+        ),
         alternateTraits: const [Trait.aoe(level: 2), Trait.blast()],
         isReact: hasReact,
       );
 
-  const Weapon.tgMedium({bool hasReact = false})
-    : this(
-        code: 'TG',
-        name: 'Tank Gun',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 12, maxOptimal: 36, max: 72),
-        damageBands: const DamageSizeBands(l: 9, m: 10, h: 11),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 4), Trait.demo(level: 2)],
-        alternateTraits: const [Trait.aoe(level: 2), Trait.blast()],
-        isReact: hasReact,
-      );
-
-  const Weapon.tgHeavy({bool hasReact = false})
-    : this(
-        code: 'TG',
-        name: 'Tank Gun',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 12, maxOptimal: 36, max: 72),
-        damageBands: const DamageSizeBands(l: 9, m: 10, h: 11),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 5), Trait.demo(level: 2)],
-        alternateTraits: const [Trait.aoe(level: 2), Trait.blast()],
-        isReact: hasReact,
-      );
-
-  const Weapon.vbLight({bool hasReact = false})
+  const Weapon.vb(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'VB',
         name: 'Vibro Blade',
-        size: WeaponSize.light,
+        size: size,
         range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
         damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 2)],
-        isReact: hasReact,
-      );
-
-  const Weapon.vbMedium({bool hasReact = false})
-    : this(
-        code: 'VB',
-        name: 'Vibro Blade',
-        size: WeaponSize.medium,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 3)],
-        isReact: hasReact,
-      );
-
-  const Weapon.vbHeavy({bool hasReact = false})
-    : this(
-        code: 'VB',
-        name: 'Vibro Blade',
-        size: WeaponSize.heavy,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 0, max: null),
-        damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
-        modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.ap(level: 4)],
+        primaryTraits: const [],
+        primaryTraitBands: const TraitSizeBands(
+          l: [Trait.ap(level: 2)],
+          m: [Trait.ap(level: 3)],
+          h: [Trait.ap(level: 4)],
+        ),
         isReact: hasReact,
       );
 }
