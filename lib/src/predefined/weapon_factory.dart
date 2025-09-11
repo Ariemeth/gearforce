@@ -31,6 +31,8 @@ class WeaponFactory {
         return Weapon.fc(size, hasReact: hasReact);
       case 'FG':
         return Weapon.fg(size, hasReact: hasReact);
+      case 'FK':
+        return Weapon.fk(size, hasReact: hasReact);
       case 'FL':
         return Weapon.fl(size, hasReact: hasReact);
       case 'GG':
@@ -41,6 +43,8 @@ class WeaponFactory {
         return Weapon.hg(size, hasReact: hasReact);
       case 'IATM':
         return Weapon.iatm(size, hasReact: hasReact);
+      case 'IC':
+        return Weapon.ic(size, hasReact: hasReact);
       case 'IGL':
         return Weapon.igl(size, hasReact: hasReact);
       case 'ILW':
@@ -55,8 +59,8 @@ class WeaponFactory {
         return Weapon.imw(size, hasReact: hasReact);
       case 'IR':
         return Weapon.ir(size, hasReact: hasReact);
-      case 'IS':
-        return Weapon.infs(size, hasReact: hasReact);
+      case 'IRC':
+        return Weapon.irc(size, hasReact: hasReact);
       case 'IW':
         return Weapon.iw(size, hasReact: hasReact);
       case 'LC':

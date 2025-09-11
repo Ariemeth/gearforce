@@ -41,19 +41,22 @@ class Weapon {
        _primaryTraits = primaryTraits,
        _alternateTraits = alternateTraits;
 
-  List<Trait> get primaryTraits => [
+  List<Trait> get primaryTraits => getPrimaryTraitsForSize(size);
+  List<Trait> getPrimaryTraitsForSize(WeaponSize size) => [
     ..._primaryTraits,
     ...primaryTraitBands.getValue(size),
   ];
-  List<Trait> get alternateTraits => [
+
+  List<Trait> get alternateTraits => getAlternateTraitsForSize(size);
+  List<Trait> getAlternateTraitsForSize(WeaponSize size) => [
     ..._alternateTraits,
     ...alternateTraitBands.getValue(size),
   ];
 
   bool get hasAlternateTraits => alternateTraits.isNotEmpty;
-  int get damage {
-    return damageBands.getValue(size);
-  }
+
+  int get damage => damageBands.getValue(size);
+  int getDamageForSize(WeaponSize size) => damageBands.getValue(size);
 
   String get code => '${size.prefix}$_code';
   String get baseCode => _code;
@@ -323,6 +326,19 @@ class Weapon {
         isReact: hasReact,
       );
 
+  const Weapon.fk(WeaponSize size, {bool hasReact = false})
+    : this(
+        code: 'FK',
+        name: 'Flak Kannon',
+        size: size,
+        range: const WeaponRange(minOptimal: 12, maxOptimal: 24, max: 48),
+        damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
+        modes: const {WeaponMode.direct},
+        primaryTraits: const [Trait.aa(), Trait.aoe(level: 3), Trait.blast()],
+        alternateTraits: const [],
+        isReact: hasReact,
+      );
+
   const Weapon.fl(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'FL',
@@ -409,12 +425,24 @@ class Weapon {
         isReact: hasReact,
       );
 
+  const Weapon.ic(WeaponSize size, {bool hasReact = false})
+    : this(
+        code: 'IC',
+        name: 'Infantry Cannon',
+        size: size,
+        range: const WeaponRange(minOptimal: 3, maxOptimal: 18, max: 36),
+        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
+        modes: const {WeaponMode.direct},
+        primaryTraits: const [],
+        isReact: hasReact,
+      );
+
   const Weapon.igl(WeaponSize size, {bool hasReact = false})
     : this(
         code: 'IGL',
         name: 'Infantry Grenade Launcher',
         size: size,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 9, max: 18),
+        range: const WeaponRange(minOptimal: 3, maxOptimal: 12, max: 24),
         damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct, WeaponMode.indirect},
         primaryTraits: const [Trait.aoe(level: 2), Trait.blast(), Trait.ai()],
@@ -445,7 +473,7 @@ class Weapon {
         code: 'ILSR',
         name: 'Infantry Laser Sniper Rifle',
         size: size,
-        range: const WeaponRange(minOptimal: 6, maxOptimal: 24, max: 48),
+        range: const WeaponRange(minOptimal: 6, maxOptimal: 36),
         damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct},
         primaryTraits: const [Trait.precise(), Trait.ai()],
@@ -474,10 +502,10 @@ class Weapon {
         code: 'IMG',
         name: 'Infantry Machine Gun',
         size: size,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 9, max: 18),
-        damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
+        range: const WeaponRange(minOptimal: 3, maxOptimal: 18, max: 36),
+        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [Trait.burst(level: 2), Trait.ai()],
+        primaryTraits: const [Trait.ai(), Trait.burst(level: 1)],
         isReact: hasReact,
       );
 
@@ -505,15 +533,15 @@ class Weapon {
         isReact: hasReact,
       );
 
-  const Weapon.infs(WeaponSize size, {bool hasReact = false})
+  const Weapon.irc(WeaponSize size, {bool hasReact = false})
     : this(
-        code: 'IS',
-        name: 'Infantry Special',
+        code: 'IRC',
+        name: 'Infantry Rotary Cannon',
         size: size,
-        range: const WeaponRange(minOptimal: 3, maxOptimal: 18, max: 36),
-        damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
+        range: const WeaponRange(minOptimal: 3, maxOptimal: 12, max: 24),
+        damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
         modes: const {WeaponMode.direct},
-        primaryTraits: const [],
+        primaryTraits: const [Trait.ai(), Trait.burst(level: 2)],
         isReact: hasReact,
       );
 
@@ -522,7 +550,7 @@ class Weapon {
         code: 'IW',
         name: 'Infantry Weapon',
         size: size,
-        range: const WeaponRange(minOptimal: 0, maxOptimal: 9, max: 18),
+        range: const WeaponRange(minOptimal: 0, maxOptimal: 12, max: 24),
         damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
         modes: const {WeaponMode.direct},
         primaryTraits: const [Trait.burst(level: 1), Trait.ai()],
