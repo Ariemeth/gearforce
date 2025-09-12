@@ -76,7 +76,7 @@ class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
     );
   }
 
-  List<Weapon> _lightWeapons() {
+  static List<Weapon> _lightWeapons() {
     const size = WeaponSize.light;
     return [
       Weapon.aam(size),
