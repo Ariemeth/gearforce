@@ -11,7 +11,8 @@ import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
-import 'package:gearforce/src/models/roster/weapon/damage_size_bands.dart';
+import 'package:gearforce/src/models/roster/weapon/size_bands.dart'
+    show DamageSizeBands;
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_mode.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_range.dart';

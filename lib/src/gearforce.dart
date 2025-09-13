@@ -6,6 +6,7 @@ import 'package:gearforce/src/pages/app_settings/bloc/app_settings_bloc.dart';
 import 'package:gearforce/src/pages/app_settings/bloc/app_settings_state.dart';
 import 'package:gearforce/src/pages/app_settings/screens/app_settings_screen.dart';
 import 'package:gearforce/src/pages/roster/screens/roster_screen.dart';
+import 'package:gearforce/src/pages/roster/screens/weapon_display_screen.dart';
 
 class Gearforce extends StatelessWidget {
   const Gearforce({super.key});
@@ -51,6 +52,8 @@ class Gearforce extends StatelessWidget {
                 switch (routeSettings.name) {
                   case AppSettingScreen.routeName:
                     return AppSettingScreen();
+                  case WeaponDisplayScreen.routeName:
+                    return WeaponDisplayScreen();
                   default:
                     return RosterScreen();
                 }
