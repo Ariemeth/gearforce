@@ -15,19 +15,6 @@ class UpdateRosterName extends RosterEvent {
   UpdateRosterName({required this.rosterName});
 }
 
-// class AddSquad extends RosterEvent {
-//   final Squad squad;
-//
-//   AddSquad({required this.squad});
-// }
-//
-// class AddModel extends RosterEvent {
-//   final Squad squad;
-//   final Model model;
-//
-//   AddModel({required this.squad, required this.model});
-// }
-
 class UpdateFaction extends RosterEvent {
   final Faction faction;
 
@@ -39,27 +26,3 @@ class UpdateSubfaction extends RosterEvent {
 
   UpdateSubfaction({required this.subfaction});
 }
-
-// class UpdateSquads extends RosterEvent {
-//   final List<Squad> squads;
-//
-//   UpdateSquads({required this.squads});
-// }
-//
-// class UpdateSquad extends RosterEvent {
-//   final Squad updatedSquad;
-//
-//   UpdateSquad({required this.updatedSquad});
-// }
-//
-// class UpdateSquadRoles extends RosterEvent {
-//   final Squad squad;
-//   final Role primaryRole;
-//   final Role? secondaryRole;
-//
-//   UpdateSquadRoles({
-//     required this.squad,
-//     required this.primaryRole,
-//     this.secondaryRole,
-//   });
-// }
