@@ -35,13 +35,6 @@ class AddSquadButton extends StatelessWidget {
               models: [],
             );
             context.read<RosterBloc>().add(AddSquad(squad: newSquad));
-
-            // Navigate to squad details screen automatically
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => SquadDetailsScreen(squad: newSquad),
-              ),
-            );
           },
           child: Text(
             AppLocalizations.of(context)!.addSquadButtonText,
