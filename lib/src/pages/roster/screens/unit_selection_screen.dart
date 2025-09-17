@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
-import 'package:gearforce/src/models/roster/unit/unit.dart' show Unit;
 import 'package:gearforce/src/models/roster/unit/unit_list_extensions.dart';
-import 'package:gearforce/src/models/roster/weapon/weapon_spec_list_extensions.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/unit_list_header_card.dart';
 import 'package:gearforce/src/predefined/filters/unit_filters.dart';
