@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
 import 'package:gearforce/src/models/roster/unit/unit_list_extensions.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
-import 'package:gearforce/src/pages/roster/widgets/unit_list_header_card.dart';
+import 'package:gearforce/src/pages/roster/widgets/unit_list_card.dart';
 import 'package:gearforce/src/predefined/filters/unit_filters.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
@@ -65,7 +65,10 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                   return ListTile(
                     contentPadding: EdgeInsets.all(0),
                     titleAlignment: ListTileTitleAlignment.center,
-                    title: UnitListHeaderCard(unit: unit),
+                    title: UnitListCard.header(unit: unit),
+                    tileColor: Colors.blueAccent,
+                    selectedColor: Colors.red,
+                    selectedTileColor: Colors.yellow,
                   );
                 },
                 body: Align(
@@ -112,12 +115,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                                   vertical: 4.0,
                                   horizontal: 3.0,
                                 ),
-                                child: Text(
-                                  variant.name,
-                                  style: AppTheme.bodyStyle.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                                child: UnitListCard.variant(variant: variant),
                               ),
                             ),
                           );
