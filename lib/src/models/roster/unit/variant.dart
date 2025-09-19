@@ -5,6 +5,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
+import 'package:gearforce/src/models/roster/unit/model.dart';
+import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:meta/meta.dart';
 
@@ -41,4 +43,22 @@ class Variant {
   }) : assert(id.length > 0, 'ID must not be empty or all whitespace'),
        assert(name.length > 0, 'Name must not be empty or all whitespace'),
        assert(tv >= 0, 'TV must be 0 or positive');
+
+  Model buildModel(Unit unit) {
+    return Model(
+      name: '$name ${unit.name}',
+      tv: tv + unit.base.tv,
+      roles: unit.base.roles.union(roles ?? {}),
+      movement: movement ?? unit.base.movement,
+      armor: armor ?? unit.base.armor,
+      hullStructure: hullStructure ?? unit.base.hullStructure,
+      actions: actions ?? unit.base.actions,
+      gu: gu ?? unit.base.gu,
+      pi: pi ?? unit.base.pi,
+      ew: ew ?? unit.base.ew,
+      weapons: [...unit.base.weapons, ...weapons ?? []],
+      traits: [...unit.base.traits, ...traits ?? []],
+      height: unit.base.height,
+    );
+  }
 }

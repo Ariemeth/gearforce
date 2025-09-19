@@ -66,9 +66,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                     contentPadding: EdgeInsets.all(0),
                     titleAlignment: ListTileTitleAlignment.center,
                     title: UnitListCard.header(unit: unit),
-                    tileColor: Colors.blueAccent,
-                    selectedColor: Colors.red,
-                    selectedTileColor: Colors.yellow,
+                    tileColor: Colors.blue.shade100,
                   );
                 },
                 body: Align(
@@ -93,8 +91,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                             },
                             child: GestureDetector(
                               onTap: () {
-                                final model = unit.buildModel(variant);
-
+                                final model = variant.buildModel(unit);
                                 context.read<RosterBloc>().add(
                                   AddModel(
                                     squad: widget.updatedSquad,
