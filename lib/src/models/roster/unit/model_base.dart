@@ -1,5 +1,6 @@
 import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
@@ -24,6 +25,11 @@ class ModelBase {
   final List<Trait> traits;
   final double height;
 
+  final Classification classification;
+  final String? subtype;
+  final String? manufacturer;
+  final String? description;
+
   const ModelBase(
     this.name, {
     required this.tv,
@@ -38,6 +44,10 @@ class ModelBase {
     required this.weapons,
     required this.traits,
     required this.height,
+    required this.classification,
+    this.subtype,
+    this.manufacturer,
+    this.description,
   }) : assert(name.length > 0, 'Name must not be empty or all whitespace'),
        assert(tv >= 0, 'TV must be 0 or positive');
 }

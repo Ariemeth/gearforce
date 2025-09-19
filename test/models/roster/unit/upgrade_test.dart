@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement_type.dart';
@@ -8,9 +9,11 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
+import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade_context.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
+import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/size_bands.dart'
     show DamageSizeBands;
 import 'package:gearforce/src/models/roster/weapon/weapon.dart';
@@ -23,8 +26,8 @@ void main() {
   group('Upgrade', () {
     test('should apply modifications to a model using UpgradeContext', () {
       // Arrange
-      final initialModel = Model(
-        name: 'Test Model',
+      final baseModel = ModelBase(
+        'Test Model',
         tv: 10,
         roles: {Role.gp},
         movement: Movement([MovementType.walker], 6),
@@ -37,6 +40,13 @@ void main() {
         weapons: [],
         traits: [],
         height: 1.5,
+        subtype: '',
+        classification: Classification.gear,
+      );
+
+      final initialModel = Model(
+        base: baseModel,
+        variant: Variant('Test Model', id: '1', tv: 0),
       );
 
       final upgrade = UnitUpgrade(
@@ -113,8 +123,8 @@ void main() {
 
     test('should not modify fields if no modifications are provided', () {
       // Arrange
-      final initialModel = Model(
-        name: 'Test Model',
+      final modelBase = ModelBase(
+        'Test Model',
         tv: 10,
         roles: {Role.gp},
         movement: Movement([MovementType.walker], 6),
@@ -127,6 +137,12 @@ void main() {
         weapons: [],
         traits: [],
         height: 1.5,
+        classification: Classification.gear,
+      );
+
+      final initialModel = Model(
+        base: modelBase,
+        variant: Variant('Test Model', id: '1', tv: 0),
       );
 
       final upgrade = UnitUpgrade(
@@ -214,19 +230,23 @@ void main() {
           10,
           UnitUpgradeContext(
             Model(
-              name: 'Test Model',
-              tv: 10,
-              roles: {Role.gp},
-              movement: Movement([MovementType.walker], 6),
-              armor: Armor(5),
-              hullStructure: HullStructure(hull: 4, structure: 3),
-              actions: UnitActions(2),
-              gu: Skill(4),
-              pi: Skill(5),
-              ew: Skill(6),
-              weapons: [],
-              traits: [],
-              height: 1.5,
+              base: ModelBase(
+                'Test Model',
+                tv: 10,
+                roles: {Role.gp},
+                movement: Movement([MovementType.walker], 6),
+                armor: Armor(5),
+                hullStructure: HullStructure(hull: 4, structure: 3),
+                actions: UnitActions(2),
+                gu: Skill(4),
+                pi: Skill(5),
+                ew: Skill(6),
+                weapons: [],
+                traits: [],
+                height: 1.5,
+                classification: Classification.gear,
+              ),
+              variant: Variant('Test Model', id: '1', tv: 0),
             ),
             updatedUpgrade,
           ),

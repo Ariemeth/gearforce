@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/unit_list_extensions.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/unit_list_card.dart';
@@ -91,7 +92,10 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                             },
                             child: GestureDetector(
                               onTap: () {
-                                final model = variant.buildModel(unit);
+                                final model = Model(
+                                  base: unit.base,
+                                  variant: variant,
+                                );
                                 context.read<RosterBloc>().add(
                                   AddModel(
                                     squad: widget.updatedSquad,

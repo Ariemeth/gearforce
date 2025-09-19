@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement_type.dart';
@@ -37,6 +38,8 @@ void main() {
         weapons: [],
         traits: [],
         height: height,
+        subtype: '',
+        classification: Classification.gear,
       );
 
       expect(baseModel.name, unitName);
