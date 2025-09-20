@@ -32,8 +32,11 @@ Unit createDarkWarrior() {
     pi: const Skill(4),
     ew: const Skill(5),
     weapons: const [
-      SingleWeaponSpec(weapon: Weapon.lc(WeaponSize.light, hasReact: true)),
-      SingleWeaponSpec(weapon: Weapon.fc(WeaponSize.light, hasReact: true)),
+      ComboWeaponSpec(
+        weapon1: Weapon.lc(WeaponSize.light, hasReact: true),
+        weapon2: Weapon.fc(WeaponSize.light, hasReact: true),
+      ),
+      SingleWeaponSpec(weapon: Weapon.vb(WeaponSize.light, hasReact: true)),
       SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light, hasReact: false)),
       SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light, hasReact: false)),
     ],

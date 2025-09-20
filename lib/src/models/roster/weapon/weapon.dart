@@ -95,15 +95,13 @@ class Weapon {
 
   @override
   String toString() {
-    final primaryTraitsDescription = primaryTraits
-        .map((trait) => trait.description)
-        .join(' | ');
-    final alternateTraitsDescription = alternateTraits
-        .map((trait) => trait.description)
-        .join(' | ');
-    final reactStatus = isReact ? 'React Weapon' : 'Non-React Weapon';
-    return '$name ($code): Damage: $damage, Range: $range, Modes: ${modes.join(', ')}, '
-        'Primary Traits: $primaryTraitsDescription, Alternate Traits: $alternateTraitsDescription, $reactStatus';
+    final pTraits = primaryTraits.join(', ');
+    final aTraits = alternateTraits.join(', ');
+    var allTraits = '\nTraits: $pTraits';
+    if (aTraits.isNotEmpty) {
+      allTraits = '$allTraits or $aTraits';
+    }
+    return '${size.toString()} $name ($code): Damage: $damage, Range: ${range.shortString()}, Modes: ${modes.map((e) => e.toString().split('.')[1][0].toUpperCase()).join(', ')}$allTraits';
   }
 
   const Weapon.aam(WeaponSize size, {bool hasReact = false})

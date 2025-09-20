@@ -11,6 +11,15 @@ enum WeaponSize {
 
   String get prefix => _prefixes[this]!;
 
+  @override
+  String toString() {
+    return switch (this) {
+      light => 'Light',
+      medium => 'Medium',
+      heavy => 'Heavy',
+    };
+  }
+
   static WeaponSize fromPrefix(String prefix) {
     if (prefix.trim().isEmpty) {
       throw ArgumentError('Prefix cannot be empty.');

@@ -37,6 +37,8 @@ class _SmallUnitListHeader extends StatelessWidget {
           columnWidths: {
             1: const FixedColumnWidth(68.0),
             2: const FixedColumnWidth(66.0),
+            3: const FixedColumnWidth(36.0),
+            5: const FixedColumnWidth(30.0),
           },
           defaultColumnWidth: const FixedColumnWidth(40),
           children: [
@@ -120,6 +122,7 @@ class _SmallUnitListHeader extends StatelessWidget {
       return _UnitAttributeValue(
         isLast ? weapon.code : '${weapon.code}, ',
         textAlign: TextAlign.left,
+        tooltipMessage: weapon.summary,
       );
     }).toList();
   }
