@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gearforce/src/models/roster/trait/trait.dart' show Trait;
-import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
-import 'package:gearforce/src/models/roster/unit/unit.dart';
-import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_spec_list_extensions.dart';
 import 'package:gearforce/src/theme/app_theme.dart';

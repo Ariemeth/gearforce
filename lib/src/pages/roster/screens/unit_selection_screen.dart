@@ -80,7 +80,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
 
 class _UnitListHeader extends StatelessWidget {
   final Unit unit;
-  const _UnitListHeader(this.unit, {super.key});
+  const _UnitListHeader(this.unit);
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +103,7 @@ class _UnitListHeader extends StatelessWidget {
 }
 
 class _UnitModelList extends StatelessWidget {
-  const _UnitModelList(this.unit, this.updatedSquad, {super.key});
+  const _UnitModelList(this.unit, this.updatedSquad);
 
   final Squad updatedSquad;
   final Unit unit;
