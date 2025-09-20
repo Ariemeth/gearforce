@@ -34,7 +34,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
     // Fetch available units from the rule set
     final availableUnits = rosterState.ruleSet
         .getAvailableUnits()
-        .filterBy(UnitFilters.matchByRoles(squadRoles))
+        .filterBy(UnitFilters.matchByUnitAndVariantRoles(squadRoles))
         .toList();
 
     // Initialize expanded states
@@ -53,7 +53,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
         padding: AppTheme.defaultPagePadding,
         child: SingleChildScrollView(
           child: ExpansionPanelList(
-            expandedHeaderPadding: EdgeInsets.fromLTRB(4, 0, 4, 4),
+            expandedHeaderPadding: EdgeInsets.fromLTRB(2, 0, 4, 2),
             expansionCallback: (index, isExpanded) {
               setState(() {
                 _expandedStates[index] = isExpanded;

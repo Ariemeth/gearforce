@@ -34,12 +34,16 @@ class _SmallUnitListHeader extends StatelessWidget {
       children: [
         Text(model.name, style: AppTheme.titleStyle),
         Table(
-          columnWidths: {1: const FixedColumnWidth(65.0)},
+          columnWidths: {
+            1: const FixedColumnWidth(68.0),
+            2: const FixedColumnWidth(66.0),
+          },
           defaultColumnWidth: const FixedColumnWidth(40),
           children: [
             const TableRow(
               children: [
                 _UnitAttributeLabel('TV'),
+                _UnitAttributeLabel('Roles'),
                 _UnitAttributeLabel('Move'),
                 _UnitAttributeLabel('Arm'),
                 _UnitAttributeLabel('H/S'),
@@ -52,6 +56,9 @@ class _SmallUnitListHeader extends StatelessWidget {
             TableRow(
               children: [
                 _UnitAttributeValue('${model.tv}'),
+                _UnitAttributeValue(
+                  model.roles.map((r) => r.abbreviation).join(', '),
+                ),
                 _UnitAttributeValue(model.movement.toString()),
                 _UnitAttributeValue(model.armor.toString()),
                 _UnitAttributeValue(model.hullStructure.toString()),
