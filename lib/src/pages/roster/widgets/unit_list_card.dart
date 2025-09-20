@@ -11,7 +11,7 @@ import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_spec_list_extensions.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
-const double _weaponAndTraitWidth = 130.0;
+const double _weaponAndTraitWidth = 134.0;
 const SizedBox _weaponAndTraitLabelSpacer = SizedBox(width: 4.0);
 const double _attributeLabelFontSize = 14;
 const FontWeight _attributeLabelFontWeight = FontWeight.w700;
