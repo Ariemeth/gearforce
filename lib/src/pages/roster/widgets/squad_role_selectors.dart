@@ -6,6 +6,8 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/role_selector.dart';
 
+const _squadRoleSelectionRowMaxWidth = 450.0;
+
 class SquadRoleSelectors extends StatelessWidget {
   final Squad squad;
 
@@ -13,10 +15,12 @@ class SquadRoleSelectors extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: SquadRoleSelector(
+    return SizedBox(
+      width: _squadRoleSelectionRowMaxWidth,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SquadRoleSelector(
             selectedRole: squad.primaryRole,
             label: AppLocalizations.of(context)!.squadPrimaryRoleLabelText,
             allowNone: false, // Disallow "None" for primary role
@@ -32,10 +36,7 @@ class SquadRoleSelectors extends StatelessWidget {
               }
             },
           ),
-        ),
-        const SizedBox(width: 16), // Add spacing between selectors
-        Expanded(
-          child: SquadRoleSelector(
+          SquadRoleSelector(
             selectedRole: squad.secondaryRole,
             label: AppLocalizations.of(context)!.squadSecondaryRoleLabelText,
             allowNone: true,
@@ -54,8 +55,8 @@ class SquadRoleSelectors extends StatelessWidget {
                 .where((role) => role != squad.primaryRole)
                 .toList(), // Exclude primary role
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

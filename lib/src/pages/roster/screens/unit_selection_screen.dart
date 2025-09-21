@@ -9,6 +9,8 @@ import 'package:gearforce/src/pages/roster/widgets/model_list_card.dart';
 import 'package:gearforce/src/predefined/filters/unit_filters.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
+const double _modelListIndentWidth = 10.0;
+
 class UnitSelectionScreen extends StatefulWidget {
   const UnitSelectionScreen({super.key, required this.updatedSquad});
 
@@ -66,7 +68,14 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                 headerBuilder: (context, isExpanded) {
                   return _UnitListHeader(unit);
                 },
-                body: _UnitModelList(unit, widget.updatedSquad),
+                body: Padding(
+                  padding: const EdgeInsets.only(left: _modelListIndentWidth),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: _UnitModelList(unit, widget.updatedSquad),
+                  ),
+                ),
+
                 splashColor: Colors.blue.shade200,
                 isExpanded: _expandedStates[index],
               );
