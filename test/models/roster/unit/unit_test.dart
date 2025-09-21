@@ -40,15 +40,16 @@ void main() {
         weapons: [],
         traits: [],
         height: 1.5,
+        classification: unitClassification,
+        subtype: unitSubtype,
+        manufacturer: unitManufacturer,
+        description: unitDescription,
       );
 
       final unit = Unit(
         baseModel,
         id: unitId,
-        classification: unitClassification,
-        subtype: unitSubtype,
-        manufacturer: unitManufacturer,
-        description: unitDescription,
+
         variants: [
           Variant(variant1Name, id: variant1Id, tv: 1, weapons: [], traits: []),
           Variant(variant2Name, id: variant2Id, tv: 2, weapons: [], traits: []),
@@ -57,10 +58,6 @@ void main() {
 
       expect(unit.name, unitName);
       expect(unit.id, unitId);
-      expect(unit.classification, unitClassification);
-      expect(unit.subtype, unitSubtype);
-      expect(unit.manufacturer, unitManufacturer);
-      expect(unit.description, unitDescription);
       expect(unit.variants.length, 2);
       expect(unit.variants[0].id, variant1Id);
       expect(unit.variants[0].name, variant1Name);

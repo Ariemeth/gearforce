@@ -1,14 +1,14 @@
 import 'package:gearforce/src/models/roster/trait/trait.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement_type.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
-import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model_base.dart';
+import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:gearforce/src/models/roster/unit/upgrade_option.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
@@ -19,8 +19,9 @@ import 'package:gearforce/src/predefined/mod_functions.dart';
 import 'package:gearforce/src/predefined/units/blackTalons/unit_ids.dart';
 
 Unit createDarkWarrior() {
+  const modelName = 'Dark Warrior';
   final base = ModelBase(
-    'Dark Warrior',
+    modelName,
     tv: 7,
     roles: const {Role.gp, Role.sk, Role.fs},
     movement: const Movement([MovementType.walker, MovementType.ground], 6),
@@ -31,24 +32,27 @@ Unit createDarkWarrior() {
     pi: const Skill(4),
     ew: const Skill(5),
     weapons: const [
-      SingleWeaponSpec(weapon: Weapon.lc(WeaponSize.light, hasReact: true)),
-      SingleWeaponSpec(weapon: Weapon.fc(WeaponSize.light, hasReact: true)),
+      ComboWeaponSpec(
+        weapon1: Weapon.lc(WeaponSize.light, hasReact: true),
+        weapon2: Weapon.fc(WeaponSize.light, hasReact: true),
+      ),
+      SingleWeaponSpec(weapon: Weapon.vb(WeaponSize.light, hasReact: true)),
       SingleWeaponSpec(weapon: Weapon.rp(WeaponSize.light, hasReact: false)),
       SingleWeaponSpec(weapon: Weapon.apgl(WeaponSize.light, hasReact: false)),
     ],
     traits: const [Trait.hands(), Trait.stealth(isAux: true)],
     height: 1.5,
-  );
-
-  return Unit(
-    base,
-    id: darkWarriorId,
     classification: Classification.gear,
     subtype: 'Trooper Gear',
     manufacturer: 'Black Talon Werks',
     description:
         'Talon commanders have noticed a need to have the option to at least hold territory for extended periods of time. So, they looked at more mass produced option so that they can get the numbers needed to hold positions without utilizing some of their higher end assets. The Dark Warrior does this in spades.',
-    variants: [Variant('Stock', id: '0', tv: 0)],
+  );
+
+  return Unit(
+    base,
+    id: darkWarriorId,
+    variants: const [Variant(modelName, id: '0', tv: 0)],
     upgrades: [
       UnitUpgrade(
         'Spectre',

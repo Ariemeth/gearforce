@@ -34,16 +34,16 @@ Unit createHunter() {
     weapons: [],
     traits: [Trait.hands()],
     height: 1.5,
-  );
-
-  return Unit(
-    baseModel,
-    id: hunterId,
     classification: Classification.gear,
     subtype: 'Trooper Gear',
     manufacturer: 'Northco',
     description:
         'The Hunter Gear was the first purpose-built combat walker on Terra Nova. It is THE forerunner for all other gear designs on the planet. It remains among the most produced gears still in active service. Refitted several times to keep it competitive, its greatest strengths have always been simplicity and ruggedness.',
+  );
+
+  return Unit(
+    baseModel,
+    id: hunterId,
     variants: [
       Variant(
         'Stock',

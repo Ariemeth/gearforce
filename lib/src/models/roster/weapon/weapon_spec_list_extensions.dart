@@ -16,4 +16,12 @@ extension WeaponSpecListExtensions on List<WeaponSpec> {
     }
     return List<WeaponSpec>.unmodifiable(copied);
   }
+
+  /// Returns all weapons where `isReact` is true.
+  List<WeaponSpec> get reactWeapons =>
+      where((ws) => ws.weapons.any((w) => w.isReact)).toList();
+
+  /// Returns all weapons where `isReact` is false (mounted weapons).
+  List<WeaponSpec> get mountedWeapons =>
+      where((ws) => ws.weapons.any((w) => !w.isReact)).toList();
 }

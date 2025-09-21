@@ -25,15 +25,15 @@ Unit createX() {
     weapons: [],
     traits: [],
     height: 0,
+    classification: Classification.gear,
+    subtype: '',
+    manufacturer: '',
+    description: '',
   );
 
   return Unit(
     baseModel,
     id: hunterId,
-    classification: Classification.gear,
-    subtype: '',
-    manufacturer: '',
-    description: '',
     variants: [Variant('Stock', id: '0', tv: 0, weapons: const [])],
     upgrades: [UnitUpgrade('', id: '0')],
   );

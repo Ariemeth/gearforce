@@ -27,4 +27,11 @@ class WeaponRange {
     final maxStr = max != null ? 'Max: $max' : '';
     return '$minOptimalStr$maxOptimalStr$maxStr'.trim();
   }
+
+  String shortString() {
+    final minOptimalStr = minOptimal != null ? '$minOptimal' : '';
+    final maxOptimalStr = maxOptimal != null ? '$maxOptimal' : '';
+    final maxStr = max != null ? '$max' : '';
+    return '$minOptimalStr-$maxOptimalStr/$maxStr'.trim();
+  }
 }

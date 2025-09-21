@@ -3,8 +3,6 @@
 Things to do next
 
 * How to display variants in the model list?
-* Figure out how to handle combo weapons
-  * Make them single weapons?
-  * Make upgrades and any other feature that can modify weapons handle 2 weapons?
 * Update Dark Warrior upgrades
 * Should Loadouts and Upgrades be different types
+* React may be best applied to the WeaponSpec instead of the Weapon itself

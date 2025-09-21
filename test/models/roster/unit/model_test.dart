@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/classification.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/model_attribute.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
@@ -8,26 +9,32 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/skill.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_actions.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
+import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
+import 'package:gearforce/src/models/roster/unit/variant.dart';
 
 void main() {
   group('Model getAttribute', () {
     test('should retrieve attribute without mods', () {
       // Arrange
       final model = Model(
-        name: 'Test Model',
-        tv: 10,
-        roles: {Role.gp},
-        movement: Movement([MovementType.walker], 6),
-        armor: Armor(5),
-        hullStructure: HullStructure(hull: 4, structure: 3),
-        actions: UnitActions(2),
-        gu: Skill(4),
-        pi: Skill(5),
-        ew: Skill(6),
-        weapons: [],
-        traits: [],
-        height: 1.5,
+        base: ModelBase(
+          'Test Model',
+          tv: 10,
+          roles: {Role.gp},
+          movement: Movement([MovementType.walker], 6),
+          armor: Armor(5),
+          hullStructure: HullStructure(hull: 4, structure: 3),
+          actions: UnitActions(2),
+          gu: Skill(4),
+          pi: Skill(5),
+          ew: Skill(6),
+          weapons: [],
+          traits: [],
+          height: 1.5,
+          classification: Classification.gear,
+        ),
+        variant: Variant('Test Model', id: '1', tv: 0),
       );
 
       // Act & Assert
@@ -42,19 +49,23 @@ void main() {
       // Arrange
       final model =
           Model(
-            name: 'Test Model',
-            tv: 10,
-            roles: {Role.gp},
-            movement: Movement([MovementType.walker], 6),
-            armor: Armor(5),
-            hullStructure: HullStructure(hull: 4, structure: 3),
-            actions: UnitActions(2),
-            gu: Skill(4),
-            pi: Skill(5),
-            ew: Skill(6),
-            weapons: [],
-            traits: [],
-            height: 1.5,
+            base: ModelBase(
+              'Test Model',
+              tv: 10,
+              roles: {Role.gp},
+              movement: Movement([MovementType.walker], 6),
+              armor: Armor(5),
+              hullStructure: HullStructure(hull: 4, structure: 3),
+              actions: UnitActions(2),
+              gu: Skill(4),
+              pi: Skill(5),
+              ew: Skill(6),
+              weapons: [],
+              traits: [],
+              height: 1.5,
+              classification: Classification.gear,
+            ),
+            variant: Variant('Test Model', id: '1', tv: 0),
           ).addUpgrade(
             UnitUpgrade(
               'Test Mod',
@@ -79,19 +90,23 @@ void main() {
     test('should retrieve attribute excluding a specific mod', () {
       // Arrange
       var model = Model(
-        name: 'Test Model',
-        tv: 10,
-        roles: {Role.gp},
-        movement: Movement([MovementType.walker], 6),
-        armor: Armor(5),
-        hullStructure: HullStructure(hull: 4, structure: 3),
-        actions: UnitActions(2),
-        gu: Skill(4),
-        pi: Skill(5),
-        ew: Skill(6),
-        weapons: [],
-        traits: [],
-        height: 1.5,
+        base: ModelBase(
+          'Test Model',
+          tv: 10,
+          roles: {Role.gp},
+          movement: Movement([MovementType.walker], 6),
+          armor: Armor(5),
+          hullStructure: HullStructure(hull: 4, structure: 3),
+          actions: UnitActions(2),
+          gu: Skill(4),
+          pi: Skill(5),
+          ew: Skill(6),
+          weapons: [],
+          traits: [],
+          height: 1.5,
+          classification: Classification.gear,
+        ),
+        variant: Variant('Test Model', id: '1', tv: 0),
       );
       model.addUpgrade(
         UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
@@ -121,19 +136,23 @@ void main() {
     test('should retrieve attribute applying mods up to a specific mod', () {
       // Arrange
       final model = Model(
-        name: 'Test Model',
-        tv: 10,
-        roles: {Role.gp},
-        movement: Movement([MovementType.walker], 6),
-        armor: Armor(5),
-        hullStructure: HullStructure(hull: 4, structure: 3),
-        actions: UnitActions(2),
-        gu: Skill(4),
-        pi: Skill(5),
-        ew: Skill(6),
-        weapons: [],
-        traits: [],
-        height: 1.5,
+        base: ModelBase(
+          'Test Model',
+          tv: 10,
+          roles: {Role.gp},
+          movement: Movement([MovementType.walker], 6),
+          armor: Armor(5),
+          hullStructure: HullStructure(hull: 4, structure: 3),
+          actions: UnitActions(2),
+          gu: Skill(4),
+          pi: Skill(5),
+          ew: Skill(6),
+          weapons: [],
+          traits: [],
+          height: 1.5,
+          classification: Classification.gear,
+        ),
+        variant: Variant('Test Model', id: '1', tv: 0),
       );
       model.addUpgrade(
         UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
@@ -159,19 +178,23 @@ void main() {
     test('should throw StateError on recursive getAttribute calls', () {
       // Arrange
       final model = Model(
-        name: 'Test Model',
-        tv: 10,
-        roles: {Role.gp},
-        movement: Movement([MovementType.walker], 6),
-        armor: Armor(5),
-        hullStructure: HullStructure(hull: 4, structure: 3),
-        actions: UnitActions(2),
-        gu: Skill(4),
-        pi: Skill(5),
-        ew: Skill(6),
-        weapons: [],
-        traits: [],
-        height: 1.5,
+        base: ModelBase(
+          'Test Model',
+          tv: 10,
+          roles: {Role.gp},
+          movement: Movement([MovementType.walker], 6),
+          armor: Armor(5),
+          hullStructure: HullStructure(hull: 4, structure: 3),
+          actions: UnitActions(2),
+          gu: Skill(4),
+          pi: Skill(5),
+          ew: Skill(6),
+          weapons: [],
+          traits: [],
+          height: 1.5,
+          classification: Classification.gear,
+        ),
+        variant: Variant('Test Model', id: '1', tv: 0),
       );
 
       model.addUpgrade(

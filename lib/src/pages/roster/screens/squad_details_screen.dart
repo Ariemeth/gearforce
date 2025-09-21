@@ -29,6 +29,7 @@ class SquadDetailsScreen extends StatelessWidget {
           return Padding(
             padding: _pagePadding,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SquadRoleSelectors(squad: updatedSquad),
                 Expanded(
@@ -47,7 +48,7 @@ class SquadDetailsScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                SelectModelButton(updatedSquad: updatedSquad),
+                Center(child: SelectModelButton(updatedSquad: updatedSquad)),
               ],
             ),
           );

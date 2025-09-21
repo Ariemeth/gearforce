@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 
+const double _gapBetweenRoleLabelAndDropdown = 8.0;
+const double _regularMenuWidth = 60.0;
+const double _noneMenuWidth = 75.0;
+
 class SquadRoleSelector extends StatelessWidget {
   final Role? selectedRole;
   final String label;
@@ -26,8 +30,11 @@ class SquadRoleSelector extends StatelessWidget {
 
     return Row(
       children: [
-        Text('$label: '),
+        Text(label),
+        SizedBox(width: _gapBetweenRoleLabelAndDropdown),
         DropdownButton<Role?>(
+          isDense: false,
+          menuWidth: allowNone ? _noneMenuWidth : _regularMenuWidth,
           value: validSelectedRole,
           items:
               [
