@@ -9,34 +9,41 @@ import 'package:gearforce/src/theme/app_theme.dart';
 const _pagePadding = EdgeInsets.fromLTRB(8, 5, 8, 5);
 
 class SquadDetailsScreen extends StatelessWidget {
-  final Squad squad;
+  final int squadId;
 
-  const SquadDetailsScreen({super.key, required this.squad});
+  const SquadDetailsScreen({super.key, required this.squadId});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(squad.name), // Use name instead of id
-      ),
-      body: BlocBuilder<RosterBloc, RosterState>(
-        builder: (context, state) {
-          // Find the updated squad from the state
-          final updatedSquad = state.squads.firstWhere(
-            (s) => s.name == squad.name,
+    return BlocSelector<RosterBloc, RosterState, Squad?>(
+      selector: (state) {
+        try {
+          return state.squads.firstWhere((s) => s.id == squadId);
+        } on StateError catch (_, _) {
+          return null;
+        }
+      },
+      builder: (context, squad) {
+        if (squad == null) {
+          return Scaffold(
+            appBar: AppBar(title: Text('Squad $squadId')),
+            body: Center(child: Text('No Squad with id $squadId is found')),
           );
+        }
 
-          return Padding(
+        return Scaffold(
+          appBar: AppBar(title: Text(squad.name)),
+          body: Padding(
             padding: _pagePadding,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SquadRoleSelectors(squad: updatedSquad),
+                SquadRoleSelectors(squad: squad),
                 Expanded(
                   child: ListView.builder(
-                    itemCount: updatedSquad.models.length,
+                    itemCount: squad.models.length,
                     itemBuilder: (context, index) {
-                      final unit = updatedSquad.models[index];
+                      final unit = squad.models[index];
                       return ListTile(
                         title: Text(
                           'Unit: ${unit.name}',
@@ -48,12 +55,12 @@ class SquadDetailsScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                Center(child: SelectModelButton(updatedSquad: updatedSquad)),
+                Center(child: SelectModelButton(updatedSquad: squad)),
               ],
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

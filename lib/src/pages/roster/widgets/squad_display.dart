@@ -37,7 +37,7 @@ class SquadDisplay extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                SquadDetailsScreen(squad: squad),
+                                SquadDetailsScreen(squadId: squad.id),
                           ),
                         );
                       },

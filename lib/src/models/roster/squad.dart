@@ -6,6 +6,7 @@ import 'package:meta/meta.dart';
 
 @immutable
 class Squad {
+  final int id;
   final String name;
   final Role primaryRole;
   final Role? secondaryRole;
@@ -14,6 +15,7 @@ class Squad {
   final List<UnitUpgrade> upgrades;
 
   const Squad({
+    required this.id,
     required this.name,
     this.primaryRole = Role.gp,
     this.secondaryRole,
@@ -24,6 +26,7 @@ class Squad {
 
   Squad copyWith({
     String? name,
+    int? id,
     Role? primaryRole,
     Role? secondaryRole,
     bool allowSecondaryRoleToBeNull = false,
@@ -40,6 +43,7 @@ class Squad {
       level: level ?? this.level,
       models: models ?? this.models,
       upgrades: upgrades ?? this.upgrades,
+      id: id ?? this.id,
     );
   }
 

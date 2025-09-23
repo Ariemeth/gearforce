@@ -11,6 +11,13 @@ class AddSquadButton extends StatelessWidget {
 
   final List<Squad> squads;
 
+  static int _nextId = 0;
+
+  static int get nextId {
+    _nextId++;
+    return _nextId;
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RosterBloc, RosterState>(
@@ -28,6 +35,7 @@ class AddSquadButton extends StatelessWidget {
 
             final newSquad = Squad(
               name: newSquadName,
+              id: nextId,
               primaryRole: Role.gp,
               secondaryRole: null,
               models: [],
