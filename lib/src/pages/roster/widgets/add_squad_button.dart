@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
@@ -10,13 +9,6 @@ class AddSquadButton extends StatelessWidget {
   const AddSquadButton({super.key, required this.squads});
 
   final List<Squad> squads;
-
-  static int _nextId = 0;
-
-  static int get nextId {
-    _nextId++;
-    return _nextId;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +25,7 @@ class AddSquadButton extends StatelessWidget {
               squadNumber++;
             } while (squads.any((squad) => squad.name == newSquadName));
 
-            final newSquad = Squad(
-              name: newSquadName,
-              id: nextId,
-              primaryRole: Role.gp,
-              secondaryRole: null,
-              models: [],
-            );
-            context.read<RosterBloc>().add(AddSquad(squad: newSquad));
+            context.read<RosterBloc>().add(AddNewSquad(name: newSquadName));
           },
           child: Text(
             AppLocalizations.of(context)!.addSquadButtonText,

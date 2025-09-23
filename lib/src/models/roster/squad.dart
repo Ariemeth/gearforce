@@ -36,6 +36,7 @@ class Squad {
   }) {
     return Squad(
       name: name ?? this.name,
+      id: id ?? this.id,
       primaryRole: primaryRole ?? this.primaryRole,
       secondaryRole: allowSecondaryRoleToBeNull
           ? null
@@ -43,7 +44,6 @@ class Squad {
       level: level ?? this.level,
       models: models ?? this.models,
       upgrades: upgrades ?? this.upgrades,
-      id: id ?? this.id,
     );
   }
 

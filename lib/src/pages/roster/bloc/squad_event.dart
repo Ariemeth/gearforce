@@ -2,9 +2,18 @@ part of 'roster_bloc.dart';
 
 sealed class SquadEvent extends RosterEvent {}
 
-class AddSquad extends SquadEvent {
-  final Squad squad;
-  AddSquad({required this.squad});
+class AddNewSquad extends SquadEvent {
+  final String name;
+  final Role primaryRole;
+  final Role? secondaryRole;
+  final Level level;
+
+  AddNewSquad({
+    required this.name,
+    this.primaryRole = Role.gp,
+    this.secondaryRole,
+    this.level = Level.regular,
+  });
 }
 
 class RemoveSquad extends SquadEvent {
