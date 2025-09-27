@@ -33,28 +33,21 @@ class SquadDetailsScreen extends StatelessWidget {
         }
 
         return Scaffold(
-          appBar: AppBar(title: Text(squad.name)),
+          appBar: AppBar(
+            title: Row(
+              children: [
+                Expanded(child: Center(child: Text(squad.name))),
+                Text('TV: ${squad.tv}'),
+              ],
+            ),
+          ),
           body: Padding(
             padding: _pagePadding,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SquadRoleSelectors(squad: squad),
-                Column(
-                  children: [
-                    // TODO convert this Row into its own widget
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'TV: ${squad.tv}',
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        ),
-                        SquadLevelSelector(squadId: squadId),
-                      ],
-                    ),
-                  ],
-                ),
+                SquadLevelSelector(squadId: squadId),
                 Expanded(
                   child: ListView.builder(
                     itemCount: squad.models.length,

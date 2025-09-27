@@ -28,6 +28,8 @@ class SquadLevelSelector extends StatelessWidget {
 
         return Row(
           children: [
+            Text('Level'),
+            SizedBox(width: 5.0),
             DropdownButton<Level>(
               value: squad.level,
               menuWidth: 90.0,
