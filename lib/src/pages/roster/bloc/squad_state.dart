@@ -33,9 +33,9 @@ class SquadState {
     return copyWith(squads: squads.where((s) => s != squad).toList());
   }
 
-  SquadState updateSquad(Squad oldSquad, Squad newSquad) {
+  SquadState updateSquad(Squad updatedSquad) {
     final updatedSquads = squads.map((squad) {
-      return squad == oldSquad ? newSquad : squad;
+      return squad.id == updatedSquad.id ? updatedSquad : squad;
     }).toList();
     return copyWith(squads: updatedSquads);
   }

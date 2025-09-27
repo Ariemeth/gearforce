@@ -25,6 +25,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<AddNewSquad>(_onAddNewSquad);
     on<RemoveSquad>(_onRemoveSquad);
     on<AddModel>(_onAddModel);
+    on<UpdateSquadLevel>(_onUpdateSquadLevel);
     on<UpdateFaction>(_onUpdateFaction);
     on<UpdateSubfaction>(_onUpdateSubFaction);
     on<UpdateSquads>(_onUpdateSquads);
@@ -64,11 +65,14 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     final updatedSquad = event.squad.copyWith(
       models: [...event.squad.models, event.model],
     );
-    final updatedSquadState = state.squadState.updateSquad(
-      event.squad,
-      updatedSquad,
-    );
+    final updatedSquadState = state.squadState.updateSquad(updatedSquad);
     emit(state.copyWith(squadState: updatedSquadState));
+  }
+
+  void _onUpdateSquadLevel(UpdateSquadLevel event, Emitter<RosterState> emit) {
+    final updatedSquad = event.squad.copyWith(level: event.level);
+    final updateSquadState = state.squadState.updateSquad(updatedSquad);
+    emit(state.copyWith(squadState: updateSquadState));
   }
 
   void _onUpdateFaction(UpdateFaction event, Emitter<RosterState> emit) {

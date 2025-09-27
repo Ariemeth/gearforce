@@ -1,6 +1,7 @@
 import 'package:gearforce/src/models/roster/unit/attribute/level.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
+import 'package:gearforce/src/models/roster/unit/model_list_extensions.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
 import 'package:meta/meta.dart';
 
@@ -23,6 +24,8 @@ class Squad {
     required this.models,
     this.upgrades = const [],
   });
+
+  int get tv => models.tv;
 
   Squad copyWith({
     String? name,

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/models/roster/squad.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/select_model_button.dart';
+import 'package:gearforce/src/pages/roster/widgets/squad_level_selector.dart';
 import 'package:gearforce/src/pages/roster/widgets/squad_role_selectors.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
@@ -39,16 +40,28 @@ class SquadDetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SquadRoleSelectors(squad: squad),
+                Column(
+                  children: [
+                    // TODO convert this Row into its own widget
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'TV: ${squad.tv}',
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                        SquadLevelSelector(squadId: squadId),
+                      ],
+                    ),
+                  ],
+                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: squad.models.length,
                     itemBuilder: (context, index) {
                       final unit = squad.models[index];
                       return ListTile(
-                        title: Text(
-                          'Unit: ${unit.name}',
-                          style: AppTheme.bodyStyle,
-                        ),
+                        title: Text(unit.name, style: AppTheme.bodyStyle),
                         subtitle: Text('TV: ${unit.tv}'),
                         contentPadding: AppTheme.listTilePadding,
                       );

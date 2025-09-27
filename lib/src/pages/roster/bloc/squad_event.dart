@@ -40,6 +40,13 @@ class AddModel extends SquadEvent {
   AddModel({required this.squad, required this.model});
 }
 
+class UpdateSquadLevel extends SquadEvent {
+  final Squad squad;
+  final Level level;
+
+  UpdateSquadLevel({required this.squad, required this.level});
+}
+
 class UpdateSquad extends SquadEvent {
   final Squad updatedSquad;
   UpdateSquad({required this.updatedSquad});

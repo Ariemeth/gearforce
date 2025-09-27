@@ -6,17 +6,20 @@ import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/role_selector.dart';
 
-const _squadRoleSelectionRowMaxWidth = 450.0;
-
 class SquadRoleSelectors extends StatelessWidget {
   final Squad squad;
+  final double maxWidth;
 
-  const SquadRoleSelectors({super.key, required this.squad});
+  const SquadRoleSelectors({
+    super.key,
+    required this.squad,
+    this.maxWidth = 450.0,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: _squadRoleSelectionRowMaxWidth,
+      width: maxWidth,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
