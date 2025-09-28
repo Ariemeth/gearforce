@@ -48,38 +48,38 @@ void main() {
 
     test('should retrieve attribute with mods applied', () {
       // Arrange
-      final model =
-          Model(
-            id: 0,
-            base: ModelBase(
-              'Test Model',
-              tv: 10,
-              roles: {Role.gp},
-              movement: Movement([MovementType.walker], 6),
-              armor: Armor(5),
-              hullStructure: HullStructure(hull: 4, structure: 3),
-              actions: UnitActions(2),
-              gu: Skill(4),
-              pi: Skill(5),
-              ew: Skill(6),
-              weapons: [],
-              traits: [],
-              height: 1.5,
-              classification: Classification.gear,
-            ),
-            variant: Variant('Test Model', id: '1', tv: 0),
-          ).addUpgrade(
-            UnitUpgrade(
-              'Test Mod',
-              id: 'mod-001',
-              nameMod: (name, context) => 'Modified $name',
-              tvMod: (tv, context) => tv + 5,
-              rolesMod: (roles, context) => {...roles, Role.sk},
-              movementMod: (movement, context) =>
-                  Movement([MovementType.ground], 8),
-              armorMod: (armor, context) => Armor(6),
-            ),
-          );
+      final model = Model(
+        id: 0,
+        base: ModelBase(
+          'Test Model',
+          tv: 10,
+          roles: {Role.gp},
+          movement: Movement([MovementType.walker], 6),
+          armor: Armor(5),
+          hullStructure: HullStructure(hull: 4, structure: 3),
+          actions: UnitActions(2),
+          gu: Skill(4),
+          pi: Skill(5),
+          ew: Skill(6),
+          weapons: [],
+          traits: [],
+          height: 1.5,
+          classification: Classification.gear,
+        ),
+        variant: Variant('Test Model', id: '1', tv: 0),
+        upgrades: [
+          UnitUpgrade(
+            'Test Mod',
+            id: 'mod-001',
+            nameMod: (name, context) => 'Modified $name',
+            tvMod: (tv, context) => tv + 5,
+            rolesMod: (roles, context) => {...roles, Role.sk},
+            movementMod: (movement, context) =>
+                Movement([MovementType.ground], 8),
+            armorMod: (armor, context) => Armor(6),
+          ),
+        ],
+      );
 
       // Act & Assert
       expect(model.getAttribute(ModelAttribute.name), 'Modified Test Model');
@@ -110,12 +110,10 @@ void main() {
           classification: Classification.gear,
         ),
         variant: Variant('Test Model', id: '1', tv: 0),
-      );
-      model.addUpgrade(
-        UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
-      );
-      model.addUpgrade(
-        UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        upgrades: [
+          UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
+          UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        ],
       );
 
       // Act & Assert
@@ -157,12 +155,10 @@ void main() {
           classification: Classification.gear,
         ),
         variant: Variant('Test Model', id: '1', tv: 0),
-      );
-      model.addUpgrade(
-        UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
-      );
-      model.addUpgrade(
-        UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        upgrades: [
+          UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
+          UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        ],
       );
 
       // Act & Assert
@@ -200,6 +196,7 @@ void main() {
           classification: Classification.gear,
         ),
         variant: Variant('Test Model', id: '1', tv: 0),
+        upgrades: [],
       );
 
       model.addUpgrade(

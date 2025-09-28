@@ -31,8 +31,8 @@ class Model {
     required this.variant,
     this.level = UnitLevel.regular,
     this.command = Command.none,
-    List<UnitUpgrade> upgrades = const [],
-  }) : _upgrades = upgrades;
+    List<UnitUpgrade>? upgrades,
+  }) : _upgrades = upgrades ?? [];
 
   String get name => getAttribute(ModelAttribute.name);
   int get tv => getAttribute(ModelAttribute.tv) + level.cost;
