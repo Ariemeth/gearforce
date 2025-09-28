@@ -18,11 +18,10 @@ class SquadDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocSelector<RosterBloc, RosterState, Squad?>(
       selector: (state) {
-        try {
-          return state.squads.firstWhere((s) => s.id == squadId);
-        } on StateError catch (_, _) {
+        if (!state.squads.any((s) => s.id == squadId)) {
           return null;
         }
+        return state.squads.firstWhere((s) => s.id == squadId);
       },
       builder: (context, squad) {
         if (squad == null) {
@@ -40,6 +39,7 @@ class SquadDetailsScreen extends StatelessWidget {
                 Text('TV: ${squad.tv}'),
               ],
             ),
+            actions: [],
           ),
           body: Padding(
             padding: _pagePadding,
@@ -47,7 +47,8 @@ class SquadDetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SquadRoleSelectors(squad: squad),
-                SquadLevelSelector(squadId: squadId),
+                SquadLevelSelector(squad: squad),
+                Divider(color: Colors.grey.shade400),
                 Expanded(
                   child: ListView.builder(
                     itemCount: squad.models.length,
