@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/squad/squad.dart';
 
 @immutable
 class CombatGroup {

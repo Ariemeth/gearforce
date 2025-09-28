@@ -1,4 +1,4 @@
-import 'package:gearforce/src/models/roster/squad.dart' show Squad;
+import 'package:gearforce/src/models/roster/squad/squad.dart' show Squad;
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart'
     show RosterState;
 

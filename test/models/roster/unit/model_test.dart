@@ -18,6 +18,7 @@ void main() {
     test('should retrieve attribute without mods', () {
       // Arrange
       final model = Model(
+        id: 0,
         base: ModelBase(
           'Test Model',
           tv: 10,
@@ -49,6 +50,7 @@ void main() {
       // Arrange
       final model =
           Model(
+            id: 0,
             base: ModelBase(
               'Test Model',
               tv: 10,
@@ -90,6 +92,7 @@ void main() {
     test('should retrieve attribute excluding a specific mod', () {
       // Arrange
       var model = Model(
+        id: 0,
         base: ModelBase(
           'Test Model',
           tv: 10,
@@ -136,6 +139,7 @@ void main() {
     test('should retrieve attribute applying mods up to a specific mod', () {
       // Arrange
       final model = Model(
+        id: 0,
         base: ModelBase(
           'Test Model',
           tv: 10,
@@ -178,6 +182,7 @@ void main() {
     test('should throw StateError on recursive getAttribute calls', () {
       // Arrange
       final model = Model(
+        id: 0,
         base: ModelBase(
           'Test Model',
           tv: 10,

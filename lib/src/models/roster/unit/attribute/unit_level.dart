@@ -1,4 +1,4 @@
-enum Level {
+enum UnitLevel {
   green('Green', -1),
   regular('Regular', 0),
   veteran('Veteran', 1),
@@ -7,5 +7,5 @@ enum Level {
   final String name;
   final int cost;
 
-  const Level(this.name, this.cost);
+  const UnitLevel(this.name, this.cost);
 }

@@ -1,4 +1,4 @@
-import 'package:gearforce/src/models/roster/unit/attribute/level.dart';
+import 'package:gearforce/src/models/roster/squad/squad_level.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/model_list_extensions.dart';
@@ -12,7 +12,7 @@ class Squad {
   final Role primaryRole;
   final Role? secondaryRole;
   final List<Model> models;
-  final Level level;
+  final SquadLevel level;
   final List<UnitUpgrade> upgrades;
 
   const Squad({
@@ -20,7 +20,7 @@ class Squad {
     required this.name,
     this.primaryRole = Role.gp,
     this.secondaryRole,
-    this.level = Level.regular,
+    this.level = SquadLevel.regular,
     required this.models,
     this.upgrades = const [],
   });
@@ -33,7 +33,7 @@ class Squad {
     Role? primaryRole,
     Role? secondaryRole,
     bool allowSecondaryRoleToBeNull = false,
-    Level? level,
+    SquadLevel? level,
     List<Model>? models,
     List<UnitUpgrade>? upgrades,
   }) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/squad/squad.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/unit.dart';
 import 'package:gearforce/src/models/roster/unit/unit_list_extensions.dart';
@@ -139,9 +139,12 @@ class _UnitModelList extends StatelessWidget {
               },
               child: GestureDetector(
                 onTap: () {
-                  final model = Model(base: unit.base, variant: variant);
                   context.read<RosterBloc>().add(
-                    AddModel(squad: updatedSquad, model: model),
+                    AddModel(
+                      squad: updatedSquad,
+                      base: unit.base,
+                      variant: variant,
+                    ),
                   );
 
                   Navigator.pop(context);
@@ -157,7 +160,7 @@ class _UnitModelList extends StatelessWidget {
                     horizontal: 3.0,
                   ),
                   child: ModelListCard(
-                    model: Model(base: unit.base, variant: variant),
+                    model: Model(id: -1, base: unit.base, variant: variant),
                   ),
                 ),
               ),

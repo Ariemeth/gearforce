@@ -1,7 +1,7 @@
 import 'package:gearforce/src/models/roster/trait/trait.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/armor.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/hull_structure.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/level.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/unit_level.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/model_attribute.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/movement.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
@@ -15,24 +15,27 @@ import 'package:gearforce/src/models/roster/unit/variant.dart';
 import 'package:gearforce/src/models/roster/weapon/weapon_spec.dart';
 
 class Model {
+  final int id;
   final ModelBase base;
   final Variant variant;
-  Level level;
-  Command command;
-  final List<UnitUpgrade> _upgrades = [];
+  final UnitLevel level;
+  final Command command;
+  final List<UnitUpgrade> _upgrades;
 
   // Instance-level Set to track active getAttribute calls
   final Set<ModelAttribute> _activeAttributes = {};
 
   Model({
+    required this.id,
     required this.base,
     required this.variant,
-    this.level = Level.regular,
+    this.level = UnitLevel.regular,
     this.command = Command.none,
-  });
+    List<UnitUpgrade> upgrades = const [],
+  }) : _upgrades = upgrades;
 
   String get name => getAttribute(ModelAttribute.name);
-  int get tv => getAttribute(ModelAttribute.tv);
+  int get tv => getAttribute(ModelAttribute.tv) + level.cost;
   Set<Role> get roles => getAttribute(ModelAttribute.roles);
   Movement get movement => getAttribute(ModelAttribute.movement);
   Armor get armor => getAttribute(ModelAttribute.armor);
@@ -46,26 +49,20 @@ class Model {
   double get height => base.height;
 
   Model copyWith({
+    int? id,
     Variant? variant,
     List<UnitUpgrade>? upgrades,
-    Level? level,
+    UnitLevel? level,
     Command? command,
-    bool replaceUpgrades = false,
   }) {
     return Model(
-        base: base,
-        variant: variant ?? this.variant,
-        level: level ?? this.level,
-        command: command ?? this.command,
-      )
-      .._upgrades.addAll(
-        replaceUpgrades
-            ? (upgrades ?? [])
-            : [
-                ..._upgrades.map((upgrade) => upgrade.copyWith()),
-                ...(upgrades ?? []),
-              ],
-      );
+      base: base,
+      id: id ?? this.id,
+      variant: variant ?? this.variant,
+      level: level ?? this.level,
+      command: command ?? this.command,
+      upgrades: upgrades ?? [..._upgrades.map((upgrade) => upgrade.copyWith())],
+    );
   }
 
   Model addUpgrade(UnitUpgrade upgrade) {

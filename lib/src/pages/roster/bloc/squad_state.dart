@@ -1,4 +1,4 @@
-import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/squad/squad.dart';
 import 'package:meta/meta.dart';
 
 @immutable

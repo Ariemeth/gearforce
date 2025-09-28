@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/squad/squad.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/select_model_button.dart';
 import 'package:gearforce/src/pages/roster/widgets/squad_level_selector.dart';
 import 'package:gearforce/src/pages/roster/widgets/squad_role_selectors.dart';
+import 'package:gearforce/src/pages/roster/widgets/unit_level_selector.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 
 const _pagePadding = EdgeInsets.fromLTRB(8, 5, 8, 5);
@@ -53,10 +54,16 @@ class SquadDetailsScreen extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: squad.models.length,
                     itemBuilder: (context, index) {
-                      final unit = squad.models[index];
+                      final model = squad.models[index];
                       return ListTile(
-                        title: Text(unit.name, style: AppTheme.bodyStyle),
-                        subtitle: Text('TV: ${unit.tv}'),
+                        title: Text(model.name, style: AppTheme.bodyStyle),
+                        subtitle: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('TV: ${model.tv}'),
+                            UnitLevelSelector(squad: squad, model: model),
+                          ],
+                        ),
                         contentPadding: AppTheme.listTilePadding,
                       );
                     },

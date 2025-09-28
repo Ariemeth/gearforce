@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gearforce/src/generated/i18n/app_localizations.dart';
-import 'package:gearforce/src/models/roster/squad.dart';
+import 'package:gearforce/src/models/roster/squad/squad.dart';
 import 'package:gearforce/src/pages/roster/screens/unit_selection_screen.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
 

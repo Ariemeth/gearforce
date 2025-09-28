@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/models/roster/squad.dart';
-import 'package:gearforce/src/models/roster/unit/attribute/level.dart';
+import 'package:gearforce/src/models/roster/squad/squad.dart';
+import 'package:gearforce/src/models/roster/squad/squad_level.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 
 class SquadLevelSelector extends StatelessWidget {
@@ -14,13 +14,15 @@ class SquadLevelSelector extends StatelessWidget {
       children: [
         Text('Level'),
         SizedBox(width: 5.0),
-        DropdownButton<Level>(
+        DropdownButton<SquadLevel>(
           value: squad.level,
           menuWidth: 90.0,
-          items: Level.values
+          items: SquadLevel.values
               .map(
-                (lvl) =>
-                    DropdownMenuItem<Level>(value: lvl, child: Text(lvl.name)),
+                (lvl) => DropdownMenuItem<SquadLevel>(
+                  value: lvl,
+                  child: Text(lvl.name),
+                ),
               )
               .toList(),
           onChanged: (newLevel) {

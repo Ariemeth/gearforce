@@ -45,6 +45,7 @@ void main() {
       );
 
       final initialModel = Model(
+        id: 0,
         base: baseModel,
         variant: Variant('Test Model', id: '1', tv: 0),
       );
@@ -141,6 +142,7 @@ void main() {
       );
 
       final initialModel = Model(
+        id: 0,
         base: modelBase,
         variant: Variant('Test Model', id: '1', tv: 0),
       );
@@ -230,6 +232,7 @@ void main() {
           10,
           UnitUpgradeContext(
             Model(
+              id: 0,
               base: ModelBase(
                 'Test Model',
                 tv: 10,

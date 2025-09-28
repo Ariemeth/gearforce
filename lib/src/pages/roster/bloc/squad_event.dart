@@ -6,13 +6,13 @@ class AddNewSquad extends SquadEvent {
   final String name;
   final Role primaryRole;
   final Role? secondaryRole;
-  final Level level;
+  final SquadLevel level;
 
   AddNewSquad({
     required this.name,
     this.primaryRole = Role.gp,
     this.secondaryRole,
-    this.level = Level.regular,
+    this.level = SquadLevel.regular,
   });
 }
 
@@ -35,16 +35,29 @@ class UpdateSquadRoles extends SquadEvent {
 
 class AddModel extends SquadEvent {
   final Squad squad;
-  final Model model;
+  final ModelBase base;
+  final Variant variant;
 
-  AddModel({required this.squad, required this.model});
+  AddModel({required this.squad, required this.base, required this.variant});
 }
 
 class UpdateSquadLevel extends SquadEvent {
   final Squad squad;
-  final Level level;
+  final SquadLevel level;
 
   UpdateSquadLevel({required this.squad, required this.level});
+}
+
+class UpdateModelLevel extends SquadEvent {
+  final Squad squad;
+  final Model model;
+  final UnitLevel level;
+
+  UpdateModelLevel({
+    required this.squad,
+    required this.model,
+    required this.level,
+  });
 }
 
 class UpdateSquad extends SquadEvent {
