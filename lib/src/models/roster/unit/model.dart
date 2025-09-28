@@ -21,6 +21,7 @@ class Model {
   final UnitLevel level;
   final Command command;
   final List<UnitUpgrade> _upgrades;
+  final bool isDuelist;
 
   // Instance-level Set to track active getAttribute calls
   final Set<ModelAttribute> _activeAttributes = {};
@@ -32,6 +33,7 @@ class Model {
     this.level = UnitLevel.regular,
     this.command = Command.none,
     List<UnitUpgrade>? upgrades,
+    this.isDuelist = false,
   }) : _upgrades = upgrades ?? [];
 
   String get name => getAttribute(ModelAttribute.name);
@@ -54,6 +56,7 @@ class Model {
     List<UnitUpgrade>? upgrades,
     UnitLevel? level,
     Command? command,
+    bool? isDuelist,
   }) {
     return Model(
       base: base,
@@ -62,6 +65,7 @@ class Model {
       level: level ?? this.level,
       command: command ?? this.command,
       upgrades: upgrades ?? [..._upgrades.map((upgrade) => upgrade.copyWith())],
+      isDuelist: isDuelist ?? this.isDuelist,
     );
   }
 

@@ -60,6 +60,30 @@ class UpdateModelLevel extends SquadEvent {
   });
 }
 
+class UpdateModelIsDuelist extends SquadEvent {
+  final Squad squad;
+  final Model model;
+  final bool isDuelist;
+
+  UpdateModelIsDuelist({
+    required this.squad,
+    required this.model,
+    required this.isDuelist,
+  });
+}
+
+class UpdateModelCommandLevel extends SquadEvent {
+  final Squad squad;
+  final Model model;
+  final Command commandLevel;
+
+  UpdateModelCommandLevel({
+    required this.squad,
+    required this.model,
+    required this.commandLevel,
+  });
+}
+
 class UpdateSquad extends SquadEvent {
   final Squad updatedSquad;
   UpdateSquad({required this.updatedSquad});

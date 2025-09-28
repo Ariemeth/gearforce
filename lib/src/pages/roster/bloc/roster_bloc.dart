@@ -6,6 +6,7 @@ import 'package:gearforce/src/models/roster/squad/squad_level.dart';
 import 'package:gearforce/src/models/roster/subfaction.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_level.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
+import 'package:gearforce/src/models/roster/unit/command.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/model_base.dart';
 import 'package:gearforce/src/models/roster/unit/variant.dart';
@@ -30,6 +31,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<AddModel>(_onAddModel);
     on<UpdateSquadLevel>(_onUpdateSquadLevel);
     on<UpdateModelLevel>(_onUpdateModelLevel);
+    on<UpdateModelIsDuelist>(_onUpdateModelIsDuelist);
+    on<UpdateModelCommandLevel>(_onUpdateModelCommand);
     on<UpdateFaction>(_onUpdateFaction);
     on<UpdateSubfaction>(_onUpdateSubFaction);
     on<UpdateSquads>(_onUpdateSquads);
@@ -91,6 +94,20 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     emit(
       state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
     );
+  }
+
+  void _onUpdateModelIsDuelist(
+    UpdateModelIsDuelist event,
+    Emitter<RosterState> emit,
+  ) {
+    // TODO Implement
+  }
+
+  void _onUpdateModelCommand(
+    UpdateModelCommandLevel event,
+    Emitter<RosterState> emit,
+  ) {
+    // TODO Implement
   }
 
   void _onUpdateFaction(UpdateFaction event, Emitter<RosterState> emit) {
