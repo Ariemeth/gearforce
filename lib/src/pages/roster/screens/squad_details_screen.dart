@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/models/roster/squad/squad.dart';
 import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/src/pages/roster/widgets/select_model_button.dart';
-import 'package:gearforce/src/pages/roster/widgets/squad_level_selector.dart';
 import 'package:gearforce/src/pages/roster/widgets/squad_role_selectors.dart';
 import 'package:gearforce/src/pages/roster/widgets/unit_level_selector.dart';
 import 'package:gearforce/src/theme/app_theme.dart';
@@ -48,7 +47,6 @@ class SquadDetailsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SquadRoleSelectors(squad: squad),
-                SquadLevelSelector(squad: squad),
                 Divider(color: Colors.grey.shade400),
                 Expanded(
                   child: ListView.builder(

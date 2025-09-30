@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/src/models/roster/faction.dart';
 import 'package:gearforce/src/models/roster/rules/rule_set.dart';
 import 'package:gearforce/src/models/roster/squad/squad.dart';
-import 'package:gearforce/src/models/roster/squad/squad_level.dart';
 import 'package:gearforce/src/models/roster/subfaction.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/unit_level.dart';
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
@@ -29,7 +28,6 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<AddNewSquad>(_onAddNewSquad);
     on<RemoveSquad>(_onRemoveSquad);
     on<AddModel>(_onAddModel);
-    on<UpdateSquadLevel>(_onUpdateSquadLevel);
     on<UpdateModelLevel>(_onUpdateModelLevel);
     on<UpdateModelIsDuelist>(_onUpdateModelIsDuelist);
     on<UpdateModelCommandLevel>(_onUpdateModelCommand);
@@ -53,7 +51,6 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       name: event.name,
       primaryRole: event.primaryRole,
       secondaryRole: event.secondaryRole,
-      level: event.level,
       models: const [],
       upgrades: const [],
     );
@@ -77,12 +74,6 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     emit(state.copyWith(squadState: updatedSquadState));
   }
 
-  void _onUpdateSquadLevel(UpdateSquadLevel event, Emitter<RosterState> emit) {
-    final updatedSquad = event.squad.copyWith(level: event.level);
-    final updateSquadState = state.squadState.updateSquad(updatedSquad);
-    emit(state.copyWith(squadState: updateSquadState));
-  }
-
   void _onUpdateModelLevel(UpdateModelLevel event, Emitter<RosterState> emit) {
     final updatedSquad = event.squad.copyWith(
       models: [
@@ -100,14 +91,32 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     UpdateModelIsDuelist event,
     Emitter<RosterState> emit,
   ) {
-    // TODO Implement
+    final updatedSquad = event.squad.copyWith(
+      models: [
+        for (final m in event.squad.models)
+          m.id == event.model.id ? m.copyWith(isDuelist: event.isDuelist) : m,
+      ],
+    );
+
+    emit(
+      state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
+    );
   }
 
   void _onUpdateModelCommand(
     UpdateModelCommandLevel event,
     Emitter<RosterState> emit,
   ) {
-    // TODO Implement
+    final updatedSquad = event.squad.copyWith(
+      models: [
+        for (final m in event.squad.models)
+          m.id == event.model.id ? m.copyWith(command: event.commandLevel) : m,
+      ],
+    );
+
+    emit(
+      state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
+    );
   }
 
   void _onUpdateFaction(UpdateFaction event, Emitter<RosterState> emit) {
