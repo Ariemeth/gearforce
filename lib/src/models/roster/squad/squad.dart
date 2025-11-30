@@ -1,4 +1,5 @@
 import 'package:gearforce/src/models/roster/unit/attribute/role.dart';
+import 'package:gearforce/src/models/roster/unit/attribute/unit_level.dart';
 import 'package:gearforce/src/models/roster/unit/model.dart';
 import 'package:gearforce/src/models/roster/unit/model_list_extensions.dart';
 import 'package:gearforce/src/models/roster/unit/unit_upgrade.dart';
@@ -23,6 +24,13 @@ class Squad {
   });
 
   int get tv => models.tv;
+  int get numGreenSquads =>
+      models.where((m) => m.level == UnitLevel.green).length;
+  int get numVetSquads =>
+      models.where((m) => m.level == UnitLevel.veteran).length;
+  int get numEliteSquads =>
+      models.where((m) => m.level == UnitLevel.elite).length;
+  int get numDuelists => models.where((m) => m.isDuelist).length;
 
   Squad copyWith({
     String? name,
