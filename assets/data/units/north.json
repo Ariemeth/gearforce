@@ -1,0 +1,70 @@
+[
+  {
+    "id": "north-hunter",
+    "name": "Hunter",
+    "tv": 6,
+    "roles": ["GP", "SK", "FS"],
+    "movement": {
+      "types": ["W", "G"],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "weapons": [],
+    "traits": ["Hands"],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Northco",
+    "description": "The Hunter Gear was the first purpose-built combat walker on Terra Nova. It is THE forerunner for all other gear designs on the planet. It remains among the most produced gears still in active service. Refitted several times to keep it competitive, its greatest strengths have always been simplicity and ruggedness.",
+    "variants": [
+      {
+        "id": "north-hunter-stock",
+        "name": "Stock",
+        "tv": 0,
+        "weapons": ["LAC", "LVB", "LRP", "LAPGL"]
+      },
+      {
+        "id": "north-hunter-mountain",
+        "name": "Mountain",
+        "tv": 1,
+        "weapons": ["LAC", "MMW", "LRP", "LAPGL"],
+        "traits": ["Climb"]
+      },
+      {
+        "id": "north-hunter-pathfinder",
+        "name": "Pathfinder",
+        "tv": 1,
+        "ew": 5,
+        "weapons": ["LAC", "LVB"],
+        "traits": ["Sensor:24"]
+      },
+      {
+        "id": "north-hunter-assault",
+        "name": "Assault",
+        "tv": 1,
+        "weapons": ["MSC", "LVB"]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-hunter-flakjacket",
+        "name": "Flak Jacket",
+        "tv": 1,
+        "hull": 6,
+        "structure": 2
+      },
+      {
+        "id": "north-hunter-spearhead",
+        "name": "Spearhead",
+        "tv": 1,
+        "traits": ["SatUp", "ECCM", "Init+", "Vuln:H"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "id": "bt-darkWarrior",
+    "name": "Dark Warrior",
+    "tv": 7,
+    "roles": ["GP", "SK", "FS"],
+    "movement": {
+      "types": ["W", "G"],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "weapons": ["LLC/LFC", "LVB", "LRP", "LAPGL"],
+    "traits": ["Hands", "Stealth (Aux)"],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "Talon commanders have noticed a need to have the option to at least hold territory for extended periods of time. So, they looked at more mass produced option so that they can get the numbers needed to hold positions without utilizing some of their higher end assets. The Dark Warrior does this in spades.",
+    "variants": [
+      {
+        "id": "bt-darkWarrior-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkWarrior-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "ew": 4,
+        "traits": ["ECM", "Sensor:24 (Aux)"]
+      },
+      {
+        "id": "bt-darkWarrior-flakjacket",
+        "name": "Flak Jacket",
+        "tv": 1,
+        "hull": 6,
+        "structure": 2
+      }
+    ]
+  }
+]
