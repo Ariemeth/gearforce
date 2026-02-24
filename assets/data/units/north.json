@@ -3,9 +3,16 @@
     "id": "north-hunter",
     "name": "Hunter",
     "tv": 6,
-    "roles": ["GP", "SK", "FS"],
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
     "movement": {
-      "types": ["W", "G"],
+      "types": [
+        "W",
+        "G"
+      ],
       "value": 6
     },
     "armor": 6,
@@ -16,7 +23,9 @@
     "pi": 4,
     "ew": 6,
     "weapons": [],
-    "traits": ["Hands"],
+    "traits": [
+      "Hands"
+    ],
     "height": 1.5,
     "classification": "Gear",
     "subtype": "Trooper Gear",
@@ -27,28 +36,48 @@
         "id": "north-hunter-stock",
         "name": "Stock",
         "tv": 0,
-        "weapons": ["LAC", "LVB", "LRP", "LAPGL"]
+        "weapons": [
+          "LAC",
+          "LVB",
+          "LRP",
+          "LAPGL"
+        ]
       },
       {
         "id": "north-hunter-mountain",
         "name": "Mountain",
         "tv": 1,
-        "weapons": ["LAC", "MMW", "LRP", "LAPGL"],
-        "traits": ["Climb"]
+        "weapons": [
+          "LAC",
+          "MMW",
+          "LRP",
+          "LAPGL"
+        ],
+        "traits": [
+          "Climb"
+        ]
       },
       {
         "id": "north-hunter-pathfinder",
         "name": "Pathfinder",
         "tv": 1,
         "ew": 5,
-        "weapons": ["LAC", "LVB"],
-        "traits": ["Sensor:24"]
+        "weapons": [
+          "LAC",
+          "LVB"
+        ],
+        "traits": [
+          "Sensor:24"
+        ]
       },
       {
         "id": "north-hunter-assault",
         "name": "Assault",
         "tv": 1,
-        "weapons": ["MSC", "LVB"]
+        "weapons": [
+          "MSC",
+          "LVB"
+        ]
       }
     ],
     "upgrades": [
@@ -63,7 +92,12 @@
         "id": "north-hunter-spearhead",
         "name": "Spearhead",
         "tv": 1,
-        "traits": ["SatUp", "ECCM", "Init+", "Vuln:H"]
+        "traits": [
+          "SatUp",
+          "ECCM",
+          "Init+",
+          "Vuln:H"
+        ]
       }
     ]
   }

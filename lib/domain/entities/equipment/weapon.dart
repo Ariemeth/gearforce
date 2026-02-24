@@ -5,7 +5,6 @@ import 'package:gearforce/domain/entities/attribute/size_bands.dart'
 import 'package:gearforce/domain/entities/equipment/weapon_mode.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_range.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
-import 'package:gearforce/data/static/trait_factory.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 

@@ -70,10 +70,10 @@ class TraitSizeBands extends SizeBands<List<Trait>> {
   List<Trait> get h => super.h;
 
   const TraitSizeBands({
-    List<Trait> l = const [],
-    List<Trait> m = const [],
-    List<Trait> h = const [],
-  }) : super(l: l, m: m, h: h);
+    super.l = const [],
+    super.m = const [],
+    super.h = const [],
+  });
 
   factory TraitSizeBands.fromJson(Map<String, dynamic> json) =>
       _$TraitSizeBandsFromJson(json);
