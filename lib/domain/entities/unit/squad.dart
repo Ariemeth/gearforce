@@ -24,6 +24,7 @@ class Squad {
   });
 
   int get tv => models.tv;
+  int get totalActions => models.fold(0, (sum, m) => sum + m.actions.value);
   int get numGreenSquads =>
       models.where((m) => m.level == UnitLevel.green).length;
   int get numVetSquads =>

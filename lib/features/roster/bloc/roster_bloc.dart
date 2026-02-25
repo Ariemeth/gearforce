@@ -31,11 +31,13 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<AddNewSquad>(_onAddNewSquad);
     on<RemoveSquad>(_onRemoveSquad);
     on<AddModel>(_onAddModel);
+    on<RemoveModel>(_onRemoveModel);
     on<UpdateModelLevel>(_onUpdateModelLevel);
     on<UpdateModelIsDuelist>(_onUpdateModelIsDuelist);
     on<UpdateModelCommandLevel>(_onUpdateModelCommand);
     on<UpdateFaction>(_onUpdateFaction);
     on<UpdateSubfaction>(_onUpdateSubFaction);
+    on<RenameSquad>(_onRenameSquad);
     on<UpdateSquads>(_onUpdateSquads);
     on<UpdateSquad>(_onUpdateSquad);
     on<UpdateSquadRoles>(_onUpdateSquadRoles);
@@ -75,6 +77,18 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     );
     final updatedSquadState = state.squadState.updateSquad(updatedSquad);
     emit(state.copyWith(squadState: updatedSquadState));
+  }
+
+  void _onRemoveModel(RemoveModel event, Emitter<RosterState> emit) {
+    final updatedSquad = event.squad.copyWith(
+      models: [
+        for (final m in event.squad.models)
+          if (m.id != event.model.id) m,
+      ],
+    );
+    emit(
+      state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
+    );
   }
 
   void _onUpdateModelLevel(UpdateModelLevel event, Emitter<RosterState> emit) {
@@ -149,6 +163,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
         ruleSet: getSubfactionRuleSet(event.subfaction, unitRepository),
       ),
     );
+  }
+
+  void _onRenameSquad(RenameSquad event, Emitter<RosterState> emit) {
+    final renamedSquad = event.squad.copyWith(name: event.newName);
+    final updatedSquadState = state.squadState.updateSquad(renamedSquad);
+    emit(state.copyWith(squadState: updatedSquadState));
   }
 
   void _onUpdateSquads(UpdateSquads event, Emitter<RosterState> emit) {

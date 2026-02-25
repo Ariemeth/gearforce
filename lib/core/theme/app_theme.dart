@@ -43,6 +43,33 @@ class AppTheme {
     fontStyle: FontStyle.italic,
   );
 
+  // Squad Page Text Styles
+  static const TextStyle squadNameStyle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle squadNameEditingStyle = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    fontStyle: FontStyle.italic,
+  );
+
+  static const TextStyle squadInfoStyle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const TextStyle squadUnitNameStyle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+  );
+
+  static const TextStyle squadUnitBodyStyle = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.normal,
+  );
+
   // Paddings
   static const EdgeInsets defaultPadding = EdgeInsets.all(0);
   static const EdgeInsets listTilePadding = defaultPadding;

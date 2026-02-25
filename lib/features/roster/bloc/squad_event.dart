@@ -39,6 +39,13 @@ class AddModel extends SquadEvent {
   AddModel({required this.squad, required this.base, required this.variant});
 }
 
+class RemoveModel extends SquadEvent {
+  final Squad squad;
+  final Model model;
+
+  RemoveModel({required this.squad, required this.model});
+}
+
 class UpdateModelLevel extends SquadEvent {
   final Squad squad;
   final Model model;
@@ -78,6 +85,12 @@ class UpdateModelCommandLevel extends SquadEvent {
 class UpdateSquad extends SquadEvent {
   final Squad updatedSquad;
   UpdateSquad({required this.updatedSquad});
+}
+
+class RenameSquad extends SquadEvent {
+  final Squad squad;
+  final String newName;
+  RenameSquad({required this.squad, required this.newName});
 }
 
 class UpdateSquads extends SquadEvent {
