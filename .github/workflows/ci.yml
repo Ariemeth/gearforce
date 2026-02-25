@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  FLUTTER_VERSION: 3.35.1
+  FLUTTER_VERSION: 3.41.2
 
 jobs:
   format:
@@ -111,9 +111,9 @@ jobs:
         if: matrix.target == 'android'
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'  # Use the Eclipse Temurin distribution
-          java-version: '21'       # Set Java version to 21
-          cache: 'gradle'          # Cache Gradle dependencies
+          distribution: "temurin" # Use the Eclipse Temurin distribution
+          java-version: "21" # Set Java version to 21
+          cache: "gradle" # Cache Gradle dependencies
 
       - name: Cache Flutter SDK
         uses: actions/cache@v3
@@ -153,5 +153,3 @@ jobs:
 
       - name: Run linter
         run: flutter analyze
-
-
