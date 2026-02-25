@@ -95,4 +95,7 @@ class AppTheme {
 
   static const EdgeInsets drawerHeaderPadding = EdgeInsets.all(4.0);
   static const EdgeInsets drawerPadding = EdgeInsets.all(4.0);
+
+  // Colors
+  static const Color deleteIconColor = Color.fromARGB(255, 190, 22, 10);
 }

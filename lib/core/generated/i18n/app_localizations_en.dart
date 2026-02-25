@@ -43,4 +43,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get squadDetailsTitleText => 'Squad Details';
+
+  @override
+  String get removeSquadConfirmTitle => 'Remove Squad';
+
+  @override
+  String removeSquadConfirmMessage(String squadName) {
+    return 'Are you sure you want to remove \"$squadName\"?';
+  }
+
+  @override
+  String get cancelButtonText => 'Cancel';
+
+  @override
+  String get removeButtonText => 'Remove';
 }

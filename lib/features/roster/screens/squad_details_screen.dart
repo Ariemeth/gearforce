@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gearforce/core/generated/i18n/app_localizations.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/select_model_button.dart';
@@ -34,7 +35,40 @@ class SquadDetailsScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Center(child: _EditableSquadName(squad: squad)),
-            actions: [],
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.delete_forever_outlined,
+                  color: AppTheme.deleteIconColor,
+                ),
+                onPressed: () async {
+                  final l10n = AppLocalizations.of(context)!;
+                  final confirmed = await showDialog<bool>(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text(l10n.removeSquadConfirmTitle),
+                      content: Text(l10n.removeSquadConfirmMessage(squad.name)),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(false),
+                          child: Text(l10n.cancelButtonText),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(true),
+                          child: Text(l10n.removeButtonText),
+                        ),
+                      ],
+                    ),
+                  );
+                  if (confirmed == true && context.mounted) {
+                    context.read<RosterBloc>().add(RemoveSquad(squad: squad));
+                    if (context.mounted) {
+                      Navigator.of(context).pop();
+                    }
+                  }
+                },
+              ),
+            ],
           ),
           body: Padding(
             padding: _pagePadding,
@@ -72,21 +106,20 @@ class SquadDetailsScreen extends StatelessWidget {
                             ),
                             Spacer(),
                             UnitLevelSelector(squad: squad, model: model),
-                            IconButton(
-                              icon: const Icon(
-                                Icons.delete_forever,
-                                color: Colors.red,
-                              ),
-                              tooltip: 'Remove unit',
-                              onPressed: () {
-                                context.read<RosterBloc>().add(
-                                  RemoveModel(squad: squad, model: model),
-                                );
-                              },
-                            ),
                           ],
                         ),
-
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.delete_forever_outlined,
+                            color: AppTheme.deleteIconColor,
+                          ),
+                          tooltip: 'Remove unit',
+                          onPressed: () {
+                            context.read<RosterBloc>().add(
+                              RemoveModel(squad: squad, model: model),
+                            );
+                          },
+                        ),
                         contentPadding: AppTheme.listTilePadding,
                       );
                     },

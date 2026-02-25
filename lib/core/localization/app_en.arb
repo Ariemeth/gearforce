@@ -47,5 +47,27 @@
   "squadDetailsTitleText": "Squad Details",
   "@squadDetailsTitleText": {
     "description": "Title for the squad details card"
+  },
+  "removeSquadConfirmTitle": "Remove Squad",
+  "@removeSquadConfirmTitle": {
+    "description": "Title for the remove squad confirmation dialog"
+  },
+  "removeSquadConfirmMessage": "Are you sure you want to remove \"{squadName}\"?",
+  "@removeSquadConfirmMessage": {
+    "description": "Confirmation message when removing a squad",
+    "placeholders": {
+      "squadName": {
+        "type": "String",
+        "example": "Squad 1"
+      }
+    }
+  },
+  "cancelButtonText": "Cancel",
+  "@cancelButtonText": {
+    "description": "Text for the cancel button in dialogs"
+  },
+  "removeButtonText": "Remove",
+  "@removeButtonText": {
+    "description": "Text for the remove button in dialogs"
   }
 }
