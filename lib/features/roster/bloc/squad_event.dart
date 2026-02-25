@@ -97,3 +97,22 @@ class UpdateSquads extends SquadEvent {
   final List<Squad> squads;
   UpdateSquads({required this.squads});
 }
+
+class ReorderModel extends SquadEvent {
+  final Squad squad;
+  final int oldIndex;
+  final int newIndex;
+
+  ReorderModel({
+    required this.squad,
+    required this.oldIndex,
+    required this.newIndex,
+  });
+}
+
+class ReorderSquad extends SquadEvent {
+  final int oldIndex;
+  final int newIndex;
+
+  ReorderSquad({required this.oldIndex, required this.newIndex});
+}

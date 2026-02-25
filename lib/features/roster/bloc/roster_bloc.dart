@@ -43,6 +43,8 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<UpdateSquads>(_onUpdateSquads);
     on<UpdateSquad>(_onUpdateSquad);
     on<UpdateSquadRoles>(_onUpdateSquadRoles);
+    on<ReorderModel>(_onReorderModel);
+    on<ReorderSquad>(_onReorderSquad);
   }
 
   void _onAddNewSquad(AddNewSquad event, Emitter<RosterState> emit) {
@@ -202,6 +204,44 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     final validatedSquad = Squad.filterValidSquadUnits(updatedSquad);
     final updatedSquadState = state.squadState.updateSquad(validatedSquad);
 
+    emit(state.copyWith(squadState: updatedSquadState));
+  }
+
+  void _onReorderModel(ReorderModel event, Emitter<RosterState> emit) {
+    final models = List<Model>.from(event.squad.models);
+
+    // Handle reordering: remove from oldIndex and insert at newIndex
+    if (event.oldIndex < event.newIndex) {
+      // Moving down
+      final model = models.removeAt(event.oldIndex);
+      models.insert(event.newIndex - 1, model);
+    } else {
+      // Moving up
+      final model = models.removeAt(event.oldIndex);
+      models.insert(event.newIndex, model);
+    }
+
+    final updatedSquad = event.squad.copyWith(models: models);
+    final updatedSquadState = state.squadState.updateSquad(updatedSquad);
+
+    emit(state.copyWith(squadState: updatedSquadState));
+  }
+
+  void _onReorderSquad(ReorderSquad event, Emitter<RosterState> emit) {
+    final squads = List<Squad>.from(state.squads);
+
+    // Handle reordering: remove from oldIndex and insert at newIndex
+    if (event.oldIndex < event.newIndex) {
+      // Moving down
+      final squad = squads.removeAt(event.oldIndex);
+      squads.insert(event.newIndex - 1, squad);
+    } else {
+      // Moving up
+      final squad = squads.removeAt(event.oldIndex);
+      squads.insert(event.newIndex, squad);
+    }
+
+    final updatedSquadState = state.squadState.copyWith(squads: squads);
     emit(state.copyWith(squadState: updatedSquadState));
   }
 }

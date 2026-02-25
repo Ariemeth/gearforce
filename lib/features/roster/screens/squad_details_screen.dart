@@ -85,11 +85,25 @@ class SquadDetailsScreen extends StatelessWidget {
                 SquadRoleSelectors(squad: squad),
                 Divider(color: Colors.grey.shade400),
                 Expanded(
-                  child: ListView.builder(
+                  child: ReorderableListView.builder(
                     itemCount: squad.models.length,
+                    buildDefaultDragHandles: false,
+                    onReorder: (oldIndex, newIndex) {
+                      context.read<RosterBloc>().add(
+                        ReorderModel(
+                          squad: squad,
+                          oldIndex: oldIndex,
+                          newIndex: newIndex,
+                        ),
+                      );
+                    },
                     itemBuilder: (context, index) {
                       final model = squad.models[index];
-                      return ModelListTile(squad: squad, model: model);
+                      return ReorderableDragStartListener(
+                        key: ValueKey(model.id),
+                        index: index,
+                        child: ModelListTile(squad: squad, model: model),
+                      );
                     },
                   ),
                 ),

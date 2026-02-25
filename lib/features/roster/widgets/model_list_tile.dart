@@ -27,19 +27,20 @@ class ModelListTile extends StatelessWidget {
           ),
           const Spacer(),
           UnitLevelSelector(squad: squad, model: model),
+          IconButton(
+            icon: const Icon(
+              Icons.delete_forever_outlined,
+              color: AppTheme.deleteIconColor,
+            ),
+            tooltip: context.l10n.removeUnitTooltip,
+            iconSize: 20,
+            onPressed: () {
+              context.read<RosterBloc>().add(
+                RemoveModel(squad: squad, model: model),
+              );
+            },
+          ),
         ],
-      ),
-      trailing: IconButton(
-        icon: const Icon(
-          Icons.delete_forever_outlined,
-          color: AppTheme.deleteIconColor,
-        ),
-        tooltip: context.l10n.removeUnitTooltip,
-        onPressed: () {
-          context.read<RosterBloc>().add(
-            RemoveModel(squad: squad, model: model),
-          );
-        },
       ),
       contentPadding: AppTheme.listTilePadding,
     );

@@ -25,42 +25,52 @@ class SquadDisplay extends StatelessWidget {
                     style: AppTheme.subtitleStyle,
                   ),
                 )
-              : ListView.builder(
+              : ReorderableListView.builder(
                   itemCount: squads.length,
+                  buildDefaultDragHandles: false,
+                  onReorder: (oldIndex, newIndex) {
+                    context.read<RosterBloc>().add(
+                      ReorderSquad(oldIndex: oldIndex, newIndex: newIndex),
+                    );
+                  },
                   itemBuilder: (context, index) {
                     final squad = squads[index];
 
-                    return ListTile(
-                      title: Text(
-                        squad.name, // Use name instead of id
-                        style: AppTheme.subtitleStyle,
-                      ),
-                      trailing: IconButton(
-                        icon: const Icon(
-                          Icons.delete_forever_outlined,
-                          color: AppTheme.deleteIconColor,
+                    return ReorderableDragStartListener(
+                      key: ValueKey(squad.id),
+                      index: index,
+                      child: ListTile(
+                        title: Text(
+                          squad.name, // Use name instead of id
+                          style: AppTheme.subtitleStyle,
                         ),
-                        onPressed: () async {
-                          final confirmed = await showRemoveSquadDialog(
-                            context: context,
-                            squadName: squad.name,
-                          );
-                          if (confirmed == true && context.mounted) {
-                            context.read<RosterBloc>().add(
-                              RemoveSquad(squad: squad),
+                        trailing: IconButton(
+                          icon: const Icon(
+                            Icons.delete_forever_outlined,
+                            color: AppTheme.deleteIconColor,
+                          ),
+                          onPressed: () async {
+                            final confirmed = await showRemoveSquadDialog(
+                              context: context,
+                              squadName: squad.name,
                             );
-                          }
+                            if (confirmed == true && context.mounted) {
+                              context.read<RosterBloc>().add(
+                                RemoveSquad(squad: squad),
+                              );
+                            }
+                          },
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  SquadDetailsScreen(squadId: squad.id),
+                            ),
+                          );
                         },
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                SquadDetailsScreen(squadId: squad.id),
-                          ),
-                        );
-                      },
                     );
                   },
                 ),
