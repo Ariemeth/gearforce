@@ -5,10 +5,9 @@ import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/large_roster_display.dart';
 import 'package:gearforce/features/roster/widgets/roster_page_drawer.dart';
 import 'package:gearforce/features/roster/widgets/small_roster_display.dart';
-import 'package:gearforce/core/widgets/display_layout_constraints.dart';
 import 'package:gearforce/core/widgets/responsive_size.dart';
 
-const _pagePadding = EdgeInsets.fromLTRB(3, 2, 3, 2);
+const _pagePadding = EdgeInsets.fromLTRB(2, 1, 5, 6);
 
 class RosterScreen extends StatelessWidget {
   const RosterScreen({super.key});
@@ -39,22 +38,12 @@ class RosterScreen extends StatelessWidget {
             child: LayoutBuilder(
               builder: (context, constraints) {
                 final screenSize = ResponsiveSize.getScreenSize(context);
-                final rosterMetaData = DisplayLayoutConstraints(
-                  maxScreenWidth: constraints.maxWidth,
-                  maxScreenHeight: constraints.maxHeight,
-                );
 
                 switch (screenSize) {
                   case ScreenSize.small:
-                    return SmallRosterDisplay(
-                      rosterMetaData: rosterMetaData,
-                      state: state,
-                    );
+                    return SmallRosterDisplay(state: state);
                   case ScreenSize.large:
-                    return LargeRosterDisplay(
-                      rosterMetaData: rosterMetaData,
-                      state: state,
-                    );
+                    return LargeRosterDisplay(state: state);
                 }
               },
             ),

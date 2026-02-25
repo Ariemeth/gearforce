@@ -5,6 +5,7 @@ import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/screens/squad_details_screen.dart';
 import 'package:gearforce/features/roster/widgets/add_squad_button.dart';
+import 'package:gearforce/features/roster/widgets/remove_squad_dialog.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
 class SquadDisplay extends StatelessWidget {
@@ -40,27 +41,9 @@ class SquadDisplay extends StatelessWidget {
                           color: AppTheme.deleteIconColor,
                         ),
                         onPressed: () async {
-                          final l10n = context.l10n;
-                          final confirmed = await showDialog<bool>(
+                          final confirmed = await showRemoveSquadDialog(
                             context: context,
-                            builder: (context) => AlertDialog(
-                              title: Text(l10n.removeSquadConfirmTitle),
-                              content: Text(
-                                l10n.removeSquadConfirmMessage(squad.name),
-                              ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.of(context).pop(false),
-                                  child: Text(l10n.cancelButtonText),
-                                ),
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.of(context).pop(true),
-                                  child: Text(l10n.removeButtonText),
-                                ),
-                              ],
-                            ),
+                            squadName: squad.name,
                           );
                           if (confirmed == true && context.mounted) {
                             context.read<RosterBloc>().add(

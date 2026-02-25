@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
+import 'package:gearforce/features/roster/widgets/model_list_tile.dart';
+import 'package:gearforce/features/roster/widgets/remove_squad_dialog.dart';
 import 'package:gearforce/features/roster/widgets/select_model_button.dart';
 import 'package:gearforce/features/roster/widgets/squad_role_selectors.dart';
-import 'package:gearforce/features/roster/widgets/unit_level_selector.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
 const _pagePadding = EdgeInsets.fromLTRB(8, 5, 8, 5);
@@ -46,23 +47,9 @@ class SquadDetailsScreen extends StatelessWidget {
                   color: AppTheme.deleteIconColor,
                 ),
                 onPressed: () async {
-                  final l10n = context.l10n;
-                  final confirmed = await showDialog<bool>(
+                  final confirmed = await showRemoveSquadDialog(
                     context: context,
-                    builder: (context) => AlertDialog(
-                      title: Text(l10n.removeSquadConfirmTitle),
-                      content: Text(l10n.removeSquadConfirmMessage(squad.name)),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.of(context).pop(false),
-                          child: Text(l10n.cancelButtonText),
-                        ),
-                        TextButton(
-                          onPressed: () => Navigator.of(context).pop(true),
-                          child: Text(l10n.removeButtonText),
-                        ),
-                      ],
-                    ),
+                    squadName: squad.name,
                   );
                   if (confirmed == true && context.mounted) {
                     context.read<RosterBloc>().add(RemoveSquad(squad: squad));
@@ -99,36 +86,7 @@ class SquadDetailsScreen extends StatelessWidget {
                     itemCount: squad.models.length,
                     itemBuilder: (context, index) {
                       final model = squad.models[index];
-                      return ListTile(
-                        title: Text(
-                          model.name,
-                          style: AppTheme.squadUnitNameStyle,
-                        ),
-                        subtitle: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              context.l10n.tvLabel(model.tv),
-                              style: AppTheme.squadUnitBodyStyle,
-                            ),
-                            const Spacer(),
-                            UnitLevelSelector(squad: squad, model: model),
-                          ],
-                        ),
-                        trailing: IconButton(
-                          icon: const Icon(
-                            Icons.delete_forever_outlined,
-                            color: AppTheme.deleteIconColor,
-                          ),
-                          tooltip: context.l10n.removeUnitTooltip,
-                          onPressed: () {
-                            context.read<RosterBloc>().add(
-                              RemoveModel(squad: squad, model: model),
-                            );
-                          },
-                        ),
-                        contentPadding: AppTheme.listTilePadding,
-                      );
+                      return ModelListTile(squad: squad, model: model);
                     },
                   ),
                 ),

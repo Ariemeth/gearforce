@@ -3,17 +3,11 @@ import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/faction_selector.dart';
 import 'package:gearforce/features/roster/widgets/roster_name_input_display.dart';
 import 'package:gearforce/features/roster/widgets/sub_faction_selector.dart';
-import 'package:gearforce/core/widgets/display_layout_constraints.dart';
 import 'package:gearforce/features/roster/widgets/squad_display.dart';
 
 class SmallRosterDisplay extends StatefulWidget {
-  const SmallRosterDisplay({
-    super.key,
-    required this.rosterMetaData,
-    required this.state,
-  });
+  const SmallRosterDisplay({super.key, required this.state});
 
-  final DisplayLayoutConstraints rosterMetaData;
   final RosterState state;
 
   @override
@@ -57,7 +51,6 @@ class _SmallRosterDisplayState extends State<SmallRosterDisplay> {
         FactionSelector(state: state),
         SubFactionSelector(state: state),
         Expanded(child: SquadDisplay(squads: state.squads)),
-        widget.rosterMetaData,
       ],
     );
   }

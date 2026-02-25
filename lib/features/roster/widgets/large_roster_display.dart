@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/squad_display.dart';
-import 'package:gearforce/core/widgets/display_layout_constraints.dart';
 
 const _leftPanelMinWidth = 400.0;
 
 class LargeRosterDisplay extends StatelessWidget {
-  const LargeRosterDisplay({
-    super.key,
-    required this.rosterMetaData,
-    required this.state,
-  });
+  const LargeRosterDisplay({super.key, required this.state});
 
-  final DisplayLayoutConstraints rosterMetaData;
   final RosterState state;
 
   @override
@@ -22,10 +16,7 @@ class LargeRosterDisplay extends StatelessWidget {
         SizedBox(
           width: _leftPanelMinWidth,
           child: Column(
-            children: [
-              Expanded(child: SquadDisplay(squads: state.squads)),
-              rosterMetaData,
-            ],
+            children: [Expanded(child: SquadDisplay(squads: state.squads))],
           ),
         ),
         Expanded(child: Container(color: Colors.blueGrey)),
