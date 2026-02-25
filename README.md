@@ -79,12 +79,12 @@ This project uses `json_serializable` to automate the mapping between JSON asset
 
 **To run a one-time build:**
 ```bash
-flutter pub run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 ```
 
 **To watch for changes and regenerate automatically:**
 ```bash
-flutter pub run build_runner watch --delete-conflicting-outputs
+dart run build_runner watch --delete-conflicting-outputs
 ```
 
 ### CI/CD Verification
@@ -93,7 +93,7 @@ To ensure that the generated files are always up-to-date in your repository, you
 
 ```bash
 # Run the build runner
-flutter pub run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 
 # Check if there are any changes to the generated files
 git diff --exit-code
@@ -106,7 +106,7 @@ If the generated files are out-of-sync with the models, `git diff --exit-code` w
 ## Summary Table: What Goes Where?
 
 | Component                        | Directory                          |
-|:---------------------------------|:-----------------------------------|
+| :------------------------------- | :--------------------------------- |
 | **Domain Entity** (Unit, Weapon) | `lib/domain/entities/`             |
 | **Attribute Entity**             | `lib/domain/entities/attribute/`   |
 | **Repository Interface**         | `lib/domain/repositories/`         |
