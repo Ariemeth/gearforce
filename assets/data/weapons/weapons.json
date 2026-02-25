@@ -1,0 +1,1144 @@
+[
+  {
+    "code": "AAM",
+    "name": "Anti-Air Missile",
+    "range": {
+      "min": 6,
+      "opt": 36,
+      "max": 72
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "AA",
+      "Guided"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "AC",
+    "name": "Autocannon",
+    "range": {
+      "min": 6,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:1"
+    ],
+    "altTraits": [
+      "Precise"
+    ]
+  },
+  {
+    "code": "AG",
+    "name": "Artillery Gun",
+    "range": {
+      "min": 12,
+      "opt": 48,
+      "max": 96
+    },
+    "damage": {
+      "l": 8,
+      "m": 9,
+      "h": 10
+    },
+    "modes": [
+      "indirect"
+    ],
+    "traits": [
+      "AOE:3",
+      "Blast",
+      "AP:1"
+    ],
+    "altTraits": [
+      "AOE:3",
+      "Blast",
+      "Demo:2"
+    ]
+  },
+  {
+    "code": "AM",
+    "name": "Artillery Missile",
+    "range": {
+      "min": 12,
+      "opt": 48,
+      "max": 96
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "indirect"
+    ],
+    "traits": [
+      "AOE:3",
+      "Blast",
+      "Guided",
+      "AP:1"
+    ],
+    "altTraits": [
+      "AOE:3",
+      "Blast",
+      "Guided",
+      "AI"
+    ]
+  },
+  {
+    "code": "APGL",
+    "name": "Anti-Personnel Grenade Launchers",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AI",
+      "Frag",
+      "AOE:3",
+      "Proximity"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "AR",
+    "name": "Artillery Rockets",
+    "range": {
+      "min": 12,
+      "opt": 36,
+      "max": 72
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "AOE:3",
+      "Demo:2"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "ATM",
+    "name": "Anti-Tank Missile",
+    "range": {
+      "min": 6,
+      "opt": 24,
+      "max": 48
+    },
+    "damage": {
+      "l": 8,
+      "m": 9,
+      "h": 10
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "Guided",
+      "AP:3"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "Bomb",
+    "name": "Bomb",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 8,
+      "m": 9,
+      "h": 10
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AOE:3",
+      "Blast",
+      "Apex"
+    ],
+    "altTraits": [
+      "AOE:3",
+      "Blast",
+      "Guided"
+    ]
+  },
+  {
+    "code": "Napalm",
+    "name": "Napalm Bomb",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AOE:3",
+      "Blast",
+      "AI",
+      "Fire:2"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "BZ",
+    "name": "Bazooka",
+    "range": {
+      "min": 6,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AP:3"
+    ],
+    "altTraits": [
+      "AOE:2",
+      "Blast"
+    ]
+  },
+  {
+    "code": "RBZ",
+    "name": "Rapid Fire Bazooka",
+    "range": {
+      "min": 6,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:1",
+      "AP:3"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "FC",
+    "name": "Frag Cannon",
+    "range": {
+      "min": 0,
+      "opt": 9,
+      "max": 18
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise",
+      "AP:2"
+    ],
+    "altTraits": [
+      "Frag",
+      "AI"
+    ]
+  },
+  {
+    "code": "FG",
+    "name": "Field Gun",
+    "range": {
+      "min": 6,
+      "opt": 24,
+      "max": 48
+    },
+    "damage": {
+      "l": 8,
+      "m": 9,
+      "h": 10
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "AOE:3",
+      "Blast"
+    ],
+    "altTraits": [
+      "AP:4"
+    ]
+  },
+  {
+    "code": "FK",
+    "name": "Flak Kannon",
+    "range": {
+      "min": 12,
+      "opt": 24,
+      "max": 48
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AA",
+      "AOE:3",
+      "Blast"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "FL",
+    "name": "Flamer",
+    "range": {
+      "min": 0,
+      "opt": 9,
+      "max": 18
+    },
+    "damage": {
+      "l": 4,
+      "m": 5,
+      "h": 6
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AI",
+      "Burst:1",
+      "Spray",
+      "Fire:2"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "GG",
+    "name": "Grappling Gun",
+    "range": {
+      "min": 0,
+      "opt": 10,
+      "max": null
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AP:2"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "GL",
+    "name": "Grenade Launcher",
+    "range": {
+      "min": 6,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "AOE:2",
+      "Blast",
+      "AI"
+    ],
+    "altTraits": [
+      "AP:3"
+    ]
+  },
+  {
+    "code": "HG",
+    "name": "Hand Grenade",
+    "range": {
+      "min": 3,
+      "opt": 6,
+      "max": 12
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "AOE:3",
+      "Blast",
+      "AI",
+      "AP:2"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "IATM",
+    "name": "Infantry ATM",
+    "range": {
+      "min": 6,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "Guided",
+      "AP:2"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "IC",
+    "name": "Infantry Cannon",
+    "range": {
+      "min": 3,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [],
+    "altTraits": []
+  },
+  {
+    "code": "IGL",
+    "name": "Infantry Grenade Launcher",
+    "range": {
+      "min": 3,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "AOE:2",
+      "Blast",
+      "AI"
+    ],
+    "altTraits": [
+      "AP:2"
+    ]
+  },
+  {
+    "code": "ILW",
+    "name": "Infantry Laser Weapon",
+    "range": {
+      "min": 3,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:1",
+      "AI"
+    ],
+    "altTraits": [
+      "Precise",
+      "AI"
+    ]
+  },
+  {
+    "code": "ILSR",
+    "name": "Infantry Laser Sniper Rifle",
+    "range": {
+      "min": 6,
+      "opt": 36,
+      "max": null
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise",
+      "AI"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "IM",
+    "name": "Infantry Mortar",
+    "range": {
+      "min": 6,
+      "opt": 24,
+      "max": 48
+    },
+    "damage": {
+      "l": 4,
+      "m": 5,
+      "h": 6
+    },
+    "modes": [
+      "indirect"
+    ],
+    "traits": [
+      "AOE:2",
+      "Blast",
+      "Apex"
+    ],
+    "altTraits": [
+      "AOE:2",
+      "Blast",
+      "Guided"
+    ]
+  },
+  {
+    "code": "IMG",
+    "name": "Infantry Machine Gun",
+    "range": {
+      "min": 3,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AI",
+      "Burst:1"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "IMW",
+    "name": "Infantry Melee Weapon",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AI"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "IR",
+    "name": "Infantry Rifle",
+    "range": {
+      "min": 3,
+      "opt": 24,
+      "max": 48
+    },
+    "damage": {
+      "l": 4,
+      "m": 5,
+      "h": 6
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise",
+      "AI"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "IRC",
+    "name": "Infantry Rotary Cannon",
+    "range": {
+      "min": 3,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 4,
+      "m": 5,
+      "h": 6
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AI",
+      "Burst:2"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "IW",
+    "name": "Infantry Weapon",
+    "range": {
+      "min": 0,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 4,
+      "m": 5,
+      "h": 6
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:1",
+      "AI"
+    ],
+    "altTraits": [
+      "Precise",
+      "AI"
+    ]
+  },
+  {
+    "code": "LC",
+    "name": "Laser Cannon",
+    "range": {
+      "min": 6,
+      "opt": 48,
+      "max": null
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "Mine",
+    "name": "Mine",
+    "range": {
+      "min": null,
+      "opt": null,
+      "max": null
+    },
+    "damage": {
+      "l": 8,
+      "m": 9,
+      "h": 10
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AOE:3",
+      "AP:2",
+      "Immobilize"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "M",
+    "name": "Mortar",
+    "range": {
+      "min": 12,
+      "opt": 36,
+      "max": 72
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "indirect"
+    ],
+    "traits": [
+      "AOE:3",
+      "Blast",
+      "Apex"
+    ],
+    "altTraits": [
+      "AOE:3",
+      "Blast",
+      "Guided"
+    ]
+  },
+  {
+    "code": "MW",
+    "name": "Melee Weapon",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Demo:4"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "P",
+    "name": "Pistol",
+    "range": {
+      "min": 0,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "PA",
+    "name": "Particle Accelerator",
+    "range": {
+      "min": 6,
+      "opt": 24,
+      "max": 48
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Haywire",
+      "Precise"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "PC",
+    "name": "Plasma Cannon",
+    "range": {
+      "min": 0,
+      "opt": 9,
+      "max": 18
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Fire:5"
+    ],
+    "altTraits": [
+      "AI",
+      "Frag",
+      "Fire:2"
+    ]
+  },
+  {
+    "code": "PL",
+    "name": "Pulse Laser",
+    "range": {
+      "min": 6,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:1"
+    ],
+    "altTraits": [
+      "Apex",
+      "AP:2"
+    ]
+  },
+  {
+    "code": "PZ",
+    "name": "Panzerfaust",
+    "range": {
+      "min": 3,
+      "opt": 6,
+      "max": 12
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AP:3"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "RC",
+    "name": "Rotary Cannon",
+    "range": {
+      "min": 6,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:2",
+      "AI"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "RF",
+    "name": "Rifle",
+    "range": {
+      "min": 6,
+      "opt": 36,
+      "max": 72
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "RG",
+    "name": "Railgun",
+    "range": {
+      "min": 6,
+      "opt": 48,
+      "max": 96
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise+",
+      "AP:4"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "RL",
+    "name": "Rotary Laser",
+    "range": {
+      "min": 6,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:2",
+      "AI"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "RP",
+    "name": "Rocket Pack",
+    "range": {
+      "min": 6,
+      "opt": 18,
+      "max": 36
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct",
+      "indirect"
+    ],
+    "traits": [
+      "AOE:3",
+      "AP:1"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "SC",
+    "name": "Snub Cannon",
+    "range": {
+      "min": 3,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 8,
+      "m": 9,
+      "h": 10
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Precise",
+      "Demo:3",
+      "AP:3"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "SE",
+    "name": "Shaped Explosive",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Demo:4",
+      "AP:3"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "SG",
+    "name": "Spike Gun",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 6,
+      "m": 7,
+      "h": 8
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AP:4"
+    ],
+    "altTraits": []
+  },
+  {
+    "code": "SMG",
+    "name": "Submachine Gun",
+    "range": {
+      "min": 0,
+      "opt": 12,
+      "max": 24
+    },
+    "damage": {
+      "l": 5,
+      "m": 6,
+      "h": 7
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Burst:2"
+    ],
+    "altTraits": [
+      "Precise"
+    ]
+  },
+  {
+    "code": "TG",
+    "name": "Tank Gun",
+    "range": {
+      "min": 12,
+      "opt": 36,
+      "max": 72
+    },
+    "damage": {
+      "l": 9,
+      "m": 10,
+      "h": 11
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "Demo:2",
+      "AP:4"
+    ],
+    "altTraits": [
+      "AOE:2",
+      "Blast"
+    ]
+  },
+  {
+    "code": "VB",
+    "name": "Vibro Blade",
+    "range": {
+      "min": 0,
+      "opt": 0,
+      "max": null
+    },
+    "damage": {
+      "l": 7,
+      "m": 8,
+      "h": 9
+    },
+    "modes": [
+      "direct"
+    ],
+    "traits": [
+      "AP:3"
+    ],
+    "altTraits": []
+  }
+]

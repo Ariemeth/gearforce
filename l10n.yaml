@@ -1,5 +1,5 @@
 # Localization configuration for Flutter Intl
-output-dir: lib/src/generated/i18n
-arb-dir: lib/src/localization
+output-dir: lib/core/generated/i18n
+arb-dir: lib/core/localization
 template-arb-file: app_en.arb
 output-localization-file: app_localizations.dart

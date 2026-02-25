@@ -6,6 +6,9 @@
 # invoked from the command line by running `flutter analyze`.
 
 analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
   errors:
     avoid_print: ignore
     prefer_adjacent_string_concatenation: ignore

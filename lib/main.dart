@@ -1,19 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/src/gearforce.dart';
-import 'package:gearforce/src/pages/app_settings/bloc/app_settings_bloc.dart';
-import 'package:gearforce/src/pages/app_settings/bloc/app_settings_provider.dart';
-import 'package:gearforce/src/pages/roster/bloc/roster_bloc.dart';
+import 'package:gearforce/app.dart';
+import 'package:gearforce/domain/repositories/unit_repository.dart';
+import 'package:gearforce/domain/repositories/weapon_repository.dart';
+import 'package:gearforce/data/repositories/json_unit_repository.dart';
+import 'package:gearforce/data/repositories/json_weapon_repository.dart';
+import 'package:gearforce/data/static/weapon_factory.dart';
+import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
+import 'package:gearforce/features/settings/bloc/app_settings_repository.dart';
+import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final weaponRepository = JsonWeaponRepository();
+  await weaponRepository.load();
+  WeaponFactory.setRepository(weaponRepository);
+
   runApp(
     MultiRepositoryProvider(
       providers: [
         RepositoryProvider<AppSettingsRepository>(
           create: (context) => AppSettingsRepository(),
         ),
-        // Add other repositories here if needed
+        RepositoryProvider<UnitRepository>(
+          create: (context) => JsonUnitRepository(),
+        ),
+        RepositoryProvider<WeaponRepository>(
+          create: (context) => weaponRepository,
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
@@ -22,8 +36,10 @@ void main() async {
               RepositoryProvider.of<AppSettingsRepository>(context),
             )..loadSettings(),
           ),
-          BlocProvider(create: (context) => RosterBloc()),
-          // Add other BlocProviders here if needed
+          BlocProvider(
+            create: (context) =>
+                RosterBloc(RepositoryProvider.of<UnitRepository>(context)),
+          ),
         ],
         child: Gearforce(),
       ),
