@@ -4,7 +4,7 @@ import 'package:gearforce/features/settings/bloc/app_settings_events.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_repository.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
 
-class AppSettingsBloc extends Bloc<AppSettingsEvents, AppSettingsState> {
+class AppSettingsBloc extends Bloc<AppSettingsEvent, AppSettingsState> {
   final AppSettingsRepository _settingsProvider;
 
   AppSettingsBloc(this._settingsProvider)
