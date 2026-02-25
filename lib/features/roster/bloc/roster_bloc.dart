@@ -186,10 +186,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onUpdateSquad(UpdateSquad event, Emitter<RosterState> emit) {
-    final updatedSquadState = state.squadState.updateSquadByName(
-      event.updatedSquad.name,
-      event.updatedSquad,
-    );
+    final updatedSquadState = state.squadState.updateSquad(event.updatedSquad);
     emit(state.copyWith(squadState: updatedSquadState));
   }
 
@@ -203,10 +200,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
     // Validate and filter units based on new roles
     final validatedSquad = Squad.filterValidSquadUnits(updatedSquad);
-    final updatedSquadState = state.squadState.updateSquadByName(
-      event.squad.name,
-      validatedSquad,
-    );
+    final updatedSquadState = state.squadState.updateSquad(validatedSquad);
 
     emit(state.copyWith(squadState: updatedSquadState));
   }

@@ -12,27 +12,23 @@ class AddSquadButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RosterBloc, RosterState>(
-      builder: (context, state) {
-        return ElevatedButton(
-          onPressed: () {
-            int squadNumber = squads.length + 1;
-            String newSquadName;
+    return ElevatedButton(
+      onPressed: () {
+        int squadNumber = squads.length + 1;
+        String newSquadName;
 
-            // Ensure the squad name is unique
-            do {
-              newSquadName = context.l10n.defaultSquadName(squadNumber);
-              squadNumber++;
-            } while (squads.any((squad) => squad.name == newSquadName));
+        // Ensure the squad name is unique
+        do {
+          newSquadName = context.l10n.defaultSquadName(squadNumber);
+          squadNumber++;
+        } while (squads.any((squad) => squad.name == newSquadName));
 
-            context.read<RosterBloc>().add(AddNewSquad(name: newSquadName));
-          },
-          child: Text(
-            context.l10n.addSquadButtonText,
-            style: AppTheme.buttonTextStyle,
-          ),
-        );
+        context.read<RosterBloc>().add(AddNewSquad(name: newSquadName));
       },
+      child: Text(
+        context.l10n.addSquadButtonText,
+        style: AppTheme.buttonTextStyle,
+      ),
     );
   }
 }

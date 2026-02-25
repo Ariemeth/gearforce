@@ -40,6 +40,5 @@ class UnitLevelSelector extends StatelessWidget {
         ),
       ],
     );
-    //return Text(squad?.name ?? 'blah');
   }
 }

@@ -39,18 +39,4 @@ class SquadState {
     }).toList();
     return copyWith(squads: updatedSquads);
   }
-
-  SquadState updateSquadByName(String squadName, Squad newSquad) {
-    final updatedSquads = squads.map((squad) {
-      return squad.name == squadName ? newSquad : squad;
-    }).toList();
-    return copyWith(squads: updatedSquads);
-  }
-
-  Squad? findSquadByName(String name) {
-    return squads.cast<Squad?>().firstWhere(
-      (squad) => squad?.name == name,
-      orElse: () => null,
-    );
-  }
 }

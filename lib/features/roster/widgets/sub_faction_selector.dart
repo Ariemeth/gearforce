@@ -24,7 +24,7 @@ class SubFactionSelector extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
           ),
-          SizedBox(width: 6),
+          const SizedBox(width: 6),
           Expanded(
             child: DropdownButton<Subfaction>(
               isExpanded: true,

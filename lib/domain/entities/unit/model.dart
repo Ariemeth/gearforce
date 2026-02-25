@@ -75,7 +75,10 @@ class Model {
 
   Model removeUpgrade(UnitUpgrade upgrade) {
     return copyWith(
-      upgrades: [for (final u in _upgrades) if (u != upgrade) u],
+      upgrades: [
+        for (final u in _upgrades)
+          if (u != upgrade) u,
+      ],
     );
   }
 

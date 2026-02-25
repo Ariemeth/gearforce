@@ -211,8 +211,14 @@ void main() {
       expect(
         () {
           // Simulate a recursive call by calling getAttribute for the same attribute
-          modelWithUpgrade.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
-          modelWithUpgrade.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
+          modelWithUpgrade.getAttribute(
+            ModelAttribute.name,
+            excludeUpgradeId: 'test',
+          );
+          modelWithUpgrade.getAttribute(
+            ModelAttribute.name,
+            excludeUpgradeId: 'test',
+          );
         },
         throwsA(
           isA<StateError>().having(

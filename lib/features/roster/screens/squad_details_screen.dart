@@ -111,7 +111,7 @@ class SquadDetailsScreen extends StatelessWidget {
                               context.l10n.tvLabel(model.tv),
                               style: AppTheme.squadUnitBodyStyle,
                             ),
-                            Spacer(),
+                            const Spacer(),
                             UnitLevelSelector(squad: squad, model: model),
                           ],
                         ),

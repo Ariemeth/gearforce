@@ -18,7 +18,7 @@ class RosterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = context.l10n.appTitle;
-    final screenSize = ResponsiveSize.getScreenSize(context);
+    final drawerScreenSize = ResponsiveSize.getScreenSize(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -61,7 +61,7 @@ class RosterScreen extends StatelessWidget {
           );
         },
       ),
-      drawer: RosterPageDrawer(title: title, screenSize: screenSize),
+      drawer: RosterPageDrawer(title: title, screenSize: drawerScreenSize),
     );
   }
 }

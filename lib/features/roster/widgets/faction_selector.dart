@@ -24,7 +24,7 @@ class FactionSelector extends StatelessWidget {
               textAlign: TextAlign.right,
             ),
           ),
-          SizedBox(width: 6),
+          const SizedBox(width: 6),
           Expanded(
             child: DropdownButton<Faction>(
               value: state.selectedFaction,

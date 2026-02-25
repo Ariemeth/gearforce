@@ -153,17 +153,14 @@ void main() {
     blocTest<RosterBloc, RosterState>(
       'removes the specified squad',
       build: () => RosterBloc(mockUnitRepository),
-      seed: () {
-        final bloc = RosterBloc(mockUnitRepository);
-        bloc.add(AddNewSquad(name: 'To Remove'));
-        return bloc.state;
-      },
-      act: (bloc) {
-        // First add a squad, then remove it
-        bloc.add(AddNewSquad(name: 'Squad X'));
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Only Squad'));
+        await Future<void>.delayed(Duration.zero);
+        final squad = bloc.state.squads.first;
+        bloc.add(RemoveSquad(squad: squad));
       },
       verify: (bloc) {
-        expect(bloc.state.squads.length, 1);
+        expect(bloc.state.squads, isEmpty);
       },
     );
 
