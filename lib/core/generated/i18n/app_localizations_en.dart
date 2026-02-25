@@ -141,6 +141,11 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String totalTvLabel(int value) {
+    return 'Total TV: $value';
+  }
+
+  @override
   String actionsLabel(int value) {
     return 'Actions: $value';
   }

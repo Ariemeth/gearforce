@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gearforce/core/theme/app_theme.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/faction_selector.dart';
 import 'package:gearforce/features/roster/widgets/roster_name_input_display.dart';
@@ -10,9 +12,14 @@ import 'package:gearforce/features/roster/widgets/squad_display.dart';
 /// Manages the [TextEditingController] lifecycle for the roster name field
 /// and renders: name input, faction selector, sub-faction selector, squad list.
 class RosterEditPanel extends StatefulWidget {
-  const RosterEditPanel({super.key, required this.state});
+  const RosterEditPanel({
+    super.key,
+    required this.state,
+    this.showTotalTv = true,
+  });
 
   final RosterState state;
+  final bool showTotalTv;
 
   @override
   State<RosterEditPanel> createState() => _RosterEditPanelState();
@@ -47,12 +54,23 @@ class _RosterEditPanelState extends State<RosterEditPanel> {
   @override
   Widget build(BuildContext context) {
     final state = widget.state;
+    final totalTv = state.squads.fold<int>(0, (sum, s) => sum + s.tv);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         RosterNameInputDisplay(rosterNameController: _rosterNameController),
         FactionSelector(state: state),
         SubFactionSelector(state: state),
+        if (widget.showTotalTv)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6.0),
+            child: Center(
+              child: Text(
+                context.l10n.totalTvLabel(totalTv),
+                style: AppTheme.subtitleStyle,
+              ),
+            ),
+          ),
         Expanded(child: SquadDisplay(squads: state.squads)),
       ],
     );

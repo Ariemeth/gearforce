@@ -322,6 +322,12 @@ abstract class AppLocalizations {
   /// **'TV: {value}'**
   String tvLabel(int value);
 
+  /// Label for total TV (threat value) across all squads
+  ///
+  /// In en, this message translates to:
+  /// **'Total TV: {value}'**
+  String totalTvLabel(int value);
+
   /// Label for total actions
   ///
   /// In en, this message translates to:

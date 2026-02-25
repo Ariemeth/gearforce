@@ -24,7 +24,10 @@ class LargeRosterDisplay extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(flex: 2, child: RosterEditPanel(state: state)),
+        Expanded(
+          flex: 2,
+          child: RosterEditPanel(state: state, showTotalTv: false),
+        ),
         const VerticalDivider(width: 1),
         Expanded(
           flex: 3,
