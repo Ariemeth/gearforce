@@ -44,22 +44,58 @@ class SquadDisplay extends StatelessWidget {
                           squad.name, // Use name instead of id
                           style: AppTheme.subtitleStyle,
                         ),
-                        trailing: IconButton(
-                          icon: const Icon(
-                            Icons.delete_forever_outlined,
-                            color: AppTheme.deleteIconColor,
-                          ),
-                          onPressed: () async {
-                            final confirmed = await showRemoveSquadDialog(
-                              context: context,
-                              squadName: squad.name,
-                            );
-                            if (confirmed == true && context.mounted) {
-                              context.read<RosterBloc>().add(
-                                RemoveSquad(squad: squad),
-                              );
-                            }
-                          },
+                        subtitle: Wrap(
+                          spacing: 12,
+                          runSpacing: 4,
+                          children: [
+                            Text(
+                              context.l10n.tvLabel(squad.tv),
+                              style: AppTheme.squadUnitBodyStyle,
+                            ),
+                            Text(
+                              context.l10n.totalUnitsLabel(squad.models.length),
+                              style: AppTheme.squadUnitBodyStyle,
+                            ),
+                            Text(
+                              context.l10n.actionsLabel(squad.totalActions),
+                              style: AppTheme.squadUnitBodyStyle,
+                            ),
+                          ],
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              squad.primaryRole.abbreviation,
+                              style: AppTheme.squadUnitBodyStyle,
+                            ),
+                            if (squad.secondaryRole != null) ...[
+                              const SizedBox(width: 4),
+                              Text('/', style: AppTheme.squadUnitBodyStyle),
+                              const SizedBox(width: 4),
+                              Text(
+                                squad.secondaryRole!.abbreviation,
+                                style: AppTheme.squadUnitBodyStyle,
+                              ),
+                            ],
+                            IconButton(
+                              icon: const Icon(
+                                Icons.delete_forever_outlined,
+                                color: AppTheme.deleteIconColor,
+                              ),
+                              onPressed: () async {
+                                final confirmed = await showRemoveSquadDialog(
+                                  context: context,
+                                  squadName: squad.name,
+                                );
+                                if (confirmed == true && context.mounted) {
+                                  context.read<RosterBloc>().add(
+                                    RemoveSquad(squad: squad),
+                                  );
+                                }
+                              },
+                            ),
+                          ],
                         ),
                         onTap: () {
                           Navigator.push(

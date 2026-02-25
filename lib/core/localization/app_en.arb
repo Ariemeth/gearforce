@@ -344,6 +344,16 @@
       }
     }
   },
+  "totalUnitsLabel": "Units: {value}",
+  "@totalUnitsLabel": {
+    "description": "Label for total number of units in a squad",
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
   "factionFieldLabel": "Faction: {name}",
   "@factionFieldLabel": {
     "description": "Label showing the selected faction name",

@@ -466,6 +466,12 @@ abstract class AppLocalizations {
   /// **'Models: {value}'**
   String totalModelsLabel(int value);
 
+  /// Label for total number of units in a squad
+  ///
+  /// In en, this message translates to:
+  /// **'Units: {value}'**
+  String totalUnitsLabel(int value);
+
   /// Label showing the selected faction name
   ///
   /// In en, this message translates to:

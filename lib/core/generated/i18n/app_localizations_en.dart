@@ -227,6 +227,11 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String totalUnitsLabel(int value) {
+    return 'Units: $value';
+  }
+
+  @override
   String factionFieldLabel(String name) {
     return 'Faction: $name';
   }
