@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/large_roster_display.dart';
 import 'package:gearforce/features/roster/widgets/roster_page_drawer.dart';
@@ -17,7 +17,7 @@ class RosterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final title = AppLocalizations.of(context)!.appTitle;
+    final title = context.l10n.appTitle;
     final screenSize = ResponsiveSize.getScreenSize(context);
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +29,7 @@ class RosterScreen extends StatelessWidget {
               // TODO add roster settings
               print('Roster settings clicked');
             },
-            tooltip: 'Roster Settings',
+            tooltip: context.l10n.rosterSettingsTooltip,
           ),
         ],
       ),

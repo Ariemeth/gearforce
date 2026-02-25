@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/screens/squad_details_screen.dart';
@@ -20,7 +20,7 @@ class SquadDisplay extends StatelessWidget {
           child: squads.isEmpty
               ? Center(
                   child: Text(
-                    AppLocalizations.of(context)!.noSquadsText,
+                    context.l10n.noSquadsText,
                     style: AppTheme.subtitleStyle,
                   ),
                 )
@@ -40,7 +40,7 @@ class SquadDisplay extends StatelessWidget {
                           color: AppTheme.deleteIconColor,
                         ),
                         onPressed: () async {
-                          final l10n = AppLocalizations.of(context)!;
+                          final l10n = context.l10n;
                           final confirmed = await showDialog<bool>(
                             context: context,
                             builder: (context) => AlertDialog(

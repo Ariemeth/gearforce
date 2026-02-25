@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/faction/subfaction.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -19,7 +19,7 @@ class SubFactionSelector extends StatelessWidget {
           SizedBox(
             width: 90,
             child: Text(
-              'Sub-Faction: ',
+              context.l10n.subFactionLabel,
               style: AppTheme.subtitleStyle,
               textAlign: TextAlign.right,
             ),
@@ -53,7 +53,7 @@ class SubFactionSelector extends StatelessWidget {
               hint: Padding(
                 padding: AppTheme.subfactionSelectorPadding,
                 child: Text(
-                  AppLocalizations.of(context)!.subfactionSelectDropdownHint,
+                  context.l10n.subfactionSelectDropdownHint,
                   style: AppTheme.dropdownHintTextStyle,
                 ),
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -19,7 +19,7 @@ class FactionSelector extends StatelessWidget {
           SizedBox(
             width: 90,
             child: Text(
-              'Faction: ',
+              context.l10n.factionLabel,
               style: AppTheme.subtitleStyle,
               textAlign: TextAlign.right,
             ),
@@ -53,7 +53,7 @@ class FactionSelector extends StatelessWidget {
               hint: Padding(
                 padding: AppTheme.factionSelectorPadding,
                 child: Text(
-                  AppLocalizations.of(context)!.factionSelectDropdownHint,
+                  context.l10n.factionSelectDropdownHint,
                   style: AppTheme.dropdownHintTextStyle,
                 ),
               ),

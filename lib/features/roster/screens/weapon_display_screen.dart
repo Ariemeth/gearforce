@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/equipment/weapon.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_size.dart'
     show WeaponSize;
@@ -40,7 +41,9 @@ class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Weapons', style: AppTheme.titleStyle)),
+        title: Center(
+          child: Text(context.l10n.weaponsTitle, style: AppTheme.titleStyle),
+        ),
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
@@ -57,12 +60,12 @@ class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
         dataRowMaxHeight: 25,
         headingRowHeight: 22,
         columns: [
-          DataColumn(label: Text('Code')),
-          DataColumn(label: Text('Name')),
-          DataColumn(label: Text('Range')),
-          DataColumn(label: Text('Damage')),
-          DataColumn(label: Text('Traits')),
-          DataColumn(label: Text('Mode')),
+          DataColumn(label: Text(context.l10n.weaponColumnCode)),
+          DataColumn(label: Text(context.l10n.weaponColumnName)),
+          DataColumn(label: Text(context.l10n.weaponColumnRange)),
+          DataColumn(label: Text(context.l10n.weaponColumnDamage)),
+          DataColumn(label: Text(context.l10n.weaponColumnTraits)),
+          DataColumn(label: Text(context.l10n.weaponColumnMode)),
         ],
         rows: weapons
             .map(

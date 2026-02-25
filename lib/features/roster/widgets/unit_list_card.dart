@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/equipment/trait.dart' show Trait;
 import 'package:gearforce/domain/entities/attribute/armor.dart';
 import 'package:gearforce/domain/entities/attribute/hull_structure.dart';
@@ -113,16 +114,16 @@ class _SmallUnitListHeader extends StatelessWidget {
           columnWidths: {1: const FixedColumnWidth(65.0)},
           defaultColumnWidth: const FixedColumnWidth(40),
           children: [
-            const TableRow(
+            TableRow(
               children: [
-                _UnitAttributeLabel('TV'),
-                _UnitAttributeLabel('Move'),
-                _UnitAttributeLabel('Arm'),
-                _UnitAttributeLabel('H/S'),
-                _UnitAttributeLabel('A'),
-                _UnitAttributeLabel('Gu'),
-                _UnitAttributeLabel('Pi'),
-                _UnitAttributeLabel('Ew'),
+                _UnitAttributeLabel(context.l10n.attributeTV),
+                _UnitAttributeLabel(context.l10n.attributeMove),
+                _UnitAttributeLabel(context.l10n.attributeArm),
+                _UnitAttributeLabel(context.l10n.attributeHS),
+                _UnitAttributeLabel(context.l10n.attributeA),
+                _UnitAttributeLabel(context.l10n.attributeGu),
+                _UnitAttributeLabel(context.l10n.attributePi),
+                _UnitAttributeLabel(context.l10n.attributeEw),
               ],
             ),
             TableRow(
@@ -141,10 +142,10 @@ class _SmallUnitListHeader extends StatelessWidget {
         ),
         Row(
           children: [
-            const SizedBox(
+            SizedBox(
               width: _weaponAndTraitWidth,
               child: _UnitAttributeLabel(
-                'React Weapons:',
+                context.l10n.reactWeaponsLabel,
                 textAlign: TextAlign.right,
               ),
             ),
@@ -154,10 +155,10 @@ class _SmallUnitListHeader extends StatelessWidget {
         ),
         Row(
           children: [
-            const SizedBox(
+            SizedBox(
               width: _weaponAndTraitWidth,
               child: _UnitAttributeLabel(
-                'Mounted Weapons:',
+                context.l10n.mountedWeaponsLabel,
                 textAlign: TextAlign.right,
               ),
             ),
@@ -167,9 +168,12 @@ class _SmallUnitListHeader extends StatelessWidget {
         ),
         Row(
           children: [
-            const SizedBox(
+            SizedBox(
               width: _weaponAndTraitWidth,
-              child: _UnitAttributeLabel('Traits:', textAlign: TextAlign.right),
+              child: _UnitAttributeLabel(
+                context.l10n.traitsLabel,
+                textAlign: TextAlign.right,
+              ),
             ),
             _weaponAndTraitLabelSpacer,
             ..._buildTraitWidgets(traits),

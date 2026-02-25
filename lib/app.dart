@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
 import 'package:gearforce/features/settings/screens/app_settings_screen.dart';
@@ -31,8 +32,7 @@ class Gearforce extends StatelessWidget {
           supportedLocales: const [
             Locale('en', ''), // English, no country code
           ],
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context)!.appTitle,
+          onGenerateTitle: (BuildContext context) => context.l10n.appTitle,
 
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the

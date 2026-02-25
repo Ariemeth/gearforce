@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/screens/unit_selection_screen.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -22,7 +22,7 @@ class SelectModelButton extends StatelessWidget {
         );
       },
       child: Text(
-        AppLocalizations.of(context)!.squadAddUnitButtonText,
+        context.l10n.squadAddUnitButtonText,
         style: AppTheme.buttonTextStyle,
       ),
     );

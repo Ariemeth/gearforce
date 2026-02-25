@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
@@ -25,7 +25,7 @@ class SquadRoleSelectors extends StatelessWidget {
         children: [
           SquadRoleSelector(
             selectedRole: squad.primaryRole,
-            label: AppLocalizations.of(context)!.squadPrimaryRoleLabelText,
+            label: context.l10n.squadPrimaryRoleLabelText,
             allowNone: false, // Disallow "None" for primary role
             onChanged: (Role? newPrimaryRole) {
               if (newPrimaryRole != null) {
@@ -41,7 +41,7 @@ class SquadRoleSelectors extends StatelessWidget {
           ),
           SquadRoleSelector(
             selectedRole: squad.secondaryRole,
-            label: AppLocalizations.of(context)!.squadSecondaryRoleLabelText,
+            label: context.l10n.squadSecondaryRoleLabelText,
             allowNone: true,
             onChanged: (Role? newSecondaryRole) {
               if (newSecondaryRole != squad.primaryRole) {

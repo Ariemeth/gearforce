@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/combat_group.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
@@ -12,7 +13,7 @@ class CombatGroupDisplay extends StatelessWidget {
     if (combatGroups.isEmpty) {
       return Center(
         child: Text(
-          'No combat groups available',
+          context.l10n.noCombatGroupsText,
           style: AppTheme.subtitleStyle,
         ),
       );
@@ -25,23 +26,29 @@ class CombatGroupDisplay extends StatelessWidget {
 
         return ExpansionTile(
           title: Text(
-            'Combat Group ${index + 1}',
+            context.l10n.combatGroupTitle(index + 1),
             style: AppTheme.subtitleStyle,
           ),
           children: combatGroup.squads.map((squad) {
             return ExpansionTile(
               title: Text(
-                'Squad: ${squad.primaryRole}',
+                context.l10n.squadRoleLabel(squad.primaryRole.toString()),
                 style: AppTheme.bodyStyle,
               ),
               subtitle: Text(
-                'Secondary Role: ${squad.secondaryRole ?? 'None'}',
+                context.l10n.secondaryRoleLabel(
+                  squad.secondaryRole?.toString() ??
+                      context.l10n.squadRoleNoneText,
+                ),
                 style: AppTheme.bodyStyle,
               ),
               children: squad.models.map((unit) {
                 return ListTile(
-                  title: Text('Unit: ${unit.name}', style: AppTheme.bodyStyle),
-                  subtitle: Text('TV: ${unit.tv}'),
+                  title: Text(
+                    context.l10n.unitLabel(unit.name),
+                    style: AppTheme.bodyStyle,
+                  ),
+                  subtitle: Text(context.l10n.tvLabel(unit.tv)),
                   contentPadding: AppTheme.listTilePadding,
                 );
               }).toList(),

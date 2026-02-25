@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_events.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
@@ -16,7 +16,7 @@ class AppSettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${AppLocalizations.of(context)!.appTitle} Settings'),
+        title: Text(context.l10n.appSettingsTitle(context.l10n.appTitle)),
       ),
       body: Padding(
         padding: _pagePadding,
@@ -31,18 +31,24 @@ class AppSettingScreen extends StatelessWidget {
                   );
                 }
               },
-              decoration: const InputDecoration(
-                labelText: 'Theme',
-                helperText: 'Choose how the app looks',
+              decoration: InputDecoration(
+                labelText: context.l10n.settingsThemeLabel,
+                helperText: context.l10n.settingsThemeHelper,
                 border: OutlineInputBorder(),
               ),
-              items: const [
+              items: [
                 DropdownMenuItem(
                   value: ThemeMode.system,
-                  child: Text('System'),
+                  child: Text(context.l10n.settingsThemeSystem),
                 ),
-                DropdownMenuItem(value: ThemeMode.light, child: Text('Light')),
-                DropdownMenuItem(value: ThemeMode.dark, child: Text('Dark')),
+                DropdownMenuItem(
+                  value: ThemeMode.light,
+                  child: Text(context.l10n.settingsThemeLight),
+                ),
+                DropdownMenuItem(
+                  value: ThemeMode.dark,
+                  child: Text(context.l10n.settingsThemeDark),
+                ),
               ],
             );
           },

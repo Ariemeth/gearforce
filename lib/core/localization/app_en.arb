@@ -44,10 +44,6 @@
   "@squadAddUnitButtonText": {
     "description": "Text for the button that adds a new unit to the squad"
   },
-  "squadDetailsTitleText": "Squad Details",
-  "@squadDetailsTitleText": {
-    "description": "Title for the squad details card"
-  },
   "removeSquadConfirmTitle": "Remove Squad",
   "@removeSquadConfirmTitle": {
     "description": "Title for the remove squad confirmation dialog"
@@ -69,5 +65,249 @@
   "removeButtonText": "Remove",
   "@removeButtonText": {
     "description": "Text for the remove button in dialogs"
+  },
+  "appSettingsTitle": "{appName} Settings",
+  "@appSettingsTitle": {
+    "description": "Title for the app settings screen",
+    "placeholders": {
+      "appName": {
+        "type": "String",
+        "example": "Gearforce"
+      }
+    }
+  },
+  "aboutAppTitle": "About {appName}",
+  "@aboutAppTitle": {
+    "description": "Title for the about section in the drawer",
+    "placeholders": {
+      "appName": {
+        "type": "String",
+        "example": "Gearforce"
+      }
+    }
+  },
+  "settingsThemeLabel": "Theme",
+  "@settingsThemeLabel": {
+    "description": "Label for the theme dropdown in settings"
+  },
+  "settingsThemeHelper": "Choose how the app looks",
+  "@settingsThemeHelper": {
+    "description": "Helper text for the theme dropdown in settings"
+  },
+  "settingsThemeSystem": "System",
+  "@settingsThemeSystem": {
+    "description": "System theme option"
+  },
+  "settingsThemeLight": "Light",
+  "@settingsThemeLight": {
+    "description": "Light theme option"
+  },
+  "settingsThemeDark": "Dark",
+  "@settingsThemeDark": {
+    "description": "Dark theme option"
+  },
+  "weaponsTitle": "Weapons",
+  "@weaponsTitle": {
+    "description": "Title for the weapons display screen"
+  },
+  "weaponsTableTitle": "Weapons Table",
+  "@weaponsTableTitle": {
+    "description": "Title for the weapons table menu item in the drawer"
+  },
+  "weaponColumnCode": "Code",
+  "@weaponColumnCode": {
+    "description": "Column header for weapon code"
+  },
+  "weaponColumnName": "Name",
+  "@weaponColumnName": {
+    "description": "Column header for weapon name"
+  },
+  "weaponColumnRange": "Range",
+  "@weaponColumnRange": {
+    "description": "Column header for weapon range"
+  },
+  "weaponColumnDamage": "Damage",
+  "@weaponColumnDamage": {
+    "description": "Column header for weapon damage"
+  },
+  "weaponColumnTraits": "Traits",
+  "@weaponColumnTraits": {
+    "description": "Column header for weapon traits"
+  },
+  "weaponColumnMode": "Mode",
+  "@weaponColumnMode": {
+    "description": "Column header for weapon mode"
+  },
+  "selectUnitTitle": "Select a Unit",
+  "@selectUnitTitle": {
+    "description": "Title for the unit selection screen"
+  },
+  "variantsCount": "{count} variants",
+  "@variantsCount": {
+    "description": "Label showing the number of variants for a unit",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "noCombatGroupsText": "No combat groups available",
+  "@noCombatGroupsText": {
+    "description": "Text displayed when there are no combat groups"
+  },
+  "combatGroupTitle": "Combat Group {number}",
+  "@combatGroupTitle": {
+    "description": "Title for a combat group",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "squadRoleLabel": "Squad: {role}",
+  "@squadRoleLabel": {
+    "description": "Label for a squad with its primary role",
+    "placeholders": {
+      "role": {
+        "type": "String",
+        "example": "GP"
+      }
+    }
+  },
+  "secondaryRoleLabel": "Secondary Role: {role}",
+  "@secondaryRoleLabel": {
+    "description": "Label for a squad secondary role",
+    "placeholders": {
+      "role": {
+        "type": "String",
+        "example": "SK"
+      }
+    }
+  },
+  "unitLabel": "Unit: {name}",
+  "@unitLabel": {
+    "description": "Label for a unit in a list",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Hunter"
+      }
+    }
+  },
+  "tvLabel": "TV: {value}",
+  "@tvLabel": {
+    "description": "Label for TV (threat value)",
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "actionsLabel": "Actions: {value}",
+  "@actionsLabel": {
+    "description": "Label for total actions",
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "removeUnitTooltip": "Remove unit",
+  "@removeUnitTooltip": {
+    "description": "Tooltip for the remove unit button"
+  },
+  "rosterSettingsTooltip": "Roster Settings",
+  "@rosterSettingsTooltip": {
+    "description": "Tooltip for the roster settings button"
+  },
+  "factionLabel": "Faction: ",
+  "@factionLabel": {
+    "description": "Label for the faction selector"
+  },
+  "subFactionLabel": "Sub-Faction: ",
+  "@subFactionLabel": {
+    "description": "Label for the sub-faction selector"
+  },
+  "defaultSquadName": "Squad {number}",
+  "@defaultSquadName": {
+    "description": "Default name for a new squad",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "squadNotFoundTitle": "Squad {id}",
+  "@squadNotFoundTitle": {
+    "description": "Title shown when a squad is not found",
+    "placeholders": {
+      "id": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "squadNotFoundMessage": "No Squad with id {id} is found",
+  "@squadNotFoundMessage": {
+    "description": "Message shown when a squad is not found",
+    "placeholders": {
+      "id": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "attributeTV": "TV",
+  "@attributeTV": {
+    "description": "Column header abbreviation for Threat Value"
+  },
+  "attributeRoles": "Roles",
+  "@attributeRoles": {
+    "description": "Column header for Roles"
+  },
+  "attributeMove": "Move",
+  "@attributeMove": {
+    "description": "Column header abbreviation for Movement"
+  },
+  "attributeArm": "Arm",
+  "@attributeArm": {
+    "description": "Column header abbreviation for Armor"
+  },
+  "attributeHS": "H/S",
+  "@attributeHS": {
+    "description": "Column header abbreviation for Hull/Structure"
+  },
+  "attributeA": "A",
+  "@attributeA": {
+    "description": "Column header abbreviation for Actions"
+  },
+  "attributeGu": "Gu",
+  "@attributeGu": {
+    "description": "Column header abbreviation for Gunnery"
+  },
+  "attributePi": "Pi",
+  "@attributePi": {
+    "description": "Column header abbreviation for Piloting"
+  },
+  "attributeEw": "Ew",
+  "@attributeEw": {
+    "description": "Column header abbreviation for Electronic Warfare"
+  },
+  "reactWeaponsLabel": "React Weapons:",
+  "@reactWeaponsLabel": {
+    "description": "Label for the react weapons row"
+  },
+  "mountedWeaponsLabel": "Mounted Weapons:",
+  "@mountedWeaponsLabel": {
+    "description": "Label for the mounted weapons row"
+  },
+  "traitsLabel": "Traits:",
+  "@traitsLabel": {
+    "description": "Label for the traits row"
   }
 }

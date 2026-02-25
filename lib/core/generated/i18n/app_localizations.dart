@@ -160,12 +160,6 @@ abstract class AppLocalizations {
   /// **'Add a unit'**
   String get squadAddUnitButtonText;
 
-  /// Title for the squad details card
-  ///
-  /// In en, this message translates to:
-  /// **'Squad Details'**
-  String get squadDetailsTitleText;
-
   /// Title for the remove squad confirmation dialog
   ///
   /// In en, this message translates to:
@@ -189,6 +183,264 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remove'**
   String get removeButtonText;
+
+  /// Title for the app settings screen
+  ///
+  /// In en, this message translates to:
+  /// **'{appName} Settings'**
+  String appSettingsTitle(String appName);
+
+  /// Title for the about section in the drawer
+  ///
+  /// In en, this message translates to:
+  /// **'About {appName}'**
+  String aboutAppTitle(String appName);
+
+  /// Label for the theme dropdown in settings
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get settingsThemeLabel;
+
+  /// Helper text for the theme dropdown in settings
+  ///
+  /// In en, this message translates to:
+  /// **'Choose how the app looks'**
+  String get settingsThemeHelper;
+
+  /// System theme option
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get settingsThemeSystem;
+
+  /// Light theme option
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get settingsThemeLight;
+
+  /// Dark theme option
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get settingsThemeDark;
+
+  /// Title for the weapons display screen
+  ///
+  /// In en, this message translates to:
+  /// **'Weapons'**
+  String get weaponsTitle;
+
+  /// Title for the weapons table menu item in the drawer
+  ///
+  /// In en, this message translates to:
+  /// **'Weapons Table'**
+  String get weaponsTableTitle;
+
+  /// Column header for weapon code
+  ///
+  /// In en, this message translates to:
+  /// **'Code'**
+  String get weaponColumnCode;
+
+  /// Column header for weapon name
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get weaponColumnName;
+
+  /// Column header for weapon range
+  ///
+  /// In en, this message translates to:
+  /// **'Range'**
+  String get weaponColumnRange;
+
+  /// Column header for weapon damage
+  ///
+  /// In en, this message translates to:
+  /// **'Damage'**
+  String get weaponColumnDamage;
+
+  /// Column header for weapon traits
+  ///
+  /// In en, this message translates to:
+  /// **'Traits'**
+  String get weaponColumnTraits;
+
+  /// Column header for weapon mode
+  ///
+  /// In en, this message translates to:
+  /// **'Mode'**
+  String get weaponColumnMode;
+
+  /// Title for the unit selection screen
+  ///
+  /// In en, this message translates to:
+  /// **'Select a Unit'**
+  String get selectUnitTitle;
+
+  /// Label showing the number of variants for a unit
+  ///
+  /// In en, this message translates to:
+  /// **'{count} variants'**
+  String variantsCount(int count);
+
+  /// Text displayed when there are no combat groups
+  ///
+  /// In en, this message translates to:
+  /// **'No combat groups available'**
+  String get noCombatGroupsText;
+
+  /// Title for a combat group
+  ///
+  /// In en, this message translates to:
+  /// **'Combat Group {number}'**
+  String combatGroupTitle(int number);
+
+  /// Label for a squad with its primary role
+  ///
+  /// In en, this message translates to:
+  /// **'Squad: {role}'**
+  String squadRoleLabel(String role);
+
+  /// Label for a squad secondary role
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary Role: {role}'**
+  String secondaryRoleLabel(String role);
+
+  /// Label for a unit in a list
+  ///
+  /// In en, this message translates to:
+  /// **'Unit: {name}'**
+  String unitLabel(String name);
+
+  /// Label for TV (threat value)
+  ///
+  /// In en, this message translates to:
+  /// **'TV: {value}'**
+  String tvLabel(int value);
+
+  /// Label for total actions
+  ///
+  /// In en, this message translates to:
+  /// **'Actions: {value}'**
+  String actionsLabel(int value);
+
+  /// Tooltip for the remove unit button
+  ///
+  /// In en, this message translates to:
+  /// **'Remove unit'**
+  String get removeUnitTooltip;
+
+  /// Tooltip for the roster settings button
+  ///
+  /// In en, this message translates to:
+  /// **'Roster Settings'**
+  String get rosterSettingsTooltip;
+
+  /// Label for the faction selector
+  ///
+  /// In en, this message translates to:
+  /// **'Faction: '**
+  String get factionLabel;
+
+  /// Label for the sub-faction selector
+  ///
+  /// In en, this message translates to:
+  /// **'Sub-Faction: '**
+  String get subFactionLabel;
+
+  /// Default name for a new squad
+  ///
+  /// In en, this message translates to:
+  /// **'Squad {number}'**
+  String defaultSquadName(int number);
+
+  /// Title shown when a squad is not found
+  ///
+  /// In en, this message translates to:
+  /// **'Squad {id}'**
+  String squadNotFoundTitle(int id);
+
+  /// Message shown when a squad is not found
+  ///
+  /// In en, this message translates to:
+  /// **'No Squad with id {id} is found'**
+  String squadNotFoundMessage(int id);
+
+  /// Column header abbreviation for Threat Value
+  ///
+  /// In en, this message translates to:
+  /// **'TV'**
+  String get attributeTV;
+
+  /// Column header for Roles
+  ///
+  /// In en, this message translates to:
+  /// **'Roles'**
+  String get attributeRoles;
+
+  /// Column header abbreviation for Movement
+  ///
+  /// In en, this message translates to:
+  /// **'Move'**
+  String get attributeMove;
+
+  /// Column header abbreviation for Armor
+  ///
+  /// In en, this message translates to:
+  /// **'Arm'**
+  String get attributeArm;
+
+  /// Column header abbreviation for Hull/Structure
+  ///
+  /// In en, this message translates to:
+  /// **'H/S'**
+  String get attributeHS;
+
+  /// Column header abbreviation for Actions
+  ///
+  /// In en, this message translates to:
+  /// **'A'**
+  String get attributeA;
+
+  /// Column header abbreviation for Gunnery
+  ///
+  /// In en, this message translates to:
+  /// **'Gu'**
+  String get attributeGu;
+
+  /// Column header abbreviation for Piloting
+  ///
+  /// In en, this message translates to:
+  /// **'Pi'**
+  String get attributePi;
+
+  /// Column header abbreviation for Electronic Warfare
+  ///
+  /// In en, this message translates to:
+  /// **'Ew'**
+  String get attributeEw;
+
+  /// Label for the react weapons row
+  ///
+  /// In en, this message translates to:
+  /// **'React Weapons:'**
+  String get reactWeaponsLabel;
+
+  /// Label for the mounted weapons row
+  ///
+  /// In en, this message translates to:
+  /// **'Mounted Weapons:'**
+  String get mountedWeaponsLabel;
+
+  /// Label for the traits row
+  ///
+  /// In en, this message translates to:
+  /// **'Traits:'**
+  String get traitsLabel;
 }
 
 class _AppLocalizationsDelegate

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/screens/app_settings_screen.dart';
 import 'package:gearforce/features/roster/screens/weapon_display_screen.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -32,7 +33,10 @@ class RosterPageDrawer extends StatelessWidget {
           ),
           if (screenSize == ScreenSize.small)
             ListTile(
-              leading: Text('Weapons Table', style: AppTheme.menuStyle),
+              leading: Text(
+                context.l10n.weaponsTableTitle,
+                style: AppTheme.menuStyle,
+              ),
               onTap: () {
                 print('weapons table selected');
                 Navigator.restorablePopAndPushNamed(
@@ -42,7 +46,10 @@ class RosterPageDrawer extends StatelessWidget {
               },
             ),
           ListTile(
-            leading: Text('$title Settings', style: AppTheme.menuStyle),
+            leading: Text(
+              context.l10n.appSettingsTitle(title),
+              style: AppTheme.menuStyle,
+            ),
             onTap: () {
               Navigator.restorablePopAndPushNamed(
                 context,
@@ -52,7 +59,10 @@ class RosterPageDrawer extends StatelessWidget {
           ),
           AboutListTile(
             applicationName: title,
-            child: Text('About $title', style: AppTheme.menuStyle),
+            child: Text(
+              context.l10n.aboutAppTitle(title),
+              style: AppTheme.menuStyle,
+            ),
           ),
         ],
       ),

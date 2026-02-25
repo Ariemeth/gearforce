@@ -101,6 +101,51 @@ git diff --exit-code
 
 If the generated files are out-of-sync with the models, `git diff --exit-code` will return a non-zero exit code, causing the CI pipeline to fail. This ensures that every pull request includes the correct generated code.
 
+### Localization
+
+User-facing strings are managed via ARB (Application Resource Bundle) files and Flutter's built-in localization system. The source strings live in `lib/core/localization/app_en.arb`, and the generated Dart code is output to `lib/core/generated/i18n/`.
+
+**To add or update a localized string:**
+
+1. Edit `lib/core/localization/app_en.arb` and add your new key/value pair. For simple strings:
+   ```json
+   "myNewLabel": "Hello World",
+   "@myNewLabel": {
+     "description": "A greeting label"
+   }
+   ```
+   For strings with placeholders:
+   ```json
+   "welcomeMessage": "Welcome, {userName}!",
+   "@welcomeMessage": {
+     "description": "Welcome message with the user's name",
+     "placeholders": {
+       "userName": {
+         "type": "String",
+         "example": "Alice"
+       }
+     }
+   }
+   ```
+
+2. Regenerate the Dart localization files:
+   ```bash
+   flutter gen-l10n
+   ```
+
+3. Use the string in your widget via the `context.l10n` extension:
+   ```dart
+   import 'package:gearforce/core/utils/l10n_extension.dart';
+
+   // Simple string
+   Text(context.l10n.myNewLabel)
+
+   // Parameterized string
+   Text(context.l10n.welcomeMessage('Alice'))
+   ```
+
+The `context.l10n` extension (defined in `lib/core/utils/l10n_extension.dart`) is the preferred way to access localized strings. Avoid using `AppLocalizations.of(context)!` directly.
+
 ---
 
 ## Summary Table: What Goes Where?

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -21,14 +21,14 @@ class AddSquadButton extends StatelessWidget {
 
             // Ensure the squad name is unique
             do {
-              newSquadName = 'Squad $squadNumber';
+              newSquadName = context.l10n.defaultSquadName(squadNumber);
               squadNumber++;
             } while (squads.any((squad) => squad.name == newSquadName));
 
             context.read<RosterBloc>().add(AddNewSquad(name: newSquadName));
           },
           child: Text(
-            AppLocalizations.of(context)!.addSquadButtonText,
+            context.l10n.addSquadButtonText,
             style: AppTheme.buttonTextStyle,
           ),
         );

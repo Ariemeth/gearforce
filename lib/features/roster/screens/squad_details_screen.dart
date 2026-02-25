@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/select_model_button.dart';
@@ -27,8 +27,12 @@ class SquadDetailsScreen extends StatelessWidget {
       builder: (context, squad) {
         if (squad == null) {
           return Scaffold(
-            appBar: AppBar(title: Text('Squad $squadId')),
-            body: Center(child: Text('No Squad with id $squadId is found')),
+            appBar: AppBar(
+              title: Text(context.l10n.squadNotFoundTitle(squadId)),
+            ),
+            body: Center(
+              child: Text(context.l10n.squadNotFoundMessage(squadId)),
+            ),
           );
         }
 
@@ -42,7 +46,7 @@ class SquadDetailsScreen extends StatelessWidget {
                   color: AppTheme.deleteIconColor,
                 ),
                 onPressed: () async {
-                  final l10n = AppLocalizations.of(context)!;
+                  final l10n = context.l10n;
                   final confirmed = await showDialog<bool>(
                     context: context,
                     builder: (context) => AlertDialog(
@@ -78,9 +82,12 @@ class SquadDetailsScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('TV: ${squad.tv}', style: AppTheme.squadInfoStyle),
                     Text(
-                      'Actions: ${squad.totalActions}',
+                      context.l10n.tvLabel(squad.tv),
+                      style: AppTheme.squadInfoStyle,
+                    ),
+                    Text(
+                      context.l10n.actionsLabel(squad.totalActions),
                       style: AppTheme.squadInfoStyle,
                     ),
                   ],
@@ -101,7 +108,7 @@ class SquadDetailsScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Text(
-                              'TV: ${model.tv}',
+                              context.l10n.tvLabel(model.tv),
                               style: AppTheme.squadUnitBodyStyle,
                             ),
                             Spacer(),
@@ -113,7 +120,7 @@ class SquadDetailsScreen extends StatelessWidget {
                             Icons.delete_forever_outlined,
                             color: AppTheme.deleteIconColor,
                           ),
-                          tooltip: 'Remove unit',
+                          tooltip: context.l10n.removeUnitTooltip,
                           onPressed: () {
                             context.read<RosterBloc>().add(
                               RemoveModel(squad: squad, model: model),

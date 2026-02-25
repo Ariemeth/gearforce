@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 
 const double _gapBetweenRoleLabelAndDropdown = 8.0;
@@ -45,8 +45,7 @@ class SquadRoleSelector extends StatelessWidget {
                     (role) => DropdownMenuItem(
                       value: role,
                       child: Text(
-                        role?.abbreviation ??
-                            AppLocalizations.of(context)!.squadRoleNoneText,
+                        role?.abbreviation ?? context.l10n.squadRoleNoneText,
                       ), // Display "None" for null
                     ),
                   )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
@@ -66,7 +67,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: const Text('Select a Unit', style: AppTheme.titleStyle),
+          child: Text(context.l10n.selectUnitTitle, style: AppTheme.titleStyle),
         ),
       ),
       body: Padding(
@@ -118,7 +119,7 @@ class _UnitListHeader extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              '${unit.variants.length} variants',
+              context.l10n.variantsCount(unit.variants.length),
               style: TextStyle(fontSize: 12),
             ),
           ),

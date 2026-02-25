@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
@@ -20,7 +20,7 @@ class RosterNameInputDisplay extends StatelessWidget {
             SizedBox(
               width: 90,
               child: Text(
-                AppLocalizations.of(context)!.rosterNameField,
+                context.l10n.rosterNameField,
                 style: AppTheme.subtitleStyle,
                 textAlign: TextAlign.right,
               ),
@@ -30,9 +30,7 @@ class RosterNameInputDisplay extends StatelessWidget {
               child: TextField(
                 controller: rosterNameController,
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(
-                    context,
-                  )!.rosterNameInputFieldHint,
+                  hintText: context.l10n.rosterNameInputFieldHint,
                   border: OutlineInputBorder(),
                   isDense: false,
                   hintStyle: AppTheme.textHintStyle,
