@@ -20,6 +20,8 @@ part 'squad_event.dart';
 
 class RosterBloc extends Bloc<RosterEvent, RosterState> {
   final UnitRepository unitRepository;
+  int _nextSquadNumber = 0;
+  int _nextModelId = 0;
 
   RosterBloc(this.unitRepository) : super(RosterInitial(unitRepository)) {
     on<UpdatePlayerName>((event, emit) {
@@ -44,12 +46,14 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onAddNewSquad(AddNewSquad event, Emitter<RosterState> emit) {
-    int newId;
+    _nextSquadNumber++;
+    int newId = _nextSquadNumber;
 
     // Ensure the squad id is unique
-    do {
-      newId = nextId;
-    } while (state.squads.any((squad) => squad.id == newId));
+    while (state.squads.any((squad) => squad.id == newId)) {
+      _nextSquadNumber++;
+      newId = _nextSquadNumber;
+    }
 
     final newSquad = Squad(
       id: newId,
@@ -71,7 +75,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onAddModel(AddModel event, Emitter<RosterState> emit) {
-    final model = Model(id: nextId, base: event.base, variant: event.variant);
+    _nextModelId++;
+    final model = Model(
+      id: _nextModelId,
+      base: event.base,
+      variant: event.variant,
+    );
     final updatedSquad = event.squad.copyWith(
       models: [...event.squad.models, model],
     );
@@ -200,11 +209,5 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     );
 
     emit(state.copyWith(squadState: updatedSquadState));
-  }
-
-  static int _nextId = 0;
-  static int get nextId {
-    _nextId++;
-    return _nextId;
   }
 }

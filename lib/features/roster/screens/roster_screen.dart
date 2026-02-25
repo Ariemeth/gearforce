@@ -27,7 +27,6 @@ class RosterScreen extends StatelessWidget {
             icon: const Icon(Icons.settings),
             onPressed: () {
               // TODO add roster settings
-              print('Roster settings clicked');
             },
             tooltip: context.l10n.rosterSettingsTooltip,
           ),
@@ -47,9 +46,15 @@ class RosterScreen extends StatelessWidget {
 
                 switch (screenSize) {
                   case ScreenSize.small:
-                    return SmallRosterDisplay(rosterMetaData: rosterMetaData);
+                    return SmallRosterDisplay(
+                      rosterMetaData: rosterMetaData,
+                      state: state,
+                    );
                   case ScreenSize.large:
-                    return LargeRosterDisplay(rosterMetaData: rosterMetaData);
+                    return LargeRosterDisplay(
+                      rosterMetaData: rosterMetaData,
+                      state: state,
+                    );
                 }
               },
             ),

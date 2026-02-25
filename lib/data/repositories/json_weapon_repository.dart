@@ -49,7 +49,7 @@ class JsonWeaponRepository implements WeaponRepository {
       }
       _isLoaded = true;
     } catch (e) {
-      print('Error loading weapons: $e');
+      throw StateError('Failed to load weapon data: $e');
     }
   }
 }

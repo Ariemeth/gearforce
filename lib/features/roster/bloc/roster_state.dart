@@ -65,3 +65,17 @@ class RosterUpdated extends RosterState {
     required super.ruleSet,
   });
 }
+
+class RosterError extends RosterState {
+  final String message;
+
+  RosterError({required RosterState previousState, required this.message})
+    : super(
+        playerName: previousState.playerName,
+        rosterName: previousState.rosterName,
+        squadState: previousState.squadState,
+        selectedFaction: previousState.selectedFaction,
+        selectedSubfaction: previousState.selectedSubfaction,
+        ruleSet: previousState.ruleSet,
+      );
+}

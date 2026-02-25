@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer' as developer;
 import 'package:meta/meta.dart';
 import 'package:flutter/services.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
@@ -23,8 +24,12 @@ class JsonUnitRepository implements UnitRepository {
       _cache[lowerFactionId] = units;
       return units;
     } catch (e) {
-      print('Error loading units for $factionId: $e');
-      return [];
+      developer.log(
+        'Error loading units for $factionId: $e',
+        name: 'JsonUnitRepository',
+        error: e,
+      );
+      rethrow;
     }
   }
 
