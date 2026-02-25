@@ -70,13 +70,13 @@ class Model {
   }
 
   Model addUpgrade(UnitUpgrade upgrade) {
-    _upgrades.add(upgrade);
-    return this;
+    return copyWith(upgrades: [..._upgrades, upgrade]);
   }
 
   Model removeUpgrade(UnitUpgrade upgrade) {
-    _upgrades.remove(upgrade);
-    return this;
+    return copyWith(
+      upgrades: [for (final u in _upgrades) if (u != upgrade) u],
+    );
   }
 
   T getAttribute<T>(

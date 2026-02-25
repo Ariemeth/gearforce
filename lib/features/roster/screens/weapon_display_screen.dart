@@ -19,11 +19,15 @@ class WeaponDisplayScreen extends StatefulWidget {
 class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
   List<Weapon> weapons = [];
   bool _isLoading = true;
+  bool _hasLoadedOnce = false;
 
   @override
-  void initState() {
-    super.initState();
-    _loadWeapons();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_hasLoadedOnce) {
+      _hasLoadedOnce = true;
+      _loadWeapons();
+    }
   }
 
   Future<void> _loadWeapons() async {

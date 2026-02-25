@@ -41,7 +41,7 @@ void main() async {
                 RosterBloc(RepositoryProvider.of<UnitRepository>(context)),
           ),
         ],
-        child: Gearforce(),
+        child: const Gearforce(),
       ),
     ),
   );

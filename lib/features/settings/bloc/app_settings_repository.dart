@@ -1,3 +1,4 @@
+import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,7 +24,11 @@ class AppSettingsRepository {
         _ => ThemeMode.system,
       };
     } catch (e) {
-      print('Unable to load theme mode: error=$e');
+      developer.log(
+        'Unable to load theme mode',
+        name: 'AppSettingsRepository',
+        error: e,
+      );
       return ThemeMode.system;
     }
   }
@@ -40,7 +45,11 @@ class AppSettingsRepository {
     try {
       await prefs.setString(_themeModeKey, themeMode);
     } catch (e) {
-      print('Unable to save theme mode: error=$e');
+      developer.log(
+        'Unable to save theme mode',
+        name: 'AppSettingsRepository',
+        error: e,
+      );
     }
   }
 }

@@ -25,11 +25,15 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
   final List<bool> _expandedStates = [];
   List<Unit> _availableUnits = [];
   bool _isLoading = true;
+  bool _hasLoadedOnce = false;
 
   @override
-  void initState() {
-    super.initState();
-    _loadAvailableUnits();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_hasLoadedOnce) {
+      _hasLoadedOnce = true;
+      _loadAvailableUnits();
+    }
   }
 
   Future<void> _loadAvailableUnits() async {

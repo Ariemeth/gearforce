@@ -199,7 +199,7 @@ void main() {
         upgrades: [],
       );
 
-      model.addUpgrade(
+      final modelWithUpgrade = model.addUpgrade(
         UnitUpgrade(
           'Test Mod',
           id: 'mod-001',
@@ -211,8 +211,8 @@ void main() {
       expect(
         () {
           // Simulate a recursive call by calling getAttribute for the same attribute
-          model.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
-          model.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
+          modelWithUpgrade.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
+          modelWithUpgrade.getAttribute(ModelAttribute.name, excludeUpgradeId: 'test');
         },
         throwsA(
           isA<StateError>().having(

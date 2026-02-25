@@ -51,11 +51,11 @@ class Gearforce extends StatelessWidget {
               builder: (BuildContext context) {
                 switch (routeSettings.name) {
                   case AppSettingScreen.routeName:
-                    return AppSettingScreen();
+                    return const AppSettingScreen();
                   case WeaponDisplayScreen.routeName:
-                    return WeaponDisplayScreen();
+                    return const WeaponDisplayScreen();
                   default:
-                    return RosterScreen();
+                    return const RosterScreen();
                 }
               },
             );

@@ -38,7 +38,6 @@ class RosterPageDrawer extends StatelessWidget {
                 style: AppTheme.menuStyle,
               ),
               onTap: () {
-                print('weapons table selected');
                 Navigator.restorablePopAndPushNamed(
                   context,
                   WeaponDisplayScreen.routeName,
