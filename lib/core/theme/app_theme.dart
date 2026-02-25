@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Text Styles
+  // ============================================================================
+  // General Text Styles
+  // ============================================================================
+
   static const TextStyle titleStyle = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
@@ -27,8 +30,6 @@ class AppTheme {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle rosterNameTextStyle = titleStyle;
-
   static TextStyle textHintStyle = TextStyle(
     fontSize: bodyStyle.fontSize,
     fontWeight: bodyStyle.fontWeight,
@@ -43,7 +44,12 @@ class AppTheme {
     fontStyle: FontStyle.italic,
   );
 
-  // Squad Page Text Styles
+  // ============================================================================
+  // Roster & Squad Text Styles
+  // ============================================================================
+
+  static const TextStyle rosterNameTextStyle = titleStyle;
+
   static const TextStyle squadNameStyle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
@@ -70,7 +76,10 @@ class AppTheme {
     fontWeight: FontWeight.normal,
   );
 
-  // Paddings
+  // ============================================================================
+  // Spacing (Paddings)
+  // ============================================================================
+
   static const EdgeInsets defaultPadding = EdgeInsets.all(0);
   static const EdgeInsets listTilePadding = defaultPadding;
 
@@ -89,6 +98,7 @@ class AppTheme {
   );
 
   static const EdgeInsets factionSelectorPadding = EdgeInsets.only(left: 5.0);
+
   static const EdgeInsets subfactionSelectorPadding = EdgeInsets.only(
     left: 5.0,
   );
@@ -96,17 +106,32 @@ class AppTheme {
   static const EdgeInsets drawerHeaderPadding = EdgeInsets.all(4.0);
   static const EdgeInsets drawerPadding = EdgeInsets.all(4.0);
 
-  // Colors
-  static const Color deleteIconColor = Color.fromARGB(255, 190, 22, 10);
+  // ============================================================================
+  // Sizing
+  // ============================================================================
 
-  // Unit Card Attribute Styling
+  // Form Layout
+  static const double defaultLabelWidth = 90.0;
+
+  // Unit Card Attributes
   static const double attributeLabelFontSize = 14;
   static const FontWeight attributeLabelFontWeight = FontWeight.w700;
   static const double attributeValueFontSize = 14;
   static const FontWeight attributeValueFontWeight = FontWeight.normal;
+
+  // Weapon and Trait Display
   static const double weaponAndTraitLabelWidth = 134.0;
   static const double weaponAndTraitLabelGap = 4.0;
 
-  // Form Layout
-  static const double defaultLabelWidth = 90.0;
+  // ============================================================================
+  // Colors
+  // ============================================================================
+
+  static const Color deleteIconColor = Color.fromARGB(255, 190, 22, 10);
+
+  // ============================================================================
+  // Tooltip Configuration
+  // ============================================================================
+
+  static const Duration tooltipWaitDuration = Duration(milliseconds: 600);
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gearforce/core/generated/i18n/app_localizations.dart';
+import 'package:gearforce/core/theme/app_theme.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/core/utils/platform_utils.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
@@ -38,11 +39,20 @@ class Gearforce extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData.from(
-            colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
-          ).copyWith(visualDensity: PlatformUtils.adaptiveVisualDensity),
+          theme:
+              ThemeData.from(
+                colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
+              ).copyWith(
+                visualDensity: PlatformUtils.adaptiveVisualDensity,
+                tooltipTheme: TooltipThemeData(
+                  waitDuration: AppTheme.tooltipWaitDuration,
+                ),
+              ),
           darkTheme: ThemeData.dark().copyWith(
             visualDensity: PlatformUtils.adaptiveVisualDensity,
+            tooltipTheme: TooltipThemeData(
+              waitDuration: AppTheme.tooltipWaitDuration,
+            ),
           ),
           themeMode: state.themeMode,
 
