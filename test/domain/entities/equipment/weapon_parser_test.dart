@@ -27,8 +27,8 @@ class MockWeaponRepository implements WeaponRepository {
           damageBands: const DamageSizeBands(l: 1, m: 2, h: 3),
           size: size,
           isReact: hasReact,
-          primaryTraits: [],
-          alternateTraits: [Trait(name: 'Precise')],
+          baseTraits: [],
+          baseAlternateTraits: [Trait(name: 'Precise')],
         );
       case 'FRC':
       case 'FC':

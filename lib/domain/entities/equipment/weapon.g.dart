@@ -13,6 +13,12 @@ Weapon _$WeaponFromJson(Map<String, dynamic> json) => Weapon(
   modes: (json['modes'] as List<dynamic>)
       .map((e) => $enumDecode(_$WeaponModeEnumMap, e))
       .toSet(),
+  baseTraits: json['traits'] == null
+      ? const []
+      : const TraitListConverter().fromJson(json['traits'] as List),
+  baseAlternateTraits: json['altTraits'] == null
+      ? const []
+      : const TraitListConverter().fromJson(json['altTraits'] as List),
   damageBands: DamageSizeBands.fromJson(json['damage'] as Map<String, dynamic>),
 );
 
@@ -21,6 +27,8 @@ Map<String, dynamic> _$WeaponToJson(Weapon instance) => <String, dynamic>{
   'name': instance.name,
   'range': instance.range,
   'modes': instance.modes.map((e) => _$WeaponModeEnumMap[e]!).toList(),
+  'traits': const TraitListConverter().toJson(instance.baseTraits),
+  'altTraits': const TraitListConverter().toJson(instance.baseAlternateTraits),
   'damage': instance.damageBands,
 };
 

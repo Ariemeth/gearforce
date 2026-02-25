@@ -20,10 +20,10 @@ class Weapon {
   final Set<WeaponMode> modes;
   @JsonKey(name: 'traits')
   @TraitListConverter()
-  final List<Trait> _primaryTraits;
+  final List<Trait> baseTraits;
   @JsonKey(name: 'altTraits')
   @TraitListConverter()
-  final List<Trait> _alternateTraits;
+  final List<Trait> baseAlternateTraits;
   @JsonKey(includeFromJson: false, includeToJson: false)
   final TraitSizeBands primaryTraitBands;
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -40,27 +40,26 @@ class Weapon {
     required this.name,
     required this.range,
     required this.modes,
-    List<Trait> primaryTraits = const [],
-    List<Trait> alternateTraits = const [],
+    this.baseTraits = const [],
+    this.baseAlternateTraits = const [],
     this.primaryTraitBands = const TraitSizeBands(),
     this.alternateTraitBands = const TraitSizeBands(),
     required this.damageBands,
     this.size = WeaponSize.light,
     this.isReact = false,
-  }) : _primaryTraits = primaryTraits,
-       _alternateTraits = alternateTraits;
+  });
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   List<Trait> get primaryTraits => getPrimaryTraitsForSize(size);
   List<Trait> getPrimaryTraitsForSize(WeaponSize size) => [
-    ..._primaryTraits,
+    ...baseTraits,
     ...primaryTraitBands.getValue(size),
   ];
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   List<Trait> get alternateTraits => getAlternateTraitsForSize(size);
   List<Trait> getAlternateTraitsForSize(WeaponSize size) => [
-    ..._alternateTraits,
+    ...baseAlternateTraits,
     ...alternateTraitBands.getValue(size),
   ];
 
@@ -92,13 +91,10 @@ class Weapon {
       size: size ?? this.size,
       damageBands: damageSizeBands ?? damageBands,
       modes: weaponModes ?? modes,
-      primaryTraits: [
-        ...primaryTraits ?? this.primaryTraits,
-        ...customTraits ?? const [],
-      ],
-      alternateTraits: [
-        ...alternateTraits ?? this.alternateTraits,
-        ...(this.alternateTraits.isNotEmpty && customTraits != null
+      baseTraits: [...primaryTraits ?? baseTraits, ...customTraits ?? const []],
+      baseAlternateTraits: [
+        ...alternateTraits ?? baseAlternateTraits,
+        ...(baseAlternateTraits.isNotEmpty && customTraits != null
             ? customTraits
             : const []),
       ],
