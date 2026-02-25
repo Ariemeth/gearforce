@@ -12,7 +12,7 @@ Future<bool?> showRemoveSquadDialog({
   return showDialog<bool>(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text(l10n.removeSquadConfirmTitle),
+      title: Center(child: Text(l10n.removeSquadConfirmTitle)),
       content: Text(l10n.removeSquadConfirmMessage(squadName)),
       actions: [
         TextButton(
