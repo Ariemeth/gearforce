@@ -4,8 +4,10 @@ import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_events.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
+import 'package:gearforce/core/widgets/constrained_content.dart';
 
 const _pagePadding = EdgeInsets.all(16);
+const double _maxContentWidth = 600;
 
 class AppSettingScreen extends StatelessWidget {
   const AppSettingScreen({super.key});
@@ -18,7 +20,8 @@ class AppSettingScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.l10n.appSettingsTitle(context.l10n.appTitle)),
       ),
-      body: Padding(
+      body: ConstrainedContent(
+        maxWidth: _maxContentWidth,
         padding: _pagePadding,
         child: BlocBuilder<AppSettingsBloc, AppSettingsState>(
           builder: (context, state) {

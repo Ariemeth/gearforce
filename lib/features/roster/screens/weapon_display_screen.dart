@@ -5,6 +5,9 @@ import 'package:gearforce/domain/entities/equipment/weapon.dart';
 import 'package:gearforce/domain/repositories/weapon_repository.dart';
 import 'package:gearforce/features/roster/widgets/weapon_data_table.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
+import 'package:gearforce/core/widgets/constrained_content.dart';
+
+const double _maxContentWidth = 1200;
 
 class WeaponDisplayScreen extends StatefulWidget {
   static const routeName = '/weapons';
@@ -50,7 +53,12 @@ class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : SingleChildScrollView(child: WeaponDataTable(weapons: weapons)),
+          : ConstrainedContent(
+              maxWidth: _maxContentWidth,
+              child: SingleChildScrollView(
+                child: WeaponDataTable(weapons: weapons),
+              ),
+            ),
     );
   }
 }

@@ -11,13 +11,9 @@ import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec_list_extensions.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
-
-const double _weaponAndTraitWidth = 134.0;
-const SizedBox _weaponAndTraitLabelSpacer = SizedBox(width: 4.0);
-const double _attributeLabelFontSize = 14;
-const FontWeight _attributeLabelFontWeight = FontWeight.w700;
-const double _attributeValueFontSize = 14;
-const FontWeight _attributeValueFontWeight = FontWeight.normal;
+import 'package:gearforce/core/widgets/unit_attribute_widgets.dart';
+import 'package:gearforce/core/widgets/weapon_trait_row.dart';
+import 'package:gearforce/core/widgets/weapon_trait_chips.dart';
 
 class UnitListCard extends StatelessWidget {
   UnitListCard.header({super.key, required Unit unit})
@@ -116,147 +112,45 @@ class _SmallUnitListHeader extends StatelessWidget {
           children: [
             TableRow(
               children: [
-                _UnitAttributeLabel(context.l10n.attributeTV),
-                _UnitAttributeLabel(context.l10n.attributeMove),
-                _UnitAttributeLabel(context.l10n.attributeArm),
-                _UnitAttributeLabel(context.l10n.attributeHS),
-                _UnitAttributeLabel(context.l10n.attributeA),
-                _UnitAttributeLabel(context.l10n.attributeGu),
-                _UnitAttributeLabel(context.l10n.attributePi),
-                _UnitAttributeLabel(context.l10n.attributeEw),
+                UnitAttributeLabel(context.l10n.attributeTV),
+                UnitAttributeLabel(context.l10n.attributeMove),
+                UnitAttributeLabel(context.l10n.attributeArm),
+                UnitAttributeLabel(context.l10n.attributeHS),
+                UnitAttributeLabel(context.l10n.attributeA),
+                UnitAttributeLabel(context.l10n.attributeGu),
+                UnitAttributeLabel(context.l10n.attributePi),
+                UnitAttributeLabel(context.l10n.attributeEw),
               ],
             ),
             TableRow(
               children: [
-                _UnitAttributeValue('$tv'),
-                _UnitAttributeValue('${movement ?? '-'}'),
-                _UnitAttributeValue('${arm ?? '-'}'),
-                _UnitAttributeValue('${hullStructure ?? '-'}'),
-                _UnitAttributeValue('${actions ?? '-'}'),
-                _UnitAttributeValue('${gu ?? '-'}'),
-                _UnitAttributeValue('${pi ?? '-'}'),
-                _UnitAttributeValue('${ew ?? '-'}'),
+                UnitAttributeValue('$tv'),
+                UnitAttributeValue('${movement ?? '-'}'),
+                UnitAttributeValue('${arm ?? '-'}'),
+                UnitAttributeValue('${hullStructure ?? '-'}'),
+                UnitAttributeValue('${actions ?? '-'}'),
+                UnitAttributeValue('${gu ?? '-'}'),
+                UnitAttributeValue('${pi ?? '-'}'),
+                UnitAttributeValue('${ew ?? '-'}'),
               ],
             ),
           ],
         ),
-        Row(
-          children: [
-            SizedBox(
-              width: _weaponAndTraitWidth,
-              child: _UnitAttributeLabel(
-                context.l10n.reactWeaponsLabel,
-                textAlign: TextAlign.right,
-              ),
-            ),
-            _weaponAndTraitLabelSpacer,
-            ..._buildWeaponWidgets(reactWeapons),
-          ],
+        WeaponTraitRow(
+          label: context.l10n.reactWeaponsLabel,
+          children: buildWeaponChips(reactWeapons, showTooltip: false),
         ),
-        Row(
-          children: [
-            SizedBox(
-              width: _weaponAndTraitWidth,
-              child: _UnitAttributeLabel(
-                context.l10n.mountedWeaponsLabel,
-                textAlign: TextAlign.right,
-              ),
-            ),
-            _weaponAndTraitLabelSpacer,
-            ..._buildWeaponWidgets(mountedWeapons),
-          ],
+        WeaponTraitRow(
+          label: context.l10n.mountedWeaponsLabel,
+          children: buildWeaponChips(mountedWeapons, showTooltip: false),
         ),
-        Row(
-          children: [
-            SizedBox(
-              width: _weaponAndTraitWidth,
-              child: _UnitAttributeLabel(
-                context.l10n.traitsLabel,
-                textAlign: TextAlign.right,
-              ),
-            ),
-            _weaponAndTraitLabelSpacer,
-            ..._buildTraitWidgets(traits),
-          ],
+        WeaponTraitRow(
+          label: context.l10n.traitsLabel,
+          children: buildTraitChips(traits),
         ),
       ],
     );
 
     return resultWidget;
-  }
-
-  List<Widget> _buildWeaponWidgets(List<WeaponSpec> weapons) {
-    return weapons.asMap().entries.map((entry) {
-      final index = entry.key;
-      final weapon = entry.value;
-      final isLast = index == weapons.length - 1;
-      return _UnitAttributeValue(
-        isLast ? weapon.code : '${weapon.code}, ',
-        textAlign: TextAlign.left,
-      );
-    }).toList();
-  }
-
-  List<Widget> _buildTraitWidgets(List<Trait> traits) {
-    return traits.asMap().entries.map((entry) {
-      final index = entry.key;
-      final trait = entry.value;
-      final isLast = index == traits.length - 1;
-      return _UnitAttributeValue(
-        isLast ? trait.name : '${trait.name}, ',
-        tooltipMessage: trait.description,
-        textAlign: TextAlign.left,
-      );
-    }).toList();
-  }
-}
-
-class _UnitAttributeLabel extends StatelessWidget {
-  const _UnitAttributeLabel(
-    this.labelText, {
-    this.textAlign = TextAlign.center,
-  });
-
-  final String labelText;
-  final TextAlign textAlign;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      labelText,
-      textAlign: textAlign,
-      style: TextStyle(
-        fontSize: _attributeLabelFontSize,
-        fontWeight: _attributeLabelFontWeight,
-      ),
-    );
-  }
-}
-
-class _UnitAttributeValue extends StatelessWidget {
-  const _UnitAttributeValue(
-    this.labelText, {
-    this.textAlign = TextAlign.center,
-    this.tooltipMessage,
-  });
-
-  final String labelText;
-  final TextAlign textAlign;
-  final String? tooltipMessage;
-
-  @override
-  Widget build(BuildContext context) {
-    final textWidget = Text(
-      labelText,
-      textAlign: textAlign,
-      style: TextStyle(
-        fontSize: _attributeValueFontSize,
-        fontWeight: _attributeValueFontWeight,
-      ),
-    );
-
-    return tooltipMessage == null
-        ? textWidget
-        : Tooltip(message: tooltipMessage, child: textWidget);
   }
 }

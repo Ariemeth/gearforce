@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
+import 'package:gearforce/core/widgets/responsive_layout.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/large_roster_display.dart';
 import 'package:gearforce/features/roster/widgets/roster_page_drawer.dart';
 import 'package:gearforce/features/roster/widgets/small_roster_display.dart';
-import 'package:gearforce/core/widgets/responsive_size.dart';
 
 const _pagePadding = EdgeInsets.fromLTRB(2, 1, 5, 6);
 
@@ -17,7 +17,6 @@ class RosterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = context.l10n.appTitle;
-    final drawerScreenSize = ResponsiveSize.getScreenSize(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -35,22 +34,14 @@ class RosterScreen extends StatelessWidget {
         builder: (context, state) {
           return Padding(
             padding: _pagePadding,
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                final screenSize = ResponsiveSize.getScreenSize(context);
-
-                switch (screenSize) {
-                  case ScreenSize.small:
-                    return SmallRosterDisplay(state: state);
-                  case ScreenSize.large:
-                    return LargeRosterDisplay(state: state);
-                }
-              },
+            child: ResponsiveLayout(
+              compact: SmallRosterDisplay(state: state),
+              expanded: LargeRosterDisplay(state: state),
             ),
           );
         },
       ),
-      drawer: RosterPageDrawer(title: title, screenSize: drawerScreenSize),
+      drawer: RosterPageDrawer(title: title),
     );
   }
 }

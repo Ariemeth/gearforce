@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gearforce/core/generated/i18n/app_localizations.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
+import 'package:gearforce/core/utils/platform_utils.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
 import 'package:gearforce/features/settings/screens/app_settings_screen.dart';
@@ -39,8 +40,10 @@ class Gearforce extends StatelessWidget {
           // SettingsController to display the correct theme.
           theme: ThemeData.from(
             colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
+          ).copyWith(visualDensity: PlatformUtils.adaptiveVisualDensity),
+          darkTheme: ThemeData.dark().copyWith(
+            visualDensity: PlatformUtils.adaptiveVisualDensity,
           ),
-          darkTheme: ThemeData.dark(),
           themeMode: state.themeMode,
 
           // Define a function to handle named routes in order to support

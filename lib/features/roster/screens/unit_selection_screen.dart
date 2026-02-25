@@ -9,8 +9,10 @@ import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/model_list_card.dart';
 import 'package:gearforce/data/static/filters/unit_filters.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
+import 'package:gearforce/core/widgets/constrained_content.dart';
 
 const double _modelListIndentWidth = 10.0;
+const double _maxContentWidth = 900;
 
 class UnitSelectionScreen extends StatefulWidget {
   const UnitSelectionScreen({super.key, required this.updatedSquad});
@@ -74,11 +76,12 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
           child: Text(context.l10n.selectUnitTitle, style: AppTheme.titleStyle),
         ),
       ),
-      body: Padding(
+      body: ConstrainedContent(
+        maxWidth: _maxContentWidth,
         padding: AppTheme.defaultPagePadding,
         child: SingleChildScrollView(
           child: ExpansionPanelList(
-            expandedHeaderPadding: EdgeInsets.fromLTRB(2, 0, 4, 2),
+            expandedHeaderPadding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
             expansionCallback: (index, isExpanded) {
               setState(() {
                 _expandedStates[index] = isExpanded;
@@ -93,10 +96,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
                 },
                 body: Padding(
                   padding: const EdgeInsets.only(left: _modelListIndentWidth),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: _UnitModelList(unit, widget.updatedSquad),
-                  ),
+                  child: _UnitModelList(unit, widget.updatedSquad),
                 ),
                 splashColor: Colors.blue.shade200,
                 isExpanded: _expandedStates[index],

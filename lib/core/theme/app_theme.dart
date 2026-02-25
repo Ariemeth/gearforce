@@ -98,4 +98,15 @@ class AppTheme {
 
   // Colors
   static const Color deleteIconColor = Color.fromARGB(255, 190, 22, 10);
+
+  // Unit Card Attribute Styling
+  static const double attributeLabelFontSize = 14;
+  static const FontWeight attributeLabelFontWeight = FontWeight.w700;
+  static const double attributeValueFontSize = 14;
+  static const FontWeight attributeValueFontWeight = FontWeight.normal;
+  static const double weaponAndTraitLabelWidth = 134.0;
+  static const double weaponAndTraitLabelGap = 4.0;
+
+  // Form Layout
+  static const double defaultLabelWidth = 90.0;
 }

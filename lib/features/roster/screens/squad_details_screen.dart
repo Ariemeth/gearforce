@@ -8,8 +8,10 @@ import 'package:gearforce/features/roster/widgets/remove_squad_dialog.dart';
 import 'package:gearforce/features/roster/widgets/select_model_button.dart';
 import 'package:gearforce/features/roster/widgets/squad_role_selectors.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
+import 'package:gearforce/core/widgets/constrained_content.dart';
 
 const _pagePadding = EdgeInsets.fromLTRB(8, 5, 8, 5);
+const double _maxContentWidth = 800;
 
 class SquadDetailsScreen extends StatelessWidget {
   final int squadId;
@@ -61,7 +63,8 @@ class SquadDetailsScreen extends StatelessWidget {
               ),
             ],
           ),
-          body: Padding(
+          body: ConstrainedContent(
+            maxWidth: _maxContentWidth,
             padding: _pagePadding,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

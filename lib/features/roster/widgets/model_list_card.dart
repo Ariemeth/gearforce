@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
-import 'package:gearforce/domain/entities/equipment/trait.dart' show Trait;
 import 'package:gearforce/domain/entities/unit/model.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec_list_extensions.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
+import 'package:gearforce/core/widgets/unit_attribute_widgets.dart';
+import 'package:gearforce/core/widgets/weapon_trait_row.dart';
+import 'package:gearforce/core/widgets/weapon_trait_chips.dart';
 
 const double _rolesAttributeWidth = 68.0;
 const double _moveAttributeWidth = 66.0;
 const double _armorAttributeWidth = 36.0;
 const double _actionsAttributeWidth = 30.0;
-const double _weaponAndTraitWidth = 134.0;
-const SizedBox _weaponAndTraitLabelSpacer = SizedBox(width: 4.0);
-const double _attributeLabelFontSize = 14;
-const FontWeight _attributeLabelFontWeight = FontWeight.w700;
-const double _attributeValueFontSize = 14;
-const FontWeight _attributeValueFontWeight = FontWeight.normal;
 
 class ModelListCard extends StatelessWidget {
   final Model model;
@@ -52,73 +47,45 @@ class _SmallUnitListHeader extends StatelessWidget {
               children: [
                 TableRow(
                   children: [
-                    _UnitAttributeLabel(context.l10n.attributeTV),
-                    _UnitAttributeLabel(context.l10n.attributeRoles),
-                    _UnitAttributeLabel(context.l10n.attributeMove),
-                    _UnitAttributeLabel(context.l10n.attributeArm),
-                    _UnitAttributeLabel(context.l10n.attributeHS),
-                    _UnitAttributeLabel(context.l10n.attributeA),
-                    _UnitAttributeLabel(context.l10n.attributeGu),
-                    _UnitAttributeLabel(context.l10n.attributePi),
-                    _UnitAttributeLabel(context.l10n.attributeEw),
+                    UnitAttributeLabel(context.l10n.attributeTV),
+                    UnitAttributeLabel(context.l10n.attributeRoles),
+                    UnitAttributeLabel(context.l10n.attributeMove),
+                    UnitAttributeLabel(context.l10n.attributeArm),
+                    UnitAttributeLabel(context.l10n.attributeHS),
+                    UnitAttributeLabel(context.l10n.attributeA),
+                    UnitAttributeLabel(context.l10n.attributeGu),
+                    UnitAttributeLabel(context.l10n.attributePi),
+                    UnitAttributeLabel(context.l10n.attributeEw),
                   ],
                 ),
                 TableRow(
                   children: [
-                    _UnitAttributeValue('${model.tv}'),
-                    _UnitAttributeValue(
+                    UnitAttributeValue('${model.tv}'),
+                    UnitAttributeValue(
                       model.roles.map((r) => r.abbreviation).join(', '),
                     ),
-                    _UnitAttributeValue(model.movement.toString()),
-                    _UnitAttributeValue(model.armor.toString()),
-                    _UnitAttributeValue(model.hullStructure.toString()),
-                    _UnitAttributeValue(model.actions.toString()),
-                    _UnitAttributeValue(model.gu.toString()),
-                    _UnitAttributeValue(model.pi.toString()),
-                    _UnitAttributeValue(model.ew.toString()),
+                    UnitAttributeValue(model.movement.toString()),
+                    UnitAttributeValue(model.armor.toString()),
+                    UnitAttributeValue(model.hullStructure.toString()),
+                    UnitAttributeValue(model.actions.toString()),
+                    UnitAttributeValue(model.gu.toString()),
+                    UnitAttributeValue(model.pi.toString()),
+                    UnitAttributeValue(model.ew.toString()),
                   ],
                 ),
               ],
             ),
-            Row(
-              children: [
-                SizedBox(
-                  width: _weaponAndTraitWidth,
-                  child: _UnitAttributeLabel(
-                    context.l10n.reactWeaponsLabel,
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-                _weaponAndTraitLabelSpacer,
-                ..._buildWeaponWidgets(model.weapons.reactWeapons),
-              ],
+            WeaponTraitRow(
+              label: context.l10n.reactWeaponsLabel,
+              children: buildWeaponChips(model.weapons.reactWeapons),
             ),
-
-            Row(
-              children: [
-                SizedBox(
-                  width: _weaponAndTraitWidth,
-                  child: _UnitAttributeLabel(
-                    context.l10n.mountedWeaponsLabel,
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-                _weaponAndTraitLabelSpacer,
-                ..._buildWeaponWidgets(model.weapons.mountedWeapons),
-              ],
+            WeaponTraitRow(
+              label: context.l10n.mountedWeaponsLabel,
+              children: buildWeaponChips(model.weapons.mountedWeapons),
             ),
-            Row(
-              children: [
-                SizedBox(
-                  width: _weaponAndTraitWidth,
-                  child: _UnitAttributeLabel(
-                    context.l10n.traitsLabel,
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-                _weaponAndTraitLabelSpacer,
-                ..._buildTraitWidgets(model.traits),
-              ],
+            WeaponTraitRow(
+              label: context.l10n.traitsLabel,
+              children: buildTraitChips(model.traits),
             ),
           ],
         ),
@@ -126,81 +93,5 @@ class _SmallUnitListHeader extends StatelessWidget {
     );
 
     return resultWidget;
-  }
-
-  List<Widget> _buildWeaponWidgets(List<WeaponSpec> weapons) {
-    return weapons.asMap().entries.map((entry) {
-      final index = entry.key;
-      final weapon = entry.value;
-      final isLast = index == weapons.length - 1;
-      return _UnitAttributeValue(
-        isLast ? weapon.code : '${weapon.code}, ',
-        textAlign: TextAlign.left,
-        tooltipMessage: weapon.summary,
-      );
-    }).toList();
-  }
-
-  List<Widget> _buildTraitWidgets(List<Trait> traits) {
-    return traits.asMap().entries.map((entry) {
-      final index = entry.key;
-      final trait = entry.value;
-      final isLast = index == traits.length - 1;
-      return _UnitAttributeValue(
-        isLast ? trait.name : '${trait.name}, ',
-        tooltipMessage: trait.description,
-        textAlign: TextAlign.left,
-      );
-    }).toList();
-  }
-}
-
-class _UnitAttributeLabel extends StatelessWidget {
-  const _UnitAttributeLabel(
-    this.labelText, {
-    this.textAlign = TextAlign.center,
-  });
-
-  final String labelText;
-  final TextAlign textAlign;
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      labelText,
-      textAlign: textAlign,
-      style: TextStyle(
-        fontSize: _attributeLabelFontSize,
-        fontWeight: _attributeLabelFontWeight,
-      ),
-    );
-  }
-}
-
-class _UnitAttributeValue extends StatelessWidget {
-  const _UnitAttributeValue(
-    this.labelText, {
-    this.textAlign = TextAlign.center,
-    this.tooltipMessage,
-  });
-
-  final String labelText;
-  final TextAlign textAlign;
-  final String? tooltipMessage;
-
-  @override
-  Widget build(BuildContext context) {
-    final textWidget = Text(
-      labelText,
-      textAlign: textAlign,
-      style: TextStyle(
-        fontSize: _attributeValueFontSize,
-        fontWeight: _attributeValueFontWeight,
-      ),
-    );
-
-    return tooltipMessage == null
-        ? textWidget
-        : Tooltip(message: tooltipMessage, child: textWidget);
   }
 }

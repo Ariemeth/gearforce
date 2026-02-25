@@ -309,5 +309,49 @@
   "traitsLabel": "Traits:",
   "@traitsLabel": {
     "description": "Label for the traits row"
+  },
+  "rosterSummaryTitle": "Roster Summary",
+  "@rosterSummaryTitle": {
+    "description": "Title for the roster summary panel on expanded screens"
+  },
+  "totalSquadsLabel": "Squads: {value}",
+  "@totalSquadsLabel": {
+    "description": "Label for total number of squads",
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "totalModelsLabel": "Models: {value}",
+  "@totalModelsLabel": {
+    "description": "Label for total number of models",
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "factionFieldLabel": "Faction: {name}",
+  "@factionFieldLabel": {
+    "description": "Label showing the selected faction name",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "North"
+      }
+    }
+  },
+  "subFactionFieldLabel": "Sub-Faction: {name}",
+  "@subFactionFieldLabel": {
+    "description": "Label showing the selected sub-faction name",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "WFP"
+      }
+    }
   }
 }

@@ -441,6 +441,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Traits:'**
   String get traitsLabel;
+
+  /// Title for the roster summary panel on expanded screens
+  ///
+  /// In en, this message translates to:
+  /// **'Roster Summary'**
+  String get rosterSummaryTitle;
+
+  /// Label for total number of squads
+  ///
+  /// In en, this message translates to:
+  /// **'Squads: {value}'**
+  String totalSquadsLabel(int value);
+
+  /// Label for total number of models
+  ///
+  /// In en, this message translates to:
+  /// **'Models: {value}'**
+  String totalModelsLabel(int value);
+
+  /// Label showing the selected faction name
+  ///
+  /// In en, this message translates to:
+  /// **'Faction: {name}'**
+  String factionFieldLabel(String name);
+
+  /// Label showing the selected sub-faction name
+  ///
+  /// In en, this message translates to:
+  /// **'Sub-Faction: {name}'**
+  String subFactionFieldLabel(String name);
 }
 
 class _AppLocalizationsDelegate

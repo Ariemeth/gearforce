@@ -207,4 +207,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get traitsLabel => 'Traits:';
+
+  @override
+  String get rosterSummaryTitle => 'Roster Summary';
+
+  @override
+  String totalSquadsLabel(int value) {
+    return 'Squads: $value';
+  }
+
+  @override
+  String totalModelsLabel(int value) {
+    return 'Models: $value';
+  }
+
+  @override
+  String factionFieldLabel(String name) {
+    return 'Faction: $name';
+  }
+
+  @override
+  String subFactionFieldLabel(String name) {
+    return 'Sub-Faction: $name';
+  }
 }

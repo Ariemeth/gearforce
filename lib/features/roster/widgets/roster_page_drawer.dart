@@ -3,19 +3,13 @@ import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/screens/app_settings_screen.dart';
 import 'package:gearforce/features/roster/screens/weapon_display_screen.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
-import 'package:gearforce/core/widgets/responsive_size.dart';
 
 const _drawerHeaderHeight = 60.0;
 
 class RosterPageDrawer extends StatelessWidget {
-  const RosterPageDrawer({
-    super.key,
-    required this.title,
-    required this.screenSize,
-  });
+  const RosterPageDrawer({super.key, required this.title});
 
   final String title;
-  final ScreenSize screenSize;
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +25,18 @@ class RosterPageDrawer extends StatelessWidget {
               child: Center(child: Text(title)),
             ),
           ),
-          if (screenSize == ScreenSize.small)
-            ListTile(
-              leading: Text(
-                context.l10n.weaponsTableTitle,
-                style: AppTheme.menuStyle,
-              ),
-              onTap: () {
-                Navigator.restorablePopAndPushNamed(
-                  context,
-                  WeaponDisplayScreen.routeName,
-                );
-              },
+          ListTile(
+            leading: Text(
+              context.l10n.weaponsTableTitle,
+              style: AppTheme.menuStyle,
             ),
+            onTap: () {
+              Navigator.restorablePopAndPushNamed(
+                context,
+                WeaponDisplayScreen.routeName,
+              );
+            },
+          ),
           ListTile(
             leading: Text(
               context.l10n.appSettingsTitle(title),
