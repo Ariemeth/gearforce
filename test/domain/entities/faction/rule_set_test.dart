@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/data/static/rules/default_rule_set.dart';
 import 'package:gearforce/domain/entities/attribute/armor.dart';
 import 'package:gearforce/domain/entities/attribute/classification.dart';
+import 'package:gearforce/domain/entities/attribute/command.dart';
 import 'package:gearforce/domain/entities/attribute/hull_structure.dart';
 import 'package:gearforce/domain/entities/attribute/movement.dart';
 import 'package:gearforce/domain/entities/attribute/movement_type.dart';
@@ -24,9 +25,9 @@ void main() {
     test('includes standard rules by default', () {
       final ruleSet = DefaultRuleSet();
 
-      expect(ruleSet.rules.length, 1);
-      expect(ruleSet.rules.single, isA<SquadSizeRule>());
-      expect((ruleSet.rules.single as SquadSizeRule).id, 'squad-size-rule');
+      expect(ruleSet.rules.length, 2);
+      expect(ruleSet.rules.first, isA<SquadSizeRule>());
+      expect((ruleSet.rules.first as SquadSizeRule).id, 'squad-size-rule');
     });
 
     test('activeRules returns only enabled rules', () {
@@ -41,8 +42,8 @@ void main() {
         ],
       );
 
-      expect(ruleSet.activeRules.length, 1);
-      expect(ruleSet.activeRules.single.id, 'squad-size-rule');
+      expect(ruleSet.activeRules.length, 2);
+      expect(ruleSet.activeRules.first.id, 'squad-size-rule');
     });
 
     test('specialized rulesets can include extra rules', () {
@@ -56,7 +57,7 @@ void main() {
         ],
       );
 
-      expect(ruleSet.rules.length, 2);
+      expect(ruleSet.rules.length, 3);
       expect(ruleSet.rules.first.id, 'squad-size-rule');
       expect(ruleSet.rules.last.id, 'north-extra-rule');
     });
@@ -146,7 +147,7 @@ void main() {
     test('counts units with 2+ actions as 2 effective units', () {
       final ruleSet = DefaultRuleSet();
       final squad = _buildSquad([
-        _buildModel(id: 1, actions: 2),
+        _buildModel(id: 1, actions: 2, command: Command.firstIC),
         _buildModel(id: 2, actions: 2),
       ]);
 
@@ -157,7 +158,11 @@ void main() {
     test('counts Repair and Medic units as 2 effective units', () {
       final ruleSet = DefaultRuleSet();
       final squad = _buildSquad([
-        _buildModel(id: 1, traits: const [Trait.repair(level: 1)]),
+        _buildModel(
+          id: 1,
+          traits: const [Trait.repair(level: 1)],
+          command: Command.firstIC,
+        ),
         _buildModel(id: 2, traits: const [Trait.medic(level: 1)]),
       ]);
 
@@ -181,12 +186,13 @@ void main() {
       'disallows adding a 10th model even if weighted count would exceed 9',
       () {
         final ruleSet = DefaultRuleSet();
-        final squad = _buildSquad(
-          List<Model>.generate(
-            9,
-            (index) => _buildModel(id: index + 1, actions: 2),
+        final squad = _buildSquad([
+          _buildModel(id: 1, actions: 2, command: Command.firstIC),
+          ...List<Model>.generate(
+            8,
+            (index) => _buildModel(id: index + 2, actions: 2),
           ),
-        );
+        ]);
 
         expect(ruleSet.getEffectiveSquadUnitCount(squad), 18);
         expect(ruleSet.isSquadComplete(squad), isTrue);
@@ -207,6 +213,7 @@ Model _buildModel({
   required int id,
   int actions = 1,
   List<Trait> traits = const [],
+  Command command = Command.none,
 }) {
   return Model(
     id: id,
@@ -227,6 +234,7 @@ Model _buildModel({
       classification: Classification.gear,
     ),
     variant: Variant('Test Unit', id: 'variant-$id', tv: 0),
+    command: command,
   );
 }
 

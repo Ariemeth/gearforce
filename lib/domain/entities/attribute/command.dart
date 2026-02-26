@@ -1,12 +1,12 @@
 enum Command {
-  none('none', '0'),
-  secondIC('2iC', '1'),
-  firstIC('1iC', '2'),
-  co('CO', '3'),
-  xo('XO', '4');
+  none('none', 0),
+  secondIC('2iC', 1),
+  firstIC('1iC', 1),
+  co('CO', 2),
+  xo('XO', 3);
 
   final String name;
-  final String id;
+  final int cost;
 
-  const Command(this.name, this.id);
+  const Command(this.name, this.cost);
 }

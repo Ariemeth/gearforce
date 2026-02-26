@@ -77,10 +77,12 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onAddModel(AddModel event, Emitter<RosterState> emit) {
+    final shouldAssignFirstIc = !_hasRequiredCommand(event.squad.models);
     final newModel = Model(
       id: _nextModelId + 1,
       base: event.base,
       variant: event.variant,
+      command: shouldAssignFirstIc ? Command.firstIC : Command.none,
     );
 
     if (!state.ruleSet.canAddUnitToSquad(squad: event.squad, unit: newModel)) {
@@ -141,15 +143,61 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     UpdateModelCommandLevel event,
     Emitter<RosterState> emit,
   ) {
-    final updatedSquad = event.squad.copyWith(
-      models: [
-        for (final m in event.squad.models)
-          m.id == event.model.id ? m.copyWith(command: event.commandLevel) : m,
-      ],
+    // Get models that need to be cleared to Command.none
+    final modelsToClear = state.ruleSet.getModelsToClearForCommandLevel(
+      model: event.model,
+      newCommandLevel: event.commandLevel,
+      squad: event.squad,
+      allSquads: state.squads,
     );
 
+    // Start with the current squads
+    var updatedSquads = List<Squad>.from(state.squads);
+    final affectedSquadIds = <int>{event.squad.id};
+
+    // First, clear conflicting command levels
+    for (final entry in modelsToClear) {
+      affectedSquadIds.add(entry.squad.id);
+      final squadIndex = updatedSquads.indexWhere(
+        (s) => s.id == entry.squad.id,
+      );
+      if (squadIndex != -1) {
+        final squad = updatedSquads[squadIndex];
+        final updatedModels = squad.models.map((m) {
+          return m.id == entry.model.id ? m.copyWith(command: Command.none) : m;
+        }).toList();
+        updatedSquads[squadIndex] = squad.copyWith(models: updatedModels);
+      }
+    }
+
+    // Then, apply the new command level to the target model
+    final targetSquadIndex = updatedSquads.indexWhere(
+      (s) => s.id == event.squad.id,
+    );
+    if (targetSquadIndex != -1) {
+      final squad = updatedSquads[targetSquadIndex];
+      final updatedModels = squad.models.map((m) {
+        return m.id == event.model.id
+            ? m.copyWith(command: event.commandLevel)
+            : m;
+      }).toList();
+      updatedSquads[targetSquadIndex] = squad.copyWith(models: updatedModels);
+    }
+
+    // Ensure squads maintain required command presence
+    for (final squadId in affectedSquadIds) {
+      final squadIndex = updatedSquads.indexWhere((s) => s.id == squadId);
+      if (squadIndex != -1) {
+        updatedSquads[squadIndex] = _ensureRequiredCommand(
+          updatedSquads[squadIndex],
+        );
+      }
+    }
+
     emit(
-      state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
+      state.copyWith(
+        squadState: state.squadState.copyWith(squads: updatedSquads),
+      ),
     );
   }
 
@@ -249,5 +297,34 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
     final updatedSquadState = state.squadState.copyWith(squads: squads);
     emit(state.copyWith(squadState: updatedSquadState));
+  }
+
+  bool _hasRequiredCommand(Iterable<Model> models) {
+    return models.any(
+      (model) =>
+          model.command == Command.firstIC ||
+          model.command == Command.co ||
+          model.command == Command.xo,
+    );
+  }
+
+  Squad _ensureRequiredCommand(Squad squad) {
+    if (_hasRequiredCommand(squad.models)) {
+      return squad;
+    }
+
+    final index = squad.models.indexWhere(
+      (model) => model.command == Command.none,
+    );
+    if (index == -1) {
+      return squad;
+    }
+
+    final updatedModels = List<Model>.from(squad.models);
+    updatedModels[index] = updatedModels[index].copyWith(
+      command: Command.firstIC,
+    );
+
+    return squad.copyWith(models: updatedModels);
   }
 }

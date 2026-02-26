@@ -4,6 +4,7 @@ import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
+import 'package:gearforce/features/roster/widgets/command_level_selector.dart';
 import 'package:gearforce/features/roster/widgets/unit_level_selector.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
@@ -26,6 +27,8 @@ class ModelListTile extends StatelessWidget {
             style: AppTheme.squadUnitBodyStyle,
           ),
           const Spacer(),
+          CommandLevelSelector(squad: squad, model: model),
+          const SizedBox(width: 8),
           UnitLevelSelector(squad: squad, model: model),
           IconButton(
             icon: const Icon(

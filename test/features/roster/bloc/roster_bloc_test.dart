@@ -221,6 +221,27 @@ void main() {
         expect(bloc.state.squads.first.models.first.base.name, 'Test Gear');
       },
     );
+
+    blocTest<RosterBloc, RosterState>(
+      'auto-assigns 1iC when squad has no command',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Command Squad'));
+        await Future<void>.delayed(Duration.zero);
+        final squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+      },
+      verify: (bloc) {
+        final model = bloc.state.squads.first.models.first;
+        expect(model.command, Command.firstIC);
+      },
+    );
   });
 
   group('RemoveModel', () {
@@ -341,6 +362,119 @@ void main() {
       },
       verify: (bloc) {
         expect(bloc.state.squads.first.models.first.command, Command.co);
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'automatically clears conflicting command level in same squad',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Command Squad'));
+        await Future<void>.delayed(Duration.zero);
+        var squad = bloc.state.squads.first;
+
+        // Add two models
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        // Assign 1iC to first model
+        squad = bloc.state.squads.first;
+        final model1 = squad.models[0];
+        bloc.add(
+          UpdateModelCommandLevel(
+            squad: squad,
+            model: model1,
+            commandLevel: Command.firstIC,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        // Assign CO to second model (should clear 1iC from first)
+        squad = bloc.state.squads.first;
+        final model2 = squad.models[1];
+        bloc.add(
+          UpdateModelCommandLevel(
+            squad: squad,
+            model: model2,
+            commandLevel: Command.co,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        expect(squad.models[0].command, Command.none);
+        expect(squad.models[1].command, Command.co);
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'automatically clears conflicting command level across squads',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        // Add first squad with CO
+        bloc.add(AddNewSquad(name: 'Squad 1'));
+        await Future<void>.delayed(Duration.zero);
+        var squad1 = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad1,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad1 = bloc.state.squads.first;
+        final model1 = squad1.models.first;
+        bloc.add(
+          UpdateModelCommandLevel(
+            squad: squad1,
+            model: model1,
+            commandLevel: Command.co,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        // Add second squad and assign CO to it (should clear CO from first squad)
+        bloc.add(AddNewSquad(name: 'Squad 2'));
+        await Future<void>.delayed(Duration.zero);
+        final squad2 = bloc.state.squads.last;
+        bloc.add(
+          AddModel(
+            squad: squad2,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        final updatedSquad2 = bloc.state.squads.last;
+        final model2 = updatedSquad2.models.first;
+        bloc.add(
+          UpdateModelCommandLevel(
+            squad: updatedSquad2,
+            model: model2,
+            commandLevel: Command.co,
+          ),
+        );
+      },
+      verify: (bloc) {
+        expect(bloc.state.squads, hasLength(2));
+        expect(bloc.state.squads[0].models.first.command, Command.firstIC);
+        expect(bloc.state.squads[1].models.first.command, Command.co);
       },
     );
   });
