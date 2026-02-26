@@ -39,6 +39,7 @@ class CommandLevelRule extends Rule {
   /// - Only one XO per roster (checked via allSquads)
   /// - A squad can only have one 1iC
   /// - A squad can include XO instead of a 2iC when a CO is present
+  /// - 1iC, CO, and XO can only be assigned to units with the squad's primary role
   bool canAssignCommandLevel({
     required Model model,
     required Command newCommandLevel,
@@ -48,6 +49,15 @@ class CommandLevelRule extends Rule {
     // None is always allowed
     if (newCommandLevel == Command.none) {
       return true;
+    }
+
+    // Check role constraint for command levels that require the primary role
+    if (newCommandLevel == Command.firstIC ||
+        newCommandLevel == Command.co ||
+        newCommandLevel == Command.xo) {
+      if (!model.roles.contains(squad.primaryRole)) {
+        return false;
+      }
     }
 
     // Get all models in the squad except the one being updated
@@ -80,10 +90,6 @@ class CommandLevelRule extends Rule {
       if (otherModelsInSquad.any((m) => m.command == Command.secondIC)) {
         return false;
       }
-      // 2iC cannot coexist with XO in the same squad
-      if (otherModelsInSquad.any((m) => m.command == Command.xo)) {
-        return false;
-      }
     }
 
     // Check roster-level constraints
@@ -107,10 +113,6 @@ class CommandLevelRule extends Rule {
       if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
         return false;
       }
-      // XO cannot coexist with 2iC in the same squad
-      if (otherModelsInSquad.any((m) => m.command == Command.secondIC)) {
-        return false;
-      }
     }
 
     return true;
@@ -125,6 +127,18 @@ class CommandLevelRule extends Rule {
   }) {
     if (newCommandLevel == Command.none) {
       return null;
+    }
+
+    // Check role constraint first
+    if (newCommandLevel == Command.firstIC ||
+        newCommandLevel == Command.co ||
+        newCommandLevel == Command.xo) {
+      if (!model.roles.contains(squad.primaryRole)) {
+        final commandName = newCommandLevel == Command.firstIC
+            ? '1iC'
+            : (newCommandLevel == Command.co ? 'CO' : 'XO');
+        return 'This unit does not have the required role (${squad.primaryRole.abbreviation}) to be a $commandName.';
+      }
     }
 
     final otherModelsInSquad = squad.models
@@ -150,9 +164,6 @@ class CommandLevelRule extends Rule {
       if (otherModelsInSquad.any((m) => m.command == Command.secondIC)) {
         return 'This squad already has a 2iC.';
       }
-      if (otherModelsInSquad.any((m) => m.command == Command.xo)) {
-        return 'A squad cannot have both a 2iC and an XO.';
-      }
     }
 
     if (newCommandLevel == Command.co) {
@@ -171,9 +182,6 @@ class CommandLevelRule extends Rule {
       if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
         return 'A squad cannot have a 1iC alongside an XO.';
       }
-      if (otherModelsInSquad.any((m) => m.command == Command.secondIC)) {
-        return 'A squad cannot have both a 2iC and an XO.';
-      }
     }
 
     return null;
@@ -184,9 +192,9 @@ class CommandLevelRule extends Rule {
   ///
   /// This enables automatic replacement behavior:
   /// - Assigning 1iC clears any existing 1iC, CO, or XO in the squad
-  /// - Assigning 2iC clears any existing 2iC or XO in the squad
+  /// - Assigning 2iC clears any existing 2iC in the squad
   /// - Assigning CO clears any existing CO in the roster and any 1iC in the squad
-  /// - Assigning XO clears any existing XO in the roster and any 1iC or 2iC in the squad
+  /// - Assigning XO clears any existing XO in the roster and any 1iC in the squad
   List<({Squad squad, Model model})> getModelsToClear({
     required Model model,
     required Command newCommandLevel,
@@ -240,12 +248,6 @@ class CommandLevelRule extends Rule {
           modelsToClear.add((squad: squad, model: m));
         }
       }
-      // Clear any XO in the squad (XO is an alternative to 2iC)
-      for (final m in otherModelsInSquad) {
-        if (m.command == Command.xo) {
-          modelsToClear.add((squad: squad, model: m));
-        }
-      }
     }
 
     if (newCommandLevel == Command.co) {
@@ -276,9 +278,9 @@ class CommandLevelRule extends Rule {
           }
         }
       }
-      // Clear any 1iC or 2iC in the squad (XO is an alternative to 2iC)
+      // Clear any 1iC in the squad
       for (final m in otherModelsInSquad) {
-        if (m.command == Command.firstIC || m.command == Command.secondIC) {
+        if (m.command == Command.firstIC) {
           modelsToClear.add((squad: squad, model: m));
         }
       }

@@ -252,7 +252,7 @@ void main() {
         );
       });
 
-      test('should not allow 2iC in squad that has XO', () {
+      test('should allow 2iC in squad that has XO', () {
         final squadWithXO = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.xo),
@@ -267,7 +267,7 @@ void main() {
             squad: squadWithXO,
             allSquads: [squadWithXO, squad2],
           ),
-          false,
+          true,
         );
       });
     });
@@ -407,7 +407,7 @@ void main() {
         );
       });
 
-      test('should not allow XO in squad that has 2iC', () {
+      test('should allow XO in squad that has 2iC', () {
         final squadWith2iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.secondIC),
@@ -422,9 +422,221 @@ void main() {
             squad: squadWith2iC,
             allSquads: [squadWith2iC, squad2],
           ),
-          false,
+          true,
         );
       });
+    });
+
+    group('role constraints for command assignments', () {
+      late Model modelWithGPRole;
+      late Model modelWithStrikeRole;
+      late Squad squadWithGPRole;
+
+      setUp(() {
+        final baseGP = ModelBase(
+          'GP Model',
+          tv: 10,
+          roles: {Role.gp},
+          movement: Movement([MovementType.walker], 6),
+          armor: Armor(5),
+          hullStructure: HullStructure(hull: 4, structure: 3),
+          actions: UnitActions(2),
+          gu: Skill(4),
+          pi: Skill(5),
+          ew: Skill(6),
+          weapons: [],
+          traits: [],
+          height: 1.5,
+          classification: Classification.gear,
+        );
+
+        final baseStrike = ModelBase(
+          'Strike Model',
+          tv: 8,
+          roles: {Role.sk},
+          movement: Movement([MovementType.walker], 8),
+          armor: Armor(3),
+          hullStructure: HullStructure(hull: 3, structure: 2),
+          actions: UnitActions(3),
+          gu: Skill(3),
+          pi: Skill(4),
+          ew: Skill(5),
+          weapons: [],
+          traits: [],
+          height: 1.0,
+          classification: Classification.gear,
+        );
+
+        modelWithGPRole = Model(
+          id: 10,
+          base: baseGP,
+          variant: Variant('GP Model', id: '1', tv: 0),
+        );
+
+        modelWithStrikeRole = Model(
+          id: 11,
+          base: baseStrike,
+          variant: Variant('Strike Model', id: '1', tv: 0),
+        );
+
+        squadWithGPRole = Squad(
+          id: 10,
+          name: 'GP Squad',
+          primaryRole: Role.gp,
+          models: [modelWithGPRole, modelWithStrikeRole],
+          upgrades: const [],
+        );
+      });
+
+      test(
+        'should allow 1iC assignment to model with matching primary role',
+        () {
+          expect(
+            rule.canAssignCommandLevel(
+              model: modelWithGPRole,
+              newCommandLevel: Command.firstIC,
+              squad: squadWithGPRole,
+              allSquads: [squadWithGPRole],
+            ),
+            true,
+          );
+        },
+      );
+
+      test(
+        'should not allow 1iC assignment to model without matching primary role',
+        () {
+          expect(
+            rule.canAssignCommandLevel(
+              model: modelWithStrikeRole,
+              newCommandLevel: Command.firstIC,
+              squad: squadWithGPRole,
+              allSquads: [squadWithGPRole],
+            ),
+            false,
+          );
+        },
+      );
+
+      test(
+        'should allow CO assignment to model with matching primary role',
+        () {
+          expect(
+            rule.canAssignCommandLevel(
+              model: modelWithGPRole,
+              newCommandLevel: Command.co,
+              squad: squadWithGPRole,
+              allSquads: [squadWithGPRole],
+            ),
+            true,
+          );
+        },
+      );
+
+      test(
+        'should not allow CO assignment to model without matching primary role',
+        () {
+          expect(
+            rule.canAssignCommandLevel(
+              model: modelWithStrikeRole,
+              newCommandLevel: Command.co,
+              squad: squadWithGPRole,
+              allSquads: [squadWithGPRole],
+            ),
+            false,
+          );
+        },
+      );
+
+      test(
+        'should allow XO assignment to model with matching primary role',
+        () {
+          expect(
+            rule.canAssignCommandLevel(
+              model: modelWithGPRole,
+              newCommandLevel: Command.xo,
+              squad: squadWithGPRole,
+              allSquads: [squadWithGPRole],
+            ),
+            true,
+          );
+        },
+      );
+
+      test(
+        'should not allow XO assignment to model without matching primary role',
+        () {
+          expect(
+            rule.canAssignCommandLevel(
+              model: modelWithStrikeRole,
+              newCommandLevel: Command.xo,
+              squad: squadWithGPRole,
+              allSquads: [squadWithGPRole],
+            ),
+            false,
+          );
+        },
+      );
+
+      test('should allow 2iC assignment to any model (role not required)', () {
+        expect(
+          rule.canAssignCommandLevel(
+            model: modelWithStrikeRole,
+            newCommandLevel: Command.secondIC,
+            squad: squadWithGPRole,
+            allSquads: [squadWithGPRole],
+          ),
+          true,
+        );
+      });
+
+      test(
+        'should return error message when model lacks required role for 1iC',
+        () {
+          final message = rule.getValidationMessage(
+            model: modelWithStrikeRole,
+            newCommandLevel: Command.firstIC,
+            squad: squadWithGPRole,
+            allSquads: [squadWithGPRole],
+          );
+
+          expect(message, isNotNull);
+          expect(message, contains('required role'));
+          expect(message, contains('GP'));
+        },
+      );
+
+      test(
+        'should return error message when model lacks required role for CO',
+        () {
+          final message = rule.getValidationMessage(
+            model: modelWithStrikeRole,
+            newCommandLevel: Command.co,
+            squad: squadWithGPRole,
+            allSquads: [squadWithGPRole],
+          );
+
+          expect(message, isNotNull);
+          expect(message, contains('required role'));
+          expect(message, contains('GP'));
+        },
+      );
+
+      test(
+        'should return error message when model lacks required role for XO',
+        () {
+          final message = rule.getValidationMessage(
+            model: modelWithStrikeRole,
+            newCommandLevel: Command.xo,
+            squad: squadWithGPRole,
+            allSquads: [squadWithGPRole],
+          );
+
+          expect(message, isNotNull);
+          expect(message, contains('required role'));
+          expect(message, contains('GP'));
+        },
+      );
     });
 
     group('validation messages', () {
@@ -504,7 +716,7 @@ void main() {
         expect(message, contains('cannot have a 1iC alongside a CO'));
       });
 
-      test('should return message when XO conflicts with 2iC', () {
+      test('should return null message when XO coexists with 2iC', () {
         final squadWith2iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.secondIC),
@@ -519,8 +731,7 @@ void main() {
           allSquads: [squadWith2iC, squad2],
         );
 
-        expect(message, isNotNull);
-        expect(message, contains('cannot have both a 2iC and an XO'));
+        expect(message, isNull);
       });
     });
 
@@ -615,7 +826,7 @@ void main() {
         expect(modelsToClear.first.model.id, model1.id);
       });
 
-      test('should identify XO to clear when assigning 2iC in same squad', () {
+      test('should not clear XO when assigning 2iC in same squad', () {
         final squadWithXO = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.xo),
@@ -630,9 +841,7 @@ void main() {
           allSquads: [squadWithXO, squad2],
         );
 
-        expect(modelsToClear, hasLength(1));
-        expect(modelsToClear.first.model.id, model1.id);
-        expect(modelsToClear.first.model.command, Command.xo);
+        expect(modelsToClear, isEmpty);
       });
 
       test(
@@ -694,7 +903,7 @@ void main() {
         },
       );
 
-      test('should identify 2iC to clear when assigning XO in same squad', () {
+      test('should not clear 2iC when assigning XO in same squad', () {
         final squadWith2iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.secondIC),
@@ -709,9 +918,7 @@ void main() {
           allSquads: [squadWith2iC, squad2],
         );
 
-        expect(modelsToClear, hasLength(1));
-        expect(modelsToClear.first.model.id, model1.id);
-        expect(modelsToClear.first.model.command, Command.secondIC);
+        expect(modelsToClear, isEmpty);
       });
 
       test(

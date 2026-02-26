@@ -77,7 +77,13 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onAddModel(AddModel event, Emitter<RosterState> emit) {
-    final shouldAssignFirstIc = !_hasRequiredCommand(event.squad.models);
+    // Only auto-assign 1iC if the squad needs a required command AND the new model has the primary role
+    final needsRequiredCommand = !_hasRequiredCommand(event.squad.models);
+    final modelHasPrimaryRole = event.base.roles.contains(
+      event.squad.primaryRole,
+    );
+    final shouldAssignFirstIc = needsRequiredCommand && modelHasPrimaryRole;
+
     final newModel = Model(
       id: _nextModelId + 1,
       base: event.base,
@@ -313,8 +319,11 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       return squad;
     }
 
+    // Find a model with Command.none that has the squad's primary role
     final index = squad.models.indexWhere(
-      (model) => model.command == Command.none,
+      (model) =>
+          model.command == Command.none &&
+          model.roles.contains(squad.primaryRole),
     );
     if (index == -1) {
       return squad;
