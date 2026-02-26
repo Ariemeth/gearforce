@@ -7,7 +7,6 @@ class DefaultRuleSet extends RuleSet {
   DefaultRuleSet()
     : super(
         name: 'Default Rule Set',
-        rules: [],
         assetTable: AssetTable(
           greenSquads: 1,
           veteranSquads: 2,

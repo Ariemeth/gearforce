@@ -77,14 +77,20 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onAddModel(AddModel event, Emitter<RosterState> emit) {
-    _nextModelId++;
-    final model = Model(
-      id: _nextModelId,
+    final newModel = Model(
+      id: _nextModelId + 1,
       base: event.base,
       variant: event.variant,
     );
+
+    if (!state.ruleSet.canAddUnitToSquad(squad: event.squad, unit: newModel)) {
+      return;
+    }
+
+    _nextModelId++;
+
     final updatedSquad = event.squad.copyWith(
-      models: [...event.squad.models, model],
+      models: [...event.squad.models, newModel],
     );
     final updatedSquadState = state.squadState.updateSquad(updatedSquad);
     emit(state.copyWith(squadState: updatedSquadState));
