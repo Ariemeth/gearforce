@@ -36,4 +36,14 @@ class AssetTable {
       airSupport = null,
       artillerySupport = null,
       droneSupport = null;
+
+  const AssetTable.one()
+    : greenSquads = 1,
+      regularSquads = 1,
+      veteranSquads = 1,
+      eliteSquads = 1,
+      duelistOrAces = 1,
+      airSupport = 1,
+      artillerySupport = 1,
+      droneSupport = 1;
 }

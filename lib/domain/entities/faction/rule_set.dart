@@ -3,6 +3,8 @@ import 'package:gearforce/domain/entities/faction/asset_table.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
 import 'package:gearforce/data/static/rules/base/command_level_rule.dart';
 import 'package:gearforce/data/static/rules/base/squad_size_rule.dart';
+import 'package:gearforce/data/static/rules/base/unit_level_rule.dart';
+import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
@@ -13,17 +15,19 @@ abstract class RuleSet {
   final List<Rule> extraRules;
   final SquadSizeRule squadSizeRule;
   final CommandLevelRule commandLevelRule;
+  final UnitLevelRule unitLevelRule;
 
   const RuleSet({
     required this.name,
     this.squadSizeRule = SquadSizeRule.standard,
     this.commandLevelRule = CommandLevelRule.standard,
+    this.unitLevelRule = UnitLevelRule.standard,
     this.extraRules = const [],
     required this.assetTable,
   });
 
   List<Rule> get rules {
-    return [squadSizeRule, commandLevelRule, ...extraRules];
+    return [squadSizeRule, commandLevelRule, unitLevelRule, ...extraRules];
   }
 
   List<Rule> get activeRules {
@@ -48,6 +52,21 @@ abstract class RuleSet {
 
   bool canAddUnitToSquad({required Squad squad, required Model unit}) {
     return _resolvedSquadSizeRule.canAddModel(squad.models, unit);
+  }
+
+  bool canAssignUnitLevel({
+    required Model model,
+    required UnitLevel newLevel,
+    required Squad squad,
+    required List<Squad> allSquads,
+  }) {
+    return _resolvedUnitLevelRule.canAssignUnitLevel(
+      model: model,
+      newLevel: newLevel,
+      squad: squad,
+      allSquads: allSquads,
+      assetTable: assetTable,
+    );
   }
 
   Future<List<Unit>> getAvailableUnits();
@@ -112,5 +131,15 @@ abstract class RuleSet {
     }
 
     return commandLevelRule;
+  }
+
+  UnitLevelRule get _resolvedUnitLevelRule {
+    for (final rule in activeRules.reversed) {
+      if (rule is UnitLevelRule) {
+        return rule;
+      }
+    }
+
+    return unitLevelRule;
   }
 }

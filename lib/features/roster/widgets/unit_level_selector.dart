@@ -16,29 +16,39 @@ class UnitLevelSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        DropdownButton<UnitLevel>(
-          value: model.level,
-          menuWidth: 90.0,
-          items: UnitLevel.values
-              .map(
-                (lvl) => DropdownMenuItem<UnitLevel>(
+    return BlocBuilder<RosterBloc, RosterState>(
+      builder: (context, state) {
+        return Row(
+          children: [
+            DropdownButton<UnitLevel>(
+              value: model.level,
+              menuWidth: 90.0,
+              items: UnitLevel.values.map((lvl) {
+                final canSelect = state.ruleSet.canAssignUnitLevel(
+                  model: model,
+                  newLevel: lvl,
+                  squad: squad,
+                  allSquads: state.squads,
+                );
+
+                return DropdownMenuItem<UnitLevel>(
                   value: lvl,
+                  enabled: canSelect,
                   child: Text(lvl.name),
-                ),
-              )
-              .toList(),
-          onChanged: (newLevel) {
-            if (newLevel == model.level || newLevel == null) {
-              return;
-            }
-            context.read<RosterBloc>().add(
-              UpdateModelLevel(model: model, squad: squad, level: newLevel),
-            );
-          },
-        ),
-      ],
+                );
+              }).toList(),
+              onChanged: (newLevel) {
+                if (newLevel == model.level || newLevel == null) {
+                  return;
+                }
+                context.read<RosterBloc>().add(
+                  UpdateModelLevel(model: model, squad: squad, level: newLevel),
+                );
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

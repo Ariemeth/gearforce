@@ -47,7 +47,10 @@ class Model {
   Skill get pi => getAttribute(ModelAttribute.pi);
   Skill get ew => getAttribute(ModelAttribute.ew);
   List<WeaponSpec> get weapons => getAttribute(ModelAttribute.weapons);
-  List<Trait> get traits => getAttribute(ModelAttribute.traits);
+  List<Trait> get traits => [
+    ...getAttribute(ModelAttribute.traits),
+    if (level == UnitLevel.green) Trait.green(),
+  ];
   double get height => base.height;
 
   Model copyWith({

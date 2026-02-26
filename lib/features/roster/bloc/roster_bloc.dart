@@ -117,6 +117,16 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onUpdateModelLevel(UpdateModelLevel event, Emitter<RosterState> emit) {
+    final canAssignLevel = state.ruleSet.canAssignUnitLevel(
+      model: event.model,
+      newLevel: event.level,
+      squad: event.squad,
+      allSquads: state.squads,
+    );
+    if (!canAssignLevel) {
+      return;
+    }
+
     final updatedSquad = event.squad.copyWith(
       models: [
         for (final m in event.squad.models)
