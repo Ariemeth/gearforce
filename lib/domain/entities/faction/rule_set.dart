@@ -1,6 +1,6 @@
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
-import 'package:gearforce/domain/entities/faction/squad_size_rule.dart';
+import 'package:gearforce/data/static/rules/base/squad_size_rule.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
@@ -8,8 +8,8 @@ import 'package:gearforce/domain/entities/unit/unit.dart';
 abstract class RuleSet {
   final String name;
   final AssetTable assetTable;
-  final SquadSizeRule squadSizeRule;
   final List<Rule> extraRules;
+  final SquadSizeRule squadSizeRule;
 
   const RuleSet({
     required this.name,
@@ -20,16 +20,6 @@ abstract class RuleSet {
 
   List<Rule> get rules {
     return [squadSizeRule, ...extraRules];
-  }
-
-  SquadSizeRule get _resolvedSquadSizeRule {
-    for (final rule in activeRules.reversed) {
-      if (rule is SquadSizeRule) {
-        return rule;
-      }
-    }
-
-    return squadSizeRule;
   }
 
   List<Rule> get activeRules {
@@ -53,4 +43,14 @@ abstract class RuleSet {
   }
 
   Future<List<Unit>> getAvailableUnits();
+
+  SquadSizeRule get _resolvedSquadSizeRule {
+    for (final rule in activeRules.reversed) {
+      if (rule is SquadSizeRule) {
+        return rule;
+      }
+    }
+
+    return squadSizeRule;
+  }
 }

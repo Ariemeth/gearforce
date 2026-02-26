@@ -12,7 +12,7 @@ import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
 import 'package:gearforce/domain/entities/faction/rule_set.dart';
-import 'package:gearforce/domain/entities/faction/squad_size_rule.dart';
+import 'package:gearforce/data/static/rules/base/squad_size_rule.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
