@@ -48,7 +48,7 @@ void main() {
     test('specialized rulesets can include extra rules', () {
       final ruleSet = _TestRuleSet(
         extraRules: const [
-          const Rule(
+          Rule(
             name: 'North Extra Rule',
             id: 'north-extra-rule',
             description: 'Example specialized rule',
