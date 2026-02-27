@@ -4,6 +4,7 @@ import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
+import 'package:gearforce/features/roster/screens/model_details_screen.dart';
 import 'package:gearforce/features/roster/widgets/command_level_selector.dart';
 import 'package:gearforce/features/roster/widgets/unit_level_selector.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -19,6 +20,15 @@ class ModelListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(model.name, style: AppTheme.squadUnitNameStyle),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            builder: (context) =>
+                ModelDetailsScreen(squadId: squad.id, modelId: model.id),
+          ),
+        );
+      },
       subtitle: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
