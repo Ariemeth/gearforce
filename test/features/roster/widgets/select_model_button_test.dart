@@ -11,6 +11,7 @@ import 'package:gearforce/domain/entities/attribute/movement_type.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
+import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
@@ -22,7 +23,7 @@ import 'package:gearforce/features/roster/widgets/select_model_button.dart';
 
 class _MockUnitRepository implements UnitRepository {
   @override
-  Future<List<Unit>> getUnitsByFaction(String factionId) async => const [];
+  Future<List<Unit>> getUnitsByFaction(Faction faction) async => const [];
 }
 
 Widget _testApp({required Widget child, required RosterBloc bloc}) {

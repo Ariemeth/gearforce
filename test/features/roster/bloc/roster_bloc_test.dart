@@ -21,7 +21,7 @@ import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 
 class MockUnitRepository implements UnitRepository {
   @override
-  Future<List<Unit>> getUnitsByFaction(String factionId) async {
+  Future<List<Unit>> getUnitsByFaction(Faction faction) async {
     return const [];
   }
 }

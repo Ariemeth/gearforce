@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer' as developer;
 import 'package:meta/meta.dart';
 import 'package:flutter/services.dart';
+import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
 
@@ -9,8 +10,8 @@ class JsonUnitRepository implements UnitRepository {
   final Map<String, List<Unit>> _cache = {};
 
   @override
-  Future<List<Unit>> getUnitsByFaction(String factionId) async {
-    final lowerFactionId = factionId.toLowerCase();
+  Future<List<Unit>> getUnitsByFaction(Faction faction) async {
+    final lowerFactionId = faction.name.toLowerCase();
     if (_cache.containsKey(lowerFactionId)) {
       return _cache[lowerFactionId]!;
     }
@@ -25,7 +26,7 @@ class JsonUnitRepository implements UnitRepository {
       return units;
     } catch (e) {
       developer.log(
-        'Error loading units for $factionId: $e',
+        'Error loading units for ${faction.name}: $e',
         name: 'JsonUnitRepository',
         error: e,
       );

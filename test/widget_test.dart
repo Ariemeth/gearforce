@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/core/generated/i18n/app_localizations.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
+import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
@@ -13,7 +14,7 @@ import 'package:gearforce/features/roster/widgets/squad_display.dart';
 
 class MockUnitRepository implements UnitRepository {
   @override
-  Future<List<Unit>> getUnitsByFaction(String factionId) async => const [];
+  Future<List<Unit>> getUnitsByFaction(Faction faction) async => const [];
 }
 
 /// Wraps a widget with MaterialApp, localization delegates, and RosterBloc.

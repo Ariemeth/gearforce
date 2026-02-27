@@ -7,8 +7,7 @@ class UnitFactory {
     UnitRepository unitRepository,
     Faction faction,
   ) async {
-    final factionId = faction.name.toLowerCase();
-    return await unitRepository.getUnitsByFaction(factionId);
+    return await unitRepository.getUnitsByFaction(faction);
   }
 
   static Future<Unit?> getUnitByName(
