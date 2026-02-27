@@ -37,7 +37,11 @@ class Model {
   }) : _upgrades = upgrades ?? [];
 
   String get name => getAttribute(ModelAttribute.name);
-  int get tv => getAttribute(ModelAttribute.tv) + level.cost + command.cost;
+  int get tv =>
+      getAttribute(ModelAttribute.tv) +
+      level.cost +
+      command.cost +
+      (isDuelist ? 1 : 0);
   Set<Role> get roles => getAttribute(ModelAttribute.roles);
   Movement get movement => getAttribute(ModelAttribute.movement);
   Armor get armor => getAttribute(ModelAttribute.armor);

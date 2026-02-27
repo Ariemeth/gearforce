@@ -9,6 +9,7 @@ import 'package:gearforce/domain/entities/attribute/movement_type.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
+import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
@@ -25,7 +26,7 @@ void main() {
     test('includes standard rules by default', () {
       final ruleSet = DefaultRuleSet();
 
-      expect(ruleSet.rules.length, 3);
+      expect(ruleSet.rules.length, 4);
       expect(ruleSet.rules.first, isA<SquadSizeRule>());
       expect((ruleSet.rules.first as SquadSizeRule).id, 'squad-size-rule');
     });
@@ -42,7 +43,7 @@ void main() {
         ],
       );
 
-      expect(ruleSet.activeRules.length, 3);
+      expect(ruleSet.activeRules.length, 4);
       expect(ruleSet.activeRules.first.id, 'squad-size-rule');
     });
 
@@ -57,7 +58,7 @@ void main() {
         ],
       );
 
-      expect(ruleSet.rules.length, 4);
+      expect(ruleSet.rules.length, 5);
       expect(ruleSet.rules.first.id, 'squad-size-rule');
       expect(ruleSet.rules.last.id, 'north-extra-rule');
     });
@@ -200,6 +201,100 @@ void main() {
           ruleSet.canAddUnitToSquad(squad: squad, unit: _buildModel(id: 100)),
           isFalse,
         );
+      },
+    );
+  });
+
+  group('RuleSet command level management', () {
+    late RuleSet ruleSet;
+    late Squad squad;
+
+    setUp(() {
+      ruleSet = DefaultRuleSet();
+      squad = Squad(
+        id: 1,
+        name: 'Test Squad',
+        primaryRole: Role.gp,
+        models: const [],
+      );
+    });
+
+    test(
+      'shouldClearCommandOnLevelChange returns true when green with command',
+      () {
+        final model = _buildModel(id: 1, command: Command.secondIC);
+
+        final shouldClear = ruleSet.shouldClearCommandOnLevelChange(
+          model: model,
+          newLevel: UnitLevel.green,
+          currentCommand: Command.secondIC,
+        );
+
+        expect(shouldClear, true);
+      },
+    );
+
+    test('shouldClearCommandOnLevelChange returns false when no command', () {
+      final model = _buildModel(id: 1);
+
+      final shouldClear = ruleSet.shouldClearCommandOnLevelChange(
+        model: model,
+        newLevel: UnitLevel.green,
+        currentCommand: Command.none,
+      );
+
+      expect(shouldClear, false);
+    });
+
+    test(
+      'shouldClearCommandOnLevelChange returns false when command is compatible',
+      () {
+        final model = _buildModel(id: 1, command: Command.secondIC);
+
+        final shouldClear = ruleSet.shouldClearCommandOnLevelChange(
+          model: model,
+          newLevel: UnitLevel.veteran,
+          currentCommand: Command.secondIC,
+        );
+
+        expect(shouldClear, false);
+      },
+    );
+
+    test('findEligibleUnitForCommandPromotion finds eligible unit', () {
+      final model1 = _buildModel(id: 1, command: Command.firstIC);
+      final model2 = _buildModel(id: 2);
+      final model3 = _buildModel(id: 3);
+
+      final squadWithModels = squad.copyWith(models: [model1, model2, model3]);
+
+      final eligible = ruleSet.findEligibleUnitForCommandPromotion(
+        commandLevel: Command.secondIC,
+        availableModels: [model2, model3],
+        squad: squadWithModels,
+        allSquads: [squadWithModels],
+      );
+
+      expect(eligible, isNotNull);
+      expect(eligible!.command, Command.none);
+    });
+
+    test(
+      'findEligibleUnitForCommandPromotion returns null when no eligible unit',
+      () {
+        final model1 = _buildModel(id: 1, command: Command.firstIC);
+        final model2 = _buildModel(id: 2, command: Command.secondIC);
+
+        final squadWithModels = squad.copyWith(models: [model1, model2]);
+
+        final eligible = ruleSet.findEligibleUnitForCommandPromotion(
+          commandLevel: Command.secondIC,
+          availableModels: [model2],
+          squad: squadWithModels,
+          allSquads: [squadWithModels],
+        );
+
+        expect(eligible, isNull);
       },
     );
   });

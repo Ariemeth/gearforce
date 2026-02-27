@@ -9,6 +9,7 @@ import 'package:gearforce/domain/entities/attribute/movement_type.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
+import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
@@ -138,7 +139,7 @@ void main() {
         },
       );
 
-      test('should not allow multiple 1iC in the same squad', () {
+      test('should allow reassigning 1iC in the same squad', () {
         final squadWith1iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.firstIC),
@@ -153,11 +154,11 @@ void main() {
             squad: squadWith1iC,
             allSquads: [squadWith1iC, squad2],
           ),
-          false,
+          true,
         );
       });
 
-      test('should not allow 1iC in squad that has CO', () {
+      test('should allow assigning 1iC in squad that has CO', () {
         final squadWithCO = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.co),
@@ -172,11 +173,11 @@ void main() {
             squad: squadWithCO,
             allSquads: [squadWithCO, squad2],
           ),
-          false,
+          true,
         );
       });
 
-      test('should not allow 1iC in squad that has XO', () {
+      test('should allow assigning 1iC in squad that has XO', () {
         final squadWithXO = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.xo),
@@ -191,7 +192,7 @@ void main() {
             squad: squadWithXO,
             allSquads: [squadWithXO, squad2],
           ),
-          false,
+          true,
         );
       });
     });
@@ -212,7 +213,7 @@ void main() {
         },
       );
 
-      test('should not allow multiple 2iC in the same squad', () {
+      test('should allow reassigning 2iC in the same squad', () {
         final squadWith2iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.secondIC),
@@ -227,7 +228,7 @@ void main() {
             squad: squadWith2iC,
             allSquads: [squadWith2iC, squad2],
           ),
-          false,
+          true,
         );
       });
 
@@ -283,7 +284,7 @@ void main() {
         );
       });
 
-      test('should not allow multiple CO in the roster', () {
+      test('should allow reassigning CO in the roster', () {
         final squad2WithCO = squad2.copyWith(
           models: [model3.copyWith(command: Command.co)],
         );
@@ -295,11 +296,11 @@ void main() {
             squad: squad1,
             allSquads: [squad1, squad2WithCO],
           ),
-          false,
+          true,
         );
       });
 
-      test('should not allow CO in squad that has 1iC', () {
+      test('should allow assigning CO in squad that has 1iC', () {
         final squadWith1iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.firstIC),
@@ -314,7 +315,7 @@ void main() {
             squad: squadWith1iC,
             allSquads: [squadWith1iC, squad2],
           ),
-          false,
+          true,
         );
       });
 
@@ -351,7 +352,7 @@ void main() {
         );
       });
 
-      test('should not allow multiple XO in the roster', () {
+      test('should allow reassigning XO in the roster', () {
         final squad2WithXO = squad2.copyWith(
           models: [model3.copyWith(command: Command.xo)],
         );
@@ -363,11 +364,11 @@ void main() {
             squad: squad1,
             allSquads: [squad1, squad2WithXO],
           ),
-          false,
+          true,
         );
       });
 
-      test('should not allow XO in squad that has 1iC', () {
+      test('should allow assigning XO in squad that has 1iC', () {
         final squadWith1iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.firstIC),
@@ -382,7 +383,7 @@ void main() {
             squad: squadWith1iC,
             allSquads: [squadWith1iC, squad2],
           ),
-          false,
+          true,
         );
       });
 
@@ -656,7 +657,7 @@ void main() {
         );
       });
 
-      test('should return message when 1iC already exists in squad', () {
+      test('should return null when 1iC already exists in squad', () {
         final squadWith1iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.firstIC),
@@ -671,11 +672,10 @@ void main() {
           allSquads: [squadWith1iC, squad2],
         );
 
-        expect(message, isNotNull);
-        expect(message, contains('already has a 1iC'));
+        expect(message, isNull);
       });
 
-      test('should return message when CO already exists in roster', () {
+      test('should return null when CO already exists in roster', () {
         final squad2WithCO = squad2.copyWith(
           models: [model3.copyWith(command: Command.co)],
         );
@@ -687,11 +687,10 @@ void main() {
           allSquads: [squad1, squad2WithCO],
         );
 
-        expect(message, isNotNull);
-        expect(message, contains('already has a CO'));
+        expect(message, isNull);
       });
 
-      test('should return message about squad exclusivity', () {
+      test('should return null when assigning CO in squad with 1iC', () {
         final squadWith1iC = squad1.copyWith(
           models: [
             model1.copyWith(command: Command.firstIC),
@@ -706,8 +705,7 @@ void main() {
           allSquads: [squadWith1iC, squad2],
         );
 
-        expect(message, isNotNull);
-        expect(message, contains('cannot have a 1iC alongside a CO'));
+        expect(message, isNull);
       });
 
       test('should return null message when XO coexists with 2iC', () {
@@ -940,6 +938,67 @@ void main() {
           expect(modelsToClear.any((e) => e.model.id == model3.id), true);
         },
       );
+    });
+
+    group('green unit constraints', () {
+      test('allows Command.none for green units', () {
+        final greenModel = model1.copyWith(level: UnitLevel.green);
+        final squad = squad1.copyWith(models: [greenModel, model2]);
+
+        final canAssign = rule.canAssignCommandLevel(
+          model: greenModel,
+          newCommandLevel: Command.none,
+          squad: squad,
+          allSquads: [squad],
+        );
+
+        expect(canAssign, true);
+      });
+
+      test('blocks any command level other than none for green units', () {
+        final greenModel = model1.copyWith(level: UnitLevel.green);
+        final squad = squad1.copyWith(models: [greenModel, model2]);
+
+        expect(
+          rule.canAssignCommandLevel(
+            model: greenModel,
+            newCommandLevel: Command.firstIC,
+            squad: squad,
+            allSquads: [squad],
+          ),
+          false,
+        );
+
+        expect(
+          rule.canAssignCommandLevel(
+            model: greenModel,
+            newCommandLevel: Command.secondIC,
+            squad: squad,
+            allSquads: [squad],
+          ),
+          false,
+        );
+
+        expect(
+          rule.canAssignCommandLevel(
+            model: greenModel,
+            newCommandLevel: Command.co,
+            squad: squad,
+            allSquads: [squad],
+          ),
+          false,
+        );
+
+        expect(
+          rule.canAssignCommandLevel(
+            model: greenModel,
+            newCommandLevel: Command.xo,
+            squad: squad,
+            allSquads: [squad],
+          ),
+          false,
+        );
+      });
     });
   });
 }

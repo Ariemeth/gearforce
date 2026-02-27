@@ -17,27 +17,37 @@ class CommandLevelSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<Command>(
-      value: model.command,
-      menuWidth: 90.0,
-      items: Command.values
-          .map(
-            (command) => DropdownMenuItem<Command>(
+    return BlocBuilder<RosterBloc, RosterState>(
+      builder: (context, state) {
+        return DropdownButton<Command>(
+          value: model.command,
+          menuWidth: 90.0,
+          items: Command.values.map((command) {
+            final canSelect = state.ruleSet.canAssignCommandLevel(
+              model: model,
+              newCommandLevel: command,
+              squad: squad,
+              allSquads: state.squads,
+            );
+
+            return DropdownMenuItem<Command>(
               value: command,
+              enabled: canSelect,
               child: Text(_labelForCommand(command)),
-            ),
-          )
-          .toList(),
-      onChanged: (newCommand) {
-        if (newCommand == null || newCommand == model.command) {
-          return;
-        }
-        context.read<RosterBloc>().add(
-          UpdateModelCommandLevel(
-            model: model,
-            squad: squad,
-            commandLevel: newCommand,
-          ),
+            );
+          }).toList(),
+          onChanged: (newCommand) {
+            if (newCommand == null || newCommand == model.command) {
+              return;
+            }
+            context.read<RosterBloc>().add(
+              UpdateModelCommandLevel(
+                model: model,
+                squad: squad,
+                commandLevel: newCommand,
+              ),
+            );
+          },
         );
       },
     );

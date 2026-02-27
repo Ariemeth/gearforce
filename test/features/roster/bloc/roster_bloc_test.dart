@@ -298,6 +298,182 @@ void main() {
         expect(bloc.state.squads.first.models.first.level, UnitLevel.veteran);
       },
     );
+
+    blocTest<RosterBloc, RosterState>(
+      'does not auto-promote to 2iC when 2iC becomes green',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        // Create squad with GP role
+        bloc.add(AddNewSquad(name: 'Auto Promote Squad', primaryRole: Role.gp));
+        await Future<void>.delayed(Duration.zero);
+        var squad = bloc.state.squads.first;
+
+        // Add model 1 (will auto-become 1iC)
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V1'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Add model 2 (will become 2iC)
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V2'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Add model 3
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V3'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+        final model2 = squad.models[1];
+
+        // Make model2 the 2iC
+        bloc.add(
+          UpdateModelCommandLevel(
+            squad: squad,
+            model: model2,
+            commandLevel: Command.secondIC,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Now make model2 green - model3 should NOT be promoted
+        var updatedModel2 = squad.models.firstWhere((m) => m.id == model2.id);
+        bloc.add(
+          UpdateModelLevel(
+            squad: squad,
+            model: updatedModel2,
+            level: UnitLevel.green,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        final model2 = squad.models[1];
+        final model3 = squad.models[2];
+
+        // model2 should be green with no command
+        expect(model2.level, UnitLevel.green);
+        expect(model2.command, Command.none);
+
+        // model3 should not be promoted (remains none)
+        expect(model3.command, Command.none);
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'auto-promotes another unit to 1iC when 1iC becomes green',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        // Create squad with GP role
+        bloc.add(
+          AddNewSquad(name: 'Promote to 1iC Squad', primaryRole: Role.gp),
+        );
+        await Future<void>.delayed(Duration.zero);
+        var squad = bloc.state.squads.first;
+
+        // Add model 1 (will auto-become 1iC)
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V1'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Add model 2
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V2'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+        final model1 = squad.models[0];
+
+        // Make model1 green - model2 should be promoted to 1iC
+        bloc.add(
+          UpdateModelLevel(squad: squad, model: model1, level: UnitLevel.green),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        final model1 = squad.models[0];
+        final model2 = squad.models[1];
+
+        // model1 should be green with no command
+        expect(model1.level, UnitLevel.green);
+        expect(model1.command, Command.none);
+
+        // model2 should be promoted to 1iC
+        expect(model2.command, Command.firstIC);
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'auto-assigns 1iC when unit changes from green back to regular',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        // Create squad with GP role
+        bloc.add(AddNewSquad(name: 'Auto Assign Squad', primaryRole: Role.gp));
+        await Future<void>.delayed(Duration.zero);
+        var squad = bloc.state.squads.first;
+
+        // Add only model (will auto-become 1iC)
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Make it green (command should become none)
+        var model = squad.models.first;
+        bloc.add(
+          UpdateModelLevel(squad: squad, model: model, level: UnitLevel.green),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Change it back to regular - should become 1iC
+        model = squad.models.first;
+        bloc.add(
+          UpdateModelLevel(
+            squad: squad,
+            model: model,
+            level: UnitLevel.regular,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final model = bloc.state.squads.first.models.first;
+        expect(model.level, UnitLevel.regular);
+        expect(model.command, Command.firstIC);
+      },
+    );
   });
 
   group('UpdateModelIsDuelist', () {
@@ -473,6 +649,68 @@ void main() {
         expect(bloc.state.squads, hasLength(2));
         expect(bloc.state.squads[0].models.first.command, Command.firstIC);
         expect(bloc.state.squads[1].models.first.command, Command.co);
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'does not auto-assign 1iC to green unit when assigning 2iC',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Mixed Squad', primaryRole: Role.gp));
+        await Future<void>.delayed(Duration.zero);
+        var squad = bloc.state.squads.first;
+
+        // Add first model
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V1'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Add second model
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V2'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Make first model green
+        final model1 = squad.models[0];
+        bloc.add(
+          UpdateModelLevel(squad: squad, model: model1, level: UnitLevel.green),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = bloc.state.squads.first;
+
+        // Assign 2iC to second model - should NOT auto-assign 1iC to green unit
+        final model2 = squad.models[1];
+        bloc.add(
+          UpdateModelCommandLevel(
+            squad: squad,
+            model: model2,
+            commandLevel: Command.secondIC,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        final model1 = squad.models[0];
+        final model2 = squad.models[1];
+
+        // model1 should remain green with no command
+        expect(model1.level, UnitLevel.green);
+        expect(model1.command, Command.none);
+
+        // model2 should have 2iC
+        expect(model2.command, Command.secondIC);
       },
     );
   });

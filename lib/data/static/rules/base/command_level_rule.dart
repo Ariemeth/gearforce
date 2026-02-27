@@ -1,4 +1,5 @@
 import 'package:gearforce/domain/entities/attribute/command.dart';
+import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
@@ -51,66 +52,16 @@ class CommandLevelRule extends Rule {
       return true;
     }
 
+    // Green units can only have Command.none
+    if (model.level == UnitLevel.green) {
+      return false;
+    }
+
     // Check role constraint for command levels that require the primary role
     if (newCommandLevel == Command.firstIC ||
         newCommandLevel == Command.co ||
         newCommandLevel == Command.xo) {
       if (!model.roles.contains(squad.primaryRole)) {
-        return false;
-      }
-    }
-
-    // Get all models in the squad except the one being updated
-    final otherModelsInSquad = squad.models
-        .where((m) => m.id != model.id)
-        .toList();
-
-    // Get all models in all squads except the one being updated
-    final allOtherModels = allSquads
-        .expand((s) => s.models)
-        .where((m) => m.id != model.id)
-        .toList();
-
-    // Check squad-level constraints
-    if (newCommandLevel == Command.firstIC) {
-      // Only one 1iC per squad
-      if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
-        return false;
-      }
-      // 1iC cannot coexist with CO or XO
-      if (otherModelsInSquad.any(
-        (m) => m.command == Command.co || m.command == Command.xo,
-      )) {
-        return false;
-      }
-    }
-
-    if (newCommandLevel == Command.secondIC) {
-      // Only one 2iC per squad
-      if (otherModelsInSquad.any((m) => m.command == Command.secondIC)) {
-        return false;
-      }
-    }
-
-    // Check roster-level constraints
-    if (newCommandLevel == Command.co) {
-      // Only one CO per roster
-      if (allOtherModels.any((m) => m.command == Command.co)) {
-        return false;
-      }
-      // CO cannot coexist with 1iC
-      if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
-        return false;
-      }
-    }
-
-    if (newCommandLevel == Command.xo) {
-      // Only one XO per roster
-      if (allOtherModels.any((m) => m.command == Command.xo)) {
-        return false;
-      }
-      // XO cannot coexist with 1iC
-      if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
         return false;
       }
     }
@@ -138,49 +89,6 @@ class CommandLevelRule extends Rule {
             ? '1iC'
             : (newCommandLevel == Command.co ? 'CO' : 'XO');
         return 'This unit does not have the required role (${squad.primaryRole.abbreviation}) to be a $commandName.';
-      }
-    }
-
-    final otherModelsInSquad = squad.models
-        .where((m) => m.id != model.id)
-        .toList();
-    final allOtherModels = allSquads
-        .expand((s) => s.models)
-        .where((m) => m.id != model.id)
-        .toList();
-
-    if (newCommandLevel == Command.firstIC) {
-      if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
-        return 'This squad already has a 1iC.';
-      }
-      if (otherModelsInSquad.any(
-        (m) => m.command == Command.co || m.command == Command.xo,
-      )) {
-        return 'A squad cannot have a 1iC alongside a CO or XO.';
-      }
-    }
-
-    if (newCommandLevel == Command.secondIC) {
-      if (otherModelsInSquad.any((m) => m.command == Command.secondIC)) {
-        return 'This squad already has a 2iC.';
-      }
-    }
-
-    if (newCommandLevel == Command.co) {
-      if (allOtherModels.any((m) => m.command == Command.co)) {
-        return 'The roster already has a CO.';
-      }
-      if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
-        return 'A squad cannot have a 1iC alongside a CO.';
-      }
-    }
-
-    if (newCommandLevel == Command.xo) {
-      if (allOtherModels.any((m) => m.command == Command.xo)) {
-        return 'The roster already has an XO.';
-      }
-      if (otherModelsInSquad.any((m) => m.command == Command.firstIC)) {
-        return 'A squad cannot have a 1iC alongside an XO.';
       }
     }
 

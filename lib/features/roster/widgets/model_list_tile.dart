@@ -7,6 +7,7 @@ import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/screens/model_details_screen.dart';
 import 'package:gearforce/features/roster/widgets/command_level_selector.dart';
 import 'package:gearforce/features/roster/widgets/unit_level_selector.dart';
+import 'package:gearforce/features/roster/widgets/duelist_toggle.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
 /// A list tile displaying a model's name, TV, level selector, and delete button.
@@ -37,6 +38,8 @@ class ModelListTile extends StatelessWidget {
             style: AppTheme.squadUnitBodyStyle,
           ),
           const Spacer(),
+          DuelistToggle(squad: squad, model: model),
+          const SizedBox(width: 8),
           CommandLevelSelector(squad: squad, model: model),
           const SizedBox(width: 8),
           UnitLevelSelector(squad: squad, model: model),
