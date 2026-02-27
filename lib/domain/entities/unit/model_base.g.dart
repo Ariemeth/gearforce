@@ -21,8 +21,19 @@ ModelBase _$ModelBaseFromJson(Map<String, dynamic> json) => ModelBase(
   gu: Skill.fromJson(json['gu']),
   pi: Skill.fromJson(json['pi']),
   ew: Skill.fromJson(json['ew']),
-  weapons: const WeaponSpecListConverter().fromJson(json['weapons'] as List),
-  traits: const TraitListConverter().fromJson(json['traits'] as List),
+  reactWeapons: json['reactWeapons'] == null
+      ? const []
+      : const ReactWeaponSpecListConverter().fromJson(
+          json['reactWeapons'] as List,
+        ),
+  mountedWeapons: json['mountedWeapons'] == null
+      ? const []
+      : const MountedWeaponSpecListConverter().fromJson(
+          json['mountedWeapons'] as List,
+        ),
+  traits: json['traits'] == null
+      ? const []
+      : const TraitListConverter().fromJson(json['traits'] as List),
   height: (json['height'] as num).toDouble(),
   classification: $enumDecode(_$ClassificationEnumMap, json['classification']),
   subtype: json['subtype'] as String?,
@@ -41,7 +52,12 @@ Map<String, dynamic> _$ModelBaseToJson(ModelBase instance) => <String, dynamic>{
   'gu': instance.gu,
   'pi': instance.pi,
   'ew': instance.ew,
-  'weapons': const WeaponSpecListConverter().toJson(instance.weapons),
+  'reactWeapons': const ReactWeaponSpecListConverter().toJson(
+    instance.reactWeapons,
+  ),
+  'mountedWeapons': const MountedWeaponSpecListConverter().toJson(
+    instance.mountedWeapons,
+  ),
   'traits': const TraitListConverter().toJson(instance.traits),
   'height': instance.height,
   'classification': _$ClassificationEnumMap[instance.classification]!,

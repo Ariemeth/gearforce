@@ -26,9 +26,13 @@ Variant _$VariantFromJson(Map<String, dynamic> json) => Variant(
   gu: json['gu'] == null ? null : Skill.fromJson(json['gu']),
   pi: json['pi'] == null ? null : Skill.fromJson(json['pi']),
   ew: json['ew'] == null ? null : Skill.fromJson(json['ew']),
-  weapons: _$JsonConverterFromJson<List<dynamic>, List<WeaponSpec>>(
-    json['weapons'],
-    const WeaponSpecListConverter().fromJson,
+  reactWeapons: _$JsonConverterFromJson<List<dynamic>, List<WeaponSpec>>(
+    json['reactWeapons'],
+    const ReactWeaponSpecListConverter().fromJson,
+  ),
+  mountedWeapons: _$JsonConverterFromJson<List<dynamic>, List<WeaponSpec>>(
+    json['mountedWeapons'],
+    const MountedWeaponSpecListConverter().fromJson,
   ),
   traits: _$JsonConverterFromJson<List<dynamic>, List<Trait>>(
     json['traits'],
@@ -48,9 +52,13 @@ Map<String, dynamic> _$VariantToJson(Variant instance) => <String, dynamic>{
   'gu': instance.gu,
   'pi': instance.pi,
   'ew': instance.ew,
-  'weapons': _$JsonConverterToJson<List<dynamic>, List<WeaponSpec>>(
-    instance.weapons,
-    const WeaponSpecListConverter().toJson,
+  'reactWeapons': _$JsonConverterToJson<List<dynamic>, List<WeaponSpec>>(
+    instance.reactWeapons,
+    const ReactWeaponSpecListConverter().toJson,
+  ),
+  'mountedWeapons': _$JsonConverterToJson<List<dynamic>, List<WeaponSpec>>(
+    instance.mountedWeapons,
+    const MountedWeaponSpecListConverter().toJson,
   ),
   'traits': _$JsonConverterToJson<List<dynamic>, List<Trait>>(
     instance.traits,

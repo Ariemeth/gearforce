@@ -9,19 +9,13 @@ void main() {
       const variantName = 'Test Variant';
       const tv = 1;
 
-      final variant = Variant(
-        variantName,
-        id: variantId,
-        tv: tv,
-        weapons: [],
-        traits: [],
-      );
+      final variant = Variant(variantName, id: variantId, tv: tv);
 
       expect(variant.id, variantId);
       expect(variant.name, variantName);
       expect(variant.tv, tv);
-      expect(variant.weapons, []);
-      expect(variant.traits, []);
+      expect(variant.mountedWeapons, null);
+      expect(variant.traits, null);
     });
 
     test('should throw assertion error for empty id', () {

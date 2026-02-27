@@ -35,8 +35,6 @@ void main() {
         gu: gu,
         pi: pi,
         ew: ew,
-        weapons: [],
-        traits: [],
         height: height,
         subtype: '',
         classification: Classification.gear,

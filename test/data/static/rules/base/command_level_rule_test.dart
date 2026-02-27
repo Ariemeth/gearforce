@@ -37,8 +37,6 @@ void main() {
         gu: Skill(4),
         pi: Skill(5),
         ew: Skill(6),
-        weapons: [],
-        traits: [],
         height: 1.5,
         classification: Classification.gear,
       );
@@ -444,8 +442,6 @@ void main() {
           gu: Skill(4),
           pi: Skill(5),
           ew: Skill(6),
-          weapons: [],
-          traits: [],
           height: 1.5,
           classification: Classification.gear,
         );
@@ -461,8 +457,6 @@ void main() {
           gu: Skill(3),
           pi: Skill(4),
           ew: Skill(5),
-          weapons: [],
-          traits: [],
           height: 1.0,
           classification: Classification.gear,
         );

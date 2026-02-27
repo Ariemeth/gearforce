@@ -46,14 +46,31 @@ class TraitListConverter implements JsonConverter<List<Trait>, List<dynamic>> {
   }
 }
 
-class WeaponSpecListConverter
+class MountedWeaponSpecListConverter
     implements JsonConverter<List<WeaponSpec>, List<dynamic>> {
-  const WeaponSpecListConverter();
+  const MountedWeaponSpecListConverter();
 
   @override
   List<WeaponSpec> fromJson(List<dynamic> json) {
     return json
         .map((e) => WeaponParser.parseWeaponString(e as String))
+        .toList();
+  }
+
+  @override
+  List<String> toJson(List<WeaponSpec> object) {
+    return object.map((e) => e.toString()).toList();
+  }
+}
+
+class ReactWeaponSpecListConverter
+    implements JsonConverter<List<WeaponSpec>, List<dynamic>> {
+  const ReactWeaponSpecListConverter();
+
+  @override
+  List<WeaponSpec> fromJson(List<dynamic> json) {
+    return json
+        .map((e) => WeaponParser.parseWeaponString(e as String, hasReact: true))
         .toList();
   }
 

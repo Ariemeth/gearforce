@@ -26,8 +26,10 @@ class ModelBase {
   final Skill gu;
   final Skill pi;
   final Skill ew;
-  @WeaponSpecListConverter()
-  final List<WeaponSpec> weapons;
+  @ReactWeaponSpecListConverter()
+  final List<WeaponSpec> reactWeapons;
+  @MountedWeaponSpecListConverter()
+  final List<WeaponSpec> mountedWeapons;
   @TraitListConverter()
   final List<Trait> traits;
   final double height;
@@ -48,8 +50,9 @@ class ModelBase {
     required this.gu,
     required this.pi,
     required this.ew,
-    required this.weapons,
-    required this.traits,
+    this.reactWeapons = const [],
+    this.mountedWeapons = const [],
+    this.traits = const [],
     required this.height,
     required this.classification,
     this.subtype,

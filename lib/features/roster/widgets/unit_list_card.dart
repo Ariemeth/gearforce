@@ -26,7 +26,7 @@ class UnitListCard extends StatelessWidget {
       gu = unit.base.gu,
       pi = unit.base.pi,
       ew = unit.base.ew,
-      weapons = unit.base.weapons,
+      weapons = [...unit.base.reactWeapons, ...unit.base.mountedWeapons],
       traits = unit.base.traits;
 
   UnitListCard.variant({super.key, required Variant variant})
@@ -39,7 +39,10 @@ class UnitListCard extends StatelessWidget {
       gu = variant.gu,
       pi = variant.pi,
       ew = variant.ew,
-      weapons = variant.weapons ?? const [],
+      weapons = [
+        ...variant.reactWeapons ?? const [],
+        ...variant.mountedWeapons ?? const [],
+      ],
       traits = variant.traits ?? const [];
 
   final String name;

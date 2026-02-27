@@ -26,8 +26,10 @@ class Variant {
   final Skill? gu;
   final Skill? pi;
   final Skill? ew;
-  @WeaponSpecListConverter()
-  final List<WeaponSpec>? weapons;
+  @ReactWeaponSpecListConverter()
+  final List<WeaponSpec>? reactWeapons;
+  @MountedWeaponSpecListConverter()
+  final List<WeaponSpec>? mountedWeapons;
   @TraitListConverter()
   final List<Trait>? traits;
 
@@ -43,7 +45,8 @@ class Variant {
     this.gu,
     this.pi,
     this.ew,
-    this.weapons,
+    this.reactWeapons,
+    this.mountedWeapons,
     this.traits,
   }) : assert(id.length > 0, 'ID must not be empty or all whitespace'),
        assert(name.length > 0, 'Name must not be empty or all whitespace'),

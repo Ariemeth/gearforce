@@ -33,7 +33,6 @@ void main() {
         gu: Skill(4),
         pi: Skill(5),
         ew: Skill(6),
-        weapons: const [],
         traits: const [],
         height: 1.5,
         classification: Classification.gear,

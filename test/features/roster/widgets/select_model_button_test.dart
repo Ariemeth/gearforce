@@ -104,7 +104,6 @@ Model _buildModel({required int id}) {
       gu: Skill(4),
       pi: Skill(4),
       ew: Skill(4),
-      weapons: const [],
       traits: const [],
       height: 1.5,
       classification: Classification.gear,

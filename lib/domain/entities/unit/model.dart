@@ -137,7 +137,13 @@ class Model {
           break;
         case ModelAttribute.weapons:
           initialValue =
-              ([...base.weapons, ...variant.weapons ?? <WeaponSpec>[]]) as T;
+              ([
+                    ...base.reactWeapons,
+                    ...base.mountedWeapons,
+                    ...variant.reactWeapons ?? <WeaponSpec>[],
+                    ...variant.mountedWeapons ?? <WeaponSpec>[],
+                  ])
+                  as T;
           break;
         case ModelAttribute.traits:
           initialValue =

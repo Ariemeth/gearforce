@@ -37,8 +37,6 @@ void main() {
         gu: Skill(4),
         pi: Skill(5),
         ew: Skill(6),
-        weapons: [],
-        traits: [],
         height: 1.5,
         classification: unitClassification,
         subtype: unitSubtype,
@@ -51,8 +49,20 @@ void main() {
         id: unitId,
 
         variants: [
-          Variant(variant1Name, id: variant1Id, tv: 1, weapons: [], traits: []),
-          Variant(variant2Name, id: variant2Id, tv: 2, weapons: [], traits: []),
+          Variant(
+            variant1Name,
+            id: variant1Id,
+            tv: 1,
+            mountedWeapons: [],
+            traits: [],
+          ),
+          Variant(
+            variant2Name,
+            id: variant2Id,
+            tv: 2,
+            mountedWeapons: [],
+            traits: [],
+          ),
         ],
       );
 
