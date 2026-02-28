@@ -102,7 +102,7 @@ void main() {
           );
 
           // Check that all upgrade IDs within a unit are unique
-          final upgradeIds = unit.upgrades
+          final upgradeIds = unit.availableModelUpgrades
               .map((upgrade) => upgrade.id)
               .toList();
           final duplicateUpgradeIds = upgradeIds

@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:gearforce/domain/entities/unit/unit_upgrade_context.dart';
+import 'package:gearforce/domain/entities/unit/model_upgrade_context.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_parser.dart';
 import 'package:gearforce/domain/entities/attribute/hull_structure.dart';
 import 'package:gearforce/domain/entities/attribute/skill.dart';
@@ -7,12 +7,12 @@ import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 
 typedef WeaponsMod =
-    List<WeaponSpec> Function(List<WeaponSpec>, UnitUpgradeContext);
-typedef IntMod = int Function(int, UnitUpgradeContext);
+    List<WeaponSpec> Function(List<WeaponSpec>, ModelUpgradeContext);
+typedef IntMod = int Function(int, ModelUpgradeContext);
 typedef HullStructureMod =
-    HullStructure Function(HullStructure, UnitUpgradeContext);
-typedef SkillMod = Skill Function(Skill, UnitUpgradeContext);
-typedef TraitsMod = List<Trait> Function(List<Trait>, UnitUpgradeContext);
+    HullStructure Function(HullStructure, ModelUpgradeContext);
+typedef SkillMod = Skill Function(Skill, ModelUpgradeContext);
+typedef TraitsMod = List<Trait> Function(List<Trait>, ModelUpgradeContext);
 
 /// Mod function to swap weapons based on upgrade options.
 WeaponsMod createSwapWeaponsFromOptionsMod(

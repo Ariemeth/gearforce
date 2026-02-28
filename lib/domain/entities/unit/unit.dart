@@ -1,5 +1,5 @@
 import 'package:gearforce/domain/entities/unit/model_base.dart';
-import 'package:gearforce/domain/entities/unit/unit_upgrade.dart';
+import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
@@ -13,13 +13,14 @@ class Unit {
   @JsonKey(name: 'base')
   final ModelBase base;
   final List<Variant> variants;
-  final List<UnitUpgrade> upgrades;
+  @JsonKey(name: 'upgrades')
+  final List<ModelUpgrade> availableModelUpgrades;
 
   const Unit(
     this.base, {
     required this.id,
     this.variants = const [],
-    this.upgrades = const [],
+    this.availableModelUpgrades = const [],
   }) : assert(id.length != 0, 'Id must not be empty or all whitespace');
 
   factory Unit.fromJson(Map<String, dynamic> json) {
@@ -46,9 +47,9 @@ class Unit {
                 .map((e) => Variant.fromJson(e as Map<String, dynamic>))
                 .toList()
           : const [],
-      upgrades: json['upgrades'] != null
+      availableModelUpgrades: json['upgrades'] != null
           ? (json['upgrades'] as List)
-                .map((e) => UnitUpgrade.fromJson(e as Map<String, dynamic>))
+                .map((e) => ModelUpgrade.fromJson(e as Map<String, dynamic>))
                 .toList()
           : const [],
     );

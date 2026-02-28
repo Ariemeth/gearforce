@@ -10,7 +10,7 @@ import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
-import 'package:gearforce/domain/entities/unit/unit_upgrade.dart';
+import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 
 void main() {
@@ -63,8 +63,8 @@ void main() {
           classification: Classification.gear,
         ),
         variant: Variant('Test Model', id: '1', tv: 0),
-        upgrades: [
-          UnitUpgrade(
+        selectedModelUpgrades: [
+          ModelUpgrade(
             'Test Mod',
             id: 'mod-001',
             nameMod: (name, context) => 'Modified $name',
@@ -104,9 +104,9 @@ void main() {
           classification: Classification.gear,
         ),
         variant: Variant('Test Model', id: '1', tv: 0),
-        upgrades: [
-          UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
-          UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        selectedModelUpgrades: [
+          ModelUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
+          ModelUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
         ],
       );
 
@@ -147,9 +147,9 @@ void main() {
           classification: Classification.gear,
         ),
         variant: Variant('Test Model', id: '1', tv: 0),
-        upgrades: [
-          UnitUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
-          UnitUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
+        selectedModelUpgrades: [
+          ModelUpgrade('Mod 1', id: 'mod-001', tvMod: (tv, context) => tv + 5),
+          ModelUpgrade('Mod 2', id: 'mod-002', tvMod: (tv, context) => tv + 3),
         ],
       );
 
@@ -188,11 +188,11 @@ void main() {
           classification: Classification.gear,
         ),
         variant: Variant('Test Model', id: '1', tv: 0),
-        upgrades: [],
+        selectedModelUpgrades: [],
       );
 
-      final modelWithUpgrade = model.addUpgrade(
-        UnitUpgrade(
+      final modelWithUpgrade = model.addModelUpgrade(
+        ModelUpgrade(
           'Test Mod',
           id: 'mod-001',
           nameMod: (name, context) => 'Modified ${context.model.name}',

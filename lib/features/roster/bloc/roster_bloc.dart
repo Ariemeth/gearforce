@@ -8,6 +8,7 @@ import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/attribute/command.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
+import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
 import 'package:gearforce/features/roster/bloc/squad_state.dart';
@@ -32,11 +33,14 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     });
     on<AddNewSquad>(_onAddNewSquad);
     on<RemoveSquad>(_onRemoveSquad);
+    on<DuplicateSquad>(_onDuplicateSquad);
     on<AddModel>(_onAddModel);
     on<RemoveModel>(_onRemoveModel);
+    on<DuplicateModel>(_onDuplicateModel);
     on<UpdateModelLevel>(_onUpdateModelLevel);
     on<UpdateModelIsDuelist>(_onUpdateModelIsDuelist);
     on<UpdateModelCommandLevel>(_onUpdateModelCommand);
+    on<UpdateModelUpgradeEnabled>(_onUpdateModelUpgradeEnabled);
     on<UpdateFaction>(_onUpdateFaction);
     on<UpdateSubfaction>(_onUpdateSubFaction);
     on<RenameSquad>(_onRenameSquad);
@@ -76,6 +80,81 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     emit(state.copyWith(squadState: updatedSquadState));
   }
 
+  void _onDuplicateSquad(DuplicateSquad event, Emitter<RosterState> emit) {
+    _nextSquadNumber++;
+    int newSquadId = _nextSquadNumber;
+
+    while (state.squads.any((squad) => squad.id == newSquadId)) {
+      _nextSquadNumber++;
+      newSquadId = _nextSquadNumber;
+    }
+
+    final duplicatedModels = [
+      for (final model in event.squad.models)
+        (() {
+          _nextModelId++;
+          return model.copyWith(id: _nextModelId, command: Command.none);
+        })(),
+    ];
+
+    var duplicatedSquad = event.squad.copyWith(
+      id: newSquadId,
+      name: event.name,
+      models: duplicatedModels,
+    );
+
+    final updatedSquads = List<Squad>.from(state.squads)..add(duplicatedSquad);
+
+    const commandCopyOrder = [
+      Command.co,
+      Command.xo,
+      Command.firstIC,
+      Command.secondIC,
+    ];
+
+    for (final commandLevel in commandCopyOrder) {
+      for (var index = 0; index < event.squad.models.length; index++) {
+        final sourceModel = event.squad.models[index];
+        if (sourceModel.command != commandLevel) {
+          continue;
+        }
+
+        final candidate = duplicatedSquad.models[index];
+        final canAssign = state.ruleSet.canAssignCommandLevel(
+          model: candidate,
+          newCommandLevel: commandLevel,
+          squad: duplicatedSquad,
+          allSquads: updatedSquads,
+        );
+
+        final conflictingModels = state.ruleSet.getModelsToClearForCommandLevel(
+          model: candidate,
+          newCommandLevel: commandLevel,
+          squad: duplicatedSquad,
+          allSquads: updatedSquads,
+        );
+
+        if (!canAssign || conflictingModels.isNotEmpty) {
+          continue;
+        }
+
+        final updatedModels = List<Model>.from(duplicatedSquad.models);
+        updatedModels[index] = candidate.copyWith(command: commandLevel);
+        duplicatedSquad = duplicatedSquad.copyWith(models: updatedModels);
+        updatedSquads[updatedSquads.length - 1] = duplicatedSquad;
+      }
+    }
+
+    duplicatedSquad = _ensureRequiredCommand(duplicatedSquad, updatedSquads);
+    updatedSquads[updatedSquads.length - 1] = duplicatedSquad;
+
+    emit(
+      state.copyWith(
+        squadState: state.squadState.copyWith(squads: updatedSquads),
+      ),
+    );
+  }
+
   void _onAddModel(AddModel event, Emitter<RosterState> emit) {
     // Only auto-assign 1iC if the squad needs a required command AND the new model has the primary role
     final needsRequiredCommand = !_hasRequiredCommand(event.squad.models);
@@ -88,6 +167,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       id: _nextModelId + 1,
       base: event.base,
       variant: event.variant,
+      availableModelUpgrades: event.availableModelUpgrades,
       command: shouldAssignFirstIc ? Command.firstIC : Command.none,
     );
 
@@ -105,12 +185,78 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onRemoveModel(RemoveModel event, Emitter<RosterState> emit) {
-    final updatedSquad = event.squad.copyWith(
+    final squadAfterRemoval = event.squad.copyWith(
       models: [
         for (final m in event.squad.models)
           if (m.id != event.model.id) m,
       ],
     );
+
+    final updatedSquads = [
+      for (final squad in state.squads)
+        squad.id == event.squad.id ? squadAfterRemoval : squad,
+    ];
+
+    final squadIndex = updatedSquads.indexWhere((s) => s.id == event.squad.id);
+    if (squadIndex != -1) {
+      updatedSquads[squadIndex] = _ensureRequiredCommand(
+        updatedSquads[squadIndex],
+        updatedSquads,
+      );
+    }
+
+    emit(
+      state.copyWith(
+        squadState: state.squadState.copyWith(squads: updatedSquads),
+      ),
+    );
+  }
+
+  void _onDuplicateModel(DuplicateModel event, Emitter<RosterState> emit) {
+    _nextModelId++;
+
+    var duplicatedModel = event.model.copyWith(
+      id: _nextModelId,
+      command: Command.none,
+      level: UnitLevel.regular,
+      isDuelist: false,
+    );
+
+    final canCopyLevel = state.ruleSet.canAssignUnitLevel(
+      model: duplicatedModel,
+      newLevel: event.model.level,
+      squad: event.squad,
+      allSquads: state.squads,
+    );
+
+    if (canCopyLevel) {
+      duplicatedModel = duplicatedModel.copyWith(level: event.model.level);
+    }
+
+    final canCopyDuelist =
+        event.model.isDuelist &&
+        state.ruleSet.canAssignDuelist(
+          model: duplicatedModel,
+          newDuelistStatus: true,
+          squad: event.squad,
+          allSquads: state.squads,
+        );
+
+    if (canCopyDuelist) {
+      duplicatedModel = duplicatedModel.copyWith(isDuelist: true);
+    }
+
+    if (!state.ruleSet.canAddUnitToSquad(
+      squad: event.squad,
+      unit: duplicatedModel,
+    )) {
+      return;
+    }
+
+    final updatedSquad = event.squad.copyWith(
+      models: [...event.squad.models, duplicatedModel],
+    );
+
     emit(
       state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
     );
@@ -316,6 +462,32 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       state.copyWith(
         squadState: state.squadState.copyWith(squads: updatedSquads),
       ),
+    );
+  }
+
+  void _onUpdateModelUpgradeEnabled(
+    UpdateModelUpgradeEnabled event,
+    Emitter<RosterState> emit,
+  ) {
+    final currentModel = event.squad.models.firstWhere(
+      (m) => m.id == event.model.id,
+      orElse: () => event.model,
+    );
+
+    final updatedModel = currentModel.setModelUpgradeEnabled(
+      upgradeId: event.upgradeId,
+      enabled: event.enabled,
+    );
+
+    final updatedSquad = event.squad.copyWith(
+      models: [
+        for (final model in event.squad.models)
+          model.id == currentModel.id ? updatedModel : model,
+      ],
+    );
+
+    emit(
+      state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
     );
   }
 

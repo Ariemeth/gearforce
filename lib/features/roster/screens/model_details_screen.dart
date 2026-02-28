@@ -7,6 +7,7 @@ import 'package:gearforce/core/widgets/unit_attribute_widgets.dart';
 import 'package:gearforce/core/widgets/weapon_trait_chips.dart';
 import 'package:gearforce/core/widgets/weapon_trait_row.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
+import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec_list_extensions.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
@@ -100,6 +101,8 @@ class ModelDetailsScreen extends StatelessWidget {
                     label: context.l10n.traitsLabel,
                     children: buildTraitChips(model.traits),
                   ),
+                  const SizedBox(height: 8),
+                  _ModelUpgradesSection(squad: result.squad!, model: model),
                 ],
               ),
             ),
@@ -169,6 +172,187 @@ class _ModelStatsTable extends StatelessWidget {
       ),
     );
   }
+}
+
+class _ModelUpgradesSection extends StatelessWidget {
+  final Squad squad;
+  final Model model;
+
+  const _ModelUpgradesSection({required this.squad, required this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    final totalUpgrades = model.availableModelUpgrades.length;
+    final enabledUpgrades = model.selectedModelUpgrades.length;
+
+    return Card(
+      child: ExpansionTile(
+        tilePadding: const EdgeInsets.symmetric(horizontal: 12),
+        childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+        title: Row(
+          children: [
+            Expanded(
+              child: Text('Model Upgrades', style: AppTheme.subtitleStyle),
+            ),
+            const SizedBox(width: 8),
+            Chip(label: Text('$enabledUpgrades / $totalUpgrades enabled')),
+          ],
+        ),
+        children: [
+          if (model.availableModelUpgrades.isEmpty)
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text('No model upgrades available.'),
+            )
+          else
+            ...model.availableModelUpgrades.map((upgrade) {
+              final isEnabled = model.hasModelUpgrade(upgrade.id);
+              final summary = _buildUpgradeChangeSummary(
+                model: model,
+                upgrade: upgrade,
+              );
+
+              final subtitleParts = <String>[
+                if (summary.inlineSummary.isNotEmpty) summary.inlineSummary,
+                if (upgrade.description.isNotEmpty) upgrade.description,
+              ];
+
+              return CheckboxListTile(
+                value: isEnabled,
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                controlAffinity: ListTileControlAffinity.leading,
+                title: Text(upgrade.name),
+                subtitle: subtitleParts.isEmpty
+                    ? null
+                    : Text(subtitleParts.join(' • ')),
+                secondary: Tooltip(
+                  message: summary.tooltip,
+                  waitDuration: const Duration(milliseconds: 300),
+                  child: const Icon(Icons.info_outline, size: 18),
+                ),
+                onChanged: (value) {
+                  if (value == null) {
+                    return;
+                  }
+
+                  context.read<RosterBloc>().add(
+                    UpdateModelUpgradeEnabled(
+                      squad: squad,
+                      model: model,
+                      upgradeId: upgrade.id,
+                      enabled: value,
+                    ),
+                  );
+                },
+              );
+            }),
+        ],
+      ),
+    );
+  }
+}
+
+_UpgradeSummary _buildUpgradeChangeSummary({
+  required Model model,
+  required ModelUpgrade upgrade,
+}) {
+  final baseModel = model.hasModelUpgrade(upgrade.id)
+      ? model.setModelUpgradeEnabled(upgradeId: upgrade.id, enabled: false)
+      : model;
+  final upgradedModel = baseModel.setModelUpgradeEnabled(
+    upgradeId: upgrade.id,
+    enabled: true,
+  );
+
+  final tooltipLines = <String>[];
+  final inlineParts = <String>[];
+
+  void addNumericDelta(String label, int before, int after) {
+    if (before == after) {
+      return;
+    }
+
+    final delta = after - before;
+    final sign = delta > 0 ? '+' : '';
+    final short = '$label $sign$delta';
+    inlineParts.add(short);
+    tooltipLines.add('$label: $before → $after ($sign$delta)');
+  }
+
+  void addValueDelta(String label, String before, String after) {
+    if (before == after) {
+      return;
+    }
+
+    inlineParts.add('$label $after');
+    tooltipLines.add('$label: $before → $after');
+  }
+
+  addNumericDelta('TV', baseModel.tv, upgradedModel.tv);
+  addValueDelta(
+    'Move',
+    baseModel.movement.toString(),
+    upgradedModel.movement.toString(),
+  );
+  addValueDelta(
+    'ARM',
+    baseModel.armor.toString(),
+    upgradedModel.armor.toString(),
+  );
+  addValueDelta(
+    'HS',
+    baseModel.hullStructure.toString(),
+    upgradedModel.hullStructure.toString(),
+  );
+  addValueDelta(
+    'A',
+    baseModel.actions.toString(),
+    upgradedModel.actions.toString(),
+  );
+  addValueDelta('GU', baseModel.gu.toString(), upgradedModel.gu.toString());
+  addValueDelta('PI', baseModel.pi.toString(), upgradedModel.pi.toString());
+  addValueDelta('EW', baseModel.ew.toString(), upgradedModel.ew.toString());
+
+  final baseTraits = baseModel.traits.map((trait) => trait.name).toSet();
+  final upgradedTraits = upgradedModel.traits
+      .map((trait) => trait.name)
+      .toSet();
+  final addedTraits = upgradedTraits.difference(baseTraits).toList()..sort();
+  final removedTraits = baseTraits.difference(upgradedTraits).toList()..sort();
+
+  if (addedTraits.isNotEmpty) {
+    final added = addedTraits.take(2).join(', ');
+    inlineParts.add('+Traits: $added${addedTraits.length > 2 ? ', …' : ''}');
+    tooltipLines.add('Added traits: ${addedTraits.join(', ')}');
+  }
+
+  if (removedTraits.isNotEmpty) {
+    final removed = removedTraits.take(2).join(', ');
+    inlineParts.add(
+      '-Traits: $removed${removedTraits.length > 2 ? ', …' : ''}',
+    );
+    tooltipLines.add('Removed traits: ${removedTraits.join(', ')}');
+  }
+
+  if (inlineParts.isEmpty) {
+    return const _UpgradeSummary(
+      inlineSummary: 'No stat changes detected',
+      tooltip: 'No stat changes detected for this upgrade.',
+    );
+  }
+
+  return _UpgradeSummary(
+    inlineSummary: inlineParts.take(3).join(' · '),
+    tooltip: tooltipLines.join('\n'),
+  );
+}
+
+class _UpgradeSummary {
+  final String inlineSummary;
+  final String tooltip;
+
+  const _UpgradeSummary({required this.inlineSummary, required this.tooltip});
 }
 
 Future<void> _showModelInfoDialog({

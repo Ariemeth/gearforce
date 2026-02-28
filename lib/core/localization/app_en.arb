@@ -230,6 +230,22 @@
   "@removeUnitTooltip": {
     "description": "Tooltip for the remove unit button"
   },
+  "deleteButtonText": "Delete",
+  "@deleteButtonText": {
+    "description": "Text for delete action button in dialogs"
+  },
+  "duplicateButtonText": "Duplicate",
+  "@duplicateButtonText": {
+    "description": "Text for duplicate action button in dialogs"
+  },
+  "modelActionsTitle": "Actions",
+  "@modelActionsTitle": {
+    "description": "Title text for model actions dialog"
+  },
+  "modelActionsTooltip": "Actions",
+  "@modelActionsTooltip": {
+    "description": "Tooltip text for model actions button"
+  },
   "rosterSettingsTooltip": "Roster Settings",
   "@rosterSettingsTooltip": {
     "description": "Tooltip for the roster settings button"

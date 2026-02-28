@@ -44,16 +44,64 @@ class ModelListTile extends StatelessWidget {
           const SizedBox(width: 8),
           UnitLevelSelector(squad: squad, model: model),
           IconButton(
-            icon: const Icon(
-              Icons.delete_forever_outlined,
-              color: AppTheme.deleteIconColor,
-            ),
-            tooltip: context.l10n.removeUnitTooltip,
+            icon: const Icon(Icons.more_vert),
+            tooltip: context.l10n.modelActionsTooltip,
             iconSize: 20,
-            onPressed: () {
-              context.read<RosterBloc>().add(
-                RemoveModel(squad: squad, model: model),
+            onPressed: () async {
+              final action = await showDialog<_ModelTileAction>(
+                context: context,
+                builder: (dialogContext) => AlertDialog(
+                  title: Text(context.l10n.modelActionsTitle),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: const Icon(
+                          Icons.delete_forever_outlined,
+                          color: AppTheme.deleteIconColor,
+                        ),
+                        title: Text(context.l10n.deleteButtonText),
+                        onTap: () => Navigator.of(
+                          dialogContext,
+                        ).pop(_ModelTileAction.delete),
+                      ),
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        leading: const Icon(Icons.copy_outlined),
+                        title: Text(context.l10n.duplicateButtonText),
+                        onTap: () => Navigator.of(
+                          dialogContext,
+                        ).pop(_ModelTileAction.duplicate),
+                      ),
+                    ],
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.of(dialogContext).pop(),
+                      child: Text(context.l10n.cancelButtonText),
+                    ),
+                  ],
+                ),
               );
+
+              if (!context.mounted || action == null) {
+                return;
+              }
+
+              if (action == _ModelTileAction.delete) {
+                context.read<RosterBloc>().add(
+                  RemoveModel(squad: squad, model: model),
+                );
+                return;
+              }
+
+              if (action == _ModelTileAction.duplicate) {
+                context.read<RosterBloc>().add(
+                  DuplicateModel(squad: squad, model: model),
+                );
+              }
             },
           ),
         ],
@@ -62,3 +110,5 @@ class ModelListTile extends StatelessWidget {
     );
   }
 }
+
+enum _ModelTileAction { delete, duplicate }

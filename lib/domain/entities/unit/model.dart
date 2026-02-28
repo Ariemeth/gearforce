@@ -9,8 +9,8 @@ import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
 import 'package:gearforce/domain/entities/attribute/command.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
-import 'package:gearforce/domain/entities/unit/unit_upgrade.dart';
-import 'package:gearforce/domain/entities/unit/unit_upgrade_context.dart';
+import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
+import 'package:gearforce/domain/entities/unit/model_upgrade_context.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 
@@ -20,7 +20,8 @@ class Model {
   final Variant variant;
   final UnitLevel level;
   final Command command;
-  final List<UnitUpgrade> _upgrades;
+  final List<ModelUpgrade> availableModelUpgrades;
+  final List<ModelUpgrade> _selectedModelUpgrades;
   final bool isDuelist;
 
   // Instance-level Set to track active getAttribute calls
@@ -32,9 +33,11 @@ class Model {
     required this.variant,
     this.level = UnitLevel.regular,
     this.command = Command.none,
-    List<UnitUpgrade>? upgrades,
+    List<ModelUpgrade>? availableModelUpgrades,
+    List<ModelUpgrade>? selectedModelUpgrades,
     this.isDuelist = false,
-  }) : _upgrades = upgrades ?? [];
+  }) : availableModelUpgrades = availableModelUpgrades ?? [],
+       _selectedModelUpgrades = selectedModelUpgrades ?? [];
 
   String get name => getAttribute(ModelAttribute.name);
   int get tv =>
@@ -51,6 +54,8 @@ class Model {
   Skill get pi => getAttribute(ModelAttribute.pi);
   Skill get ew => getAttribute(ModelAttribute.ew);
   List<WeaponSpec> get weapons => getAttribute(ModelAttribute.weapons);
+  List<ModelUpgrade> get selectedModelUpgrades =>
+      List.unmodifiable(_selectedModelUpgrades);
   List<Trait> get traits => [
     ...getAttribute(ModelAttribute.traits),
     if (level == UnitLevel.green) Trait.green(),
@@ -60,7 +65,8 @@ class Model {
   Model copyWith({
     int? id,
     Variant? variant,
-    List<UnitUpgrade>? upgrades,
+    List<ModelUpgrade>? availableModelUpgrades,
+    List<ModelUpgrade>? selectedModelUpgrades,
     UnitLevel? level,
     Command? command,
     bool? isDuelist,
@@ -71,19 +77,56 @@ class Model {
       variant: variant ?? this.variant,
       level: level ?? this.level,
       command: command ?? this.command,
-      upgrades: upgrades ?? [..._upgrades.map((upgrade) => upgrade.copyWith())],
+      availableModelUpgrades:
+          availableModelUpgrades ??
+          [...this.availableModelUpgrades.map((upgrade) => upgrade.copyWith())],
+      selectedModelUpgrades:
+          selectedModelUpgrades ??
+          [..._selectedModelUpgrades.map((upgrade) => upgrade.copyWith())],
       isDuelist: isDuelist ?? this.isDuelist,
     );
   }
 
-  Model addUpgrade(UnitUpgrade upgrade) {
-    return copyWith(upgrades: [..._upgrades, upgrade]);
+  bool hasModelUpgrade(String upgradeId) {
+    return _selectedModelUpgrades.any((upgrade) => upgrade.id == upgradeId);
   }
 
-  Model removeUpgrade(UnitUpgrade upgrade) {
+  Model setModelUpgradeEnabled({
+    required String upgradeId,
+    required bool enabled,
+  }) {
+    if (enabled) {
+      if (hasModelUpgrade(upgradeId)) {
+        return this;
+      }
+
+      final upgrade = availableModelUpgrades.firstWhere(
+        (candidate) => candidate.id == upgradeId,
+        orElse: () => throw StateError('Model upgrade not found: $upgradeId'),
+      );
+
+      return copyWith(
+        selectedModelUpgrades: [..._selectedModelUpgrades, upgrade.copyWith()],
+      );
+    }
+
     return copyWith(
-      upgrades: [
-        for (final u in _upgrades)
+      selectedModelUpgrades: _selectedModelUpgrades
+          .where((upgrade) => upgrade.id != upgradeId)
+          .toList(),
+    );
+  }
+
+  Model addModelUpgrade(ModelUpgrade upgrade) {
+    return copyWith(
+      selectedModelUpgrades: [..._selectedModelUpgrades, upgrade],
+    );
+  }
+
+  Model removeModelUpgrade(ModelUpgrade upgrade) {
+    return copyWith(
+      selectedModelUpgrades: [
+        for (final u in _selectedModelUpgrades)
           if (u != upgrade) u,
       ],
     );
@@ -197,7 +240,7 @@ class Model {
 
   T _applyMods<T>(
     T initialValue,
-    T Function(UnitUpgrade mod, T value, UnitUpgradeContext context)
+    T Function(ModelUpgrade mod, T value, ModelUpgradeContext context)
     modFunction, {
     String? excludeUpgradeId,
     String? upToUpgradeId,
@@ -208,11 +251,11 @@ class Model {
     );
 
     var value = initialValue;
-    for (final upgrade in _upgrades) {
+    for (final upgrade in _selectedModelUpgrades) {
       if (excludeUpgradeId != null && upgrade.id == excludeUpgradeId) {
         continue;
       }
-      final context = UnitUpgradeContext(this, upgrade);
+      final context = ModelUpgradeContext(this, upgrade);
       value = modFunction(upgrade, value, context);
       if (upToUpgradeId != null && upgrade.id == upToUpgradeId) {
         break;

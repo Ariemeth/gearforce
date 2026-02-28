@@ -19,6 +19,13 @@ class RemoveSquad extends SquadEvent {
   RemoveSquad({required this.squad});
 }
 
+class DuplicateSquad extends SquadEvent {
+  final Squad squad;
+  final String name;
+
+  DuplicateSquad({required this.squad, required this.name});
+}
+
 class UpdateSquadRoles extends SquadEvent {
   final Squad squad;
   final Role primaryRole;
@@ -35,8 +42,14 @@ class AddModel extends SquadEvent {
   final Squad squad;
   final ModelBase base;
   final Variant variant;
+  final List<ModelUpgrade> availableModelUpgrades;
 
-  AddModel({required this.squad, required this.base, required this.variant});
+  AddModel({
+    required this.squad,
+    required this.base,
+    required this.variant,
+    this.availableModelUpgrades = const [],
+  });
 }
 
 class RemoveModel extends SquadEvent {
@@ -44,6 +57,13 @@ class RemoveModel extends SquadEvent {
   final Model model;
 
   RemoveModel({required this.squad, required this.model});
+}
+
+class DuplicateModel extends SquadEvent {
+  final Squad squad;
+  final Model model;
+
+  DuplicateModel({required this.squad, required this.model});
 }
 
 class UpdateModelLevel extends SquadEvent {
@@ -79,6 +99,20 @@ class UpdateModelCommandLevel extends SquadEvent {
     required this.squad,
     required this.model,
     required this.commandLevel,
+  });
+}
+
+class UpdateModelUpgradeEnabled extends SquadEvent {
+  final Squad squad;
+  final Model model;
+  final String upgradeId;
+  final bool enabled;
+
+  UpdateModelUpgradeEnabled({
+    required this.squad,
+    required this.model,
+    required this.upgradeId,
+    required this.enabled,
   });
 }
 

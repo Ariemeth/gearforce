@@ -154,6 +154,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get removeUnitTooltip => 'Remove unit';
 
   @override
+  String get deleteButtonText => 'Delete';
+
+  @override
+  String get duplicateButtonText => 'Duplicate';
+
+  @override
+  String get modelActionsTitle => 'Actions';
+
+  @override
+  String get modelActionsTooltip => 'Actions';
+
+  @override
   String get rosterSettingsTooltip => 'Roster Settings';
 
   @override

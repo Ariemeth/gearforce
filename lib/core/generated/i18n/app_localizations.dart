@@ -340,6 +340,30 @@ abstract class AppLocalizations {
   /// **'Remove unit'**
   String get removeUnitTooltip;
 
+  /// Text for delete action button in dialogs
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteButtonText;
+
+  /// Text for duplicate action button in dialogs
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate'**
+  String get duplicateButtonText;
+
+  /// Title text for model actions dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get modelActionsTitle;
+
+  /// Tooltip text for model actions button
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get modelActionsTooltip;
+
   /// Tooltip for the roster settings button
   ///
   /// In en, this message translates to:

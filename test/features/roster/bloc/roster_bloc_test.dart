@@ -182,6 +182,82 @@ void main() {
     );
   });
 
+  group('DuplicateSquad', () {
+    blocTest<RosterBloc, RosterState>(
+      'duplicates squad with copied models and unique squad/model IDs',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Alpha'));
+        await Future<void>.delayed(Duration.zero);
+
+        var squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V1'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        bloc.add(DuplicateSquad(squad: squad, name: 'Squad 2'));
+      },
+      verify: (bloc) {
+        expect(bloc.state.squads.length, 2);
+
+        final original = bloc.state.squads[0];
+        final duplicate = bloc.state.squads[1];
+
+        expect(duplicate.name, 'Squad 2');
+        expect(duplicate.id, isNot(original.id));
+        expect(duplicate.models.length, original.models.length);
+
+        if (original.models.isNotEmpty && duplicate.models.isNotEmpty) {
+          expect(duplicate.models.first.id, isNot(original.models.first.id));
+        }
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'does not duplicate CO command level when duplicating a squad',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Command Squad'));
+        await Future<void>.delayed(Duration.zero);
+
+        var squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V1'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        final model = squad.models.first;
+        bloc.add(
+          UpdateModelCommandLevel(
+            squad: squad,
+            model: model,
+            commandLevel: Command.co,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        bloc.add(DuplicateSquad(squad: squad, name: 'Squad 2'));
+      },
+      verify: (bloc) {
+        final allModels = bloc.state.squads.expand((s) => s.models).toList();
+        final coCount = allModels.where((m) => m.command == Command.co).length;
+        expect(coCount, 1);
+      },
+    );
+  });
+
   group('RenameSquad', () {
     blocTest<RosterBloc, RosterState>(
       'renames the specified squad',
@@ -264,6 +340,135 @@ void main() {
       },
       verify: (bloc) {
         expect(bloc.state.squads.first.models, isEmpty);
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'promotes another model to 1iC when current 1iC is removed',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Command Reassign Squad'));
+        await Future<void>.delayed(Duration.zero);
+
+        var squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V1'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(id: 'V2'),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        final firstIcModel = squad.models.firstWhere(
+          (model) => model.command == Command.firstIC,
+        );
+
+        bloc.add(RemoveModel(squad: squad, model: firstIcModel));
+      },
+      verify: (bloc) {
+        final models = bloc.state.squads.first.models;
+        expect(models.length, 1);
+        expect(models.single.command, Command.firstIC);
+      },
+    );
+  });
+
+  group('DuplicateModel', () {
+    blocTest<RosterBloc, RosterState>(
+      'duplicates model with command reset and conditional level/duelist copy',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Duplicate Model Squad'));
+        await Future<void>.delayed(Duration.zero);
+
+        var squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        var sourceModel = squad.models.first;
+
+        bloc.add(
+          UpdateModelLevel(
+            squad: squad,
+            model: sourceModel,
+            level: UnitLevel.veteran,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        sourceModel = squad.models.first;
+        bloc.add(
+          UpdateModelIsDuelist(
+            squad: squad,
+            model: sourceModel,
+            isDuelist: true,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        squad = bloc.state.squads.first;
+        sourceModel = squad.models.first;
+        bloc.add(DuplicateModel(squad: squad, model: sourceModel));
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        expect(squad.models.length, 2);
+
+        final sourceModel = squad.models[0];
+        final duplicatedModel = squad.models[1];
+
+        final expectedBaseModel = sourceModel.copyWith(
+          id: duplicatedModel.id,
+          command: Command.none,
+          level: UnitLevel.regular,
+          isDuelist: false,
+        );
+
+        final canCopyLevel = bloc.state.ruleSet.canAssignUnitLevel(
+          model: expectedBaseModel,
+          newLevel: sourceModel.level,
+          squad: squad,
+          allSquads: bloc.state.squads,
+        );
+        final expectedLevel = canCopyLevel
+            ? sourceModel.level
+            : UnitLevel.regular;
+
+        final modelAfterLevel = expectedBaseModel.copyWith(
+          level: expectedLevel,
+        );
+        final canCopyDuelist =
+            sourceModel.isDuelist &&
+            bloc.state.ruleSet.canAssignDuelist(
+              model: modelAfterLevel,
+              newDuelistStatus: true,
+              squad: squad,
+              allSquads: bloc.state.squads,
+            );
+
+        expect(duplicatedModel.command, Command.none);
+        expect(duplicatedModel.level, expectedLevel);
+        expect(duplicatedModel.isDuelist, canCopyDuelist);
       },
     );
   });

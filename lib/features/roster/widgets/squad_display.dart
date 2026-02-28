@@ -79,18 +79,91 @@ class SquadDisplay extends StatelessWidget {
                               ),
                             ],
                             IconButton(
-                              icon: const Icon(
-                                Icons.delete_forever_outlined,
-                                color: AppTheme.deleteIconColor,
-                              ),
+                              icon: const Icon(Icons.more_vert),
+                              tooltip: context.l10n.modelActionsTooltip,
                               onPressed: () async {
-                                final confirmed = await showRemoveSquadDialog(
-                                  context: context,
-                                  squadName: squad.name,
-                                );
-                                if (confirmed == true && context.mounted) {
+                                final action =
+                                    await showDialog<_SquadTileAction>(
+                                      context: context,
+                                      builder: (dialogContext) => AlertDialog(
+                                        title: Text(
+                                          context.l10n.modelActionsTitle,
+                                        ),
+                                        content: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            ListTile(
+                                              contentPadding: EdgeInsets.zero,
+                                              leading: const Icon(
+                                                Icons.delete_forever_outlined,
+                                                color: AppTheme.deleteIconColor,
+                                              ),
+                                              title: Text(
+                                                context.l10n.deleteButtonText,
+                                              ),
+                                              onTap: () => Navigator.of(
+                                                dialogContext,
+                                              ).pop(_SquadTileAction.delete),
+                                            ),
+                                            ListTile(
+                                              contentPadding: EdgeInsets.zero,
+                                              leading: const Icon(
+                                                Icons.copy_outlined,
+                                              ),
+                                              title: Text(
+                                                context
+                                                    .l10n
+                                                    .duplicateButtonText,
+                                              ),
+                                              onTap: () => Navigator.of(
+                                                dialogContext,
+                                              ).pop(_SquadTileAction.duplicate),
+                                            ),
+                                          ],
+                                        ),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.of(
+                                              dialogContext,
+                                            ).pop(),
+                                            child: Text(
+                                              context.l10n.cancelButtonText,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+
+                                if (!context.mounted || action == null) {
+                                  return;
+                                }
+
+                                if (action == _SquadTileAction.delete) {
+                                  final confirmed = await showRemoveSquadDialog(
+                                    context: context,
+                                    squadName: squad.name,
+                                  );
+                                  if (confirmed == true && context.mounted) {
+                                    context.read<RosterBloc>().add(
+                                      RemoveSquad(squad: squad),
+                                    );
+                                  }
+                                  return;
+                                }
+
+                                if (action == _SquadTileAction.duplicate) {
+                                  final duplicateName =
+                                      generateUniqueDefaultSquadName(
+                                        context,
+                                        squads,
+                                      );
                                   context.read<RosterBloc>().add(
-                                    RemoveSquad(squad: squad),
+                                    DuplicateSquad(
+                                      squad: squad,
+                                      name: duplicateName,
+                                    ),
                                   );
                                 }
                               },
@@ -116,3 +189,5 @@ class SquadDisplay extends StatelessWidget {
     );
   }
 }
+
+enum _SquadTileAction { delete, duplicate }

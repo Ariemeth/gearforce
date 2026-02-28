@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/data/repositories/json_unit_repository.dart';
 import 'package:gearforce/domain/entities/equipment/weapon.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
+import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/repositories/weapon_repository.dart';
 import 'package:gearforce/data/static/weapon_factory.dart';
 
@@ -130,7 +131,23 @@ void main() {
         final unit = unitRepository.parseUnit(
           unitWithUpgrades as Map<String, dynamic>,
         );
-        expect(unit.upgrades, isNotEmpty);
+        expect(unit.availableModelUpgrades, isNotEmpty);
+
+        final model = Model(
+          id: 1,
+          base: unit.base,
+          variant: unit.variants.first,
+          availableModelUpgrades: unit.availableModelUpgrades,
+        );
+
+        final flakJacket = unit.availableModelUpgrades.firstWhere(
+          (upgrade) => upgrade.id == 'north-hunter-flakjacket',
+        );
+        final upgradedModel = model.addModelUpgrade(flakJacket);
+
+        expect(upgradedModel.tv, model.tv + 1);
+        expect(upgradedModel.hullStructure.hull, 6);
+        expect(upgradedModel.hullStructure.structure, 2);
       }
     });
   });
