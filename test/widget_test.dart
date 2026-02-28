@@ -69,14 +69,14 @@ void main() {
       expect(find.text('Bravo Squad'), findsOneWidget);
     });
 
-    testWidgets('shows delete icon for each squad', (tester) async {
+    testWidgets('shows actions menu button for each squad', (tester) async {
       final squads = [
         const Squad(id: 1, name: 'Alpha', primaryRole: Role.gp, models: []),
       ];
       await tester.pumpWidget(_testApp(child: SquadDisplay(squads: squads)));
       await tester.pumpAndSettle();
 
-      expect(find.byIcon(Icons.delete_forever_outlined), findsOneWidget);
+      expect(find.byIcon(Icons.more_vert), findsOneWidget);
     });
 
     testWidgets('shows confirmation dialog when delete is tapped', (
@@ -88,6 +88,11 @@ void main() {
       await tester.pumpWidget(_testApp(child: SquadDisplay(squads: squads)));
       await tester.pumpAndSettle();
 
+      // Tap the more_vert button to open the actions menu
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      // Tap the delete option in the actions menu
       await tester.tap(find.byIcon(Icons.delete_forever_outlined));
       await tester.pumpAndSettle();
 
@@ -116,6 +121,11 @@ void main() {
       );
       await tester.pumpAndSettle();
 
+      // Tap the more_vert button to open the actions menu
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      // Tap the delete option in the actions menu
       await tester.tap(find.byIcon(Icons.delete_forever_outlined));
       await tester.pumpAndSettle();
 
@@ -144,6 +154,11 @@ void main() {
       );
       await tester.pumpAndSettle();
 
+      // Tap the more_vert button to open the actions menu
+      await tester.tap(find.byIcon(Icons.more_vert));
+      await tester.pumpAndSettle();
+
+      // Tap the delete option in the actions menu
       await tester.tap(find.byIcon(Icons.delete_forever_outlined));
       await tester.pumpAndSettle();
 
