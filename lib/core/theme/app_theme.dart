@@ -68,7 +68,7 @@ class AppTheme {
 
   static const TextStyle squadUnitNameStyle = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w700,
   );
 
   static const TextStyle squadUnitBodyStyle = TextStyle(
@@ -81,7 +81,10 @@ class AppTheme {
   // ============================================================================
 
   static const EdgeInsets defaultPadding = EdgeInsets.all(0);
-  static const EdgeInsets listTilePadding = defaultPadding;
+  static const EdgeInsets listTilePadding = EdgeInsets.symmetric(
+    horizontal: 5.0,
+    vertical: 0.0,
+  );
 
   static const EdgeInsets defaultPagePadding = EdgeInsets.fromLTRB(5, 3, 5, 3);
 

@@ -40,10 +40,8 @@ class SquadDisplay extends StatelessWidget {
                       key: ValueKey(squad.id),
                       index: index,
                       child: ListTile(
-                        title: Text(
-                          squad.name, // Use name instead of id
-                          style: AppTheme.subtitleStyle,
-                        ),
+                        contentPadding: AppTheme.listTilePadding,
+                        title: Text(squad.name, style: AppTheme.subtitleStyle),
                         subtitle: Wrap(
                           spacing: 12,
                           runSpacing: 4,
@@ -78,6 +76,7 @@ class SquadDisplay extends StatelessWidget {
                                 style: AppTheme.squadUnitBodyStyle,
                               ),
                             ],
+                            const SizedBox(width: 4),
                             IconButton(
                               icon: const Icon(Icons.more_vert),
                               tooltip: context.l10n.modelActionsTooltip,
