@@ -1,3 +1,5 @@
+import 'package:gearforce/data/static/rules/base/squad_upgrades_rule.dart';
+import 'package:gearforce/domain/entities/unit/squad_upgrade.dart';
 import 'package:gearforce/domain/entities/attribute/command.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
@@ -19,6 +21,7 @@ abstract class RuleSet {
   final CommandLevelRule commandLevelRule;
   final UnitLevelRule unitLevelRule;
   final DuelistRule duelistRule;
+  final SquadUpgradesRule? squadUpgradesRule;
 
   const RuleSet({
     required this.name,
@@ -26,6 +29,7 @@ abstract class RuleSet {
     this.commandLevelRule = CommandLevelRule.standard,
     this.unitLevelRule = UnitLevelRule.standard,
     this.duelistRule = DuelistRule.standard,
+    this.squadUpgradesRule,
     this.extraRules = const [],
     required this.assetTable,
   });
@@ -36,8 +40,13 @@ abstract class RuleSet {
       commandLevelRule,
       unitLevelRule,
       duelistRule,
+      ?squadUpgradesRule,
       ...extraRules,
     ];
+  }
+
+  List<SquadUpgrade> getAvailableSquadUpgrades() {
+    return _resolvedSquadUpgradesRule.availableUpgrades;
   }
 
   List<Rule> get activeRules {
@@ -232,5 +241,15 @@ abstract class RuleSet {
     }
 
     return unitLevelRule;
+  }
+
+  SquadUpgradesRule get _resolvedSquadUpgradesRule {
+    for (final rule in activeRules.reversed) {
+      if (rule is SquadUpgradesRule) {
+        return rule;
+      }
+    }
+
+    return squadUpgradesRule ?? SquadUpgradesRule.standard;
   }
 }

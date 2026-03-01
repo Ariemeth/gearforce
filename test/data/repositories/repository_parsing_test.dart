@@ -2,11 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/data/repositories/json_unit_repository.dart';
-import 'package:gearforce/domain/entities/equipment/weapon.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
-import 'package:gearforce/domain/repositories/weapon_repository.dart';
-import 'package:gearforce/data/static/weapon_factory.dart';
 
 /// A test subclass that exposes [parseUnit] for direct testing.
 class TestableUnitRepository extends JsonUnitRepository {
@@ -15,43 +11,10 @@ class TestableUnitRepository extends JsonUnitRepository {
   }
 }
 
-class TestWeaponRepository implements WeaponRepository {
-  final Map<String, Map<String, dynamic>> _weaponsByCode = {};
-
-  TestWeaponRepository() {
-    final file = File('assets/data/weapons/weapons.json');
-    final jsonString = file.readAsStringSync();
-    final List<dynamic> jsonData = json.decode(jsonString);
-    for (final item in jsonData) {
-      final weaponMap = item as Map<String, dynamic>;
-      _weaponsByCode[weaponMap['code'] as String] = weaponMap;
-    }
-  }
-
-  @override
-  Future<List<Weapon>> getWeapons({WeaponSize size = WeaponSize.light}) async {
-    return _weaponsByCode.values.map((j) => Weapon.fromJson(j, size)).toList();
-  }
-
-  @override
-  Weapon? getWeaponByCode(String code, {bool hasReact = false}) {
-    final size = WeaponSize.fromCode(code);
-    final baseCode = code.substring(1);
-    final weaponJson = _weaponsByCode[baseCode];
-    if (weaponJson == null) return null;
-    return Weapon.fromJson(weaponJson, size, isReact: hasReact);
-  }
-}
-
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  late TestWeaponRepository weaponRepository;
-  late TestableUnitRepository unitRepository;
 
-  setUpAll(() {
-    weaponRepository = TestWeaponRepository();
-    WeaponFactory.setRepository(weaponRepository);
-  });
+  late TestableUnitRepository unitRepository;
 
   setUp(() {
     unitRepository = TestableUnitRepository();
@@ -148,28 +111,6 @@ void main() {
         expect(upgradedModel.hullStructure.hull, 6);
         expect(upgradedModel.hullStructure.structure, 2);
       }
-    });
-  });
-
-  group('WeaponRepository', () {
-    test('getWeaponByCode returns weapon for valid code', () {
-      // Use a known weapon code from the real data
-      final weapon = weaponRepository.getWeaponByCode('LSMG');
-      // If LSMG doesn't exist, try other common codes
-      if (weapon != null) {
-        expect(weapon.code, isNotEmpty);
-      }
-    });
-
-    test('getWeaponByCode returns null for unknown code', () {
-      // Code must start with valid size prefix (L, M, H)
-      final weapon = weaponRepository.getWeaponByCode('LXYZ');
-      expect(weapon, isNull);
-    });
-
-    test('getWeapons returns non-empty list', () async {
-      final weapons = await weaponRepository.getWeapons();
-      expect(weapons, isNotEmpty);
     });
   });
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/equipment/weapon.dart';
-import 'package:gearforce/domain/repositories/weapon_repository.dart';
+import 'package:gearforce/data/static/weapon_factory.dart';
 import 'package:gearforce/features/roster/widgets/weapon_data_table.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 import 'package:gearforce/core/widgets/constrained_content.dart';
@@ -20,7 +19,6 @@ class WeaponDisplayScreen extends StatefulWidget {
 
 class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
   List<Weapon> weapons = [];
-  bool _isLoading = true;
   bool _hasLoadedOnce = false;
 
   @override
@@ -32,15 +30,10 @@ class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
     }
   }
 
-  Future<void> _loadWeapons() async {
-    final repository = context.read<WeaponRepository>();
-    final loadedWeapons = await repository.getWeapons();
-    if (mounted) {
-      setState(() {
-        weapons = loadedWeapons;
-        _isLoading = false;
-      });
-    }
+  void _loadWeapons() {
+    setState(() {
+      weapons = WeaponFactory.getAllWeapons();
+    });
   }
 
   @override
@@ -51,14 +44,10 @@ class _WeaponDisplayScreenState extends State<WeaponDisplayScreen> {
           child: Text(context.l10n.weaponsTitle, style: AppTheme.titleStyle),
         ),
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : ConstrainedContent(
-              maxWidth: _maxContentWidth,
-              child: SingleChildScrollView(
-                child: WeaponDataTable(weapons: weapons),
-              ),
-            ),
+      body: ConstrainedContent(
+        maxWidth: _maxContentWidth,
+        child: SingleChildScrollView(child: WeaponDataTable(weapons: weapons)),
+      ),
     );
   }
 }

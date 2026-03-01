@@ -70,7 +70,7 @@ void main() {
           ...weapons,
           SingleWeaponSpec(
             weapon: Weapon(
-              baseCode: 'W001',
+              code: 'W001',
               name: 'Test Weapon',
               size: WeaponSize.light,
               range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),

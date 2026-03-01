@@ -14,6 +14,7 @@ import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
 import 'package:gearforce/domain/entities/faction/rule_set.dart';
+import 'package:gearforce/data/static/rules/base/squad_upgrades_rule.dart';
 import 'package:gearforce/data/static/rules/base/squad_size_rule.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
@@ -143,6 +144,50 @@ void main() {
 
       expect(ruleSet.rules.whereType<SquadSizeRule>().length, 2);
       expect(ruleSet.activeRules.whereType<SquadSizeRule>().length, 1);
+    });
+
+    test('uses base squad upgrades rule when no override exists', () {
+      const baseRule = SquadUpgradesRule(
+        id: 'base-squad-upgrades',
+        name: 'Base Squad Upgrades',
+        description: 'Base squad upgrades for test',
+        availableUpgrades: [],
+      );
+
+      final ruleSet = _TestRuleSet(squadUpgradesRule: baseRule);
+
+      expect(ruleSet.getAvailableSquadUpgrades(), isEmpty);
+    });
+
+    test('uses last active SquadUpgradesRule from extra rules', () {
+      const baseRule = SquadUpgradesRule(
+        id: 'base-squad-upgrades',
+        name: 'Base Squad Upgrades',
+        description: 'Base squad upgrades for test',
+        availableUpgrades: [],
+      );
+
+      const firstOverride = SquadUpgradesRule(
+        id: 'first-squad-upgrades-override',
+        name: 'First Override',
+        description: 'First override rule',
+        availableUpgrades: [],
+      );
+
+      const lastOverride = SquadUpgradesRule(
+        id: 'last-squad-upgrades-override',
+        name: 'Last Override',
+        description: 'Last override rule',
+        availableUpgrades: [],
+      );
+
+      final ruleSet = _TestRuleSet(
+        squadUpgradesRule: baseRule,
+        extraRules: [firstOverride, lastOverride],
+      );
+
+      expect(ruleSet.activeRules.last.id, 'last-squad-upgrades-override');
+      expect(ruleSet.getAvailableSquadUpgrades(), isEmpty);
     });
 
     test('counts units with 2+ actions as 2 effective units', () {
@@ -334,7 +379,7 @@ Model _buildModel({
 }
 
 class _TestRuleSet extends RuleSet {
-  const _TestRuleSet({super.extraRules = const []})
+  const _TestRuleSet({super.squadUpgradesRule, super.extraRules = const []})
     : super(name: 'Test RuleSet', assetTable: const AssetTable.unlimited());
 
   @override

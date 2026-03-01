@@ -1,67 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_parser.dart';
-import 'package:gearforce/data/static/weapon_factory.dart';
-import 'package:gearforce/domain/repositories/weapon_repository.dart';
-import 'package:gearforce/domain/entities/equipment/weapon.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
-import 'package:gearforce/domain/entities/attribute/size_bands.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_range.dart';
-
-class MockWeaponRepository implements WeaponRepository {
-  @override
-  Future<List<Weapon>> getWeapons() async => [];
-
-  @override
-  Weapon? getWeaponByCode(String code, {bool hasReact = false}) {
-    final size = WeaponSize.fromCode(code);
-    final baseCode = code.substring(1);
-
-    switch (baseCode) {
-      case 'AC':
-        return Weapon(
-          baseCode: 'AC',
-          name: 'Autocannon',
-          range: const WeaponRange(minOptimal: 0, maxOptimal: 12, max: 24),
-          modes: {},
-          damageBands: const DamageSizeBands(l: 1, m: 2, h: 3),
-          size: size,
-          isReact: hasReact,
-          baseTraits: [],
-          baseAlternateTraits: [Trait(name: 'Precise')],
-        );
-      case 'FRC':
-      case 'FC':
-        return Weapon(
-          baseCode: baseCode,
-          name: 'Frag Cannon',
-          range: const WeaponRange(minOptimal: 0, maxOptimal: 6, max: 12),
-          modes: {},
-          damageBands: const DamageSizeBands(l: 1, m: 2, h: 3),
-          size: size,
-          isReact: hasReact,
-        );
-      case 'ATM':
-        return Weapon(
-          baseCode: 'ATM',
-          name: 'Anti-Tank Missile',
-          range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-          modes: {},
-          damageBands: const DamageSizeBands(l: 2, m: 3, h: 4),
-          size: size,
-          isReact: hasReact,
-        );
-      default:
-        return null;
-    }
-  }
-}
 
 void main() {
-  setUp(() {
-    WeaponFactory.setRepository(MockWeaponRepository());
-  });
-
   group('WeaponParser.parseWeaponString', () {
     test('should parse a weapon string without traits', () {
       // Arrange

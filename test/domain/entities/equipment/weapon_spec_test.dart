@@ -5,26 +5,10 @@ import 'package:gearforce/domain/entities/equipment/weapon_size.dart'
     show WeaponSize;
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart'
     show SingleWeaponSpec, ComboWeaponSpec;
-import 'package:gearforce/domain/entities/attribute/size_bands.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_range.dart';
 
 void main() {
-  final wacL = Weapon(
-    baseCode: 'AC',
-    name: 'Autocannon',
-    range: const WeaponRange(minOptimal: 0, maxOptimal: 12, max: 24),
-    modes: {},
-    damageBands: const DamageSizeBands(l: 1, m: 2, h: 3),
-    size: WeaponSize.light,
-  );
-  final watmL = Weapon(
-    baseCode: 'ATM',
-    name: 'Anti-Tank Missile',
-    range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-    modes: {},
-    damageBands: const DamageSizeBands(l: 2, m: 3, h: 4),
-    size: WeaponSize.light,
-  );
+  final wacL = Weapon.ac(WeaponSize.light);
+  final watmL = Weapon.atm(WeaponSize.light);
 
   group('WeaponV2.SingleWeaponSpec', () {
     test('SingleWeaponSpec creation no custom traits', () {

@@ -4,40 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/data/repositories/json_unit_repository.dart';
 import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
-import 'package:gearforce/domain/entities/equipment/weapon.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
-import 'package:gearforce/domain/repositories/weapon_repository.dart';
-import 'package:gearforce/data/static/weapon_factory.dart';
-
-class TestWeaponRepository implements WeaponRepository {
-  final Map<String, Map<String, dynamic>> _weaponsByCode = {};
-
-  TestWeaponRepository() {
-    final file = File('assets/data/weapons/weapons.json');
-    final jsonString = file.readAsStringSync();
-    final List<dynamic> jsonData = json.decode(jsonString);
-    for (final item in jsonData) {
-      final weaponMap = item as Map<String, dynamic>;
-      _weaponsByCode[weaponMap['code'] as String] = weaponMap;
-    }
-  }
-
-  @override
-  Future<List<Weapon>> getWeapons() async {
-    return _weaponsByCode.values
-        .map((json) => Weapon.fromJson(json, WeaponSize.light))
-        .toList();
-  }
-
-  @override
-  Weapon? getWeaponByCode(String code, {bool hasReact = false}) {
-    final size = WeaponSize.fromCode(code);
-    final baseCode = code.substring(1);
-    final weaponJson = _weaponsByCode[baseCode];
-    if (weaponJson == null) return null;
-    return Weapon.fromJson(weaponJson, size, isReact: hasReact);
-  }
-}
 
 class TestJsonUnitRepository extends JsonUnitRepository {
   @override
@@ -56,8 +22,6 @@ class TestJsonUnitRepository extends JsonUnitRepository {
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  final weaponRepository = TestWeaponRepository();
-  WeaponFactory.setRepository(weaponRepository);
 
   // TODO Update to include each factions units once they are available
   const factions = [Faction.blackTalons, Faction.north];
