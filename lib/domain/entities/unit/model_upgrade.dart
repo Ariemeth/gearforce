@@ -221,7 +221,7 @@ class ModelUpgrade {
 
 UpgradeType _upgradeTypeFromJson(dynamic value) {
   if (value == null) {
-    return UpgradeType.unit; // default
+    return UpgradeType.profile; // default
   }
   return UpgradeType.fromString(value as String);
 }

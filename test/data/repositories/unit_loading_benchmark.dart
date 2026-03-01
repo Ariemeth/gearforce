@@ -41,7 +41,7 @@ void main() {
         final firstUnit = units.first;
         print('\nFirst unit: ${firstUnit.name}');
         print('  - Variants: ${firstUnit.variants.length}');
-        print('  - Upgrades: ${firstUnit.availableUnitUpgrades.length}');
+        print('  - Upgrades: ${firstUnit.availableProfileUpgrades.length}');
         if (firstUnit.base.reactWeapons.isNotEmpty) {
           print('  - React weapons: ${firstUnit.base.reactWeapons.length}');
         }
@@ -85,7 +85,7 @@ void main() {
 
       final unitsWithVariants = units.where((u) => u.variants.isNotEmpty);
       final unitsWithUpgrades = units.where(
-        (u) => u.availableUnitUpgrades.isNotEmpty,
+        (u) => u.availableProfileUpgrades.isNotEmpty,
       );
       final unitsWithWeapons = units.where(
         (u) =>
@@ -100,14 +100,14 @@ void main() {
 
       // Show sample complex units
       final complexUnits = units.where(
-        (u) => u.variants.isNotEmpty && u.availableUnitUpgrades.isNotEmpty,
+        (u) => u.variants.isNotEmpty && u.availableProfileUpgrades.isNotEmpty,
       );
 
       if (complexUnits.isNotEmpty) {
         print('\nSample complex units (with variants and upgrades):');
         for (final unit in complexUnits.take(3)) {
           print(
-            '  ${unit.name}: ${unit.variants.length} variants, ${unit.availableUnitUpgrades.length} upgrades',
+            '  ${unit.name}: ${unit.variants.length} variants, ${unit.availableProfileUpgrades.length} upgrades',
           );
         }
       }

@@ -1,8 +1,11 @@
 enum UpgradeType {
-  core('core'),
-  unit('unit'),
+  profile('profile'),
+  command('command'),
+  cg('cg'),
   squad('squad'),
-  command('command');
+  unit('unit'),
+  blitz('blitz'),
+  fieldGuide('fieldGuide');
 
   final String value;
 
@@ -11,7 +14,7 @@ enum UpgradeType {
   factory UpgradeType.fromString(String value) {
     return UpgradeType.values.firstWhere(
       (type) => type.value == value,
-      orElse: () => UpgradeType.unit, // default to unit if not found
+      orElse: () => UpgradeType.profile, // default to profile if not found
     );
   }
 }

@@ -53,7 +53,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Test Upgrade',
         id: 'upgrade-001',
-        type: UpgradeType.unit,
+        type: UpgradeType.profile,
         description: 'A test upgrade',
         nameMod: (name, context) => 'Modified ${context.model.name}',
         tvMod: (tv, context) => tv + 5,
@@ -150,7 +150,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'No-Op Upgrade',
         id: 'upgrade-002',
-        type: UpgradeType.unit,
+        type: UpgradeType.profile,
         description: 'A no-op upgrade',
       );
 
@@ -196,7 +196,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Test Upgrade with Option',
         id: 'upgrade-003',
-        type: UpgradeType.unit,
+        type: UpgradeType.profile,
         upgradeOption: modOption,
       );
 
@@ -214,7 +214,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Original Upgrade',
         id: 'upgrade-004',
-        type: UpgradeType.unit,
+        type: UpgradeType.profile,
         description: 'Original description',
         tvMod: (tv, context) => tv + 2,
       );
@@ -270,7 +270,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Upgrade with Option',
         id: 'upgrade-005',
-        type: UpgradeType.unit,
+        type: UpgradeType.profile,
         upgradeOption: modOption,
       );
 

@@ -21,7 +21,7 @@ abstract class RuleSet {
   final CommandLevelRule commandLevelRule;
   final UnitLevelRule unitLevelRule;
   final DuelistRule duelistRule;
-  final SquadUpgradesRule? squadUpgradesRule;
+  final SquadUpgradesRule squadUpgradesRule;
 
   const RuleSet({
     required this.name,
@@ -29,7 +29,7 @@ abstract class RuleSet {
     this.commandLevelRule = CommandLevelRule.standard,
     this.unitLevelRule = UnitLevelRule.standard,
     this.duelistRule = DuelistRule.standard,
-    this.squadUpgradesRule,
+    this.squadUpgradesRule = SquadUpgradesRule.standard,
     this.extraRules = const [],
     required this.assetTable,
   });
@@ -40,7 +40,7 @@ abstract class RuleSet {
       commandLevelRule,
       unitLevelRule,
       duelistRule,
-      ?squadUpgradesRule,
+      squadUpgradesRule,
       ...extraRules,
     ];
   }
@@ -250,6 +250,6 @@ abstract class RuleSet {
       }
     }
 
-    return squadUpgradesRule ?? SquadUpgradesRule.standard;
+    return squadUpgradesRule;
   }
 }

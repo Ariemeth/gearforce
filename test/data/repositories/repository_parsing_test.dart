@@ -94,7 +94,7 @@ void main() {
         final unit = unitRepository.parseUnit(
           unitWithUpgrades as Map<String, dynamic>,
         );
-        expect(unit.availableUnitUpgrades, isNotEmpty);
+        expect(unit.availableProfileUpgrades, isNotEmpty);
 
         final model = Model(
           id: 1,
@@ -102,7 +102,7 @@ void main() {
           variant: unit.variants.first,
         );
 
-        final flakJacket = unit.availableUnitUpgrades.firstWhere(
+        final flakJacket = unit.availableProfileUpgrades.firstWhere(
           (upgrade) => upgrade.id == 'north-hunter-flakjacket',
         );
         final upgradedModel = model.addModelUpgrade(flakJacket);

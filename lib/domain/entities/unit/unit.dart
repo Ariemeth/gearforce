@@ -14,13 +14,13 @@ class Unit {
   final ModelBase base;
   final List<Variant> variants;
   @JsonKey(name: 'upgrades')
-  final List<ModelUpgrade> availableUnitUpgrades;
+  final List<ModelUpgrade> availableProfileUpgrades;
 
   const Unit(
     this.base, {
     required this.id,
     this.variants = const [],
-    this.availableUnitUpgrades = const [],
+    this.availableProfileUpgrades = const [],
   }) : assert(id.length != 0, 'Id must not be empty');
 
   factory Unit.fromJson(Map<String, dynamic> json) {
@@ -50,7 +50,7 @@ class Unit {
                 .map((e) => Variant.fromJson(e as Map<String, dynamic>))
                 .toList()
           : const [],
-      availableUnitUpgrades: json['upgrades'] != null
+      availableProfileUpgrades: json['upgrades'] != null
           ? (json['upgrades'] as List)
                 .map((e) => ModelUpgrade.fromJson(e as Map<String, dynamic>))
                 .toList()

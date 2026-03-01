@@ -70,7 +70,7 @@ void main() {
           ModelUpgrade(
             'Test Mod',
             id: 'mod-001',
-            type: UpgradeType.unit,
+            type: UpgradeType.profile,
             nameMod: (name, context) => 'Modified $name',
             tvMod: (tv, context) => tv + 5,
             rolesMod: (roles, context) => {...roles, Role.sk},
@@ -113,13 +113,13 @@ void main() {
           ModelUpgrade(
             'Mod 1',
             id: 'mod-001',
-            type: UpgradeType.unit,
+            type: UpgradeType.profile,
             tvMod: (tv, context) => tv + 5,
           ),
           ModelUpgrade(
             'Mod 2',
             id: 'mod-002',
-            type: UpgradeType.unit,
+            type: UpgradeType.profile,
             tvMod: (tv, context) => tv + 3,
           ),
         ],
@@ -167,13 +167,13 @@ void main() {
           ModelUpgrade(
             'Mod 1',
             id: 'mod-001',
-            type: UpgradeType.unit,
+            type: UpgradeType.profile,
             tvMod: (tv, context) => tv + 5,
           ),
           ModelUpgrade(
             'Mod 2',
             id: 'mod-002',
-            type: UpgradeType.unit,
+            type: UpgradeType.profile,
             tvMod: (tv, context) => tv + 3,
           ),
         ],
@@ -222,7 +222,7 @@ void main() {
         ModelUpgrade(
           'Test Mod',
           id: 'mod-001',
-          type: UpgradeType.unit,
+          type: UpgradeType.profile,
           nameMod: (name, context) => 'Modified ${context.model.name}',
         ),
       );

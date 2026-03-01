@@ -64,7 +64,7 @@ class Model {
     UnitRepository repository,
   ) async {
     final unit = await repository.getUnitById(base.unitId);
-    return unit?.availableUnitUpgrades ?? [];
+    return unit?.availableProfileUpgrades ?? [];
   }
 
   Model copyWith({
