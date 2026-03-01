@@ -48,6 +48,10 @@ app.*.map.json
 # Ignore generated localizations files
 /lib/src/generated/i18n
 
+# Benchmark output files
+benchmark_output.txt
+benchmark_results_*.txt
+
 # Android build files
 /android/.gradle/
 /android/.idea/

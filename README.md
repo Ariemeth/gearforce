@@ -148,6 +148,25 @@ The `context.l10n` extension (defined in `lib/core/utils/l10n_extension.dart`) i
 
 ---
 
+## Benchmarking
+
+Gearforce includes comprehensive benchmark tests for measuring JSON parsing and unit loading performance. See [docs/benchmarks.md](docs/benchmarks.md) for details.
+
+**Quick Start:**
+
+```bash
+# Run benchmarks
+flutter test test/data/repositories/unit_loading_benchmark.dart
+```
+
+Run with verbose output to see detailed timing:
+
+```bash
+flutter test test/data/repositories/unit_loading_benchmark.dart --verbose
+```
+
+---
+
 ## Summary Table: What Goes Where?
 
 | Component                        | Directory                          |
