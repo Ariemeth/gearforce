@@ -8,6 +8,7 @@ part of 'model_base.dart';
 
 ModelBase _$ModelBaseFromJson(Map<String, dynamic> json) => ModelBase(
   json['name'] as String,
+  unitId: json['unitId'] as String,
   tv: (json['tv'] as num).toInt(),
   roles: (json['roles'] as List<dynamic>)
       .map((e) => $enumDecode(_$RoleEnumMap, e))
@@ -42,6 +43,7 @@ ModelBase _$ModelBaseFromJson(Map<String, dynamic> json) => ModelBase(
 );
 
 Map<String, dynamic> _$ModelBaseToJson(ModelBase instance) => <String, dynamic>{
+  'unitId': instance.unitId,
   'name': instance.name,
   'tv': instance.tv,
   'roles': instance.roles.map((e) => _$RoleEnumMap[e]!).toList(),

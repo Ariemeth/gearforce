@@ -1,5 +1,6 @@
 import 'package:gearforce/domain/entities/unit/common_modifiers.dart'
     show RequirementCheck, CommonModifiers, NameGenerator;
+import 'package:gearforce/domain/entities/unit/upgrade_type.dart';
 import 'package:gearforce/data/static/mod_functions.dart'
     show
         createAddTraitsMod,
@@ -25,6 +26,8 @@ class ModelUpgrade {
   @JsonKey(includeFromJson: false, includeToJson: false)
   final NameGenerator? nameGenerator;
   final String id;
+  @JsonKey(fromJson: _upgradeTypeFromJson, toJson: _upgradeTypeToJson)
+  final UpgradeType type;
   final String description;
   @JsonKey(includeFromJson: false, includeToJson: false)
   final StringMod nameMod;
@@ -58,6 +61,7 @@ class ModelUpgrade {
   const ModelUpgrade(
     String name, {
     required this.id,
+    required this.type,
     this.nameGenerator,
     this.description = '',
     this.nameMod = UnitModifiers.defaultStringMod,
@@ -82,6 +86,8 @@ class ModelUpgrade {
     final name = json['name'] as String;
     final id = json['id'] as String;
     final description = json['description'] as String? ?? '';
+    final typeString = json['type'] as String? ?? 'unit';
+    final type = UpgradeType.fromString(typeString);
 
     final tvAdjustment = _asInt(json['tv']);
     final hull = _asInt(json['hull']);
@@ -125,6 +131,7 @@ class ModelUpgrade {
     return ModelUpgrade(
       name,
       id: id,
+      type: type,
       description: description,
       tvMod: tvAdjustment == null
           ? UnitModifiers.defaultIntMod
@@ -168,6 +175,7 @@ class ModelUpgrade {
     String? name,
     NameGenerator? nameGenerator,
     String? id,
+    UpgradeType? type,
     String? description,
     StringMod? nameMod,
     IntMod? tvMod,
@@ -188,6 +196,7 @@ class ModelUpgrade {
     return ModelUpgrade(
       name ?? this.name,
       id: id ?? this.id,
+      type: type ?? this.type,
       nameGenerator: nameGenerator ?? this.nameGenerator,
       description: description ?? this.description,
       nameMod: nameMod ?? this.nameMod,
@@ -208,6 +217,17 @@ class ModelUpgrade {
       requirementCheck: requirementCheck ?? this.requirementCheck,
     );
   }
+}
+
+UpgradeType _upgradeTypeFromJson(dynamic value) {
+  if (value == null) {
+    return UpgradeType.unit; // default
+  }
+  return UpgradeType.fromString(value as String);
+}
+
+String _upgradeTypeToJson(UpgradeType type) {
+  return type.value;
 }
 
 int? _asInt(dynamic value) {

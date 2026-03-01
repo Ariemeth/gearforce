@@ -167,7 +167,6 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       id: _nextModelId + 1,
       base: event.base,
       variant: event.variant,
-      availableModelUpgrades: event.availableModelUpgrades,
       command: shouldAssignFirstIc ? Command.firstIC : Command.none,
     );
 
@@ -474,10 +473,9 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       orElse: () => event.model,
     );
 
-    final updatedModel = currentModel.setModelUpgradeEnabled(
-      upgradeId: event.upgradeId,
-      enabled: event.enabled,
-    );
+    final updatedModel = event.enabled
+        ? currentModel.setModelUpgradeEnabled(upgrade: event.upgrade)
+        : currentModel.removeModelUpgrade(event.upgrade);
 
     final updatedSquad = event.squad.copyWith(
       models: [

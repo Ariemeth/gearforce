@@ -13,6 +13,7 @@ import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade_context.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
+import 'package:gearforce/domain/repositories/unit_repository.dart';
 
 class Model {
   final int id;
@@ -20,7 +21,6 @@ class Model {
   final Variant variant;
   final UnitLevel level;
   final Command command;
-  final List<ModelUpgrade> availableModelUpgrades;
   final List<ModelUpgrade> _selectedModelUpgrades;
   final bool isDuelist;
 
@@ -33,11 +33,9 @@ class Model {
     required this.variant,
     this.level = UnitLevel.regular,
     this.command = Command.none,
-    List<ModelUpgrade>? availableModelUpgrades,
     List<ModelUpgrade>? selectedModelUpgrades,
     this.isDuelist = false,
-  }) : availableModelUpgrades = availableModelUpgrades ?? [],
-       _selectedModelUpgrades = selectedModelUpgrades ?? [];
+  }) : _selectedModelUpgrades = selectedModelUpgrades ?? [];
 
   String get name => getAttribute(ModelAttribute.name);
   int get tv =>
@@ -62,10 +60,16 @@ class Model {
   ];
   double get height => base.height;
 
+  Future<List<ModelUpgrade>> getAvailableUnitUpgrades(
+    UnitRepository repository,
+  ) async {
+    final unit = await repository.getUnitById(base.unitId);
+    return unit?.availableUnitUpgrades ?? [];
+  }
+
   Model copyWith({
     int? id,
     Variant? variant,
-    List<ModelUpgrade>? availableModelUpgrades,
     List<ModelUpgrade>? selectedModelUpgrades,
     UnitLevel? level,
     Command? command,
@@ -77,9 +81,6 @@ class Model {
       variant: variant ?? this.variant,
       level: level ?? this.level,
       command: command ?? this.command,
-      availableModelUpgrades:
-          availableModelUpgrades ??
-          [...this.availableModelUpgrades.map((upgrade) => upgrade.copyWith())],
       selectedModelUpgrades:
           selectedModelUpgrades ??
           [..._selectedModelUpgrades.map((upgrade) => upgrade.copyWith())],
@@ -91,29 +92,13 @@ class Model {
     return _selectedModelUpgrades.any((upgrade) => upgrade.id == upgradeId);
   }
 
-  Model setModelUpgradeEnabled({
-    required String upgradeId,
-    required bool enabled,
-  }) {
-    if (enabled) {
-      if (hasModelUpgrade(upgradeId)) {
-        return this;
-      }
-
-      final upgrade = availableModelUpgrades.firstWhere(
-        (candidate) => candidate.id == upgradeId,
-        orElse: () => throw StateError('Model upgrade not found: $upgradeId'),
-      );
-
-      return copyWith(
-        selectedModelUpgrades: [..._selectedModelUpgrades, upgrade.copyWith()],
-      );
+  Model setModelUpgradeEnabled({required ModelUpgrade upgrade}) {
+    if (hasModelUpgrade(upgrade.id)) {
+      return this;
     }
 
     return copyWith(
-      selectedModelUpgrades: _selectedModelUpgrades
-          .where((upgrade) => upgrade.id != upgradeId)
-          .toList(),
+      selectedModelUpgrades: [..._selectedModelUpgrades, upgrade.copyWith()],
     );
   }
 
@@ -127,7 +112,7 @@ class Model {
     return copyWith(
       selectedModelUpgrades: [
         for (final u in _selectedModelUpgrades)
-          if (u != upgrade) u,
+          if (u.id != upgrade.id) u,
       ],
     );
   }

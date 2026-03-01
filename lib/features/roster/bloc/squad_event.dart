@@ -42,14 +42,8 @@ class AddModel extends SquadEvent {
   final Squad squad;
   final ModelBase base;
   final Variant variant;
-  final List<ModelUpgrade> availableModelUpgrades;
 
-  AddModel({
-    required this.squad,
-    required this.base,
-    required this.variant,
-    this.availableModelUpgrades = const [],
-  });
+  AddModel({required this.squad, required this.base, required this.variant});
 }
 
 class RemoveModel extends SquadEvent {
@@ -105,13 +99,13 @@ class UpdateModelCommandLevel extends SquadEvent {
 class UpdateModelUpgradeEnabled extends SquadEvent {
   final Squad squad;
   final Model model;
-  final String upgradeId;
+  final ModelUpgrade upgrade;
   final bool enabled;
 
   UpdateModelUpgradeEnabled({
     required this.squad,
     required this.model,
-    required this.upgradeId,
+    required this.upgrade,
     required this.enabled,
   });
 }

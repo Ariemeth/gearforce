@@ -28,6 +28,7 @@ void main() {
 
       const baseModel = ModelBase(
         unitName,
+        unitId: 'test-unit',
         tv: unitTV,
         roles: {Role.gp, Role.sk},
         movement: Movement([MovementType.walker], 6),

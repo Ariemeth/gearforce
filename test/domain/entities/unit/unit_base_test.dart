@@ -26,6 +26,7 @@ void main() {
 
       final baseModel = ModelBase(
         unitName,
+        unitId: 'test-unit',
         tv: tv,
         roles: roles,
         movement: movement,

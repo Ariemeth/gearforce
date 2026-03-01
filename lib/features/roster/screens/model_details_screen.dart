@@ -10,6 +10,7 @@ import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec_list_extensions.dart';
+import 'package:gearforce/domain/repositories/unit_repository.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/model_info_content.dart';
 
@@ -102,7 +103,11 @@ class ModelDetailsScreen extends StatelessWidget {
                     children: buildTraitChips(model.traits),
                   ),
                   const SizedBox(height: 8),
-                  _ModelUpgradesSection(squad: result.squad!, model: model),
+                  _ModelUpgradesSection(
+                    squad: result.squad!,
+                    model: model,
+                    repository: context.read<UnitRepository>(),
+                  ),
                 ],
               ),
             ),
@@ -177,78 +182,98 @@ class _ModelStatsTable extends StatelessWidget {
 class _ModelUpgradesSection extends StatelessWidget {
   final Squad squad;
   final Model model;
+  final UnitRepository repository;
 
-  const _ModelUpgradesSection({required this.squad, required this.model});
+  const _ModelUpgradesSection({
+    required this.squad,
+    required this.model,
+    required this.repository,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final totalUpgrades = model.availableModelUpgrades.length;
-    final enabledUpgrades = model.selectedModelUpgrades.length;
+    return FutureBuilder<List<ModelUpgrade>>(
+      future: model.getAvailableUnitUpgrades(repository),
+      builder: (context, snapshot) {
+        final availableUpgrades = snapshot.data ?? [];
+        final totalUpgrades = availableUpgrades.length;
+        final enabledUpgrades = model.selectedModelUpgrades.length;
 
-    return Card(
-      child: ExpansionTile(
-        tilePadding: const EdgeInsets.symmetric(horizontal: 12),
-        childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-        title: Row(
-          children: [
-            Expanded(
-              child: Text('Model Upgrades', style: AppTheme.subtitleStyle),
-            ),
-            const SizedBox(width: 8),
-            Chip(label: Text('$enabledUpgrades / $totalUpgrades enabled')),
-          ],
-        ),
-        children: [
-          if (model.availableModelUpgrades.isEmpty)
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text('No model upgrades available.'),
-            )
-          else
-            ...model.availableModelUpgrades.map((upgrade) {
-              final isEnabled = model.hasModelUpgrade(upgrade.id);
-              final summary = _buildUpgradeChangeSummary(
-                model: model,
-                upgrade: upgrade,
-              );
-
-              final subtitleParts = <String>[
-                if (summary.inlineSummary.isNotEmpty) summary.inlineSummary,
-                if (upgrade.description.isNotEmpty) upgrade.description,
-              ];
-
-              return CheckboxListTile(
-                value: isEnabled,
-                dense: true,
-                contentPadding: EdgeInsets.zero,
-                controlAffinity: ListTileControlAffinity.leading,
-                title: Text(upgrade.name),
-                subtitle: subtitleParts.isEmpty
-                    ? null
-                    : Text(subtitleParts.join(' • ')),
-                secondary: Tooltip(
-                  message: summary.tooltip,
-                  waitDuration: const Duration(milliseconds: 300),
-                  child: const Icon(Icons.info_outline, size: 18),
+        return Card(
+          child: ExpansionTile(
+            tilePadding: const EdgeInsets.symmetric(horizontal: 12),
+            childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+            title: Row(
+              children: [
+                Expanded(
+                  child: Text('Model Upgrades', style: AppTheme.subtitleStyle),
                 ),
-                onChanged: (value) {
-                  if (value == null) {
-                    return;
-                  }
-
-                  context.read<RosterBloc>().add(
-                    UpdateModelUpgradeEnabled(
-                      squad: squad,
-                      model: model,
-                      upgradeId: upgrade.id,
-                      enabled: value,
-                    ),
+                const SizedBox(width: 8),
+                Chip(label: Text('$enabledUpgrades / $totalUpgrades enabled')),
+              ],
+            ),
+            children: [
+              if (snapshot.connectionState == ConnectionState.waiting)
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: SizedBox(
+                    height: 20,
+                    width: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                )
+              else if (availableUpgrades.isEmpty)
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('No model upgrades available.'),
+                )
+              else
+                ...availableUpgrades.map((upgrade) {
+                  final isEnabled = model.hasModelUpgrade(upgrade.id);
+                  final summary = _buildUpgradeChangeSummary(
+                    model: model,
+                    upgrade: upgrade,
                   );
-                },
-              );
-            }),
-        ],
-      ),
+
+                  final subtitleParts = <String>[
+                    if (summary.inlineSummary.isNotEmpty) summary.inlineSummary,
+                    if (upgrade.description.isNotEmpty) upgrade.description,
+                  ];
+
+                  return CheckboxListTile(
+                    value: isEnabled,
+                    dense: true,
+                    contentPadding: EdgeInsets.zero,
+                    controlAffinity: ListTileControlAffinity.leading,
+                    title: Text(upgrade.name),
+                    subtitle: subtitleParts.isEmpty
+                        ? null
+                        : Text(subtitleParts.join(' • ')),
+                    secondary: Tooltip(
+                      message: summary.tooltip,
+                      waitDuration: const Duration(milliseconds: 300),
+                      child: const Icon(Icons.info_outline, size: 18),
+                    ),
+                    onChanged: (value) {
+                      if (value == null) {
+                        return;
+                      }
+
+                      context.read<RosterBloc>().add(
+                        UpdateModelUpgradeEnabled(
+                          squad: squad,
+                          model: model,
+                          upgrade: upgrade,
+                          enabled: value,
+                        ),
+                      );
+                    },
+                  );
+                }),
+            ],
+          ),
+        );
+      },
     );
   }
 }
@@ -258,12 +283,9 @@ _UpgradeSummary _buildUpgradeChangeSummary({
   required ModelUpgrade upgrade,
 }) {
   final baseModel = model.hasModelUpgrade(upgrade.id)
-      ? model.setModelUpgradeEnabled(upgradeId: upgrade.id, enabled: false)
+      ? model.removeModelUpgrade(upgrade)
       : model;
-  final upgradedModel = baseModel.setModelUpgradeEnabled(
-    upgradeId: upgrade.id,
-    enabled: true,
-  );
+  final upgradedModel = baseModel.setModelUpgradeEnabled(upgrade: upgrade);
 
   final tooltipLines = <String>[];
   final inlineParts = <String>[];

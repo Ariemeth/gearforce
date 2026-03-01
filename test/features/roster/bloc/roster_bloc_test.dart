@@ -24,6 +24,11 @@ class MockUnitRepository implements UnitRepository {
   Future<List<Unit>> getUnitsByFaction(Faction faction) async {
     return const [];
   }
+
+  @override
+  Future<Unit?> getUnitById(String unitId) async {
+    return null;
+  }
 }
 
 ModelBase _createTestModelBase({
@@ -33,6 +38,7 @@ ModelBase _createTestModelBase({
 }) {
   return ModelBase(
     name,
+    unitId: 'test-unit',
     tv: tv,
     roles: roles,
     movement: Movement([MovementType.walker], 6),

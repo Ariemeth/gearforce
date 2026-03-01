@@ -24,6 +24,11 @@ import 'package:gearforce/features/roster/widgets/select_model_button.dart';
 class _MockUnitRepository implements UnitRepository {
   @override
   Future<List<Unit>> getUnitsByFaction(Faction faction) async => const [];
+
+  @override
+  Future<Unit?> getUnitById(String unitId) async {
+    return null;
+  }
 }
 
 Widget _testApp({required Widget child, required RosterBloc bloc}) {
@@ -95,6 +100,7 @@ Model _buildModel({required int id}) {
     id: id,
     base: ModelBase(
       'Test Unit',
+      unitId: 'test-unit',
       tv: 0,
       roles: {Role.gp},
       movement: Movement([MovementType.walker], 6),

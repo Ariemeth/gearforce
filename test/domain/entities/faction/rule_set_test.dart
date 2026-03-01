@@ -314,6 +314,7 @@ Model _buildModel({
     id: id,
     base: ModelBase(
       'Test Unit',
+      unitId: 'test-unit',
       tv: 0,
       roles: {Role.gp},
       movement: Movement([MovementType.walker], 6),

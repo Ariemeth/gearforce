@@ -24,6 +24,7 @@ void main() {
       rule = const DuelistRule();
       base = ModelBase(
         'Test Model',
+        unitId: 'test-unit',
         tv: 10,
         roles: {Role.gp},
         movement: Movement([MovementType.walker], 6),

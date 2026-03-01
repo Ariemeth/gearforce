@@ -16,6 +16,7 @@ part 'model_base.g.dart';
 @immutable
 @JsonSerializable()
 class ModelBase {
+  final String unitId;
   final String name;
   final int tv;
   final Set<Role> roles;
@@ -41,6 +42,7 @@ class ModelBase {
 
   const ModelBase(
     this.name, {
+    required this.unitId,
     required this.tv,
     required this.roles,
     required this.movement,

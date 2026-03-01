@@ -166,7 +166,6 @@ class _UnitModelList extends StatelessWidget {
                       squad: updatedSquad,
                       base: unit.base,
                       variant: variant,
-                      availableModelUpgrades: unit.availableModelUpgrades,
                     ),
                   );
 
@@ -183,12 +182,7 @@ class _UnitModelList extends StatelessWidget {
                     horizontal: 3.0,
                   ),
                   child: ModelListCard(
-                    model: Model(
-                      id: -1,
-                      base: unit.base,
-                      variant: variant,
-                      availableModelUpgrades: unit.availableModelUpgrades,
-                    ),
+                    model: Model(id: -1, base: unit.base, variant: variant),
                   ),
                 ),
               ),

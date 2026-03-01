@@ -13,6 +13,7 @@ import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade_context.dart';
 import 'package:gearforce/domain/entities/unit/upgrade_option.dart';
+import 'package:gearforce/domain/entities/unit/upgrade_type.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/entities/attribute/size_bands.dart'
     show DamageSizeBands;
@@ -28,6 +29,7 @@ void main() {
       // Arrange
       final baseModel = ModelBase(
         'Test Model',
+        unitId: 'test-unit',
         tv: 10,
         roles: {Role.gp},
         movement: Movement([MovementType.walker], 6),
@@ -51,6 +53,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Test Upgrade',
         id: 'upgrade-001',
+        type: UpgradeType.unit,
         description: 'A test upgrade',
         nameMod: (name, context) => 'Modified ${context.model.name}',
         tvMod: (tv, context) => tv + 5,
@@ -124,6 +127,7 @@ void main() {
       // Arrange
       final modelBase = ModelBase(
         'Test Model',
+        unitId: 'test-unit',
         tv: 10,
         roles: {Role.gp},
         movement: Movement([MovementType.walker], 6),
@@ -146,6 +150,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'No-Op Upgrade',
         id: 'upgrade-002',
+        type: UpgradeType.unit,
         description: 'A no-op upgrade',
       );
 
@@ -191,6 +196,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Test Upgrade with Option',
         id: 'upgrade-003',
+        type: UpgradeType.unit,
         upgradeOption: modOption,
       );
 
@@ -208,6 +214,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Original Upgrade',
         id: 'upgrade-004',
+        type: UpgradeType.unit,
         description: 'Original description',
         tvMod: (tv, context) => tv + 2,
       );
@@ -231,6 +238,7 @@ void main() {
               id: 0,
               base: ModelBase(
                 'Test Model',
+                unitId: 'test-unit',
                 tv: 10,
                 roles: {Role.gp},
                 movement: Movement([MovementType.walker], 6),
@@ -262,6 +270,7 @@ void main() {
       final upgrade = ModelUpgrade(
         'Upgrade with Option',
         id: 'upgrade-005',
+        type: UpgradeType.unit,
         upgradeOption: modOption,
       );
 

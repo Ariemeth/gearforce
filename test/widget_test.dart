@@ -15,6 +15,11 @@ import 'package:gearforce/features/roster/widgets/squad_display.dart';
 class MockUnitRepository implements UnitRepository {
   @override
   Future<List<Unit>> getUnitsByFaction(Faction faction) async => const [];
+
+  @override
+  Future<Unit?> getUnitById(String unitId) async {
+    return null;
+  }
 }
 
 /// Wraps a widget with MaterialApp, localization delegates, and RosterBloc.
