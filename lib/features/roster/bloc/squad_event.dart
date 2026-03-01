@@ -116,6 +116,18 @@ class UpdateModelUpgradeEnabled extends SquadEvent {
   });
 }
 
+class UpdateSquadUpgradeEnabled extends SquadEvent {
+  final Squad squad;
+  final String upgradeId;
+  final bool enabled;
+
+  UpdateSquadUpgradeEnabled({
+    required this.squad,
+    required this.upgradeId,
+    required this.enabled,
+  });
+}
+
 class UpdateSquad extends SquadEvent {
   final Squad updatedSquad;
   UpdateSquad({required this.updatedSquad});

@@ -2,7 +2,7 @@ import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_list_extensions.dart';
-import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
+import 'package:gearforce/domain/entities/unit/squad_upgrade.dart';
 import 'package:meta/meta.dart';
 
 @immutable
@@ -12,7 +12,7 @@ class Squad {
   final Role primaryRole;
   final Role? secondaryRole;
   final List<Model> models;
-  final List<ModelUpgrade> upgrades;
+  final List<SquadUpgrade> upgrades;
 
   const Squad({
     required this.id,
@@ -40,7 +40,7 @@ class Squad {
     Role? secondaryRole,
     bool allowSecondaryRoleToBeNull = false,
     List<Model>? models,
-    List<ModelUpgrade>? upgrades,
+    List<SquadUpgrade>? upgrades,
   }) {
     return Squad(
       name: name ?? this.name,

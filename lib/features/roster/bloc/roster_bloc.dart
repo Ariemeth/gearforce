@@ -9,6 +9,7 @@ import 'package:gearforce/domain/entities/attribute/command.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
+import 'package:gearforce/domain/entities/unit/squad_upgrade_model_upgrade_mapper.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
 import 'package:gearforce/features/roster/bloc/squad_state.dart';
@@ -41,6 +42,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     on<UpdateModelIsDuelist>(_onUpdateModelIsDuelist);
     on<UpdateModelCommandLevel>(_onUpdateModelCommand);
     on<UpdateModelUpgradeEnabled>(_onUpdateModelUpgradeEnabled);
+    on<UpdateSquadUpgradeEnabled>(_onUpdateSquadUpgradeEnabled);
     on<UpdateFaction>(_onUpdateFaction);
     on<UpdateSubfaction>(_onUpdateSubFaction);
     on<RenameSquad>(_onRenameSquad);
@@ -474,18 +476,83 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       orElse: () => event.model,
     );
 
-    final updatedModel = currentModel.setModelUpgradeEnabled(
+    final currentSquad = state.squads.firstWhere(
+      (squad) => squad.id == event.squad.id,
+      orElse: () => event.squad,
+    );
+
+    final modelWithEffectiveUpgrades = currentModel.copyWith(
+      availableModelUpgrades: mergeAvailableModelUpgrades(
+        squad: currentSquad,
+        model: currentModel,
+      ),
+    );
+
+    final updatedModel = modelWithEffectiveUpgrades.setModelUpgradeEnabled(
       upgradeId: event.upgradeId,
       enabled: event.enabled,
     );
 
-    final updatedSquad = event.squad.copyWith(
+    final updatedSquad = currentSquad.copyWith(
       models: [
-        for (final model in event.squad.models)
+        for (final model in currentSquad.models)
           model.id == currentModel.id ? updatedModel : model,
       ],
     );
 
+    emit(
+      state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
+    );
+  }
+
+  void _onUpdateSquadUpgradeEnabled(
+    UpdateSquadUpgradeEnabled event,
+    Emitter<RosterState> emit,
+  ) {
+    final currentSquad = state.squads.firstWhere(
+      (squad) => squad.id == event.squad.id,
+      orElse: () => event.squad,
+    );
+
+    final hasUpgrade = currentSquad.upgrades.any(
+      (upgrade) => upgrade.id == event.upgradeId,
+    );
+
+    if (event.enabled && hasUpgrade) {
+      return;
+    }
+
+    if (!event.enabled && !hasUpgrade) {
+      return;
+    }
+
+    final updatedUpgrades = event.enabled
+        ? [
+            ...currentSquad.upgrades,
+            state.ruleSet.availableSquadUpgrades.firstWhere(
+              (upgrade) => upgrade.id == event.upgradeId,
+            ),
+          ]
+        : currentSquad.upgrades
+              .where((upgrade) => upgrade.id != event.upgradeId)
+              .toList();
+
+    final disabledModelUpgradeId = squadUpgradeModelUpgradeId(event.upgradeId);
+    final updatedModels = event.enabled
+        ? currentSquad.models
+        : currentSquad.models
+              .map((model) => model.hasModelUpgrade(disabledModelUpgradeId)
+                  ? model.setModelUpgradeEnabled(
+                      upgradeId: disabledModelUpgradeId,
+                      enabled: false,
+                    )
+                  : model)
+              .toList(growable: false);
+
+    final updatedSquad = currentSquad.copyWith(
+      upgrades: updatedUpgrades,
+      models: updatedModels,
+    );
     emit(
       state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
     );

@@ -9,6 +9,8 @@ import 'package:gearforce/core/widgets/weapon_trait_row.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
+import 'package:gearforce/domain/entities/unit/squad_upgrade.dart';
+import 'package:gearforce/domain/entities/unit/squad_upgrade_model_upgrade_mapper.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec_list_extensions.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/model_info_content.dart';
@@ -103,6 +105,8 @@ class ModelDetailsScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   _ModelUpgradesSection(squad: result.squad!, model: model),
+                  const SizedBox(height: 8),
+                  _SquadUpgradesSection(squad: result.squad!, model: model),
                 ],
               ),
             ),
@@ -182,8 +186,14 @@ class _ModelUpgradesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final totalUpgrades = model.availableModelUpgrades.length;
-    final enabledUpgrades = model.selectedModelUpgrades.length;
+    final effectiveModel = model.copyWith(
+      availableModelUpgrades: mergeAvailableModelUpgrades(
+        squad: squad,
+        model: model,
+      ),
+    );
+    final totalUpgrades = effectiveModel.availableModelUpgrades.length;
+    final enabledUpgrades = effectiveModel.selectedModelUpgrades.length;
 
     return Card(
       child: ExpansionTile(
@@ -199,16 +209,16 @@ class _ModelUpgradesSection extends StatelessWidget {
           ],
         ),
         children: [
-          if (model.availableModelUpgrades.isEmpty)
+          if (effectiveModel.availableModelUpgrades.isEmpty)
             const Align(
               alignment: Alignment.centerLeft,
               child: Text('No model upgrades available.'),
             )
           else
-            ...model.availableModelUpgrades.map((upgrade) {
-              final isEnabled = model.hasModelUpgrade(upgrade.id);
+            ...effectiveModel.availableModelUpgrades.map((upgrade) {
+              final isEnabled = effectiveModel.hasModelUpgrade(upgrade.id);
               final summary = _buildUpgradeChangeSummary(
-                model: model,
+                model: effectiveModel,
                 upgrade: upgrade,
               );
 
@@ -239,7 +249,83 @@ class _ModelUpgradesSection extends StatelessWidget {
                   context.read<RosterBloc>().add(
                     UpdateModelUpgradeEnabled(
                       squad: squad,
-                      model: model,
+                      model: effectiveModel,
+                      upgradeId: upgrade.id,
+                      enabled: value,
+                    ),
+                  );
+                },
+              );
+            }),
+        ],
+      ),
+    );
+  }
+}
+
+class _SquadUpgradesSection extends StatelessWidget {
+  final Squad squad;
+  final Model model;
+
+  const _SquadUpgradesSection({required this.squad, required this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    final ruleSet = context.read<RosterBloc>().state.ruleSet;
+    final squadUpgradeOptions = ruleSet.availableSquadUpgrades
+        .where(
+          (upgrade) => upgrade.canApplyToClassification(model.base.classification),
+        )
+        .toList(growable: false);
+    final enabledUpgrades = squadUpgradeOptions
+        .where((option) => squad.upgrades.any((selected) => selected.id == option.id))
+        .length;
+
+    return Card(
+      child: ExpansionTile(
+        tilePadding: const EdgeInsets.symmetric(horizontal: 12),
+        childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+        title: Row(
+          children: [
+            Expanded(
+              child: Text('Squad Upgrades', style: AppTheme.subtitleStyle),
+            ),
+            const SizedBox(width: 8),
+            Chip(label: Text('$enabledUpgrades / ${squadUpgradeOptions.length} enabled')),
+          ],
+        ),
+        children: [
+          if (squadUpgradeOptions.isEmpty)
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text('No squad-upgrade options available for this model.'),
+            )
+          else
+            ...squadUpgradeOptions.map((upgrade) {
+              final isEnabled = squad.upgrades.any(
+                (selected) => selected.id == upgrade.id,
+              );
+              final columnLabel = upgrade.column == SquadUpgradeColumn.react
+                  ? 'React'
+                  : 'Mounted';
+
+              return CheckboxListTile(
+                value: isEnabled,
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                controlAffinity: ListTileControlAffinity.leading,
+                title: Text(upgrade.name),
+                subtitle: Text(
+                  '${upgrade.weaponCode} • $columnLabel Column • ${upgrade.description}',
+                ),
+                onChanged: (value) {
+                  if (value == null) {
+                    return;
+                  }
+
+                  context.read<RosterBloc>().add(
+                    UpdateSquadUpgradeEnabled(
+                      squad: squad,
                       upgradeId: upgrade.id,
                       enabled: value,
                     ),

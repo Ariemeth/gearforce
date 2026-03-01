@@ -4,6 +4,7 @@ import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/screens/squad_details_screen.dart';
+import 'package:gearforce/features/roster/screens/squad_options_screen.dart';
 import 'package:gearforce/features/roster/widgets/add_squad_button.dart';
 import 'package:gearforce/features/roster/widgets/remove_squad_dialog.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -95,6 +96,14 @@ class SquadDisplay extends StatelessWidget {
                                           children: [
                                             ListTile(
                                               contentPadding: EdgeInsets.zero,
+                                              leading: const Icon(Icons.tune),
+                                              title: const Text('Squad Options'),
+                                              onTap: () => Navigator.of(
+                                                dialogContext,
+                                              ).pop(_SquadTileAction.options),
+                                            ),
+                                            ListTile(
+                                              contentPadding: EdgeInsets.zero,
                                               leading: const Icon(
                                                 Icons.delete_forever_outlined,
                                                 color: AppTheme.deleteIconColor,
@@ -136,6 +145,17 @@ class SquadDisplay extends StatelessWidget {
                                     );
 
                                 if (!context.mounted || action == null) {
+                                  return;
+                                }
+
+                                if (action == _SquadTileAction.options) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute<void>(
+                                      builder: (context) =>
+                                          SquadOptionsScreen(squadId: squad.id),
+                                    ),
+                                  );
                                   return;
                                 }
 
@@ -189,4 +209,4 @@ class SquadDisplay extends StatelessWidget {
   }
 }
 
-enum _SquadTileAction { delete, duplicate }
+enum _SquadTileAction { options, delete, duplicate }

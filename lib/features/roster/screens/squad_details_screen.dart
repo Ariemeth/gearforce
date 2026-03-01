@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
+import 'package:gearforce/features/roster/screens/squad_options_screen.dart';
 import 'package:gearforce/features/roster/widgets/model_list_tile.dart';
 import 'package:gearforce/features/roster/widgets/remove_squad_dialog.dart';
 import 'package:gearforce/features/roster/widgets/select_model_button.dart';
@@ -43,6 +44,18 @@ class SquadDetailsScreen extends StatelessWidget {
           appBar: AppBar(
             title: Center(child: _EditableSquadName(squad: squad)),
             actions: [
+              IconButton(
+                icon: const Icon(Icons.tune),
+                tooltip: 'Squad Options',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (context) => SquadOptionsScreen(squadId: squad.id),
+                    ),
+                  );
+                },
+              ),
               IconButton(
                 icon: const Icon(
                   Icons.delete_forever_outlined,

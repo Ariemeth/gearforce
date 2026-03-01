@@ -12,17 +12,42 @@ import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
 import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/domain/entities/faction/subfaction.dart';
+import 'package:gearforce/domain/entities/equipment/weapon.dart';
+import 'package:gearforce/domain/entities/equipment/weapon_mode.dart';
+import 'package:gearforce/domain/entities/equipment/weapon_range.dart';
+import 'package:gearforce/domain/entities/attribute/size_bands.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
+import 'package:gearforce/domain/entities/unit/squad_upgrade_model_upgrade_mapper.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
+import 'package:gearforce/domain/repositories/weapon_repository.dart';
+import 'package:gearforce/data/static/weapon_factory.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 
 class MockUnitRepository implements UnitRepository {
   @override
   Future<List<Unit>> getUnitsByFaction(Faction faction) async {
     return const [];
+  }
+}
+
+class MockWeaponRepository implements WeaponRepository {
+  @override
+  Future<List<Weapon>> getWeapons() async => const [];
+
+  @override
+  Weapon? getWeaponByCode(String code, {bool hasReact = false}) {
+    final baseCode = code.length > 1 ? code.substring(1) : code;
+    return Weapon(
+      baseCode: baseCode,
+      name: code,
+      range: const WeaponRange(minOptimal: 0, maxOptimal: 12, max: 24),
+      modes: {WeaponMode.direct},
+      damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
+      isReact: hasReact,
+    );
   }
 }
 
@@ -53,9 +78,12 @@ Variant _createTestVariant({String name = 'Test Gear', String id = 'V1'}) {
 
 void main() {
   late MockUnitRepository mockUnitRepository;
+  late MockWeaponRepository mockWeaponRepository;
 
   setUp(() {
     mockUnitRepository = MockUnitRepository();
+    mockWeaponRepository = MockWeaponRepository();
+    WeaponFactory.setRepository(mockWeaponRepository);
   });
 
   group('RosterBloc initial state', () {
@@ -111,6 +139,7 @@ void main() {
         expect(squad.primaryRole, Role.gp);
         expect(squad.secondaryRole, isNull);
         expect(squad.models, isEmpty);
+        expect(squad.upgrades, isEmpty);
       },
     );
 
@@ -1060,6 +1089,184 @@ void main() {
       },
       verify: (bloc) {
         expect(bloc.state.squads.first.primaryRole, Role.fs);
+      },
+    );
+  });
+
+  group('UpdateSquadUpgradeEnabled', () {
+    blocTest<RosterBloc, RosterState>(
+      'enables a squad upgrade for a squad',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Upgrade Squad'));
+        await Future<void>.delayed(Duration.zero);
+
+        final squad = bloc.state.squads.first;
+        final upgradeId = bloc.state.ruleSet.availableSquadUpgrades.first.id;
+
+        bloc.add(
+          UpdateSquadUpgradeEnabled(
+            squad: squad,
+            upgradeId: upgradeId,
+            enabled: true,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        expect(squad.upgrades.length, 1);
+        expect(
+          squad.upgrades.first.id,
+          bloc.state.ruleSet.availableSquadUpgrades.first.id,
+        );
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'disables a previously selected squad upgrade',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Upgrade Squad'));
+        await Future<void>.delayed(Duration.zero);
+
+        final squad = bloc.state.squads.first;
+        final upgradeId = bloc.state.ruleSet.availableSquadUpgrades.first.id;
+
+        bloc.add(
+          UpdateSquadUpgradeEnabled(
+            squad: squad,
+            upgradeId: upgradeId,
+            enabled: true,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        bloc.add(
+          UpdateSquadUpgradeEnabled(
+            squad: bloc.state.squads.first,
+            upgradeId: upgradeId,
+            enabled: false,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        expect(squad.upgrades, isEmpty);
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'enabling grenades-light allows selecting derived 1TV Add LHG model upgrade',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Upgrade Squad'));
+        await Future<void>.delayed(Duration.zero);
+
+        final squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        final squadAfterModel = bloc.state.squads.first;
+        const squadUpgradeId = 'squad-grenades-light';
+        bloc.add(
+          UpdateSquadUpgradeEnabled(
+            squad: squadAfterModel,
+            upgradeId: squadUpgradeId,
+            enabled: true,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        final updatedSquad = bloc.state.squads.first;
+        final model = updatedSquad.models.first;
+        bloc.add(
+          UpdateModelUpgradeEnabled(
+            squad: updatedSquad,
+            model: model,
+            upgradeId: squadUpgradeModelUpgradeId(squadUpgradeId),
+            enabled: true,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        final model = squad.models.first;
+        expect(
+          model.selectedModelUpgrades.any(
+            (upgrade) => upgrade.id == 'squad-model-upgrade-squad-grenades-light',
+          ),
+          isTrue,
+        );
+        expect(
+          model.weapons.any((weaponSpec) => weaponSpec.code == 'LHG'),
+          isTrue,
+        );
+      },
+    );
+
+    blocTest<RosterBloc, RosterState>(
+      'disabling a selected squad upgrade removes corresponding derived model upgrade selection',
+      build: () => RosterBloc(mockUnitRepository),
+      act: (bloc) async {
+        bloc.add(AddNewSquad(name: 'Upgrade Squad'));
+        await Future<void>.delayed(Duration.zero);
+
+        final squad = bloc.state.squads.first;
+        bloc.add(
+          AddModel(
+            squad: squad,
+            base: _createTestModelBase(),
+            variant: _createTestVariant(),
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        const squadUpgradeId = 'squad-grenades-light';
+        var currentSquad = bloc.state.squads.first;
+        bloc.add(
+          UpdateSquadUpgradeEnabled(
+            squad: currentSquad,
+            upgradeId: squadUpgradeId,
+            enabled: true,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        currentSquad = bloc.state.squads.first;
+        bloc.add(
+          UpdateModelUpgradeEnabled(
+            squad: currentSquad,
+            model: currentSquad.models.first,
+            upgradeId: squadUpgradeModelUpgradeId(squadUpgradeId),
+            enabled: true,
+          ),
+        );
+        await Future<void>.delayed(Duration.zero);
+
+        currentSquad = bloc.state.squads.first;
+        bloc.add(
+          UpdateSquadUpgradeEnabled(
+            squad: currentSquad,
+            upgradeId: squadUpgradeId,
+            enabled: false,
+          ),
+        );
+      },
+      verify: (bloc) {
+        final squad = bloc.state.squads.first;
+        final model = squad.models.first;
+        expect(
+          model.selectedModelUpgrades.any(
+            (upgrade) => upgrade.id == 'squad-model-upgrade-squad-grenades-light',
+          ),
+          isFalse,
+        );
       },
     );
   });

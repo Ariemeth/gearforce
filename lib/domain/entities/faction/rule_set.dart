@@ -2,6 +2,7 @@ import 'package:gearforce/domain/entities/attribute/command.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
+import 'package:gearforce/data/static/squad_upgrades.dart';
 import 'package:gearforce/data/static/rules/base/command_level_rule.dart';
 import 'package:gearforce/data/static/rules/base/squad_size_rule.dart';
 import 'package:gearforce/data/static/rules/base/unit_level_rule.dart';
@@ -9,6 +10,7 @@ import 'package:gearforce/data/static/rules/base/duelist_rule.dart';
 import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
+import 'package:gearforce/domain/entities/unit/squad_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
 
 abstract class RuleSet {
@@ -19,6 +21,7 @@ abstract class RuleSet {
   final CommandLevelRule commandLevelRule;
   final UnitLevelRule unitLevelRule;
   final DuelistRule duelistRule;
+  final List<SquadUpgrade> availableSquadUpgrades;
 
   const RuleSet({
     required this.name,
@@ -27,6 +30,7 @@ abstract class RuleSet {
     this.unitLevelRule = UnitLevelRule.standard,
     this.duelistRule = DuelistRule.standard,
     this.extraRules = const [],
+    this.availableSquadUpgrades = SquadUpgrades.standard,
     required this.assetTable,
   });
 
