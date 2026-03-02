@@ -1,5 +1,5 @@
 import 'package:gearforce/domain/entities/unit/common_modifiers.dart'
-    show RequirementCheck, CommonModifiers, NameGenerator;
+    show CommonModifiers, ModelRequirementCheck, NameGenerator;
 import 'package:gearforce/domain/entities/unit/upgrade_type.dart';
 import 'package:gearforce/data/static/mod_functions.dart'
     show
@@ -56,7 +56,7 @@ class ModelUpgrade {
   @JsonKey(includeFromJson: false, includeToJson: false)
   final UpgradeOption? upgradeOption;
   @JsonKey(includeFromJson: false, includeToJson: false)
-  final RequirementCheck requirementCheck;
+  final ModelRequirementCheck requirementCheck;
 
   const ModelUpgrade(
     String name, {
@@ -77,7 +77,7 @@ class ModelUpgrade {
     this.weaponsMod = UnitModifiers.defaultWeaponsMod,
     this.traitsMod = UnitModifiers.defaultTraitsMod,
     this.upgradeOption,
-    this.requirementCheck = CommonModifiers.defaultRequirementCheck,
+    this.requirementCheck = CommonModifiers.defaultModelRequirementCheck,
   }) : _name = name;
 
   String get name => nameGenerator?.call() ?? _name;
@@ -191,7 +191,7 @@ class ModelUpgrade {
     TraitsMod? traitsMod,
     UpgradeOption? upgradeOption,
     bool replaceModOption = false,
-    RequirementCheck? requirementCheck,
+    ModelRequirementCheck? requirementCheck,
   }) {
     return ModelUpgrade(
       name ?? this.name,

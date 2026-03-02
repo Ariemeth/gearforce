@@ -17,7 +17,6 @@ void main() {
         upgrade.description,
         'All Gears in 1 Squad may add an LHG to the Mounted Column.',
       );
-      expect(upgrade.weaponsToAdd.length, 1);
     });
 
     test('grenadesMedium should have correct properties', () {

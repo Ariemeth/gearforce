@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:gearforce/domain/entities/unit/common_modifiers.dart'
-    show RequirementCheck, CommonModifiers;
+    show SquadRequirementCheck, CommonModifiers;
 
 @immutable
 class Rule {
@@ -9,7 +9,7 @@ class Rule {
   final String description;
   final bool isEnabled;
   final bool canBeToggled;
-  final RequirementCheck requirementCheck;
+  final SquadRequirementCheck requirementCheck;
 
   const Rule({
     required this.name,
@@ -17,7 +17,7 @@ class Rule {
     required this.description,
     this.isEnabled = true,
     this.canBeToggled = false,
-    this.requirementCheck = CommonModifiers.defaultRequirementCheck,
+    this.requirementCheck = CommonModifiers.defaultSquadRequirementCheck,
   });
 
   Rule copyWith({
@@ -26,7 +26,7 @@ class Rule {
     String? description,
     bool? isEnabled,
     bool? canBeToggled,
-    RequirementCheck? requirementCheck,
+    SquadRequirementCheck? requirementCheck,
   }) {
     return Rule(
       name: name ?? this.name,

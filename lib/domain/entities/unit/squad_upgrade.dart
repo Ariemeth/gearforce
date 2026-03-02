@@ -1,6 +1,5 @@
-import 'package:gearforce/domain/entities/equipment/weapon.dart' show Weapon;
-import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
+import 'package:gearforce/domain/entities/unit/common_modifiers.dart'
+    show SquadRequirementCheck, CommonModifiers;
 import 'package:gearforce/domain/entities/unit/upgrade_type.dart';
 import 'package:meta/meta.dart';
 
@@ -11,7 +10,7 @@ class SquadUpgrade {
   final UpgradeType type;
   final int tv;
   final String description;
-  final List<WeaponSpec> weaponsToAdd;
+  final SquadRequirementCheck requirementCheck;
 
   const SquadUpgrade({
     required this.id,
@@ -19,7 +18,7 @@ class SquadUpgrade {
     required this.type,
     required this.tv,
     required this.description,
-    this.weaponsToAdd = const [],
+    this.requirementCheck = CommonModifiers.defaultSquadRequirementCheck,
   });
 
   SquadUpgrade copyWith({
@@ -28,7 +27,7 @@ class SquadUpgrade {
     UpgradeType? type,
     int? tv,
     String? description,
-    List<WeaponSpec>? weaponsToAdd,
+    SquadRequirementCheck? requirementCheck,
   }) {
     return SquadUpgrade(
       id: id ?? this.id,
@@ -36,7 +35,7 @@ class SquadUpgrade {
       type: type ?? this.type,
       tv: tv ?? this.tv,
       description: description ?? this.description,
-      weaponsToAdd: weaponsToAdd ?? this.weaponsToAdd,
+      requirementCheck: requirementCheck ?? this.requirementCheck,
     );
   }
 
@@ -56,7 +55,7 @@ class SquadUpgrade {
     type: UpgradeType.squad,
     tv: 1,
     description: 'All Gears in 1 Squad may add an LHG to the Mounted Column.',
-    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.hg(WeaponSize.light))],
+    //    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.hg(WeaponSize.light))],
   );
 
   static const grenadesMedium = SquadUpgrade(
@@ -65,7 +64,7 @@ class SquadUpgrade {
     type: UpgradeType.squad,
     tv: 2,
     description: 'All Gears in 1 Squad may add an MHG to the Mounted Column.',
-    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.hg(WeaponSize.medium))],
+    //    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.hg(WeaponSize.medium))],
   );
 
   static const panzerfaustsLight = SquadUpgrade(
@@ -74,7 +73,7 @@ class SquadUpgrade {
     type: UpgradeType.squad,
     tv: 1,
     description: 'All Gears in 1 Squad may add an LPZ to the Mounted Column.',
-    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.pz(WeaponSize.light))],
+    //    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.pz(WeaponSize.light))],
   );
 
   static const panzerfaustsMedium = SquadUpgrade(
@@ -83,7 +82,7 @@ class SquadUpgrade {
     type: UpgradeType.squad,
     tv: 2,
     description: 'All Gears in 1 Squad may add an MPZ to the Mounted Column.',
-    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.pz(WeaponSize.medium))],
+    //    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.pz(WeaponSize.medium))],
   );
 
   static const shapedExplosivesLight = SquadUpgrade(
@@ -92,7 +91,7 @@ class SquadUpgrade {
     type: UpgradeType.squad,
     tv: 1,
     description: 'All Gears in 1 Squad may add an LSE to the Mounted Column.',
-    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.se(WeaponSize.light))],
+    //    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.se(WeaponSize.light))],
   );
 
   static const shapedExplosivesMedium = SquadUpgrade(
@@ -101,7 +100,7 @@ class SquadUpgrade {
     type: UpgradeType.squad,
     tv: 2,
     description: 'All Gears in 1 Squad may add an MSE to the Mounted Column.',
-    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.se(WeaponSize.medium))],
+    //   weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.se(WeaponSize.medium))],
   );
 
   static const sidearms = SquadUpgrade(
@@ -110,7 +109,7 @@ class SquadUpgrade {
     type: UpgradeType.squad,
     tv: 1,
     description: 'All Gears in 1 Squad may add an LP to the React Column.',
-    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.p(WeaponSize.light))],
+    //    weaponsToAdd: [SingleWeaponSpec(weapon: Weapon.p(WeaponSize.light))],
   );
 
   // List of all available squad upgrades
