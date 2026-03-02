@@ -27,7 +27,7 @@ void main() {
     test('includes standard rules by default', () {
       final ruleSet = DefaultRuleSet();
 
-      expect(ruleSet.rules.length, 4);
+      expect(ruleSet.rules.length, 5);
       expect(ruleSet.rules.first, isA<SquadSizeRule>());
       expect((ruleSet.rules.first as SquadSizeRule).id, 'squad-size-rule');
     });
@@ -44,7 +44,7 @@ void main() {
         ],
       );
 
-      expect(ruleSet.activeRules.length, 4);
+      expect(ruleSet.activeRules.length, 5);
       expect(ruleSet.activeRules.first.id, 'squad-size-rule');
     });
 
@@ -59,7 +59,7 @@ void main() {
         ],
       );
 
-      expect(ruleSet.rules.length, 5);
+      expect(ruleSet.rules.length, 6);
       expect(ruleSet.rules.first.id, 'squad-size-rule');
       expect(ruleSet.rules.last.id, 'north-extra-rule');
     });
