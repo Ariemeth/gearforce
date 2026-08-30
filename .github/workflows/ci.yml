@@ -18,10 +18,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Cache Flutter SDK
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ~/.flutter
           key: flutter-sdk-${{ runner.os }}-${{ env.FLUTTER_VERSION }}
@@ -34,7 +34,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
 
       - name: Cache Pub Dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ~/.pub-cache
           key: pub-cache-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
@@ -60,10 +60,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Cache Flutter SDK
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ~/.flutter
           key: flutter-sdk-${{ runner.os }}-${{ env.FLUTTER_VERSION }}
@@ -76,7 +76,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
 
       - name: Cache Pub Dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ~/.pub-cache
           key: pub-cache-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
@@ -105,18 +105,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Java JDK
         if: matrix.target == 'android'
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v6
         with:
           distribution: "temurin" # Use the Eclipse Temurin distribution
-          java-version: "21" # Set Java version to 21
+          java-version: "17" # Set Java version to 21
           cache: "gradle" # Cache Gradle dependencies
 
       - name: Cache Flutter SDK
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ${{ runner.os == 'Windows' && 'C:\\flutter' || '~/.flutter' }}
           key: flutter-sdk-${{ runner.os }}-${{ env.FLUTTER_VERSION }}
@@ -129,7 +129,7 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
 
       - name: Cache Pub Dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ${{ runner.os == 'Windows' && 'C:\\Users\\runneradmin\\AppData\\Local\\Pub\\Cache' || '~/.pub-cache' }}
           key: pub-cache-${{ runner.os }}-${{ hashFiles('pubspec.yaml') }}
@@ -145,7 +145,7 @@ jobs:
 
       - name: Build APK
         if: matrix.target == 'android'
-        run: flutter build apk
+        run: flutter build apk --release
 
       - name: Build Web App
         if: matrix.target == 'web'
