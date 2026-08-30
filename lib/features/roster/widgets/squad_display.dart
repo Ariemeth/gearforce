@@ -28,7 +28,7 @@ class SquadDisplay extends StatelessWidget {
               : ReorderableListView.builder(
                   itemCount: squads.length,
                   buildDefaultDragHandles: false,
-                  onReorder: (oldIndex, newIndex) {
+                  onReorderItem: (oldIndex, newIndex) {
                     context.read<RosterBloc>().add(
                       ReorderSquad(oldIndex: oldIndex, newIndex: newIndex),
                     );
