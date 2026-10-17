@@ -79,12 +79,12 @@ This project uses `json_serializable` to automate the mapping between JSON asset
 
 **To run a one-time build:**
 ```bash
-dart run build_runner build --delete-conflicting-outputs
+dart run build_runner build
 ```
 
 **To watch for changes and regenerate automatically:**
 ```bash
-dart run build_runner watch --delete-conflicting-outputs
+dart run build_runner watch
 ```
 
 ### CI/CD Verification
@@ -93,7 +93,7 @@ To ensure that the generated files are always up-to-date in your repository, you
 
 ```bash
 # Run the build runner
-dart run build_runner build --delete-conflicting-outputs
+dart run build_runner build
 
 # Check if there are any changes to the generated files
 git diff --exit-code
