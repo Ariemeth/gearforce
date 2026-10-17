@@ -12,7 +12,7 @@ import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
 import 'package:gearforce/features/roster/bloc/squad_state.dart';
-import 'package:gearforce/data/static/rules/get_subfaction_rule_set.dart';
+import 'package:gearforce/domain/rules/get_subfaction_rule_set.dart';
 import 'package:meta/meta.dart';
 
 part 'roster_event.dart';

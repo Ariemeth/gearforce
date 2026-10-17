@@ -1,3 +1,4 @@
+import 'package:gearforce/data/static/catalogs/trait_catalog.dart';
 import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/equipment/trait_type.dart';
 
@@ -36,156 +37,156 @@ class TraitFactory {
 
     switch (cleanName.toLowerCase()) {
       case 'agile':
-        return Trait.agile(isAux: isAux);
+        return TraitCatalog.agile(isAux: isAux);
       case 'aa':
-        return Trait.aa(isAux: isAux);
+        return TraitCatalog.aa(isAux: isAux);
       case 'ap':
-        return Trait.ap(isAux: isAux, level: level ?? 0);
+        return TraitCatalog.ap(isAux: isAux, level: level ?? 0);
       case 'ai':
-        return Trait.ai(isAux: isAux);
+        return TraitCatalog.ai(isAux: isAux);
       case 'airdrop':
-        return Trait.airdrop(isAux: isAux);
+        return TraitCatalog.airdrop(isAux: isAux);
       case 'amphib':
-        return Trait.amphib(isAux: isAux);
+        return TraitCatalog.amphib(isAux: isAux);
       case 'ams':
-        return Trait.ams(isAux: isAux);
+        return TraitCatalog.ams(isAux: isAux);
       case 'aoe':
-        return Trait.aoe(isAux: isAux, level: level);
+        return TraitCatalog.aoe(isAux: isAux, level: level);
       case 'apex':
-        return Trait.apex(isAux: isAux);
+        return TraitCatalog.apex(isAux: isAux);
       case 'auto':
-        return Trait.auto(isAux: isAux);
+        return TraitCatalog.auto(isAux: isAux);
       case 'aux':
-        return Trait.aux(isAux: isAux);
+        return TraitCatalog.aux(isAux: isAux);
       case 'b':
-        return Trait.b(isAux: isAux);
+        return TraitCatalog.b(isAux: isAux);
       case 'blast':
-        return Trait.blast(isAux: isAux);
+        return TraitCatalog.blast(isAux: isAux);
       case 'brawl':
-        return Trait.brawl(isAux: isAux, level: level);
+        return TraitCatalog.brawl(isAux: isAux, level: level);
       case 'burst':
-        return Trait.burst(isAux: isAux, level: level);
+        return TraitCatalog.burst(isAux: isAux, level: level);
       case 'climb':
-        return Trait.climb(isAux: isAux);
+        return TraitCatalog.climb(isAux: isAux);
       case 'corrosion':
-        return Trait.corrosion(isAux: isAux);
+        return TraitCatalog.corrosion(isAux: isAux);
       case 'demo':
-        return Trait.demo(isAux: isAux, level: level);
+        return TraitCatalog.demo(isAux: isAux, level: level);
       case 'e-comms':
-        return Trait.eComms(isAux: isAux);
+        return TraitCatalog.eComms(isAux: isAux);
       case 'ecm':
-        return Trait.ecm(isAux: isAux);
+        return TraitCatalog.ecm(isAux: isAux);
       case 'ecm+':
-        return Trait.ecmPlus(isAux: isAux);
+        return TraitCatalog.ecmPlus(isAux: isAux);
       case 'eccm':
-        return Trait.eccm(isAux: isAux);
+        return TraitCatalog.eccm(isAux: isAux);
       case 'eccm+':
-        return Trait.eccmPlus(isAux: isAux);
+        return TraitCatalog.eccmPlus(isAux: isAux);
       case 'fire':
-        return Trait.fire(isAux: isAux, level: level);
+        return TraitCatalog.fire(isAux: isAux, level: level);
       case 'frag':
-        return Trait.frag(isAux: isAux);
+        return TraitCatalog.frag(isAux: isAux);
       case 'green':
-        return Trait.green();
+        return TraitCatalog.green();
       case 'guided':
-        return Trait.guided(isAux: isAux);
+        return TraitCatalog.guided(isAux: isAux);
       case 'hands':
-        return Trait.hands(isAux: isAux);
+        return TraitCatalog.hands(isAux: isAux);
       case 'haywire':
-        return Trait.haywire(isAux: isAux);
+        return TraitCatalog.haywire(isAux: isAux);
       case 'hi-tech':
-        return Trait.hiTech(isAux: isAux);
+        return TraitCatalog.hiTech(isAux: isAux);
       case 'immobilize':
-        return Trait.immobilize(isAux: isAux);
+        return TraitCatalog.immobilize(isAux: isAux);
       case 'init+':
-        return Trait.initPlus(isAux: isAux);
+        return TraitCatalog.initPlus(isAux: isAux);
       case 'jetpack':
-        return Trait.jetpack(isAux: isAux, level: level);
+        return TraitCatalog.jetpack(isAux: isAux, level: level);
       case 'jump':
-        return Trait.jump(isAux: isAux, level: level);
+        return TraitCatalog.jump(isAux: isAux, level: level);
       case 'la':
-        return Trait.la(isAux: isAux, level: level);
+        return TraitCatalog.la(isAux: isAux, level: level);
       case 'linked':
-        return Trait.linked(isAux: isAux);
+        return TraitCatalog.linked(isAux: isAux);
       case 'lo-tech':
-        return Trait.loTech(isAux: isAux);
+        return TraitCatalog.loTech(isAux: isAux);
       case 'lumbering':
-        return Trait.lumbering(isAux: isAux);
+        return TraitCatalog.lumbering(isAux: isAux);
       case 'medic':
-        return Trait.medic(isAux: isAux, level: level);
+        return TraitCatalog.medic(isAux: isAux, level: level);
       case 'occupancy':
         if (type == null) {
           throw ArgumentError('Trait.occupancy requires a non-null type.');
         }
-        return Trait.occupancy(isAux: isAux, level: level, type: type);
+        return TraitCatalog.occupancy(isAux: isAux, level: level, type: type);
       case 'offroad':
-        return Trait.offroad(isAux: isAux);
+        return TraitCatalog.offroad(isAux: isAux);
       case 'open top':
-        return Trait.openTop(isAux: isAux);
+        return TraitCatalog.openTop(isAux: isAux);
       case 'precise':
-        return Trait.precise(isAux: isAux);
+        return TraitCatalog.precise(isAux: isAux);
       case 'precise+':
-        return Trait.precisePlus(isAux: isAux);
+        return TraitCatalog.precisePlus(isAux: isAux);
       case 'proximity':
-        return Trait.proximity(isAux: isAux);
+        return TraitCatalog.proximity(isAux: isAux);
       case 'r':
-        return Trait.r(isAux: isAux);
+        return TraitCatalog.r(isAux: isAux);
       case 'reach':
-        return Trait.reach(isAux: isAux, level: level);
+        return TraitCatalog.reach(isAux: isAux, level: level);
       case 'react':
-        return Trait.react(isAux: isAux);
+        return TraitCatalog.react(isAux: isAux);
       case 'react+':
-        return Trait.reactPlus(isAux: isAux);
+        return TraitCatalog.reactPlus(isAux: isAux);
       case 'reflex':
-        return Trait.reflex(isAux: isAux);
+        return TraitCatalog.reflex(isAux: isAux);
       case 'repair':
-        return Trait.repair(isAux: isAux, level: level);
+        return TraitCatalog.repair(isAux: isAux, level: level);
       case 'resist':
-        return Trait.resist(isAux: isAux, type: type);
+        return TraitCatalog.resist(isAux: isAux, type: type);
       case 'satup':
-        return Trait.satUp(isAux: isAux);
+        return TraitCatalog.satUp(isAux: isAux);
       case 'sensor boom':
-        return Trait.sensorBoom(isAux: isAux);
+        return TraitCatalog.sensorBoom(isAux: isAux);
       case 'sensor':
-        return Trait.sensor(isAux: isAux, level: level);
+        return TraitCatalog.sensor(isAux: isAux, level: level);
       case 'shield':
-        return Trait.shield(isAux: isAux);
+        return TraitCatalog.shield(isAux: isAux);
       case 'silent':
-        return Trait.silent(isAux: isAux);
+        return TraitCatalog.silent(isAux: isAux);
       case 'smoke':
-        return Trait.smoke(isAux: isAux);
+        return TraitCatalog.smoke(isAux: isAux);
       case 'sp':
-        return Trait.sp1(isAux: isAux);
+        return TraitCatalog.sp1(isAux: isAux);
       case 'spray':
-        return Trait.spray(isAux: isAux);
+        return TraitCatalog.spray(isAux: isAux);
       case 'stable':
-        return Trait.stable(isAux: isAux);
+        return TraitCatalog.stable(isAux: isAux);
       case 'stationary':
-        return Trait.stationary(isAux: isAux);
+        return TraitCatalog.stationary(isAux: isAux);
       case 'stealth':
-        return Trait.stealth(isAux: isAux);
+        return TraitCatalog.stealth(isAux: isAux);
       case 'sub':
-        return Trait.sub(isAux: isAux);
+        return TraitCatalog.sub(isAux: isAux);
       case 'supply':
-        return Trait.supply(isAux: isAux);
+        return TraitCatalog.supply(isAux: isAux);
       case 'td':
-        return Trait.td(isAux: isAux);
+        return TraitCatalog.td(isAux: isAux);
       case 'towed':
-        return Trait.towed(isAux: isAux);
+        return TraitCatalog.towed(isAux: isAux);
       case 'transport':
         if (type == null) {
           throw ArgumentError('Trait.transport requires a non-null type.');
         }
-        return Trait.transport(isAux: isAux, level: level, type: type);
+        return TraitCatalog.transport(isAux: isAux, level: level, type: type);
       case 't':
-        return Trait.t(isAux: isAux);
+        return TraitCatalog.t(isAux: isAux);
       case 'vtol':
-        return Trait.vtol(isAux: isAux);
+        return TraitCatalog.vtol(isAux: isAux);
       case 'vuln':
         if (type == null) {
           throw ArgumentError('Trait.vuln requires a non-null type.');
         }
-        return Trait.vuln(isAux: isAux, type: type);
+        return TraitCatalog.vuln(isAux: isAux, type: type);
       default:
         throw ArgumentError('Unknown trait name: $cleanName');
     }

@@ -1,3 +1,4 @@
+import 'package:gearforce/data/static/catalogs/trait_catalog.dart';
 import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/attribute/armor.dart';
 import 'package:gearforce/domain/entities/attribute/hull_structure.dart';
@@ -56,7 +57,7 @@ class Model {
       List.unmodifiable(_selectedModelUpgrades);
   List<Trait> get traits => [
     ...getAttribute(ModelAttribute.traits),
-    if (level == UnitLevel.green) Trait.green(),
+    if (level == UnitLevel.green) TraitCatalog.green(),
   ];
   double get height => base.height;
 

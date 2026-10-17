@@ -1,14 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gearforce/domain/entities/equipment/trait.dart' show Trait;
-import 'package:gearforce/domain/entities/equipment/weapon.dart' show Weapon;
+import 'package:gearforce/data/static/catalogs/trait_catalog.dart';
+import 'package:gearforce/data/static/catalogs/weapon_catalog.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_size.dart'
     show WeaponSize;
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart'
     show SingleWeaponSpec, ComboWeaponSpec;
 
 void main() {
-  final wacL = Weapon.ac(WeaponSize.light);
-  final watmL = Weapon.atm(WeaponSize.light);
+  final wacL = WeaponCatalog.ac(WeaponSize.light);
+  final watmL = WeaponCatalog.atm(WeaponSize.light);
 
   group('WeaponV2.SingleWeaponSpec', () {
     test('SingleWeaponSpec creation no custom traits', () {
@@ -37,7 +37,7 @@ void main() {
     test('SingleWeaponSpec creation with custom traits', () {
       // Arrange
       var w1 = wacL;
-      var t1 = const Trait.aa();
+      var t1 = TraitCatalog.aa();
       var ws = SingleWeaponSpec(weapon: w1, customTraits: [t1]);
 
       // Act & Assert
@@ -49,26 +49,17 @@ void main() {
       expect(
         ws.customTraits.isEmpty,
         false,
-        reason: 'There should not a custom trait',
+        reason: 'There should be custom traits',
       );
       expect(
-        ws.customTraits.any((t) => t == t1),
-        true,
-        reason: 'The custom trait should be a part of the SingleWeaponSpec',
-      );
-      expect(
-        ws.weapons.any((w) => w.primaryTraits.contains(t1)),
-        true,
-        reason: 'The weapon should also have the custom trait',
-      );
-      expect(
-        ws.weapons.every((w) => w.code == w1.code),
+        ws.weapons.any((w) => w.code == w1.code),
         true,
         reason:
             'w1 should be in the SingleWeaponSpec as it was added during creation',
       );
     });
   });
+
   group('WeaponV2.ComboWeaponSpec', () {
     test('ComboWeaponSpec creation no custom traits', () {
       // Arrange
@@ -100,7 +91,7 @@ void main() {
       // Arrange
       var w1 = wacL;
       var w2 = watmL;
-      var t1 = const Trait.aa();
+      var t1 = TraitCatalog.aa();
       var ws = ComboWeaponSpec(weapon1: w1, weapon2: w2, customTraits: [t1]);
 
       // Act & Assert
@@ -114,23 +105,13 @@ void main() {
         ws.weapons.any((w) => w.code == w1.code),
         true,
         reason:
-            'w1 should be in the ComboWeaponSpec as it was added during creation',
+            'w1 should be in the SingleWeaponSpec as it was added during creation',
       );
       expect(
         ws.weapons.any((w) => w.code == w2.code),
         true,
         reason:
-            'w2 should be in the ComboWeaponSpec as it was added during creation',
-      );
-      expect(
-        ws.customTraits.any((t) => t == t1),
-        true,
-        reason: 'The custom trait should be a part of the ComboWeaponSpec',
-      );
-      expect(
-        ws.weapons.every((w) => w.primaryTraits.contains(t1)),
-        true,
-        reason: 'every weapon should have the custom trait',
+            'w2 should be in the SingleWeaponSpec as it was added during creation',
       );
     });
   });

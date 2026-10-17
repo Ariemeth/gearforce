@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gearforce/data/static/rules/default_rule_set.dart';
+import 'package:gearforce/domain/rules/default_rule_set.dart';
 import 'package:gearforce/domain/entities/attribute/armor.dart';
 import 'package:gearforce/domain/entities/attribute/classification.dart';
 import 'package:gearforce/domain/entities/attribute/command.dart';
@@ -10,12 +10,13 @@ import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
 import 'package:gearforce/domain/entities/attribute/unit_level.dart';
+import 'package:gearforce/data/static/catalogs/trait_catalog.dart';
 import 'package:gearforce/domain/entities/equipment/trait.dart';
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
 import 'package:gearforce/domain/entities/faction/rule.dart';
 import 'package:gearforce/domain/entities/faction/rule_set.dart';
-import 'package:gearforce/data/static/rules/base/squad_upgrades_rule.dart';
-import 'package:gearforce/data/static/rules/base/squad_size_rule.dart';
+import 'package:gearforce/domain/rules/base/squad_upgrades_rule.dart';
+import 'package:gearforce/domain/rules/base/squad_size_rule.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
@@ -206,10 +207,10 @@ void main() {
       final squad = _buildSquad([
         _buildModel(
           id: 1,
-          traits: const [Trait.repair(level: 1)],
+          traits: [TraitCatalog.repair(level: 1)],
           command: Command.firstIC,
         ),
-        _buildModel(id: 2, traits: const [Trait.medic(level: 1)]),
+        _buildModel(id: 2, traits: [TraitCatalog.medic(level: 1)]),
       ]);
 
       expect(ruleSet.getEffectiveSquadUnitCount(squad), 4);

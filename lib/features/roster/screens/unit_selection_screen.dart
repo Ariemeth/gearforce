@@ -7,7 +7,7 @@ import 'package:gearforce/domain/entities/unit/unit.dart';
 import 'package:gearforce/domain/entities/unit/unit_list_extensions.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 import 'package:gearforce/features/roster/widgets/model_list_card.dart';
-import 'package:gearforce/data/static/filters/unit_filters.dart';
+import 'package:gearforce/domain/specifications/unit_filters.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 import 'package:gearforce/core/widgets/constrained_content.dart';
 

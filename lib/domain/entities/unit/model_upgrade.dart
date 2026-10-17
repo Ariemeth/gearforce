@@ -1,7 +1,7 @@
 import 'package:gearforce/domain/entities/unit/common_modifiers.dart'
     show CommonModifiers, ModelRequirementCheck, NameGenerator;
 import 'package:gearforce/domain/entities/unit/upgrade_type.dart';
-import 'package:gearforce/data/static/mod_functions.dart'
+import 'package:gearforce/domain/modifiers/mod_functions.dart'
     show
         createAddTraitsMod,
         createAddWeaponsMod,

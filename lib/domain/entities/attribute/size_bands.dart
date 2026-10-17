@@ -52,9 +52,9 @@ class SizeBands<T> {
 /// ```dart
 /// // Define traits that increase in power with weapon size
 /// final traitBands = TraitSizeBands(
-///   l: [Trait.ap(level: 1)],
-///   m: [Trait.ap(level: 2)],
-///   h: [Trait.ap(level: 3)],
+///   l: [TraitCatalog.ap(level: 1)],
+///   m: [TraitCatalog.ap(level: 2)],
+///   h: [TraitCatalog.ap(level: 3)],
 /// );
 /// ```
 @JsonSerializable()
