@@ -37,6 +37,16 @@ sealed class RosterState {
   }
 
   List<Squad> get squads => squadState.squads;
+
+  int get totalTv => RosterRuleEngine.calculateTotalTv(squads);
+  int get totalModels => RosterRuleEngine.calculateModelCount(squads);
+  int get totalActivations => RosterRuleEngine.calculateActivationCount(squads);
+  int get totalCp => RosterRuleEngine.calculateTotalCp(squads);
+
+  RosterValidationResult get validationResult =>
+      RosterRuleEngine.validateRoster(squads: squads, ruleSet: ruleSet);
+
+  bool get isRosterValid => validationResult.isValid;
 }
 
 class RosterInitial extends RosterState {

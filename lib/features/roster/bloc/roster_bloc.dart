@@ -12,6 +12,7 @@ import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
 import 'package:gearforce/domain/rules/get_subfaction_rule_set.dart';
+import 'package:gearforce/domain/rules/roster_rule_engine.dart';
 import 'package:gearforce/domain/rules/squad_rule_engine.dart';
 import 'package:gearforce/features/roster/bloc/squad_state.dart';
 import 'package:meta/meta.dart';
@@ -81,76 +82,23 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
   }
 
   void _onDuplicateSquad(DuplicateSquad event, Emitter<RosterState> emit) {
-    _nextSquadNumber++;
-    int newSquadId = _nextSquadNumber;
-
-    while (state.squads.any((squad) => squad.id == newSquadId)) {
-      _nextSquadNumber++;
-      newSquadId = _nextSquadNumber;
-    }
-
-    final duplicatedModels = [
-      for (final model in event.squad.models)
-        (() {
-          _nextModelId++;
-          return model.copyWith(id: _nextModelId, command: Command.none);
-        })(),
-    ];
-
-    var duplicatedSquad = event.squad.copyWith(
-      id: newSquadId,
-      name: event.name,
-      models: duplicatedModels,
-    );
-
-    final updatedSquads = List<Squad>.from(state.squads)..add(duplicatedSquad);
-
-    const commandCopyOrder = [
-      Command.co,
-      Command.xo,
-      Command.firstIC,
-      Command.secondIC,
-    ];
-
-    for (final commandLevel in commandCopyOrder) {
-      for (var index = 0; index < event.squad.models.length; index++) {
-        final sourceModel = event.squad.models[index];
-        if (sourceModel.command != commandLevel) {
-          continue;
-        }
-
-        final candidate = duplicatedSquad.models[index];
-        final canAssign = state.ruleSet.canAssignCommandLevel(
-          model: candidate,
-          newCommandLevel: commandLevel,
-          squad: duplicatedSquad,
-          allSquads: updatedSquads,
-        );
-
-        final conflictingModels = state.ruleSet.getModelsToClearForCommandLevel(
-          model: candidate,
-          newCommandLevel: commandLevel,
-          squad: duplicatedSquad,
-          allSquads: updatedSquads,
-        );
-
-        if (!canAssign || conflictingModels.isNotEmpty) {
-          continue;
-        }
-
-        final updatedModels = List<Model>.from(duplicatedSquad.models);
-        updatedModels[index] = candidate.copyWith(command: commandLevel);
-        duplicatedSquad = duplicatedSquad.copyWith(models: updatedModels);
-        updatedSquads[updatedSquads.length - 1] = duplicatedSquad;
-      }
-    }
-
-    duplicatedSquad = SquadRuleEngine.ensureRequiredCommand(
-      squad: duplicatedSquad,
-      allSquads: updatedSquads,
+    final updatedSquads = RosterRuleEngine.duplicateSquad(
+      squadToDuplicate: event.squad,
+      newSquadName: event.name,
+      currentSquads: state.squads,
       ruleSet: state.ruleSet,
+      nextSquadIdGenerator: () {
+        _nextSquadNumber++;
+        while (state.squads.any((squad) => squad.id == _nextSquadNumber)) {
+          _nextSquadNumber++;
+        }
+        return _nextSquadNumber;
+      },
+      nextModelIdGenerator: () {
+        _nextModelId++;
+        return _nextModelId;
+      },
     );
-    updatedSquads[updatedSquads.length - 1] = duplicatedSquad;
 
     emit(
       state.copyWith(
