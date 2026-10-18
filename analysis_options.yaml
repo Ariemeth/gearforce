@@ -17,7 +17,6 @@ analyzer:
     - macos/**
     - linux/**
   errors:
-    avoid_print: ignore
     prefer_adjacent_string_concatenation: ignore
     # prefer_interpolation_to_compose_strings: ignore
 
@@ -37,7 +36,7 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    avoid_print: false
+    avoid_print: true
     prefer_single_quotes: true
     always_use_package_imports: true
     unnecessary_constructor_name: true
