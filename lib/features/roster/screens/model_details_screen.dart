@@ -28,7 +28,7 @@ class ModelDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<RosterBloc, RosterState, _ModelLookupResult>(
+    return BlocSelector<RosterCubit, RosterState, _ModelLookupResult>(
       selector: (state) {
         for (final squad in state.squads) {
           if (squad.id != squadId) {
@@ -259,13 +259,11 @@ class _ModelUpgradesSection extends StatelessWidget {
                         return;
                       }
 
-                      context.read<RosterBloc>().add(
-                        UpdateModelUpgradeEnabled(
-                          squad: squad,
-                          model: model,
-                          upgrade: upgrade,
-                          enabled: value,
-                        ),
+                      context.read<RosterCubit>().updateModelUpgradeEnabled(
+                        squad: squad,
+                        model: model,
+                        upgrade: upgrade,
+                        enabled: value,
                       );
                     },
                   );

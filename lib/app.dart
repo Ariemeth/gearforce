@@ -14,7 +14,7 @@ class Gearforce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AppSettingsBloc, AppSettingsState>(
+    return BlocBuilder<AppSettingsCubit, AppSettingsState>(
       builder: (context, state) {
         return MaterialApp.router(
           routerConfig: appRouter,

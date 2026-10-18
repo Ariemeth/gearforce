@@ -16,7 +16,7 @@ class UnitLevelSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RosterBloc, RosterState>(
+    return BlocBuilder<RosterCubit, RosterState>(
       builder: (context, state) {
         return Row(
           children: [
@@ -41,8 +41,10 @@ class UnitLevelSelector extends StatelessWidget {
                 if (newLevel == model.level || newLevel == null) {
                   return;
                 }
-                context.read<RosterBloc>().add(
-                  UpdateModelLevel(model: model, squad: squad, level: newLevel),
+                context.read<RosterCubit>().updateModelLevel(
+                  model: model,
+                  squad: squad,
+                  level: newLevel,
                 );
               },
             ),

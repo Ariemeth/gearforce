@@ -12,7 +12,7 @@ class DuelistToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RosterBloc, RosterState>(
+    return BlocBuilder<RosterCubit, RosterState>(
       builder: (context, state) {
         final canToggle = state.ruleSet.canAssignDuelist(
           model: model,
@@ -35,12 +35,10 @@ class DuelistToggle extends StatelessWidget {
             iconSize: 20,
             onPressed: canToggle
                 ? () {
-                    context.read<RosterBloc>().add(
-                      UpdateModelIsDuelist(
-                        model: model,
-                        squad: squad,
-                        isDuelist: !model.isDuelist,
-                      ),
+                    context.read<RosterCubit>().updateModelIsDuelist(
+                      model: model,
+                      squad: squad,
+                      isDuelist: !model.isDuelist,
                     );
                   }
                 : null,

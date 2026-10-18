@@ -29,8 +29,9 @@ class SquadDisplay extends StatelessWidget {
                   itemCount: squads.length,
                   buildDefaultDragHandles: false,
                   onReorderItem: (oldIndex, newIndex) {
-                    context.read<RosterBloc>().add(
-                      ReorderSquad(oldIndex: oldIndex, newIndex: newIndex),
+                    context.read<RosterCubit>().reorderSquad(
+                      oldIndex: oldIndex,
+                      newIndex: newIndex,
                     );
                   },
                   itemBuilder: (context, index) {
@@ -148,8 +149,8 @@ class SquadDisplay extends StatelessWidget {
                                     squadName: squad.name,
                                   );
                                   if (confirmed == true && context.mounted) {
-                                    context.read<RosterBloc>().add(
-                                      RemoveSquad(squad: squad),
+                                    context.read<RosterCubit>().removeSquad(
+                                      squad,
                                     );
                                   }
                                   return;
@@ -161,11 +162,9 @@ class SquadDisplay extends StatelessWidget {
                                         context,
                                         squads,
                                       );
-                                  context.read<RosterBloc>().add(
-                                    DuplicateSquad(
-                                      squad: squad,
-                                      name: duplicateName,
-                                    ),
+                                  context.read<RosterCubit>().duplicateSquad(
+                                    squad: squad,
+                                    name: duplicateName,
                                   );
                                 }
                               },

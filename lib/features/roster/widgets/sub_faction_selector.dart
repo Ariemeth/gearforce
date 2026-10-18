@@ -35,9 +35,7 @@ class SubFactionSelector extends StatelessWidget {
             .toList(),
         onChanged: (Subfaction? newSubfaction) {
           if (newSubfaction != null) {
-            context.read<RosterBloc>().add(
-              UpdateSubfaction(subfaction: newSubfaction),
-            );
+            context.read<RosterCubit>().updateSubfaction(newSubfaction);
           }
         },
         hint: Padding(

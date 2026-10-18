@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_events.dart';
 import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
 import 'package:gearforce/core/widgets/constrained_content.dart';
 
@@ -23,14 +22,14 @@ class AppSettingScreen extends StatelessWidget {
       body: ConstrainedContent(
         maxWidth: _maxContentWidth,
         padding: _pagePadding,
-        child: BlocBuilder<AppSettingsBloc, AppSettingsState>(
+        child: BlocBuilder<AppSettingsCubit, AppSettingsState>(
           builder: (context, state) {
             return DropdownButtonFormField<ThemeMode>(
               initialValue: state.themeMode,
               onChanged: (newThemeMode) {
                 if (newThemeMode != null && newThemeMode != state.themeMode) {
-                  context.read<AppSettingsBloc>().add(
-                    UpdateThemeMode(themeMode: newThemeMode),
+                  context.read<AppSettingsCubit>().updateThemeMode(
+                    newThemeMode,
                   );
                 }
               },

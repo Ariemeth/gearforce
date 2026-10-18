@@ -31,7 +31,7 @@ class AddSquadButton extends StatelessWidget {
       onPressed: () {
         final newSquadName = generateUniqueDefaultSquadName(context, squads);
 
-        context.read<RosterBloc>().add(AddNewSquad(name: newSquadName));
+        context.read<RosterCubit>().addNewSquad(name: newSquadName);
       },
       child: Text(
         context.l10n.addSquadButtonText,

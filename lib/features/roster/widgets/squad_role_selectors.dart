@@ -24,12 +24,10 @@ class SquadRoleSelectors extends StatelessWidget {
             allowNone: false, // Disallow "None" for primary role
             onChanged: (Role? newPrimaryRole) {
               if (newPrimaryRole != null) {
-                context.read<RosterBloc>().add(
-                  UpdateSquadRoles(
-                    squad: squad,
-                    primaryRole: newPrimaryRole,
-                    secondaryRole: squad.secondaryRole,
-                  ),
+                context.read<RosterCubit>().updateSquadRoles(
+                  squad: squad,
+                  primaryRole: newPrimaryRole,
+                  secondaryRole: squad.secondaryRole,
                 );
               }
             },
@@ -40,12 +38,10 @@ class SquadRoleSelectors extends StatelessWidget {
             allowNone: true,
             onChanged: (Role? newSecondaryRole) {
               if (newSecondaryRole != squad.primaryRole) {
-                context.read<RosterBloc>().add(
-                  UpdateSquadRoles(
-                    squad: squad,
-                    primaryRole: squad.primaryRole,
-                    secondaryRole: newSecondaryRole,
-                  ),
+                context.read<RosterCubit>().updateSquadRoles(
+                  squad: squad,
+                  primaryRole: squad.primaryRole,
+                  secondaryRole: newSecondaryRole,
                 );
               }
             },

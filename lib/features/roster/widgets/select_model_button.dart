@@ -13,7 +13,7 @@ class SelectModelButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<RosterBloc, RosterState, bool>(
+    return BlocSelector<RosterCubit, RosterState, bool>(
       selector: (state) {
         return state.ruleSet.canAddAnyUnitToSquad(squad: updatedSquad);
       },

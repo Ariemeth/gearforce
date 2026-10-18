@@ -23,13 +23,13 @@ void main() async {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => AppSettingsBloc(
+            create: (context) => AppSettingsCubit(
               RepositoryProvider.of<AppSettingsRepository>(context),
             )..loadSettings(),
           ),
           BlocProvider(
             create: (context) =>
-                RosterBloc(RepositoryProvider.of<UnitRepository>(context)),
+                RosterCubit(RepositoryProvider.of<UnitRepository>(context)),
           ),
         ],
         child: const Gearforce(),

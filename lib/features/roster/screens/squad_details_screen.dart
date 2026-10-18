@@ -20,7 +20,7 @@ class SquadDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<RosterBloc, RosterState, Squad?>(
+    return BlocSelector<RosterCubit, RosterState, Squad?>(
       selector: (state) {
         if (!state.squads.any((s) => s.id == squadId)) {
           return null;
@@ -54,7 +54,7 @@ class SquadDetailsScreen extends StatelessWidget {
                     squadName: squad.name,
                   );
                   if (confirmed == true && context.mounted) {
-                    context.read<RosterBloc>().add(RemoveSquad(squad: squad));
+                    context.read<RosterCubit>().removeSquad(squad);
                     if (context.mounted) {
                       Navigator.of(context).pop();
                     }
@@ -89,12 +89,10 @@ class SquadDetailsScreen extends StatelessWidget {
                     itemCount: squad.models.length,
                     buildDefaultDragHandles: false,
                     onReorderItem: (oldIndex, newIndex) {
-                      context.read<RosterBloc>().add(
-                        ReorderModel(
-                          squad: squad,
-                          oldIndex: oldIndex,
-                          newIndex: newIndex,
-                        ),
+                      context.read<RosterCubit>().reorderModel(
+                        squad: squad,
+                        oldIndex: oldIndex,
+                        newIndex: newIndex,
                       );
                     },
                     itemBuilder: (context, index) {
@@ -153,8 +151,9 @@ class _EditableSquadNameState extends State<_EditableSquadName> {
   void _submitName() {
     final newName = _controller.text.trim();
     if (newName.isNotEmpty && newName != widget.squad.name) {
-      context.read<RosterBloc>().add(
-        RenameSquad(squad: widget.squad, newName: newName),
+      context.read<RosterCubit>().renameSquad(
+        squad: widget.squad,
+        newName: newName,
       );
     } else {
       _controller.text = widget.squad.name;

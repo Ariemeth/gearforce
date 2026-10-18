@@ -64,24 +64,24 @@ void main() {
     mockUnitRepository = MockUnitRepository();
   });
 
-  group('RosterBloc initial state', () {
+  group('RosterCubit initial state', () {
     test('has correct initial values', () {
-      final bloc = RosterBloc(mockUnitRepository);
-      expect(bloc.state, isA<RosterInitial>());
-      expect(bloc.state.playerName, '');
-      expect(bloc.state.rosterName, '');
-      expect(bloc.state.squads, isEmpty);
-      expect(bloc.state.selectedFaction, Faction.north);
-      expect(bloc.state.selectedSubfaction, Faction.north.subfactions.first);
-      bloc.close();
+      final cubit = RosterCubit(mockUnitRepository);
+      expect(cubit.state, isA<RosterInitial>());
+      expect(cubit.state.playerName, '');
+      expect(cubit.state.rosterName, '');
+      expect(cubit.state.squads, isEmpty);
+      expect(cubit.state.selectedFaction, Faction.north);
+      expect(cubit.state.selectedSubfaction, Faction.north.subfactions.first);
+      cubit.close();
     });
   });
 
   group('UpdatePlayerName', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'emits state with updated player name',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) => bloc.add(UpdatePlayerName(playerName: 'John')),
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) => cubit.updatePlayerName('John'),
       expect: () => [
         isA<RosterState>().having((s) => s.playerName, 'playerName', 'John'),
       ],
@@ -89,10 +89,10 @@ void main() {
   });
 
   group('UpdateRosterName', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'emits state with updated roster name',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) => bloc.add(UpdateRosterName(rosterName: 'My Roster')),
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) => cubit.updateRosterName('My Roster'),
       expect: () => [
         isA<RosterState>().having(
           (s) => s.rosterName,
@@ -104,15 +104,15 @@ void main() {
   });
 
   group('AddNewSquad', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'adds a squad with default role',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) => bloc.add(AddNewSquad(name: 'Alpha Squad')),
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) => cubit.addNewSquad(name: 'Alpha Squad'),
       expect: () => [
         isA<RosterState>().having((s) => s.squads.length, 'squad count', 1),
       ],
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         expect(squad.name, 'Alpha Squad');
         expect(squad.primaryRole, Role.gp);
         expect(squad.secondaryRole, isNull);
@@ -120,100 +120,96 @@ void main() {
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'adds a squad with specified roles',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) => bloc.add(
-        AddNewSquad(
-          name: 'Strike Team',
-          primaryRole: Role.sk,
-          secondaryRole: Role.gp,
-        ),
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) => cubit.addNewSquad(
+        name: 'Strike Team',
+        primaryRole: Role.sk,
+        secondaryRole: Role.gp,
       ),
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         expect(squad.primaryRole, Role.sk);
         expect(squad.secondaryRole, Role.gp);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'adds multiple squads with unique IDs',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) {
-        bloc.add(AddNewSquad(name: 'Squad A'));
-        bloc.add(AddNewSquad(name: 'Squad B'));
-        bloc.add(AddNewSquad(name: 'Squad C'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) {
+        cubit.addNewSquad(name: 'Squad A');
+        cubit.addNewSquad(name: 'Squad B');
+        cubit.addNewSquad(name: 'Squad C');
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.length, 3);
-        final ids = bloc.state.squads.map((s) => s.id).toSet();
+      verify: (cubit) {
+        expect(cubit.state.squads.length, 3);
+        final ids = cubit.state.squads.map((s) => s.id).toSet();
         expect(ids.length, 3, reason: 'All squad IDs should be unique');
       },
     );
   });
 
   group('RemoveSquad', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'removes the specified squad',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Only Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Only Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(RemoveSquad(squad: squad));
+        final squad = cubit.state.squads.first;
+        cubit.removeSquad(squad);
       },
-      verify: (bloc) {
-        expect(bloc.state.squads, isEmpty);
+      verify: (cubit) {
+        expect(cubit.state.squads, isEmpty);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'removes correct squad when multiple exist',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Keep'));
-        bloc.add(AddNewSquad(name: 'Remove'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Keep');
+        cubit.addNewSquad(name: 'Remove');
         await Future<void>.delayed(Duration.zero);
         // After both are added, remove the second
-        final squadToRemove = bloc.state.squads.firstWhere(
+        final squadToRemove = cubit.state.squads.firstWhere(
           (s) => s.name == 'Remove',
         );
-        bloc.add(RemoveSquad(squad: squadToRemove));
+        cubit.removeSquad(squadToRemove);
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.length, 1);
-        expect(bloc.state.squads.first.name, 'Keep');
+      verify: (cubit) {
+        expect(cubit.state.squads.length, 1);
+        expect(cubit.state.squads.first.name, 'Keep');
       },
     );
   });
 
   group('DuplicateSquad', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'duplicates squad with copied models and unique squad/model IDs',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Alpha'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Alpha');
         await Future<void>.delayed(Duration.zero);
 
-        var squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V1'),
-          ),
+        var squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V1'),
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
-        bloc.add(DuplicateSquad(squad: squad, name: 'Squad 2'));
+        squad = cubit.state.squads.first;
+        cubit.duplicateSquad(squad: squad, name: 'Squad 2');
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.length, 2);
+      verify: (cubit) {
+        expect(cubit.state.squads.length, 2);
 
-        final original = bloc.state.squads[0];
-        final duplicate = bloc.state.squads[1];
+        final original = cubit.state.squads[0];
+        final duplicate = cubit.state.squads[1];
 
         expect(duplicate.name, 'Squad 2');
         expect(duplicate.id, isNot(original.id));
@@ -225,39 +221,35 @@ void main() {
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'does not duplicate CO command level when duplicating a squad',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Command Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Command Squad');
         await Future<void>.delayed(Duration.zero);
 
-        var squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V1'),
-          ),
+        var squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V1'),
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         final model = squad.models.first;
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: squad,
-            model: model,
-            commandLevel: Command.co,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: squad,
+          model: model,
+          commandLevel: Command.co,
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
-        bloc.add(DuplicateSquad(squad: squad, name: 'Squad 2'));
+        squad = cubit.state.squads.first;
+        cubit.duplicateSquad(squad: squad, name: 'Squad 2');
       },
-      verify: (bloc) {
-        final allModels = bloc.state.squads.expand((s) => s.models).toList();
+      verify: (cubit) {
+        final allModels = cubit.state.squads.expand((s) => s.models).toList();
         final coCount = allModels.where((m) => m.command == Command.co).length;
         expect(coCount, 1);
       },
@@ -265,126 +257,116 @@ void main() {
   });
 
   group('RenameSquad', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'renames the specified squad',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Old Name'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Old Name');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(RenameSquad(squad: squad, newName: 'New Name'));
+        final squad = cubit.state.squads.first;
+        cubit.renameSquad(squad: squad, newName: 'New Name');
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.first.name, 'New Name');
+      verify: (cubit) {
+        expect(cubit.state.squads.first.name, 'New Name');
       },
     );
   });
 
   group('AddModel', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'adds a model to the specified squad',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Model Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Model Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        final squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.first.models.length, 1);
-        expect(bloc.state.squads.first.models.first.base.name, 'Test Gear');
+      verify: (cubit) {
+        expect(cubit.state.squads.first.models.length, 1);
+        expect(cubit.state.squads.first.models.first.base.name, 'Test Gear');
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'auto-assigns 1iC when squad has no command',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Command Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Command Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        final squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
       },
-      verify: (bloc) {
-        final model = bloc.state.squads.first.models.first;
+      verify: (cubit) {
+        final model = cubit.state.squads.first.models.first;
         expect(model.command, Command.firstIC);
       },
     );
   });
 
   group('RemoveModel', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'removes a model from the specified squad',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Test Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Test Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        final squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        final updatedSquad = bloc.state.squads.first;
+        final updatedSquad = cubit.state.squads.first;
         final model = updatedSquad.models.first;
-        bloc.add(RemoveModel(squad: updatedSquad, model: model));
+        cubit.removeModel(squad: updatedSquad, model: model);
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.first.models, isEmpty);
+      verify: (cubit) {
+        expect(cubit.state.squads.first.models, isEmpty);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'promotes another model to 1iC when current 1iC is removed',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Command Reassign Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Command Reassign Squad');
         await Future<void>.delayed(Duration.zero);
 
-        var squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V1'),
-          ),
+        var squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V1'),
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V2'),
-          ),
+        squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V2'),
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         final firstIcModel = squad.models.firstWhere(
           (model) => model.command == Command.firstIC,
         );
 
-        bloc.add(RemoveModel(squad: squad, model: firstIcModel));
+        cubit.removeModel(squad: squad, model: firstIcModel);
       },
-      verify: (bloc) {
-        final models = bloc.state.squads.first.models;
+      verify: (cubit) {
+        final models = cubit.state.squads.first.models;
         expect(models.length, 1);
         expect(models.single.command, Command.firstIC);
       },
@@ -392,52 +374,46 @@ void main() {
   });
 
   group('DuplicateModel', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'duplicates model with command reset and conditional level/duelist copy',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Duplicate Model Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Duplicate Model Squad');
         await Future<void>.delayed(Duration.zero);
 
-        var squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        var squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         var sourceModel = squad.models.first;
 
-        bloc.add(
-          UpdateModelLevel(
-            squad: squad,
-            model: sourceModel,
-            level: UnitLevel.veteran,
-          ),
+        cubit.updateModelLevel(
+          squad: squad,
+          model: sourceModel,
+          level: UnitLevel.veteran,
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         sourceModel = squad.models.first;
-        bloc.add(
-          UpdateModelIsDuelist(
-            squad: squad,
-            model: sourceModel,
-            isDuelist: true,
-          ),
+        cubit.updateModelIsDuelist(
+          squad: squad,
+          model: sourceModel,
+          isDuelist: true,
         );
         await Future<void>.delayed(Duration.zero);
 
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         sourceModel = squad.models.first;
-        bloc.add(DuplicateModel(squad: squad, model: sourceModel));
+        cubit.duplicateModel(squad: squad, model: sourceModel);
       },
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         expect(squad.models.length, 2);
 
         final sourceModel = squad.models[0];
@@ -450,11 +426,11 @@ void main() {
           isDuelist: false,
         );
 
-        final canCopyLevel = bloc.state.ruleSet.canAssignUnitLevel(
+        final canCopyLevel = cubit.state.ruleSet.canAssignUnitLevel(
           model: expectedBaseModel,
           newLevel: sourceModel.level,
           squad: squad,
-          allSquads: bloc.state.squads,
+          allSquads: cubit.state.squads,
         );
         final expectedLevel = canCopyLevel
             ? sourceModel.level
@@ -465,11 +441,11 @@ void main() {
         );
         final canCopyDuelist =
             sourceModel.isDuelist &&
-            bloc.state.ruleSet.canAssignDuelist(
+            cubit.state.ruleSet.canAssignDuelist(
               model: modelAfterLevel,
               newDuelistStatus: true,
               squad: squad,
-              allSquads: bloc.state.squads,
+              allSquads: cubit.state.squads,
             );
 
         expect(duplicatedModel.command, Command.none);
@@ -480,102 +456,88 @@ void main() {
   });
 
   group('UpdateModelLevel', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'updates model level to veteran',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Level Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Level Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        final squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        final updatedSquad = bloc.state.squads.first;
+        final updatedSquad = cubit.state.squads.first;
         final model = updatedSquad.models.first;
-        bloc.add(
-          UpdateModelLevel(
-            squad: updatedSquad,
-            model: model,
-            level: UnitLevel.veteran,
-          ),
+        cubit.updateModelLevel(
+          squad: updatedSquad,
+          model: model,
+          level: UnitLevel.veteran,
         );
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.first.models.first.level, UnitLevel.veteran);
+      verify: (cubit) {
+        expect(cubit.state.squads.first.models.first.level, UnitLevel.veteran);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'does not auto-promote to 2iC when 2iC becomes green',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
         // Create squad with GP role
-        bloc.add(AddNewSquad(name: 'Auto Promote Squad', primaryRole: Role.gp));
+        cubit.addNewSquad(name: 'Auto Promote Squad', primaryRole: Role.gp);
         await Future<void>.delayed(Duration.zero);
-        var squad = bloc.state.squads.first;
+        var squad = cubit.state.squads.first;
 
         // Add model 1 (will auto-become 1iC)
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V1'),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V1'),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Add model 2 (will become 2iC)
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V2'),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V2'),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Add model 3
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V3'),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V3'),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         final model2 = squad.models[1];
 
         // Make model2 the 2iC
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: squad,
-            model: model2,
-            commandLevel: Command.secondIC,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: squad,
+          model: model2,
+          commandLevel: Command.secondIC,
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Now make model2 green - model3 should NOT be promoted
         var updatedModel2 = squad.models.firstWhere((m) => m.id == model2.id);
-        bloc.add(
-          UpdateModelLevel(
-            squad: squad,
-            model: updatedModel2,
-            level: UnitLevel.green,
-          ),
+        cubit.updateModelLevel(
+          squad: squad,
+          model: updatedModel2,
+          level: UnitLevel.green,
         );
       },
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         final model2 = squad.models[1];
         final model3 = squad.models[2];
 
@@ -588,47 +550,43 @@ void main() {
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'auto-promotes another unit to 1iC when 1iC becomes green',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
         // Create squad with GP role
-        bloc.add(
-          AddNewSquad(name: 'Promote to 1iC Squad', primaryRole: Role.gp),
-        );
+        cubit.addNewSquad(name: 'Promote to 1iC Squad', primaryRole: Role.gp);
         await Future<void>.delayed(Duration.zero);
-        var squad = bloc.state.squads.first;
+        var squad = cubit.state.squads.first;
 
         // Add model 1 (will auto-become 1iC)
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V1'),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V1'),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Add model 2
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V2'),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V2'),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         final model1 = squad.models[0];
 
         // Make model1 green - model2 should be promoted to 1iC
-        bloc.add(
-          UpdateModelLevel(squad: squad, model: model1, level: UnitLevel.green),
+        cubit.updateModelLevel(
+          squad: squad,
+          model: model1,
+          level: UnitLevel.green,
         );
       },
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         final model1 = squad.models[0];
         final model2 = squad.models[1];
 
@@ -641,46 +599,44 @@ void main() {
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'auto-assigns 1iC when unit changes from green back to regular',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
         // Create squad with GP role
-        bloc.add(AddNewSquad(name: 'Auto Assign Squad', primaryRole: Role.gp));
+        cubit.addNewSquad(name: 'Auto Assign Squad', primaryRole: Role.gp);
         await Future<void>.delayed(Duration.zero);
-        var squad = bloc.state.squads.first;
+        var squad = cubit.state.squads.first;
 
         // Add only model (will auto-become 1iC)
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Make it green (command should become none)
         var model = squad.models.first;
-        bloc.add(
-          UpdateModelLevel(squad: squad, model: model, level: UnitLevel.green),
+        cubit.updateModelLevel(
+          squad: squad,
+          model: model,
+          level: UnitLevel.green,
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Change it back to regular - should become 1iC
         model = squad.models.first;
-        bloc.add(
-          UpdateModelLevel(
-            squad: squad,
-            model: model,
-            level: UnitLevel.regular,
-          ),
+        cubit.updateModelLevel(
+          squad: squad,
+          model: model,
+          level: UnitLevel.regular,
         );
       },
-      verify: (bloc) {
-        final model = bloc.state.squads.first.models.first;
+      verify: (cubit) {
+        final model = cubit.state.squads.first.models.first;
         expect(model.level, UnitLevel.regular);
         expect(model.command, Command.firstIC);
       },
@@ -688,231 +644,203 @@ void main() {
   });
 
   group('UpdateModelIsDuelist', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'marks model as duelist',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Duelist Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Duelist Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        final squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        final updatedSquad = bloc.state.squads.first;
+        final updatedSquad = cubit.state.squads.first;
         final model = updatedSquad.models.first;
-        bloc.add(
-          UpdateModelIsDuelist(
-            squad: updatedSquad,
-            model: model,
-            isDuelist: true,
-          ),
+        cubit.updateModelIsDuelist(
+          squad: updatedSquad,
+          model: model,
+          isDuelist: true,
         );
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.first.models.first.isDuelist, isTrue);
+      verify: (cubit) {
+        expect(cubit.state.squads.first.models.first.isDuelist, isTrue);
       },
     );
   });
 
   group('UpdateModelCommandLevel', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'updates model command level',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Command Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Command Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        final squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        final updatedSquad = bloc.state.squads.first;
+        final updatedSquad = cubit.state.squads.first;
         final model = updatedSquad.models.first;
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: updatedSquad,
-            model: model,
-            commandLevel: Command.co,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: updatedSquad,
+          model: model,
+          commandLevel: Command.co,
         );
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.first.models.first.command, Command.co);
+      verify: (cubit) {
+        expect(cubit.state.squads.first.models.first.command, Command.co);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'automatically clears conflicting command level in same squad',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Command Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Command Squad');
         await Future<void>.delayed(Duration.zero);
-        var squad = bloc.state.squads.first;
+        var squad = cubit.state.squads.first;
 
         // Add two models
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
 
         // Assign 1iC to first model
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         final model1 = squad.models[0];
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: squad,
-            model: model1,
-            commandLevel: Command.firstIC,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: squad,
+          model: model1,
+          commandLevel: Command.firstIC,
         );
         await Future<void>.delayed(Duration.zero);
 
         // Assign CO to second model (should clear 1iC from first)
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
         final model2 = squad.models[1];
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: squad,
-            model: model2,
-            commandLevel: Command.co,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: squad,
+          model: model2,
+          commandLevel: Command.co,
         );
       },
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         expect(squad.models[0].command, Command.none);
         expect(squad.models[1].command, Command.co);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'automatically clears conflicting command level across squads',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
         // Add first squad with CO
-        bloc.add(AddNewSquad(name: 'Squad 1'));
+        cubit.addNewSquad(name: 'Squad 1');
         await Future<void>.delayed(Duration.zero);
-        var squad1 = bloc.state.squads.first;
-        bloc.add(
-          AddModel(
-            squad: squad1,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        var squad1 = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad1,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        squad1 = bloc.state.squads.first;
+        squad1 = cubit.state.squads.first;
         final model1 = squad1.models.first;
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: squad1,
-            model: model1,
-            commandLevel: Command.co,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: squad1,
+          model: model1,
+          commandLevel: Command.co,
         );
         await Future<void>.delayed(Duration.zero);
 
         // Add second squad and assign CO to it (should clear CO from first squad)
-        bloc.add(AddNewSquad(name: 'Squad 2'));
+        cubit.addNewSquad(name: 'Squad 2');
         await Future<void>.delayed(Duration.zero);
-        final squad2 = bloc.state.squads.last;
-        bloc.add(
-          AddModel(
-            squad: squad2,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(),
-          ),
+        final squad2 = cubit.state.squads.last;
+        cubit.addModel(
+          squad: squad2,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        final updatedSquad2 = bloc.state.squads.last;
+        final updatedSquad2 = cubit.state.squads.last;
         final model2 = updatedSquad2.models.first;
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: updatedSquad2,
-            model: model2,
-            commandLevel: Command.co,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: updatedSquad2,
+          model: model2,
+          commandLevel: Command.co,
         );
       },
-      verify: (bloc) {
-        expect(bloc.state.squads, hasLength(2));
-        expect(bloc.state.squads[0].models.first.command, Command.firstIC);
-        expect(bloc.state.squads[1].models.first.command, Command.co);
+      verify: (cubit) {
+        expect(cubit.state.squads, hasLength(2));
+        expect(cubit.state.squads[0].models.first.command, Command.firstIC);
+        expect(cubit.state.squads[1].models.first.command, Command.co);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'does not auto-assign 1iC to green unit when assigning 2iC',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Mixed Squad', primaryRole: Role.gp));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Mixed Squad', primaryRole: Role.gp);
         await Future<void>.delayed(Duration.zero);
-        var squad = bloc.state.squads.first;
+        var squad = cubit.state.squads.first;
 
         // Add first model
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V1'),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V1'),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Add second model
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(),
-            variant: _createTestVariant(id: 'V2'),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(),
+          variant: _createTestVariant(id: 'V2'),
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Make first model green
         final model1 = squad.models[0];
-        bloc.add(
-          UpdateModelLevel(squad: squad, model: model1, level: UnitLevel.green),
+        cubit.updateModelLevel(
+          squad: squad,
+          model: model1,
+          level: UnitLevel.green,
         );
         await Future<void>.delayed(Duration.zero);
-        squad = bloc.state.squads.first;
+        squad = cubit.state.squads.first;
 
         // Assign 2iC to second model - should NOT auto-assign 1iC to green unit
         final model2 = squad.models[1];
-        bloc.add(
-          UpdateModelCommandLevel(
-            squad: squad,
-            model: model2,
-            commandLevel: Command.secondIC,
-          ),
+        cubit.updateModelCommandLevel(
+          squad: squad,
+          model: model2,
+          commandLevel: Command.secondIC,
         );
       },
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         final model1 = squad.models[0];
         final model2 = squad.models[1];
 
@@ -927,101 +855,94 @@ void main() {
   });
 
   group('UpdateFaction', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'changes faction and resets squads',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
         // Add a squad first so we can verify it gets cleared
-        bloc.add(AddNewSquad(name: 'Will Be Removed'));
+        cubit.addNewSquad(name: 'Will Be Removed');
         await Future<void>.delayed(Duration.zero);
-        bloc.add(UpdateFaction(faction: Faction.south));
+        cubit.updateFaction(Faction.south);
       },
-      verify: (bloc) {
-        expect(bloc.state.selectedFaction, Faction.south);
-        expect(bloc.state.selectedSubfaction, Faction.south.subfactions.first);
+      verify: (cubit) {
+        expect(cubit.state.selectedFaction, Faction.south);
+        expect(cubit.state.selectedSubfaction, Faction.south.subfactions.first);
         expect(
-          bloc.state.squads,
+          cubit.state.squads,
           isEmpty,
           reason: 'Squads should be cleared on faction change',
         );
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'does not emit when selecting same faction',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) => bloc.add(UpdateFaction(faction: Faction.north)),
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) => cubit.updateFaction(Faction.north),
       expect: () => <RosterState>[],
     );
   });
 
   group('UpdateSubfaction', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'changes subfaction',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) =>
-          bloc.add(UpdateSubfaction(subfaction: Subfaction.norguard)),
-      verify: (bloc) {
-        expect(bloc.state.selectedSubfaction, Subfaction.norguard);
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) => cubit.updateSubfaction(Subfaction.norguard),
+      verify: (cubit) {
+        expect(cubit.state.selectedSubfaction, Subfaction.norguard);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'does not emit when selecting same subfaction',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) => bloc.add(
-        UpdateSubfaction(subfaction: Faction.north.subfactions.first),
-      ),
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) => cubit.updateSubfaction(Faction.north.subfactions.first),
       expect: () => <RosterState>[],
     );
   });
 
   group('UpdateSquadRoles', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'updates squad roles',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Roles Squad'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Roles Squad');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
-        bloc.add(
-          UpdateSquadRoles(
-            squad: squad,
-            primaryRole: Role.sk,
-            secondaryRole: Role.rc,
-          ),
+        final squad = cubit.state.squads.first;
+        cubit.updateSquadRoles(
+          squad: squad,
+          primaryRole: Role.sk,
+          secondaryRole: Role.rc,
         );
       },
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         expect(squad.primaryRole, Role.sk);
         expect(squad.secondaryRole, Role.rc);
       },
     );
 
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'filters out models with invalid roles when roles change',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Filter Squad', primaryRole: Role.gp));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Filter Squad', primaryRole: Role.gp);
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
+        final squad = cubit.state.squads.first;
         // Add a model that only has fs role
-        bloc.add(
-          AddModel(
-            squad: squad,
-            base: _createTestModelBase(roles: {Role.fs}),
-            variant: _createTestVariant(),
-          ),
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(roles: {Role.fs}),
+          variant: _createTestVariant(),
         );
         await Future<void>.delayed(Duration.zero);
-        final updatedSquad = bloc.state.squads.first;
+        final updatedSquad = cubit.state.squads.first;
         expect(updatedSquad.models.length, 1);
         // Change roles to sk only - the fs-only model should be filtered out
-        bloc.add(UpdateSquadRoles(squad: updatedSquad, primaryRole: Role.sk));
+        cubit.updateSquadRoles(squad: updatedSquad, primaryRole: Role.sk);
       },
-      verify: (bloc) {
-        final squad = bloc.state.squads.first;
+      verify: (cubit) {
+        final squad = cubit.state.squads.first;
         expect(
           squad.models,
           isEmpty,
@@ -1032,35 +953,35 @@ void main() {
   });
 
   group('UpdateSquads', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'replaces all squads',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) {
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) {
         final squads = [
           const Squad(id: 99, name: 'Imported Squad', models: [], upgrades: []),
         ];
-        bloc.add(UpdateSquads(squads: squads));
+        cubit.updateSquads(squads);
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.length, 1);
-        expect(bloc.state.squads.first.name, 'Imported Squad');
+      verify: (cubit) {
+        expect(cubit.state.squads.length, 1);
+        expect(cubit.state.squads.first.name, 'Imported Squad');
       },
     );
   });
 
   group('UpdateSquad', () {
-    blocTest<RosterBloc, RosterState>(
+    blocTest<RosterCubit, RosterState>(
       'updates a squad by name',
-      build: () => RosterBloc(mockUnitRepository),
-      act: (bloc) async {
-        bloc.add(AddNewSquad(name: 'Update Me'));
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Update Me');
         await Future<void>.delayed(Duration.zero);
-        final squad = bloc.state.squads.first;
+        final squad = cubit.state.squads.first;
         final updatedSquad = squad.copyWith(primaryRole: Role.fs);
-        bloc.add(UpdateSquad(updatedSquad: updatedSquad));
+        cubit.updateSquad(updatedSquad);
       },
-      verify: (bloc) {
-        expect(bloc.state.squads.first.primaryRole, Role.fs);
+      verify: (cubit) {
+        expect(cubit.state.squads.first.primaryRole, Role.fs);
       },
     );
   });

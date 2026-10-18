@@ -31,9 +31,9 @@ class _MockUnitRepository implements UnitRepository {
   }
 }
 
-Widget _testApp({required Widget child, required RosterBloc bloc}) {
-  return BlocProvider<RosterBloc>.value(
-    value: bloc,
+Widget _testApp({required Widget child, required RosterCubit cubit}) {
+  return BlocProvider<RosterCubit>.value(
+    value: cubit,
     child: MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -49,14 +49,14 @@ Widget _testApp({required Widget child, required RosterBloc bloc}) {
 
 void main() {
   group('SelectModelButton', () {
-    late RosterBloc bloc;
+    late RosterCubit cubit;
 
     setUp(() {
-      bloc = RosterBloc(_MockUnitRepository());
+      cubit = RosterCubit(_MockUnitRepository());
     });
 
     tearDown(() {
-      bloc.close();
+      cubit.close();
     });
 
     testWidgets('is enabled when squad can add units', (tester) async {
@@ -70,7 +70,7 @@ void main() {
       await tester.pumpWidget(
         _testApp(
           child: SelectModelButton(updatedSquad: squad),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
 
@@ -89,7 +89,7 @@ void main() {
       await tester.pumpWidget(
         _testApp(
           child: SelectModelButton(updatedSquad: fullSquad),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
 

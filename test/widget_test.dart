@@ -22,10 +22,10 @@ class MockUnitRepository implements UnitRepository {
   }
 }
 
-/// Wraps a widget with MaterialApp, localization delegates, and RosterBloc.
-Widget _testApp({required Widget child, required RosterBloc bloc}) {
-  return BlocProvider<RosterBloc>.value(
-    value: bloc,
+/// Wraps a widget with MaterialApp, localization delegates, and RosterCubit.
+Widget _testApp({required Widget child, required RosterCubit cubit}) {
+  return BlocProvider<RosterCubit>.value(
+    value: cubit,
     child: MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -41,21 +41,21 @@ Widget _testApp({required Widget child, required RosterBloc bloc}) {
 
 void main() {
   group('SquadDisplay', () {
-    late RosterBloc bloc;
+    late RosterCubit cubit;
 
     setUp(() {
-      bloc = RosterBloc(MockUnitRepository());
+      cubit = RosterCubit(MockUnitRepository());
     });
 
     tearDown(() {
-      bloc.close();
+      cubit.close();
     });
 
     testWidgets('shows empty text when no squads', (tester) async {
       await tester.pumpWidget(
         _testApp(
           child: const SquadDisplay(squads: []),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -84,7 +84,7 @@ void main() {
       await tester.pumpWidget(
         _testApp(
           child: SquadDisplay(squads: squads),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -100,7 +100,7 @@ void main() {
       await tester.pumpWidget(
         _testApp(
           child: SquadDisplay(squads: squads),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -117,7 +117,7 @@ void main() {
       await tester.pumpWidget(
         _testApp(
           child: SquadDisplay(squads: squads),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -145,11 +145,11 @@ void main() {
       ];
 
       // Add a squad so we can verify it isn't removed
-      bloc.add(AddNewSquad(name: 'Alpha'));
+      cubit.addNewSquad(name: 'Alpha');
       await tester.pumpWidget(
         _testApp(
           child: SquadDisplay(squads: squads),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -162,7 +162,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.delete_forever_outlined));
       await tester.pumpAndSettle();
 
-      // Tap Cancel — this should close the dialog without dispatching RemoveSquad
+      // Tap Cancel — this should close the dialog without removing squad
       await tester.tap(find.text('Cancel'));
       await tester.pumpAndSettle();
 
@@ -171,7 +171,7 @@ void main() {
       expect(find.text('Alpha'), findsOneWidget);
     });
 
-    testWidgets('confirm dispatches RemoveSquad event', (tester) async {
+    testWidgets('confirm dispatches RemoveSquad', (tester) async {
       final squads = [
         const Squad(id: 1, name: 'Alpha', primaryRole: Role.gp, models: []),
       ];
@@ -179,7 +179,7 @@ void main() {
       await tester.pumpWidget(
         _testApp(
           child: SquadDisplay(squads: squads),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -192,7 +192,7 @@ void main() {
       await tester.tap(find.byIcon(Icons.delete_forever_outlined));
       await tester.pumpAndSettle();
 
-      // Tap Remove — this dispatches RemoveSquad
+      // Tap Remove — this calls removeSquad
       await tester.tap(find.text('Remove'));
       await tester.pumpAndSettle();
 
@@ -202,21 +202,21 @@ void main() {
   });
 
   group('AddSquadButton', () {
-    late RosterBloc bloc;
+    late RosterCubit cubit;
 
     setUp(() {
-      bloc = RosterBloc(MockUnitRepository());
+      cubit = RosterCubit(MockUnitRepository());
     });
 
     tearDown(() {
-      bloc.close();
+      cubit.close();
     });
 
     testWidgets('shows Add Squad text', (tester) async {
       await tester.pumpWidget(
         _testApp(
           child: const AddSquadButton(squads: []),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -224,11 +224,11 @@ void main() {
       expect(find.text('Add Squad'), findsOneWidget);
     });
 
-    testWidgets('dispatches AddNewSquad event on tap', (tester) async {
+    testWidgets('calls addNewSquad on tap', (tester) async {
       await tester.pumpWidget(
         _testApp(
           child: const AddSquadButton(squads: []),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -236,9 +236,9 @@ void main() {
       await tester.tap(find.text('Add Squad'));
       await tester.pumpAndSettle();
 
-      // The bloc should now have a squad named 'Squad 1'
-      expect(bloc.state.squads.length, 1);
-      expect(bloc.state.squads.first.name, 'Squad 1');
+      // The cubit should now have a squad named 'Squad 1'
+      expect(cubit.state.squads.length, 1);
+      expect(cubit.state.squads.first.name, 'Squad 1');
     });
 
     testWidgets('generates unique squad name', (tester) async {
@@ -249,7 +249,7 @@ void main() {
       await tester.pumpWidget(
         _testApp(
           child: AddSquadButton(squads: existingSquads),
-          bloc: bloc,
+          cubit: cubit,
         ),
       );
       await tester.pumpAndSettle();
@@ -258,7 +258,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Should skip 'Squad 1' (which is in the existing list) and create 'Squad 2'
-      expect(bloc.state.squads.any((s) => s.name == 'Squad 2'), isTrue);
+      expect(cubit.state.squads.any((s) => s.name == 'Squad 2'), isTrue);
     });
   });
 }

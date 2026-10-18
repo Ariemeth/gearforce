@@ -85,15 +85,17 @@ class ModelListTile extends StatelessWidget {
               }
 
               if (action == _ModelTileAction.delete) {
-                context.read<RosterBloc>().add(
-                  RemoveModel(squad: squad, model: model),
+                context.read<RosterCubit>().removeModel(
+                  squad: squad,
+                  model: model,
                 );
                 return;
               }
 
               if (action == _ModelTileAction.duplicate) {
-                context.read<RosterBloc>().add(
-                  DuplicateModel(squad: squad, model: model),
+                context.read<RosterCubit>().duplicateModel(
+                  squad: squad,
+                  model: model,
                 );
               }
             },

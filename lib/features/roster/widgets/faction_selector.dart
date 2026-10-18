@@ -35,7 +35,7 @@ class FactionSelector extends StatelessWidget {
             .toList(),
         onChanged: (Faction? newFaction) {
           if (newFaction != null) {
-            context.read<RosterBloc>().add(UpdateFaction(faction: newFaction));
+            context.read<RosterCubit>().updateFaction(newFaction);
           }
         },
         hint: Padding(

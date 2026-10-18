@@ -30,7 +30,7 @@ class RosterScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: BlocBuilder<RosterBloc, RosterState>(
+      body: BlocBuilder<RosterCubit, RosterState>(
         builder: (context, state) {
           return Padding(
             padding: _pagePadding,

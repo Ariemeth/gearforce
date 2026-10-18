@@ -39,7 +39,7 @@ class _UnitSelectionScreenState extends State<UnitSelectionScreen> {
   }
 
   Future<void> _loadAvailableUnits() async {
-    final rosterBloc = context.read<RosterBloc>();
+    final rosterBloc = context.read<RosterCubit>();
     final rosterState = rosterBloc.state;
 
     final squadRoles = {
@@ -161,12 +161,10 @@ class _UnitModelList extends StatelessWidget {
               },
               child: GestureDetector(
                 onTap: () {
-                  context.read<RosterBloc>().add(
-                    AddModel(
-                      squad: updatedSquad,
-                      base: unit.base,
-                      variant: variant,
-                    ),
+                  context.read<RosterCubit>().addModel(
+                    squad: updatedSquad,
+                    base: unit.base,
+                    variant: variant,
                   );
 
                   Navigator.pop(context);

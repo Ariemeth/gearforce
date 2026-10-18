@@ -17,7 +17,7 @@ class CommandLevelSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RosterBloc, RosterState>(
+    return BlocBuilder<RosterCubit, RosterState>(
       builder: (context, state) {
         return DropdownButton<Command>(
           value: model.command,
@@ -40,12 +40,10 @@ class CommandLevelSelector extends StatelessWidget {
             if (newCommand == null || newCommand == model.command) {
               return;
             }
-            context.read<RosterBloc>().add(
-              UpdateModelCommandLevel(
-                model: model,
-                squad: squad,
-                commandLevel: newCommand,
-              ),
+            context.read<RosterCubit>().updateModelCommandLevel(
+              model: model,
+              squad: squad,
+              commandLevel: newCommand,
             );
           },
         );
