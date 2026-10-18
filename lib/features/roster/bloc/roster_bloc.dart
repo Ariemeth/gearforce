@@ -11,8 +11,9 @@ import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
-import 'package:gearforce/features/roster/bloc/squad_state.dart';
 import 'package:gearforce/domain/rules/get_subfaction_rule_set.dart';
+import 'package:gearforce/domain/rules/squad_rule_engine.dart';
+import 'package:gearforce/features/roster/bloc/squad_state.dart';
 import 'package:meta/meta.dart';
 
 part 'roster_event.dart';
@@ -70,8 +71,7 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       upgrades: const [],
     );
 
-    final updatedSquads = List<Squad>.from(state.squads)..add(newSquad);
-    final updatedSquadState = state.squadState.copyWith(squads: updatedSquads);
+    final updatedSquadState = state.squadState.addSquad(newSquad);
     emit(state.copyWith(squadState: updatedSquadState));
   }
 
@@ -145,7 +145,11 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       }
     }
 
-    duplicatedSquad = _ensureRequiredCommand(duplicatedSquad, updatedSquads);
+    duplicatedSquad = SquadRuleEngine.ensureRequiredCommand(
+      squad: duplicatedSquad,
+      allSquads: updatedSquads,
+      ruleSet: state.ruleSet,
+    );
     updatedSquads[updatedSquads.length - 1] = duplicatedSquad;
 
     emit(
@@ -157,7 +161,10 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
   void _onAddModel(AddModel event, Emitter<RosterState> emit) {
     // Only auto-assign 1iC if the squad needs a required command AND the new model has the primary role
-    final needsRequiredCommand = !_hasRequiredCommand(event.squad.models);
+    final needsRequiredCommand = !SquadRuleEngine.hasRequiredCommand(
+      event.squad.models,
+      state.ruleSet,
+    );
     final modelHasPrimaryRole = event.base.roles.contains(
       event.squad.primaryRole,
     );
@@ -198,9 +205,10 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
     final squadIndex = updatedSquads.indexWhere((s) => s.id == event.squad.id);
     if (squadIndex != -1) {
-      updatedSquads[squadIndex] = _ensureRequiredCommand(
-        updatedSquads[squadIndex],
-        updatedSquads,
+      updatedSquads[squadIndex] = SquadRuleEngine.ensureRequiredCommand(
+        squad: updatedSquads[squadIndex],
+        allSquads: updatedSquads,
+        ruleSet: state.ruleSet,
       );
     }
 
@@ -268,107 +276,17 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
       orElse: () => event.model,
     );
 
-    final canAssignLevel = state.ruleSet.canAssignUnitLevel(
-      model: currentModel,
+    final updatedSquad = SquadRuleEngine.resolveLevelChange(
+      currentModel: currentModel,
       newLevel: event.level,
       squad: event.squad,
       allSquads: state.squads,
+      ruleSet: state.ruleSet,
     );
-    if (!canAssignLevel) {
+
+    if (updatedSquad == null) {
       return;
     }
-
-    // Determine if command should be cleared based on the new level
-    final shouldClearCommand = state.ruleSet.shouldClearCommandOnLevelChange(
-      model: currentModel,
-      newLevel: event.level,
-      currentCommand: currentModel.command,
-    );
-
-    final newCommand = shouldClearCommand ? Command.none : currentModel.command;
-
-    // Build the updated squad with the level change
-    var modelsAfterLevelChange = [
-      for (final m in event.squad.models)
-        m.id == currentModel.id
-            ? m.copyWith(level: event.level, command: newCommand)
-            : m,
-    ];
-
-    // If we lost a command, try to promote another unit to 1iC if needed
-    if (shouldClearCommand && currentModel.command != Command.none) {
-      final squadAfterChange = event.squad.copyWith(
-        models: modelsAfterLevelChange,
-      );
-
-      // Build updated squad list with the changed squad for accurate constraint checking
-      final updatedSquads = [
-        for (final s in state.squads)
-          s.id == event.squad.id ? squadAfterChange : s,
-      ];
-
-      // Only promote to 1iC if squad doesn't have one
-      final needsFirstIC = !modelsAfterLevelChange.any(
-        (m) => m.command == Command.firstIC,
-      );
-
-      if (needsFirstIC) {
-        final unitToPromote = state.ruleSet.findEligibleUnitForCommandPromotion(
-          commandLevel: Command.firstIC,
-          availableModels: modelsAfterLevelChange
-              .where((m) => m.id != currentModel.id)
-              .toList(),
-          squad: squadAfterChange,
-          allSquads: updatedSquads,
-        );
-
-        // Apply the promotion if we found an eligible unit
-        if (unitToPromote != null) {
-          modelsAfterLevelChange = [
-            for (final m in modelsAfterLevelChange)
-              m.id == unitToPromote.id
-                  ? m.copyWith(command: Command.firstIC)
-                  : m,
-          ];
-        }
-      }
-    }
-
-    // If unit now has no command and squad needs 1iC, assign it
-    final squadAfterLevelChange = event.squad.copyWith(
-      models: modelsAfterLevelChange,
-    );
-
-    final updatedSquadsForAssignment = [
-      for (final s in state.squads)
-        s.id == event.squad.id ? squadAfterLevelChange : s,
-    ];
-
-    if (newCommand == Command.none) {
-      // Only auto-assign 1iC if squad doesn't have one
-      final needsFirstIC = !modelsAfterLevelChange.any(
-        (m) => m.command == Command.firstIC,
-      );
-
-      if (needsFirstIC) {
-        // Check if this unit can have 1iC
-        if (state.ruleSet.canAssignCommandLevel(
-          model: currentModel.copyWith(level: event.level),
-          newCommandLevel: Command.firstIC,
-          squad: squadAfterLevelChange,
-          allSquads: updatedSquadsForAssignment,
-        )) {
-          modelsAfterLevelChange = [
-            for (final m in modelsAfterLevelChange)
-              m.id == currentModel.id
-                  ? m.copyWith(command: Command.firstIC)
-                  : m,
-          ];
-        }
-      }
-    }
-
-    final updatedSquad = event.squad.copyWith(models: modelsAfterLevelChange);
 
     emit(
       state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
@@ -395,66 +313,16 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
     UpdateModelCommandLevel event,
     Emitter<RosterState> emit,
   ) {
-    // Validate using the ruleset (checks green units, role constraints, etc.)
-    if (!state.ruleSet.canAssignCommandLevel(
+    final updatedSquads = SquadRuleEngine.resolveCommandLevelChange(
       model: event.model,
       newCommandLevel: event.commandLevel,
       squad: event.squad,
       allSquads: state.squads,
-    )) {
-      return; // Cannot assign this command level
-    }
-
-    // Get models that need to be cleared to Command.none
-    final modelsToClear = state.ruleSet.getModelsToClearForCommandLevel(
-      model: event.model,
-      newCommandLevel: event.commandLevel,
-      squad: event.squad,
-      allSquads: state.squads,
+      ruleSet: state.ruleSet,
     );
 
-    // Start with the current squads
-    var updatedSquads = List<Squad>.from(state.squads);
-    final affectedSquadIds = <int>{event.squad.id};
-
-    // First, clear conflicting command levels
-    for (final entry in modelsToClear) {
-      affectedSquadIds.add(entry.squad.id);
-      final squadIndex = updatedSquads.indexWhere(
-        (s) => s.id == entry.squad.id,
-      );
-      if (squadIndex != -1) {
-        final squad = updatedSquads[squadIndex];
-        final updatedModels = squad.models.map((m) {
-          return m.id == entry.model.id ? m.copyWith(command: Command.none) : m;
-        }).toList();
-        updatedSquads[squadIndex] = squad.copyWith(models: updatedModels);
-      }
-    }
-
-    // Then, apply the new command level to the target model
-    final targetSquadIndex = updatedSquads.indexWhere(
-      (s) => s.id == event.squad.id,
-    );
-    if (targetSquadIndex != -1) {
-      final squad = updatedSquads[targetSquadIndex];
-      final updatedModels = squad.models.map((m) {
-        return m.id == event.model.id
-            ? m.copyWith(command: event.commandLevel)
-            : m;
-      }).toList();
-      updatedSquads[targetSquadIndex] = squad.copyWith(models: updatedModels);
-    }
-
-    // Ensure squads maintain required command presence
-    for (final squadId in affectedSquadIds) {
-      final squadIndex = updatedSquads.indexWhere((s) => s.id == squadId);
-      if (squadIndex != -1) {
-        updatedSquads[squadIndex] = _ensureRequiredCommand(
-          updatedSquads[squadIndex],
-          updatedSquads,
-        );
-      }
+    if (updatedSquads == null) {
+      return;
     }
 
     emit(
@@ -585,37 +453,5 @@ class RosterBloc extends Bloc<RosterEvent, RosterState> {
 
     final updatedSquadState = state.squadState.copyWith(squads: squads);
     emit(state.copyWith(squadState: updatedSquadState));
-  }
-
-  bool _hasRequiredCommand(Iterable<Model> models) {
-    return state.ruleSet.commandLevelRule.hasRequiredCommand(models);
-  }
-
-  Squad _ensureRequiredCommand(Squad squad, List<Squad> allSquads) {
-    if (_hasRequiredCommand(squad.models)) {
-      return squad;
-    }
-
-    // Find a model with Command.none that can be assigned 1iC
-    final index = squad.models.indexWhere(
-      (model) =>
-          model.command == Command.none &&
-          state.ruleSet.canAssignCommandLevel(
-            model: model,
-            newCommandLevel: Command.firstIC,
-            squad: squad,
-            allSquads: allSquads,
-          ),
-    );
-    if (index == -1) {
-      return squad;
-    }
-
-    final updatedModels = List<Model>.from(squad.models);
-    updatedModels[index] = updatedModels[index].copyWith(
-      command: Command.firstIC,
-    );
-
-    return squad.copyWith(models: updatedModels);
   }
 }
