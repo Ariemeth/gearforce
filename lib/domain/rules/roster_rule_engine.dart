@@ -1,4 +1,5 @@
 import 'package:gearforce/domain/entities/attribute/command.dart';
+import 'package:gearforce/domain/entities/attribute/unit_level.dart';
 import 'package:gearforce/domain/entities/faction/rule_set.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
@@ -160,5 +161,93 @@ class RosterRuleEngine {
       errors: errors,
       warnings: warnings,
     );
+  }
+
+  /// Sanitizes squads to ensure they comply with the asset table limits
+  /// and command requirements of a new RuleSet.
+  static List<Squad> sanitizeRosterForRuleSet({
+    required List<Squad> squads,
+    required RuleSet ruleSet,
+  }) {
+    if (squads.isEmpty) {
+      return squads;
+    }
+
+    var updatedSquads = List<Squad>.from(squads);
+
+    // 1. Sanitize Duelists based on assetTable.duelistOrAces
+    final duelistLimit = ruleSet.assetTable.duelistOrAces;
+    if (duelistLimit != null) {
+      int duelistCount = 0;
+      for (var sIdx = 0; sIdx < updatedSquads.length; sIdx++) {
+        final squad = updatedSquads[sIdx];
+        var squadModelsChanged = false;
+        final updatedModels = <Model>[];
+
+        for (final model in squad.models) {
+          if (model.isDuelist) {
+            if (duelistCount < duelistLimit) {
+              duelistCount++;
+              updatedModels.add(model);
+            } else {
+              // Exceeds limit, remove duelist status
+              updatedModels.add(model.copyWith(isDuelist: false));
+              squadModelsChanged = true;
+            }
+          } else {
+            updatedModels.add(model);
+          }
+        }
+
+        if (squadModelsChanged) {
+          updatedSquads[sIdx] = squad.copyWith(models: updatedModels);
+        }
+      }
+    }
+
+    // 2. Sanitize Unit Levels (green, veteran, elite)
+    final levelLimits = {
+      UnitLevel.green: ruleSet.assetTable.greenSquads,
+      UnitLevel.veteran: ruleSet.assetTable.veteranSquads,
+      UnitLevel.elite: ruleSet.assetTable.eliteSquads,
+    };
+
+    for (final entry in levelLimits.entries) {
+      final level = entry.key;
+      final limit = entry.value;
+      if (limit == null) {
+        continue;
+      }
+
+      int squadsWithLevelCount = 0;
+      for (var sIdx = 0; sIdx < updatedSquads.length; sIdx++) {
+        final squad = updatedSquads[sIdx];
+        final hasLevel = squad.models.any((m) => m.level == level);
+        if (hasLevel) {
+          if (squadsWithLevelCount < limit) {
+            squadsWithLevelCount++;
+          } else {
+            // Exceeds limit for this level, revert models with this level to regular
+            final updatedModels = squad.models.map((m) {
+              return m.level == level
+                  ? m.copyWith(level: UnitLevel.regular)
+                  : m;
+            }).toList();
+            updatedSquads[sIdx] = squad.copyWith(models: updatedModels);
+          }
+        }
+      }
+    }
+
+    // 3. Ensure required command for each squad under new RuleSet
+    for (var sIdx = 0; sIdx < updatedSquads.length; sIdx++) {
+      updatedSquads[sIdx] = SquadRuleEngine.ensureRequiredCommand(
+        squad: updatedSquads[sIdx],
+        allSquads: updatedSquads,
+        ruleSet: ruleSet,
+      );
+    }
+
+    return updatedSquads;
   }
 }

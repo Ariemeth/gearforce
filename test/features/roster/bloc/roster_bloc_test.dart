@@ -899,6 +899,56 @@ void main() {
       act: (cubit) => cubit.updateSubfaction(Faction.north.subfactions.first),
       expect: () => <RosterState>[],
     );
+
+    blocTest<RosterCubit, RosterState>(
+      'sanitizes excess duelists when updating subfaction',
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Squad 1');
+        await Future<void>.delayed(Duration.zero);
+        final squad = cubit.state.squads.first;
+        final base = _createTestModelBase();
+        final variant = _createTestVariant();
+
+        // Add 2 models
+        cubit.addModel(squad: squad, base: base, variant: variant);
+        cubit.addModel(
+          squad: cubit.state.squads.first,
+          base: base,
+          variant: variant,
+        );
+
+        final updatedSquad = cubit.state.squads.first;
+        final model1 = updatedSquad.models[0];
+        final model2 = updatedSquad.models[1];
+
+        // Make both models duelists under unlimited asset table (base North faction)
+        cubit.updateModelIsDuelist(
+          squad: updatedSquad,
+          model: model1,
+          isDuelist: true,
+        );
+        cubit.updateModelIsDuelist(
+          squad: cubit.state.squads.first,
+          model: model2,
+          isDuelist: true,
+        );
+
+        expect(
+          cubit.state.squads.first.models.where((m) => m.isDuelist).length,
+          2,
+        );
+
+        // Switch to subfaction with duelist limit of 1 (Norguard uses AssetTable.one())
+        cubit.updateSubfaction(Subfaction.norguard);
+      },
+      verify: (cubit) {
+        final duelists = cubit.state.squads.first.models
+            .where((m) => m.isDuelist)
+            .toList();
+        expect(duelists.length, 1);
+      },
+    );
   });
 
   group('UpdateSquadRoles', () {

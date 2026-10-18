@@ -315,10 +315,17 @@ class RosterCubit extends Cubit<RosterState> {
       // No change in subfaction, do not emit a new state
       return;
     }
+    final newRuleSet = getSubfactionRuleSet(subfaction, unitRepository);
+    final sanitizedSquads = RosterRuleEngine.sanitizeRosterForRuleSet(
+      squads: state.squads,
+      ruleSet: newRuleSet,
+    );
+
     emit(
       state.copyWith(
         selectedSubfaction: subfaction,
-        ruleSet: getSubfactionRuleSet(subfaction, unitRepository),
+        ruleSet: newRuleSet,
+        squadState: state.squadState.copyWith(squads: sanitizedSquads),
       ),
     );
   }
