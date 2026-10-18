@@ -44,13 +44,13 @@ class Gearforce extends StatelessWidget {
                 colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue),
               ).copyWith(
                 visualDensity: PlatformUtils.adaptiveVisualDensity,
-                tooltipTheme: TooltipThemeData(
+                tooltipTheme: const TooltipThemeData(
                   waitDuration: AppTheme.tooltipWaitDuration,
                 ),
               ),
           darkTheme: ThemeData.dark().copyWith(
             visualDensity: PlatformUtils.adaptiveVisualDensity,
-            tooltipTheme: TooltipThemeData(
+            tooltipTheme: const TooltipThemeData(
               waitDuration: AppTheme.tooltipWaitDuration,
             ),
           ),

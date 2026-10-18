@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/data/repositories/json_unit_repository.dart';
 import 'package:gearforce/domain/entities/faction/faction.dart';

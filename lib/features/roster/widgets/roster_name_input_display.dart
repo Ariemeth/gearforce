@@ -20,7 +20,7 @@ class RosterNameInputDisplay extends StatelessWidget {
         controller: rosterNameController,
         decoration: InputDecoration(
           hintText: context.l10n.rosterNameInputFieldHint,
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           isDense: false,
           hintStyle: AppTheme.textHintStyle,
           // contentPadding: AppTheme.defaultPadding,

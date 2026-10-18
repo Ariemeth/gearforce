@@ -45,7 +45,7 @@ void main() {
         description: unitDescription,
       );
 
-      final unit = Unit(
+      const unit = Unit(
         baseModel,
         id: unitId,
 

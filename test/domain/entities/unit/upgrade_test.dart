@@ -27,7 +27,7 @@ void main() {
   group('Upgrade', () {
     test('should apply modifications to a model using UpgradeContext', () {
       // Arrange
-      final baseModel = ModelBase(
+      const baseModel = ModelBase(
         'Test Model',
         unitId: 'test-unit',
         tv: 10,
@@ -47,7 +47,7 @@ void main() {
       final initialModel = Model(
         id: 0,
         base: baseModel,
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
       );
 
       final upgrade = ModelUpgrade(
@@ -58,30 +58,30 @@ void main() {
         nameMod: (name, context) => 'Modified ${context.model.name}',
         tvMod: (tv, context) => tv + 5,
         rolesMod: (roles, context) => {...roles, Role.sk},
-        movementMod: (movement, context) => Movement([MovementType.ground], 8),
-        armorMod: (armor, context) => Armor(6),
+        movementMod: (movement, context) => const Movement([MovementType.ground], 8),
+        armorMod: (armor, context) => const Armor(6),
         hullStructureMod: (hullStructure, context) =>
             hullStructure.copyWith(hull: 5, structure: 4),
-        actionsMod: (actions, context) => UnitActions(3),
-        guMod: (gu, context) => Skill(5),
-        piMod: (pi, context) => Skill(6),
-        ewMod: (ew, context) => Skill(7),
+        actionsMod: (actions, context) => const UnitActions(3),
+        guMod: (gu, context) => const Skill(5),
+        piMod: (pi, context) => const Skill(6),
+        ewMod: (ew, context) => const Skill(7),
         weaponsMod: (weapons, context) => [
           ...weapons,
-          SingleWeaponSpec(
+          const SingleWeaponSpec(
             weapon: Weapon(
               code: 'W001',
               name: 'Test Weapon',
               size: WeaponSize.light,
-              range: const WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
-              damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
+              range: WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
+              damageBands: DamageSizeBands(l: 7, m: 8, h: 9),
               modes: {WeaponMode.direct},
             ),
           ),
         ],
         traitsMod: (traits, context) => [
           ...traits,
-          Trait(name: 'Test Trait', description: 'A test trait'),
+          const Trait(name: 'Test Trait', description: 'A test trait'),
         ],
       );
 
@@ -125,7 +125,7 @@ void main() {
 
     test('should not modify fields if no modifications are provided', () {
       // Arrange
-      final modelBase = ModelBase(
+      const modelBase = ModelBase(
         'Test Model',
         unitId: 'test-unit',
         tv: 10,
@@ -144,10 +144,10 @@ void main() {
       final initialModel = Model(
         id: 0,
         base: modelBase,
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
       );
 
-      final upgrade = ModelUpgrade(
+      const upgrade = ModelUpgrade(
         'No-Op Upgrade',
         id: 'upgrade-002',
         type: UpgradeType.profile,
@@ -236,7 +236,7 @@ void main() {
           ModelUpgradeContext(
             Model(
               id: 0,
-              base: ModelBase(
+              base: const ModelBase(
                 'Test Model',
                 unitId: 'test-unit',
                 tv: 10,
@@ -251,7 +251,7 @@ void main() {
                 height: 1.5,
                 classification: Classification.gear,
               ),
-              variant: Variant('Test Model', id: '1', tv: 0),
+              variant: const Variant('Test Model', id: '1', tv: 0),
             ),
             updatedUpgrade,
           ),

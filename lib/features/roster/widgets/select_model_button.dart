@@ -23,7 +23,7 @@ class SelectModelButton extends StatelessWidget {
               ? () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
+                    MaterialPageRoute<void>(
                       builder: (context) =>
                           UnitSelectionScreen(updatedSquad: updatedSquad),
                     ),

@@ -7,7 +7,7 @@ class DefaultRuleSet extends RuleSet {
   DefaultRuleSet()
     : super(
         name: 'Default Rule Set',
-        assetTable: AssetTable(
+        assetTable: const AssetTable(
           greenSquads: 1,
           veteranSquads: 2,
           eliteSquads: 1,

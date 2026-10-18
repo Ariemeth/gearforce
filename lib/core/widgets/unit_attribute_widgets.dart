@@ -19,7 +19,7 @@ class UnitAttributeLabel extends StatelessWidget {
     return Text(
       labelText,
       textAlign: textAlign,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: AppTheme.attributeLabelFontSize,
         fontWeight: AppTheme.attributeLabelFontWeight,
       ),
@@ -47,7 +47,7 @@ class UnitAttributeValue extends StatelessWidget {
     final textWidget = Text(
       labelText,
       textAlign: textAlign,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: AppTheme.attributeValueFontSize,
         fontWeight: AppTheme.attributeValueFontWeight,
       ),

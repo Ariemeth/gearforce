@@ -22,7 +22,7 @@ void main() {
 
     setUp(() {
       rule = const DuelistRule();
-      base = ModelBase(
+      base = const ModelBase(
         'Test Model',
         unitId: 'test-unit',
         tv: 10,
@@ -34,7 +34,7 @@ void main() {
         gu: Skill(4),
         pi: Skill(5),
         ew: Skill(6),
-        traits: const [],
+        traits: [],
         height: 1.5,
         classification: Classification.gear,
       );
@@ -55,7 +55,7 @@ void main() {
     }
 
     test('allows assignment when limit is not reached', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -86,7 +86,7 @@ void main() {
     });
 
     test('blocks duelist assignment when limit is reached', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -117,7 +117,7 @@ void main() {
     });
 
     test('allows unlimited duelists when asset table has no limit', () {
-      final assetTable = AssetTable.unlimited();
+      const assetTable = AssetTable.unlimited();
       final squad1 = Squad(
         id: 1,
         name: 'Squad 1',
@@ -146,7 +146,7 @@ void main() {
     });
 
     test('blocks green unit from becoming duelist', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -171,7 +171,7 @@ void main() {
     });
 
     test('allows removing duelist status', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -196,7 +196,7 @@ void main() {
     });
 
     test('allows assigning same duelist status (no change)', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -221,7 +221,7 @@ void main() {
     });
 
     test('counts duelists correctly across multiple squads', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,

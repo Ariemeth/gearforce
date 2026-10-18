@@ -22,7 +22,7 @@ void main() {
 
     setUp(() {
       rule = const UnitLevelRule();
-      base = ModelBase(
+      base = const ModelBase(
         'Test Model',
         unitId: 'test-unit',
         tv: 10,
@@ -34,7 +34,7 @@ void main() {
         gu: Skill(4),
         pi: Skill(5),
         ew: Skill(6),
-        traits: const [],
+        traits: [],
         height: 1.5,
         classification: Classification.gear,
       );
@@ -50,7 +50,7 @@ void main() {
     }
 
     test('allows assignment when limit is not reached', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -80,7 +80,7 @@ void main() {
     });
 
     test('blocks assignment when limit is reached by another squad', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -110,7 +110,7 @@ void main() {
     });
 
     test('allows assignment when squad already uses that level slot', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,
@@ -143,7 +143,7 @@ void main() {
     });
 
     test('blocks veteran assignment when veteran limit is reached', () {
-      final assetTable = AssetTable(
+      const assetTable = AssetTable(
         greenSquads: 1,
         veteranSquads: 1,
         eliteSquads: 1,

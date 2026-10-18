@@ -9,7 +9,7 @@ void main() {
       const variantName = 'Test Variant';
       const tv = 1;
 
-      final variant = Variant(variantName, id: variantId, tv: tv);
+      const variant = Variant(variantName, id: variantId, tv: tv);
 
       expect(variant.id, variantId);
       expect(variant.name, variantName);

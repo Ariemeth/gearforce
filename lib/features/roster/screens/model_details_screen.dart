@@ -131,7 +131,7 @@ class _ModelStatsTable extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Stats', style: AppTheme.subtitleStyle),
+            const Text('Stats', style: AppTheme.subtitleStyle),
             const SizedBox(height: 8),
             Table(
               columnWidths: const {
@@ -140,7 +140,7 @@ class _ModelStatsTable extends StatelessWidget {
                 3: FixedColumnWidth(36),
                 5: FixedColumnWidth(30),
               },
-              defaultColumnWidth: FixedColumnWidth(40),
+              defaultColumnWidth: const FixedColumnWidth(40),
               children: [
                 TableRow(
                   children: [
@@ -205,7 +205,7 @@ class _ModelUpgradesSection extends StatelessWidget {
             childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             title: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Text('Model Upgrades', style: AppTheme.subtitleStyle),
                 ),
                 const SizedBox(width: 8),

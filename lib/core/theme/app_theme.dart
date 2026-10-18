@@ -36,7 +36,7 @@ class AppTheme {
     fontStyle: FontStyle.italic,
   );
 
-  static TextStyle textInputFieldStyle = TextStyle(fontSize: 14);
+  static TextStyle textInputFieldStyle = const TextStyle(fontSize: 14);
 
   static const TextStyle dropdownHintTextStyle = TextStyle(
     fontSize: 12,

@@ -11,8 +11,10 @@ class TestJsonUnitRepository extends JsonUnitRepository {
     final file = File('assets/data/units/${faction.name.toLowerCase()}.json');
     if (!file.existsSync()) return [];
     final jsonString = await file.readAsString();
-    final List<dynamic> jsonData = json.decode(jsonString);
-    return jsonData.map((data) => parseUnitForTest(data)).toList();
+    final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
+    return jsonData
+        .map((dynamic data) => parseUnitForTest(data as Map<String, dynamic>))
+        .toList();
   }
 
   Unit parseUnitForTest(Map<String, dynamic> data) {

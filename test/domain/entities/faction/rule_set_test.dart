@@ -34,8 +34,8 @@ void main() {
     });
 
     test('activeRules returns only enabled rules', () {
-      final ruleSet = _TestRuleSet(
-        extraRules: const [
+      const ruleSet = _TestRuleSet(
+        extraRules: [
           Rule(
             name: 'Disabled Rule',
             id: 'disabled-rule',
@@ -50,8 +50,8 @@ void main() {
     });
 
     test('specialized rulesets can include extra rules', () {
-      final ruleSet = _TestRuleSet(
-        extraRules: const [
+      const ruleSet = _TestRuleSet(
+        extraRules: [
           Rule(
             name: 'North Extra Rule',
             id: 'north-extra-rule',
@@ -66,8 +66,8 @@ void main() {
     });
 
     test('default squad size rule field is included in rules', () {
-      final ruleSet = _TestRuleSet(
-        extraRules: const [
+      const ruleSet = _TestRuleSet(
+        extraRules: [
           Rule(
             name: 'Non Squad Rule',
             id: 'non-squad-rule',
@@ -82,8 +82,8 @@ void main() {
     });
 
     test('uses base squad size rule when extra SquadSizeRule is disabled', () {
-      final ruleSet = _TestRuleSet(
-        extraRules: const [
+      const ruleSet = _TestRuleSet(
+        extraRules: [
           SquadSizeRule(
             id: 'override-squad-size',
             name: 'Override Squad Size',
@@ -103,8 +103,8 @@ void main() {
     });
 
     test('uses last active SquadSizeRule when multiple are present', () {
-      final ruleSet = _TestRuleSet(
-        extraRules: const [
+      const ruleSet = _TestRuleSet(
+        extraRules: [
           SquadSizeRule(
             id: 'override-squad-size-1',
             name: 'Override Squad Size 1',
@@ -130,8 +130,8 @@ void main() {
     });
 
     test('allows additional disabled SquadSizeRule in extraRules', () {
-      final ruleSet = _TestRuleSet(
-        extraRules: const [
+      const ruleSet = _TestRuleSet(
+        extraRules: [
           SquadSizeRule(
             id: 'disabled-override-squad-size',
             name: 'Disabled Override Squad Size',
@@ -155,7 +155,7 @@ void main() {
         availableUpgrades: [],
       );
 
-      final ruleSet = _TestRuleSet(squadUpgradesRule: baseRule);
+      const ruleSet = _TestRuleSet(squadUpgradesRule: baseRule);
 
       expect(ruleSet.getAvailableSquadUpgrades(), isEmpty);
     });
@@ -182,7 +182,7 @@ void main() {
         availableUpgrades: [],
       );
 
-      final ruleSet = _TestRuleSet(
+      const ruleSet = _TestRuleSet(
         squadUpgradesRule: baseRule,
         extraRules: [firstOverride, lastOverride],
       );
@@ -257,11 +257,11 @@ void main() {
 
     setUp(() {
       ruleSet = DefaultRuleSet();
-      squad = Squad(
+      squad = const Squad(
         id: 1,
         name: 'Test Squad',
         primaryRole: Role.gp,
-        models: const [],
+        models: [],
       );
     });
 
@@ -363,13 +363,13 @@ Model _buildModel({
       unitId: 'test-unit',
       tv: 0,
       roles: {Role.gp},
-      movement: Movement([MovementType.walker], 6),
-      armor: Armor(5),
-      hullStructure: HullStructure(hull: 2, structure: 2),
+      movement: const Movement([MovementType.walker], 6),
+      armor: const Armor(5),
+      hullStructure: const HullStructure(hull: 2, structure: 2),
       actions: UnitActions(actions),
-      gu: Skill(4),
-      pi: Skill(4),
-      ew: Skill(4),
+      gu: const Skill(4),
+      pi: const Skill(4),
+      ew: const Skill(4),
       traits: traits,
       height: 1.5,
       classification: Classification.gear,

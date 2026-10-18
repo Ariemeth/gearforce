@@ -41,13 +41,13 @@ ModelBase _createTestModelBase({
     unitId: 'test-unit',
     tv: tv,
     roles: roles,
-    movement: Movement([MovementType.walker], 6),
-    armor: Armor(5),
-    hullStructure: HullStructure(hull: 4, structure: 3),
-    actions: UnitActions(1),
-    gu: Skill(4),
-    pi: Skill(5),
-    ew: Skill(6),
+    movement: const Movement([MovementType.walker], 6),
+    armor: const Armor(5),
+    hullStructure: const HullStructure(hull: 4, structure: 3),
+    actions: const UnitActions(1),
+    gu: const Skill(4),
+    pi: const Skill(5),
+    ew: const Skill(6),
     height: 1.5,
     classification: Classification.gear,
   );
@@ -1037,11 +1037,11 @@ void main() {
       build: () => RosterBloc(mockUnitRepository),
       act: (bloc) {
         final squads = [
-          Squad(
+          const Squad(
             id: 99,
             name: 'Imported Squad',
-            models: const [],
-            upgrades: const [],
+            models: [],
+            upgrades: [],
           ),
         ];
         bloc.add(UpdateSquads(squads: squads));

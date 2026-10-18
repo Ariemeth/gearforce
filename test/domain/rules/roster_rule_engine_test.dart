@@ -38,7 +38,7 @@ void main() {
         height: 1.5,
         classification: Classification.gear,
       ),
-      variant: Variant('Hunter Standard', id: 'v1', tv: 0),
+      variant: const Variant('Hunter Standard', id: 'v1', tv: 0),
       command: command,
     );
   }
@@ -82,8 +82,8 @@ void main() {
 
     test('calculateActivationCount counts squads', () {
       final squads = [
-        Squad(id: 1, name: 'S1', primaryRole: Role.gp, models: const []),
-        Squad(id: 2, name: 'S2', primaryRole: Role.sk, models: const []),
+        const Squad(id: 1, name: 'S1', primaryRole: Role.gp, models: []),
+        const Squad(id: 2, name: 'S2', primaryRole: Role.sk, models: []),
       ];
 
       expect(RosterRuleEngine.calculateActivationCount(squads), 2);

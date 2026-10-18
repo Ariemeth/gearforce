@@ -27,7 +27,7 @@ void main() {
     setUp(() {
       rule = const CommandLevelRule();
 
-      final base = ModelBase(
+      const base = ModelBase(
         'Test Model',
         unitId: 'test-unit',
         tv: 10,
@@ -46,19 +46,19 @@ void main() {
       model1 = Model(
         id: 1,
         base: base,
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
       );
 
       model2 = Model(
         id: 2,
         base: base,
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
       );
 
       model3 = Model(
         id: 3,
         base: base,
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
       );
 
       squad1 = Squad(
@@ -433,7 +433,7 @@ void main() {
       late Squad squadWithGPRole;
 
       setUp(() {
-        final baseGP = ModelBase(
+        const baseGP = ModelBase(
           'GP Model',
           unitId: 'test-unit',
           tv: 10,
@@ -449,7 +449,7 @@ void main() {
           classification: Classification.gear,
         );
 
-        final baseStrike = ModelBase(
+        const baseStrike = ModelBase(
           'Strike Model',
           unitId: 'test-unit',
           tv: 8,
@@ -468,13 +468,13 @@ void main() {
         modelWithGPRole = Model(
           id: 10,
           base: baseGP,
-          variant: Variant('GP Model', id: '1', tv: 0),
+          variant: const Variant('GP Model', id: '1', tv: 0),
         );
 
         modelWithStrikeRole = Model(
           id: 11,
           base: baseStrike,
-          variant: Variant('Strike Model', id: '1', tv: 0),
+          variant: const Variant('Strike Model', id: '1', tv: 0),
         );
 
         squadWithGPRole = Squad(

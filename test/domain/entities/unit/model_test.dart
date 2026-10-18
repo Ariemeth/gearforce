@@ -20,7 +20,7 @@ void main() {
       // Arrange
       final model = Model(
         id: 0,
-        base: ModelBase(
+        base: const ModelBase(
           'Test Model',
           unitId: 'test-unit',
           tv: 10,
@@ -35,7 +35,7 @@ void main() {
           height: 1.5,
           classification: Classification.gear,
         ),
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
       );
 
       // Act & Assert
@@ -50,7 +50,7 @@ void main() {
       // Arrange
       final model = Model(
         id: 0,
-        base: ModelBase(
+        base: const ModelBase(
           'Test Model',
           unitId: 'test-unit',
           tv: 10,
@@ -65,7 +65,7 @@ void main() {
           height: 1.5,
           classification: Classification.gear,
         ),
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
         selectedModelUpgrades: [
           ModelUpgrade(
             'Test Mod',
@@ -75,8 +75,8 @@ void main() {
             tvMod: (tv, context) => tv + 5,
             rolesMod: (roles, context) => {...roles, Role.sk},
             movementMod: (movement, context) =>
-                Movement([MovementType.ground], 8),
-            armorMod: (armor, context) => Armor(6),
+                const Movement([MovementType.ground], 8),
+            armorMod: (armor, context) => const Armor(6),
           ),
         ],
       );
@@ -93,7 +93,7 @@ void main() {
       // Arrange
       var model = Model(
         id: 0,
-        base: ModelBase(
+        base: const ModelBase(
           'Test Model',
           unitId: 'test-unit',
           tv: 10,
@@ -108,7 +108,7 @@ void main() {
           height: 1.5,
           classification: Classification.gear,
         ),
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
         selectedModelUpgrades: [
           ModelUpgrade(
             'Mod 1',
@@ -147,7 +147,7 @@ void main() {
       // Arrange
       final model = Model(
         id: 0,
-        base: ModelBase(
+        base: const ModelBase(
           'Test Model',
           unitId: 'test-unit',
           tv: 10,
@@ -162,7 +162,7 @@ void main() {
           height: 1.5,
           classification: Classification.gear,
         ),
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
         selectedModelUpgrades: [
           ModelUpgrade(
             'Mod 1',
@@ -197,7 +197,7 @@ void main() {
       // Arrange
       final model = Model(
         id: 0,
-        base: ModelBase(
+        base: const ModelBase(
           'Test Model',
           unitId: 'test-unit',
           tv: 10,
@@ -214,7 +214,7 @@ void main() {
           height: 1.5,
           classification: Classification.gear,
         ),
-        variant: Variant('Test Model', id: '1', tv: 0),
+        variant: const Variant('Test Model', id: '1', tv: 0),
         selectedModelUpgrades: [],
       );
 

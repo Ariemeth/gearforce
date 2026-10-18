@@ -24,7 +24,7 @@ void main() {
     test('parses unit with nested base object', () {
       final file = File('assets/data/units/north.json');
       final jsonString = file.readAsStringSync();
-      final List<dynamic> jsonData = json.decode(jsonString);
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
 
       // Use the first unit from real data
       expect(jsonData, isNotEmpty);
@@ -40,7 +40,7 @@ void main() {
     test('parses all north units without error', () {
       final file = File('assets/data/units/north.json');
       final jsonString = file.readAsStringSync();
-      final List<dynamic> jsonData = json.decode(jsonString);
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
 
       final units = jsonData.map((data) {
         return unitRepository.parseUnit(data as Map<String, dynamic>);
@@ -56,7 +56,7 @@ void main() {
     test('parses unit with variants', () {
       final file = File('assets/data/units/north.json');
       final jsonString = file.readAsStringSync();
-      final List<dynamic> jsonData = json.decode(jsonString);
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
 
       // Find a unit that has variants
       final unitWithVariants = jsonData.firstWhere(
@@ -80,7 +80,7 @@ void main() {
     test('parses unit with upgrades', () {
       final file = File('assets/data/units/north.json');
       final jsonString = file.readAsStringSync();
-      final List<dynamic> jsonData = json.decode(jsonString);
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
 
       // Find a unit that has upgrades
       final unitWithUpgrades = jsonData.firstWhere(

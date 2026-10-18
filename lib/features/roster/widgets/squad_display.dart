@@ -69,7 +69,7 @@ class SquadDisplay extends StatelessWidget {
                             ),
                             if (squad.secondaryRole != null) ...[
                               const SizedBox(width: 4),
-                              Text('/', style: AppTheme.squadUnitBodyStyle),
+                              const Text('/', style: AppTheme.squadUnitBodyStyle),
                               const SizedBox(width: 4),
                               Text(
                                 squad.secondaryRole!.abbreviation,
@@ -172,7 +172,7 @@ class SquadDisplay extends StatelessWidget {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            MaterialPageRoute<void>(
                               builder: (context) =>
                                   SquadDetailsScreen(squadId: squad.id),
                             ),

@@ -31,7 +31,7 @@ class SquadRoleSelector extends StatelessWidget {
     return Row(
       children: [
         Text(label),
-        SizedBox(width: _gapBetweenRoleLabelAndDropdown),
+        const SizedBox(width: _gapBetweenRoleLabelAndDropdown),
         DropdownButton<Role?>(
           isDense: false,
           menuWidth: allowNone ? _noneMenuWidth : _regularMenuWidth,

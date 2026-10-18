@@ -49,8 +49,17 @@ Widget _testApp({required Widget child, required RosterBloc bloc}) {
 
 void main() {
   group('SelectModelButton', () {
+    late RosterBloc bloc;
+
+    setUp(() {
+      bloc = RosterBloc(_MockUnitRepository());
+    });
+
+    tearDown(() {
+      bloc.close();
+    });
+
     testWidgets('is enabled when squad can add units', (tester) async {
-      final bloc = RosterBloc(_MockUnitRepository());
       final squad = Squad(
         id: 1,
         name: 'Alpha',
@@ -67,12 +76,9 @@ void main() {
 
       final button = tester.widget<ElevatedButton>(find.byType(ElevatedButton));
       expect(button.onPressed, isNotNull);
-
-      bloc.close();
     });
 
     testWidgets('is disabled when squad is at max unit count', (tester) async {
-      final bloc = RosterBloc(_MockUnitRepository());
       final fullSquad = Squad(
         id: 1,
         name: 'Full Squad',
@@ -89,8 +95,6 @@ void main() {
 
       final button = tester.widget<ElevatedButton>(find.byType(ElevatedButton));
       expect(button.onPressed, isNull);
-
-      bloc.close();
     });
   });
 }
@@ -98,7 +102,7 @@ void main() {
 Model _buildModel({required int id}) {
   return Model(
     id: id,
-    base: ModelBase(
+    base: const ModelBase(
       'Test Unit',
       unitId: 'test-unit',
       tv: 0,
@@ -110,7 +114,7 @@ Model _buildModel({required int id}) {
       gu: Skill(4),
       pi: Skill(4),
       ew: Skill(4),
-      traits: const [],
+      traits: [],
       height: 1.5,
       classification: Classification.gear,
     ),

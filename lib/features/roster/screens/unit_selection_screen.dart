@@ -124,7 +124,7 @@ class _UnitListHeader extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               context.l10n.variantsCount(unit.variants.length),
-              style: TextStyle(fontSize: 12),
+              style: const TextStyle(fontSize: 12),
             ),
           ),
         ],

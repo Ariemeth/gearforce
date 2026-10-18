@@ -23,10 +23,9 @@ class MockUnitRepository implements UnitRepository {
 }
 
 /// Wraps a widget with MaterialApp, localization delegates, and RosterBloc.
-Widget _testApp({required Widget child, RosterBloc? bloc}) {
-  final rosterBloc = bloc ?? RosterBloc(MockUnitRepository());
+Widget _testApp({required Widget child, required RosterBloc bloc}) {
   return BlocProvider<RosterBloc>.value(
-    value: rosterBloc,
+    value: bloc,
     child: MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -42,8 +41,23 @@ Widget _testApp({required Widget child, RosterBloc? bloc}) {
 
 void main() {
   group('SquadDisplay', () {
+    late RosterBloc bloc;
+
+    setUp(() {
+      bloc = RosterBloc(MockUnitRepository());
+    });
+
+    tearDown(() {
+      bloc.close();
+    });
+
     testWidgets('shows empty text when no squads', (tester) async {
-      await tester.pumpWidget(_testApp(child: const SquadDisplay(squads: [])));
+      await tester.pumpWidget(
+        _testApp(
+          child: const SquadDisplay(squads: []),
+          bloc: bloc,
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(
@@ -67,7 +81,12 @@ void main() {
           models: [],
         ),
       ];
-      await tester.pumpWidget(_testApp(child: SquadDisplay(squads: squads)));
+      await tester.pumpWidget(
+        _testApp(
+          child: SquadDisplay(squads: squads),
+          bloc: bloc,
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(find.text('Alpha Squad'), findsOneWidget);
@@ -78,7 +97,12 @@ void main() {
       final squads = [
         const Squad(id: 1, name: 'Alpha', primaryRole: Role.gp, models: []),
       ];
-      await tester.pumpWidget(_testApp(child: SquadDisplay(squads: squads)));
+      await tester.pumpWidget(
+        _testApp(
+          child: SquadDisplay(squads: squads),
+          bloc: bloc,
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(find.byIcon(Icons.more_vert), findsOneWidget);
@@ -90,7 +114,12 @@ void main() {
       final squads = [
         const Squad(id: 1, name: 'Alpha', primaryRole: Role.gp, models: []),
       ];
-      await tester.pumpWidget(_testApp(child: SquadDisplay(squads: squads)));
+      await tester.pumpWidget(
+        _testApp(
+          child: SquadDisplay(squads: squads),
+          bloc: bloc,
+        ),
+      );
       await tester.pumpAndSettle();
 
       // Tap the more_vert button to open the actions menu
@@ -114,10 +143,9 @@ void main() {
       final squads = [
         const Squad(id: 1, name: 'Alpha', primaryRole: Role.gp, models: []),
       ];
-      final bloc = RosterBloc(MockUnitRepository());
+
       // Add a squad so we can verify it isn't removed
       bloc.add(AddNewSquad(name: 'Alpha'));
-
       await tester.pumpWidget(
         _testApp(
           child: SquadDisplay(squads: squads),
@@ -134,22 +162,19 @@ void main() {
       await tester.tap(find.byIcon(Icons.delete_forever_outlined));
       await tester.pumpAndSettle();
 
-      // Tap cancel
+      // Tap Cancel — this should close the dialog without dispatching RemoveSquad
       await tester.tap(find.text('Cancel'));
       await tester.pumpAndSettle();
 
       // Dialog should be dismissed, squad still visible
       expect(find.text('Remove Squad'), findsNothing);
       expect(find.text('Alpha'), findsOneWidget);
-
-      bloc.close();
     });
 
     testWidgets('confirm dispatches RemoveSquad event', (tester) async {
       final squads = [
         const Squad(id: 1, name: 'Alpha', primaryRole: Role.gp, models: []),
       ];
-      final bloc = RosterBloc(MockUnitRepository());
 
       await tester.pumpWidget(
         _testApp(
@@ -173,15 +198,26 @@ void main() {
 
       // Dialog should be dismissed
       expect(find.text('Remove Squad'), findsNothing);
-
-      bloc.close();
     });
   });
 
   group('AddSquadButton', () {
+    late RosterBloc bloc;
+
+    setUp(() {
+      bloc = RosterBloc(MockUnitRepository());
+    });
+
+    tearDown(() {
+      bloc.close();
+    });
+
     testWidgets('shows Add Squad text', (tester) async {
       await tester.pumpWidget(
-        _testApp(child: const AddSquadButton(squads: [])),
+        _testApp(
+          child: const AddSquadButton(squads: []),
+          bloc: bloc,
+        ),
       );
       await tester.pumpAndSettle();
 
@@ -189,8 +225,6 @@ void main() {
     });
 
     testWidgets('dispatches AddNewSquad event on tap', (tester) async {
-      final bloc = RosterBloc(MockUnitRepository());
-
       await tester.pumpWidget(
         _testApp(
           child: const AddSquadButton(squads: []),
@@ -205,13 +239,9 @@ void main() {
       // The bloc should now have a squad named 'Squad 1'
       expect(bloc.state.squads.length, 1);
       expect(bloc.state.squads.first.name, 'Squad 1');
-
-      bloc.close();
     });
 
     testWidgets('generates unique squad name', (tester) async {
-      final bloc = RosterBloc(MockUnitRepository());
-
       final existingSquads = [
         const Squad(id: 1, name: 'Squad 1', primaryRole: Role.gp, models: []),
       ];
@@ -229,8 +259,6 @@ void main() {
 
       // Should skip 'Squad 1' (which is in the existing list) and create 'Squad 2'
       expect(bloc.state.squads.any((s) => s.name == 'Squad 2'), isTrue);
-
-      bloc.close();
     });
   });
 }

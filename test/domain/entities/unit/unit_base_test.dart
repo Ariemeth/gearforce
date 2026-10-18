@@ -15,7 +15,7 @@ void main() {
       const unitName = 'Test Unit';
       const tv = 10;
       final roles = {Role.gp, Role.sk};
-      final movement = Movement([MovementType.walker], 6);
+      const movement = Movement([MovementType.walker], 6);
       const armor = Armor(5);
       const hullStructure = HullStructure(hull: 4, structure: 3);
       const actions = UnitActions(2);

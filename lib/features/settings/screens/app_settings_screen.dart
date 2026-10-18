@@ -37,7 +37,7 @@ class AppSettingScreen extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: context.l10n.settingsThemeLabel,
                 helperText: context.l10n.settingsThemeHelper,
-                border: OutlineInputBorder(),
+                border: const OutlineInputBorder(),
               ),
               items: [
                 DropdownMenuItem(

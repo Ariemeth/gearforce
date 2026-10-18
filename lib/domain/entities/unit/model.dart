@@ -26,7 +26,7 @@ class Model {
   final bool isDuelist;
 
   // Instance-level Set to track active getAttribute calls
-  final Set<ModelAttribute> _activeAttributes = {};
+  final Set<ModelAttribute<Object?>> _activeAttributes = {};
 
   Model({
     required this.id,
