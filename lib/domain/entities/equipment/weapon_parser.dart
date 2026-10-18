@@ -4,11 +4,43 @@ import 'package:gearforce/data/static/trait_factory.dart';
 import 'package:gearforce/data/static/weapon_factory.dart';
 
 class WeaponParser {
-  /// Parses a string like "2 x LATM (LA:2)" or "LATM (LA:2, Precise)" into a `Weapon` object.
-  static WeaponSpec parseWeaponString(String input, {bool hasReact = false}) {
-    // Remove "2 x" or "2 X" from the start of the string
+  /// Parses a string like "2 x LATM (LA:2)", "2x LAC", or "LATM (LA:2, Precise)"
+  /// into a list of [WeaponSpec]s.
+  ///
+  /// If the input includes a multiplier prefix like "2 x" or "2x", the list
+  /// will contain that many independent [WeaponSpec] instances (e.g., 2 weapons).
+  static List<WeaponSpec> parseWeaponString(
+    String input, {
+    bool hasReact = false,
+  }) {
+    final trimmedInput = input.trim();
+
+    final quantityRegex = RegExp(
+      r'^(?<count>\d+)\s*x\s*',
+      caseSensitive: false,
+    );
+    final quantityMatch = quantityRegex.firstMatch(trimmedInput);
+
+    int count = 1;
+    String weaponInput = trimmedInput;
+
+    if (quantityMatch != null) {
+      count = int.parse(quantityMatch.namedGroup('count')!);
+      weaponInput = trimmedInput.substring(quantityMatch.end);
+    }
+
+    final singleSpec = parseSingleWeaponSpec(weaponInput, hasReact: hasReact);
+
+    return List.generate(count, (_) => singleSpec.copySpec());
+  }
+
+  /// Parses a single weapon spec string without quantity prefix expansion.
+  static WeaponSpec parseSingleWeaponSpec(
+    String input, {
+    bool hasReact = false,
+  }) {
     final trimmedInput = input.trim().replaceFirst(
-      RegExp(r'^2\s+x\s+', caseSensitive: false),
+      RegExp(r'^\d+\s*x\s*', caseSensitive: false),
       '',
     );
 
@@ -27,7 +59,7 @@ class WeaponParser {
     LAC/LFC (LA:2, Precise)
      */
     final weaponParsingRegex = RegExp(
-      r'^(?<code1>[a-zA-Z]+)(?:\/)?(?<code2>[a-zA-Z]+)?\s*(?:\((?<traits>.+)\))?$',
+      r'^(?<code1>[a-zA-Z]+)/?(?<code2>[a-zA-Z]+)?\s*(?:\((?<traits>.+)\))?$',
     );
     final match = weaponParsingRegex.firstMatch(trimmedInput);
 

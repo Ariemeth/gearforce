@@ -28,14 +28,18 @@ WeaponsMod createSwapWeaponsFromOptionsMod(
     final newWeaponCode = context.upgrade.upgradeOption!.selectedOption!;
 
     try {
-      final newWeapon = WeaponParser.parseWeaponString(
+      final newWeapons = WeaponParser.parseWeaponString(
         newWeaponCode,
         hasReact: hasReact,
       );
 
       final index = weapons.indexWhere((w) => w.code == oldWeaponCode);
+      if (index == -1) {
+        return weapons;
+      }
+
       final updatedWeapons = List<WeaponSpec>.from(weapons);
-      updatedWeapons[index] = newWeapon;
+      updatedWeapons.replaceRange(index, index + 1, newWeapons);
       return updatedWeapons;
     } catch (e, stackTrace) {
       log(

@@ -9,7 +9,7 @@ class WeaponSpecConverter implements JsonConverter<WeaponSpec, String> {
 
   @override
   WeaponSpec fromJson(String json) {
-    return WeaponParser.parseWeaponString(json);
+    return WeaponParser.parseWeaponString(json).first;
   }
 
   @override
@@ -53,7 +53,7 @@ class MountedWeaponSpecListConverter
   @override
   List<WeaponSpec> fromJson(List<dynamic> json) {
     return json
-        .map((e) => WeaponParser.parseWeaponString(e as String))
+        .expand((e) => WeaponParser.parseWeaponString(e as String))
         .toList();
   }
 
@@ -70,7 +70,9 @@ class ReactWeaponSpecListConverter
   @override
   List<WeaponSpec> fromJson(List<dynamic> json) {
     return json
-        .map((e) => WeaponParser.parseWeaponString(e as String, hasReact: true))
+        .expand(
+          (e) => WeaponParser.parseWeaponString(e as String, hasReact: true),
+        )
         .toList();
   }
 

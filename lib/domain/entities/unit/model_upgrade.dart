@@ -125,7 +125,9 @@ class ModelUpgrade {
     final List<WeaponSpec> weaponsToAdd = weaponStrings == null
         ? <WeaponSpec>[]
         : weaponStrings
-              .map((weaponCode) => WeaponParser.parseWeaponString(weaponCode))
+              .expand(
+                (weaponCode) => WeaponParser.parseWeaponString(weaponCode),
+              )
               .toList();
 
     return ModelUpgrade(

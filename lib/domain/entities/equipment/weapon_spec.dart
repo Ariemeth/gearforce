@@ -21,6 +21,8 @@ abstract class WeaponSpec {
   String get code;
 
   String get summary;
+
+  WeaponSpec copySpec();
 }
 
 @immutable
@@ -62,6 +64,9 @@ final class SingleWeaponSpec extends WeaponSpec {
       customTraits: customTraits ?? this.customTraits.copyWith(),
     );
   }
+
+  @override
+  WeaponSpec copySpec() => copyWith();
 
   @override
   String get summary => weapon.toString();
@@ -119,6 +124,9 @@ final class ComboWeaponSpec extends WeaponSpec {
       customTraits: customTraits ?? this.customTraits.copyWith(),
     );
   }
+
+  @override
+  WeaponSpec copySpec() => copyWith();
 
   @override
   String get summary => '${weapon1.toString()}\n${weapon2.toString()}';
