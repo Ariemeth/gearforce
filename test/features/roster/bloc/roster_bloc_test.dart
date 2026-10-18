@@ -1037,12 +1037,7 @@ void main() {
       build: () => RosterBloc(mockUnitRepository),
       act: (bloc) {
         final squads = [
-          const Squad(
-            id: 99,
-            name: 'Imported Squad',
-            models: [],
-            upgrades: [],
-          ),
+          const Squad(id: 99, name: 'Imported Squad', models: [], upgrades: []),
         ];
         bloc.add(UpdateSquads(squads: squads));
       },

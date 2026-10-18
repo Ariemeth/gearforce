@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/screens/app_settings_screen.dart';
 import 'package:gearforce/features/roster/screens/weapon_display_screen.dart';
@@ -31,10 +32,8 @@ class RosterPageDrawer extends StatelessWidget {
               style: AppTheme.menuStyle,
             ),
             onTap: () {
-              Navigator.restorablePopAndPushNamed(
-                context,
-                WeaponDisplayScreen.routeName,
-              );
+              Navigator.pop(context);
+              context.push(WeaponDisplayScreen.routeName);
             },
           ),
           ListTile(
@@ -43,10 +42,8 @@ class RosterPageDrawer extends StatelessWidget {
               style: AppTheme.menuStyle,
             ),
             onTap: () {
-              Navigator.restorablePopAndPushNamed(
-                context,
-                AppSettingScreen.routeName,
-              );
+              Navigator.pop(context);
+              context.push(AppSettingScreen.routeName);
             },
           ),
           AboutListTile(

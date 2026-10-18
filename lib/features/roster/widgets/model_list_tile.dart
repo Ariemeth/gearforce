@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
-import 'package:gearforce/features/roster/screens/model_details_screen.dart';
 import 'package:gearforce/features/roster/widgets/command_level_selector.dart';
 import 'package:gearforce/features/roster/widgets/unit_level_selector.dart';
 import 'package:gearforce/features/roster/widgets/duelist_toggle.dart';
@@ -22,13 +22,7 @@ class ModelListTile extends StatelessWidget {
     return ListTile(
       title: Text(model.name, style: AppTheme.squadUnitNameStyle),
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute<void>(
-            builder: (context) =>
-                ModelDetailsScreen(squadId: squad.id, modelId: model.id),
-          ),
-        );
+        context.push('/squad/${squad.id}/model/${model.id}');
       },
       subtitle: Row(
         mainAxisAlignment: MainAxisAlignment.end,

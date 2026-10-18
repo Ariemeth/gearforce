@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
-import 'package:gearforce/features/roster/screens/unit_selection_screen.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
 class SelectModelButton extends StatelessWidget {
@@ -21,13 +21,7 @@ class SelectModelButton extends StatelessWidget {
         return ElevatedButton(
           onPressed: canAddUnits
               ? () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (context) =>
-                          UnitSelectionScreen(updatedSquad: updatedSquad),
-                    ),
-                  );
+                  context.push('/select-unit', extra: updatedSquad);
                 }
               : null,
           child: Text(

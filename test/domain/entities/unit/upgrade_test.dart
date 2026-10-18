@@ -58,7 +58,8 @@ void main() {
         nameMod: (name, context) => 'Modified ${context.model.name}',
         tvMod: (tv, context) => tv + 5,
         rolesMod: (roles, context) => {...roles, Role.sk},
-        movementMod: (movement, context) => const Movement([MovementType.ground], 8),
+        movementMod: (movement, context) =>
+            const Movement([MovementType.ground], 8),
         armorMod: (armor, context) => const Armor(6),
         hullStructureMod: (hullStructure, context) =>
             hullStructure.copyWith(hull: 5, structure: 4),

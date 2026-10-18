@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
-import 'package:gearforce/features/roster/screens/squad_details_screen.dart';
 import 'package:gearforce/features/roster/widgets/add_squad_button.dart';
 import 'package:gearforce/features/roster/widgets/remove_squad_dialog.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -69,7 +69,10 @@ class SquadDisplay extends StatelessWidget {
                             ),
                             if (squad.secondaryRole != null) ...[
                               const SizedBox(width: 4),
-                              const Text('/', style: AppTheme.squadUnitBodyStyle),
+                              const Text(
+                                '/',
+                                style: AppTheme.squadUnitBodyStyle,
+                              ),
                               const SizedBox(width: 4),
                               Text(
                                 squad.secondaryRole!.abbreviation,
@@ -170,13 +173,7 @@ class SquadDisplay extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute<void>(
-                              builder: (context) =>
-                                  SquadDetailsScreen(squadId: squad.id),
-                            ),
-                          );
+                          context.push('/squad/${squad.id}');
                         },
                       ),
                     );
