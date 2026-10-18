@@ -952,6 +952,68 @@ void main() {
     );
   });
 
+  group('ReorderSquad', () {
+    blocTest<RosterCubit, RosterState>(
+      'reorders squads down',
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Squad A');
+        cubit.addNewSquad(name: 'Squad B');
+        cubit.addNewSquad(name: 'Squad C');
+        await Future<void>.delayed(Duration.zero);
+        // Move Squad A (index 0) down to index 3 (after Squad C)
+        cubit.reorderSquad(oldIndex: 0, newIndex: 3);
+      },
+      verify: (cubit) {
+        expect(cubit.state.squads.map((s) => s.name).toList(), [
+          'Squad B',
+          'Squad C',
+          'Squad A',
+        ]);
+      },
+    );
+
+    blocTest<RosterCubit, RosterState>(
+      'ignores out-of-bounds reorderSquad',
+      build: () => RosterCubit(mockUnitRepository),
+      seed: () => RosterInitial(mockUnitRepository),
+      act: (cubit) => cubit.reorderSquad(oldIndex: -1, newIndex: 5),
+      expect: () => <RosterState>[],
+    );
+  });
+
+  group('ReorderModel', () {
+    blocTest<RosterCubit, RosterState>(
+      'reorders models up',
+      build: () => RosterCubit(mockUnitRepository),
+      act: (cubit) async {
+        cubit.addNewSquad(name: 'Squad A');
+        await Future<void>.delayed(Duration.zero);
+        var squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(name: 'Model 1'),
+          variant: _createTestVariant(id: 'V1'),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = cubit.state.squads.first;
+        cubit.addModel(
+          squad: squad,
+          base: _createTestModelBase(name: 'Model 2'),
+          variant: _createTestVariant(id: 'V2'),
+        );
+        await Future<void>.delayed(Duration.zero);
+        squad = cubit.state.squads.first;
+        // Move Model 2 (index 1) to top (index 0)
+        cubit.reorderModel(squad: squad, oldIndex: 1, newIndex: 0);
+      },
+      verify: (cubit) {
+        final models = cubit.state.squads.first.models;
+        expect(models.map((m) => m.base.name).toList(), ['Model 2', 'Model 1']);
+      },
+    );
+  });
+
   group('UpdateSquads', () {
     blocTest<RosterCubit, RosterState>(
       'replaces all squads',

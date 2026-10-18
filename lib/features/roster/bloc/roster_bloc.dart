@@ -365,16 +365,21 @@ class RosterCubit extends Cubit<RosterState> {
   }) {
     final models = List<Model>.from(squad.models);
 
-    // Handle reordering: remove from oldIndex and insert at newIndex
-    if (oldIndex < newIndex) {
-      // Moving down
-      final model = models.removeAt(oldIndex);
-      models.insert(newIndex - 1, model);
-    } else {
-      // Moving up
-      final model = models.removeAt(oldIndex);
-      models.insert(newIndex, model);
+    if (oldIndex < 0 ||
+        oldIndex >= models.length ||
+        newIndex < 0 ||
+        newIndex > models.length) {
+      return;
     }
+
+    final targetIndex = oldIndex < newIndex ? newIndex - 1 : newIndex;
+
+    if (oldIndex == targetIndex) {
+      return;
+    }
+
+    final model = models.removeAt(oldIndex);
+    models.insert(targetIndex, model);
 
     final updatedSquad = squad.copyWith(models: models);
     final updatedSquadState = state.squadState.updateSquad(updatedSquad);
@@ -385,16 +390,21 @@ class RosterCubit extends Cubit<RosterState> {
   void reorderSquad({required int oldIndex, required int newIndex}) {
     final squads = List<Squad>.from(state.squads);
 
-    // Handle reordering: remove from oldIndex and insert at newIndex
-    if (oldIndex < newIndex) {
-      // Moving down
-      final squad = squads.removeAt(oldIndex);
-      squads.insert(newIndex - 1, squad);
-    } else {
-      // Moving up
-      final squad = squads.removeAt(oldIndex);
-      squads.insert(newIndex, squad);
+    if (oldIndex < 0 ||
+        oldIndex >= squads.length ||
+        newIndex < 0 ||
+        newIndex > squads.length) {
+      return;
     }
+
+    final targetIndex = oldIndex < newIndex ? newIndex - 1 : newIndex;
+
+    if (oldIndex == targetIndex) {
+      return;
+    }
+
+    final squad = squads.removeAt(oldIndex);
+    squads.insert(targetIndex, squad);
 
     final updatedSquadState = state.squadState.copyWith(squads: squads);
     emit(state.copyWith(squadState: updatedSquadState));
