@@ -65,13 +65,23 @@ class UnitLevelRule extends Rule {
     required List<Squad> allSquads,
   }) {
     int count = 0;
+    // Tracks whether [squad] (the target squad receiving [newLevel]) is already
+    // present in [allSquads].
+    bool targetSquadInRoster = false;
+
     for (final currentSquad in allSquads) {
-      final hasLevel = currentSquad.id == squad.id
-          ? true
-          : currentSquad.models.any((m) => m.level == newLevel);
-      if (hasLevel) {
+      if (currentSquad.id == squad.id) {
+        targetSquadInRoster = true;
+        count++;
+      } else if (currentSquad.models.any((m) => m.level == newLevel)) {
         count++;
       }
+    }
+
+    // If [squad] is a new squad not yet included in [allSquads], count it here
+    // as it will contain [newLevel] after the update.
+    if (!targetSquadInRoster) {
+      count++;
     }
 
     return count;
