@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/caprice/caprice_rules.dart';
 class CapriceRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const CapriceRuleSet(this.unitRepository)
-    : super(
-        name: 'Caprice',
-        extraRules: capriceRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const CapriceRuleSet(
+    this.unitRepository, {
+    super.name = 'Caprice',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = capriceRuleCatalog,
+  });
 
   @override
   String toString() => 'CapriceRuleSet';

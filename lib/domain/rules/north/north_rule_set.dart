@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/north/north_rules.dart';
 class NorthRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const NorthRuleSet(this.unitRepository)
-    : super(
-        name: 'North',
-        extraRules: northRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const NorthRuleSet(
+    this.unitRepository, {
+    super.name = 'North',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = northRuleCatalog,
+  });
 
   @override
   String toString() => 'NorthRuleSet';

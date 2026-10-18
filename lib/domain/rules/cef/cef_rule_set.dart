@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/cef/cef_rules.dart';
 class CefRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const CefRuleSet(this.unitRepository)
-    : super(
-        name: 'CEF',
-        extraRules: cefRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const CefRuleSet(
+    this.unitRepository, {
+    super.name = 'CEF',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = cefRuleCatalog,
+  });
 
   @override
   String toString() => 'CefRuleSet';

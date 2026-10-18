@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/peaceriver/peaceriver_rules.dart';
 class PeaceRiverRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const PeaceRiverRuleSet(this.unitRepository)
-    : super(
-        name: 'Peace River',
-        extraRules: peaceRiverRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const PeaceRiverRuleSet(
+    this.unitRepository, {
+    super.name = 'Peace River',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = peaceRiverRuleCatalog,
+  });
 
   @override
   String toString() => 'PeaceRiverRuleSet';

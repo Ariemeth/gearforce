@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/eden/eden_rules.dart';
 class EdenRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const EdenRuleSet(this.unitRepository)
-    : super(
-        name: 'Eden',
-        extraRules: edenRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const EdenRuleSet(
+    this.unitRepository, {
+    super.name = 'Eden',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = edenRuleCatalog,
+  });
 
   @override
   String toString() => 'EdenRuleSet';

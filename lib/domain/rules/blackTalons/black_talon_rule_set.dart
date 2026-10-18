@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/blackTalons/black_talon_rules.dart';
 class BlackTalonRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const BlackTalonRuleSet(this.unitRepository)
-    : super(
-        name: 'Black Talon',
-        extraRules: blackTalonRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const BlackTalonRuleSet(
+    this.unitRepository, {
+    super.name = 'Black Talon',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = blackTalonRuleCatalog,
+  });
 
   @override
   String toString() => 'BlackTalonRuleSet';

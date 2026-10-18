@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/south/south_rules.dart';
 class SouthRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const SouthRuleSet(this.unitRepository)
-    : super(
-        name: 'South',
-        extraRules: southRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const SouthRuleSet(
+    this.unitRepository, {
+    super.name = 'South',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = southRuleCatalog,
+  });
 
   @override
   String toString() => 'SouthRuleSet';

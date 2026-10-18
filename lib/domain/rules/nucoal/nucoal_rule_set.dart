@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/nucoal/nucoal_rules.dart';
 class NuCoalRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const NuCoalRuleSet(this.unitRepository)
-    : super(
-        name: 'NuCoal',
-        extraRules: nuCoalRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const NuCoalRuleSet(
+    this.unitRepository, {
+    super.name = 'NuCoal',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = nuCoalRuleCatalog,
+  });
 
   @override
   String toString() => 'NuCoalRuleSet';

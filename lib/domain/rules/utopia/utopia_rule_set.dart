@@ -8,12 +8,12 @@ import 'package:gearforce/domain/rules/utopia/utopia_rules.dart';
 class UtopiaRuleSet extends RuleSet {
   final UnitRepository unitRepository;
 
-  const UtopiaRuleSet(this.unitRepository)
-    : super(
-        name: 'Utopia',
-        extraRules: utopiaRuleCatalog,
-        assetTable: const AssetTable.unlimited(),
-      );
+  const UtopiaRuleSet(
+    this.unitRepository, {
+    super.name = 'Utopia',
+    super.assetTable = const AssetTable.unlimited(),
+    super.extraRules = utopiaRuleCatalog,
+  });
 
   @override
   String toString() => 'UtopiaRuleSet';
