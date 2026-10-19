@@ -11,7 +11,7 @@ import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/variant.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
-import 'package:gearforce/domain/rules/get_subfaction_rule_set.dart';
+import 'package:gearforce/domain/rules/factions/get_subfaction_rule_set.dart';
 import 'package:gearforce/domain/rules/roster_rule_engine.dart';
 import 'package:gearforce/domain/rules/squad_rule_engine.dart';
 import 'package:gearforce/features/roster/bloc/squad_state.dart';
