@@ -1,5 +1,5 @@
 import 'package:gearforce/domain/entities/equipment/trait.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_parser.dart';
+import 'package:gearforce/data/parsers/weapon_parser.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 import 'package:gearforce/data/static/trait_factory.dart';
 import 'package:json_annotation/json_annotation.dart';

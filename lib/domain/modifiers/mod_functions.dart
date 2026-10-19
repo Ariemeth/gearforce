@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:gearforce/domain/entities/unit/model_upgrade_context.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_parser.dart';
+import 'package:gearforce/data/parsers/weapon_parser.dart';
 import 'package:gearforce/domain/entities/attribute/hull_structure.dart';
 import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/equipment/trait.dart';

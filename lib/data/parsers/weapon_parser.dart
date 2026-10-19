@@ -1,7 +1,7 @@
-import 'package:gearforce/domain/entities/equipment/trait.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 import 'package:gearforce/data/static/trait_factory.dart';
 import 'package:gearforce/data/static/weapon_factory.dart';
+import 'package:gearforce/domain/entities/equipment/trait.dart';
+import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 
 class WeaponParser {
   /// Parses a string like "2 x LATM (LA:2)", "2x LAC", or "LATM (LA:2, Precise)"

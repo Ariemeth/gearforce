@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gearforce/data/parsers/weapon_parser.dart';
 import 'package:gearforce/domain/entities/attribute/armor.dart';
 import 'package:gearforce/domain/entities/attribute/classification.dart';
 import 'package:gearforce/domain/entities/attribute/hull_structure.dart';
@@ -7,7 +8,6 @@ import 'package:gearforce/domain/entities/attribute/movement_type.dart';
 import 'package:gearforce/domain/entities/attribute/role.dart';
 import 'package:gearforce/domain/entities/attribute/skill.dart';
 import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
-import 'package:gearforce/domain/entities/equipment/weapon_parser.dart';
 import 'package:gearforce/domain/entities/unit/model.dart';
 import 'package:gearforce/domain/entities/unit/model_base.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
