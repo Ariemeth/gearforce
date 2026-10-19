@@ -9,7 +9,7 @@ enum Subfaction {
   // South
   southDefault('None', 'None'),
   southernRepublic('Southern Republic', 'SR'),
-  milicia('Military Intervention and Counter Insurgency Army ', 'MILICIA'),
+  milicia('Military Intervention and Counter Insurgency Army', 'MILICIA'),
   mekongDominion('Mekong Dominion', 'MD'),
   easternSunEmirates('Eastern Sun Emirates', 'ESE'),
   humanistAlliance('Humanist Alliance', 'HA'),
