@@ -1,11 +1,11 @@
 import 'package:gearforce/domain/entities/faction/rule_set.dart';
 import 'package:gearforce/domain/entities/faction/subfaction.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
-import 'package:gearforce/domain/rules/blackTalons/black_talon_rule_set.dart';
-import 'package:gearforce/domain/rules/blackTalons/subfactions/tat.dart';
-import 'package:gearforce/domain/rules/blackTalons/subfactions/tit.dart';
-import 'package:gearforce/domain/rules/blackTalons/subfactions/trt.dart';
-import 'package:gearforce/domain/rules/blackTalons/subfactions/tst.dart';
+import 'package:gearforce/domain/rules/black_talons/black_talon_rule_set.dart';
+import 'package:gearforce/domain/rules/black_talons/subfactions/tat.dart';
+import 'package:gearforce/domain/rules/black_talons/subfactions/tit.dart';
+import 'package:gearforce/domain/rules/black_talons/subfactions/trt.dart';
+import 'package:gearforce/domain/rules/black_talons/subfactions/tst.dart';
 import 'package:gearforce/domain/rules/caprice/caprice_rule_set.dart';
 import 'package:gearforce/domain/rules/caprice/subfactions/cms.dart';
 import 'package:gearforce/domain/rules/caprice/subfactions/cs.dart';

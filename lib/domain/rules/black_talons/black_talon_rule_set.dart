@@ -3,7 +3,7 @@ import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/domain/entities/faction/rule_set.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
-import 'package:gearforce/domain/rules/blackTalons/black_talon_rules.dart';
+import 'package:gearforce/domain/rules/black_talons/black_talon_rules.dart';
 
 class BlackTalonRuleSet extends RuleSet {
   final UnitRepository unitRepository;

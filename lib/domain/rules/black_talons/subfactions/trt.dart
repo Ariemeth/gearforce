@@ -1,5 +1,5 @@
 import 'package:gearforce/domain/entities/faction/asset_table.dart';
-import 'package:gearforce/domain/rules/blackTalons/black_talon_rule_set.dart';
+import 'package:gearforce/domain/rules/black_talons/black_talon_rule_set.dart';
 
 class BlackTalonRuleSetTrt extends BlackTalonRuleSet {
   const BlackTalonRuleSetTrt(
