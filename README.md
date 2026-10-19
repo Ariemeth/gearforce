@@ -2,7 +2,7 @@
 
 Gearforce is an application to build unit rosters for the game Heavy Gear Blitz.
 
-More info about Heavy gear can be found at [Dream Pod 9's](www.dp9.com) website.
+More info about Heavy gear can be found at [Dream Pod 9's](https://www.dp9.com) website.
 
 ---
 
@@ -15,8 +15,8 @@ This section provides an overview of the Gearforce project structure and guideli
 The project is divided into four main directories under `lib/`:
 
 1.  **`core/`**: Shared utilities, themes, localization, and generic widgets used across the entire application.
-2.  **`domain/`**: The core business logic and entities. This layer is independent of any external frameworks (like Flutter) and the data layer.
-3.  **`data/`**: Implementations of repositories and data sources. This layer handles data fetching (e.g., from JSON assets or APIs).
+2.  **`domain/`**: The core business logic and entities. This layer is independent of any external frameworks (like Flutter) or data storage/deserialization logic.
+3.  **`data/`**: Implementations of repositories, parsers, and static catalogs. This layer handles data fetching and parsing (e.g., from JSON assets or raw strings into domain entities).
 4.  **`features/`**: UI-related code grouped by feature (e.g., `roster`, `settings`). Each feature typically contains its own Blocs, screens, and feature-specific widgets.
 
 ---
@@ -32,7 +32,7 @@ Contains code reused across multiple features.
 -   **`widgets/`**: Truly generic, reusable widgets (e.g., a custom button, layout helper, or responsive size utility).
 
 ### `lib/domain/`
-The "brain" of the application. Contains no UI code.
+The "brain" of the application. Contains pure Dart entities and business rules (no UI or serialization code).
 -   **`entities/`**: Plain Dart objects representing game concepts. Grouped into sub-directories:
     -   `unit/`: Core unit, model, and squad definitions.
     -   `attribute/`: Core attributes (Armor, Skill, etc.) shared by multiple entities.
@@ -41,9 +41,12 @@ The "brain" of the application. Contains no UI code.
 -   **`repositories/`**: Abstract interfaces that define how data should be fetched. The domain layer doesn't care *where* the data comes from, only *what* it can get.
 
 ### `lib/data/`
-Handles how data is retrieved and stored.
+Handles how data is retrieved, parsed, and stored.
+-   **`parsers/`**: Dedicated parsers for mapping external data into domain objects:
+    -   `json/`: Mappers for deserializing JSON assets into pure domain entities (e.g., `UnitJsonParser`, `ModelBaseJsonParser`).
+    -   `weapon_parser.dart`: Expression parser for raw tabletop weapon string notation.
 -   **`repositories/`**: Concrete implementations of the interfaces defined in `lib/domain/repositories/` (e.g., `JsonUnitRepository`).
--   **`static/`**: Static configuration, registries (like `RuleSet` factory), and complex logic that doesn't fit neatly into JSON assets (e.g., modifier functions).
+-   **`static/`**: Static configuration, registries (like `RuleSet` factory), catalogs, and complex logic that doesn't fit neatly into JSON assets (e.g., modifier functions).
 
 ### `lib/features/`
 Organized by high-level user features. Each feature folder should follow this structure:
@@ -73,34 +76,6 @@ The `test/` directory strictly mirrors the `lib/` directory's structure.
 
 ## Development
 
-### Code Generation
-
-This project uses `json_serializable` to automate the mapping between JSON assets and Domain Entities. Whenever you modify a class annotated with `@JsonSerializable` (or its related parts), you must run the code generator to update the `.g.dart` files.
-
-**To run a one-time build:**
-```bash
-dart run build_runner build
-```
-
-**To watch for changes and regenerate automatically:**
-```bash
-dart run build_runner watch
-```
-
-### CI/CD Verification
-
-To ensure that the generated files are always up-to-date in your repository, you can add a check to your CI/CD pipeline. The recommended way to do this is to run the build runner and then check if there are any changes in the working directory:
-
-```bash
-# Run the build runner
-dart run build_runner build
-
-# Check if there are any changes to the generated files
-git diff --exit-code
-```
-
-If the generated files are out-of-sync with the models, `git diff --exit-code` will return a non-zero exit code, causing the CI pipeline to fail. This ensures that every pull request includes the correct generated code.
-
 ### Localization
 
 User-facing strings are managed via ARB (Application Resource Bundle) files and Flutter's built-in localization system. The source strings live in `lib/core/localization/app_en.arb`, and the generated Dart code is output to `lib/core/generated/i18n/`.
@@ -109,22 +84,26 @@ User-facing strings are managed via ARB (Application Resource Bundle) files and 
 
 1. Edit `lib/core/localization/app_en.arb` and add your new key/value pair. For simple strings:
    ```json
-   "myNewLabel": "Hello World",
-   "@myNewLabel": {
-     "description": "A greeting label"
+   {   
+       "myNewLabel": "Hello World",
+       "@myNewLabel": {
+         "description": "A greeting label"
+       }
    }
    ```
    For strings with placeholders:
    ```json
-   "welcomeMessage": "Welcome, {userName}!",
-   "@welcomeMessage": {
-     "description": "Welcome message with the user's name",
-     "placeholders": {
-       "userName": {
-         "type": "String",
-         "example": "Alice"
+   {
+       "welcomeMessage": "Welcome, {userName}!",
+       "@welcomeMessage": {
+         "description": "Welcome message with the user's name",
+         "placeholders": {
+           "userName": {
+             "type": "String",
+             "example": "Alice"
+           }
+         }
        }
-     }
    }
    ```
 
@@ -175,10 +154,10 @@ flutter test test/data/repositories/unit_loading_benchmark.dart --verbose
 | **Attribute Entity**             | `lib/domain/entities/attribute/`   |
 | **Repository Interface**         | `lib/domain/repositories/`         |
 | **Repository Implementation**    | `lib/data/repositories/`           |
+| **JSON Parser / Data Mapper**    | `lib/data/parsers/json/`           |
 | **State Management** (Bloc)      | `lib/features/[feature]/bloc/`     |
 | **UI Screen**                    | `lib/features/[feature]/screens/`  |
 | **Reusable UI Widget**           | `lib/core/widgets/`                |
 | **Feature-Specific Widget**      | `lib/features/[feature]/widgets/`  |
 | **Localization Keys**            | `lib/core/localization/app_en.arb` |
 | **Game Data** (JSON)             | `assets/data/`                     |
-

@@ -1,11 +1,6 @@
-import 'package:json_annotation/json_annotation.dart';
-
 enum WeaponSize {
-  @JsonValue('L')
   light,
-  @JsonValue('M')
   medium,
-  @JsonValue('H')
   heavy;
 
   static const Map<WeaponSize, String> _prefixes = {

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer' as developer;
 import 'package:meta/meta.dart';
 import 'package:flutter/services.dart';
+import 'package:gearforce/data/parsers/json/unit_json_parser.dart';
 import 'package:gearforce/domain/entities/faction/faction.dart';
 import 'package:gearforce/domain/entities/unit/unit.dart';
 import 'package:gearforce/domain/repositories/unit_repository.dart';
@@ -90,6 +91,6 @@ class JsonUnitRepository implements UnitRepository {
 
   @visibleForTesting
   Unit parseUnit(Map<String, dynamic> data) {
-    return Unit.fromJson(data);
+    return UnitJsonParser.parseUnit(data);
   }
 }

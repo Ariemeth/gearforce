@@ -1,14 +1,8 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-part 'weapon_range.g.dart';
-
 @immutable
-@JsonSerializable()
 class WeaponRange {
-  @JsonKey(name: 'min')
   final int? minOptimal;
-  @JsonKey(name: 'opt')
   final int? maxOptimal;
   final int? max;
 
@@ -25,11 +19,6 @@ class WeaponRange {
         max == null || (maxOptimal != null && max > maxOptimal),
         'Max range must be greater than or equal to normal range if provided',
       );
-
-  factory WeaponRange.fromJson(Map<String, dynamic> json) =>
-      _$WeaponRangeFromJson(json);
-
-  Map<String, dynamic> toJson() => _$WeaponRangeToJson(this);
 
   @override
   String toString() {

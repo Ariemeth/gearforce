@@ -44,12 +44,6 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Run the build runner
-        run: dart run build_runner build
-
-      - name: Check if there are any changes to the generated files
-        run: git diff --exit-code
-
       - name: Ensure dart code is formatted correctly
         run: dart format --set-exit-if-changed .
 
