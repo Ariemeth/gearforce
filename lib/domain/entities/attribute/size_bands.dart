@@ -16,13 +16,6 @@ class SizeBands<T> {
 }
 
 class TraitSizeBands extends SizeBands<List<Trait>> {
-  @override
-  List<Trait> get l => super.l;
-  @override
-  List<Trait> get m => super.m;
-  @override
-  List<Trait> get h => super.h;
-
   const TraitSizeBands({
     super.l = const [],
     super.m = const [],
