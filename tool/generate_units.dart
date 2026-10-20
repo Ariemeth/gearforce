@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 import 'package:excel/excel.dart';
 
@@ -22,7 +23,7 @@ void main(List<String> args) {
   try {
     File(excelPath).copySync(tempFile.path);
   } catch (e) {
-    print('Copy warning: $e');
+    log('Copy warning: $e');
   }
 
   final bytes = (tempFile.existsSync() ? tempFile : File(excelPath))
@@ -61,7 +62,7 @@ void main(List<String> args) {
     final targetFile = File('${outputDir.path}/$fileName');
     const encoder = JsonEncoder.withIndent('  ');
     targetFile.writeAsStringSync(encoder.convert(units));
-    print('Generated $fileName: ${units.length} units');
+    log('Generated $fileName: ${units.length} units');
   }
 }
 
