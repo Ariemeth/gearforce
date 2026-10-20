@@ -104,8 +104,11 @@ class TraitFactory {
         return TraitCatalog.jetpack(isAux: isAux, level: level);
       case 'jump':
         return TraitCatalog.jump(isAux: isAux, level: level);
+      case 'l':
+        return TraitCatalog.l(isAux: isAux);
       case 'la':
         return TraitCatalog.la(isAux: isAux, level: level);
+      case 'link':
       case 'linked':
         return TraitCatalog.linked(isAux: isAux);
       case 'lo-tech':

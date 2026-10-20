@@ -1,1 +1,1490 @@
-[]
+[
+  {
+    "id": "peaceriver-warrior",
+    "name": "Warrior",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Paxton",
+    "description": "The Warrior is Peace River’s main trooper gear. It is deployed throughout the Badlands and is often used to deal with rover threats. Though similar to the Hunter or Jager in many ways, the Warrior includes a standard ECM suite sufficient to disrupt rover communications as a prelude to an assault.",
+    "variants": [
+      {
+        "id": "peaceriver-warrior-stock",
+        "name": "Stock",
+        "tv": 0,
+        "reactWeapons": [
+          "LAC"
+        ],
+        "mountedWeapons": [
+          "LRP"
+        ]
+      },
+      {
+        "id": "peaceriver-warrior-crossfire",
+        "name": "Crossfire",
+        "tv": 1,
+        "reactWeapons": [
+          "LLC"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-warrior-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-warriorIV",
+    "name": "Warrior IV",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Paxton",
+    "description": "The Warrior IV has seen wide scale deployment throughout the Badlands. Tasked primarily with defending the Alpha Maglev line, they have mounted an effective campaign against CEF saboteurs. The heavier rocket payload makes it a decent deterrent against the invaders armor columns even in its standard configuration.",
+    "variants": [
+      {
+        "id": "peaceriver-warriorIV-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-warriorIV-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "peaceriver-warriorIV-0",
+        "name": "0",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      },
+      {
+        "id": "peaceriver-warriorIV-02",
+        "name": "0",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-jackal",
+    "name": "Jackal",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LIRC"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Paxton",
+    "description": "The Jackal has a few features not found on the Warrior. It has a larger melee weapon available and a variant with a sleek new Medium Rotary Laser (MRL). But most importantly, it’s reliable and cheap. The Jackal has proved to be an economic boon, allowing Paxton a significant source of income during the reconstruction period.",
+    "variants": [
+      {
+        "id": "peaceriver-jackal-stock",
+        "name": "Stock",
+        "tv": 0,
+        "reactWeapons": [
+          "LAC"
+        ],
+        "mountedWeapons": [
+          "LRP"
+        ]
+      },
+      {
+        "id": "peaceriver-jackal-kestros",
+        "name": "Kestros",
+        "tv": 1,
+        "reactWeapons": [
+          "LAC/LGL"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-gladiator",
+    "name": "Gladiator",
+    "tv": 8,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "LP",
+      "LSG"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Paxton",
+    "description": "The Gladiator was originally an expansion on the Warrior chassis. Over the design process though, the Gladiator developed into an extremely high end gear. The Gladiator has excelled in operations against rovers. The gear is devastating at close ranges and able to cleave its way through targets with its vibro-axe.",
+    "variants": [
+      {
+        "id": "peaceriver-gladiator-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-pitBull",
+    "name": "Pit Bull",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LIMG",
+      "2 x LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Paxton",
+    "description": "Much like the Warrior on which it is based, the Pit Bull has undergone many revisions. It was first produced in the TN 1870s as a police gear for the Peace Officer Corps (POC). It has sold much better than the Warrior thanks to its low cost, distinctive role, appearance, and great service record.",
+    "variants": [
+      {
+        "id": "peaceriver-pitBull-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-pitBull-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECM",
+          "Sensor:24 (Aux)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-harrier",
+    "name": "Harrier",
+    "tv": 9,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MRF",
+      "LP",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Jump:3",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Paxton",
+    "description": "The Harrier is the offspring of a Cheetah and Chasseur. Engineers at Paxton were so impressed by the NuCoal gear that they immediately lobbied for the opportunity to develop something similar. The Harrier is the preferred gear for recon specialists who need to be able to extract themselves from any situation quickly.",
+    "variants": [
+      {
+        "id": "peaceriver-harrier-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-harrier-spectre",
+        "name": "Spectre",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "peaceriver-harrier-tag",
+        "name": "Tag",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-greyhound",
+    "name": "Greyhound",
+    "tv": 11,
+    "roles": [
+      "GP",
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "MRF",
+      "LP",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Offroad",
+      "Sensor:36",
+      "ECM",
+      "ECCM"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Paxton",
+    "description": "The Greyhound uses advanced computational systems that automate many communication functions for the pilot, allowing them to focus more on the battle and tasks needing to be performed. While the stock Greyhound can be used by anyone, the Chieftain is normally reserved for commanders.",
+    "variants": [
+      {
+        "id": "peaceriver-greyhound-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-greyhound-alpha",
+        "name": "Alpha",
+        "tv": 1,
+        "ew": 3,
+        "traits": [
+          "SatUp",
+          "Init+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-stalker",
+    "name": "Stalker",
+    "tv": 12,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "MAC/LGL",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "SatUp"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Command Gear",
+    "manufacturer": "Paxton",
+    "description": "The PRDF took delivery of its first Stalker in the Spring of TN 1932. Since then, Paxton Arms has built over one hundred of these gears. While some have been deployed in front line regiments, most were never fielded. Where these gears are now is anyone’s guess. At least one is used by a duelist in the Khayr ad-Din dueling circuits.",
+    "variants": [
+      {
+        "id": "peaceriver-stalker-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-skirmisher",
+    "name": "Skirmisher",
+    "tv": 9,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "ECM",
+      "ECCM",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Paxton",
+    "description": "The Skirmisher is a long range reconnaissance gear and the result of the Protectorate Defense Plan to field exclusively Paxton-made models. It’s maximized in as many ways as it can be, with research budgets being the only restriction. This gear offers more customization options that any other recon gear on the market. The Skirmisher’s flexibility allows it to be outfitted for many roles. When not interdicting communications, coordinating the battlefield via satellite uplink or breaking through enemy ECM, the Skirmisher is often found tagging targets for other units standing by to unleash long range indirect fire.",
+    "variants": [
+      {
+        "id": "peaceriver-skirmisher-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-skirmisher-spectre",
+        "name": "Spectre",
+        "tv": 2,
+        "ew": 3,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "peaceriver-skirmisher-tag",
+        "name": "Tag",
+        "tv": 1,
+        "ew": 3,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      },
+      {
+        "id": "peaceriver-skirmisher-0",
+        "name": "0",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      },
+      {
+        "id": "peaceriver-skirmisher-02",
+        "name": "0",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-perseus",
+    "name": "Perseus",
+    "tv": 9,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LIMG"
+    ],
+    "traits": [
+      "Agile",
+      "Hands",
+      "Jump:3"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Paxton",
+    "description": "Despite NuCoalian claims, the Perseus was actually the first hover-gear on Terra Nova. This gear spent many cycles in development and only went into full production for a short period of time before evolving into the Raven. The remaining Perseus can still be found in Paxton facilities and a few other locations.",
+    "variants": [
+      {
+        "id": "peaceriver-perseus-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-perseus-spectre",
+        "name": "Spectre",
+        "tv": 2,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "peaceriver-perseus-tag",
+        "name": "Tag",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-shinobi",
+    "name": "Shinobi",
+    "tv": 8,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "Paxton",
+    "description": "The Shinobi is one of the secret results from Project Talon. Aided by captured CEF tech and Paxton’s knowledge of covert operations, the Shinobi project breaks typical research budgets in an attempt to make the best stealth gear available. While the design is extremely good, some debate if the price was worth it.",
+    "variants": [
+      {
+        "id": "peaceriver-shinobi-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-shinobi-spectre",
+        "name": "Spectre",
+        "tv": 2,
+        "ew": 3,
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "peaceriver-shinobi-comanche",
+        "name": "Comanche",
+        "tv": 1,
+        "ew": 3,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "peaceriver-shinobi-assassin",
+        "name": "Assassin",
+        "tv": 1,
+        "reactWeapons": [
+          "MVB (Reflex)"
+        ],
+        "traits": [
+          "Brawl:1"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-spartan",
+    "name": "Spartan",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HAC",
+      "MMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "LFC",
+      "MIRC"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop",
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Paxton",
+    "description": "Like the Jackal, the Spartan is part of the Paxton Arms “A gear for everyone” initiative. In order to maintain a market presence after 1939, Paxton Arms revealed a range of budget gears which would be more affordable than their existing line of high end military gears. The Spartan fills the role of an affordable heavy trooper.",
+    "variants": [
+      {
+        "id": "peaceriver-spartan-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-spartan-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-mustang",
+    "name": "Mustang",
+    "tv": 9,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "2 x LAR",
+      "LM",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Brawl:1",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Paxton",
+    "description": "Mustangs are favored by the POC for anti-Rover operations. Artillery rockets and mortars are key assets when taking on massed infantry, whether they’re on the move or dug in. These same weapons can also take on gears Rovers typically use. And if they want to come closer, the Mustang has answers for that too.",
+    "variants": [
+      {
+        "id": "peaceriver-mustang-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-myrmidon",
+    "name": "Myrmidon",
+    "tv": 14,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HRC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "2 x LRC (Link)",
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Paxton",
+    "description": "The Myrmidons were initially armed with the Banshee, a prototype 45-millimeter rotary cannon at the time. Both Myrmidons and Banshee Heavy Rotary Cannons (HRCs) are now well known for their smooth response and rugged durability. Two good qualities for any machine on Terra Nova.",
+    "variants": [
+      {
+        "id": "peaceriver-myrmidon-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-crusader",
+    "name": "Crusader",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HAC"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LM",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Paxton",
+    "description": "The Crusader is Paxton’s initial response to developing a gear relative the polar forces’ Grizzly and Cobra. It does perform much like its competition and even has a few advantages. One disadvantage is the weakness towards particle accelerators, but the Crusader V overcomes this problem.",
+    "variants": [
+      {
+        "id": "peaceriver-crusader-mkIV",
+        "name": "Mk IV",
+        "tv": -0.5,
+        "traits": [
+          "Vuln:H"
+        ]
+      },
+      {
+        "id": "peaceriver-crusader-mkV",
+        "name": "Mk V",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-agamemnon",
+    "name": "Agamemnon",
+    "tv": 18,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 2,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LRG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "MM",
+      "MFC"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "Paxton",
+    "description": "At the time of Peace River City's destruction, the Agamemnon was in an early prototype stage. The Agamemnon development team then worked with notable fervor, revenge being the topic of every day. Some of the Agamemnon’s are reported to have ONNets programmed with a distinct hatred for CEF units.",
+    "variants": [
+      {
+        "id": "peaceriver-agamemnon-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-argos",
+    "name": "Argos",
+    "tv": 16,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 9,
+    "hull": 6,
+    "structure": 2,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "MSC",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "Paxton",
+    "description": "Despite its massive bulk, the Argos is very easy to operate and carries a fearsome payload of weapons. It’s reserved for some of the most experienced pilots. After someone is selected to become an Argos pilot they must then complete a significant training period to include melee tactics.",
+    "variants": [
+      {
+        "id": "peaceriver-argos-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-argos-comanche",
+        "name": "Comanche",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-cataphract",
+    "name": "Cataphract",
+    "tv": 25,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "HRC",
+      "2 x LIMG (Auto, Link)",
+      "HVB (Apex, Reach:1)"
+    ],
+    "mountedWeapons": [
+      "MM",
+      "HHG"
+    ],
+    "traits": [
+      "Hands",
+      "ECM",
+      "Brawl:1",
+      "Shield",
+      "Offroad"
+    ],
+    "height": 2.5,
+    "classification": "Strider",
+    "subtype": "Gear-Strider",
+    "manufacturer": "Paxton",
+    "description": "The original gear-strider, the Cataphract has a glorious history of dealing with CEF hovertanks and polar forces. The Cataphract carries weapons normally seen on tanks, such as rail guns and tank guns and has one of the largest melee swords ever constructed. It has a fearsome reputation amongst Peace Riverans and their enemies.",
+    "variants": [
+      {
+        "id": "peaceriver-cataphract-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-cataphract-lord",
+        "name": "Lord",
+        "tv": 1,
+        "traits": [
+          "ECCM",
+          "Init+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-uhlan",
+    "name": "Uhlan",
+    "tv": 31,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 11,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 3,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "HAC (Apex, AP:3)",
+      "2 x MAC (Link)",
+      "LAPGL (Auto)",
+      "HSG"
+    ],
+    "mountedWeapons": [
+      "2 x HRP",
+      "HHG"
+    ],
+    "traits": [
+      "Hands",
+      "ECM",
+      "AMS",
+      "Brawl:1",
+      "Shield"
+    ],
+    "height": 2.5,
+    "classification": "Strider",
+    "subtype": "Gear-Strider",
+    "manufacturer": "Paxton",
+    "description": "The Uhlan is bristling with weapons and has been called – the walking pill box. A single Uhlan is capable of laying down a withering stream of fire that can tear any gear to pieces. Defensively it couples very heavy armor with an efficient anti-missile system, allowing it to withstand even the fiercest enemy assaults.",
+    "variants": [
+      {
+        "id": "peaceriver-uhlan-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-uhlan-lord",
+        "name": "Lord",
+        "tv": 1,
+        "traits": [
+          "ECCM",
+          "Init+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-hyenaII",
+    "name": "Hyena II",
+    "tv": 19,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "2 x MLC (T)",
+      "MIRC (Auto)"
+    ],
+    "mountedWeapons": [
+      "MRP (T, Guided, AP:2)"
+    ],
+    "traits": [
+      "ECM+",
+      "ECCM+",
+      "TD",
+      "Sensor:36",
+      "Resist:H",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Light Tank",
+    "manufacturer": "Paxton",
+    "description": "When the original Hyena factory was destroyed in the Peace River City bombing, all data pertaining to it was also destroyed. The Coyote was then gradually modified over time until it filled the Hyena’s previous role as a medium tank-strider. When the Hyena was finally recreated, it was redesigned to take position as a light tank with an advanced suspension system instead of true-legs.",
+    "variants": [
+      {
+        "id": "peaceriver-hyenaII-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-coyote",
+    "name": "Coyote",
+    "tv": 19,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "MRG (T)",
+      "MRC (T, AA)"
+    ],
+    "mountedWeapons": [
+      "MAPGL"
+    ],
+    "traits": [
+      "Airdrop",
+      "Offroad",
+      "ECM",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Medium Tank-Strider",
+    "manufacturer": "Paxton",
+    "description": "The Coyote Medium Tank-Strider was built from the ground up after the success of the Red Bull II. It is a daring exploration of the middle ground between tanks and striders. Paxton spent a generous amount of money on R&D in order to produce it. To say they succeeded would be an understatement.",
+    "variants": [
+      {
+        "id": "peaceriver-coyote-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "peaceriver-coyote-comanche",
+        "name": "Comanche",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "peaceriver-redBull",
+    "name": "Red Bull",
+    "tv": 22,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 12,
+    "hull": 4,
+    "structure": 4,
+    "actions": 3,
+    "gu": 4,
+    "pi": 6,
+    "ew": 5,
+    "reactWeapons": [
+      "LRC"
+    ],
+    "mountedWeapons": [
+      "HAPGL"
+    ],
+    "traits": [
+      "Lumbering",
+      "Sensor:24"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Heavy Strider",
+    "manufacturer": "Paxton",
+    "description": "The Red Bull was Terra Nova’s first tank-strider. It’s performance has proven the concept’s viability by presenting a platform with heavy tank like armor and strider-esque flexibility. These lumbering titans provide the armies of Peace River with heavy direct and indirect supporting fire.",
+    "variants": [
+      {
+        "id": "peaceriver-redBull-aa",
+        "name": "AA",
+        "tv": 2,
+        "reactWeapons": [
+          "MRC (T, AA)"
+        ],
+        "traits": [
+          "AMS"
+        ]
+      },
+      {
+        "id": "peaceriver-redBull-hippeis",
+        "name": "Hippeis",
+        "tv": 7,
+        "mountedWeapons": [
+          "2 x MFG (T, Stable)"
+        ]
+      },
+      {
+        "id": "peaceriver-redBull-xyston",
+        "name": "Xyston",
+        "tv": 4,
+        "mountedWeapons": [
+          "HFG (T, Stable)"
+        ]
+      },
+      {
+        "id": "peaceriver-redBull-arbalest",
+        "name": "Arbalest",
+        "tv": 6,
+        "mountedWeapons": [
+          "2 x HAR (T)"
+        ]
+      },
+      {
+        "id": "peaceriver-redBull-sarisa",
+        "name": "Sarisa",
+        "tv": 8,
+        "mountedWeapons": [
+          "2 x HATM (T)"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-mameluk",
+    "name": "Mameluk",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC (T, AA)",
+      "HIRC (T)"
+    ],
+    "traits": [
+      "Offroad",
+      "Airdrop"
+    ],
+    "height": 0.5,
+    "classification": "Gear",
+    "subtype": "Infantry Fighting Vehicle",
+    "manufacturer": "Paxton",
+    "description": "The Mameluk is an experiment in itself. It has an extremely low profile for a combat vehicle and uses treads for mobility across rough terrain. It barely fits two; driver and gunner. But the infantry have taken to it rather well because its weapons can challenge gears and other targets better than many of their man-portable options.",
+    "variants": [
+      {
+        "id": "peaceriver-mameluk-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "peaceriver-hoplite",
+    "name": "Hoplite",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "traits": [
+      "Transport:2 Cadres",
+      "Smoke"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Paxton",
+    "description": "The Hoplite APC is the workhorse of Peace River’s military regiments, carrying two cadres of infantry. Different variants offer a wide selection of weapon options that the commander can use to tailor how the Hoplite supports infantry.",
+    "variants": [
+      {
+        "id": "peaceriver-hoplite-hoplite",
+        "name": "Hoplite",
+        "tv": 1,
+        "reactWeapons": [
+          "MRF (T)"
+        ]
+      },
+      {
+        "id": "peaceriver-hoplite-arbalest",
+        "name": "Arbalest",
+        "tv": 1,
+        "mountedWeapons": [
+          "MRP (T)"
+        ]
+      },
+      {
+        "id": "peaceriver-hoplite-hippeis",
+        "name": "Hippeis",
+        "tv": 2,
+        "ew": 4,
+        "mountedWeapons": [
+          "LM (T)"
+        ],
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "peaceriver-hoplite-xyston",
+        "name": "Xyston",
+        "tv": 2,
+        "mountedWeapons": [
+          "LFG"
+        ]
+      }
+    ],
+    "upgrades": []
+  }
+]

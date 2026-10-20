@@ -1,0 +1,982 @@
+[
+  {
+    "id": "unigear-wildcat",
+    "name": "Wildcat",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Keimuri Gears",
+    "description": "Originally a companion gear to the Hunter, it quickly fell out of favor as pilots preferred the Hunter’s better armor and previously reduced fire control systems. Keimuri Gears would find a new market with the WFP where the cheaper and more rugged design was appreciated. Today the Wildcat can often be seen defending Badlands communities against rovers.",
+    "variants": [
+      {
+        "id": "unigear-wildcat-stock",
+        "name": "Stock",
+        "tv": 0,
+        "reactWeapons": [
+          "LAC"
+        ],
+        "mountedWeapons": [
+          "LRP"
+        ]
+      },
+      {
+        "id": "unigear-wildcat-assault",
+        "name": "Assault",
+        "tv": 1,
+        "reactWeapons": [
+          "MSC"
+        ]
+      },
+      {
+        "id": "unigear-wildcat-pathfinder",
+        "name": "Pathfinder",
+        "tv": 1,
+        "ew": 5,
+        "reactWeapons": [
+          "LAC"
+        ],
+        "traits": [
+          "Sensor:24"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-copperhead",
+    "name": "Copperhead",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Copperhead has gone through many revisions since its origins as a light trooper gear. Its evolution has allowed it to be an alternate option to a Jager. While many would prefer a Jager, more melee oriented pilots prefer the Copperhead.  It’s not uncommon to see one or two Copperheads mixed in with Jagers.",
+    "variants": [
+      {
+        "id": "unigear-copperhead-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-desertViper",
+    "name": "Desert Viper",
+    "tv": 8,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 5
+    },
+    "armor": 7,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "Mandeers Heavy Industries",
+    "description": "The Desert Viper was built as a no-nonsense machine, using a general configuration similar to that of the Northern Razorback. This aging gear finds a niche wherever a cheap and easily replaceable rough terrain gear is needed. Easily modified, the Viper Chassis has been a test bed for the south since its inception.",
+    "variants": [
+      {
+        "id": "unigear-desertViper-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "unigear-desertViper-ruggedTerrain",
+        "name": "Rugged Terrain",
+        "tv": 1,
+        "reactWeapons": [
+          "MMW"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unigear-blackAdder",
+    "name": "Black Adder",
+    "tv": 7,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 7,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Dynamic Systems",
+    "description": "The Black Adder has been proclaimed \"the safest gear ever designed.\" Thick armor plates surround the torso and cockpit areas.  Under all of the additional armor plates on the torso, the Black Adder uses the same basic chassis as the Sidewinder and features an entirely redesigned main body.",
+    "variants": [
+      {
+        "id": "unigear-blackAdder-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-anolis",
+    "name": "Anolis",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LRF",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Recon Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Anolis is one of Territorial Arm's economic recon gears. Original Anoles quickly replaced Recon Jagers (now SD Jagers) when they first came out. Later, the Anolis R (Refit) started seeing wide distribution. Because Anoles have always been popular for their low costs, other packaged deals saw Anoles loaded for light combat.",
+    "variants": [
+      {
+        "id": "unigear-anolis-stock",
+        "name": "Stock",
+        "tv": 0,
+        "traits": [
+          "Sensor:24",
+          "Vuln:H"
+        ]
+      },
+      {
+        "id": "unigear-anolis-refit",
+        "name": "Refit",
+        "tv": 1,
+        "traits": [
+          "Sensor:36",
+          "TD",
+          "ECCM"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "unigear-anolis-ruggedTerrain",
+        "name": "Rugged Terrain",
+        "tv": 1,
+        "reactWeapons": [
+          "MMW"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "unigear-bear",
+    "name": "Bear",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "HIRC (Auto)",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Northco",
+    "description": "The Bear was designed for long range engagements and was the CNCS's first fire support gear. The guided mortar has a long reach and a deadly punch, while the twin medium rocket packs mounted on its shoulders also allow it to be used in an assault role. The Bear was so successful that it went on to inspire other gears.",
+    "variants": [
+      {
+        "id": "unigear-bear-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-razorback",
+    "name": "Razorback",
+    "tv": 12,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 7,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MSC",
+      "LSMG",
+      "LSG"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LIMG",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Northco",
+    "description": "The Razorback is ruggedly constructed and its snub cannon can make short work of any tank, while the heavy rotary cannon variant can mince gears wholesale. Despite being almost as old as the Hunter, the Razorback is still employed in UMF and WFP regiments for missions where heavy armor and weapons are required.",
+    "variants": [
+      {
+        "id": "unigear-razorback-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-madDog",
+    "name": "Mad Dog",
+    "tv": 9,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 8,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MBZ",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "2 x HIRC (Link)"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Western Armories",
+    "description": "The Mad Dog uses a similar drive system to the Bear. While the aging gear is quickly becoming a rare sight, the Mad Dog is a common trooper gear in the WFP where cost is a major concern. Many famous pilots, such as Kyle Trudel, have piloted a Mad Dog in arena championships simply because opponents underestimate it.",
+    "variants": [
+      {
+        "id": "unigear-madDog-stock",
+        "name": "Stock",
+        "tv": 1,
+        "mountedWeapons": [
+          "HRP"
+        ]
+      },
+      {
+        "id": "unigear-madDog-refit",
+        "name": "Refit",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x MRP"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-python",
+    "name": "Python",
+    "tv": 12,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP"
+    ],
+    "traits": [
+      "Hands",
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Mandeers Heavy Industries",
+    "description": "Pythons are one of the biggest exports from the South. Many became surplus after they were replaced by Cobras. A powerful gear that comes with many assorted loadouts, they are frequently used by rovers and security forces alike as supply caravans snake through hostile Badlands.",
+    "variants": [
+      {
+        "id": "unigear-python-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-boa",
+    "name": "Boa",
+    "tv": 15,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 9,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LM",
+      "HIRC"
+    ],
+    "traits": [
+      "Hands",
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Mandeers Heavy Industries",
+    "description": "Mandeers designed the Boa to be the most well-protected gear on the planet. The added armor made the Boa less useful for support roles since it could not carry as many heavy weapons. Neil Motorworks is licensed to make and distribute them, and this is part of why Boas are seen in Khayr ad-Din arenas frequently.",
+    "variants": [
+      {
+        "id": "unigear-boa-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-g16",
+    "name": "G-16",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Moscow Heavy Industries",
+    "variants": [
+      {
+        "id": "unigear-g16-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Sensor:24",
+          "TD (Aux)",
+          "Sensor Boom (Aux)"
+        ]
+      },
+      {
+        "id": "unigear-g16-daywatch",
+        "name": "Daywatch",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "Sensor:24",
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "unigear-g16-growler",
+        "name": "Growler",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-druid",
+    "name": "Druid",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "HMW (Brawl:1)"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4",
+      "Jetpack:6 (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Engineering Golem",
+    "manufacturer": "Excalibur Inc",
+    "description": "The Druid started as a submersible golem used for mining methane hydrate in Eden's vast oceans. It has since received many upgrades and only loosely resembles its origins. As one of the few combat engineering assets that the CEF has direct access to, they have heavily supported its mass production and even use them amongst their own forces.",
+    "variants": [
+      {
+        "id": "unigear-druid-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-valence",
+    "name": "Valence",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4",
+      "Vuln:F"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Engineering Gear",
+    "manufacturer": "Paxton",
+    "description": "Peace River’s Engineer Corps is mainly comprised of three gears. Foremost among these is the Valence. Though unremarkable as a combat vehicle, the Valence is very good at being cheap. A popular choice throughout Terra Nova, the Valence has a reputation for being one of the most comfortable rides allowing engineers to operate for longer periods of time.",
+    "variants": [
+      {
+        "id": "unigear-valence-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-chargeur",
+    "name": "Chargeur",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "mountedWeapons": [
+      "LAC"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Engineering Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "Sharing the same chassis as the Lancier, the Chargeur has seen active use in both civilian and peacekeeping capacity. The NuCoal Marshal Service uses them for anti-rover operations. Other applications include hauling, loading and general construction.",
+    "variants": [
+      {
+        "id": "unigear-chargeur-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-bricklayer",
+    "name": "Bricklayer",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4",
+      "Vuln:F"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Engineering Gear",
+    "manufacturer": "Northco",
+    "description": "The Bricklayer Engineering Gear is based off the popular Hunter chassis. It has a roll bar canopy and no head assembly. The pilot sits slightly higher than in the Hunter and is protected only by a sturdy steel roll cage. When needed, Bricklayers can be used as light trooper gears in combat engineering squads.",
+    "variants": [
+      {
+        "id": "unigear-bricklayer-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-stonemason",
+    "name": "Stonemason",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4",
+      "Vuln:F"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Engineering Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Although the Stonemason shares the same basic frame as the Jager, considerable modifications have been made to improve its capabilities in the engineering role. A set of tool arms on the back of the gear are equipped with a simple set of grasping claws that are often used in melee combat to great effect.",
+    "variants": [
+      {
+        "id": "unigear-stonemason-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-sapeur",
+    "name": "Sapeur",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Engineering Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "Based off of the Chevalier, the Sapeur is a common sight in and around the ever-expanding townships of NuCoal. Often assigned to engineering squads, with ratio of 1 Sapeur for every 4 Chargeurs, this gear is used as an earth mover or recovery vehicle.",
+    "variants": [
+      {
+        "id": "unigear-sapeur-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-engineeringGrizzly",
+    "name": "Engineering Grizzly",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4",
+      "Offroad",
+      "Vuln:F"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Engineering Gear",
+    "manufacturer": "Northco",
+    "description": "The Engineering Grizzly is a field engineering gear based on the basic frame and chassis of the Grizzly fire support gear. The Engineering Grizzly's hands come semi-modular. A skilled maintenance team can add or remove Demolisher Hands in 15 minutes.",
+    "variants": [
+      {
+        "id": "unigear-engineeringGrizzly-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "unigear-engineeringCobra",
+    "name": "Engineering Cobra",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4",
+      "Offroad",
+      "Vuln:F"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Engineering Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Engineering Cobra has already proven its worth as a military engineering and maintenance unit. A large and powerful frame allows it to lift and bear extremely heavy loads. Pilots often use the gear to batter enemy gears in melee when they get too close.",
+    "variants": [
+      {
+        "id": "unigear-engineeringCobra-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  }
+]

@@ -86,8 +86,12 @@ class TraitCatalog {
     isAux: isAux,
   );
 
-  static Trait b({bool isAux = false}) =>
-      Trait(name: 'B', description: 'Brawl weapon trait.', isAux: isAux);
+  static Trait b({bool isAux = false}) => Trait(
+    name: 'B',
+    description:
+        'Weapons with this trait can only be fired at targets within this unit’s Back Arc (the back 180 degrees of the model).',
+    isAux: isAux,
+  );
 
   static Trait blast({bool isAux = false}) => Trait(
     name: 'Blast',
@@ -226,6 +230,12 @@ class TraitCatalog {
     isAux: isAux,
   );
 
+  static Trait l({bool isAux = false}) => const Trait(
+    name: 'L',
+    description:
+        'A weapon with this trait can only be fired at targets within the model’s Left Arc.',
+  );
+
   static Trait la({bool isAux = false, int? level}) => Trait(
     name: 'LA',
     description: 'Limited Ammo trait.',
@@ -302,7 +312,8 @@ class TraitCatalog {
 
   static Trait r({bool isAux = false}) => Trait(
     name: 'R',
-    description: 'Reach melee range modifier.',
+    description:
+        'A weapon with this trait can only be fired at targets within the model’s Right Arc.',
     isAux: isAux,
   );
 

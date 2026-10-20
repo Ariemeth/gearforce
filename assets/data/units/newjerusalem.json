@@ -1,0 +1,763 @@
+[
+  {
+    "id": "nj-initiate",
+    "name": "Initiate",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MSMG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "General Purpose Angel",
+    "manufacturer": "Basilica of Archangels",
+    "description": "The Initiate is Sanctuary’s general-purpose angel. Initiates are seen in a variety of roles from security to field operations. Performance-wise, they are similar to a Hunter. Energy weapons such as the plasma cannon provide this unit with more punch than the average Hunter.",
+    "variants": [
+      {
+        "id": "nj-initiate-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nj-apostle",
+    "name": "Apostle",
+    "tv": 12,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "LPL",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Angel",
+    "manufacturer": "Basilica of Archangels",
+    "description": "The Apostle has seen centuries of service. It was the first mass production angel to see combat. It’s designed as a high-performance angel and is used in assaults. Continued updates and overhauls keep this design in its place as the flagship angel in the Shepherds arsenal.",
+    "variants": [
+      {
+        "id": "nj-apostle-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nj-disciple",
+    "name": "Disciple",
+    "tv": 9,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "2 x LP",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Jump:2",
+      "ECM",
+      "ECCM",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Angel",
+    "manufacturer": "Basilica of Archangels",
+    "description": "The Disciple is Sanctuary’s Electronic Warfare (EW) angel. The base model comes with everything an EW specialist needs for basic operations. The Abdias upgrade and a few other options enhance this even further. A fully supped-up Disciple is capable of taking on Iguanas.",
+    "variants": [
+      {
+        "id": "nj-disciple-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nj-disciple-abdias",
+        "name": "Abdias",
+        "tv": 2,
+        "traits": [
+          "TD",
+          "Sensor Boom",
+          "Sensor:36",
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nj-ghazi",
+    "name": "Ghazi",
+    "tv": 13,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MPL (Reflex)",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Jump:2",
+      "Brawl:1",
+      "Stealth"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Angel",
+    "manufacturer": "13th tower",
+    "description": "The Ghazi is used by special forces for assassination, strike and sabotage missions. The Ghazi’s signature wings are actually directable thrusters allowing the machine to perform sudden adjustments to speed and direction. While they are not jetpacks, they do give the machine an archangel’s vibe.",
+    "variants": [
+      {
+        "id": "nj-ghazi-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nj-ghazi-zacchaeus",
+        "name": "Zacchaeus",
+        "tv": 1,
+        "reactWeapons": [
+          "MMW"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      },
+      {
+        "id": "nj-ghazi-genesis",
+        "name": "Genesis",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "nj-ghazi-arch",
+        "name": "Arch",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nj-templar",
+    "name": "Templar",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MVB (Reach:1, Fire:1)"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Jump:2",
+      "Shield",
+      "Brawl:1"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Close Combat Angel",
+    "manufacturer": "13th Tower",
+    "description": "Templars are piloted by what most Shepherds consider the insane. Templars have no organic ranged weapons and operate as a type of shock-trooper. The Shepherds use melee combat for breaking assaults. And since Templars are able to minimize collateral damage, they are also popular on capital ships.",
+    "variants": [
+      {
+        "id": "nj-templar-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nj-templar-genesis",
+        "name": "Genesis",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nj-paladin",
+    "name": "Paladin",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "2 x MP",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LFG"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Jump:2"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Angel",
+    "manufacturer": "Basilica of Archangels",
+    "description": "The Paladin is Sanctuary’s premier fire support angel. Its main weaponry is considered its shoulder-mounted cannons, indicating its namesake as fire support. The pistols are sneakily quite capable. Many an enemy has closed in on a Paladin to strike at it with heavy weaponry only to get shot to pieces by pistols akimbo.",
+    "variants": [
+      {
+        "id": "nj-paladin-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nj-hakham",
+    "name": "Hakham",
+    "tv": 20,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 2,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "MPL",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "MM",
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2",
+      "Satup",
+      "ECCM",
+      "Sensor:24"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Command Angel",
+    "manufacturer": "13th Tower",
+    "description": "The Hakham is fundamentally a command angel. More conventionally armed compared to the Paladin, the Hakham sports a communications suite with a focus on communications security. The machine can be further upgraded with and improved ECCM, sensors and even an Anti-Missile System (AMS).",
+    "variants": [
+      {
+        "id": "nj-hakham-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nj-prioress",
+    "name": "Prioress",
+    "tv": 20,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "reactWeapons": [
+      "LRL (T, AA)"
+    ],
+    "mountedWeapons": [
+      "LFG (T)",
+      "2 x MRP (T)"
+    ],
+    "traits": [],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Medium Seraphim",
+    "manufacturer": "Avadat Shalom",
+    "description": "The Prioress is the equivalent of a medium strider found on Terra Nova. It operates as Sanctuary’s main battle tank in many ways. It can take a hit while being faster than anything that outguns it or outgunning anything faster than it. They are often found taking part in heavy assaults.",
+    "variants": [
+      {
+        "id": "nj-prioress-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nj-prioress-genesis",
+        "name": "Genesis",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nj-abbess",
+    "name": "Abbess",
+    "tv": 29,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 5
+    },
+    "armor": 12,
+    "hull": 4,
+    "structure": 4,
+    "actions": 3,
+    "gu": 4,
+    "pi": 6,
+    "ew": 5,
+    "reactWeapons": [
+      "LRL (T, AA)",
+      "MFL (T)"
+    ],
+    "mountedWeapons": [
+      "2 x MRG (T, Stable)",
+      "2 x HRP (T)"
+    ],
+    "traits": [
+      "Lumbering"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Heavy Seraphim",
+    "manufacturer": "Avadat Shalom",
+    "description": "The Abbess serves as Sanctuary’s heavy seraphim. It features heavier weapons than the Prioress but is also slower than it too. It lumbers around. However, the six legs provide a very smooth ride overall. The stability also allows the predictive fire control system in the rail guns improved accuracy.",
+    "variants": [
+      {
+        "id": "nj-abbess-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nj-abbess-arch",
+        "name": "Arch",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nj-prophet",
+    "name": "Prophet",
+    "tv": 70,
+    "roles": [
+      "MB"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 4
+    },
+    "armor": 12,
+    "hull": 10,
+    "structure": 6,
+    "actions": 6,
+    "gu": 3,
+    "pi": 6,
+    "ew": 5,
+    "reactWeapons": [
+      "2 x HPA",
+      "2 x HLC",
+      "2 x MFL"
+    ],
+    "traits": [
+      "SatUp",
+      "ECCM",
+      "Resist:H",
+      "Lumbering"
+    ],
+    "height": 4,
+    "classification": "Strider",
+    "subtype": "Superheavy Seraphim",
+    "manufacturer": "Avadat Shalom",
+    "description": "While the Abbes lumbers, the Prophet ponders. This seraphim is the largest in production. Its weapons are rather modular for a vehicle of this size. Weapon modules are mostly artillery centric. Though, the Kibush modules provide varying layers of electronic warfare capabilities.",
+    "variants": [
+      {
+        "id": "nj-prophet-milchama",
+        "name": "Milchama",
+        "tv": 4,
+        "mountedWeapons": [
+          "MAG (Stable)"
+        ]
+      },
+      {
+        "id": "nj-prophet-raav",
+        "name": "Ra'av",
+        "tv": 5,
+        "mountedWeapons": [
+          "HRG (Stable)"
+        ]
+      },
+      {
+        "id": "nj-prophet-maveth",
+        "name": "Maveth",
+        "tv": 5,
+        "mountedWeapons": [
+          "2 x LFG (Stable)"
+        ]
+      },
+      {
+        "id": "nj-prophet-dever",
+        "name": "Dever",
+        "tv": 3,
+        "armor": 0,
+        "mountedWeapons": [
+          "MAM"
+        ]
+      },
+      {
+        "id": "nj-prophet-kibush",
+        "name": "Kibush*",
+        "tv": 2,
+        "armor": 0,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "Sensor:24"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nj-tenet",
+    "name": "Tenet",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LSMG (T)"
+    ],
+    "traits": [],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Avadat Shalom",
+    "description": "The Tenet is a simple, rugged, wheeled design. It is a cost-effective APC with variants for use as a field ambulance or engineering asset. The main weapon is the equivalent of a handheld, gear-sized submachinegun. Tenets are not intended to go toe to toe with seraphim. Their primary use is movement of troops.",
+    "variants": [
+      {
+        "id": "nj-tenet-stock",
+        "name": "Stock",
+        "tv": 1,
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "nj-tenet-numbers",
+        "name": "Numbers",
+        "tv": 1,
+        "traits": [
+          "Transport:1 Cadres",
+          "Medic:4"
+        ]
+      },
+      {
+        "id": "nj-tenet-tiferet",
+        "name": "Tiferet",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x MMW (T)"
+        ],
+        "traits": [
+          "Repair:4",
+          "Supply"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nj-tenet-genarch",
+        "name": "GenArch",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "Satup",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nj-kwaja",
+    "name": "Kwaja",
+    "tv": 6,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 3,
+    "hull": 2,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LICW"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 1,
+    "classification": "Cavalry",
+    "subtype": "Light Hoverbike",
+    "description": "The hoverbike racing scene is popular across New Jerusalem. Even lower tech nations take part with their own lower grade racing circuits. The Kwaja has become a staple in Sanctuary’s military. Built with the high performance hoverbike technology Sanctuary is known for, they make excellent scouting tools.",
+    "variants": [
+      {
+        "id": "nj-kwaja-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nj-kwaja-abdias",
+        "name": "Abdias",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "Sensor:18",
+          "TD"
+        ]
+      },
+      {
+        "id": "nj-kwaja-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 4,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "nj-zealot",
+    "name": "Zealot",
+    "tv": 8,
+    "roles": [
+      "SK",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LICW"
+    ],
+    "mountedWeapons": [
+      "2 x MIMG (Link)"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 1.5,
+    "classification": "Cavalry",
+    "subtype": "Patrol Hoverbike",
+    "description": "The Zealot is a heavier hoverbike made for military use in arial assaults. These heavy-but-compact machines can provide a level of close air support even in densely populated metropolitan zones. They’re frequently deployed from a transport, providing them strategic reach during operations.",
+    "variants": [
+      {
+        "id": "nj-zealot-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  }
+]

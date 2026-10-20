@@ -334,9 +334,9 @@ _UpgradeSummary _buildUpgradeChangeSummary({
   addValueDelta('PI', baseModel.pi.toString(), upgradedModel.pi.toString());
   addValueDelta('EW', baseModel.ew.toString(), upgradedModel.ew.toString());
 
-  final baseTraits = baseModel.traits.map((trait) => trait.name).toSet();
+  final baseTraits = baseModel.traits.map((trait) => trait.toString()).toSet();
   final upgradedTraits = upgradedModel.traits
-      .map((trait) => trait.name)
+      .map((trait) => trait.toString())
       .toSet();
   final addedTraits = upgradedTraits.difference(baseTraits).toList()..sort();
   final removedTraits = baseTraits.difference(upgradedTraits).toList()..sort();

@@ -1,1 +1,980 @@
-[]
+[
+  {
+    "id": "nucoal-chasseur",
+    "name": "Chasseur",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "The Chasseur can trace its lineage back to the Jager from Territorial Arms.  Following the rejection of the Chasseur by the SRA, the city-state of Nineveh purchased and perfected the gear. The CEF so admired the Chasseur during the first invasion, that it would later inspire future CEF frame design.",
+    "variants": [
+      {
+        "id": "nucoal-chasseur-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-chasseur-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-sdChasseur",
+    "name": "SD Chasseur",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:3"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "Inspired by southern Stripped-Down (SD) Jagers, the engineers at Neil Motorworks originally developed the SD Chasseur as an unofficial modification of the Chasseur. With NuCoalian doctrine emphasizing speed, the SD Chasseur became immediately popular with commanders and pilots everywhere.",
+    "variants": [
+      {
+        "id": "nucoal-sdChasseur-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-sdChasseur-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-chasseurParatrooper",
+    "name": "Chasseur Paratrooper",
+    "tv": 7,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LSG"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Paratrooper Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "The Chasseur Paratroopers fielded by NuCoal feature modified weapons configurations so that they can be equipped with gear sized parachutes. In addition to the frame and shock absorber modifications that allow them to survive the impact of a landing, the jetpacks give these gears an additional control during descent.",
+    "variants": [
+      {
+        "id": "nucoal-chasseurParatrooper-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-chasseurParatrooper-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-chasseurMK2",
+    "name": "Chasseur MK2",
+    "tv": 8,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Jump:2",
+      "Jetpack:6 (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "Although the Mk2 has seen limited distribution due to the complexities of manufacturing, those units so equipped have shown impressive results against CEF forces. Hastily deployed in only a red ochre primer, Colonel Arthur’s Wolf Brigade earned numerous battle honors and a fearsome reputation with these gears.",
+    "variants": [
+      {
+        "id": "nucoal-chasseurMK2-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-chasseurMK2-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-cuirassier",
+    "name": "Cuirassier",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "The strike gear that has served the HAPF since the Interpolar War, the Cuirassier is well loved by the league's elite units. In the NuCoal SDF regiments, the gear is a popular alternative to the Chasseur Mk2. It turns out that many Terra Novan pilots appreciate the more standard movement systems of the Cuirassier.",
+    "variants": [
+      {
+        "id": "nucoal-cuirassier-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-cuirassier-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-lancier",
+    "name": "Lancier",
+    "tv": 8,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "MMW"
+    ],
+    "mountedWeapons": [
+      "LAPGL",
+      "2 x MGG"
+    ],
+    "traits": [
+      "Hands",
+      "Climb",
+      "Brawl:1"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Mountaineering Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "While originally designed for mountaineering, they are excellent melee specialists as the shoulder mounted grappling hooks have more than enough punch to pierce the armor of a typical gear. Lanciers have met with considerable combat success since their adoption by the NSDF do to their simple yet effective design choices.",
+    "variants": [
+      {
+        "id": "nucoal-lancier-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-lancier-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-espion",
+    "name": "Espion",
+    "tv": 10,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP (Guided)"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "ECCM",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "Javelin Systems",
+    "description": "The Espion is a no-nonsense special forces gear. Like many advanced stealth gears, it has remarkable agility, good speed, effective weapon configurations and specialized armor to reduce sensor detection. Although as far as stealth gears go, its high price and specialized parts make accruing a large number of them hard to do.",
+    "variants": [
+      {
+        "id": "nucoal-espion-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-espion-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 3,
+        "traits": [
+          "ECCM+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-jerboa",
+    "name": "Jerboa",
+    "tv": 7,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 9
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 5,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LRF",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:3",
+      "Sensor:24"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Verton Tech",
+    "description": "The Jerboa has seen wide deployment throughout the New Coalition, replacing many of the older Ferrets. The Jerboa is considered a superior unit to the Ferret due to the rocket engines which propel it even faster. It also boasts an increased level of comfort above the Ferret.",
+    "variants": [
+      {
+        "id": "nucoal-jerboa-gobi",
+        "name": "Gobi",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "nucoal-jerboa-fist",
+        "name": "Fist",
+        "tv": 2,
+        "traits": [
+          "ECM+",
+          "ECCM",
+          "Sensor:36"
+        ]
+      },
+      {
+        "id": "nucoal-jerboa-sentry",
+        "name": "Sentry",
+        "tv": 2,
+        "traits": [
+          "ECM",
+          "ECCM+",
+          "Sensor:36"
+        ]
+      },
+      {
+        "id": "nucoal-jerboa-flash",
+        "name": "Flash",
+        "tv": 3,
+        "ew": 3,
+        "traits": [
+          "ECM+",
+          "ECCM+",
+          "Sensor:36"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-jerboa-hotay",
+        "name": "Hotay",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-jerboaParatrooper",
+    "name": "Jerboa Paratrooper",
+    "tv": 7,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 9
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 5,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LAC",
+      "LSG"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop",
+      "Jump:3",
+      "Sensor:24"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Verton Tech",
+    "description": "Jerboa Paratroopers also shed the shoulder mounted rocket pack for both weight and safety purposes. On the Jerboa, this is offset by the use of the standard paratrooper assault rifle which combines an autocannon and light grenade launcher. However, the Jerboa’s main task of electronic warfare remains its priority.",
+    "variants": [
+      {
+        "id": "nucoal-jerboaParatrooper-gobi",
+        "name": "Gobi",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "nucoal-jerboaParatrooper-fist",
+        "name": "Fist",
+        "tv": 2,
+        "traits": [
+          "ECM+",
+          "ECCM",
+          "Sensor:36"
+        ]
+      },
+      {
+        "id": "nucoal-jerboaParatrooper-sentry",
+        "name": "Sentry",
+        "tv": 2,
+        "traits": [
+          "ECM",
+          "ECCM+",
+          "Sensor:36"
+        ]
+      },
+      {
+        "id": "nucoal-jerboaParatrooper-flash",
+        "name": "Flash",
+        "tv": 3,
+        "ew": 3,
+        "traits": [
+          "ECM+",
+          "ECCM+",
+          "Sensor:36"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-jerboaParatrooper-hotay",
+        "name": "Hotay",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-chevalier",
+    "name": "Chevalier",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "2 x HIRC (Link)"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "The Chevalier has a good variety of weapons, making this gear very versatile on the field. Chevalier pilots represent a small subset of the NuCoal population who prefer firepower over speed. The Chevalier Spear is one of the most popular variants. The amount of rockets it can fire at once is spectacular for a gear.",
+    "variants": [
+      {
+        "id": "nucoal-chevalier-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nucoal-arbalestier",
+    "name": "Arbalestier",
+    "tv": 15,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 9,
+    "hull": 3,
+    "structure": 3,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HRP",
+      "MFC",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "LIRC",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2",
+      "Airdrop"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "Neil Motorworks",
+    "description": "Since NuCoal forces generally utilize tactics that require fast machines, the more traditional fire support gears find themselves struggling to keep pace.  The answer is the hover capable Arbalestier from Neil Motorworks, sporting speeds normally only attained by smaller gears such as Jaguars and Black Mambas.",
+    "variants": [
+      {
+        "id": "nucoal-arbalestier-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nucoal-hussar",
+    "name": "Hussar",
+    "tv": 20,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 3,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "reactWeapons": [
+      "HRC (Apex)/HVB",
+      "MIRC (Auto)"
+    ],
+    "traits": [
+      "Hands",
+      "Brawl:1",
+      "Offroad"
+    ],
+    "height": 3,
+    "classification": "Strider",
+    "subtype": "Gear-Strider",
+    "manufacturer": "Neil Motorworks",
+    "description": "Designed by Humanist Engineers, the Hussar is a variation of the gear-strider concept. Initially fraught with difficulties at the time of its conception, Humanist, PAK and NuCoal engineers worked together to allow the design to see the light of day. Although popular, the Hussar is considered to be one of the most complex combat machines ever built.",
+    "variants": [
+      {
+        "id": "nucoal-hussar-hammer",
+        "name": "Hammer",
+        "tv": 3,
+        "mountedWeapons": [
+          "MFG (T)"
+        ]
+      },
+      {
+        "id": "nucoal-hussar-anvil",
+        "name": "Anvil",
+        "tv": 4,
+        "mountedWeapons": [
+          "2 x LFG (T)"
+        ]
+      },
+      {
+        "id": "nucoal-hussar-spear",
+        "name": "Spear",
+        "tv": 4,
+        "mountedWeapons": [
+          "2 x HRP (T)"
+        ]
+      },
+      {
+        "id": "nucoal-hussar-lance",
+        "name": "Lance",
+        "tv": 4,
+        "mountedWeapons": [
+          "2 x HRC (T, AA, Link)"
+        ]
+      },
+      {
+        "id": "nucoal-hussar-skyhammer",
+        "name": "Skyhammer",
+        "tv": 6,
+        "mountedWeapons": [
+          "2 x MAM (T)"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nucoal-fusilier",
+    "name": "Fusilier",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LPL (T, AA)"
+    ],
+    "mountedWeapons": [
+      "HAC (T)",
+      "LAPGL"
+    ],
+    "traits": [
+      "Airdrop",
+      "React+",
+      "Jump:3"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Light Hovertank",
+    "manufacturer": "Neil Motorworks",
+    "description": "The Fusilier has proved itself well against its CEF counterparts. The simplicity of the design gives this light hovertank staying power on the field. During one campaign, 43 Fusiliers were heavily damaged in fierce fighting. By the time the major battles were over, 41 of the Fusiliers were already back in operation.",
+    "variants": [
+      {
+        "id": "nucoal-fusilier-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "nucoal-voltigeur",
+    "name": "Voltigeur",
+    "tv": 23,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 11,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "LIMG (T)"
+    ],
+    "mountedWeapons": [
+      "2 x MAM",
+      "HAPGL"
+    ],
+    "traits": [
+      "Lumbering",
+      "Offroad",
+      "Smoke"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Heavy Tank",
+    "manufacturer": "Neil Motorworks",
+    "description": "The Voltigeur is uniquely NuCoalian. Its secondary artillery missiles are not a common sight on Terra Novan main battle tanks. However, similar to Visigoths, the design features two main weapon options between the Anvil and Hammer variants. While not nearly as fast as NuCoal’s hovertanks, this beast excels at holding the line.",
+    "variants": [
+      {
+        "id": "nucoal-voltigeur-anvil",
+        "name": "Anvil",
+        "tv": 3,
+        "mountedWeapons": [
+          "2 x LFG (T, Stable, Precise)"
+        ]
+      },
+      {
+        "id": "nucoal-voltigeur-hammer",
+        "name": "Hammer",
+        "tv": 6,
+        "mountedWeapons": [
+          "HTG (T, Stable, Precise)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-voltigeur-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nucoal-sampson",
+    "name": "Sampson",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "traits": [
+      "Jump:2"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Light Hovervehicle",
+    "manufacturer": "Neil Motorworks",
+    "description": "Inspired by CEF designs, the Sampson does everything the HPC-64 can do and then some. Although primarily an APC, its heavier armor allows it to be pressed into service as a light cavalry vehicle. Troops have also found the large slab-sided armor is a perfect canvas for all kinds of nose art and nicknames.",
+    "variants": [
+      {
+        "id": "nucoal-sampson-anvil",
+        "name": "Anvil",
+        "tv": 1,
+        "reactWeapons": [
+          "2 x LAC (T, Link)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "nucoal-sampson-spear",
+        "name": "Spear",
+        "tv": 2,
+        "mountedWeapons": [
+          "2 x LAR (T)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "nucoal-sampson-javelin",
+        "name": "Javelin",
+        "tv": 2,
+        "mountedWeapons": [
+          "LATM (T)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "nucoal-sampson-medical",
+        "name": "Medical",
+        "tv": 1,
+        "traits": [
+          "Transport:1 Cadres",
+          "Medic:4"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "nucoal-sampson-ewPackage",
+        "name": "EW Package",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  }
+]

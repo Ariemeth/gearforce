@@ -22,7 +22,6 @@
     "gu": 4,
     "pi": 4,
     "ew": 6,
-    "mountedWeapons": [],
     "traits": [
       "Hands"
     ],
@@ -69,6 +68,9 @@
         "reactWeapons": [
           "LAC",
           "LVB"
+        ],
+        "traits": [
+          "Sensor:24"
         ]
       },
       {
@@ -83,13 +85,6 @@
     ],
     "upgrades": [
       {
-        "id": "north-hunter-flakjacket",
-        "name": "Flak Jacket",
-        "tv": 1,
-        "hull": 6,
-        "structure": 2
-      },
-      {
         "id": "north-hunter-spearhead",
         "name": "Spearhead",
         "tv": 1,
@@ -101,5 +96,2799 @@
         ]
       }
     ]
+  },
+  {
+    "id": "north-sdHunter",
+    "name": "SD Hunter",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Northco",
+    "description": "The Stripped-Down (SD) Hunter was developed before the era of advanced reconnaissance gears and was originally intended for recon duties. Its increased speed and lower maintenance costs made it popular in places such as the WFP even after the advent of more advanced recon gears.",
+    "variants": [
+      {
+        "id": "north-sdHunter-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-paraHunter",
+    "name": "Para Hunter",
+    "tv": 6,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LSG"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Paratrooper Gear",
+    "manufacturer": "Northco",
+    "description": "Originally, Norguard high command requested a Hunter variant be developed exclusively for paratrooper duties. The base chassis was readily available and easy to modify. As it is still basically a Hunter, the paratrooper variant is still cheap enough to field in quantities sufficient to be a significant threat.",
+    "variants": [
+      {
+        "id": "north-paraHunter-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-armoredHunter",
+    "name": "Armored Hunter",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 7,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "HIM"
+    ],
+    "traits": [
+      "Hands",
+      "Lumbering"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Northco",
+    "description": "The Armored Hunter, also known as – the armored can – is one of the rarest Hunter variants of all. The special program was an attempt to create a new type of Hunter able to survive anything short of the firepower of a tank. Although the resulting armored shell was fairly resistant to gear-class weaponry, its lack of mobility would also get it into trouble.",
+    "variants": [
+      {
+        "id": "north-armoredHunter-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-bearhunter",
+    "name": "Bearhunter",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "HIM"
+    ],
+    "traits": [
+      "Hands",
+      "Vuln:H"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Northco",
+    "description": "The Bearhunter has an uncommon origin. During a field exercise, a Bear technician happened to end up working on an Armored Hunter’s engine. While a bit smaller, the Armored Hunter’s engine had a very similar layout to the Bear’s Engine. Some tooling took place to get the Armored Hunter’s engine replaced with the Bear’s engine. The consequent improvement in performance was startling, and the Bearhunter was born.",
+    "variants": [
+      {
+        "id": "north-bearhunter-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-hunterXMG",
+    "name": "Hunter XMG",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "LAC"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Advanced Trooper Gear",
+    "manufacturer": "Northco",
+    "description": "Success is a good place to start when building the future’s next gear. And there's no better place to start than the original Hunter. The XMG represents a leap in capabilities with improvements in fire control and maneuverability. The high fuel consumption rates of the XMG don’t worry the commanders, but the supply officers don’t like it.",
+    "variants": [
+      {
+        "id": "north-hunterXMG-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-hunterXMG-spearhead",
+        "name": "Spearhead",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM",
+          "Init+",
+          "Vuln:H"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-commandoHunter",
+    "name": "Commando Hunter",
+    "tv": 7,
+    "roles": [
+      "SK",
+      "RC",
+      "SO"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 6,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Commando Gear",
+    "manufacturer": "Northco",
+    "description": "The Commando Hunters are some of the most recognizable of the Hunter variants. It was designed as the first northern gear to be fully airdroppable and are made to undertake raids and other missions deep within enemy territory. The Wild Commando was also the first airborne electronic warfare gear.",
+    "variants": [
+      {
+        "id": "north-commandoHunter-stock",
+        "name": "Stock",
+        "tv": 1,
+        "mountedWeapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "north-commandoHunter-wild",
+        "name": "Wild",
+        "tv": 1,
+        "traits": [
+          "Sensor:24",
+          "Vuln:H",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-commandoHunter-mountain",
+        "name": "Mountain",
+        "tv": 1,
+        "reactWeapons": [
+          "MMW"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      },
+      {
+        "id": "north-commandoHunter-spearhead",
+        "name": "Spearhead",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM",
+          "Init+",
+          "Vuln:H"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-wolf",
+    "name": "Wolf",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "2 x LMW (Link)"
+    ],
+    "traits": [
+      "Hands",
+      "Agile"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Western Armories",
+    "description": "The lesser-known Wolf began as a contemporary trooper gear in competition with the Hunter. Mismanagement saw its production collapse. However, Western Armories purchased the rights from M-Corp to meet local demands for climbing gears, and gears which just cost less than Hunters.",
+    "variants": [
+      {
+        "id": "north-wolf-prairie",
+        "name": "Prairie",
+        "tv": 0,
+        "mountedWeapons": [
+          "LRP",
+          "LAPGL"
+        ]
+      },
+      {
+        "id": "north-wolf-mountain",
+        "name": "Mountain",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x MGG",
+          "LAPGL"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-jaguar",
+    "name": "Jaguar",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Northco",
+    "description": "One of the most advanced gears in the Northern armed forces, the Jaguar was developed by Northco in the early 1900s as a possible successor of the Hunter. Only the high cost of the machine prevented this from happening. The Jaguar features an exceptional balance of speed, firepower, and agility.",
+    "variants": [
+      {
+        "id": "north-jaguar-stock",
+        "name": "Stock",
+        "tv": 0,
+        "mountedWeapons": [
+          "LRP"
+        ]
+      },
+      {
+        "id": "north-jaguar-pathfinder",
+        "name": "Pathfinder",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Sensor:24"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-jaguar-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-nemesisJaguar",
+    "name": "Nemesis Jaguar",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "LSG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Dueling Gear",
+    "manufacturer": "Northco",
+    "description": "The Nemesis Jaguar is more of an unapproved field variant some commanders choose to allow. They argue dueling capabilities are a tool which can both enhance the performance of the surrounding troops and intimidate the enemy at the same time. Nemesis Jaguars are typically piloted by the platoon's premier duelist.",
+    "variants": [
+      {
+        "id": "north-nemesisJaguar-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-nemesisJaguar-southernSpecial",
+        "name": "Southern Special",
+        "tv": 1,
+        "reactWeapons": [
+          "MVB"
+        ],
+        "traits": [
+          "Brawl:1"
+        ]
+      },
+      {
+        "id": "north-nemesisJaguar-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-jaguarundi",
+    "name": "Jaguarundi",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "RC",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "LSMG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Northco",
+    "description": "The Jaguarundi is a Jaguar with reduced armor for increasing speed. The Jaguarundi can’t take hits like a Jaguar, but it moves more similar to a Cheetah. The pilots who love their Jaguarundis, love them and wouldn’t trade them for anything. Jaguarundis are common around dueling scenes.",
+    "variants": [
+      {
+        "id": "north-jaguarundi-stock",
+        "name": "Stock",
+        "tv": 1,
+        "mountedWeapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "north-jaguarundi-pathfinder",
+        "name": "Pathfinder",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Sensor:24"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-jaguarundi-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-leopard",
+    "name": "Leopard",
+    "tv": 9,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC/LFC"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "MGG"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Climb",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Mountaineering Gear",
+    "manufacturer": "Shaian Mechanics",
+    "description": "Originally conceived as a rally/arena gear, the Leopard has found its home within the ranks of the CNCS. The Leopard’s light weight and air-droppable design along with the later addition of climbing equipment has created a great mountaineering gear able to traverse any terrain with ease. Deployable by land or air, the Leopard can respond to any threat.",
+    "variants": [
+      {
+        "id": "north-leopard-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-tiger",
+    "name": "Tiger",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Northco",
+    "description": "An advanced design with more armor and better fire control than the Hunter, the Tiger was developed by Northco. Used by the armies of the Northern hemisphere as a shock trooper and line breaker, the design neither uses nor requires many of the technological advances that have occurred since its entry into military service.",
+    "variants": [
+      {
+        "id": "north-tiger-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-bobcat",
+    "name": "Bobcat",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 0,
+    "reactWeapons": [
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Offroad",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Northco",
+    "description": "An early recon gear, the Bobcat’s unique SMS design requires the gear to kneel down to engage its wheels. This configuration improves handling but also prevents its legs from being properly armored. Bobcats are often paired with Wildcats in the WFP and despite their perceived obsolescence they perform admirably.",
+    "variants": [
+      {
+        "id": "north-bobcat-stock",
+        "name": "Stock",
+        "tv": 2,
+        "ew": 4,
+        "reactWeapons": [
+          "LSMG"
+        ],
+        "mountedWeapons": [
+          "LRP"
+        ],
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "north-bobcat-birdArrow",
+        "name": "Bird Arrow",
+        "tv": 1,
+        "ew": 6,
+        "reactWeapons": [
+          "LSMG",
+          "LRC (AA)"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-lynx",
+    "name": "Lynx",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LSMG",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Offroad"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Patrol Gear",
+    "manufacturer": "Western Armories",
+    "description": "Although officially designated as a gear, many would consider the Lynx to be more akin to a transformable power armor system. They are commonly used as rapid response gears attached directly to Infantry companies. Infantry commanders appreciate having Lynxes organic to them as they can respond faster than most gears.",
+    "variants": [
+      {
+        "id": "north-lynx-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-lynx-armoredLynx",
+        "name": "Armored Lynx",
+        "tv": 1,
+        "armor": 5
+      }
+    ]
+  },
+  {
+    "id": "north-ferret",
+    "name": "Ferret",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 5,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LSMG",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Sensor:24"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Keimuri Gears",
+    "description": "The Ferret serves the Northern armies as an effective electronic warfare gear. Its low cost matched with a good track record has allowed this aging design to endure. Ferret pilots tend to avoid high-intensity combat and concentrate on recon duties, operating the gear in its SMS mode, racing across the landscape as it scans for trouble.",
+    "variants": [
+      {
+        "id": "north-ferret-stock",
+        "name": "Stock",
+        "tv": 1,
+        "mountedWeapons": [
+          "LRP"
+        ],
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "north-ferret-wild",
+        "name": "Wild",
+        "tv": 2,
+        "traits": [
+          "ECM+",
+          "ECCM+",
+          "Sensor:36",
+          "Vuln:H"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-weasel",
+    "name": "Weasel",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 5,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "SatUp",
+      "ECM",
+      "ECCM",
+      "Sensor:36"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Keimuri Gears",
+    "description": "This electronic warfare specialist gear is an upgrade of the venerable Ferret design. It retains the basic torso of the Ferret, but employs a more standard leg and drive assembly. The Weasel’s electronic systems are one of the most powerful of any Northern gear design. Pilots are encouraged to avoid combat and support from the rear.",
+    "variants": [
+      {
+        "id": "north-weasel-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-weasel-wild",
+        "name": "Wild",
+        "tv": 2,
+        "ew": 3,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-cheetah",
+    "name": "Cheetah",
+    "tv": 8,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LSMG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Shaian Mechanics",
+    "description": "Packed with the best electronics available, the Cheetah is the gear of choice for reconnaissance and electronic warfare within the CNCS. Popular with pilots, the Cheetah’s Surveillance and Target Acquisition (STA) package makes them popular around FS Gears too.",
+    "variants": [
+      {
+        "id": "north-cheetah-whiteCat",
+        "name": "White Cat",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "north-cheetah-seccom",
+        "name": "SecCom",
+        "tv": 3,
+        "traits": [
+          "SatUp",
+          "ECM+",
+          "ECCM+"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-cheetah-sta",
+        "name": "STA",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-metalCat",
+    "name": "Metal Cat",
+    "tv": 8,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Shaian Mechanics",
+    "description": "the Metal Cat is essentially an armored-up Cheetah with the high-end electronics stripped out. Metal Cats have seen wide use within the NLC, who seeks to reduce their reliance on Northco. Some gear jocks favor Metal Cats over Hunters due to their smaller size, agility and increased speed.",
+    "variants": [
+      {
+        "id": "north-metalCat-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-metalCat-reconCat",
+        "name": "Recon Cat",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-paraCheetah",
+    "name": "Para Cheetah",
+    "tv": 8,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LSMG",
+      "LSG"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Shaian Mechanics",
+    "description": "Given the vast distances to cover and the importance of a quick reaction force, it was inevitable that a Cheetah Paratrooper would come to be. Just as with the base Cheetah, this cat can strike hard and disappear before the enemy knows what hit them. Cheetah pilots are usually very happy with their assignment to this gear.",
+    "variants": [
+      {
+        "id": "north-paraCheetah-whiteCat",
+        "name": "White Cat",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "north-paraCheetah-seccom",
+        "name": "SecCom",
+        "tv": 3,
+        "traits": [
+          "SatUp",
+          "ECM+",
+          "ECCM+"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-paraCheetah-sta",
+        "name": "STA",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-blackCat",
+    "name": "Black Cat",
+    "tv": 9,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LSMG (Silent)",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP (Guided)"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Sensor:24",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "Shaian Mechanics",
+    "description": "The Black Cat is built from the ground up for stealth, making it an excellent commando and covert operations machine. The existence of the Black Cat is such a well-guarded secret that most intelligence officers from rival powers consider its existence to be a myth. Black Cats are usually deployed in a supporting role to Panthers.",
+    "variants": [
+      {
+        "id": "north-blackCat-greyCat",
+        "name": "Grey Cat",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "north-blackCat-seccom",
+        "name": "SecCom",
+        "tv": 3,
+        "traits": [
+          "SatUp",
+          "ECM+",
+          "ECCM+"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-blackCat-sta",
+        "name": "STA",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-panther",
+    "name": "Panther",
+    "tv": 12,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "MAC (Silent, Reflex)",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP (Guided)"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "Northco",
+    "description": "The Panther stealth gear is only available in small numbers. Its advanced systems include a Racetech rubberized absorbent coating, an electric battery/turbine for silent-running power, and a silenced 40mm Heavy Rifle. The Panther brings death to enemies of the CNCS, striking in utter silence.",
+    "variants": [
+      {
+        "id": "north-panther-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-panther-sta",
+        "name": "STA",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-hunterMP",
+    "name": "Hunter MP",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MFC",
+      "LMW"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop",
+      "Shield"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Police Gear",
+    "manufacturer": "Northco",
+    "description": "Northern heavy gear military police regiments make sure discipline is maintained throughout the Northern Guard. The gear-sized shotgun has a distinct sound when racking a round. It's usually more than enough to calm most situations down.",
+    "variants": [
+      {
+        "id": "north-hunterMP-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-hunterMP-seccom",
+        "name": "SecCom",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-cheetahMP",
+    "name": "Cheetah MP",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "MFC",
+      "LMW"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Shield"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Police Gear",
+    "manufacturer": "Shaian Mechanics",
+    "description": "The Northern MPs have their own agenda and are granted significant freedom in carrying out their duties. Their license to kill, for one thing, makes them respected throughout all the Northern forces. Cheetah MPs paired with Jaguar MPs usually means something is about to go down.",
+    "variants": [
+      {
+        "id": "north-cheetahMP-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-jaguarMP",
+    "name": "Jaguar MP",
+    "tv": 10,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MFC",
+      "LMW"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Shield"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Police Gear",
+    "manufacturer": "Northco",
+    "description": "The Jaguar MP entered wide distribution after the War of the Alliance. Only some UMFA units had them in the pre-war cycles. They are now frequently used in Counter Insurgency (COIN) operations. Insurgencies are less prevalent in the North than in the South, but that’s only saying so much.",
+    "variants": [
+      {
+        "id": "north-jaguarMP-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-jaguarMP-seccom",
+        "name": "SecCom",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-lion",
+    "name": "Lion",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC"
+    ],
+    "mountedWeapons": [
+      "LAR",
+      "LAPGL",
+      "2 x MGG"
+    ],
+    "traits": [
+      "Hands",
+      "Climb",
+      "Brawl:1",
+      "React+",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Northco",
+    "description": "A fire support gear designed by Northco, the Lion uses lessons learned from Jaguars and Kodiaks. It is fast for a machine of its size and has remarkable agility for a large gear due to the latest gyro designs. While access to the Lion has been somewhat limited, Northco hopes to meet the growing demand soon.",
+    "variants": [
+      {
+        "id": "north-lion-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-lion-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-grizzly",
+    "name": "Grizzly",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "LSMG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "HIRC"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Northco",
+    "description": "The Grizzly has been the most common Northern fire support gear since the War of the Alliance. A big, brutal, and obnoxious creature like its namesake, the Grizzly is capable of both long range fire support and heavy assault. It can also be a devastating anti-anything weapon if screened well by lighter units.",
+    "variants": [
+      {
+        "id": "north-grizzly-stock",
+        "name": "Stock",
+        "tv": 1,
+        "mountedWeapons": [
+          "MRP",
+          "MM"
+        ]
+      },
+      {
+        "id": "north-grizzly-defender",
+        "name": "Defender",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x MRP",
+          "MAAM (LA:2)"
+        ]
+      },
+      {
+        "id": "north-grizzly-mauler",
+        "name": "Mauler",
+        "tv": 2,
+        "mountedWeapons": [
+          "2 x MRP",
+          "MM"
+        ]
+      },
+      {
+        "id": "north-grizzly-crossbow",
+        "name": "Crossbow",
+        "tv": 2,
+        "mountedWeapons": [
+          "2 x MATM (LA:4)"
+        ]
+      },
+      {
+        "id": "north-grizzly-mountain",
+        "name": "Mountain",
+        "tv": 2,
+        "reactWeapons": [
+          "MMW"
+        ],
+        "mountedWeapons": [
+          "MM"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-grizzly-armoredGrizzly",
+        "name": "Armored Grizzly",
+        "tv": 3,
+        "armor": 9,
+        "traits": [
+          "Resist:C",
+          "Resist:F"
+        ]
+      },
+      {
+        "id": "north-grizzly-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-koala",
+    "name": "Koala",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC/LGL",
+      "MSG"
+    ],
+    "mountedWeapons": [
+      "2 x MRP",
+      "HIRC"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Airdrop"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Northco",
+    "description": "The Koala started as a design to upgrade the aging Bear fire support gear. The Koala, or – Drop Bear – as pilots like to call it, provides paratrooper squads with access to heavier firepower allowing them to undertake a wider range of missions.",
+    "variants": [
+      {
+        "id": "north-koala-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-dingo",
+    "name": "Dingo",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC/LGL",
+      "MSG"
+    ],
+    "mountedWeapons": [
+      "2 x MRP",
+      "2 x HIRC (Link)"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Airdrop"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Western Armories",
+    "description": "The Dingo saw extensive use during the Polar War and postwar anti-rover operations. These were some of the first airdroppable fire support gears on the northern market. Squads of Dingoes have been used to drop into enemy sectors and begin suppressing entire platoons. They are quite good at this.",
+    "variants": [
+      {
+        "id": "north-dingo-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-panda",
+    "name": "Panda",
+    "tv": 12,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "2 x LFC (Link)"
+    ],
+    "traits": [
+      "Hands",
+      "Offroad",
+      "React+",
+      "Sensor:24",
+      "Vuln:H"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Northco",
+    "description": "Northern Guard High Command commissioned Northco for an fire support gear based on the Grizzly they had already done. They asked for a faster-stronger-better Grizzly, all of which made the engineers frown. However, what they did do is considered by many to be superior to the Grizzly.",
+    "variants": [
+      {
+        "id": "north-panda-feral",
+        "name": "Feral",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x LM"
+        ]
+      },
+      {
+        "id": "north-panda-rabid",
+        "name": "Rabid",
+        "tv": 1,
+        "mountedWeapons": [
+          "MM",
+          "LAR"
+        ]
+      },
+      {
+        "id": "north-panda-thunder",
+        "name": "Thunder",
+        "tv": 1,
+        "mountedWeapons": [
+          "LFG"
+        ]
+      },
+      {
+        "id": "north-panda-mauler",
+        "name": "Mauler",
+        "tv": 1,
+        "mountedWeapons": [
+          "MAR"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-kodiak",
+    "name": "Kodiak",
+    "tv": 15,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 2,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "2 x HIRC (Link)",
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "Northco",
+    "description": "The Kodiak was developed during the War of the Alliance as a counter to CEF Light Hovertanks. It sports tougher armor than the Grizzly and its light anti-tank missile is an upgraded version of the Badger's tried and true anti-tank missile system. It is a badge of honor for any CNCS gear pilot to be assigned to a Kodiak.",
+    "variants": [
+      {
+        "id": "north-kodiak-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-kodiak-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-scimitar",
+    "name": "Scimitar",
+    "tv": 26,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "HSC (Apex, Precise+)",
+      "HVB (Apex, Reach:1)",
+      "LRC (T, AA)",
+      "2 x MMW"
+    ],
+    "mountedWeapons": [
+      "2 x LATM (T)",
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Brawl:1",
+      "Climb"
+    ],
+    "height": 3,
+    "classification": "Strider",
+    "subtype": "Gear-Strider",
+    "manufacturer": "Northco",
+    "description": "Sponsored by the Revisionist Church, the Scimitar is the first gear-strider of the CNCS. Designed with the mountainous terrain of the North in mind it is outfitted with climbing equipment that also functions in close combat. Powerful weaponry and heavy armor makes it a fearsome gear-strider indeed.",
+    "variants": [
+      {
+        "id": "north-scimitar-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-scimitar-seccom",
+        "name": "SecCom",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-mammoth",
+    "name": "Mammoth",
+    "tv": 16,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 4
+    },
+    "armor": 11,
+    "hull": 6,
+    "structure": 2,
+    "actions": 2,
+    "gu": 4,
+    "pi": 6,
+    "ew": 5,
+    "reactWeapons": [
+      "LRC (Auto)",
+      "2 x MIRC (Auto)"
+    ],
+    "traits": [
+      "TD",
+      "Lumbering"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Assault Strider",
+    "manufacturer": "Hartmore Motor Company",
+    "description": "The oldest strider used by the CNCS forces, the Mammoth has been in service for almost 100 cycles. Northerners everywhere beam with pride when they spot a Mammoth because of its rich history. All variants are armed with a battery of heavy weapons. And if needed, they can replace the automated machine guns with anti-personnel grenade launchers.",
+    "variants": [
+      {
+        "id": "north-mammoth-rabid",
+        "name": "Rabid",
+        "tv": 3,
+        "reactWeapons": [
+          "HRC (Apex)",
+          "HFC"
+        ]
+      },
+      {
+        "id": "north-mammoth-feral",
+        "name": "Feral",
+        "tv": 3,
+        "reactWeapons": [
+          "HSC (Precise+)"
+        ]
+      },
+      {
+        "id": "north-mammoth-savage",
+        "name": "Savage",
+        "tv": 3,
+        "reactWeapons": [
+          "HGL (Burst:1)"
+        ]
+      },
+      {
+        "id": "north-mammoth-crossbow",
+        "name": "Crossbow",
+        "tv": 3,
+        "reactWeapons": [
+          "MATM"
+        ]
+      },
+      {
+        "id": "north-mammoth-bombard",
+        "name": "Bombard",
+        "tv": 2,
+        "reactWeapons": [
+          "LFG"
+        ]
+      },
+      {
+        "id": "north-mammoth-a2Arm",
+        "name": "A2 Arm",
+        "tv": 1,
+        "reactWeapons": [
+          "MVB"
+        ],
+        "traits": [
+          "Hands"
+        ]
+      },
+      {
+        "id": "north-mammoth-mammothHand",
+        "name": "Mammoth Hand",
+        "tv": 1,
+        "reactWeapons": [
+          "HMW"
+        ],
+        "traits": [
+          "Hands",
+          "Brawl:1"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-mammoth-trackedFeet",
+        "name": "Tracked Feet",
+        "tv": 1,
+        "movement": {
+          "types": [
+            "W",
+            "G"
+          ],
+          "value": 5
+        },
+        "traits": [
+          "Offroad"
+        ]
+      },
+      {
+        "id": "north-mammoth-duelistLegs",
+        "name": "Duelist Legs",
+        "tv": 1
+      },
+      {
+        "id": "north-mammoth-amsModules",
+        "name": "AMS Modules",
+        "tv": 1,
+        "reactWeapons": [
+          "LIRC (Auto)"
+        ],
+        "traits": [
+          "AMS"
+        ]
+      },
+      {
+        "id": "north-mammoth-artilleryRockets",
+        "name": "Artillery Rockets",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x MAR"
+        ]
+      },
+      {
+        "id": "north-mammoth-commandSuite",
+        "name": "Command Suite",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "SatUp",
+          "ECCM",
+          "Init+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-damocles",
+    "name": "Damocles",
+    "tv": 20,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 4
+    },
+    "armor": 11,
+    "hull": 6,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 6,
+    "ew": 5,
+    "reactWeapons": [
+      "2 x LPL",
+      "2 x MIRC (Link)"
+    ],
+    "mountedWeapons": [
+      "HAG"
+    ],
+    "traits": [
+      "AMS",
+      "Lumbering",
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Artillery Strider",
+    "manufacturer": "Hartmore Motor Company",
+    "description": "The Damocles Artillery Strider is built from the highly successful Mammoth Assault Strider. Initially it featured the massive KLG-675 Artillery Gun with no arms as its mission did not call for it. As time progressed the A2 variant with arms naturally became more common.",
+    "variants": [
+      {
+        "id": "north-damocles-rabid",
+        "name": "Rabid",
+        "tv": 5,
+        "actions": 1,
+        "reactWeapons": [
+          "HRC (Apex)",
+          "HFC"
+        ]
+      },
+      {
+        "id": "north-damocles-feral",
+        "name": "Feral",
+        "tv": 5,
+        "actions": 1,
+        "reactWeapons": [
+          "HSC (Precise+)"
+        ]
+      },
+      {
+        "id": "north-damocles-savage",
+        "name": "Savage",
+        "tv": 5,
+        "actions": 1,
+        "reactWeapons": [
+          "HGL (Burst:1)"
+        ]
+      },
+      {
+        "id": "north-damocles-crossbow",
+        "name": "Crossbow",
+        "tv": 4,
+        "actions": 1,
+        "reactWeapons": [
+          "MATM"
+        ]
+      },
+      {
+        "id": "north-damocles-bombard",
+        "name": "Bombard",
+        "tv": 3,
+        "actions": 1,
+        "reactWeapons": [
+          "LFG"
+        ]
+      },
+      {
+        "id": "north-damocles-a2Arm",
+        "name": "A2 Arm",
+        "tv": 2,
+        "actions": 1,
+        "reactWeapons": [
+          "MVB"
+        ],
+        "traits": [
+          "Hands"
+        ]
+      },
+      {
+        "id": "north-damocles-mammothHand",
+        "name": "Mammoth Hand",
+        "tv": 2,
+        "actions": 1,
+        "reactWeapons": [
+          "HMW"
+        ],
+        "traits": [
+          "Hands",
+          "Brawl:1"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-damocles-trackedFeet",
+        "name": "Tracked Feet",
+        "tv": 1,
+        "movement": {
+          "types": [
+            "W",
+            "G"
+          ],
+          "value": 5
+        },
+        "traits": [
+          "Offroad"
+        ]
+      },
+      {
+        "id": "north-damocles-duelistLegs",
+        "name": "Duelist Legs",
+        "tv": 1
+      }
+    ]
+  },
+  {
+    "id": "north-mastodon",
+    "name": "Mastodon",
+    "tv": 23,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 3
+    },
+    "armor": 12,
+    "hull": 6,
+    "structure": 2,
+    "actions": 3,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "HFC (Auto)"
+    ],
+    "mountedWeapons": [
+      "HGL"
+    ],
+    "traits": [
+      "Lumbering"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Heavy Assault Strider",
+    "manufacturer": "Hartmore Motor Company",
+    "description": "The Mastodon started as a request from Norlight high command. While the request was a convoluted mess of every privileged commander’s wish list, to include very specific cup holders for some reason… The end result is a more armored, albeit slower, Mammoth.",
+    "variants": [
+      {
+        "id": "north-mastodon-mastodon",
+        "name": "Mastodon",
+        "tv": 3,
+        "reactWeapons": [
+          "HRC (Apex, Stable)"
+        ]
+      },
+      {
+        "id": "north-mastodon-rabid",
+        "name": "Rabid",
+        "tv": 3,
+        "reactWeapons": [
+          "HRC (Apex)",
+          "HFC"
+        ]
+      },
+      {
+        "id": "north-mastodon-feral",
+        "name": "Feral",
+        "tv": 3,
+        "reactWeapons": [
+          "HSC (Precise+)"
+        ]
+      },
+      {
+        "id": "north-mastodon-savage",
+        "name": "Savage",
+        "tv": 3,
+        "reactWeapons": [
+          "HGL (Burst:1)"
+        ]
+      },
+      {
+        "id": "north-mastodon-crossbow",
+        "name": "Crossbow",
+        "tv": 3,
+        "reactWeapons": [
+          "MATM"
+        ]
+      },
+      {
+        "id": "north-mastodon-bombard",
+        "name": "Bombard",
+        "tv": 2,
+        "reactWeapons": [
+          "LFG"
+        ]
+      },
+      {
+        "id": "north-mastodon-a2Arm",
+        "name": "A2 Arm",
+        "tv": 1,
+        "reactWeapons": [
+          "MVB"
+        ],
+        "traits": [
+          "Hands"
+        ]
+      },
+      {
+        "id": "north-mastodon-mammothHand",
+        "name": "Mammoth Hand",
+        "tv": 1,
+        "reactWeapons": [
+          "HMW"
+        ],
+        "traits": [
+          "Hands",
+          "Brawl:1"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-mastodon-trackedFeet",
+        "name": "Tracked Feet",
+        "tv": 1,
+        "movement": {
+          "types": [
+            "W",
+            "G"
+          ],
+          "value": 4
+        },
+        "traits": [
+          "Offroad"
+        ]
+      },
+      {
+        "id": "north-mastodon-duelistLegs",
+        "name": "Duelist Legs",
+        "tv": 1
+      },
+      {
+        "id": "north-mastodon-commandSuite",
+        "name": "Command Suite",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "SatUp",
+          "ECCM",
+          "Init+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-thunderhammer",
+    "name": "Thunderhammer",
+    "tv": 21,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 12,
+    "hull": 4,
+    "structure": 4,
+    "actions": 3,
+    "gu": 4,
+    "pi": 6,
+    "ew": 5,
+    "reactWeapons": [
+      "MRC"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "HAPGL"
+    ],
+    "traits": [
+      "Lumbering"
+    ],
+    "height": 3,
+    "classification": "Strider",
+    "subtype": "Heavy Strider",
+    "manufacturer": "Northco",
+    "description": "The Thunderhammer is a four-legged field heavy strider used by Northern forces for heavy fire support. Its legs and large feet allow it to traverse regions normally impassable by other vehicles. Many of the subsystems are automated so it functions very efficiently even with only one pilot and one gunner.",
+    "variants": [
+      {
+        "id": "north-thunderhammer-flak",
+        "name": "Flak",
+        "tv": 5,
+        "reactWeapons": [
+          "2 x HRC (T, AA, Link)"
+        ],
+        "traits": [
+          "AMS"
+        ]
+      },
+      {
+        "id": "north-thunderhammer-squall",
+        "name": "Squall",
+        "tv": 5,
+        "mountedWeapons": [
+          "HFG (T, Stable)"
+        ]
+      },
+      {
+        "id": "north-thunderhammer-lightning",
+        "name": "Lightning",
+        "tv": 5,
+        "mountedWeapons": [
+          "HRG (T, Stable)"
+        ]
+      },
+      {
+        "id": "north-thunderhammer-thunder",
+        "name": "Thunder",
+        "tv": 7,
+        "mountedWeapons": [
+          "2 x HM (T)"
+        ]
+      },
+      {
+        "id": "north-thunderhammer-crossbow",
+        "name": "Crossbow",
+        "tv": 9,
+        "mountedWeapons": [
+          "2 x HATM (T)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "north-thunderhammer-bastion",
+        "name": "Bastion",
+        "tv": 1,
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "north-badger",
+    "name": "Badger",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "traits": [],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Shaian Mechanics",
+    "description": "The Badger Armored Personnel Carrier is ubiquitous in the armies of the CNCS. Good speed, armor, and reliable armament have made it a staple of all Northern infantry regiments. Its sturdy eight-wheeled design can transport up to twenty fully equipped troopers to battle through almost any terrain.",
+    "variants": [
+      {
+        "id": "north-badger-gunner",
+        "name": "Gunner",
+        "tv": 1,
+        "reactWeapons": [
+          "2 x LAC (T, Link)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "north-badger-cavalry",
+        "name": "Cavalry",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x MRP (T)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "north-badger-rabid",
+        "name": "Rabid",
+        "tv": 2,
+        "mountedWeapons": [
+          "LATM (T)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "north-badger-medical",
+        "name": "Medical",
+        "tv": 1,
+        "traits": [
+          "Transport:1 Cadres",
+          "Medic:4"
+        ]
+      },
+      {
+        "id": "north-badger-seccom",
+        "name": "SecCom",
+        "tv": 3,
+        "ew": 4,
+        "reactWeapons": [
+          "2 x LAC (T, Link)"
+        ],
+        "traits": [
+          "SatUp",
+          "ECCM",
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "north-badger-covert",
+        "name": "Covert",
+        "tv": 3,
+        "ew": 5,
+        "reactWeapons": [
+          "2 x LAC (T, Link)"
+        ],
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Stealth (Aux)",
+          "Transport:2 Cadres"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-klemm",
+    "name": "Klemm",
+    "tv": 9,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 0,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "mountedWeapons": [
+      "MAPGL"
+    ],
+    "traits": [
+      "Offroad",
+      "Smoke"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Tank",
+    "manufacturer": "Norlight Industries",
+    "description": "The Klemm is a light tank that is armed with a bank of six anti-tank missiles that allows it to punch above its weight against heavier enemy armor or provide fire support for spotter units equipped with target designators. The chassis is very modular which allows a significant variety of variants.",
+    "variants": [
+      {
+        "id": "north-klemm-stock",
+        "name": "Stock",
+        "tv": 5,
+        "actions": 1,
+        "reactWeapons": [
+          "MAC (T)"
+        ],
+        "mountedWeapons": [
+          "2 x MATM (T)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "north-klemm-banditHunter",
+        "name": "Bandit Hunter",
+        "tv": 4,
+        "actions": 1,
+        "reactWeapons": [
+          "HRF (T)",
+          "HIMG (Auto)"
+        ],
+        "mountedWeapons": [
+          "MRP (T)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "north-klemm-tyburr",
+        "name": "Tyburr",
+        "tv": 4,
+        "actions": 1,
+        "reactWeapons": [
+          "HIMG (Auto)"
+        ],
+        "mountedWeapons": [
+          "MFG (T)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "north-klemm-jaxon",
+        "name": "Jaxon",
+        "tv": 5,
+        "actions": 1,
+        "mountedWeapons": [
+          "2 x HAR (T)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "north-klemm-thunder",
+        "name": "Thunder",
+        "tv": 5,
+        "actions": 1,
+        "reactWeapons": [
+          "HIMG (Auto)"
+        ],
+        "mountedWeapons": [
+          "HM (T, Demo:2)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "north-klemm-snakeEater",
+        "name": "Snake Eater",
+        "tv": 5,
+        "actions": 2,
+        "reactWeapons": [
+          "LRC (Auto)"
+        ],
+        "mountedWeapons": [
+          "LRG (T)",
+          "2 x LATM (T, LA:4)"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-victor",
+    "name": "Victor",
+    "tv": 19,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC (T)",
+      "MIMG (R, Auto)",
+      "MIMG (L, Auto)",
+      "LIMG (Auto)"
+    ],
+    "mountedWeapons": [
+      "HTG"
+    ],
+    "traits": [
+      "Lumbering",
+      "Smoke",
+      "Offroad"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Heavy Tank",
+    "manufacturer": "Western Armories",
+    "description": "The WFP looked to Western Armories to produce a cheap self propelled gun. The Victor, named after Victor Cristobal, a historic clan head from the Cristobal clan, was the answer. The cost savings on forgoing the use of a turret and several other features make this tank cheap. Its reputation against much more advanced tanks make it popular.",
+    "variants": [
+      {
+        "id": "north-victor-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-aller",
+    "name": "Aller",
+    "tv": 18,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 4
+    },
+    "armor": 12,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC (T)",
+      "LIMG (T, Auto)"
+    ],
+    "mountedWeapons": [
+      "HAPGL"
+    ],
+    "traits": [
+      "Lumbering",
+      "Offroad",
+      "Smoke"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Heavy Tank",
+    "manufacturer": "Brok Enterprises",
+    "description": "The Aller is an advanced main battle tank designed to excel at combat with other armored units. All variants of the Aller carry heavy weaponry and are used to dominate open battlefields. The Naval Support Aller adds a battery of heavy anti-tank missiles and the Hardy Aller replaces the rail gun with a more reliable tank gun.",
+    "variants": [
+      {
+        "id": "north-aller-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "north-verder",
+    "name": "Verder",
+    "tv": 17,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 4
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "LPL (T, AA)"
+    ],
+    "mountedWeapons": [
+      "HAG"
+    ],
+    "traits": [
+      "Lumbering",
+      "Offroad",
+      "Smoke",
+      "React+"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Heavy Tank",
+    "manufacturer": "Brok Enterprises",
+    "description": "The Verder is a heavy self-propelled gun based on the hull and drive train of the Aller main battle tank. The upper hull of the MBT accommodates the characteristic 200 mm artillery gun and its associated machinery. The Verder is the pride of several Northern artillery units and the terror of its foes.",
+    "variants": [
+      {
+        "id": "north-verder-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
   }
 ]

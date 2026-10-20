@@ -1,1 +1,720 @@
-[]
+[
+  {
+    "id": "utopia-commandoArmiger",
+    "name": "Commando Armiger",
+    "tv": 14,
+    "roles": [
+      "SO",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MRL",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Stealth",
+      "React+",
+      "Jump:3",
+      "Jetpack:6 (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Commando Ape",
+    "manufacturer": "Kogland",
+    "description": "Commando Armigers have been observed being used for headhunting missions and is often accompanied by Commando N-KIDUs. It appears that the pilots chosen for Commando Armigers are some of the more experienced pilots Utopia has to offer. Some of them appear to be on the level of Black Talon pilots and that’s a bit concerning.",
+    "variants": [
+      {
+        "id": "utopia-commandoArmiger-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "utopia-commandoArmiger-node",
+        "name": "Node",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "utopia-commandoArmiger-wunsc",
+        "name": "Wunsc",
+        "tv": 1,
+        "movement": {
+          "types": [
+            "W",
+            "H"
+          ],
+          "value": 8
+        },
+        "traits": [
+          "VTOL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utopia-commandoNKIDU",
+    "name": "Commando N-KIDU",
+    "tv": 5,
+    "roles": [
+      "SO",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "reactWeapons": [
+      "HIATM"
+    ],
+    "traits": [
+      "Agile",
+      "Stealth",
+      "Jump:2",
+      "Jetpack:6",
+      "Vuln:H"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Commando Automaton",
+    "manufacturer": "Steelgate Central Foundries",
+    "description": "The Commando N-KIDU is armed with a light, but effective missiles and a few other options. Fast, agile, and incredibly maneuverable these drones display predatory behavior and have been known to stalk their targets. Swarms of these are extremely dangerous. They have been the bane of gear squads across Terra Nova.",
+    "variants": [
+      {
+        "id": "utopia-commandoNKIDU-stock",
+        "name": "Stock",
+        "tv": -0.5,
+        "ew": 6,
+        "traits": [
+          "Lo-Tech"
+        ]
+      },
+      {
+        "id": "utopia-commandoNKIDU-pazu",
+        "name": "Pazu",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Hi-Tech",
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "utopia-commandoNKIDU-nlil",
+        "name": "N-LIL",
+        "tv": 2,
+        "movement": {
+          "types": [
+            "H"
+          ],
+          "value": 8
+        },
+        "hull": 4,
+        "structure": 2,
+        "traits": [
+          "VTOL"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utopia-recceArmiger",
+    "name": "Recce Armiger",
+    "tv": 12,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "LLC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Stealth",
+      "Jump:2\r\nReact+",
+      "SatUp"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Recce Ape",
+    "manufacturer": "Kogland",
+    "description": "The Recce Armiger comes with some of the most advanced electronic warfare technology available. It has a hover system it can use to travel quickly and a stealth coating to keep it hidden. Its main armament is either a laser cannon for sniping out targets or a rotary laser for a more direct approach.",
+    "variants": [
+      {
+        "id": "utopia-recceArmiger-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "utopia-recceNKIDU",
+    "name": "Recce N-KIDU",
+    "tv": 5,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "reactWeapons": [
+      "HIMG"
+    ],
+    "traits": [
+      "Stealth",
+      "Jump:1",
+      "Vuln:H"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Recce Automaton",
+    "manufacturer": "Steelgate Central Foundries",
+    "description": "The Recce variants are the more stealthy of the N-KIDUs found in the Utopian arsenal. These drones see use in recon squads and commando squads. They can be equipped with either comms gear or ECM gear allowing them to effectively contribute to any engagement.",
+    "variants": [
+      {
+        "id": "utopia-recceNKIDU-stock",
+        "name": "Stock",
+        "tv": 0,
+        "ew": 5,
+        "traits": [
+          "Lo-Tech"
+        ]
+      },
+      {
+        "id": "utopia-recceNKIDU-pazu",
+        "name": "Pazu",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "Hi-Tech",
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "utopia-supportArmiger",
+    "name": "Support Armiger",
+    "tv": 14,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HRC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MM",
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Offroad"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Fire Support Ape",
+    "manufacturer": "Kogland",
+    "description": "While sharing the base chassis of all armiger units, the Support Armiger swaps the legs and hover systems for a pair of tracks. This allows the unit to mount heavier weapons. Utopian pilots who are assigned to Support Armigers generally prefer to use it in a very direct manner. Although they also have very effective indirect options as well.",
+    "variants": [
+      {
+        "id": "utopia-supportArmiger-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "utopia-supportNKIDU",
+    "name": "Support N-KIDU",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "mountedWeapons": [
+      "MRP"
+    ],
+    "traits": [
+      "Offroad",
+      "Vuln:H"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Fire Support Automaton",
+    "manufacturer": "Steelgate Central Foundries",
+    "description": "The Support N-KIDUs can be outfitted for rocket barrages, anti-armor work, or indirect mortar fire. It uses a set of caterpillar tracks so that is can carry more and still cover rough terrain. The AIs selected to be placed in the Support N-KIDU are generally a little on the psychotic side and seem to legitimately enjoy blowing things up.",
+    "variants": [
+      {
+        "id": "utopia-supportNKIDU-stock",
+        "name": "Stock",
+        "tv": -0.5,
+        "ew": 6,
+        "traits": [
+          "Lo-Tech"
+        ]
+      },
+      {
+        "id": "utopia-supportNKIDU-pazu",
+        "name": "Pazu",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Hi-Tech",
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "utopia-engineeringArmiger",
+    "name": "Engineering Armiger",
+    "tv": 7,
+    "roles": [
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LLC",
+      "MMW (Brawl:1)"
+    ],
+    "traits": [
+      "Hands",
+      "Repair:4"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Engineering Ape",
+    "manufacturer": "Kogland",
+    "description": "Utopia’s constant state of war proved useful in spinning up an invasion force to support the CEF. Decades of logistics and tactics were supplamented by novel designs to aid the drone formation. One example is the Utopian trend to recycle and reuse. The Engineering Armiger is a battlefield recovery unit deisgned to recover equipment.",
+    "variants": [
+      {
+        "id": "utopia-engineeringArmiger-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "utopia-engineeringNKIDU",
+    "name": "Engineering N-KIDU",
+    "tv": 4,
+    "roles": [
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MFC",
+      "LMW (Brawl:1)"
+    ],
+    "traits": [
+      "Lo-Tech",
+      "Vuln:H",
+      "Climb",
+      "Repair:4"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Engineering Automaton",
+    "manufacturer": "Steelgate Central Foundries",
+    "description": "The Engineering N-KIDU operates alongside Engineering Armigers like many other Utopian drones. Its primary job is either to repair or recover equipment and vehicles from the battlefied or to lay and identify mines. Their role as a support unit has lead many to consider them easy prey, a fact they soon regret as the drone’s frag cannon opens up.",
+    "variants": [
+      {
+        "id": "utopia-engineeringNKIDU-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "utopia-trooperApe",
+    "name": "Trooper Ape",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LSMG/MIGL",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Jetpack:7 (Aux)"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Combat Ape",
+    "manufacturer": "Various",
+    "description": "Developed in Ankara hundreds of years ago, the original APES were a patented design based on engineering machines at the time. When Kogland invaded, they took to the design, which also removed it as a source of income for Ankara. Now the term APES has become colloquially ‘apes’ and everyone makes them.",
+    "variants": [
+      {
+        "id": "utopia-trooperApe-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "utopia-trooperApe-specOps",
+        "name": "Spec Ops",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Stealth (Aux)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utopia-supportApe",
+    "name": "Support Ape",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MRF/MIGL",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP (AP:2)"
+    ],
+    "traits": [
+      "Hands",
+      "Jetpack:6 (Aux)"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Combat Ape",
+    "manufacturer": "Various",
+    "description": "When the situation demands heavier weapons the Support Apes are called to action. Like the Trooper Ape, this combat ape can easily swap weapon loadouts as the situation demands. The Bulwark Support Ape, with a medium rotary laser, is the newest variant weapon and pilots are sometimes seen arguing over who has the right to pilot them.",
+    "variants": [
+      {
+        "id": "utopia-supportApe-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "utopia-supportApe-specOps",
+        "name": "Spec Ops",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Stealth (Aux)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "utopia-mardk",
+    "name": "MAR-DK",
+    "tv": 14,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "reactWeapons": [
+      "MPA (T)",
+      "2 x LRL (T, AA)"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Ape",
+    "manufacturer": "Kogland",
+    "description": "MAR-DKs are devastatingly efficient at laying down large volumes of fire. They are often operated by advanced humanoid automatons, though cheaper autos can be used. Human ape pilots may pilot them as well. Human pilots are fewer in number but take priority when they are around.",
+    "variants": [
+      {
+        "id": "utopia-mardk-lotechAuto",
+        "name": "Lo-Tech Auto",
+        "tv": 0,
+        "ew": 5,
+        "traits": [
+          "Lo-Tech"
+        ]
+      },
+      {
+        "id": "utopia-mardk-hitechAuto",
+        "name": "Hi-Tech Auto",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Hi-Tech"
+        ]
+      },
+      {
+        "id": "utopia-mardk-human",
+        "name": "Human",
+        "tv": 1,
+        "ew": 4
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "utopia-gilgamesh",
+    "name": "Gilgamesh",
+    "tv": 70,
+    "roles": [
+      "MB"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 12,
+    "hull": 12,
+    "structure": 6,
+    "actions": 6,
+    "gu": 4,
+    "pi": 6,
+    "ew": 4,
+    "reactWeapons": [
+      "MRL\r\n2 x MRCs",
+      "HIMG (R, Auto)\r\nHIMG (L, Auto)"
+    ],
+    "mountedWeapons": [
+      "HPA (T, Apex, Precise+)"
+    ],
+    "traits": [
+      "Resist:H",
+      "AMS",
+      "SatUp",
+      "Init+",
+      "ECM+",
+      "ECCM+",
+      "TD",
+      "Sensor:36",
+      "Lumbering",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Super Tank",
+    "manufacturer": "Kogland",
+    "description": "The Gilgamesh is the center piece of any Utopian battlefield. These tanks operate surrounded by an army of automatons and other units. They are crewed by four humans or automatons, and they are assisted by a fifth member, the Gilgamesh’s highly advanced artificial intelligence.",
+    "variants": [
+      {
+        "id": "utopia-gilgamesh-rearGuard",
+        "name": "Rear Guard",
+        "tv": 4,
+        "reactWeapons": [
+          "2 x MRC (B)"
+        ]
+      },
+      {
+        "id": "utopia-gilgamesh-engineeringBay",
+        "name": "Engineering Bay",
+        "tv": 1,
+        "reactWeapons": [
+          "2 x HMW (B, Reach:3)"
+        ],
+        "traits": [
+          "Transport: 4 N-KIDUs or 1 Armiger",
+          "Open Top",
+          "Repair:4"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "utopia-gilgamesh-transportModules",
+        "name": "Transport Modules",
+        "tv": 10,
+        "hull": 14,
+        "structure": 6,
+        "reactWeapons": [
+          "2 x HIMGs (R, Auto)\r\n2 x HIMGs (L, Auto)"
+        ],
+        "mountedWeapons": [
+          "2 x HAM (T)",
+          "2 x MM (T)"
+        ],
+        "traits": [
+          "Transport:12 N-KIDUs"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1552 @@
+[
+  {
+    "id": "infantry-infantryAndCavalry",
+    "name": "Infantry and Cavalry",
+    "tv": 3,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 4
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIMW"
+    ],
+    "mountedWeapons": [
+      "LIR",
+      "LIMG"
+    ],
+    "traits": [],
+    "height": 0.5,
+    "classification": "Infantry",
+    "subtype": "Human Infantry",
+    "manufacturer": "N/A",
+    "description": "Infantry Personnel It continues to be proven repeatedly that no matter how good the technology gets infantry are essential to holding and claiming territory. Dismounted infantry entrenched into the land require significant resources to dislodge or remove, especially in urban environments. Don’t underestimate them.",
+    "variants": [
+      {
+        "id": "infantry-infantryAndCavalry-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-infantryAndCavalry-engineering",
+        "name": "Engineering",
+        "tv": 1,
+        "mountedWeapons": [
+          "LSE",
+          "L-Mine"
+        ]
+      },
+      {
+        "id": "infantry-infantryAndCavalry-recon",
+        "name": "Recon",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "TD"
+        ]
+      },
+      {
+        "id": "infantry-infantryAndCavalry-0",
+        "name": "0",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      },
+      {
+        "id": "infantry-infantryAndCavalry-05",
+        "name": "0.5",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      }
+    ]
+  },
+  {
+    "id": "infantry-achillusExoskeleton",
+    "name": "Achillus Exoskeleton",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 4,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "MIW",
+      "MIMW"
+    ],
+    "mountedWeapons": [
+      "MIR"
+    ],
+    "traits": [
+      "Offroad",
+      "Jump:1"
+    ],
+    "height": 0.5,
+    "classification": "Infantry",
+    "subtype": "Powered Exoskeleton",
+    "manufacturer": "Paxton",
+    "description": "Personnel The Pilum Exoskeleton Program (PEP) started in the early 1950s endeavored to provide infantry with improved mobility and the ability to carry heavier weapons on the battlefield. The Achillus Exoskeleton is one of the products of this program. It allows human operators to go toe to toe with GREL, which has thus resulted in extraordinary sales for Paxton across all of Terra Nova.",
+    "variants": [
+      {
+        "id": "infantry-achillusExoskeleton-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-achillusExoskeleton-tag",
+        "name": "Tag",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "TD"
+        ]
+      },
+      {
+        "id": "infantry-achillusExoskeleton-0",
+        "name": "0",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      },
+      {
+        "id": "infantry-achillusExoskeleton-05",
+        "name": "0.5",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      }
+    ]
+  },
+  {
+    "id": "infantry-arminiusPowerArmor",
+    "name": "Arminius Power Armor",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HIW/MIGL",
+      "2 x LIW (Auto)"
+    ],
+    "traits": [
+      "Offroad",
+      "Jump:2"
+    ],
+    "height": 1,
+    "classification": "Infantry",
+    "subtype": "Power Armor",
+    "manufacturer": "Paxton",
+    "description": "Personnel The Arminius is Paxton’s newest achievement in powered armor. This suit’s heavier weapons and armor allows infantry to go up against FLAILs one on one. The different loadouts, including two computer-controlled weapon arms make it a flexible design, able to engage other infantry or even CEF frames.",
+    "variants": [
+      {
+        "id": "infantry-arminiusPowerArmor-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-arminiusPowerArmor-0",
+        "name": "0",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      },
+      {
+        "id": "infantry-arminiusPowerArmor-05",
+        "name": "0.5",
+        "tv": 0,
+        "armor": 0,
+        "actions": 0,
+        "gu": 0,
+        "pi": 0,
+        "ew": 0
+      }
+    ]
+  },
+  {
+    "id": "infantry-oannesPowerArmor",
+    "name": "Oannes Power Armor",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 5
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HIW/LIGL",
+      "LIC (T, Auto)",
+      "LIMW (AP:1)"
+    ],
+    "traits": [],
+    "height": 1,
+    "classification": "Infantry",
+    "subtype": "Power Armor",
+    "manufacturer": "Quedd Merchants",
+    "description": "Personnel The Oannes is a common power armor suit based on the submersible powered suits used during the Mid-Colonial Period. These early powered suits were used to aid in the terraforming and industrial tasks for the colony. The Oannes combat variant was continually improved since that time.",
+    "variants": [
+      {
+        "id": "infantry-oannesPowerArmor-volatus",
+        "name": "Volatus",
+        "tv": 1,
+        "mountedWeapons": [
+          "HIM"
+        ],
+        "traits": [
+          "Jetpack:5"
+        ]
+      },
+      {
+        "id": "infantry-oannesPowerArmor-hydor",
+        "name": "Hydor",
+        "tv": 1,
+        "mountedWeapons": [
+          "HIATM (LA:2)"
+        ],
+        "traits": [
+          "Sub"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-oannesPowerArmor-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 8,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-emberPowerArmor",
+    "name": "Ember Power Armor",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 5
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HIW/LIGL",
+      "LIMW"
+    ],
+    "traits": [
+      "Sensor:24"
+    ],
+    "height": 1,
+    "classification": "Infantry",
+    "subtype": "Power Armor",
+    "manufacturer": "Steelgate",
+    "description": "Personnel Like most of the other human colonies, Utopia received a number of multi-purpose vehicles designed to make the terraforming and construction work easier. Like the Terranovans and the Capricians before them, the Utopians later adapted these machines to more war-like purposes.",
+    "variants": [
+      {
+        "id": "infantry-emberPowerArmor-anzu",
+        "name": "ANZU",
+        "tv": 1,
+        "mountedWeapons": [
+          "HIM"
+        ],
+        "traits": [
+          "Jetpack:5"
+        ]
+      },
+      {
+        "id": "infantry-emberPowerArmor-nki",
+        "name": "N-KI",
+        "tv": 1,
+        "mountedWeapons": [
+          "HIATM (LA:2)"
+        ],
+        "traits": [
+          "Sub"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-emberPowerArmor-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 8,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-trooperAutomaton",
+    "name": "Trooper Automaton",
+    "tv": 2,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 4
+    },
+    "armor": 4,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "reactWeapons": [
+      "LIW",
+      "LIMW"
+    ],
+    "mountedWeapons": [
+      "LIR",
+      "LIMG"
+    ],
+    "traits": [
+      "Vuln:H"
+    ],
+    "height": 0.5,
+    "classification": "Infantry",
+    "subtype": "Infantry Automaton",
+    "manufacturer": "Various",
+    "description": "Automatons With automaton technology working its way into every facet of life on Utopia, automaton infantry was inevitable. There are countless derivatives of this robotic humanoid serving multitudes of jobs from policing and security to butlers and construction. The ones shown here are the most commonly found. All major factions produce them, or some spin off of them.",
+    "variants": [
+      {
+        "id": "infantry-trooperAutomaton-stock",
+        "name": "Stock",
+        "tv": 0,
+        "ew": 5,
+        "traits": [
+          "Lo-Tech"
+        ]
+      },
+      {
+        "id": "infantry-trooperAutomaton-node",
+        "name": "Node",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "Hi-Tech",
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-trooperAutomaton-clearence",
+        "name": "Clearence*",
+        "tv": 1,
+        "mountedWeapons": [
+          "L-Bomb (AP:2)"
+        ]
+      },
+      {
+        "id": "infantry-trooperAutomaton-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 8,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-zaidu",
+    "name": "Zaidu",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 5
+    },
+    "armor": 4,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "reactWeapons": [
+      "LIW",
+      "LIMW (AP:2)"
+    ],
+    "mountedWeapons": [
+      "LIR",
+      "LIMG"
+    ],
+    "traits": [
+      "Resist:H",
+      "Brawl:2",
+      "Jump:2"
+    ],
+    "height": 0.5,
+    "classification": "Infantry",
+    "subtype": "Infantry Automaton",
+    "manufacturer": "Steelgate Central Foundries",
+    "description": "Automatons With the Trooper Automaton being a very ubiquitous machine across all of Utopia, the Zaidu, from Steelgate Central Foundries, represents one of the many higher-performance designs. The Zaidu features a hover system and a vibro-pole-sword and is quite adept at using them for an NAI.",
+    "variants": [
+      {
+        "id": "infantry-zaidu-stock",
+        "name": "Stock",
+        "tv": 0,
+        "ew": 5,
+        "traits": [
+          "Lo-Tech"
+        ]
+      },
+      {
+        "id": "infantry-zaidu-node",
+        "name": "Node",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Hi-Tech",
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-zaidu-kaiju",
+        "name": "Kaiju",
+        "tv": 1,
+        "movement": {
+          "types": [
+            "W",
+            "H"
+          ],
+          "value": 6
+        },
+        "gu": 3,
+        "pi": 3
+      },
+      {
+        "id": "infantry-zaidu-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 10,
+        "structure": 2
+      }
+    ]
+  },
+  {
+    "id": "infantry-mordredGREL",
+    "name": "Mordred GREL",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 5
+    },
+    "armor": 4,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MIW",
+      "MIMW"
+    ],
+    "mountedWeapons": [
+      "MIR",
+      "MIMG"
+    ],
+    "traits": [],
+    "height": 0.5,
+    "classification": "Infantry",
+    "subtype": "Super Soldier",
+    "manufacturer": "Elite Genome Labs",
+    "description": "Personnel Genetically Recombined Experimental Legionnaires (GREL) are the CEF’s frontline troops. The CEF views GREL as equipment, but they are neither mistreated nor abused. They are weapons of war and just like any other weapon require careful maintenance in the form of hypno-training (subconscious indoctrination).",
+    "variants": [
+      {
+        "id": "infantry-mordredGREL-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-mordredGREL-kassandra",
+        "name": "Kassandra",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-mordredGREL-jan",
+        "name": "Jan",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-mordredGREL-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 8,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-morganaGREL",
+    "name": "Morgana GREL",
+    "tv": 6,
+    "roles": [
+      "SO",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MIW",
+      "MIMW"
+    ],
+    "traits": [
+      "Stealth",
+      "Jump:1"
+    ],
+    "height": 0.5,
+    "classification": "Infantry",
+    "subtype": "Super Soldier",
+    "manufacturer": "Elite Genome Labs",
+    "description": "Personnel The Morgana-class commandos are all female, hard-edged, stone-cold killers. When a Morgana meets someone for the first time, whether it is a trooper, soldier, commander, ally, or an enemy, her instinctive reaction is to perform a brief study of the individual and identify the swiftest way to kill them.",
+    "variants": [
+      {
+        "id": "infantry-morganaGREL-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-morganaGREL-kassandra",
+        "name": "Kassandra",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-morganaGREL-jan",
+        "name": "Jan",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-morganaGREL-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 6,
+        "structure": 6
+      }
+    ]
+  },
+  {
+    "id": "infantry-flail",
+    "name": "FLAIL",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 5
+    },
+    "armor": 5,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "MIRC",
+      "MIMW"
+    ],
+    "traits": [
+      "Jump:1",
+      "Sensor:24"
+    ],
+    "height": 1,
+    "classification": "Infantry",
+    "subtype": "Cyborg Soldier",
+    "manufacturer": "Elite Genome Labs",
+    "description": "Personnel Front-Line Augmented Infantry Legionnaires are the CEF’s cyborg GRELs. These powered infantry are a seamless melding of man and machine. They feel no pain and no fear and can just keep pressing forward no matter what. They are so fearsome that Terra Novan forces have resorted to using gear squads to deal with them.",
+    "variants": [
+      {
+        "id": "infantry-flail-laser",
+        "name": "Laser",
+        "tv": 1,
+        "reactWeapons": [
+          "HILW"
+        ]
+      },
+      {
+        "id": "infantry-flail-mortar",
+        "name": "Mortar",
+        "tv": 1,
+        "mountedWeapons": [
+          "HIM"
+        ]
+      },
+      {
+        "id": "infantry-flail-antitank",
+        "name": "Anti-Tank",
+        "tv": 1,
+        "mountedWeapons": [
+          "HIATM"
+        ]
+      },
+      {
+        "id": "infantry-flail-interdiction",
+        "name": "Interdiction",
+        "tv": 1,
+        "reactWeapons": [
+          "HIC (Precise, AP:2)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-flail-morgana",
+        "name": "Morgana",
+        "tv": 1,
+        "reactWeapons": [
+          "LVB"
+        ],
+        "traits": [
+          "Brawl:1",
+          "Stealth (Aux)"
+        ]
+      },
+      {
+        "id": "infantry-flail-maxwell",
+        "name": "Maxwell",
+        "tv": 1,
+        "gu": 3,
+        "reactWeapons": [
+          "MIRC (Reflex)"
+        ]
+      },
+      {
+        "id": "infantry-flail-minerva",
+        "name": "Minerva",
+        "tv": 1,
+        "movement": {
+          "types": [
+            "W",
+            "H"
+          ],
+          "value": 6
+        },
+        "pi": 3,
+        "traits": [
+          "Jump:2"
+        ]
+      },
+      {
+        "id": "infantry-flail-kassandra",
+        "name": "Kassandra",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-flail-jan",
+        "name": "Jan",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-flail-issac",
+        "name": "Issac",
+        "tv": 1,
+        "mountedWeapons": [
+          "LSE"
+        ],
+        "traits": [
+          "Repair:4"
+        ]
+      },
+      {
+        "id": "infantry-flail-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 10,
+        "structure": 2
+      }
+    ]
+  },
+  {
+    "id": "infantry-sandrider",
+    "name": "Sandrider",
+    "tv": 4,
+    "roles": [
+      "GP",
+      "SK",
+      "SO"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 5
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MIW",
+      "MIMW (AP:1)"
+    ],
+    "traits": [],
+    "height": 0.5,
+    "classification": "Infantry",
+    "subtype": "Enhanced Infantry",
+    "manufacturer": "Terra Nova",
+    "description": "Personnel Out within the deepest deserts of Terra Nova there exist small tribes that eschew the trappings of modern civilization. Dubbed \"Sandriders\" by most Terra Novans, these hardy tribesmen are known to be fearsome warriors. Where they came from and how they evolved is anybody’s guess. They tend to stick to themselves.",
+    "variants": [
+      {
+        "id": "infantry-sandrider-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-sandrider-observers",
+        "name": "Observers",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-sandrider-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 6,
+        "structure": 6
+      }
+    ]
+  },
+  {
+    "id": "infantry-springer",
+    "name": "Springer",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIMW (Auto)"
+    ],
+    "traits": [
+      "Agile",
+      "Jump:2"
+    ],
+    "height": 1,
+    "classification": "Cavalry",
+    "subtype": "Riding Beast",
+    "manufacturer": "Terra Nova",
+    "description": "Personnel Ridden springers are the result of dedicated breeding efforts over the centuries. These springers are leaner and stronger cousins of the herding springer. Ranchers, Badlanders and tribesmen often ride this creature. Riding springers are typically well-trained and easy to control.",
+    "variants": [
+      {
+        "id": "infantry-springer-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-springer-recon",
+        "name": "Recon",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-springer-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 6,
+        "structure": 2
+      }
+    ]
+  },
+  {
+    "id": "infantry-greaterPackLizard",
+    "name": "Greater Pack Lizard",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 4,
+    "hull": 2,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "HIMW (Auto)"
+    ],
+    "traits": [
+      "Agile",
+      "Jump:3"
+    ],
+    "height": 1,
+    "classification": "Cavalry",
+    "subtype": "Riding Beast",
+    "manufacturer": "Terra Nova",
+    "description": "Personnel Lizard Riders are an interesting group of people. Their lizards are very large and rather aggressive. They can easily chomp an arm off of a human. These riders are very capable and know not to try to scratch their chin like you would with a common house cat.",
+    "variants": [
+      {
+        "id": "infantry-greaterPackLizard-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-greaterPackLizard-recon",
+        "name": "Recon",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-greaterPackLizard-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 4,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-huni",
+    "name": "Huni",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 4,
+    "hull": 2,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIMW (Auto)"
+    ],
+    "traits": [
+      "Agile",
+      "Jump:2"
+    ],
+    "height": 1,
+    "classification": "Cavalry",
+    "subtype": "Riding Beast",
+    "manufacturer": "Eden",
+    "description": "Personnel The huni are bioengineered amphibious therapsids developed by the scientists of Eden. The riders are equipped with advanced amphibious packs that can provide them with up to 32 hours of oxygen while underwater.",
+    "variants": [
+      {
+        "id": "infantry-huni-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-huni-seer",
+        "name": "Seer",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-huni-dominus",
+        "name": "Dominus",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-huni-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 4,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-barnabusIguana",
+    "name": "Barnabus Iguana",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "HIMW (Auto)"
+    ],
+    "traits": [
+      "Agile",
+      "Climb",
+      "Jump:1"
+    ],
+    "height": 1,
+    "classification": "Cavalry",
+    "subtype": "Riding Beast",
+    "manufacturer": "Terra Nova",
+    "description": "Personnel Barnaby Riders are common out in the deep deserts. Some homesteaders and caravan crew really take a liking to their preferred beasts and treat them like family. It’s not uncommon for a waste-lander to talk to the Barnaby like they’re old friends.",
+    "variants": [
+      {
+        "id": "infantry-barnabusIguana-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "infantry-armadilloBeast",
+    "name": "Armadillo Beast",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "HIMW (Auto)"
+    ],
+    "traits": [
+      "Climb",
+      "Jump:1",
+      "Brawl:2"
+    ],
+    "height": 1,
+    "classification": "Cavalry",
+    "subtype": "Riding Beast",
+    "manufacturer": "Terra Nova",
+    "description": "Personnel Longeing is the name of a technique used to train wild beasts on Terra Nova. The key is getting the animal accustomed to saddles, bits and other equipment, which are then used to command the animal. Armadillo Beasts in particular are ill tempered and specifically difficult to do this with. Animal trainers everywhere have the scars to prove it. Trainers spend untold hours teaching beasts to respond to voice commands, reins and even the rider's body language. Getting beasts accustomed to a saddle, bridle, reins and bit pressure is an art that not everyone can do. And some of these beasts can be very ill tempered. Many who do this for a living have scars to prove it.",
+    "variants": [
+      {
+        "id": "infantry-armadilloBeast-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "infantry-agniHellion",
+    "name": "Agni Hellion",
+    "tv": 7,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIC (AA)",
+      "MFL (Auto)",
+      "HIMW"
+    ],
+    "traits": [
+      "Agile",
+      "VTOL"
+    ],
+    "height": 1.5,
+    "classification": "Cavalry",
+    "subtype": "Riding Beast",
+    "manufacturer": "Eden",
+    "description": "Personnel Agni were initially bio-engineered to be much smaller and mostly tame. But like much of the flora and fauna on Eden, as time progressed without controlled genetic management, these animals evolved into something new. Now, people called the Gleanai frequently travel to the floating islands to catch agni, train them, and even sell them on the open market. They make good money doing so, but it's very dangerous work.",
+    "variants": [
+      {
+        "id": "infantry-agniHellion-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "infantry-wallaby",
+    "name": "Wallaby",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 4,
+    "hull": 2,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIMW"
+    ],
+    "traits": [
+      "Agile",
+      "Offroad"
+    ],
+    "height": 0.5,
+    "classification": "Cavalry",
+    "subtype": "ATV",
+    "manufacturer": "Shaian Mechanics",
+    "description": "Personnel The Wallaby is one of the many All Terrain Vehicles (ATV) designed to carry heavily equipped infantry troops in difficult battlefield conditions. The vehicle's large wheels are powered by two independent V-engines placed in tandem in the main body. There are computer controlled transmissions inside each armored wheel.",
+    "variants": [
+      {
+        "id": "infantry-wallaby-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-wallaby-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-wallaby-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 4,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-spitz",
+    "name": "Spitz",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "LIW",
+      "LIMW"
+    ],
+    "traits": [
+      "Agile"
+    ],
+    "height": 0.5,
+    "classification": "Cavalry",
+    "subtype": "Monocycle",
+    "manufacturer": "Paxton",
+    "description": "Personnel The Spitz monocycle was developed by Peace River. The unique mono wheel design has endeared it to the typical Badlander as its single wheel allows for its rider to perform impressive maneuvers and non-linear attack runs.",
+    "variants": [
+      {
+        "id": "infantry-spitz-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-spitz-spectre",
+        "name": "Spectre",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-spitz-comanche",
+        "name": "Comanche",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-spitz-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 6,
+        "structure": 2
+      }
+    ]
+  },
+  {
+    "id": "infantry-jackrabbit",
+    "name": "Jackrabbit",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 3,
+    "hull": 2,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIMW"
+    ],
+    "traits": [
+      "Agile"
+    ],
+    "height": 0.5,
+    "classification": "Cavalry",
+    "subtype": "Motorcycle",
+    "manufacturer": "Various",
+    "description": "Personnel Southern infantry introduced the Jackrabbit motorbike as an option to move them across the battlefields of Terra Nova. A sidecar can be attached to carry a second person, but it is frequently used to carry supplies and items instead for long range patrols.",
+    "variants": [
+      {
+        "id": "infantry-jackrabbit-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-jackrabbit-sidecar",
+        "name": "Sidecar",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-jackrabbit-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 4,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-haru",
+    "name": "Haru",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 4,
+    "hull": 2,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIMW"
+    ],
+    "traits": [
+      "Agile"
+    ],
+    "height": 0.5,
+    "classification": "Cavalry",
+    "subtype": "Motorcycle",
+    "manufacturer": "Costa Moreia",
+    "description": "Personnel Costa Moreia’s Haru is used by many within the city of Gomorrah. They are also used by police and corporate special forces. Optional parts are sold by Costa Moreia and various third parties to customize them for professional racing, street racing, or even off-road racing.",
+    "variants": [
+      {
+        "id": "infantry-haru-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-haru-azat",
+        "name": "Azat",
+        "tv": 1,
+        "armor": 4,
+        "gu": 3
+      },
+      {
+        "id": "infantry-haru-watcher",
+        "name": "Watcher",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "infantry-haru-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 4,
+        "structure": 4
+      }
+    ]
+  },
+  {
+    "id": "infantry-hoverbike",
+    "name": "Hoverbike",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 4,
+    "hull": 2,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LIW",
+      "LIMW"
+    ],
+    "traits": [
+      "Agile",
+      "Jump:2"
+    ],
+    "height": 1,
+    "classification": "Cavalry",
+    "subtype": "Hoverbike",
+    "manufacturer": "Kadellie Weapon Systems",
+    "description": "Personnel It is not uncommon to see GREL hurtling across the battlefield mounted on hoverbikes. While they generally can’t carry as much as their dismounted brothers and sisters, they still carry more than typical Terra Novan infantry. Large numbers of GREL on Hoverbikes is not a very comfortable thought for many Terra Novans.",
+    "variants": [
+      {
+        "id": "infantry-hoverbike-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "infantry-hoverbike-mordred",
+        "name": "Mordred",
+        "tv": 2,
+        "armor": 5,
+        "mountedWeapons": [
+          "MIMG"
+        ]
+      },
+      {
+        "id": "infantry-hoverbike-maxwell",
+        "name": "Maxwell",
+        "tv": 2,
+        "gu": 3,
+        "reactWeapons": [
+          "MIGL"
+        ],
+        "mountedWeapons": [
+          "MIATM"
+        ]
+      },
+      {
+        "id": "infantry-hoverbike-minerva",
+        "name": "Minerva",
+        "tv": 1,
+        "movement": {
+          "types": [
+            "H"
+          ],
+          "value": 9
+        },
+        "traits": [
+          "Jump:3"
+        ]
+      },
+      {
+        "id": "infantry-hoverbike-jan",
+        "name": "Jan",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "infantry-hoverbike-cadre",
+        "name": "Cadre",
+        "tv": 1,
+        "hull": 4,
+        "structure": 4
+      }
+    ]
+  }
+]

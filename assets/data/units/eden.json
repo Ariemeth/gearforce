@@ -1,1 +1,552 @@
-[]
+[
+  {
+    "id": "eden-constable",
+    "name": "Constable",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LSMG/MIGL",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Jetpack:7 (Aux)"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Combat Golem",
+    "manufacturer": "Various",
+    "description": "The Constable Golems were hand-crafted artisan armor up until about 70 years ago when mass production of them resumed. Recently, Utopian and Edenite engineers shared their designs of the APE and golem suits. This resulted in the two becoming nearly identical. Despite this, Edenite artificers are quick to claim that their designs are better.",
+    "variants": [
+      {
+        "id": "eden-constable-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "eden-constable-specOps",
+        "name": "Spec Ops",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Airdrop",
+          "Stealth (Aux)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eden-manAtArms",
+    "name": "Man at Arms",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MRF/MIGL",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP (AP:2)"
+    ],
+    "traits": [
+      "Hands",
+      "Jetpack:6 (Aux)"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Combat Golem",
+    "manufacturer": "Various",
+    "description": "An upgrade to the original golem, the Man At Arms is a newer addition for Eden that came from Utopia. Similar to the Constable, the Man at Arms Golem adds additional firepower and armor for use against heavy targets. While it’s running speed is pretty average for a machine of this size, its jetpack enables it to jet around at high speed or even leap over obstacles rather easily.",
+    "variants": [
+      {
+        "id": "eden-manAtArms-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "eden-manAtArms-specOps",
+        "name": "Spec Ops",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Airdrop",
+          "Stealth (Aux)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eden-centaur",
+    "name": "Centaur",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "LGL"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop",
+      "Jump:3",
+      "Jetpack:8 (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Cavalry Golem",
+    "manufacturer": "Lionheart Heavy Industries",
+    "description": "The Centaur’s hover system makes it ideal for traversing Eden’s vast oceans. It excels as a high-speed cavalry machine, which the noble houses are very enthusiastic about. Nobles periodically hold jousting tournaments to entertain the masses. This golem is featured in almost every event because they are relatively inexpensive compared to other designs.",
+    "variants": [
+      {
+        "id": "eden-centaur-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "eden-griffin",
+    "name": "Griffin",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC (AA)",
+      "2 x MVB"
+    ],
+    "mountedWeapons": [
+      "2 x LGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "VTOL"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Combat Golem",
+    "manufacturer": "Quedd Merchants",
+    "description": "Developed with Eden’s privateer consortiums in mind, the Quedd Merchants designed the Griffins with ship to ship actions in mind. They can be launched from a significant distance compared to other golems that rely on jetpacks. Their imposing disposition and unorthodox melee weapons are rather distasteful in the eyes of most nobles.",
+    "variants": [
+      {
+        "id": "eden-griffin-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "eden-griffin-dominus",
+        "name": "Dominus",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eden-doppel",
+    "name": "Doppel",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MRC",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "MRP"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop",
+      "Shield",
+      "Jetpack:7 (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Golem",
+    "manufacturer": "Lionheart Heavy Industries",
+    "description": "Edenite children who dream of being champions for their kingdom first think of Doppels. Galant, strong and fierce are the associations. They can do anything a true knight would need. They can duel with a sword and shield. They can launch forward and joust. Or they can unleash with an effective selection of weaponry. To military commanders and adult pilots, they follow through with every promise.",
+    "variants": [
+      {
+        "id": "eden-doppel-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "eden-doppel-dominus",
+        "name": "Dominus",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eden-warlock",
+    "name": "Warlock",
+    "tv": 8,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LSMG/MIGL",
+      "MMW (Stun)"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop",
+      "Sensor:36",
+      "Jetpack:7 (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Golem",
+    "manufacturer": "Excalibur Inc.",
+    "description": "The Warlock is Eden’s first true electronic warfare specialist golem. Its modular design allows commanders and operators to arm it in relation to upcoming missions. All types of EW operators appreciate the Warlock’s exceptional sensors, which further enhance everything from spotting duties to jamming and hacking. The CEF has even purchased some of them to test as an – expendable – E-war option.",
+    "variants": [
+      {
+        "id": "eden-warlock-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "eden-warlock-seer",
+        "name": "Seer",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "TD"
+        ]
+      },
+      {
+        "id": "eden-warlock-adapt",
+        "name": "Adapt",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eden-animus",
+    "name": "Animus",
+    "tv": 12,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "HVB"
+    ],
+    "mountedWeapons": [
+      "MM",
+      "HIMG"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Jetpack:6 (Aux)"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Golem",
+    "manufacturer": "Lionheart Heavy Industries",
+    "description": "The Animus is Eden’s first steps into truly heavy golems. The project is officially supported by the CEF. The guided mortar is even a direct adaptation of CEF mortars. However, this design troubles CEF command because of features consistent with Terra Novan fire support gears, such as the torso mounted heavy machinegun.",
+    "variants": [
+      {
+        "id": "eden-animus-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "eden-gargoyle",
+    "name": "Gargoyle",
+    "tv": 25,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 9,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "reactWeapons": [
+      "HRC (Apex, AA)",
+      "HVB (Apex, Reach:1)"
+    ],
+    "mountedWeapons": [
+      "HM",
+      "2 x MRP (Guided, AA)"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:3",
+      "VTOL",
+      "Shield",
+      "Brawl:1"
+    ],
+    "height": 2.5,
+    "classification": "Strider",
+    "subtype": "Golem-Strider",
+    "manufacturer": "Quedd Merchants",
+    "description": "Gargoyles are not considered golems. They are deemed a class of their own and more analogous to Terra Novan striders. The Quedd Merchants took criticism about their Griffins not being intimidating enough very seriously. The result is something that proper nobles publicly scuff at, while they also secretly consider how to purchase some without their friends and families knowing.",
+    "variants": [
+      {
+        "id": "eden-gargoyle-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "eden-serpentina",
+    "name": "Serpentina",
+    "tv": 21,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "reactWeapons": [
+      "HIMG (T, Auto)"
+    ],
+    "mountedWeapons": [
+      "MTG (T)",
+      "MATM (T)"
+    ],
+    "traits": [
+      "Jump:3"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Medium Hovertank",
+    "manufacturer": "Victory Enterprises",
+    "description": "CEF command considers Serpentina Hovertanks lesser versions of their own hovertanks. However, resistance cells performing hit and run strikes against the CEF have been using them to increasing effect as time goes on. Where the resistance has been obtaining them has not yet been discovered. But it’s only a matter of time before a Serpentina faces off with a 68 or 72 for the first time.",
+    "variants": [
+      {
+        "id": "eden-serpentina-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "eden-serpentina-dominus",
+        "name": "Dominus",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eden-baroness",
+    "name": "Baroness",
+    "tv": 75,
+    "roles": [
+      "MB"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 6
+    },
+    "armor": 11,
+    "hull": 8,
+    "structure": 8,
+    "actions": 6,
+    "gu": 4,
+    "pi": 6,
+    "ew": 4,
+    "reactWeapons": [
+      "2 x HAC (R, AA, Link)",
+      "2 x HAC (L, AA, Link)",
+      "2 x LAC (R, AA, Link)",
+      "2 x LAC (L, AA, Link)"
+    ],
+    "mountedWeapons": [
+      "2 x HTG (Stable)",
+      "HAR (T)",
+      "HAM"
+    ],
+    "traits": [
+      "VTOL",
+      "Lumbering",
+      "SatUp",
+      "ECM",
+      "ECCM",
+      "Sensor:36",
+      "Transport:2 Cadres",
+      "Open Top"
+    ],
+    "height": 3,
+    "classification": "Gear",
+    "subtype": "Patrol Craft",
+    "manufacturer": "MHK",
+    "description": "The Baroness is commonly seen patrolling the littoral waters around Eden’s ports of call. They can operate in the water as a ship, or take to the air as a VTOL. Other uses include anti-piracy operations and long range patrols. When not in use they are generally landed in the water and moored to the pier.",
+    "variants": [
+      {
+        "id": "eden-baroness-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  }
+]

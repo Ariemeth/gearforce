@@ -1,0 +1,1343 @@
+[
+  {
+    "id": "univeh-antelopeElan",
+    "name": "Antelope / Elan",
+    "tv": 3,
+    "roles": [
+      "GP",
+      "RC",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 4,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "traits": [
+      "Offroad"
+    ],
+    "height": 0.5,
+    "classification": "Gear",
+    "subtype": "Utility Vehicle",
+    "manufacturer": "Various",
+    "description": "Antelopes and Elans are common off road military vehicles. Their Technical variants include a few additional crew members to operate weaponry from the armored deck on the back. They are used regularly for scouting, patrolling, special operations, reconnaissance, and a myriad of other tasks.",
+    "variants": [
+      {
+        "id": "univeh-antelopeElan-stock",
+        "name": "Stock",
+        "tv": 0,
+        "traits": [
+          "Transport:1 Teams",
+          "Open Top"
+        ]
+      },
+      {
+        "id": "univeh-antelopeElan-recon",
+        "name": "Recon",
+        "tv": 2,
+        "ew": 5,
+        "reactWeapons": [
+          "MIMG (T)"
+        ],
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "univeh-antelopeElan-technical",
+        "name": "Technical*",
+        "tv": 0,
+        "reactWeapons": [
+          "LIW (T)",
+          "LIMG (T)"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-fieldGun",
+    "name": "Field Gun",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 2
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "mountedWeapons": [
+      "LFG"
+    ],
+    "traits": [
+      "Towed",
+      "Lumbering"
+    ],
+    "height": 0.5,
+    "classification": "Gear",
+    "subtype": "Towed Field Gun",
+    "manufacturer": "Various",
+    "description": "Several companies manufacture a variety of field guns, most of which follow similar specifications. They combine excellent firepower and good range with broad availability. Almost any vehicle with sufficient engine power can tow one through a standard towing attachment.",
+    "variants": [
+      {
+        "id": "univeh-fieldGun-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-camelTruck",
+    "name": "Camel Truck",
+    "tv": 4,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LIMG (T)"
+    ],
+    "traits": [
+      "Transport:1 Cadres",
+      "Open Top"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Various",
+    "description": "The Camel is a large and sturdy transport truck frequently used by military, paramilitary and even civilian groups. Large numbers have been sold all over Terra Nova. They are commonly seen in caravans as supply vehicles. Some variants come armed with strategically important weapons.",
+    "variants": [
+      {
+        "id": "univeh-camelTruck-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-nightingale",
+    "name": "Nightingale",
+    "tv": 3,
+    "roles": [],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 5,
+    "pi": 4,
+    "ew": 6,
+    "traits": [
+      "Medic:4"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Medium Vehicle",
+    "manufacturer": "Various",
+    "description": "The Nightingale is a highly advanced ambulance developed to support casualty receiving and evacuation. It contains four beds and an operating room. The vehicle is also equipped with a full lab featuring the latest in pathogenic testing equipment, allowing technicians to perform advanced testing on the spot.",
+    "variants": [
+      {
+        "id": "univeh-nightingale-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-saker",
+    "name": "Saker",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MIMG (T)"
+    ],
+    "traits": [
+      "Agile",
+      "Airdrop",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Light Hovervehicle",
+    "manufacturer": "Various",
+    "description": "With much of the planet covered by water, the evolution of the Saker was almost inevitable. It is a cheap and effective asset that can transition between maritime and land operations in the blink of an eye. All of the kingdoms use them for littoral patrols while some of the more unscrupulous privateers use them for raids.",
+    "variants": [
+      {
+        "id": "univeh-saker-stock",
+        "name": "Stock",
+        "tv": 1,
+        "mountedWeapons": [
+          "LAR (T)"
+        ]
+      },
+      {
+        "id": "univeh-saker-squire",
+        "name": "Squire",
+        "tv": 1,
+        "traits": [
+          "Supply"
+        ]
+      },
+      {
+        "id": "univeh-saker-anakite",
+        "name": "Anakite",
+        "tv": 1,
+        "traits": [
+          "Transport:1 Cadres",
+          "Open Top"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-seeker",
+    "name": "Seeker",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "RC",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 5,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "MIRC"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Sensor:36",
+      "ECM+",
+      "ECCM+",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Hansen's Electronics",
+    "description": "The Seeker has a large sensor array, stealth system and electronic warfare assets to listen in or even interfere with enemy transmissions. Two technicians operate the equipment from workstations placed in a roomy compartment in the back. The vehicle has a roof-mounted machine gun and rocket pack for defense.",
+    "variants": [
+      {
+        "id": "univeh-seeker-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-murdock",
+    "name": "Murdock",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 5,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "HIGL"
+    ],
+    "traits": [
+      "SatUp",
+      "ECCM",
+      "Sensor:36"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Hansen's Electronics",
+    "description": "The Murdock is designed as a mobile field HQ and C3 (Command, Control and Communication). It was commissioned in TN 1898 by General Jenke Murdock, a famous figure during the Sandstorm Strikes (TN 1896-1905). The vehicle rests on a sturdy six-wheeled chassis, each wheel having its own independent suspension.",
+    "variants": [
+      {
+        "id": "univeh-murdock-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-capricianTrike",
+    "name": "Caprician Trike",
+    "tv": 4,
+    "roles": [
+      "GP",
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "traits": [
+      "Offroad"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Trike",
+    "manufacturer": "Various",
+    "description": "Caprician forces sent to Terra Nova requested something to use as an outrider and patrol vehicle. There are many competing buggies and off-road vehicles on the Caprician market. The Reubeni variant used to be made by Hakkar. Now it’s more of a popular trike conversion sold by the Liberati.",
+    "variants": [
+      {
+        "id": "univeh-capricianTrike-stock",
+        "name": "Stock",
+        "tv": 1,
+        "reactWeapons": [
+          "MIMG"
+        ],
+        "mountedWeapons": [
+          "LRF"
+        ]
+      },
+      {
+        "id": "univeh-capricianTrike-reubeni",
+        "name": "Reubeni",
+        "tv": 2,
+        "ew": 5,
+        "reactWeapons": [
+          "MIMG"
+        ],
+        "mountedWeapons": [
+          "LRF"
+        ],
+        "traits": [
+          "SatUp",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-mastiff",
+    "name": "Mastiff",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "traits": [
+      "Transport:1 Cadres"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Paxton",
+    "description": "The Peace Officer Corps fields a number of modified armored personnel carriers for crowd control and emergency situations. These transports are often deployed for anti-rovers operations. Compared to the Hoplite there is not much reason for conventional forces to use them other than the fact that they are cheaper to produce.",
+    "variants": [
+      {
+        "id": "univeh-mastiff-stock",
+        "name": "Stock",
+        "tv": 1,
+        "reactWeapons": [
+          "LRF (T, Precise+)"
+        ],
+        "mountedWeapons": [
+          "LRP (T)"
+        ]
+      },
+      {
+        "id": "univeh-mastiff-hippeis",
+        "name": "Hippeis",
+        "tv": 2,
+        "ew": 4,
+        "mountedWeapons": [
+          "LM (T)"
+        ],
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "univeh-mastiff-hippocrates",
+        "name": "Hippocrates",
+        "tv": 1,
+        "traits": [
+          "Medic:4"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-sandSpider",
+    "name": "Sand Spider",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LAC"
+    ],
+    "traits": [
+      "Offroad",
+      "TD",
+      "React+\r\nTransport:2 Cadres"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Paxton",
+    "description": "Originally, the Sand Spider’s low-profile and camouflage were considered sufficient for concealment. Paxton incorporated stealth options to further enhance the Sand Spider’s ability to conceal itself. It is one of the few stealth capable exports sold on Terra Nova’s open market.",
+    "variants": [
+      {
+        "id": "univeh-sandSpider-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-sandSpider-alpha",
+        "name": "Alpha",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-baxter",
+    "name": "Baxter",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "traits": [
+      "Offroad",
+      "Smoke",
+      "Repair:4"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Tank",
+    "variants": [
+      {
+        "id": "univeh-baxter-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-celt",
+    "name": "Celt",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "mountedWeapons": [
+      "LAPGL",
+      "HSE"
+    ],
+    "traits": [
+      "Offroad",
+      "Smoke",
+      "Repair:4"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "variants": [
+      {
+        "id": "univeh-celt-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-barnabyBehemoth",
+    "name": "Barnaby / Behemoth",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 5,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "MIMG (T)"
+    ],
+    "traits": [
+      "Transport:5 Gears",
+      "Lumbering",
+      "Repair:4",
+      "Supply"
+    ],
+    "height": 3,
+    "classification": "Gear",
+    "subtype": "Heavy Vehicle",
+    "manufacturer": "Various",
+    "description": "Created during the War of the Alliance to replace the then-obsolete Mother Springer. the Barnaby was noticeably sturdier and faster than its predecessor. Its tempered steel armor, while extremely cheap and cost efficient, was replaced with the more standard durasheet plating that is the trademark of the late 19th and 20th century military vehicles. The Behemoth gear transport was designed in TN 1706 by Northco. Gear transports were already being used to transport engineering and construction gears to and from work sites. Taking the basic frame of one design named the Hunchback and modifying it for military use was seamlessly accomplished by the Northco engineers.",
+    "variants": [
+      {
+        "id": "univeh-barnabyBehemoth-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-barnabyBehemoth-razorfang",
+        "name": "Razorfang",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "univeh-barnabyBehemoth-greyBox",
+        "name": "Grey Box",
+        "tv": 3,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-varis",
+    "name": "Varis",
+    "tv": 11,
+    "roles": [
+      "AS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 9
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "mountedWeapons": [
+      "2 x LAAM"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Hopper",
+    "manufacturer": "Tsi Heavy Industries",
+    "description": "The Varis was adopted by all forces as one of their available hoppers (vectored thrust aerodyne). Its simple but effective design was favored by many. Their employment is sometimes limited as many field commanders simply favor infantry, gears and tanks more.",
+    "variants": [
+      {
+        "id": "univeh-varis-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-varis-blackBox",
+        "name": "Black Box",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "univeh-varis-recon",
+        "name": "Recon",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-dragonfly",
+    "name": "Dragonfly",
+    "tv": 12,
+    "roles": [
+      "AS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "mountedWeapons": [
+      "2 x LAAM"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Hopper",
+    "manufacturer": "Paxton",
+    "description": "One of the most innovative military vehicles, hoppers (vectored thrust aerodynes) are as agile as helicopters, but tend to be sturdier and can achieve higher speeds. A battle tested, reliable model, the Dragonfly is both fast and maneuverable, characteristics that make it perfect for anti-gear operations.",
+    "variants": [
+      {
+        "id": "univeh-dragonfly-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-dragonfly-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "univeh-dragonfly-tag",
+        "name": "Tag",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-blackWind",
+    "name": "Black Wind",
+    "tv": 16,
+    "roles": [
+      "AS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MPL (AA, Silent)"
+    ],
+    "mountedWeapons": [
+      "2 x MRP"
+    ],
+    "traits": [
+      "VTOL",
+      "Stealth"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Stealth Hopper",
+    "manufacturer": "Paxton",
+    "description": "The Black Wind is another design acquired by the Talon project. At its core it is a very fast and agile hopper with a weapon loadout similar to a Dragonfly. The Talon project takes it one step further and adds some of the latest in stealth technology and a new ECM device to further reduce the ability to track and target this craft.",
+    "variants": [
+      {
+        "id": "univeh-blackWind-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-blackWind-spectre",
+        "name": "Spectre",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "univeh-blackWind-tag",
+        "name": "Tag",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-peregrineGunship",
+    "name": "Peregrine Gunship",
+    "tv": 15,
+    "roles": [
+      "AS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "MRL (AA)"
+    ],
+    "mountedWeapons": [
+      "2 x MRP"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Attack VTOL",
+    "manufacturer": "Gallot Enterprises",
+    "description": "Gallot Enterprises won the bid to develop the Type 42 Peregrine Gunship for the CEF. This VTOL has low-bypass turbofans that are well suited for intense atmospheric effects found on Caprice and some of the other colony worlds. They are also quite useful for patrolling in and around the tight spaces of Gomorrah City on Caprice.",
+    "variants": [
+      {
+        "id": "univeh-peregrineGunship-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-peregrineGunship-phantom",
+        "name": "Phantom",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECCM",
+          "TD",
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "univeh-peregrineGunship-nightwatch",
+        "name": "Nightwatch",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-scorpion",
+    "name": "Scorpion",
+    "tv": 20,
+    "roles": [
+      "AS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC (AA)"
+    ],
+    "mountedWeapons": [
+      "2 x MATM",
+      "2 x MRP"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Attack Chopper",
+    "manufacturer": "Northco",
+    "description": "Gear pilots that survive an encounter with a Scorpion gunship often have traumatic responses to the characteristic sounds of its counter rotating blades.  The propulsion system is highly resistant to damage and Scorpions have been known to return to base with over 40% damage to their lift surfaces.",
+    "variants": [
+      {
+        "id": "univeh-scorpion-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-scorpion-sta",
+        "name": "STA",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-titan",
+    "name": "Titan",
+    "tv": 20,
+    "roles": [
+      "AS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LRC (AA)"
+    ],
+    "mountedWeapons": [
+      "2 x MATM",
+      "2 x MRP"
+    ],
+    "traits": [
+      "VTOL",
+      "Transport:1 Cadres"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Attack Chopper",
+    "manufacturer": "Marshall Avionics",
+    "description": "Classified as an attack helicopter, the Titan is often used to airlift elite infantry cadres into position to capture objectives. Once its cargo is safely delivered, the Titan will either provide the ground team with air support or leave for other tasks. A squadron of Titans in the air is usually a signal that a ground offensive is coming.",
+    "variants": [
+      {
+        "id": "univeh-titan-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-titan-recon",
+        "name": "Recon",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-rockBeetle",
+    "name": "Rock Beetle",
+    "tv": 12,
+    "roles": [
+      "AS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "traits": [
+      "VTOL",
+      "Transport:2 Cadres"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Medium Lift Helicopter",
+    "manufacturer": "Skycorp Ltd.",
+    "description": "The Rock Beetle was developed by Skycorp Ltd., a well-known United Mercantile Federation helicopter manufacturer. The helicopter's engines are geared for torque, not speed, which allows the Rock Beetle to carry an incredible amount of material. More recent configurations have included limited ground attack weapons.",
+    "variants": [
+      {
+        "id": "univeh-rockBeetle-mauler",
+        "name": "Mauler",
+        "tv": 1,
+        "reactWeapons": [
+          "MIMG",
+          "MIMG (R)"
+        ],
+        "mountedWeapons": [
+          "2 x LRP"
+        ]
+      },
+      {
+        "id": "univeh-rockBeetle-medical",
+        "name": "Medical",
+        "tv": 1,
+        "traits": [
+          "Medic:4"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-terraNovanDrones",
+    "name": "Terra Novan Drones",
+    "tv": 2,
+    "roles": [
+      "RC",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 2,
+    "hull": 1,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "traits": [
+      "Lo-Tech",
+      "Vuln:H",
+      "Jump:1",
+      "E-Comms",
+      "TD"
+    ],
+    "height": 0.5,
+    "classification": "Gear",
+    "subtype": "Drone",
+    "manufacturer": "Various",
+    "description": "Drones are popular with most militaries. They feature self mobile backup weapons, supplementary electronics and the ability to deal with threats from a distance. The threat of drones is sometimes underestimated and there are more than a few with war stories concerning them.",
+    "variants": [
+      {
+        "id": "univeh-terraNovanDrones-hunterKiller",
+        "name": "Hunter Killer",
+        "tv": 2,
+        "roles": [
+          "GP",
+          "SK",
+          "FS"
+        ],
+        "movement": {
+          "types": [
+            "H"
+          ],
+          "value": 6
+        },
+        "armor": 2,
+        "hull": 1,
+        "structure": 1,
+        "actions": 1,
+        "gu": 4,
+        "pi": 4,
+        "ew": 6,
+        "reactWeapons": [
+          "MIRC"
+        ],
+        "traits": [
+          "Lo-Tech",
+          "Vuln:H",
+          "VTOL"
+        ]
+      },
+      {
+        "id": "univeh-terraNovanDrones-demo",
+        "name": "Demo*",
+        "tv": 2,
+        "roles": [
+          "GP",
+          "SK",
+          "FS"
+        ],
+        "movement": {
+          "types": [
+            "G"
+          ],
+          "value": 5
+        },
+        "armor": 2,
+        "hull": 1,
+        "structure": 1,
+        "actions": 1,
+        "gu": 4,
+        "pi": 4,
+        "ew": 6,
+        "mountedWeapons": [
+          "L-Bomb (AP:1)"
+        ],
+        "traits": [
+          "Lo-Tech",
+          "Vuln:H",
+          "Offroad"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-octopusDrones",
+    "name": "Octopus Drones",
+    "tv": 2,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 2,
+    "hull": 2,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "4 x LIMW"
+    ],
+    "traits": [
+      "Lo-Tech",
+      "VTOL"
+    ],
+    "height": 0.5,
+    "classification": "Gear",
+    "subtype": "Drone",
+    "manufacturer": "Kadellie Weapon Systems",
+    "variants": [
+      {
+        "id": "univeh-octopusDrones-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "univeh-octopusDrones-wunderpuss",
+        "name": "Wunderpuss",
+        "tv": 3,
+        "movement": {
+          "types": [
+            "H"
+          ],
+          "value": 8
+        },
+        "gu": 3,
+        "pi": 3,
+        "ew": 5,
+        "traits": [
+          "Hi-Tech"
+        ]
+      },
+      {
+        "id": "univeh-octopusDrones-gelding",
+        "name": "Gelding*",
+        "tv": 1,
+        "mountedWeapons": [
+          "L-Bomb (AP:1)**"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "univeh-airStrikes",
+    "name": "Air Strikes",
+    "tv": 3,
+    "roles": [],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 0
+    },
+    "armor": 0,
+    "hull": 0,
+    "structure": 0,
+    "actions": 0,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "mountedWeapons": [
+      "M-Bomb"
+    ],
+    "traits": [],
+    "height": 0,
+    "classification": "Counter",
+    "subtype": "Air Support",
+    "manufacturer": "Various",
+    "description": "From Northco’s G-7 Redjacket to the CEF’s TAAF-54, airstrikes are standard for every military on every planet. Your strike fighters are on hot standby, ready to drop bombs on enemies your ground units mark out for them. You will use Forward Observations to initiate airstrikes.",
+    "variants": [
+      {
+        "id": "univeh-airStrikes-napalm",
+        "name": "Napalm",
+        "tv": 3,
+        "gu": 4,
+        "pi": 4,
+        "mountedWeapons": [
+          "M-Napalm"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "univeh-artilleryStrikes",
+    "name": "Artillery Strikes",
+    "tv": 4,
+    "roles": [],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 0
+    },
+    "armor": 0,
+    "hull": 0,
+    "structure": 0,
+    "actions": 0,
+    "gu": 4,
+    "pi": 0,
+    "ew": 0,
+    "mountedWeapons": [
+      "MATM"
+    ],
+    "traits": [],
+    "height": 0,
+    "classification": "Counter",
+    "subtype": "Artillery Support",
+    "manufacturer": "Various",
+    "description": "Long range artillery can be called in by Forward Observers. Depending on how far out they are, you may even hear the shout-out. It’s a quieter, duller thump, easily missed when you're in the middle of a firefight. It’s followed by ground shaking eruptions when the artillery strikes. You’re sure to not miss the second thump.",
+    "variants": [
+      {
+        "id": "univeh-artilleryStrikes-artilleryGun",
+        "name": "Artillery Gun",
+        "tv": 4,
+        "gu": 4,
+        "mountedWeapons": [
+          "MAG"
+        ]
+      },
+      {
+        "id": "univeh-artilleryStrikes-artilleryMissile",
+        "name": "Artillery Missile",
+        "tv": 4,
+        "gu": 4,
+        "mountedWeapons": [
+          "MAM"
+        ]
+      }
+    ],
+    "upgrades": []
+  }
+]

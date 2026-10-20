@@ -1,1 +1,763 @@
-[]
+[
+  {
+    "id": "caprice-f32Maru",
+    "name": "F-32 Maru",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LRF",
+      "MP",
+      "2 x LSG"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Climb"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Hakkar",
+    "description": "Small and wide-footed, the F-32 can easily make its way across both the urban jungle of Gomorrah or the broken ground of Caprice's landscape. While initially employed as a civil policing unit, the F-32 has been updated with heavier armaments for combat operations.",
+    "variants": [
+      {
+        "id": "caprice-f32Maru-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-f55Zikru",
+    "name": "F-55 Zikru",
+    "tv": 7,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LAC",
+      "MP",
+      "MMW",
+      "2 x LSG"
+    ],
+    "mountedWeapons": [
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Climb",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Hakkar",
+    "description": "Like the F-27 and F-32, the pads on the F-55’s hands and feet utilize “Lacerta-tech”, produced by Lysander Incorporated, which can be engaged to produce van der Waals forces. This Lacerta-tech, combined with additional climbing equipment makes these frames excellent climbers.",
+    "variants": [
+      {
+        "id": "caprice-f55Zikru-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "caprice-f55Zikru-jammer",
+        "name": "Jammer",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "ECM",
+          "ECCM",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "caprice-f112Rabbu",
+    "name": "F-112 Rabbu",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "MP",
+      "MMW"
+    ],
+    "mountedWeapons": [
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Brawl:1",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Interceptor Frame",
+    "manufacturer": "Hakkar",
+    "description": "The F-112 is an F-55 with four legs. All four legs are tipped with a wheeled secondary movement system that provides increased speed and mobility on pavement and most level surfaces. While it is capable of working in off road conditions, they tend to be favored in urban environments.",
+    "variants": [
+      {
+        "id": "caprice-f112Rabbu-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-f27Sarru",
+    "name": "F-27 Sarru",
+    "tv": 14,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "MP",
+      "2 x LSGs\r\nMMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "2 x LATM",
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Climb",
+      "Brawl:1",
+      "React+"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Frame",
+    "manufacturer": "Hakkar",
+    "description": "The F-27’s Rocket-Assisted Hammer 5000 (RAH-5000), trademarked by Hakkar, is an evolved rock hammer with a fearsome reputation amongst arena fighters on Caprice. No other arena weapon has been credited with more one-hit victories than the RAH-5000.",
+    "variants": [
+      {
+        "id": "caprice-f27Sarru-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-acco",
+    "name": "Acco",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MIMG"
+    ],
+    "mountedWeapons": [
+      "2 x LSG"
+    ],
+    "traits": [
+      "Agile",
+      "Climb"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Utility Mount",
+    "manufacturer": "Kinzler Industries",
+    "description": "The first purely military mount developed on Caprice, the Acco is now a workhorse used by police and military. Developed by Kinzler Industries to be an exceptional climber, they can easily hang upside down from rock ceilings. Hakkar was so impressed they poached some of the key engineers involved with its development.",
+    "variants": [
+      {
+        "id": "caprice-acco-rex",
+        "name": "Rex",
+        "tv": 1,
+        "reactWeapons": [
+          "LAC",
+          "LRP"
+        ]
+      },
+      {
+        "id": "caprice-acco-spot",
+        "name": "Spot",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "TD",
+          "Sensor:24",
+          "Vuln:H"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-bashan",
+    "name": "Bashan",
+    "tv": 13,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "MIMG",
+      "MAC"
+    ],
+    "mountedWeapons": [
+      "2 x LSG"
+    ],
+    "traits": [
+      "React+",
+      "Climb",
+      "Sensor:24"
+    ],
+    "height": 1,
+    "classification": "Strider",
+    "subtype": "Light Mount",
+    "manufacturer": "Hakkar",
+    "description": "The Bashan is Hakkar’s electronic warfare answer for mounts. Their electronics suite is impressive, allowing the machine to be an acceptable command and control mount, even without the added features from the command upgrade. Bashans are regularly tasked with reconnaissance.",
+    "variants": [
+      {
+        "id": "caprice-bashan-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "caprice-bashan-jammer",
+        "name": "Jammer",
+        "tv": 2,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "caprice-aphek",
+    "name": "Aphek",
+    "tv": 11,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HIMG"
+    ],
+    "mountedWeapons": [
+      "2 x LSG"
+    ],
+    "traits": [
+      "React+",
+      "Climb"
+    ],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Light Mount",
+    "manufacturer": "Hakkar",
+    "description": "Caprice uses Apheks in a similar manner that Terra Novans use light tanks. However, they come with some features that allow them more tactical diversity. They can climb extremely well and are able to use their scorpion-like appendage to direct weapons from around cover.",
+    "variants": [
+      {
+        "id": "caprice-aphek-barrage",
+        "name": "Barrage",
+        "tv": 1,
+        "reactWeapons": [
+          "2 x LRP"
+        ]
+      },
+      {
+        "id": "caprice-aphek-rex",
+        "name": "Rex",
+        "tv": 2,
+        "reactWeapons": [
+          "MRC",
+          "LRP"
+        ]
+      },
+      {
+        "id": "caprice-aphek-buster",
+        "name": "Buster",
+        "tv": 3,
+        "reactWeapons": [
+          "MRC",
+          "MATM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-anab",
+    "name": "Anab",
+    "tv": 14,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LSMG"
+    ],
+    "mountedWeapons": [
+      "2 x MSG",
+      "LFG"
+    ],
+    "traits": [
+      "Climb",
+      "Sensor:36",
+      "React+"
+    ],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Medium Mount",
+    "manufacturer": "Hakkar",
+    "description": "Performance reports on Caprician mounts continue to note how they tend to lack strategic options, especially outside of mountainous environments. One of Hakkar’s responses was to develop a mount to bring a specific option currently lacking from many of their mounts: artillery.",
+    "variants": [
+      {
+        "id": "caprice-anab-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-kadesh",
+    "name": "Kadesh",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "MIMG",
+      "MRC"
+    ],
+    "mountedWeapons": [
+      "2 x MSG"
+    ],
+    "traits": [
+      "React+",
+      "Climb",
+      "Jetpack:4"
+    ],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Medium Mount",
+    "manufacturer": "Hakkar",
+    "description": "As Hakkar’s first entry into heavy mounts, the Kadesh is a bit of a multi-tool. It has an ECM device for electronic warfare and jet assisted jumping capabilities, all in addition to its climbing pistons, good armor and exceptional weapon choices.",
+    "variants": [
+      {
+        "id": "caprice-kadesh-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-meggido",
+    "name": "Meggido",
+    "tv": 14,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 9,
+    "hull": 5,
+    "structure": 3,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HIMG"
+    ],
+    "mountedWeapons": [
+      "2 x MSG"
+    ],
+    "traits": [
+      "Climb",
+      "Jetpack:4"
+    ],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Medium Mount",
+    "manufacturer": "Hakkar",
+    "description": "Hakkar’s second entry into the heavy combat mount class of vehicles is a favorite amongst many pilots. The Meggido marries popular features found on the Aphek with features from the Kadesh. Its advanced computers assist the pilot with several functions, allowing many features to be initiated by voice commands.",
+    "variants": [
+      {
+        "id": "caprice-meggido-buster",
+        "name": "Buster",
+        "tv": 4,
+        "reactWeapons": [
+          "MRP",
+          "MATM"
+        ]
+      },
+      {
+        "id": "caprice-meggido-meteor",
+        "name": "Meteor",
+        "tv": 5,
+        "reactWeapons": [
+          "MPL",
+          "MATM"
+        ]
+      },
+      {
+        "id": "caprice-meggido-rex",
+        "name": "Rex",
+        "tv": 5,
+        "reactWeapons": [
+          "HRC",
+          "MGL"
+        ]
+      },
+      {
+        "id": "caprice-meggido-meta",
+        "name": "Meta",
+        "tv": 6,
+        "reactWeapons": [
+          "HRC",
+          "MATM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-ammon",
+    "name": "Ammon",
+    "tv": 23,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 5
+    },
+    "armor": 11,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "2 x HRP (Guided)",
+      "HIMG"
+    ],
+    "mountedWeapons": [
+      "2 x MSG"
+    ],
+    "traits": [
+      "Climb",
+      "TD"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Heavy Mount",
+    "manufacturer": "Hakkar",
+    "description": "The Ammon is built like a main battle tank and has exceptional mobility for its size within rocky environments, such as the Cat’s Eye Trench. Like most mounts, it is usually frowned upon for them to climb buildings within the city of Gomorrah, due to the giant holes their climbing pistons leave in the walls of buildings.",
+    "variants": [
+      {
+        "id": "caprice-ammon-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-moab",
+    "name": "Moab",
+    "tv": 21,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "2 x MPA"
+    ],
+    "traits": [
+      "Climb"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Heavy Mount",
+    "manufacturer": "Hakkar",
+    "description": "The Moab was one of the first mounts. It is almost 200 years old and was initially developed as a very heavy all-terrain vehicle. It has been upgraded hundreds of times to stay modernized. Hakkar used the design to inspire the Ammon and allows other corporations to manufacture them, for a fee of course.",
+    "variants": [
+      {
+        "id": "caprice-moab-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-baalim",
+    "name": "Ba'alim",
+    "tv": 19,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "2 x HAR"
+    ],
+    "traits": [],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Fire Support Frame",
+    "manufacturer": "Hakkar",
+    "description": "The Ba'alim Heavy Frame is an adaptation of the Moab. While it is lighter than the Moab, both share a similar main body and powerplant design. The Ba'alim has only two legs, built around a digitigrade stance that makes it easier to absorb the shock of running and jumping at higher speeds.",
+    "variants": [
+      {
+        "id": "caprice-baalim-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "caprice-hamath",
+    "name": "Hamath",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "traits": [
+      "Transport:2 Cadres",
+      "Climb"
+    ],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Medium Mount",
+    "manufacturer": "Kinzler Industries",
+    "description": "The Hamath APC is an armed and armored version of a transport commonly used to get miners to and from sites wheeled, or even treaded vehicles normally can’t go. The corporations use them within the city limits of Gomorrah to transport fire, EMS and police response units.",
+    "variants": [
+      {
+        "id": "caprice-hamath-rex",
+        "name": "Rex",
+        "tv": 2,
+        "reactWeapons": [
+          "MRC (T)",
+          "MIMG"
+        ]
+      },
+      {
+        "id": "caprice-hamath-gaug",
+        "name": "Gaug",
+        "tv": 1,
+        "mountedWeapons": [
+          "MMW (Brawl:1)"
+        ],
+        "traits": [
+          "Repair:4"
+        ]
+      },
+      {
+        "id": "caprice-hamath-medico",
+        "name": "Medico",
+        "tv": 1,
+        "traits": [
+          "Medic:4"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "caprice-hamath-command",
+        "name": "Command",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Init+"
+        ]
+      }
+    ]
+  }
+]

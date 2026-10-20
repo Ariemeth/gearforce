@@ -1,1 +1,2398 @@
-[]
+[
+  {
+    "id": "south-jager",
+    "name": "Jager",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The oldest and most basic gear fielded by the South, the Jager began its existence as a shameless copy of the Hunter.  Indeed, Republican commandos stole a Hunter prototype and engineers were able to create a near-exact copy for operations which led to the creation of the Allied Southern Territories.",
+    "variants": [
+      {
+        "id": "south-jager-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-sdJager",
+    "name": "SD Jager",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Almost as soon as the North deployed the Stripped-Down (SD) Hunter, Southern patrol forces absconded with one of the gears for Territorial Arms to reverse engineer it. The efficiency at which the South is able to perform such actions is remarkable and Northern commanders everywhere curse it.",
+    "variants": [
+      {
+        "id": "south-sdJager-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-paraJager",
+    "name": "Para Jager",
+    "tv": 6,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LSG"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Paratrooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Normally, air deployment precludes the availability of heavier weapons. But the inexpensive Jager Paratrooper can be equipped with a selection of effective weapons without adversely affecting its aerodynamics. This extra punch has allowed this gear to help turn the tide in many engagements.",
+    "variants": [
+      {
+        "id": "south-paraJager-stock",
+        "name": "Stock",
+        "tv": 0,
+        "mountedWeapons": [
+          "LAPGL"
+        ]
+      },
+      {
+        "id": "south-paraJager-longbow",
+        "name": "Longbow",
+        "tv": 1,
+        "reactWeapons": [
+          "LSMG"
+        ],
+        "mountedWeapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "south-paraJager-blitz",
+        "name": "Blitz",
+        "tv": 2,
+        "mountedWeapons": [
+          "LATM (LA:2)",
+          "LM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-dartjager",
+    "name": "Dartjager",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "traits": [
+      "Hands",
+      "Agile",
+      "Offroad",
+      "ECCM"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Rapid Response Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Dartjager, nicknamed - Bug Head - by pilots, is designed to serve as a Rapid Response Vehicle (RRV). The SRA uses squads of RRVs to quickly deploy and engage enemy contacts while more comprehensive plans are drawn up. It is dangerous work indeed as they take on any and all comers.",
+    "variants": [
+      {
+        "id": "south-dartjager-stock",
+        "name": "Stock",
+        "tv": 0,
+        "reactWeapons": [
+          "LAC",
+          "LVB"
+        ],
+        "mountedWeapons": [
+          "LRP",
+          "LAPGL"
+        ]
+      },
+      {
+        "id": "south-dartjager-heavyShooter",
+        "name": "Heavy Shooter",
+        "tv": 2,
+        "reactWeapons": [
+          "LSMG"
+        ],
+        "mountedWeapons": [
+          "MM"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-dartjager-armoredDartjager",
+        "name": "Armored Dartjager",
+        "tv": 1,
+        "armor": 6
+      }
+    ]
+  },
+  {
+    "id": "south-wasserjager",
+    "name": "Wasserjager",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Sub"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Submersible Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "As the first amphibious gear on Terra Nova, several weapons were developed for the Wasserjager, such as the watertight, hand-held, 30mm, PR-55 autocannon. Shoulder-mounted Standard-XII torpedo pods grant the Wasserjager considerable underwater punch. An HLB-16 APGL and a HHVB-3 vibro-knife round out its abilities.",
+    "variants": [
+      {
+        "id": "south-wasserjager-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-rattlesnake",
+    "name": "Rattlesnake",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Rattlesnake is another older southern design which continues to be relevant. Its main selling point is the price tag associated with a Medium Rocket Pod (MRP). Other gears with the same weapon are typically more expensive. This is a good option for commanders who are not as concerned with their pilots' survivability.",
+    "variants": [
+      {
+        "id": "south-rattlesnake-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-sidewinder",
+    "name": "Sidewinder",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "LSMG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Sidewinder was designed for when the survival of carefully trained gear pilots is deemed a priority to an understaffed Republican military. The torso and head armor is thicker around the cockpit, forming a heavily protected – box – which surrounds the pilot, making this gear popular with pilots.",
+    "variants": [
+      {
+        "id": "south-sidewinder-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-sidewinder-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-diamondback",
+    "name": "Diamondback",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 6,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAR",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Mandeers Heavy Industries",
+    "description": "The latest design to be produced by Mandeers Heavy Industries and the engineering experts of Dynamic Systems, the Diamondback Gear is a culmination of two decades of development. The result is a heavier trooper gear that can outlast any other gear in its class without compromising weapons.",
+    "variants": [
+      {
+        "id": "south-diamondback-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-blackMamba",
+    "name": "Black Mamba",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The current cutting edge in Southern gear design, the Black Mamba is a relatively recent gear that has had a serious impact on the Terra Novan military scene. The Mamba is the result of the modernization program that swept the Southern military just before the War of the Alliance.",
+    "variants": [
+      {
+        "id": "south-blackMamba-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-blackMamba-armoredMamba",
+        "name": "Armored Mamba",
+        "tv": 2,
+        "armor": 8
+      },
+      {
+        "id": "south-blackMamba-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-rockMamba",
+    "name": "Rock Mamba",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LM",
+      "LRP",
+      "MGG"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Climb"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Southern Republic is always interested in expanding its ability to dominate the mountainous areas of Terra Nova in general and of the Badlands in particular. Rock Mambas lead the way in these endeavors with loadout sets task built for rugged terrain operations.",
+    "variants": [
+      {
+        "id": "south-rockMamba-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-rockMamba-switchback",
+        "name": "Switchback",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-waterViper",
+    "name": "Water Viper",
+    "tv": 8,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 7,
+    "hull": 5,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MFC",
+      "LSMG",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "2 x LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Sub"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Submersible Strike Gear",
+    "manufacturer": "Mandeers Heavy Industries",
+    "description": "On a planet where most combat takes place on dry land, the Water Viper has a very niche market. However, the SRA has made significant purchases of the design to strengthen their swamp and jungle fighting units. The Water Viper Silent Running (SR) is further equipped with an ECM pod while its turbines are retrofitted to reduce cavitation.",
+    "variants": [
+      {
+        "id": "south-waterViper-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-waterViper-sr",
+        "name": "SR",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "ECM",
+          "Sensor:24",
+          "Smoke",
+          "Stealth (Aux)"
+        ]
+      },
+      {
+        "id": "south-waterViper-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-mambaMP",
+    "name": "Mamba MP",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 6,
+    "reactWeapons": [
+      "MFC",
+      "LMW"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Military Police Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Military Police gears (MP gears) are typically built for dealing with human targets, lightly armored vehicles, and other gears. Their primary weapon of choice tends to be frag cannons, capable of being loaded with non-lethal or lethal projectiles. Other weaponry, to include bazookas are available for heavier targets.",
+    "variants": [
+      {
+        "id": "south-mambaMP-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-mambaMP-banded",
+        "name": "Banded",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-cobraMP",
+    "name": "Cobra MP",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LMW"
+    ],
+    "mountedWeapons": [
+      "HIM",
+      "MIRC"
+    ],
+    "traits": [
+      "Hands",
+      "Airdrop"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Military Police Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "MP gears are commonly found in the Mekong Dominion or in areas where MILICIA regiments are active. For the Mekonese, these gears embody the Peacekeeper's mythos they have fashioned for themselves. Cobra MPs are fielded both for riot control and anti-rover duties. And, they excel at both.",
+    "variants": [
+      {
+        "id": "south-cobraMP-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-cobraMP-banded",
+        "name": "Banded",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-iguanaMP",
+    "name": "Iguana MP",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "MFC",
+      "LMW"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Military Police Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Iguana MPs can be found on all major southern military bases and quite a few minor ones. The Iguana MP is often preferred to the larger Mamba MP by pilots who find themselves undertaking operations in tight urban conditions. The lower profile of the Iguana allows it to work comfortably inside warehouses or in small alleys.",
+    "variants": [
+      {
+        "id": "south-iguanaMP-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-salamander",
+    "name": "Salamander",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MAC/LFC",
+      "MMW (Brawl:1)"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Military Police Gear",
+    "manufacturer": "Mandeers Heavy Industries",
+    "description": "As a popular rally gear the Salamander has a reputation for speed-with-firepower. As an urban police gear, the Salamander is extensively used in city-states across the South. Since there is no rocket pack, Salamanders usually come armed with an autocannon that has an underslung secondary weapon.",
+    "variants": [
+      {
+        "id": "south-salamander-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-salamander-ruggedTerrain",
+        "name": "Rugged Terrain",
+        "tv": 1,
+        "reactWeapons": [
+          "MMW"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-streetViper",
+    "name": "Street Viper",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LRF",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Agile"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Military Police Gear",
+    "manufacturer": "Mandeers Heavy Industries",
+    "description": "This low cost gear has options for police equipment. The cockpit was redesigned by Dynamic Systems to be more ergonomic, making the gear extremely comfortable for extended operations. The Street Viper is found in city militias and is popular with police forces as an interception unit.",
+    "variants": [
+      {
+        "id": "south-streetViper-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-streetViper-ruggedTerrain",
+        "name": "Rugged Terrain",
+        "tv": 1,
+        "reactWeapons": [
+          "MMW"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-asp",
+    "name": "Asp",
+    "tv": 5,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Asp was officially developed to be a low-cost garrison gear. In truth, it’s an attempted deterrent to separatist movements, rovers and other dissidents. It’s armed and armored too lightly for most commanders' preferences. However, its frontal plates are reinforced, giving the pilot better protection than expected.",
+    "variants": [
+      {
+        "id": "south-asp-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-basilisk",
+    "name": "Basilisk",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 0
+    },
+    "armor": 0,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 0,
+    "ew": 5,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Sensor:36"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Advanced Trooper Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Basilisk is basically a Jager with advanced sensors and other added electronics. The sensor array is very useful when firing indirectly with its rocket pack, which adds some diversity to the options available to trooper gears. Although its original duties have been mostly replaced by more advanced EW gears, it is still a great choice for its cost.",
+    "variants": [
+      {
+        "id": "south-basilisk-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-silverscale",
+    "name": "Silverscale",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "RC"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 0
+    },
+    "armor": 0,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 0,
+    "ew": 4,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "TD",
+      "Sensor Boom",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Territorial Arms claims the Silverscale is the finest EW gear on Terra Nova today. Based on the Basilisk trooper gear, the Silverscale comes equipped with an even more advanced communications and electronic warfare suite. The target designator can extend out from a sensor boom and be used to peer around corners.",
+    "variants": [
+      {
+        "id": "south-silverscale-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-iguana",
+    "name": "Iguana",
+    "tv": 8,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "LAC",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Agile"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Since its introduction, the Iguana has proven itself to be an extremely successful design. The Iguana saw extensive action in the War of the Alliance, where it was deployed as a recon, light trooper, and commando gear. The flexibility of this gear’s design was so apparent that it has even served as a command platform.",
+    "variants": [
+      {
+        "id": "south-iguana-banded",
+        "name": "Banded",
+        "tv": 1,
+        "mountedWeapons": [
+          "LRP"
+        ],
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "south-iguana-blackBox",
+        "name": "Black Box",
+        "tv": 2,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "south-iguana-chatterbox",
+        "name": "Chatterbox",
+        "tv": 3,
+        "traits": [
+          "ECM",
+          "ECCM+",
+          "SatUp",
+          "Init+"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-iguana-recon",
+        "name": "Recon",
+        "tv": 1,
+        "traits": [
+          "Sensor:36",
+          "TD"
+        ]
+      },
+      {
+        "id": "south-iguana-lidded",
+        "name": "Lidded",
+        "tv": 1,
+        "traits": [
+          "Stealth (Aux)"
+        ]
+      },
+      {
+        "id": "south-iguana-rapier",
+        "name": "Rapier",
+        "tv": 1,
+        "hull": 5,
+        "structure": 3,
+        "reactWeapons": [
+          "MVB"
+        ],
+        "traits": [
+          "Brawl:1"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-paraIguana",
+    "name": "Para Iguana",
+    "tv": 9,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LAC",
+      "LSG"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "ECM",
+      "ECCM"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "The Para Iguana has been in service since TN 1894. It's has proven its worth in the toughest commando and extraction missions, demonstrating that even a small machine can do the most dangerous jobs. This success can be traced back to the training for these pilots as it is some of the most rigorous around.",
+    "variants": [
+      {
+        "id": "south-paraIguana-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-paraIguana-recon",
+        "name": "Recon",
+        "tv": 1,
+        "traits": [
+          "Sensor:24",
+          "TD"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-ferDeLance",
+    "name": "Fer de Lance",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Brawl:1"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "SRWI / Dynamic Systems",
+    "description": "Sporting a wide array of lethal weapons, the Fer de Lance is an elegant fighting machine reserved for only the best. Based on the Sidewinder chassis, the engineers of the Fer de Lance made a number of internal changes by borrowing the actuator design and combat computer from Diamondbacks.",
+    "variants": [
+      {
+        "id": "south-ferDeLance-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-ferDeLance-chatterbox",
+        "name": "Chatterbox",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-gila",
+    "name": "Gila",
+    "tv": 9,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 5,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MRF",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LFL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Brawl:1"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Developed as an upgraded variant of the highly successful Iguana, the Gila design focuses on the potential lethality of an Iguana in an assault role. The Gila is frequently sold with a unique Heavy Submachine Gun (HSMG) that comes with an integrated Light Frag Cannon (LFC) underslung.",
+    "variants": [
+      {
+        "id": "south-gila-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-chameleon",
+    "name": "Chameleon",
+    "tv": 11,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "LSMG (Silent)",
+      "LAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "ECM",
+      "ECCM",
+      "Sensor:36",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "TA Skunk Works",
+    "description": "As its name indicates, the Chameleon is specifically designed to disappear. At first glance, the Chameleon looks simply like a modified Iguana with slightly blockier armor plates. This impression soon vanishes when examining the intricate cockpit with even more advanced electronics than an Iguana.",
+    "variants": [
+      {
+        "id": "south-chameleon-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-snakeyeBlackMamba",
+    "name": "Snakeye Black Mamba",
+    "tv": 11,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "TA Skunk Works",
+    "description": "The Snakeye variant of the Black Mamba fulfills the need for a high performance, stealth gear built for covert operations, assassinations, and lightning raids. The hybrid propulsion system gives the pilot the option of switching to – whisper – mode by shutting down the turbine and only using the energy stored in the battery.",
+    "variants": [
+      {
+        "id": "south-snakeyeBlackMamba-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-greenMamba",
+    "name": "Green Mamba",
+    "tv": 11,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "TA Skunk Works",
+    "description": "The Green Mamba is another exceptional stealth gear. It strikes a happy medium between performance and cost by using more conventional weapons systems. One major benefit is that its weapons do not need to be recharged and the required ammunition is readily available just about anywhere on Terra Nova.",
+    "variants": [
+      {
+        "id": "south-greenMamba-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-goldMamba",
+    "name": "Gold Mamba",
+    "tv": 12,
+    "roles": [
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "LLC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LM",
+      "LATM (LA:2)",
+      "LAPGL",
+      "MGG"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Climb",
+      "Stealth"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Special Forces Gear",
+    "manufacturer": "TA Skunk Works",
+    "description": "The Gold Mamba is one of the most expensive gears ever developed. Produced simultaneously with the Rock Mamba, the Gold Mamba was allowed a larger budget and is considered by many to be the ultimate Mamba. They are usually only entrusted to the best gear pilots.",
+    "variants": [
+      {
+        "id": "south-goldMamba-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-goldMamba-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-cobra",
+    "name": "Cobra",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HAC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MIRC"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Territorial Arms",
+    "description": "Armed to the teeth and sporting armor to match, the Cobra is the AST’s main fire support gear. Highly modular, the Cobra can be fitted in various configurations that are each capable of filling a variety roles. Its ferocious reputation means that many Northern gear pilots treat the sighting of Cobras as a prelude to an assault.",
+    "variants": [
+      {
+        "id": "south-cobra-spitting",
+        "name": "Spitting",
+        "tv": 1,
+        "mountedWeapons": [
+          "MAR"
+        ]
+      },
+      {
+        "id": "south-cobra-longFang",
+        "name": "Long Fang",
+        "tv": 1,
+        "mountedWeapons": [
+          "LFG"
+        ]
+      },
+      {
+        "id": "south-cobra-storm",
+        "name": "Storm",
+        "tv": 1,
+        "mountedWeapons": [
+          "MM"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-cobra-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "south-cobra-brahmin",
+        "name": "Brahmin",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECM",
+          "ECCM",
+          "Vuln:H"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-kingCobra",
+    "name": "King Cobra",
+    "tv": 14,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 2,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LLC",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "HIRC",
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "TA Skunk Works",
+    "description": "The King Cobra is often considered one of the most powerful gears ever commissioned and has repeatedly proven itself to be one of the most devastating weapons in the Southern arsenal. Heavy armor and a powerful and flexible armament allow it to function equally well as an assault or fire support gear.",
+    "variants": [
+      {
+        "id": "south-kingCobra-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-drake",
+    "name": "Drake",
+    "tv": 21,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "HFL",
+      "HFC (T, Auto)",
+      "HSG (Apex)"
+    ],
+    "mountedWeapons": [
+      "2 x LAR"
+    ],
+    "traits": [
+      "Hands",
+      "Brawl:1",
+      "Shield",
+      "Resist:F",
+      "AMS"
+    ],
+    "height": 3,
+    "classification": "Strider",
+    "subtype": "Gear-Strider",
+    "manufacturer": "Avesta Group",
+    "description": "Carrying a virtual arsenal, this behemoth is capable of destroying any target. Like many of the AST’s designs, the Drake is considered to be a marvel of technology and design. Used for support or assault, this Strider’s offensive capabilities are only matched by its frightening array of defensive measures.",
+    "variants": [
+      {
+        "id": "south-drake-striking",
+        "name": "Striking",
+        "tv": 2,
+        "reactWeapons": [
+          "HBZ (Apex, Precise+)"
+        ]
+      },
+      {
+        "id": "south-drake-junglemower",
+        "name": "Junglemower",
+        "tv": 4,
+        "reactWeapons": [
+          "HRC (Apex)"
+        ]
+      },
+      {
+        "id": "south-drake-force",
+        "name": "Force",
+        "tv": 3,
+        "reactWeapons": [
+          "2 x MPL (Link)"
+        ]
+      },
+      {
+        "id": "south-drake-blazing",
+        "name": "Blazing",
+        "tv": 4,
+        "reactWeapons": [
+          "2 x HRL (Link)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-drake-chatterbox",
+        "name": "Chatterbox",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-naga",
+    "name": "Naga",
+    "tv": 13,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "reactWeapons": [
+      "2 x HIMG (Link)"
+    ],
+    "traits": [
+      "TD",
+      "Sensor Boom",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Fire Support Strider",
+    "manufacturer": "Republican Heavy Industries",
+    "description": "The Naga is currently one of the premier striders of the Southern military and is a common sight guarding nearly every military installation. Serving with distinction since its introduction, it proved its worth during the War of the Alliance, where its powerful guided missiles were used with great effect against the hovertanks of the CEF.",
+    "variants": [
+      {
+        "id": "south-naga-hunting",
+        "name": "Hunting",
+        "tv": 2,
+        "mountedWeapons": [
+          "LLC (Reflex)"
+        ]
+      },
+      {
+        "id": "south-naga-longFang",
+        "name": "Long Fang",
+        "tv": 2,
+        "mountedWeapons": [
+          "LFG"
+        ]
+      },
+      {
+        "id": "south-naga-barbed",
+        "name": "Barbed",
+        "tv": 2,
+        "mountedWeapons": [
+          "HRP"
+        ]
+      },
+      {
+        "id": "south-naga-tusked",
+        "name": "Tusked",
+        "tv": 3,
+        "mountedWeapons": [
+          "MATM"
+        ]
+      },
+      {
+        "id": "south-naga-brawler",
+        "name": "Brawler",
+        "tv": 4,
+        "mountedWeapons": [
+          "HGL"
+        ]
+      },
+      {
+        "id": "south-naga-spitting",
+        "name": "Spitting",
+        "tv": 3,
+        "mountedWeapons": [
+          "LAR",
+          "LATM"
+        ]
+      },
+      {
+        "id": "south-naga-hissing",
+        "name": "Hissing",
+        "tv": 4,
+        "mountedWeapons": [
+          "MRP",
+          "MATM"
+        ]
+      },
+      {
+        "id": "south-naga-recon",
+        "name": "Recon*",
+        "tv": 1,
+        "traits": [
+          "Sensor:36",
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-naga-banded",
+        "name": "Banded",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-hydra",
+    "name": "Hydra",
+    "tv": 24,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 10,
+    "hull": 5,
+    "structure": 3,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 4,
+    "reactWeapons": [
+      "MTG",
+      "2 x LRC (Link)"
+    ],
+    "mountedWeapons": [
+      "MGL (T)",
+      "MRF (T)",
+      "HIM (T)"
+    ],
+    "traits": [
+      "Sub",
+      "ECM",
+      "React+",
+      "Sensor Boom (Aux)"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Submersible Strider",
+    "manufacturer": "Republican Heavy Industries",
+    "description": "The Hydra is a specialized Strider that is capable of operating in the swampy regions prevalent in the South. Deployed by the Humanist Alliance, Eastern Sun Emirates, and in the jungles of the Mekong, Hydras are often tasked with ambush attacks. A Hydra, rising without warning from the swamp, is often the last sight many pilots see.",
+    "variants": [
+      {
+        "id": "south-hydra-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-sagittarius",
+    "name": "Sagittarius",
+    "tv": 20,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 6
+    },
+    "armor": 11,
+    "hull": 5,
+    "structure": 3,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 4,
+    "reactWeapons": [
+      "LRC",
+      "HIMG"
+    ],
+    "traits": [
+      "Sub",
+      "ECM",
+      "React+"
+    ],
+    "height": 3,
+    "classification": "Strider",
+    "subtype": "Submersible Strider",
+    "manufacturer": "Allied Defense Works",
+    "description": "The Sagittarius is a heavily armored weapons platform that is capable of laying down impressive firepower. The Sagittarius comes in a variety of variants including anti-armor, anti-gear, and artillery. Some variants eschew rocket or missile weapons altogether and instead operate as advanced weapon platforms.",
+    "variants": [
+      {
+        "id": "south-sagittarius-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-fireDragon",
+    "name": "Fire Dragon",
+    "tv": 25,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 12,
+    "hull": 5,
+    "structure": 3,
+    "actions": 3,
+    "gu": 3,
+    "pi": 6,
+    "ew": 5,
+    "reactWeapons": [
+      "MFL",
+      "LAC (R, Auto)",
+      "LAC (L, Auto)"
+    ],
+    "mountedWeapons": [
+      "HRP (T, Precise+)"
+    ],
+    "traits": [
+      "Lumbering"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Heavy Strider",
+    "manufacturer": "HA Armor Werks",
+    "description": "The Dragon represents one of the most successful strider designs on Terra Nova. It is heavily armored and packs a fearsome array of weapons that is more than capable of reducing its targets to scrap. Developed by the Humanist Alliance, the success of the design saw it quickly adopted by all the armies of the AST.",
+    "variants": [
+      {
+        "id": "south-fireDragon-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-hun",
+    "name": "Hun",
+    "tv": 9,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 0,
+    "gu": 4,
+    "pi": 5,
+    "ew": 6,
+    "traits": [
+      "Amphib",
+      "Offroad",
+      "Smoke"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Tank",
+    "manufacturer": "Various",
+    "description": "The main light tank employed by the South, the Hun is a dependable and effective design. Chosen in part due to its versatility, the Hun has been a part of the AST’s arsenal for over a century. Its flexible design allows it to be adapted to a variety of roles ranging from a frontline fighting unit to a heavy APC. The Hun can also be fielded as an artillery unit with the Ballista variant serving as an artillery rocket platform and the Ostrogoth as an artillery gun platform. Tank units comprising exclusively of Hun tank variants are popular for garrison duty as their maintenance costs are much lower than a unit of gears.",
+    "variants": [
+      {
+        "id": "south-hun-stock",
+        "name": "Stock",
+        "tv": 4,
+        "actions": 1,
+        "reactWeapons": [
+          "LPL (T, AA)"
+        ],
+        "mountedWeapons": [
+          "MRF (T)",
+          "MAR (T)",
+          "MAPGL"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "south-hun-ballista",
+        "name": "Ballista",
+        "tv": 4,
+        "actions": 1,
+        "mountedWeapons": [
+          "MAM (T)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "south-hun-hwacha",
+        "name": "Hwacha",
+        "tv": 4,
+        "actions": 1,
+        "mountedWeapons": [
+          "MAR (T, Guided)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "south-hun-ostrogoth",
+        "name": "Ostrogoth",
+        "tv": 4,
+        "actions": 1,
+        "mountedWeapons": [
+          "MAG (T)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "south-hun-hittite",
+        "name": "Hittite",
+        "tv": 4,
+        "actions": 3,
+        "reactWeapons": [
+          "2 x MIMG",
+          "2 x MIMG (R)"
+        ],
+        "mountedWeapons": [
+          "HFL (T, Apex)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "south-hun-spahen",
+        "name": "Spahen*",
+        "tv": 9,
+        "actions": 1,
+        "reactWeapons": [
+          "LPL (T, AA)"
+        ],
+        "mountedWeapons": [
+          "MRF (T)"
+        ],
+        "traits": [
+          "Transport: 3 Drones**"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-caiman",
+    "name": "Caiman",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "traits": [
+      "Amphib",
+      "Offroad",
+      "Transport:1 Cadres"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Brok Enterprises",
+    "description": "The Caiman is a sturdy, tracked vehicle equipped with good overall armor protection and is cheap enough to be fielded in large numbers. The fact that it’s amphibious is a plus as the South has many wetlands. The Caiman has built a solid reputation for itself and has been used in every Southern conflict since its introduction in TN1829.",
+    "variants": [
+      {
+        "id": "south-caiman-stock",
+        "name": "Stock",
+        "tv": 1,
+        "reactWeapons": [
+          "MAC (T)",
+          "LIMG (T, Auto)"
+        ]
+      },
+      {
+        "id": "south-caiman-crocodile",
+        "name": "Crocodile",
+        "tv": 2,
+        "mountedWeapons": [
+          "HRP (T)"
+        ]
+      },
+      {
+        "id": "south-caiman-medical",
+        "name": "Medical",
+        "tv": 1,
+        "traits": [
+          "Medic:4"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-caiman-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-hetairoi",
+    "name": "Hetairoi",
+    "tv": 17,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HIMG (T)"
+    ],
+    "mountedWeapons": [
+      "MRP (T)"
+    ],
+    "traits": [
+      "Airdrop",
+      "Jump:2"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Medium Hovertank",
+    "manufacturer": "Humanist Alliance",
+    "description": "Another Humanist design to be adopted by the AST, the Hetairoi represents the pinnacle of Terra Novan efforts at building their own combat hover vehicles. As a combat platform the Hetairoi offers an unparalleled degree of maneuverability, agility, and firepower. The Spark variant compares favorably to CEF hovertanks and shares a common hunter-killer role. These hovertanks have seen constant combat in the current invasion and have been instrumental in countering hostile CEF forces.",
+    "variants": [
+      {
+        "id": "south-hetairoi-stock",
+        "name": "Stock",
+        "tv": 3,
+        "mountedWeapons": [
+          "HRC (T)"
+        ]
+      },
+      {
+        "id": "south-hetairoi-longFang",
+        "name": "Long Fang",
+        "tv": 3,
+        "mountedWeapons": [
+          "MFG (T)"
+        ]
+      },
+      {
+        "id": "south-hetairoi-spark",
+        "name": "Spark",
+        "tv": 3,
+        "mountedWeapons": [
+          "MPA (T)"
+        ]
+      },
+      {
+        "id": "south-hetairoi-force",
+        "name": "Force",
+        "tv": 3,
+        "mountedWeapons": [
+          "HPL (T)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-hetairoi-chatterbox",
+        "name": "Chatterbox",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "SatUp",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "south-artemis",
+    "name": "Artemis",
+    "tv": 20,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 4
+    },
+    "armor": 11,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "HFK (T, Apex, Burst:1)"
+    ],
+    "traits": [
+      "Lumbering",
+      "Offroad",
+      "Smoke"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Heavy Tank",
+    "manufacturer": "Republican Tank Arsenal",
+    "description": "The Artemis serves as a rugged field air interdiction platform. Enhanced targeting computers allow the Artemis to lay down accurate fire even while on the move, increasing its survival rate against airstrikes and long range artillery fire. It is also very capable of taking out enemy gears.",
+    "variants": [
+      {
+        "id": "south-artemis-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "south-visigoth",
+    "name": "Visigoth",
+    "tv": 22,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 4
+    },
+    "armor": 12,
+    "hull": 6,
+    "structure": 2,
+    "actions": 3,
+    "gu": 4,
+    "pi": 6,
+    "ew": 6,
+    "reactWeapons": [
+      "LPL (T, AA)",
+      "MRP (R)",
+      "MRP"
+    ],
+    "mountedWeapons": [
+      "HAPGL"
+    ],
+    "traits": [
+      "Lumbering",
+      "Offroad",
+      "Smoke"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Heavy Tank",
+    "manufacturer": "Republican Tank Arsenal",
+    "description": "For over a century and a half, the South’s main battle tank has been the reliable, powerful Visigoth. A 140mm tank gun is the centerpiece of the Visigoth’s armament, with additional options to increase its versatility. The Visigoth Khan command tank has an electronic suite that is the envy of many commanders.",
+    "variants": [
+      {
+        "id": "south-visigoth-stock",
+        "name": "Stock",
+        "tv": 8,
+        "mountedWeapons": [
+          "HTG (T, Stable, Precise)",
+          "HAC (T, Stable)"
+        ]
+      },
+      {
+        "id": "south-visigoth-longFang",
+        "name": "Long Fang",
+        "tv": 6,
+        "reactWeapons": [
+          "MRC (T)"
+        ],
+        "mountedWeapons": [
+          "2 x LFG (T, Stable, Precise)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "south-visigoth-khan",
+        "name": "Khan",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "SatUp",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  }
+]

@@ -1,5 +1,83 @@
 [
   {
+    "id": "bt-hadesPack",
+    "name": "Hades Pack",
+    "tv": 1,
+    "roles": [],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 0
+    },
+    "armor": 0,
+    "hull": 0,
+    "structure": 0,
+    "actions": 0,
+    "gu": 0,
+    "pi": 0,
+    "ew": 0,
+    "mountedWeapons": [
+      "MRF",
+      "LRP"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 0,
+    "classification": "Gear",
+    "subtype": "1.5-Inch Gear Upgrade",
+    "manufacturer": "Black Talon Werks",
+    "description": "Talon Assault Teams (TATs) have a need for space-capable gears. The Hades Packs are the Talon Werk’s answer. It includes enough propulsion for flight even while in atmosphere. They also incorporate weapons for use against CEF capital ships or their vanguard of fighters and space capable frames.",
+    "variants": [
+      {
+        "id": "bt-hadesPack-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "bt-aresPack",
+    "name": "Ares Pack",
+    "tv": 1,
+    "roles": [],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 0
+    },
+    "armor": 0,
+    "hull": 0,
+    "structure": 0,
+    "actions": 0,
+    "gu": 0,
+    "pi": 0,
+    "ew": 0,
+    "mountedWeapons": [
+      "MLC",
+      "MRP"
+    ],
+    "traits": [
+      "VTOL"
+    ],
+    "height": 0,
+    "classification": "Gear",
+    "subtype": "2-Inch Gear Upgrade",
+    "manufacturer": "Black Talon Werks",
+    "description": "Heavier fire support gears can be armed with heavier weapons. For the Ares Packs this means heavier weapons for attacking capital ships. However, they too can be armed with weapons for anti-fighter and anti-frame support.",
+    "variants": [
+      {
+        "id": "bt-aresPack-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
     "id": "bt-darkWarrior",
     "name": "Dark Warrior",
     "tv": 7,
@@ -23,7 +101,7 @@
     "pi": 4,
     "ew": 5,
     "reactWeapons": [
-      "LLC/LFC",
+      "LAC/LFC",
       "LVB"
     ],
     "mountedWeapons": [
@@ -56,14 +134,1270 @@
           "ECM",
           "Sensor:24 (Aux)"
         ]
-      },
-      {
-        "id": "bt-darkWarrior-flakjacket",
-        "name": "Flak Jacket",
-        "tv": 1,
-        "hull": 6,
-        "structure": 2
       }
     ]
+  },
+  {
+    "id": "bt-darkWolf",
+    "name": "Dark Wolf",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LAC/LGL",
+      "2 x LMW"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Airdrop",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Trooper Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Talons are noted for their tech, including advanced jetpacks. However, when stealth is a requirement, climbing gears are actually one of the top choices. When Western Armories reanimated the Wolf program, Talon Werks engineers jumped at the opportunity to modify them.",
+    "variants": [
+      {
+        "id": "bt-darkWolf-tenebris",
+        "name": "Tenebris",
+        "tv": 0,
+        "mountedWeapons": [
+          "LRP",
+          "LAPGL"
+        ]
+      },
+      {
+        "id": "bt-darkWolf-lucius",
+        "name": "Lucius",
+        "tv": 1,
+        "mountedWeapons": [
+          "2 x MGG",
+          "MAPGL"
+        ],
+        "traits": [
+          "Climb"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "bt-darkJaguar",
+    "name": "Dark Jaguar",
+    "tv": 11,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC/LFC",
+      "MMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "An upgrade of the Northern Jaguar, this gear is used by Black Talon combat units in their standard operations. Despite an active stealth system, advanced actuators and improved power plant the gear is relatively unchanged. This gear is used in Talon squads operating in System and are often Terra Nova’s first responders to the CEF threat.",
+    "variants": [
+      {
+        "id": "bt-darkJaguar-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkJaguar-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "bt-darkJaguar-seccom",
+        "name": "SecCom",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-darkMamba",
+    "name": "Dark Mamba",
+    "tv": 11,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 5,
+    "reactWeapons": [
+      "MAC",
+      "MMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "LRP",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Black Mamba is the South’s primary strike gear and the many years of use have been influential in developing strategies and tactics that synergize its many advantages. The Dark Mamba is a fearsome combat unit harmoniously marrying the deadly trinity of performance, firepower and survivability in a single package.",
+    "variants": [
+      {
+        "id": "bt-darkMamba-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkMamba-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-eagle",
+    "name": "Eagle",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "MAC/LGL",
+      "MMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "MRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Jetpack:6",
+      "Stealth"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Strike Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The primary strike gear used by the Black Talons, the Eagle was also the first of the Claw series to roll off the assembly line. Based off Paxton’s Warrior Elite program, the Eagle incorporated numerous technological advancements developed for the high risk missions undertaken by Talon operatives.",
+    "variants": [
+      {
+        "id": "bt-eagle-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-eagle-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "Sensor:24"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-owl",
+    "name": "Owl",
+    "tv": 14,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "MRF",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "MRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "SatUp",
+      "Init+",
+      "Jetpack:6",
+      "Stealth"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Command Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Owl was designed as a command gear from the ground up and incorporates the latest in electronic technologies. Exclusively used by commanders, the Owl features a networked logic engine which assists in decision making by analyzing sensor and targeting data from all gears in the squad.",
+    "variants": [
+      {
+        "id": "bt-owl-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "bt-darkCheetah",
+    "name": "Dark Cheetah",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 4,
+    "reactWeapons": [
+      "LSMG",
+      "MMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "ECM",
+      "ECCM",
+      "Sensor:36",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Dark Cheetah occupies a role similar to that of its CNCS variant. It is an excellent recon gear with powerful sensors and communications equipment. Though initially competing with the Dark Iguana, Dark Cheetahs were chosen due to the slightly better maneuverability, smaller size and lower tonnage.",
+    "variants": [
+      {
+        "id": "bt-darkCheetah-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkCheetah-grey",
+        "name": "Grey",
+        "tv": 1,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "bt-darkCheetah-sta",
+        "name": "STA",
+        "tv": 1,
+        "traits": [
+          "TD",
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-darkSkirmisher",
+    "name": "Dark Skirmisher",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "LAC",
+      "MMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Stealth (Aux)",
+      "ECM",
+      "ECCM"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Dark Skirmisher was chosen for the Black Talons because of its sterling record of reliability in the field, low maintenance requirements and its ability to easily fill multiple mission profiles. It retains its advanced ECM suite allowing it to wreak havoc by disrupting comms, targeting systems or other voodoo tricks.",
+    "variants": [
+      {
+        "id": "bt-darkSkirmisher-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkSkirmisher-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "bt-darkSkirmisher-tag",
+        "name": "TAG",
+        "tv": 2,
+        "traits": [
+          "SatUp",
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-raven",
+    "name": "Raven",
+    "tv": 11,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 3,
+    "ew": 3,
+    "reactWeapons": [
+      "LRF",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Sensor:36",
+      "Jetpack:6",
+      "Stealth"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "EW Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "Like all Claw series gears, The Raven originated from the dark depths of the Paxton Karaq Wastes Research and Development facility. It’s in this facility that Terra Novan technology was challenged and taken to the next level with the ultimate endeavor of defeating the CEF. The Raven is the most advanced EW gear from Terra Nova.",
+    "variants": [
+      {
+        "id": "bt-raven-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-raven-spectre",
+        "name": "Spectre",
+        "tv": 2,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "bt-raven-tag",
+        "name": "TAG",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "TD"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-darkCobra",
+    "name": "Dark Cobra",
+    "tv": 15,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 3,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HRC (Reflex, AA)",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "MAR",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Offroad",
+      "Stealth (Aux)"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Dark Cobra is Armed with an array of short and long ranged weapons. These loadouts allow the pilots to work as a hammer or go in with more finesse. Famed gear pilot Miranda Petite pilots a Dark Cobra, Julius. It is rumored she helped develop the variant loadouts with the Talon Werks Team.",
+    "variants": [
+      {
+        "id": "bt-darkCobra-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkCobra-razorFang",
+        "name": "Razor Fang",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-raptor",
+    "name": "Raptor",
+    "tv": 15,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 3,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HRC",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "MIRC",
+      "LAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "React+",
+      "Jetpack:6",
+      "Stealth"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Raptor is used when the Black Talons are tasked with assaulting fortified enemy positions. Like its namesake, the Raptor is a merciless predator and is equipped with a wide array of tools for quickly dismantling its prey. An unusually high number of Raptor pilots have dueling experience.",
+    "variants": [
+      {
+        "id": "bt-raptor-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-raptor-comanche",
+        "name": "Comanche",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-darkKodiak",
+    "name": "Dark Kodiak",
+    "tv": 19,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 5
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 2,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "HRC (Reflex, AA)",
+      "MVB"
+    ],
+    "mountedWeapons": [
+      "MAR",
+      "2 x HIRC (Link)",
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Stealth (Aux)",
+      "Offroad"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "The mission profile of the Dark Kodiak remains unchanged from its CNCS forbearer. Armed with a variety of tank busting weaponry the gear is often used in an assault capacity. Due to its reliance on CNCS manufacturing facilities for components and replacement parts, the Dark Kodiak is gradually being phased out in favor of its Claw counterparts.",
+    "variants": [
+      {
+        "id": "bt-darkKodiak-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkKodiak-sabertooth",
+        "name": "Sabertooth",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-vulture",
+    "name": "Vulture",
+    "tv": 20,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 2,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LFG (Precise)",
+      "HVB"
+    ],
+    "mountedWeapons": [
+      "MM",
+      "MFC",
+      "MAPGL"
+    ],
+    "traits": [
+      "Hands",
+      "Jetpack:6",
+      "Stealth"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Assault Gear",
+    "manufacturer": "Black Talon Werks",
+    "description": "Originally called the Agamemnon, the Vulture is easily the most advanced fire support gear to come out of Paxton’s hidden Karaq Wastes R&D facility. It’s arguably the most powerful fire support gear ever made and it makes engineers everywhere wonder what Paxton did to evolve their gears to this level.",
+    "variants": [
+      {
+        "id": "bt-vulture-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-vulture-comanche",
+        "name": "Comanche",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-karakara",
+    "name": "Karakara",
+    "tv": 23,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 4,
+    "actions": 3,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "HRC (Apex)",
+      "2 x MIMG (Auto, Link)",
+      "HVB (Apex, Reach:1)"
+    ],
+    "mountedWeapons": [
+      "HHG"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2",
+      "Brawl:1",
+      "Shield",
+      "Stealth",
+      "React+"
+    ],
+    "height": 2.5,
+    "classification": "Strider",
+    "subtype": "Gear-Strider",
+    "manufacturer": "Black Talon Werks",
+    "description": "Deep in the hidden Karaq Waste facility, Talon Werks has been busy developing the most advanced strider Terra Nova has ever known. With lessons learned from engagements with the CEF and other colonies, Paxton has taken major design elements from the Cataphract and added new and improved capabilities.",
+    "variants": [
+      {
+        "id": "bt-karakara-stock",
+        "name": "Stock",
+        "tv": 2,
+        "mountedWeapons": [
+          "LATM (Precise)"
+        ]
+      },
+      {
+        "id": "bt-karakara-karakaraWithZeusPack",
+        "name": "Karakara with \r\nZeus Pack",
+        "tv": 4,
+        "mountedWeapons": [
+          "HSC (Apex)",
+          "HRP (Apex)"
+        ],
+        "traits": [
+          "VTOL"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-karakara-alpha",
+        "name": "Alpha",
+        "tv": 1,
+        "traits": [
+          "ECCM",
+          "Init+"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-darkHyenaII",
+    "name": "Dark Hyena II",
+    "tv": 20,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "2 x MLC (T)",
+      "MIRC (Auto)"
+    ],
+    "mountedWeapons": [
+      "MRP (T, Guided, AP:2)"
+    ],
+    "traits": [
+      "ECM+",
+      "ECCM+",
+      "TD",
+      "Sensor:36",
+      "Resist:H",
+      "Offroad",
+      "Stealth (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Light Tank",
+    "manufacturer": "Black Talon Werks",
+    "description": "As soon as the Hyena II started rolling off the assembly lines, Talon operatives clamored for its inclusion into their arsenal. Faster than the average strider, and carrying some high-tech weaponry, Hyena IIs fall into the special operations of the Talons like they were made for it.",
+    "variants": [
+      {
+        "id": "bt-darkHyenaII-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "bt-darkCoyote",
+    "name": "Dark Coyote",
+    "tv": 20,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 9,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 3,
+    "pi": 5,
+    "ew": 4,
+    "reactWeapons": [
+      "MRG (T)",
+      "MRC (T, AA)"
+    ],
+    "mountedWeapons": [
+      "MAPGL"
+    ],
+    "traits": [
+      "Stealth (Aux)",
+      "Offroad"
+    ],
+    "height": 1.5,
+    "classification": "Strider",
+    "subtype": "Medium Tank-Strider",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Dark Coyote was a top pick for Black Talon operations because they can easily adapt to running battles. So, Black Talon engineers got to work improving Coyotes to the best of their abilities. They improved the armor, targeting systems and even added a stealthy skin.",
+    "variants": [
+      {
+        "id": "bt-darkCoyote-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkCoyote-spectre",
+        "name": "Spectre",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "Sensor:36"
+        ]
+      },
+      {
+        "id": "bt-darkCoyote-comanche",
+        "name": "Comanche",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bt-darkNaga",
+    "name": "Dark Naga",
+    "tv": 12,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "G"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 2,
+    "gu": 3,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "2 x HIMG (Link)"
+    ],
+    "traits": [
+      "TD",
+      "Sensor Boom",
+      "Offroad",
+      "Stealth (Aux)"
+    ],
+    "height": 2,
+    "classification": "Strider",
+    "subtype": "Fire Support Strider",
+    "manufacturer": "Black Talon Werks",
+    "description": "Black Talon uses Nagas for assaulting targets with direct and indirect firepower. When indirect firepower is called for, then its sensor booms may come into play. Sensor booms that can stealthily peer around corners paired with indirect weapons make the Dark Naga perfect for ambushes.",
+    "variants": [
+      {
+        "id": "bt-darkNaga-hunting",
+        "name": "Hunting",
+        "tv": 2,
+        "mountedWeapons": [
+          "LLC (Reflex)"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-longFang",
+        "name": "Long Fang",
+        "tv": 2,
+        "mountedWeapons": [
+          "LFG"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-barbed",
+        "name": "Barbed",
+        "tv": 2,
+        "mountedWeapons": [
+          "HRP"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-tusked",
+        "name": "Tusked",
+        "tv": 3,
+        "mountedWeapons": [
+          "MATM"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-brawler",
+        "name": "Brawler",
+        "tv": 4,
+        "mountedWeapons": [
+          "HGL"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-spitting",
+        "name": "Spitting",
+        "tv": 3,
+        "mountedWeapons": [
+          "LAR",
+          "LATM"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-hissing",
+        "name": "Hissing",
+        "tv": 4,
+        "mountedWeapons": [
+          "MRP",
+          "MATM"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-fusillade",
+        "name": "Fusillade",
+        "tv": 4,
+        "mountedWeapons": [
+          "HRL"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-recon",
+        "name": "Recon*",
+        "tv": 1,
+        "traits": [
+          "Sensor:36",
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "bt-darkNaga-banded",
+        "name": "Banded",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "bt-darkNaga-armoredNaga",
+        "name": "Armored Naga",
+        "tv": 3,
+        "armor": 9
+      }
+    ]
+  },
+  {
+    "id": "bt-darkMastiff",
+    "name": "Dark Mastiff",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 3,
+    "ew": 5,
+    "traits": [
+      "Transport:1 Cadres",
+      "Stealth (Aux)"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Dark Mastiff is the same APC used by Peace River. They are upgraded with reinforced shocks to allow airdropping, as well as new sensor absorbing skin. The fact that it can only carry one cadre is perfect for infiltration work.",
+    "variants": [
+      {
+        "id": "bt-darkMastiff-assassin",
+        "name": "Assassin",
+        "tv": 2,
+        "reactWeapons": [
+          "LRF (T, Precise+)"
+        ],
+        "mountedWeapons": [
+          "LRP (T)"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "bt-darkMastiff-hippeis",
+        "name": "Hippeis",
+        "tv": 2,
+        "ew": 4,
+        "mountedWeapons": [
+          "LM (T)"
+        ],
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "bt-darkMastiff-hippocrates",
+        "name": "Hippocrates",
+        "tv": 1,
+        "traits": [
+          "Medic:4"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "bt-darkHoplite",
+    "name": "Dark Hoplite",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 8
+    },
+    "armor": 6,
+    "hull": 5,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "traits": [
+      "Smoke",
+      "Stealth (Aux)",
+      "Transport:2 Cadres"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Light Vehicle",
+    "manufacturer": "Black Talon Werks",
+    "description": "The Dark Hoplite is a robust APC that can carry two infantry cadres. Very similar to Peace River’s regular Hoplite it has a wide selection of variants and options that allow commanders to customize. And like the Dark Mastiff they are upgraded with reinforced shocks to allow airdropping, as well as new sensor absorbing skin.",
+    "variants": [
+      {
+        "id": "bt-darkHoplite-stock",
+        "name": "Stock",
+        "tv": 3,
+        "reactWeapons": [
+          "MRF (T, Precise+)"
+        ],
+        "mountedWeapons": [
+          "LRP"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "bt-darkHoplite-arbalest",
+        "name": "Arbalest",
+        "tv": 1,
+        "mountedWeapons": [
+          "MRP (T)"
+        ]
+      },
+      {
+        "id": "bt-darkHoplite-hippeis",
+        "name": "Hippeis",
+        "tv": 2,
+        "ew": 4,
+        "mountedWeapons": [
+          "LM (T)"
+        ],
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "bt-darkHoplite-xyston",
+        "name": "Xyston",
+        "tv": 2,
+        "mountedWeapons": [
+          "LFG"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "bt-dodo",
+    "name": "Dodo",
+    "tv": 3,
+    "roles": [
+      "RC",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "G"
+      ],
+      "value": 6
+    },
+    "armor": 2,
+    "hull": 1,
+    "structure": 1,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "traits": [
+      "Lo-Tech",
+      "E-Comms",
+      "Offroad",
+      "TD",
+      "Stealth"
+    ],
+    "height": 0.5,
+    "classification": "Gear",
+    "subtype": "Recon Drone",
+    "manufacturer": "Obelisk Electronics / Applefish / Paxton",
+    "variants": [
+      {
+        "id": "bt-dodo-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
   }
 ]

@@ -64,6 +64,37 @@ Game data (Units, Weapons, etc.) is stored as **JSON assets** to allow for updat
 
 New units should be added to the appropriate JSON file in `assets/data/units/` rather than being hardcoded in Dart.
 
+### Regenerating Unit Data from Excel
+
+Unit profiles can be generated or updated from the Heavy Gear Blitz profiles Excel spreadsheet using either the pure Dart generator script or the Python utility script.
+
+**Using Dart (Recommended - no Python required):**
+
+```bash
+dart run tool/generate_units.dart
+```
+Or pass a custom path to a profiles spreadsheet:
+```bash
+dart run tool/generate_units.dart "path/to/profiles.xlsx"
+```
+
+**Using Python:**
+
+```bash
+python tool/generate_units.py
+```
+Or pass a custom path to a profiles spreadsheet:
+```bash
+python tool/generate_units.py "path/to/profiles.xlsx"
+```
+
+The generator scripts parse all 14 faction worksheets (*North*, *South*, *NuCoal*, *Peace River*, *Black Talon*, *CEF*, *Caprice*, *Utopia*, *Eden*, *New Jerusalem*, *Uni Gears*, *Uni Vehicles*, *Infantry*, and *Terrain*) and output formatted JSON files directly to `assets/data/units/`.
+
+After regenerating data files, verify that all repository parsing and roster tests pass:
+```bash
+flutter test
+```
+
 ---
 
 ## Testing Structure
@@ -161,3 +192,4 @@ flutter test test/data/repositories/unit_loading_benchmark.dart --verbose
 | **Feature-Specific Widget**      | `lib/features/[feature]/widgets/`  |
 | **Localization Keys**            | `lib/core/localization/app_en.arb` |
 | **Game Data** (JSON)             | `assets/data/`                     |
+| **Data Conversion Script**       | `tool/generate_units.py`          |

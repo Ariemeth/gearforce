@@ -1,1 +1,1206 @@
-[]
+[
+  {
+    "id": "cef-f616",
+    "name": "F6-16",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LLC"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "All CEF frames are a result of reverse engineering captured gears from Terra Nova. Using powerful hover technology, CEF frames can easily keep pace with the hovertanks. They often work together, trading duties flanking the enemy. Jan class GREL are sometimes found in the F6-16 when they come with the upgraded command and control suite.",
+    "variants": [
+      {
+        "id": "cef-f616-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Sensor:24",
+          "TD (Aux)",
+          "Sensor Boom (Aux)"
+        ]
+      },
+      {
+        "id": "cef-f616-nightwatch",
+        "name": "Nightwatch",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "Sensor:24",
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "cef-f616-growler",
+        "name": "Growler",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "cef-f616-kommando",
+        "name": "Kommando",
+        "tv": 2,
+        "movement": {
+          "types": [
+            "W",
+            "H"
+          ],
+          "value": 8
+        },
+        "ew": 4,
+        "traits": [
+          "Agile",
+          "Jetpack:6 (Aux)",
+          "Stealth (Aux)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cef-f221",
+    "name": "F2-21",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LLC"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:3"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "A similar design to the F6-16, the F2-21 are commonly piloted by a GREL. Terra Novan intelligence has not been able to confirm why GREL are more likely to pilot the F2-21. For the CEF, the reasons are simply unspoken and more cultural in nature.",
+    "variants": [
+      {
+        "id": "cef-f221-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "TD (Aux)",
+          "Sensor Boom (Aux)"
+        ]
+      },
+      {
+        "id": "cef-f221-nightwatch",
+        "name": "Nightwatch",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "cef-f221-growler",
+        "name": "Growler",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f8112",
+    "name": "F81-12",
+    "tv": 7,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LLC",
+      "2 x LMW",
+      "LVB"
+    ],
+    "mountedWeapons": [
+      "MGG"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Brawl:1",
+      "Climb"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Mountaineering Frame",
+    "manufacturer": "Kadellie Weapon Systems",
+    "description": "As an early frame, Kadellie engineers determined the primary requirement for the F81-12 would be mobility rather than armor or firepower. Their rationale being this frame would need to get to advantageous locations fast and many such locations would not be easy to reach by walking alone.",
+    "variants": [
+      {
+        "id": "cef-f8112-avenger",
+        "name": "Avenger",
+        "tv": 1,
+        "mountedWeapons": [
+          "LM",
+          "HIM"
+        ]
+      },
+      {
+        "id": "cef-f8112-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "TD (Aux)",
+          "Sensor Boom (Aux)"
+        ]
+      },
+      {
+        "id": "cef-f8112-nightwatch",
+        "name": "Nightwatch",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f99",
+    "name": "F-99",
+    "tv": 6,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W"
+      ],
+      "value": 7
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LLC",
+      "LVB",
+      "MMW (Brawl:1)"
+    ],
+    "mountedWeapons": [
+      "MGG"
+    ],
+    "traits": [
+      "Hands",
+      "Climb"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Kadellie Weapon Systems",
+    "description": "The F-99 Frame is intended for patrolling around space facilities and supporting boarding actions. Certainly, Black Talon operations against critical assets motivated CEF command to rush development of these. Many of the top pilots are Minerva with key cybernetic enhancements provided by Caprice.",
+    "variants": [
+      {
+        "id": "cef-f99-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "TD (Aux)",
+          "Sensor Boom (Aux)"
+        ]
+      },
+      {
+        "id": "cef-f99-nightwatch",
+        "name": "Nightwatch",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f55",
+    "name": "F-55",
+    "tv": 9,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "MRL",
+      "LVB"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Moscow Heavy Industries",
+    "variants": [
+      {
+        "id": "cef-f55-fury",
+        "name": "Fury",
+        "tv": 2,
+        "mountedWeapons": [
+          "HIM",
+          "LAM (LA:2)"
+        ]
+      },
+      {
+        "id": "cef-f55-corsair",
+        "name": "Corsair",
+        "tv": 1,
+        "mountedWeapons": [
+          "LAR"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f207",
+    "name": "F2-07",
+    "tv": 10,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "LLC"
+    ],
+    "traits": [
+      "Hands",
+      "Sensor:24",
+      "Jump:2"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "While the Terra Novan gears excel in denser environments, these same environments limit large vehicles, such as hovertanks and hover APCs. This ultimately reduces the deploy-ability of weapon systems, including artillery support. The F2-07 is one overpriced fire support answer, but an answer none-the-less.",
+    "variants": [
+      {
+        "id": "cef-f207-avenger",
+        "name": "Avenger",
+        "tv": 2,
+        "mountedWeapons": [
+          "MM",
+          "HIM"
+        ]
+      },
+      {
+        "id": "cef-f207-zero",
+        "name": "Zero",
+        "tv": 1,
+        "mountedWeapons": [
+          "LFG (Guided)"
+        ]
+      },
+      {
+        "id": "cef-f207-aster",
+        "name": "Aster",
+        "tv": 1,
+        "mountedWeapons": [
+          "LAAM (Precise)"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f225",
+    "name": "F2-25",
+    "tv": 10,
+    "roles": [
+      "RC",
+      "SO",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "reactWeapons": [
+      "LLC"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Stealth (Aux)",
+      "Jump:3",
+      "Jetpack:6 (Aux)"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Advanced Frame",
+    "manufacturer": "Kadellie Weapon Systems",
+    "description": "First observed on Eden by Black Talon teams, the F2-25 was suspected of being a dedicated black ops vehicle but it is now widely known that the 25 was designed for recon missions and is only incidentally used for headhunter or espionage missions. That said, it is very fast and comes with many features found only on SF gears.",
+    "variants": [
+      {
+        "id": "cef-f225-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "Sensor:24",
+          "TD (Aux)",
+          "Sensor Boom (Aux)"
+        ]
+      },
+      {
+        "id": "cef-f225-nightwatch",
+        "name": "Nightwatch",
+        "tv": 2,
+        "ew": 4,
+        "traits": [
+          "Sensor:24",
+          "ECM",
+          "ECCM"
+        ]
+      },
+      {
+        "id": "cef-f225-growler",
+        "name": "Growler",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f1122",
+    "name": "F11-22",
+    "tv": 9,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 9
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "LLC"
+    ],
+    "traits": [
+      "Hands",
+      "Agile",
+      "Jump:3",
+      "Sensor:36"
+    ],
+    "height": 1,
+    "classification": "Gear",
+    "subtype": "Combat Frame",
+    "manufacturer": "Kadellie Weapon Systems",
+    "description": "The F11-22 proved too fragile for the sort of frontline assault duties Ground Command had in mind. Unwilling to accept failure, the executives at Moscow Heavy Industries decided to pursue an independent schedule for the development of something the Colonial Expeditionary Force needed but hadn't asked for. A scout.",
+    "variants": [
+      {
+        "id": "cef-f1122-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "traits": [
+          "TD (Aux)",
+          "Sensor Boom (Aux)",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "cef-f1122-nightwatch",
+        "name": "Nightwatch",
+        "tv": 1,
+        "traits": [
+          "ECM+"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f219",
+    "name": "F2-19",
+    "tv": 11,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 2,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LLC"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:2"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Fire Support Frame",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "A heavier frame than the 6-16 or the 2-21, the F2-19 carries the heaviest weapons of all known frame designs. These 2-19s are very fast for a frame of their size and can outflank many Terra Novan fire support gears very quickly.",
+    "variants": [
+      {
+        "id": "cef-f219-punisher",
+        "name": "Punisher",
+        "tv": 2,
+        "mountedWeapons": [
+          "LATM",
+          "MRP"
+        ],
+        "traits": [
+          "React+"
+        ]
+      },
+      {
+        "id": "cef-f219-phantom",
+        "name": "Phantom",
+        "tv": 1,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "TD (Aux)",
+          "Sensor Boom (Aux)"
+        ]
+      },
+      {
+        "id": "cef-f219-nightwatch",
+        "name": "Nightwatch",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "Sensor:24",
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-f305",
+    "name": "F-305",
+    "tv": 7,
+    "roles": [
+      "EG"
+    ],
+    "movement": {
+      "types": [
+        "W",
+        "H"
+      ],
+      "value": 6
+    },
+    "armor": 6,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LLC",
+      "MMW (Brawl:1)"
+    ],
+    "traits": [
+      "Hands",
+      "Jump:1",
+      "Repair:4"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Engineering Frame",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "The F-305 is the CEF’s engineering frame. It features two main variants, a standard combat engineering frame and a mine layer. During the opening shots of the current invasion a platoon of 305s tasked with setting up an airfield repelled an attack from a proxy force of Badland irregulars backed by Peace River.",
+    "variants": [
+      {
+        "id": "cef-f305-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-lht67",
+    "name": "LHT-67",
+    "tv": 12,
+    "roles": [
+      "SK",
+      "RC",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "traits": [
+      "Jump:3",
+      "TD",
+      "Sensor:24"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Light Hovertank",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "The first hovertanks that polar forces encountered during the first CEF invasion of Terra Nova were LHT-67 Hovertanks. Fast and nimble, the LHT- 67 can strike quickly from a flanking position and then dart away before a response can be coordinated.",
+    "variants": [
+      {
+        "id": "cef-lht67-prowler",
+        "name": "Prowler",
+        "tv": 5,
+        "mountedWeapons": [
+          "MPA (T)",
+          "LATM (T)"
+        ]
+      },
+      {
+        "id": "cef-lht67-aster",
+        "name": "Aster",
+        "tv": 5,
+        "mountedWeapons": [
+          "MPL (T, AA)",
+          "LATM (T)"
+        ]
+      },
+      {
+        "id": "cef-lht67-assault",
+        "name": "Assault",
+        "tv": 4,
+        "reactWeapons": [
+          "2 x MFC (T)"
+        ],
+        "mountedWeapons": [
+          "MRL (T)"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-lht71",
+    "name": "LHT-71",
+    "tv": 13,
+    "roles": [
+      "SK",
+      "RC",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 8,
+    "hull": 5,
+    "structure": 3,
+    "actions": 2,
+    "gu": 4,
+    "pi": 4,
+    "ew": 5,
+    "traits": [
+      "Jump:3",
+      "TD",
+      "Sensor:36"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Light Hovertank",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "The LHT-71 marks advancements beyond the LHT-67. It’s faster and better armored, but it comes at a higher cost.  Carrying a range of weapons to suit different tactical situations, this light hovertank is more than capable of dueling at range with any gear that Terra Novan armies can field.",
+    "variants": [
+      {
+        "id": "cef-lht71-prowler",
+        "name": "Prowler",
+        "tv": 6,
+        "mountedWeapons": [
+          "MPA (T)",
+          "2 x LATM (T)"
+        ]
+      },
+      {
+        "id": "cef-lht71-aster",
+        "name": "Aster",
+        "tv": 5,
+        "mountedWeapons": [
+          "MPL (T, AA)",
+          "2 x LATM (T)"
+        ]
+      },
+      {
+        "id": "cef-lht71-assault",
+        "name": "Assault",
+        "tv": 4,
+        "reactWeapons": [
+          "2 x MFC (T)"
+        ],
+        "mountedWeapons": [
+          "MRL (T)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "cef-lht71-nightwatch",
+        "name": "Nightwatch",
+        "tv": 1,
+        "ew": 4,
+        "traits": [
+          "ECM"
+        ]
+      },
+      {
+        "id": "cef-lht71-growler",
+        "name": "Growler",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cef-lht95",
+    "name": "LHT-95",
+    "tv": 12,
+    "roles": [
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 8,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 6,
+    "reactWeapons": [
+      "LPL (T, AA)"
+    ],
+    "mountedWeapons": [
+      "MRP (T)"
+    ],
+    "traits": [
+      "Jump:3",
+      "React+",
+      "Sensor:24"
+    ],
+    "height": 1.5,
+    "classification": "Gear",
+    "subtype": "Light Hovertank",
+    "manufacturer": "Kadellie Weapon Systems",
+    "description": "The LHT-95 marks a change in design from the other fast hovertanks. It steadily advances and pins the enemy with its main weapons while other elements flank and close in for the kill. Previously only available to CEF forces, several examples of the LHT-95 were appropriated by the Port Arthur Korps and reverse engineered.",
+    "variants": [
+      {
+        "id": "cef-lht95-assault",
+        "name": "Assault",
+        "tv": 3,
+        "mountedWeapons": [
+          "MGL (T)"
+        ]
+      },
+      {
+        "id": "cef-lht95-prowler",
+        "name": "Prowler",
+        "tv": 2,
+        "mountedWeapons": [
+          "LRG (T)"
+        ]
+      },
+      {
+        "id": "cef-lht95-striker",
+        "name": "Striker",
+        "tv": 2,
+        "mountedWeapons": [
+          "LAG (T)"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "cef-lht95-phantom",
+        "name": "Phantom",
+        "tv": 2,
+        "ew": 5,
+        "traits": [
+          "SatUp",
+          "TD",
+          "Sensor:36"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cef-mht68",
+    "name": "MHT-68",
+    "tv": 16,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 7
+    },
+    "armor": 10,
+    "hull": 4,
+    "structure": 4,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "traits": [
+      "Jump:2",
+      "TD"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Medium Hovertank",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "The MHT-68 provides a heavy punch to the forces of the CEF. It’s tough enough to press right down the middle, but fast enough to escape most things it cannot kill. It took Terra Novan military forces a while to become proficient at countering them. The price they paid in order to learn is hard to forget.",
+    "variants": [
+      {
+        "id": "cef-mht68-mht",
+        "name": "MHT",
+        "tv": 8,
+        "mountedWeapons": [
+          "HPA (T)",
+          "2 x MATM (T, LA:4)",
+          "MRP (T)"
+        ],
+        "traits": [
+          "Sensor:24"
+        ]
+      },
+      {
+        "id": "cef-mht68-mat",
+        "name": "MAT",
+        "tv": 4,
+        "mountedWeapons": [
+          "MAG (T)",
+          "MAPGL"
+        ],
+        "traits": [
+          "Sensor:36"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-mht72",
+    "name": "MHT-72",
+    "tv": 17,
+    "roles": [
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 10,
+    "hull": 5,
+    "structure": 3,
+    "actions": 2,
+    "gu": 4,
+    "pi": 5,
+    "ew": 5,
+    "traits": [
+      "Jump:3",
+      "TD",
+      "Sensor:36"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Medium Hovertank",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "The MHT-72 marks more advancements made in hovertank technology. Slightly improved armor and jump jets, plus a few other features makes this hovertank more expensive too. The cost doesn’t seem to be an issue for the CEF as they send wave after wave of 72s to assault heavily fortified positions.",
+    "variants": [
+      {
+        "id": "cef-mht72-mht",
+        "name": "MHT",
+        "tv": 8,
+        "mountedWeapons": [
+          "HPA (T)",
+          "2 x MATM (T)"
+        ]
+      },
+      {
+        "id": "cef-mht72-mat",
+        "name": "MAT",
+        "tv": 5,
+        "mountedWeapons": [
+          "HAG (T)",
+          "MAPGL"
+        ]
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "cef-mht72-nightwatch",
+        "name": "Nightwatch",
+        "tv": 3,
+        "ew": 4,
+        "traits": [
+          "ECM+",
+          "ECCM+"
+        ]
+      },
+      {
+        "id": "cef-mht72-growler",
+        "name": "Growler",
+        "tv": 1,
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cef-hc3a",
+    "name": "HC-3A",
+    "tv": 9,
+    "roles": [
+      "RC",
+      "SK"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 5,
+    "hull": 3,
+    "structure": 3,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 4,
+    "reactWeapons": [
+      "LLC"
+    ],
+    "mountedWeapons": [
+      "LRP"
+    ],
+    "traits": [
+      "Vuln:H",
+      "Jump:4",
+      "Satup",
+      "Sensor:36"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Light Hovervehicle",
+    "manufacturer": "Kadellie Weapon Systems",
+    "description": "An old but reliable design, the HC-3 first saw action on the battlefields of Earth as a spotter for artillery units. The HC-3 in its current iteration has been designated as a high priority target by Terra Novan forces, so much so bounties have been placed on them for destruction or capture.",
+    "variants": [
+      {
+        "id": "cef-hc3a-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": [
+      {
+        "id": "cef-hc3a-nightwatch",
+        "name": "Nightwatch",
+        "tv": 1,
+        "traits": [
+          "ECM",
+          "ECCM"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cef-hpc64",
+    "name": "HPC-64",
+    "tv": 8,
+    "roles": [
+      "GP",
+      "SK",
+      "FS"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 8
+    },
+    "armor": 7,
+    "hull": 4,
+    "structure": 4,
+    "actions": 1,
+    "gu": 4,
+    "pi": 4,
+    "ew": 0,
+    "traits": [
+      "Jump:2"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Light Hovervehicle",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "The HPC-64 can carry two fully armed cadres of infantry. Its stock configuration comes with a rotary laser, which already outclasses many Terra Novan APC weaponry. If needed, the HPC can mount an artillery rocket system, allowing it to support advancing troops with indirect fire. These usually follow just behind the main force.",
+    "variants": [
+      {
+        "id": "cef-hpc64-assault",
+        "name": "Assault",
+        "tv": 3,
+        "ew": 6,
+        "reactWeapons": [
+          "LRL (T)"
+        ],
+        "traits": [
+          "Transport:2 Cadres"
+        ]
+      },
+      {
+        "id": "cef-hpc64-medical",
+        "name": "Medical",
+        "tv": 1,
+        "ew": 6,
+        "traits": [
+          "Transport:1 Cadres",
+          "Medic:4"
+        ]
+      },
+      {
+        "id": "cef-hpc64-growler",
+        "name": "Growler",
+        "tv": 4,
+        "ew": 5,
+        "reactWeapons": [
+          "LRL (T)"
+        ],
+        "traits": [
+          "SatUp",
+          "ECCM"
+        ]
+      }
+    ],
+    "upgrades": []
+  },
+  {
+    "id": "cef-hht90Overlord",
+    "name": "HHT-90 Overlord",
+    "tv": 70,
+    "roles": [
+      "MB"
+    ],
+    "movement": {
+      "types": [
+        "H"
+      ],
+      "value": 6
+    },
+    "armor": 12,
+    "hull": 10,
+    "structure": 8,
+    "actions": 6,
+    "gu": 4,
+    "pi": 6,
+    "ew": 4,
+    "reactWeapons": [
+      "HPA (T, Auto)",
+      "HRL (AA, Auto)",
+      "2 x MRL (R)",
+      "2 x MRL"
+    ],
+    "mountedWeapons": [
+      "HTG (T, Apex, Reflex)",
+      "HAM (T)",
+      "HATM (T)",
+      "HRP (R)",
+      "HRP"
+    ],
+    "traits": [
+      "SatUp",
+      "Sensor:36",
+      "Jump:2",
+      "Resist:H",
+      "Lumbering",
+      "Transport:4 Cadres"
+    ],
+    "height": 2,
+    "classification": "Gear",
+    "subtype": "Super Tank",
+    "manufacturer": "Moscow Heavy Industries",
+    "description": "The HHT-90 represents the pinnacle of CEF hover technology. Purpose-built to engage and destroy Terra Novan landships, it is the king of the battlefield. Its main weapons are scaled down naval guns and its chassis can withstand severe punishment while transporting four cadres of GREL.",
+    "variants": [
+      {
+        "id": "cef-hht90Overlord-stock",
+        "name": "Stock",
+        "tv": 0
+      }
+    ],
+    "upgrades": []
+  }
+]

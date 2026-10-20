@@ -36,7 +36,10 @@ class Trait {
   @override
   String toString() {
     final levelString = level != null ? ':$level' : '';
-    final typeString = type != null ? ' ${type?.value}' : '';
+    String typeString = '';
+    if (type != null) {
+      typeString = level != null ? ' ${type?.value}' : ':${type?.value}';
+    }
     final auxString = isAux ? ' (Aux)' : '';
     return '$name$levelString$typeString$auxString';
   }

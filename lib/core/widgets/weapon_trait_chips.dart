@@ -31,8 +31,9 @@ List<Widget> buildTraitChips(List<Trait> traits) {
     final index = entry.key;
     final trait = entry.value;
     final isLast = index == traits.length - 1;
+    final traitText = trait.toString();
     return UnitAttributeValue(
-      isLast ? trait.name : '${trait.name}, ',
+      isLast ? traitText : '$traitText, ',
       tooltipMessage: trait.description,
       textAlign: TextAlign.left,
     );

@@ -45,7 +45,7 @@ class WeaponDataTable extends StatelessWidget {
                   ),
                   DataCell(
                     Text(
-                      '${w.primaryTraits.map((t) => t.name).toList().join(', ')}${w.hasAlternateTraits ? ' or ${w.alternateTraits.map((t) => t.name).toList().join(', ')}' : ''}',
+                      '${w.primaryTraits.map((t) => t.toString()).toList().join(', ')}${w.hasAlternateTraits ? ' or ${w.alternateTraits.map((t) => t.toString()).toList().join(', ')}' : ''}',
                     ),
                   ),
                   DataCell(
