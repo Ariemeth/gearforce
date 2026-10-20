@@ -8,10 +8,15 @@ import subprocess
 import sys
 
 def main():
-    if len(sys.argv) > 1:
-        excel_path = sys.argv[1]
-    else:
-        excel_path = r'C:\Users\ariem\OneDrive\Games\Miniatures\Heavy Gear\Beta\4.0 Beta\2026 - 06\4.0 Profiles 29 Jun 2026.xlsx'
+    if len(sys.argv) <= 1:
+        print("Error: Path to Excel profiles spreadsheet is required.")
+        print('Usage: python tool/generate_units.py "path/to/profiles.xlsx"')
+        sys.exit(1)
+
+    excel_path = sys.argv[1]
+    if not os.path.exists(excel_path):
+        print(f"Error: Specified Excel file does not exist: {excel_path}")
+        sys.exit(1)
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.abspath(os.path.join(script_dir, '..'))

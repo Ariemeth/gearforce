@@ -66,24 +66,16 @@ New units should be added to the appropriate JSON file in `assets/data/units/` r
 
 ### Regenerating Unit Data from Excel
 
-Unit profiles can be generated or updated from the Heavy Gear Blitz profiles Excel spreadsheet using either the pure Dart generator script or the Python utility script.
+Unit profiles can be generated or updated from the Heavy Gear Blitz profiles Excel spreadsheet using either the pure Dart generator script or the Python utility script. Both scripts require passing the path to the `.xlsx` file as an argument.
 
-**Using Dart (Recommended - no Python required):**
+**Using Dart (Recommended):**
 
-```bash
-dart run tool/generate_units.dart
-```
-Or pass a custom path to a profiles spreadsheet:
 ```bash
 dart run tool/generate_units.dart "path/to/profiles.xlsx"
 ```
 
 **Using Python:**
 
-```bash
-python tool/generate_units.py
-```
-Or pass a custom path to a profiles spreadsheet:
 ```bash
 python tool/generate_units.py "path/to/profiles.xlsx"
 ```

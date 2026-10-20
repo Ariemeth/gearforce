@@ -4,9 +4,17 @@ import 'dart:io';
 import 'package:excel/excel.dart';
 
 void main(List<String> args) {
-  final String excelPath = args.isNotEmpty
-      ? args.first
-      : r'C:\Users\ariem\OneDrive\Games\Miniatures\Heavy Gear\Beta\4.0 Beta\2026 - 06\4.0 Profiles 29 Jun 2026.xlsx';
+  if (args.isEmpty) {
+    log('Error: Path to Excel profiles spreadsheet is required.');
+    log('Usage: dart run tool/generate_units.dart "path/to/profiles.xlsx"');
+    exit(1);
+  }
+
+  final String excelPath = args.first;
+  if (!File(excelPath).existsSync()) {
+    log('Error: Specified Excel file does not exist: $excelPath');
+    exit(1);
+  }
 
   final scriptDir = File(Platform.script.toFilePath()).parent;
   final projectRoot = scriptDir.parent;
