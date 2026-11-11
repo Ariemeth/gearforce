@@ -389,5 +389,9 @@
         "example": "WFP"
       }
     }
-  }
+  },
+  "testField": "Test",
+  "@testField": {
+    "description": "Test field"
+    }
 }

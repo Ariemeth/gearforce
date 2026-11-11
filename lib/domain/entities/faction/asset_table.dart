@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:meta/meta.dart';
 
 ///
 /// The AssetTable indicates the available asset types a ruleset or faction has

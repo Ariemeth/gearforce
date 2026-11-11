@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
 /// A label widget used in unit stat tables (e.g. "TV", "Arm", "Gu").

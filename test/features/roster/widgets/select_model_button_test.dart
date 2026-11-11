@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/core/generated/i18n/app_localizations.dart';
 import 'package:gearforce/domain/entities/attribute/armor.dart';
@@ -35,13 +34,8 @@ Widget _testApp({required Widget child, required RosterCubit cubit}) {
   return BlocProvider<RosterCubit>.value(
     value: cubit,
     child: MaterialApp(
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const [Locale('en', '')],
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: Scaffold(body: child),
     ),
   );

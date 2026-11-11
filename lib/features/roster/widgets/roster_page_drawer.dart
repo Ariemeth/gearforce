@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/settings/screens/app_settings_screen.dart';

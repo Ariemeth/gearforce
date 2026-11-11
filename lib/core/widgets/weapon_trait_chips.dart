@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:gearforce/core/widgets/unit_attribute_widgets.dart';
 import 'package:gearforce/domain/entities/equipment/trait.dart' show Trait;
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';

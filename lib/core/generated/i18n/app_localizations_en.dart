@@ -252,4 +252,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String subFactionFieldLabel(String name) {
     return 'Sub-Faction: $name';
   }
+
+  @override
+  String get testField => 'Test';
 }

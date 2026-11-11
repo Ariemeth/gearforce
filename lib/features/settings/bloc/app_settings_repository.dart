@@ -1,5 +1,5 @@
 import 'dart:developer' as developer;
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A provider that stores and retrieves user app_settings.

@@ -507,6 +507,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sub-Faction: {name}'**
   String subFactionFieldLabel(String name);
+
+  /// Test field
+  ///
+  /// In en, this message translates to:
+  /// **'Test'**
+  String get testField;
 }
 
 class _AppLocalizationsDelegate

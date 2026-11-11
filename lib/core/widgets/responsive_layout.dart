@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:gearforce/core/widgets/responsive_size.dart';
 
 /// A reusable layout widget that selects between [compact], [medium], and

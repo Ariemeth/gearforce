@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/features/roster/bloc/roster_bloc.dart';

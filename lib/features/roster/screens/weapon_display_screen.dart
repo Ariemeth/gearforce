@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/domain/entities/equipment/weapon.dart';
 import 'package:gearforce/data/static/weapon_factory.dart';

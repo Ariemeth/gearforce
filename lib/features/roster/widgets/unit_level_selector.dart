@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/attribute/unit_level.dart';

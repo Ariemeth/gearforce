@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gearforce/core/generated/i18n/app_localizations.dart';
 import 'package:gearforce/core/routing/app_router.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
@@ -20,13 +19,8 @@ class Gearforce extends StatelessWidget {
           routerConfig: appRouter,
           restorationScopeId: 'app',
           debugShowCheckedModeBanner: false,
-          localizationsDelegates: const [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: const [Locale('en', '')],
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
           onGenerateTitle: (BuildContext context) => context.l10n.appTitle,
           theme:
               ThemeData.from(
