@@ -94,11 +94,11 @@ flutter test
 
 Gearforce supports full Heavy Gear Blitz 4.0 Construction Rules across all target platforms (Android, iOS, Web, Windows, macOS, Linux).
 
-Design documentation and interactive SVG visual wireframes are available in `docs/wireframes/`:
+Design documentation and interactive visual wireframes are available in `docs/wireframes/`:
 
 * **Documentation & Diagrams**:
   * [docs/wireframes/ui_design_construction_rules.md](docs/wireframes/ui_design_construction_rules.md) — Complete 4.0 Rule Evaluation & UI Design Specification.
-  * [docs/wireframes/navigation_flow.mmd](docs/wireframes/navigation_flow.mmd) — Standalone Mermaid Navigation Flowchart Source (View and edit online at [mermaid.live](https://mermaid.live)).
+  * [docs/wireframes/navigation_flow.mmd](docs/wireframes/navigation_flow.mmd) — Standalone Mermaid Navigation Flowchart Source (View/edit online at [mermaid.live](https://mermaid.live)).
   * [docs/wireframes/navigation_flow.svg](docs/wireframes/navigation_flow.svg) — Visual Information Architecture & Navigation Flowchart.
 * **Desktop, Web & Tablet Wireframe Suite**:
   * [docs/wireframes/desktop_web/01_roster_overview_desktop.svg](docs/wireframes/desktop_web/01_roster_overview_desktop.svg)
@@ -110,6 +110,9 @@ Design documentation and interactive SVG visual wireframes are available in `doc
   * [docs/wireframes/mobile_phone/02_squad_details_phone.svg](docs/wireframes/mobile_phone/02_squad_details_phone.svg)
   * [docs/wireframes/mobile_phone/03_unit_customization_phone.svg](docs/wireframes/mobile_phone/03_unit_customization_phone.svg)
   * [docs/wireframes/mobile_phone/04_asset_compliance_sheet_phone.svg](docs/wireframes/mobile_phone/04_asset_compliance_sheet_phone.svg)
+
+> [!TIP]
+> **Penpot & Figma Compatibility**: Penpot natively uses SVG as its core document format. All SVG wireframes in `docs/wireframes/` can be dragged and dropped directly into **[Penpot](https://penpot.app)** or **Figma**, where every rectangle, text block, and color badge is converted into native, fully editable layers and frames!
 
 ---
 
