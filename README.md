@@ -92,27 +92,20 @@ flutter test
 
 ## Heavy Gear Blitz 4.0 Construction Rules & UI Wireframes
 
-Gearforce supports full Heavy Gear Blitz 4.0 Construction Rules across all target platforms (Android, iOS, Web, Windows, macOS, Linux).
+Gearforce supports full Heavy Gear Blitz 4.0 Construction Rules across all target platforms (Android, iOS, Web, Windows, macOS, Linux) in both **Dark Theme** and **Light Theme**.
 
-Design documentation and interactive visual wireframes are available in `docs/wireframes/`:
+Design documentation and interactive SVG visual wireframes are available in `docs/wireframes/`:
 
 * **Documentation & Diagrams**:
   * [docs/wireframes/ui_design_construction_rules.md](docs/wireframes/ui_design_construction_rules.md) — Complete 4.0 Rule Evaluation & UI Design Specification.
-  * [docs/wireframes/navigation_flow.mmd](docs/wireframes/navigation_flow.mmd) — Standalone Mermaid Navigation Flowchart Source (View/edit online at [mermaid.live](https://mermaid.live)).
+  * [docs/wireframes/navigation_flow.mmd](docs/wireframes/navigation_flow.mmd) — Standalone Mermaid Navigation Flowchart Source (View and edit online at [mermaid.live](https://mermaid.live)).
   * [docs/wireframes/navigation_flow.svg](docs/wireframes/navigation_flow.svg) — Visual Information Architecture & Navigation Flowchart.
 * **Desktop, Web & Tablet Wireframe Suite**:
-  * [docs/wireframes/desktop_web/01_roster_overview_desktop.svg](docs/wireframes/desktop_web/01_roster_overview_desktop.svg)
-  * [docs/wireframes/desktop_web/02_squad_details_desktop.svg](docs/wireframes/desktop_web/02_squad_details_desktop.svg)
-  * [docs/wireframes/desktop_web/03_unit_customization_desktop.svg](docs/wireframes/desktop_web/03_unit_customization_desktop.svg)
-  * [docs/wireframes/desktop_web/04_asset_compliance_center_desktop.svg](docs/wireframes/desktop_web/04_asset_compliance_center_desktop.svg)
+  * **Dark Theme**: [docs/wireframes/desktop_web/dark/](docs/wireframes/desktop_web/dark/) ([01 Overview](docs/wireframes/desktop_web/dark/01_roster_overview_desktop.svg), [02 Squad](docs/wireframes/desktop_web/dark/02_squad_details_desktop.svg), [03 Unit](docs/wireframes/desktop_web/dark/03_unit_customization_desktop.svg), [04 Asset Rules](docs/wireframes/desktop_web/dark/04_asset_compliance_center_desktop.svg))
+  * **Light Theme**: [docs/wireframes/desktop_web/light/](docs/wireframes/desktop_web/light/) ([01 Overview](docs/wireframes/desktop_web/light/01_roster_overview_desktop_light.svg), [02 Squad](docs/wireframes/desktop_web/light/02_squad_details_desktop_light.svg), [03 Unit](docs/wireframes/desktop_web/light/03_unit_customization_desktop_light.svg), [04 Asset Rules](docs/wireframes/desktop_web/light/04_asset_compliance_center_desktop_light.svg))
 * **Mobile Phone (Android & iOS) Wireframe Suite**:
-  * [docs/wireframes/mobile_phone/01_roster_overview_phone.svg](docs/wireframes/mobile_phone/01_roster_overview_phone.svg)
-  * [docs/wireframes/mobile_phone/02_squad_details_phone.svg](docs/wireframes/mobile_phone/02_squad_details_phone.svg)
-  * [docs/wireframes/mobile_phone/03_unit_customization_phone.svg](docs/wireframes/mobile_phone/03_unit_customization_phone.svg)
-  * [docs/wireframes/mobile_phone/04_asset_compliance_sheet_phone.svg](docs/wireframes/mobile_phone/04_asset_compliance_sheet_phone.svg)
-
-> [!TIP]
-> **Penpot & Figma Compatibility**: Penpot natively uses SVG as its core document format. All SVG wireframes in `docs/wireframes/` can be dragged and dropped directly into **[Penpot](https://penpot.app)** or **Figma**, where every rectangle, text block, and color badge is converted into native, fully editable layers and frames!
+  * **Dark Theme**: [docs/wireframes/mobile_phone/dark/](docs/wireframes/mobile_phone/dark/) ([01 Overview](docs/wireframes/mobile_phone/dark/01_roster_overview_phone.svg), [02 Squad](docs/wireframes/mobile_phone/dark/02_squad_details_phone.svg), [03 Unit](docs/wireframes/mobile_phone/dark/03_unit_customization_phone.svg), [04 Asset Sheet](docs/wireframes/mobile_phone/dark/04_asset_compliance_sheet_phone.svg))
+  * **Light Theme**: [docs/wireframes/mobile_phone/light/](docs/wireframes/mobile_phone/light/) ([01 Overview](docs/wireframes/mobile_phone/light/01_roster_overview_phone_light.svg), [02 Squad](docs/wireframes/mobile_phone/light/02_squad_details_phone_light.svg), [03 Unit](docs/wireframes/mobile_phone/light/03_unit_customization_phone_light.svg), [04 Asset Sheet](docs/wireframes/mobile_phone/light/04_asset_compliance_sheet_phone_light.svg))
 
 ---
 

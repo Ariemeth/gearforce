@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" style="background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+  <!-- Outer App Frame -->
+  <rect x="10" y="10" width="1180" height="880" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+
+  <!-- Header Bar -->
+  <rect x="10" y="10" width="1180" height="60" rx="12" fill="#1e293b" stroke="#0f172a" stroke-width="1" />
+  <text x="30" y="46" font-size="20" font-weight="bold" fill="#ffffff">GEARFORCE — Heavy Gear Blitz 4.0 (Desktop Light Theme)</text>
+
+  <rect x="880" y="22" width="290" height="36" rx="6" fill="#334155" stroke="#475569" stroke-width="1" />
+  <text x="895" y="45" font-size="14" font-weight="bold" fill="#38bdf8">Target TV: 150 TV | Current: 142 TV</text>
+
+  <!-- Budget Progress Bar -->
+  <rect x="30" y="85" width="1140" height="36" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="45" y="107" font-size="12" fill="#475569">Force Budget Status</text>
+  <text x="820" y="107" font-size="12" fill="#0f172a" font-weight="bold">142 / 150 TV Used (95% Budget — 8 TV Remaining)</text>
+  <rect x="45" y="112" width="1110" height="4" rx="2" fill="#e2e8f0" />
+  <rect x="45" y="112" width="1054" height="4" rx="2" fill="#16a34a" />
+
+  <!-- Left Panel: Setup & Squad List (w: 420) -->
+  <rect x="30" y="135" width="420" height="735" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="45" y="162" font-size="15" font-weight="bold" fill="#0f172a">FORCE SETUP &amp; COMBAT GROUPS</text>
+
+  <text x="45" y="188" font-size="11" fill="#475569">Roster Name</text>
+  <rect x="45" y="195" width="390" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="55" y="216" font-size="13" fill="#0f172a">Northern Guard 1st Heavy Strike Force</text>
+
+  <text x="45" y="242" font-size="11" fill="#475569">Faction</text>
+  <rect x="45" y="249" width="185" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="55" y="270" font-size="13" fill="#0f172a">North  ▼</text>
+
+  <text x="250" y="242" font-size="11" fill="#475569">Sub-Faction</text>
+  <rect x="250" y="249" width="185" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="260" y="270" font-size="13" fill="#0f172a">Northern Guard  ▼</text>
+
+  <line x1="45" y1="295" x2="435" y2="295" stroke="#e2e8f0" stroke-width="1" />
+
+  <text x="45" y="318" font-size="14" font-weight="bold" fill="#0f172a">Squads (Combat Groups)</text>
+  <rect x="335" y="302" width="100" height="26" rx="6" fill="#2563eb" />
+  <text x="347" y="319" font-size="12" font-weight="bold" fill="#ffffff">+ Add Squad</text>
+
+  <!-- Squad 1 Card (Active Light) -->
+  <rect x="45" y="338" width="390" height="135" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" />
+  <text x="60" y="360" font-size="14" font-weight="bold" fill="#1e40af">≡ Squad 1: Heavy Armor</text>
+  <text x="380" y="360" font-size="14" font-weight="bold" fill="#1d4ed8">48 TV</text>
+  <text x="60" y="380" font-size="12" fill="#475569">Roles: [GP / FS] | Units: 4 | Actions: 5</text>
+
+  <rect x="60" y="392" width="125" height="22" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1" />
+  <text x="66" y="407" font-size="10" font-weight="bold" fill="#92400e">⭐ CGL: Capt. Vance</text>
+
+  <rect x="190" y="392" width="90" height="22" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1" />
+  <text x="196" y="407" font-size="10" font-weight="bold" fill="#1e40af">1iC: CO (2 TV)</text>
+
+  <rect x="285" y="392" width="80" height="22" rx="4" fill="#f3e8ff" stroke="#9333ea" stroke-width="1" />
+  <text x="291" y="407" font-size="10" font-weight="bold" fill="#6b21a8">VET SQUAD</text>
+
+  <text x="60" y="432" font-size="11" fill="#64748b">Commanders: CO (Jaguar) &amp; 2iC (Grizzly)</text>
+  <text x="60" y="458" font-size="11" fill="#1d4ed8">✓ Selected in Right Workspace</text>
+
+  <!-- Squad 2 Card -->
+  <rect x="45" y="488" width="390" height="115" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="60" y="510" font-size="14" font-weight="bold" fill="#0f172a">≡ Squad 2: Recon Cadre</text>
+  <text x="380" y="510" font-size="14" font-weight="bold" fill="#0f172a">54 TV</text>
+  <text x="60" y="530" font-size="12" fill="#64748b">Roles: [RC / SK] | Units: 5 | Actions: 6</text>
+
+  <rect x="60" y="542" width="90" height="22" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="66" y="557" font-size="10" font-weight="bold" fill="#334155">1iC: 1iC (1 TV)</text>
+
+  <rect x="155" y="542" width="105" height="22" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="161" y="557" font-size="10" font-weight="bold" fill="#334155">REGULAR SQUAD</text>
+
+  <!-- Squad 3 Card (Warning) -->
+  <rect x="45" y="618" width="390" height="115" rx="8" fill="#fefce8" stroke="#ca8a04" stroke-width="1" />
+  <text x="60" y="640" font-size="14" font-weight="bold" fill="#0f172a">≡ Squad 3: Fire Support</text>
+  <text x="380" y="640" font-size="14" font-weight="bold" fill="#b45309">40 TV</text>
+  <text x="60" y="660" font-size="12" fill="#b45309">Roles: [FS] | Units: 3 ⚠️ | Actions: 4</text>
+
+  <rect x="60" y="672" width="90" height="22" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="66" y="687" font-size="10" font-weight="bold" fill="#334155">1iC: 1iC (1 TV)</text>
+
+  <rect x="155" y="672" width="150" height="22" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" />
+  <text x="161" y="687" font-size="10" font-weight="bold" fill="#92400e">⚠️ Size Warning (&lt;4 units)</text>
+
+  <!-- Right Workspace: Faction Asset Compliance Summary (w: 700) -->
+  <rect x="470" y="135" width="700" height="735" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="485" y="162" font-size="15" font-weight="bold" fill="#0f172a">FACTION ASSET TABLE &amp; RULES COMPLIANCE CENTER</text>
+
+  <!-- Compliance Grid -->
+  <rect x="485" y="180" width="335" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="495" y="202" font-size="12" fill="#0f172a">Vet / Elite Squads: 1 / 2 Allowed</text>
+  <rect x="750" y="187" width="60" height="22" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+  <text x="758" y="202" font-size="10" font-weight="bold" fill="#15803d">VALID</text>
+
+  <rect x="830" y="180" width="325" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="840" y="202" font-size="12" fill="#0f172a">Duelists / Aces: 1 / 2 Allowed</text>
+  <rect x="1085" y="187" width="60" height="22" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+  <text x="1093" y="202" font-size="10" font-weight="bold" fill="#15803d">VALID</text>
+
+  <rect x="485" y="225" width="335" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="495" y="247" font-size="12" fill="#0f172a">Green Squads: 0 / 1 Allowed</text>
+  <rect x="750" y="232" width="60" height="22" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+  <text x="758" y="247" font-size="10" font-weight="bold" fill="#15803d">VALID</text>
+
+  <rect x="830" y="225" width="325" height="36" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="840" y="247" font-size="12" fill="#0f172a">Off-Board Airstrikes: 1 (3 TV)</text>
+  <rect x="1075" y="232" width="70" height="22" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+  <text x="1080" y="247" font-size="10" font-weight="bold" fill="#475569">OFF-BOARD</text>
+
+  <!-- Quick Selected Squad Workspace -->
+  <rect x="485" y="280" width="670" height="570" rx="8" fill="#f8fafc" stroke="#2563eb" stroke-width="1" />
+  <text x="500" y="305" font-size="15" font-weight="bold" fill="#1d4ed8">Active Squad Workspace: Squad 1 — Heavy Armor (48 TV)</text>
+
+  <text x="500" y="335" font-size="12" fill="#475569">Primary Role: <tspan fill="#0f172a" font-weight="bold">GP (General Purpose)</tspan>  |  Secondary Role: <tspan fill="#0f172a" font-weight="bold">FS (Fire Support)</tspan></text>
+  <text x="500" y="355" font-size="12" fill="#334155">Squad Upgrades: [X] Light Grenades (LHG) (+1 TV)</text>
+
+  <!-- Mini Model Table in Workspace -->
+  <rect x="500" y="375" width="640" height="455" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="515" y="398" font-size="13" font-weight="bold" fill="#0f172a">Models in Squad 1 (4 Units)</text>
+
+  <rect x="515" y="410" width="610" height="90" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1" />
+  <text x="525" y="430" font-size="13" font-weight="bold" fill="#0f172a">1. Jaguar (Command Unit) — 15 TV</text>
+  <text x="525" y="450" font-size="11" fill="#1e40af">Rank: CO ⭐ CGL  |  Level: Veteran  |  Upgrades: Sabertooth Swap, Init+</text>
+  <text x="525" y="468" font-size="11" fill="#475569" font-family="monospace">Move: 6" W | ARM: 7 | HS: 2 | A: 2 | GU: 4+ | PI: 4+ | EW: 3+</text>
+
+  <rect x="515" y="510" width="610" height="75" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="525" y="530" font-size="13" font-weight="bold" fill="#0f172a">2. Grizzly — 13 TV</text>
+  <text x="525" y="548" font-size="11" fill="#334155">Rank: 2iC  |  Level: Regular</text>
+  <text x="525" y="566" font-size="11" fill="#475569" font-family="monospace">Move: 5" W | ARM: 8 | HS: 2 | A: 1 | GU: 4+ | PI: 4+ | EW: 5+</text>
+
+  <rect x="515" y="595" width="610" height="75" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="525" y="615" font-size="13" font-weight="bold" fill="#0f172a">3. Hunter — 10 TV</text>
+  <text x="525" y="633" font-size="11" fill="#334155">Rank: Trooper  |  Level: Regular</text>
+  <text x="525" y="651" font-size="11" fill="#475569" font-family="monospace">Move: 6" W | ARM: 6 | HS: 2 | A: 1 | GU: 4+ | PI: 4+ | EW: 6+</text>
+
+  <rect x="515" y="680" width="610" height="75" rx="6" fill="#f7fee7" stroke="#65a30d" stroke-width="1" />
+  <text x="525" y="700" font-size="13" font-weight="bold" fill="#3f6212">4. Hunter (Green Downgrade) — 9 TV (-1)</text>
+  <text x="525" y="718" font-size="11" fill="#3f6212">Rank: Trooper  |  Level: GREEN (-1 TV discount)</text>
+  <text x="525" y="736" font-size="11" fill="#3f6212" font-family="monospace">Move: 6" W | ARM: 6 | HS: 2 | A: 1 | GU: 4+ | PI: 4+ | EW: 6+ (Green)</text>
+
+</svg>

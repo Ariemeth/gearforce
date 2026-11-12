@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="1200" height="850" style="background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+  <rect x="10" y="10" width="1180" height="830" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" />
+
+  <rect x="10" y="10" width="1180" height="60" rx="12" fill="#1e293b" stroke="#0f172a" stroke-width="1" />
+  <text x="30" y="46" font-size="20" font-weight="bold" fill="#ffffff">FACTION ASSET TABLE &amp; RULES COMPLIANCE CENTER</text>
+  <rect x="1040" y="22" width="130" height="36" rx="6" fill="#2563eb" />
+  <text x="1065" y="45" font-size="13" font-weight="bold" fill="#ffffff">Close Modal</text>
+
+  <rect x="30" y="85" width="1140" height="70" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2" />
+  <text x="50" y="112" font-size="16" font-weight="bold" fill="#1d4ed8">Northern Guard Force Status: VALID (1 Notice)</text>
+  <text x="50" y="135" font-size="13" fill="#334155">Selected Faction: North  |  Sub-Faction: Northern Guard  |  Target TV: 150 TV (142 Used, 8 Remaining)</text>
+
+  <rect x="30" y="170" width="1140" height="340" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="50" y="198" font-size="15" font-weight="bold" fill="#0f172a">NORTHERN GUARD ASSET LIMITATIONS (BLITZ 4.0 FIELD GUIDE)</text>
+
+  <rect x="50" y="215" width="1100" height="32" rx="4" fill="#f8fafc" />
+  <text x="65" y="236" font-size="11" font-weight="bold" fill="#475569">ASSET CATEGORY</text>
+  <text x="400" y="236" font-size="11" font-weight="bold" fill="#475569">LIMIT (BY FACTION)</text>
+  <text x="650" y="236" font-size="11" font-weight="bold" fill="#475569">CURRENT ROSTER USAGE</text>
+  <text x="950" y="236" font-size="11" font-weight="bold" fill="#475569">COMPLIANCE STATUS</text>
+
+  <line x1="50" y1="280" x2="1150" y2="280" stroke="#e2e8f0" stroke-width="1" />
+  <text x="65" y="268" font-size="13" font-weight="bold" fill="#0f172a">Veteran / Elite Squads</text>
+  <text x="400" y="268" font-size="13" fill="#475569">Max 2 Squads</text>
+  <text x="650" y="268" font-size="13" fill="#0f172a">1 Squad (Squad 1: Heavy Armor)</text>
+  <rect x="950" y="253" width="70" height="22" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+  <text x="958" y="268" font-size="10" font-weight="bold" fill="#15803d">✓ VALID</text>
+
+  <line x1="50" y1="330" x2="1150" y2="330" stroke="#e2e8f0" stroke-width="1" />
+  <text x="65" y="318" font-size="13" font-weight="bold" fill="#0f172a">Duelists / Aces</text>
+  <text x="400" y="318" font-size="13" fill="#475569">Max 2 Duelists</text>
+  <text x="650" y="318" font-size="13" fill="#0f172a">1 Duelist (Jaguar in Squad 1)</text>
+  <rect x="950" y="303" width="70" height="22" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+  <text x="958" y="318" font-size="10" font-weight="bold" fill="#15803d">✓ VALID</text>
+
+  <line x1="50" y1="380" x2="1150" y2="380" stroke="#e2e8f0" stroke-width="1" />
+  <text x="65" y="368" font-size="13" font-weight="bold" fill="#0f172a">Green Downgrade Squads</text>
+  <text x="400" y="368" font-size="13" fill="#475569">Max 1 Squad</text>
+  <text x="650" y="368" font-size="13" fill="#0f172a">0 Squads (1 individual Green unit)</text>
+  <rect x="950" y="353" width="70" height="22" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+  <text x="958" y="368" font-size="10" font-weight="bold" fill="#15803d">✓ VALID</text>
+
+  <line x1="50" y1="430" x2="1150" y2="430" stroke="#e2e8f0" stroke-width="1" />
+  <text x="65" y="418" font-size="13" font-weight="bold" fill="#0f172a">Airstrikes &amp; Artillery Strikes</text>
+  <text x="400" y="418" font-size="13" fill="#475569">Per TV Budget</text>
+  <text x="650" y="418" font-size="13" fill="#0f172a">1 Airstrike Counter (3 TV)</text>
+  <rect x="950" y="403" width="70" height="22" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1" />
+  <text x="958" y="418" font-size="10" font-weight="bold" fill="#15803d">✓ VALID</text>
+
+  <text x="65" y="468" font-size="13" font-weight="bold" fill="#0f172a">Squad Sizes (Standard 4-9)</text>
+  <text x="400" y="468" font-size="13" fill="#475569">Min 4, Max 9 per squad</text>
+  <text x="650" y="468" font-size="13" fill="#b45309">Squad 3 has 3 units ⚠️</text>
+  <rect x="950" y="453" width="85" height="22" rx="4" fill="#fef3c7" stroke="#ca8a04" stroke-width="1" />
+  <text x="958" y="468" font-size="10" font-weight="bold" fill="#92400e">⚠️ NOTICE</text>
+
+  <rect x="30" y="525" width="1140" height="150" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+  <text x="50" y="552" font-size="15" font-weight="bold" fill="#0f172a">OFF-BOARD ASSETS MANAGEMENT (CG LEVEL)</text>
+
+  <rect x="50" y="570" width="540" height="85" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="70" y="595" font-size="14" font-weight="bold" fill="#0f172a">Airstrike Counters (3 TV each)</text>
+  <text x="70" y="618" font-size="12" fill="#64748b">Allows Call for Fire off-board airstrikes during game rounds.</text>
+  <rect x="420" y="588" width="30" height="30" rx="4" fill="#e2e8f0" />
+  <text x="430" y="608" font-size="16" font-weight="bold" fill="#0f172a">-</text>
+  <text x="465" y="608" font-size="16" font-weight="bold" fill="#1d4ed8">1</text>
+  <rect x="490" y="588" width="30" height="30" rx="4" fill="#2563eb" />
+  <text x="500" y="608" font-size="16" font-weight="bold" fill="#ffffff">+</text>
+
+  <rect x="610" y="570" width="540" height="85" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+  <text x="630" y="595" font-size="14" font-weight="bold" fill="#0f172a">Artillery Strike Counters (4 TV each)</text>
+  <text x="630" y="618" font-size="12" fill="#64748b">Allows Call for Fire off-board heavy artillery bombardment.</text>
+  <rect x="980" y="588" width="30" height="30" rx="4" fill="#e2e8f0" />
+  <text x="990" y="608" font-size="16" font-weight="bold" fill="#0f172a">-</text>
+  <text x="1025" y="608" font-size="16" font-weight="bold" fill="#475569">0</text>
+  <rect x="1050" y="588" width="30" height="30" rx="4" fill="#2563eb" />
+  <text x="1060" y="608" font-size="16" font-weight="bold" fill="#ffffff">+</text>
+
+</svg>
