@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844" style="background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+  <rect x="5" y="5" width="380" height="834" rx="32" fill="#1e293b" stroke="#334155" stroke-width="3" />
+
+  <!-- Mobile Header Bar -->
+  <rect x="5" y="5" width="380" height="55" rx="32" fill="#0f172a" />
+  <text x="20" y="38" font-size="14" font-weight="bold" fill="#f8fafc">← Jaguar (Squad 1)</text>
+  <rect x="280" y="18" width="90" height="28" rx="6" fill="#2563eb" />
+  <text x="292" y="36" font-size="12" font-weight="bold" fill="#ffffff">✓ Done</text>
+
+  <!-- Model Summary Box -->
+  <rect x="15" y="65" width="360" height="110" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+  <text x="25" y="88" font-size="14" font-weight="bold" fill="#38bdf8">Jaguar (Command Unit)</text>
+  <text x="285" y="88" font-size="14" font-weight="bold" fill="#f8fafc">15 TV</text>
+  <text x="25" y="105" font-size="10" fill="#94a3b8">Base: 13 TV  •  Roles: GP, SK, FS</text>
+
+  <text x="25" y="125" font-size="10" fill="#94a3b8" font-family="monospace">MOVE: 6"W | ARM: 7 | HS: 2 | A: 2 | GU: 4+ | EW: 3+</text>
+  <text x="25" y="142" font-size="10" fill="#f8fafc">MAC (Med Autocannon), HVB (Heavy Vibroblade)</text>
+  <text x="25" y="158" font-size="10" fill="#cbd5e1">Traits: ECM, E-Comms, Init+</text>
+
+  <!-- Level & Rank Switches Card -->
+  <rect x="15" y="185" width="360" height="135" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="25" y="205" font-size="12" font-weight="bold" fill="#f8fafc">1. Level &amp; Command Rank Controls</text>
+
+  <text x="25" y="225" font-size="10" fill="#94a3b8">Unit Level:</text>
+  <rect x="25" y="230" width="340" height="26" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+  <text x="32" y="247" font-size="11" fill="#cbd5e1">Green  •  Regular  •  <tspan fill="#a855f7" font-weight="bold">[Veteran +1 TV]</tspan>  •  Elite</text>
+
+  <text x="25" y="270" font-size="10" fill="#94a3b8">Command Rank:</text>
+  <rect x="25" y="275" width="340" height="28" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1" />
+  <text x="32" y="293" font-size="11" fill="#bfdbfe">⭐ CO — Commanding Officer (+2 TV)</text>
+
+  <!-- Mobile Scrollable Category Tabs -->
+  <rect x="15" y="330" width="360" height="490" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+
+  <rect x="25" y="342" width="165" height="28" rx="6" fill="#2563eb" />
+  <text x="35" y="360" font-size="11" font-weight="bold" fill="#ffffff">🏷️ Profile Swaps</text>
+
+  <rect x="195" y="342" width="170" height="28" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+  <text x="205" y="360" font-size="11" font-weight="bold" fill="#cbd5e1">⭐ Level &amp; Command</text>
+
+  <!-- Upgrade Option Cards -->
+  <!-- Option 1 -->
+  <rect x="25" y="380" width="340" height="95" rx="6" fill="#172554" stroke="#38bdf8" stroke-width="2" />
+  <text x="35" y="400" font-size="12" font-weight="bold" fill="#f8fafc">[X] Sabertooth Package (0 TV)</text>
+  <text x="310" y="400" font-size="11" font-weight="bold" fill="#4ade80">ON</text>
+  <text x="35" y="420" font-size="10" fill="#cbd5e1">Swaps LAC for Medium Autocannon (MAC) &amp; upgrades VB to Heavy Vibroblade (HVB).</text>
+  <text x="35" y="440" font-size="10" fill="#38bdf8">Stat Delta: React Weapons MAC/HVB  •  0 TV</text>
+
+  <!-- Option 2 -->
+  <rect x="25" y="485" width="340" height="85" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <text x="35" y="505" font-size="12" font-weight="bold" fill="#f8fafc">[  ] Command Package Variant (0 TV)</text>
+  <text x="310" y="505" font-size="11" fill="#94a3b8">OFF</text>
+  <text x="35" y="525" font-size="10" fill="#94a3b8">Swaps Light Rocket Pack for Satellite Comms Array. Adds Sat Uplink trait.</text>
+  <text x="35" y="545" font-size="10" fill="#64748b">Stat Delta: Traits +Sat Uplink  •  0 TV</text>
+
+  <!-- Option 3 -->
+  <rect x="25" y="580" width="340" height="95" rx="6" fill="#172554" stroke="#38bdf8" stroke-width="2" />
+  <text x="35" y="600" font-size="12" font-weight="bold" fill="#f8fafc">[X] Initiative Plus (+1 TV)</text>
+  <text x="310" y="600" font-size="11" font-weight="bold" fill="#4ade80">ON</text>
+  <text x="35" y="620" font-size="10" fill="#cbd5e1">Adds Init+ trait (+1 to all Initiative rolls for squad).</text>
+  <text x="35" y="640" font-size="10" fill="#38bdf8">Stat Delta: Traits +Init+  •  +1 TV</text>
+
+  <!-- Option 4 -->
+  <rect x="25" y="685" width="340" height="85" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <text x="35" y="705" font-size="12" font-weight="bold" fill="#f8fafc">[  ] Hardened Armor (+1 TV)</text>
+  <text x="310" y="705" font-size="11" fill="#94a3b8">OFF</text>
+  <text x="35" y="725" font-size="10" fill="#94a3b8">Increases Armor from 7 to 8. Adds Lumbering trait.</text>
+  <text x="35" y="745" font-size="10" fill="#64748b">Stat Delta: ARM 7 → 8  •  +1 TV</text>
+
+</svg>

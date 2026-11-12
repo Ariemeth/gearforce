@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="1000" height="650" style="background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+  <rect x="10" y="10" width="980" height="630" rx="12" fill="#1e293b" stroke="#334155" stroke-width="2" />
+
+  <text x="30" y="45" font-size="18" font-weight="bold" fill="#f8fafc">GEARFORCE — Information Architecture &amp; Navigation Flow</text>
+
+  <!-- Level 1: Roster Screen -->
+  <rect x="350" y="70" width="300" height="40" rx="8" fill="#2563eb" stroke="#3b82f6" stroke-width="2" />
+  <text x="375" y="95" font-size="14" font-weight="bold" fill="#ffffff">1. Roster Screen (CG Force Level)</text>
+
+  <path d="M 350 90 L 150 150" stroke="#475569" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 420 110 L 320 150" stroke="#475569" stroke-width="2" />
+  <path d="M 500 110 L 500 150" stroke="#475569" stroke-width="2" />
+  <path d="M 580 110 L 680 150" stroke="#475569" stroke-width="2" />
+  <path d="M 650 90 L 850 150" stroke="#475569" stroke-width="2" />
+
+  <!-- Children of Level 1 -->
+  <rect x="50" y="150" width="180" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="60" y="172" font-size="11" fill="#cbd5e1">Target TV &amp; Budget Header</text>
+
+  <rect x="240" y="150" width="160" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="250" y="172" font-size="11" fill="#cbd5e1">Faction Selectors</text>
+
+  <rect x="410" y="150" width="180" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="420" y="172" font-size="11" fill="#cbd5e1">Asset Compliance Summary</text>
+
+  <rect x="600" y="150" width="160" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="610" y="172" font-size="11" fill="#cbd5e1">Off-Board Support</text>
+
+  <rect x="770" y="150" width="180" height="35" rx="6" fill="#172554" stroke="#38bdf8" stroke-width="2" />
+  <text x="785" y="172" font-size="11" font-weight="bold" fill="#38bdf8">Squads List (Combat Groups)</text>
+
+  <!-- Level 2: Squad Details Screen -->
+  <path d="M 860 185 L 500 240" stroke="#38bdf8" stroke-width="2" />
+
+  <rect x="350" y="240" width="300" height="40" rx="8" fill="#2563eb" stroke="#3b82f6" stroke-width="2" />
+  <text x="385" y="265" font-size="14" font-weight="bold" fill="#ffffff">2. Squad Details Screen</text>
+
+  <path d="M 380 280 L 180 320" stroke="#475569" stroke-width="2" />
+  <path d="M 450 280 L 380 320" stroke="#475569" stroke-width="2" />
+  <path d="M 520 280 L 580 320" stroke="#475569" stroke-width="2" />
+  <path d="M 600 280 L 800 320" stroke="#475569" stroke-width="2" />
+
+  <!-- Children of Level 2 -->
+  <rect x="80" y="320" width="180" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="90" y="342" font-size="11" fill="#cbd5e1">1iC &amp; 2iC Leader Status</text>
+
+  <rect x="280" y="320" width="180" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="290" y="342" font-size="11" fill="#cbd5e1">Primary/Secondary Roles</text>
+
+  <rect x="480" y="320" width="180" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="490" y="342" font-size="11" fill="#cbd5e1">Squad-Wide Upgrades</text>
+
+  <rect x="680" y="320" width="200" height="35" rx="6" fill="#172554" stroke="#38bdf8" stroke-width="2" />
+  <text x="695" y="342" font-size="11" font-weight="bold" fill="#38bdf8">Model List (Role/Level Badges)</text>
+
+  <!-- Level 3: Model Customization Screen -->
+  <path d="M 780 355 L 500 410" stroke="#38bdf8" stroke-width="2" />
+
+  <rect x="350" y="410" width="300" height="40" rx="8" fill="#2563eb" stroke="#3b82f6" stroke-width="2" />
+  <text x="365" y="435" font-size="14" font-weight="bold" fill="#ffffff">3. Model Customization Screen</text>
+
+  <path d="M 380 450 L 150 490" stroke="#475569" stroke-width="2" />
+  <path d="M 450 450 L 380 490" stroke="#475569" stroke-width="2" />
+  <path d="M 520 450 L 620 490" stroke="#475569" stroke-width="2" />
+  <path d="M 600 450 L 850 490" stroke="#475569" stroke-width="2" />
+
+  <!-- Children of Level 3 -->
+  <rect x="50" y="490" width="180" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="60" y="512" font-size="11" fill="#cbd5e1">Model Stat Block Summary</text>
+
+  <rect x="250" y="490" width="230" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="260" y="512" font-size="11" fill="#cbd5e1">Level (Green/Vet/Elite) &amp; Rank (CO/XO)</text>
+
+  <rect x="500" y="490" width="200" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="510" y="512" font-size="11" fill="#cbd5e1">Tab 1: Profile &amp; Weapon Swaps</text>
+
+  <rect x="720" y="490" width="240" height="35" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="730" y="512" font-size="11" fill="#cbd5e1">Tabs 2-4: Vet/Duelist/Special Upgrades</text>
+
+</svg>

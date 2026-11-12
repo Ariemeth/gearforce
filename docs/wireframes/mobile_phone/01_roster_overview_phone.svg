@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844" style="background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+  <!-- Outer Phone Frame -->
+  <rect x="5" y="5" width="380" height="834" rx="32" fill="#1e293b" stroke="#334155" stroke-width="3" />
+
+  <!-- Mobile Status / Header Bar -->
+  <rect x="5" y="5" width="380" height="55" rx="32" fill="#0f172a" />
+  <text x="20" y="38" font-size="16" font-weight="bold" fill="#f8fafc">GEARFORCE</text>
+  <rect x="250" y="20" width="120" height="26" rx="6" fill="#334155" stroke="#475569" stroke-width="1" />
+  <text x="258" y="37" font-size="11" font-weight="bold" fill="#38bdf8">142 / 150 TV</text>
+
+  <!-- Budget Progress Bar Header -->
+  <rect x="15" y="65" width="360" height="40" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="25" y="82" font-size="10" fill="#94a3b8">Northern Guard Strike Force</text>
+  <text x="245" y="82" font-size="10" font-weight="bold" fill="#22c55e">95% Budget Used</text>
+  <rect x="25" y="88" width="340" height="6" rx="3" fill="#334155" />
+  <rect x="25" y="88" width="323" height="6" rx="3" fill="#22c55e" />
+
+  <!-- Faction & CGL Summary Bar -->
+  <rect x="15" y="112" width="360" height="48" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <text x="25" y="130" font-size="11" fill="#cbd5e1"><tspan font-weight="bold">North</tspan> • Northern Guard</text>
+  <text x="25" y="148" font-size="11" fill="#38bdf8">⭐ <tspan font-weight="bold">CGL:</tspan> Capt. Vance (Jaguar CO)</text>
+  <rect x="275" y="122" width="90" height="22" rx="4" fill="#14532d" stroke="#22c55e" stroke-width="1" />
+  <text x="282" y="136" font-size="9" font-weight="bold" fill="#bbf7d0">✓ Rules OK</text>
+
+  <!-- Squads List Title -->
+  <text x="20" y="180" font-size="14" font-weight="bold" fill="#f8fafc">COMBAT GROUPS (SQUADS)</text>
+  <rect x="280" y="165" width="95" height="24" rx="6" fill="#2563eb" />
+  <text x="290" y="181" font-size="11" font-weight="bold" fill="#ffffff">+ Add Squad</text>
+
+  <!-- Squad 1 Mobile Card -->
+  <rect x="15" y="198" width="360" height="150" rx="8" fill="#172554" stroke="#38bdf8" stroke-width="2" />
+  <text x="25" y="220" font-size="13" font-weight="bold" fill="#f8fafc">≡ Squad 1: Heavy Armor</text>
+  <text x="325" y="220" font-size="13" font-weight="bold" fill="#38bdf8">48 TV</text>
+  <text x="25" y="238" font-size="11" fill="#94a3b8">Roles: GP / FS  •  4 Units  •  5 Actions</text>
+
+  <rect x="25" y="248" width="115" height="20" rx="4" fill="#78350f" stroke="#ca8a04" stroke-width="1" />
+  <text x="30" y="262" font-size="9" font-weight="bold" fill="#fef08a">⭐ CGL: Capt. Vance</text>
+
+  <rect x="145" y="248" width="80" height="20" rx="4" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1" />
+  <text x="150" y="262" font-size="9" font-weight="bold" fill="#bfdbfe">1iC: CO (2 TV)</text>
+
+  <rect x="230" y="248" width="75" height="20" rx="4" fill="#581c87" stroke="#a855f7" stroke-width="1" />
+  <text x="235" y="262" font-size="9" font-weight="bold" fill="#f3e8ff">VET SQUAD</text>
+
+  <text x="25" y="285" font-size="10" fill="#cbd5e1">• 1. Jaguar (CO ⭐ CGL, Vet) [15 TV]</text>
+  <text x="25" y="300" font-size="10" fill="#cbd5e1">• 2. Grizzly (2iC, Regular) [13 TV]</text>
+  <text x="25" y="315" font-size="10" fill="#cbd5e1">• 3. Hunter x2 (Trooper, Green/Reg) [19 TV]</text>
+  <text x="25" y="335" font-size="10" fill="#38bdf8">Tap to view/edit squad details →</text>
+
+  <!-- Squad 2 Mobile Card -->
+  <rect x="15" y="358" width="360" height="120" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <text x="25" y="380" font-size="13" font-weight="bold" fill="#f8fafc">≡ Squad 2: Recon Cadre</text>
+  <text x="325" y="380" font-size="13" font-weight="bold" fill="#f8fafc">54 TV</text>
+  <text x="25" y="398" font-size="11" fill="#94a3b8">Roles: RC / SK  •  5 Units  •  6 Actions</text>
+
+  <rect x="25" y="408" width="80" height="20" rx="4" fill="#334155" stroke="#64748b" stroke-width="1" />
+  <text x="30" y="422" font-size="9" font-weight="bold" fill="#cbd5e1">1iC: 1iC (1 TV)</text>
+
+  <rect x="110" y="408" width="95" height="20" rx="4" fill="#334155" stroke="#64748b" stroke-width="1" />
+  <text x="115" y="422" font-size="9" font-weight="bold" fill="#cbd5e1">REGULAR SQUAD</text>
+
+  <text x="25" y="445" font-size="10" fill="#cbd5e1">• Cheetah (1iC), Ferret x2, Blackcat x2</text>
+  <text x="25" y="465" font-size="10" fill="#94a3b8">Tap to view/edit squad details →</text>
+
+  <!-- Squad 3 Mobile Card (Warning) -->
+  <rect x="15" y="488" width="360" height="120" rx="8" fill="#1e293b" stroke="#ca8a04" stroke-width="1" />
+  <text x="25" y="510" font-size="13" font-weight="bold" fill="#f8fafc">≡ Squad 3: Fire Support</text>
+  <text x="325" y="510" font-size="13" font-weight="bold" fill="#eab308">40 TV</text>
+  <text x="25" y="528" font-size="11" fill="#fde047">Roles: FS  •  3 Units ⚠️  •  4 Actions</text>
+
+  <rect x="25" y="538" width="80" height="20" rx="4" fill="#334155" stroke="#64748b" stroke-width="1" />
+  <text x="30" y="552" font-size="9" font-weight="bold" fill="#cbd5e1">1iC: 1iC (1 TV)</text>
+
+  <rect x="110" y="538" width="140" height="20" rx="4" fill="#713f12" stroke="#eab308" stroke-width="1" />
+  <text x="115" y="552" font-size="9" font-weight="bold" fill="#fef08a">⚠️ Size Warning (&lt;4 units)</text>
+
+  <text x="25" y="575" font-size="10" fill="#fde047">• Kodiak (1iC), Wildfire x2</text>
+  <text x="25" y="595" font-size="10" fill="#eab308">Tap to resolve size warning →</text>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <rect x="5" y="775" width="380" height="64" rx="20" fill="#0f172a" stroke="#334155" stroke-width="1" />
+
+  <text x="45" y="802" font-size="18" fill="#38bdf8">📋</text>
+  <text x="38" y="820" font-size="10" font-weight="bold" fill="#38bdf8">Roster</text>
+
+  <text x="145" y="802" font-size="18" fill="#94a3b8">📊</text>
+  <text x="135" y="820" font-size="10" fill="#94a3b8">Asset Rules</text>
+
+  <text x="245" y="802" font-size="18" fill="#94a3b8">✈️</text>
+  <text x="235" y="820" font-size="10" fill="#94a3b8">Off-Board</text>
+
+  <text x="335" y="802" font-size="18" fill="#94a3b8">⚙️</text>
+  <text x="328" y="820" font-size="10" fill="#94a3b8">Settings</text>
+
+</svg>

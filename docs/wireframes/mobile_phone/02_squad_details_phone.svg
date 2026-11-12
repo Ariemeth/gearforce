@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844" style="background-color: #0f172a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+
+  <rect x="5" y="5" width="380" height="834" rx="32" fill="#1e293b" stroke="#334155" stroke-width="3" />
+
+  <!-- Mobile Header Bar -->
+  <rect x="5" y="5" width="380" height="55" rx="32" fill="#0f172a" />
+  <text x="20" y="38" font-size="15" font-weight="bold" fill="#38bdf8">← Squad 1: Heavy Armor</text>
+  <text x="320" y="38" font-size="14" font-weight="bold" fill="#38bdf8">48 TV</text>
+
+  <!-- Squad Roles & Command Panel -->
+  <rect x="15" y="65" width="360" height="110" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2" />
+  <text x="25" y="88" font-size="12" font-weight="bold" fill="#f8fafc">Squad Roles &amp; Command Structure</text>
+
+  <text x="25" y="110" font-size="10" fill="#94a3b8">Primary Role (Set by 1iC)</text>
+  <rect x="25" y="116" width="165" height="28" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+  <text x="32" y="133" font-size="11" fill="#f8fafc">GP — Purpose ▼</text>
+
+  <text x="200" y="110" font-size="10" fill="#94a3b8">Secondary Role</text>
+  <rect x="200" y="116" width="165" height="28" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+  <text x="207" y="133" font-size="11" fill="#f8fafc">FS — Support ▼</text>
+
+  <text x="25" y="162" font-size="10" fill="#bfdbfe"><tspan font-weight="bold">Leaders:</tspan> 1iC: CO ⭐ Capt. Vance  |  2iC: Grizzly</text>
+
+  <!-- Squad-Wide Upgrades Card -->
+  <rect x="15" y="185" width="360" height="110" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="25" y="205" font-size="12" font-weight="bold" fill="#f8fafc">Squad-Wide Upgrades</text>
+
+  <text x="25" y="228" font-size="11" fill="#38bdf8"><tspan font-weight="bold">[X] Light Grenades (LHG) (+1 TV)</tspan></text>
+  <text x="25" y="248" font-size="11" fill="#cbd5e1">[  ] Medium Panzerfausts (MPZ) (+2 TV)</text>
+  <text x="25" y="268" font-size="11" fill="#cbd5e1">[  ] Shaped Explosives (LSE) (+1 TV)</text>
+
+  <!-- Models List Title -->
+  <text x="20" y="315" font-size="14" font-weight="bold" fill="#f8fafc">SQUAD MODELS (4 / 9)</text>
+  <rect x="280" y="300" width="95" height="24" rx="6" fill="#2563eb" />
+  <text x="290" y="316" font-size="11" font-weight="bold" fill="#ffffff">+ Select Unit</text>
+
+  <!-- Model 1 Mobile Card -->
+  <rect x="15" y="332" width="360" height="110" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1" />
+  <text x="25" y="352" font-size="13" font-weight="bold" fill="#f8fafc">1. Jaguar (Command Unit)</text>
+  <text x="325" y="352" font-size="13" font-weight="bold" fill="#4ade80">15 TV</text>
+
+  <rect x="25" y="360" width="55" height="18" rx="3" fill="#78350f" />
+  <text x="30" y="372" font-size="9" font-weight="bold" fill="#fef08a">⭐ CGL</text>
+
+  <rect x="85" y="360" width="80" height="18" rx="3" fill="#1e3a8a" />
+  <text x="90" y="372" font-size="9" font-weight="bold" fill="#bfdbfe">CO (+2 TV)</text>
+
+  <rect x="170" y="360" width="45" height="18" rx="3" fill="#581c87" />
+  <text x="175" y="372" font-size="9" font-weight="bold" fill="#f3e8ff">VET</text>
+
+  <text x="25" y="395" font-size="10" fill="#94a3b8" font-family="monospace">Move: 6" W | ARM: 7 | HS: 2 | A: 2 | GU: 4+ | EW: 3+</text>
+  <text x="25" y="412" font-size="10" fill="#4ade80">Upgrades: Sabertooth Swap, Init+  •  Tap to customize →</text>
+
+  <!-- Model 2 Mobile Card -->
+  <rect x="15" y="450" width="360" height="90" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <text x="25" y="470" font-size="13" font-weight="bold" fill="#f8fafc">2. Grizzly</text>
+  <text x="325" y="470" font-size="13" font-weight="bold" fill="#f8fafc">13 TV</text>
+
+  <rect x="25" y="478" width="75" height="18" rx="3" fill="#334155" />
+  <text x="30" y="490" font-size="9" font-weight="bold" fill="#cbd5e1">2iC (+1 TV)</text>
+
+  <rect x="105" y="478" width="65" height="18" rx="3" fill="#334155" />
+  <text x="110" y="490" font-size="9" font-weight="bold" fill="#cbd5e1">REGULAR</text>
+
+  <text x="25" y="512" font-size="10" fill="#94a3b8" font-family="monospace">Move: 5" W | ARM: 8 | HS: 2 | A: 1 | GU: 4+ | EW: 5+</text>
+  <text x="25" y="528" font-size="10" fill="#94a3b8">Tap to customize →</text>
+
+  <!-- Model 3 Mobile Card -->
+  <rect x="15" y="548" width="360" height="85" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <text x="25" y="568" font-size="13" font-weight="bold" fill="#f8fafc">3. Hunter</text>
+  <text x="325" y="568" font-size="13" font-weight="bold" fill="#f8fafc">10 TV</text>
+
+  <rect x="25" y="576" width="65" height="18" rx="3" fill="#334155" />
+  <text x="30" y="588" font-size="9" font-weight="bold" fill="#cbd5e1">REGULAR</text>
+
+  <text x="25" y="610" font-size="10" fill="#94a3b8" font-family="monospace">Move: 6" W | ARM: 6 | HS: 2 | A: 1 | GU: 4+ | EW: 6+</text>
+
+  <!-- Model 4 Mobile Card (Green) -->
+  <rect x="15" y="641" width="360" height="85" rx="8" fill="#1a2e05" stroke="#84cc16" stroke-width="1" />
+  <text x="25" y="661" font-size="13" font-weight="bold" fill="#a3e635">4. Hunter (Green Downgrade)</text>
+  <text x="315" y="661" font-size="13" font-weight="bold" fill="#a3e635">9 TV (-1)</text>
+
+  <rect x="25" y="669" width="95" height="18" rx="3" fill="#365314" stroke="#84cc16" stroke-width="1" />
+  <text x="30" y="681" font-size="9" font-weight="bold" fill="#d9f99d">GREEN (-1 TV)</text>
+
+  <text x="25" y="703" font-size="10" fill="#a3e635" font-family="monospace">Move: 6" W | ARM: 6 | HS: 2 | A: 1 | GU: 4+ | EW: 6+ (Green)</text>
+
+</svg>

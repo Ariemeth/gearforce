@@ -1,8 +1,8 @@
 # Gearforce
 
-Gearforce is an application to build unit rosters for the game Heavy Gear Blitz.
+Gearforce is an application to build unit rosters for the tabletop game Heavy Gear Blitz.
 
-More info about Heavy gear can be found at [Dream Pod 9's](https://www.dp9.com) website.
+More info about Heavy Gear can be found at [Dream Pod 9's](https://www.dp9.com) website.
 
 ---
 
@@ -56,9 +56,10 @@ Organized by high-level user features. Each feature folder should follow this st
 
 ---
 
-## Data-Driven Content
+## Data-Driven Content & Schema
 
-Game data (Units, Weapons, etc.) is stored as **JSON assets** to allow for updates without changing code.
+Game data (Units, Weapons, etc.) is stored as **JSON assets** to allow for updates without changing code. See [docs/data_schema.md](docs/data_schema.md) for full JSON schema details.
+
 -   **`assets/data/units/`**: Faction-specific JSON files containing unit statistics and variants.
 -   **`assets/data/weapons/`**: JSON files for weapon definitions.
 
@@ -89,6 +90,29 @@ flutter test
 
 ---
 
+## Heavy Gear Blitz 4.0 Construction Rules & UI Wireframes
+
+Gearforce supports full Heavy Gear Blitz 4.0 Construction Rules across all target platforms (Android, iOS, Web, Windows, macOS, Linux).
+
+Design documentation and interactive SVG visual wireframes are available in `docs/wireframes/`:
+
+* **Documentation & Diagrams**:
+  * [docs/wireframes/ui_design_construction_rules.md](docs/wireframes/ui_design_construction_rules.md) — Complete 4.0 Rule Evaluation & UI Design Specification.
+  * [docs/wireframes/navigation_flow.mmd](docs/wireframes/navigation_flow.mmd) — Standalone Mermaid Navigation Flowchart Source (View and edit online at [mermaid.live](https://mermaid.live)).
+  * [docs/wireframes/navigation_flow.svg](docs/wireframes/navigation_flow.svg) — Visual Information Architecture & Navigation Flowchart.
+* **Desktop, Web & Tablet Wireframe Suite**:
+  * [docs/wireframes/desktop_web/01_roster_overview_desktop.svg](docs/wireframes/desktop_web/01_roster_overview_desktop.svg)
+  * [docs/wireframes/desktop_web/02_squad_details_desktop.svg](docs/wireframes/desktop_web/02_squad_details_desktop.svg)
+  * [docs/wireframes/desktop_web/03_unit_customization_desktop.svg](docs/wireframes/desktop_web/03_unit_customization_desktop.svg)
+  * [docs/wireframes/desktop_web/04_asset_compliance_center_desktop.svg](docs/wireframes/desktop_web/04_asset_compliance_center_desktop.svg)
+* **Mobile Phone (Android & iOS) Wireframe Suite**:
+  * [docs/wireframes/mobile_phone/01_roster_overview_phone.svg](docs/wireframes/mobile_phone/01_roster_overview_phone.svg)
+  * [docs/wireframes/mobile_phone/02_squad_details_phone.svg](docs/wireframes/mobile_phone/02_squad_details_phone.svg)
+  * [docs/wireframes/mobile_phone/03_unit_customization_phone.svg](docs/wireframes/mobile_phone/03_unit_customization_phone.svg)
+  * [docs/wireframes/mobile_phone/04_asset_compliance_sheet_phone.svg](docs/wireframes/mobile_phone/04_asset_compliance_sheet_phone.svg)
+
+---
+
 ## Testing Structure
 
 The `test/` directory strictly mirrors the `lib/` directory's structure.
@@ -97,35 +121,18 @@ The `test/` directory strictly mirrors the `lib/` directory's structure.
 
 ---
 
-## Development
-
-### Localization
+## Development & Localization
 
 User-facing strings are managed via ARB (Application Resource Bundle) files and Flutter's built-in localization system. The source strings live in `lib/core/localization/app_en.arb`, and the generated Dart code is output to `lib/core/generated/i18n/`.
 
 **To add or update a localized string:**
 
-1. Edit `lib/core/localization/app_en.arb` and add your new key/value pair. For simple strings:
+1. Edit `lib/core/localization/app_en.arb` and add your new key/value pair:
    ```json
    {   
        "myNewLabel": "Hello World",
        "@myNewLabel": {
          "description": "A greeting label"
-       }
-   }
-   ```
-   For strings with placeholders:
-   ```json
-   {
-       "welcomeMessage": "Welcome, {userName}!",
-       "@welcomeMessage": {
-         "description": "Welcome message with the user's name",
-         "placeholders": {
-           "userName": {
-             "type": "String",
-             "example": "Alice"
-           }
-         }
        }
    }
    ```
@@ -135,36 +142,21 @@ User-facing strings are managed via ARB (Application Resource Bundle) files and 
    flutter gen-l10n
    ```
 
-3. Use the string in your widget via the `context.l10n` extension:
+3. Access localized strings in widgets via `context.l10n`:
    ```dart
    import 'package:gearforce/core/utils/l10n_extension.dart';
 
-   // Simple string
    Text(context.l10n.myNewLabel)
-
-   // Parameterized string
-   Text(context.l10n.welcomeMessage('Alice'))
    ```
-
-The `context.l10n` extension (defined in `lib/core/utils/l10n_extension.dart`) is the preferred way to access localized strings. Avoid using `AppLocalizations.of(context)!` directly.
 
 ---
 
 ## Benchmarking
 
-Gearforce includes comprehensive benchmark tests for measuring JSON parsing and unit loading performance. See [docs/benchmarks.md](docs/benchmarks.md) for details.
-
-**Quick Start:**
+Gearforce includes benchmark tests for measuring JSON parsing and unit loading performance. See [docs/benchmarks.md](docs/benchmarks.md) for details.
 
 ```bash
-# Run benchmarks
 flutter test test/data/repositories/unit_loading_benchmark.dart
-```
-
-Run with verbose output to see detailed timing:
-
-```bash
-flutter test test/data/repositories/unit_loading_benchmark.dart --verbose
 ```
 
 ---
@@ -172,7 +164,7 @@ flutter test test/data/repositories/unit_loading_benchmark.dart --verbose
 ## Summary Table: What Goes Where?
 
 | Component                        | Directory                          |
-| :------------------------------- | :--------------------------------- |
+|----------------------------------|------------------------------------|
 | **Domain Entity** (Unit, Weapon) | `lib/domain/entities/`             |
 | **Attribute Entity**             | `lib/domain/entities/attribute/`   |
 | **Repository Interface**         | `lib/domain/repositories/`         |
@@ -183,5 +175,6 @@ flutter test test/data/repositories/unit_loading_benchmark.dart --verbose
 | **Reusable UI Widget**           | `lib/core/widgets/`                |
 | **Feature-Specific Widget**      | `lib/features/[feature]/widgets/`  |
 | **Localization Keys**            | `lib/core/localization/app_en.arb` |
-| **Game Data** (JSON)             | `assets/data/`                     |
-| **Data Conversion Script**       | `tool/generate_units.py`          |
+| **Game Data (JSON)**             | `assets/data/`                     |
+| **Data Conversion Script**       | `tool/generate_units.dart`         |
+| **UI Wireframes & Design Rules** | `docs/wireframes/`                 |
