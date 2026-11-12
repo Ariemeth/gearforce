@@ -24,32 +24,69 @@ class AppSettingScreen extends StatelessWidget {
         padding: _pagePadding,
         child: BlocBuilder<AppSettingsCubit, AppSettingsState>(
           builder: (context, state) {
-            return DropdownButtonFormField<ThemeMode>(
-              initialValue: state.themeMode,
-              onChanged: (newThemeMode) {
-                if (newThemeMode != null && newThemeMode != state.themeMode) {
-                  context.read<AppSettingsCubit>().updateThemeMode(
-                    newThemeMode,
-                  );
-                }
-              },
-              decoration: InputDecoration(
-                labelText: context.l10n.settingsThemeLabel,
-                helperText: context.l10n.settingsThemeHelper,
-                border: const OutlineInputBorder(),
-              ),
-              items: [
-                DropdownMenuItem(
-                  value: ThemeMode.system,
-                  child: Text(context.l10n.settingsThemeSystem),
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DropdownButtonFormField<ThemeMode>(
+                  initialValue: state.themeMode,
+                  onChanged: (newThemeMode) {
+                    if (newThemeMode != null &&
+                        newThemeMode != state.themeMode) {
+                      context.read<AppSettingsCubit>().updateThemeMode(
+                        newThemeMode,
+                      );
+                    }
+                  },
+                  decoration: InputDecoration(
+                    labelText: context.l10n.settingsThemeLabel,
+                    helperText: context.l10n.settingsThemeHelper,
+                    border: const OutlineInputBorder(),
+                  ),
+                  items: [
+                    DropdownMenuItem(
+                      value: ThemeMode.system,
+                      child: Text(context.l10n.settingsThemeSystem),
+                    ),
+                    DropdownMenuItem(
+                      value: ThemeMode.light,
+                      child: Text(context.l10n.settingsThemeLight),
+                    ),
+                    DropdownMenuItem(
+                      value: ThemeMode.dark,
+                      child: Text(context.l10n.settingsThemeDark),
+                    ),
+                  ],
                 ),
-                DropdownMenuItem(
-                  value: ThemeMode.light,
-                  child: Text(context.l10n.settingsThemeLight),
-                ),
-                DropdownMenuItem(
-                  value: ThemeMode.dark,
-                  child: Text(context.l10n.settingsThemeDark),
+                const SizedBox(height: 24),
+                DropdownButtonFormField<UiDisplayMode>(
+                  initialValue: state.uiDisplayMode,
+                  onChanged: (newDisplayMode) {
+                    if (newDisplayMode != null &&
+                        newDisplayMode != state.uiDisplayMode) {
+                      context.read<AppSettingsCubit>().updateUiDisplayMode(
+                        newDisplayMode,
+                      );
+                    }
+                  },
+                  decoration: InputDecoration(
+                    labelText: context.l10n.settingsDisplayModeLabel,
+                    helperText: context.l10n.settingsDisplayModeHelper,
+                    border: const OutlineInputBorder(),
+                  ),
+                  items: [
+                    DropdownMenuItem(
+                      value: UiDisplayMode.auto,
+                      child: Text(context.l10n.settingsDisplayModeAuto),
+                    ),
+                    DropdownMenuItem(
+                      value: UiDisplayMode.mobile,
+                      child: Text(context.l10n.settingsDisplayModeMobile),
+                    ),
+                    DropdownMenuItem(
+                      value: UiDisplayMode.desktop,
+                      child: Text(context.l10n.settingsDisplayModeDesktop),
+                    ),
+                  ],
                 ),
               ],
             );

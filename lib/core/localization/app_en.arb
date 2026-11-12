@@ -106,6 +106,26 @@
   "@settingsThemeDark": {
     "description": "Dark theme option"
   },
+  "settingsDisplayModeLabel": "UI Display Mode",
+  "@settingsDisplayModeLabel": {
+    "description": "Label for the UI layout display mode dropdown in settings"
+  },
+  "settingsDisplayModeHelper": "Choose layout to use",
+  "@settingsDisplayModeHelper": {
+    "description": "Helper text for the UI display mode dropdown in settings"
+  },
+  "settingsDisplayModeAuto": "Auto",
+  "@settingsDisplayModeAuto": {
+    "description": "Auto responsive display mode option"
+  },
+  "settingsDisplayModeMobile": "Mobile",
+  "@settingsDisplayModeMobile": {
+    "description": "Forced mobile display mode option"
+  },
+  "settingsDisplayModeDesktop": "Web/Desktop",
+  "@settingsDisplayModeDesktop": {
+    "description": "Forced desktop display mode option"
+  },
   "weaponsTitle": "Weapons",
   "@weaponsTitle": {
     "description": "Title for the weapons display screen"
@@ -393,5 +413,5 @@
   "testField": "Test",
   "@testField": {
     "description": "Test field"
-    }
+  }
 }

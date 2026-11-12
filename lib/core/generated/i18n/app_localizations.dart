@@ -226,6 +226,36 @@ abstract class AppLocalizations {
   /// **'Dark'**
   String get settingsThemeDark;
 
+  /// Label for the UI layout display mode dropdown in settings
+  ///
+  /// In en, this message translates to:
+  /// **'UI Display Mode'**
+  String get settingsDisplayModeLabel;
+
+  /// Helper text for the UI display mode dropdown in settings
+  ///
+  /// In en, this message translates to:
+  /// **'Choose layout to use'**
+  String get settingsDisplayModeHelper;
+
+  /// Auto responsive display mode option
+  ///
+  /// In en, this message translates to:
+  /// **'Auto'**
+  String get settingsDisplayModeAuto;
+
+  /// Forced mobile display mode option
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile'**
+  String get settingsDisplayModeMobile;
+
+  /// Forced desktop display mode option
+  ///
+  /// In en, this message translates to:
+  /// **'Web/Desktop'**
+  String get settingsDisplayModeDesktop;
+
   /// Title for the weapons display screen
   ///
   /// In en, this message translates to:

@@ -81,6 +81,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsThemeDark => 'Dark';
 
   @override
+  String get settingsDisplayModeLabel => 'UI Display Mode';
+
+  @override
+  String get settingsDisplayModeHelper => 'Choose layout to use';
+
+  @override
+  String get settingsDisplayModeAuto => 'Auto';
+
+  @override
+  String get settingsDisplayModeMobile => 'Mobile';
+
+  @override
+  String get settingsDisplayModeDesktop => 'Web/Desktop';
+
+  @override
   String get weaponsTitle => 'Weapons';
 
   @override
