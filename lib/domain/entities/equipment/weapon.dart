@@ -18,7 +18,6 @@ class Weapon {
   final TraitSizeBands alternateTraitBands;
   final DamageSizeBands damageBands;
   final WeaponSize size;
-  final bool isReact;
 
   const Weapon({
     required String code,
@@ -36,7 +35,6 @@ class Weapon {
     this.alternateTraitBands = const TraitSizeBands(),
     required this.damageBands,
     required this.size,
-    this.isReact = false,
   }) : _code = code,
        _primaryTraits = primaryTraits,
        _alternateTraits = alternateTraits;
@@ -70,7 +68,6 @@ class Weapon {
     List<Trait>? primaryTraits,
     List<Trait>? alternateTraits,
     List<Trait>? customTraits,
-    bool? isReact,
   }) {
     return Weapon(
       code: _code,
@@ -89,7 +86,6 @@ class Weapon {
             ? customTraits
             : const []),
       ],
-      isReact: isReact ?? this.isReact,
     );
   }
 

@@ -79,10 +79,7 @@ class WeaponParser {
               .map((trait) => TraitFactory.traitFromString(trait.trim()))
               .toList();
 
-    final baseWeapon1 = WeaponFactory.getWeaponByCode(
-      code1,
-      hasReact: hasReact,
-    );
+    final baseWeapon1 = WeaponFactory.getWeaponByCode(code1);
     if (baseWeapon1 == null) {
       throw ArgumentError('Invalid weapon1 code: $code1');
     }
@@ -92,13 +89,11 @@ class WeaponParser {
       return SingleWeaponSpec(
         weapon: baseWeapon1,
         customTraits: additionalTraits,
+        isReact: hasReact,
       );
     }
 
-    final baseWeapon2 = WeaponFactory.getWeaponByCode(
-      code2,
-      hasReact: hasReact,
-    );
+    final baseWeapon2 = WeaponFactory.getWeaponByCode(code2);
     if (baseWeapon2 == null) {
       throw ArgumentError('Invalid weapon2 code: $code2');
     }
@@ -107,6 +102,7 @@ class WeaponParser {
       weapon1: baseWeapon1,
       weapon2: baseWeapon2,
       customTraits: additionalTraits,
+      isReact: hasReact,
     );
   }
 }

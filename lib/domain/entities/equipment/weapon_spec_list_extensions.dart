@@ -18,10 +18,8 @@ extension WeaponSpecListExtensions on List<WeaponSpec> {
   }
 
   /// Returns all weapons where `isReact` is true.
-  List<WeaponSpec> get reactWeapons =>
-      where((ws) => ws.weapons.any((w) => w.isReact)).toList();
+  List<WeaponSpec> get reactWeapons => where((ws) => ws.isReact).toList();
 
   /// Returns all weapons where `isReact` is false (mounted weapons).
-  List<WeaponSpec> get mountedWeapons =>
-      where((ws) => ws.weapons.any((w) => !w.isReact)).toList();
+  List<WeaponSpec> get mountedWeapons => where((ws) => !ws.isReact).toList();
 }

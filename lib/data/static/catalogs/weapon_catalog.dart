@@ -6,7 +6,7 @@ import 'package:gearforce/domain/entities/equipment/weapon_range.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
 
 class WeaponCatalog {
-  static Weapon aam(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon aam(WeaponSize size) => Weapon(
     code: 'AAM',
     name: 'Anti-Air Missile',
     size: size,
@@ -14,10 +14,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aa(), TraitCatalog.guided()],
-    isReact: hasReact,
   );
 
-  static Weapon ac(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon ac(WeaponSize size) => Weapon(
     code: 'AC',
     name: 'Autocannon',
     size: size,
@@ -26,10 +25,9 @@ class WeaponCatalog {
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 1)],
     alternateTraits: [TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon ag(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon ag(WeaponSize size) => Weapon(
     code: 'AG',
     name: 'Artillery Gun',
     size: size,
@@ -46,10 +44,9 @@ class WeaponCatalog {
       TraitCatalog.blast(),
       TraitCatalog.demo(level: 2),
     ],
-    isReact: hasReact,
   );
 
-  static Weapon am(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon am(WeaponSize size) => Weapon(
     code: 'AM',
     name: 'Artillery Missile',
     size: size,
@@ -68,10 +65,9 @@ class WeaponCatalog {
       TraitCatalog.guided(),
       TraitCatalog.ai(),
     ],
-    isReact: hasReact,
   );
 
-  static Weapon apgl(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon apgl(WeaponSize size) => Weapon(
     code: 'APGL',
     name: 'Anti-Personnel Grenade Launchers',
     size: size,
@@ -84,10 +80,9 @@ class WeaponCatalog {
       TraitCatalog.aoe(level: 3),
       TraitCatalog.proximity(),
     ],
-    isReact: hasReact,
   );
 
-  static Weapon ar(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon ar(WeaponSize size) => Weapon(
     code: 'AR',
     name: 'Artillery Rockets',
     size: size,
@@ -95,10 +90,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 3), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon atm(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon atm(WeaponSize size) => Weapon(
     code: 'ATM',
     name: 'Anti-Tank Missile',
     size: size,
@@ -111,10 +105,9 @@ class WeaponCatalog {
       m: [TraitCatalog.ap(level: 3)],
       h: [TraitCatalog.ap(level: 4)],
     ),
-    isReact: hasReact,
   );
 
-  static Weapon bomb(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon bomb(WeaponSize size) => Weapon(
     code: 'Bomb',
     name: 'Bomb',
     size: size,
@@ -122,10 +115,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.aoe(level: 3), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon napalm(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon napalm(WeaponSize size) => Weapon(
     code: 'Napalm',
     name: 'Napalm Bomb',
     size: size,
@@ -133,10 +125,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.fire(level: 2), TraitCatalog.aoe(level: 3)],
-    isReact: hasReact,
   );
 
-  static Weapon bz(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon bz(WeaponSize size) => Weapon(
     code: 'BZ',
     name: 'Bazooka',
     size: size,
@@ -149,10 +140,9 @@ class WeaponCatalog {
       m: [TraitCatalog.ap(level: 2)],
       h: [TraitCatalog.ap(level: 3)],
     ),
-    isReact: hasReact,
   );
 
-  static Weapon rbz(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon rbz(WeaponSize size) => Weapon(
     code: 'RBZ',
     name: 'Repeating Bazooka',
     size: size,
@@ -165,10 +155,9 @@ class WeaponCatalog {
       m: [TraitCatalog.ap(level: 2)],
       h: [TraitCatalog.ap(level: 3)],
     ),
-    isReact: hasReact,
   );
 
-  static Weapon flc(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon flc(WeaponSize size) => Weapon(
     code: 'FLC',
     name: 'Field Cannon',
     size: size,
@@ -182,10 +171,9 @@ class WeaponCatalog {
       h: [TraitCatalog.ap(level: 4)],
     ),
     alternateTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon fg(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon fg(WeaponSize size) => Weapon(
     code: 'FG',
     name: 'Field Gun',
     size: size,
@@ -194,10 +182,9 @@ class WeaponCatalog {
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 1)],
     alternateTraits: [TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon fc(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon fc(WeaponSize size) => Weapon(
     code: 'FC',
     name: 'Frag Cannon',
     size: size,
@@ -205,10 +192,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.frag(), TraitCatalog.aoe(level: 2)],
-    isReact: hasReact,
   );
 
-  static Weapon fl(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon fl(WeaponSize size) => Weapon(
     code: 'FL',
     name: 'Flamethrower',
     size: size,
@@ -220,10 +206,9 @@ class WeaponCatalog {
       TraitCatalog.spray(),
       TraitCatalog.ai(),
     ],
-    isReact: hasReact,
   );
 
-  static Weapon gg(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon gg(WeaponSize size) => Weapon(
     code: 'GG',
     name: 'Grenade Cannon',
     size: size,
@@ -231,10 +216,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon gl(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon gl(WeaponSize size) => Weapon(
     code: 'GL',
     name: 'Grenade Launcher',
     size: size,
@@ -242,10 +226,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon hg(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon hg(WeaponSize size) => Weapon(
     code: 'HG',
     name: 'Heavy Gun',
     size: size,
@@ -254,10 +237,9 @@ class WeaponCatalog {
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 1)],
     alternateTraits: [TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon iatm(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon iatm(WeaponSize size) => Weapon(
     code: 'IATM',
     name: 'Infantry Anti-Tank Missile',
     size: size,
@@ -265,10 +247,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.guided(), TraitCatalog.ap(level: 2)],
-    isReact: hasReact,
   );
 
-  static Weapon ic(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon ic(WeaponSize size) => Weapon(
     code: 'IC',
     name: 'Infantry Cannon',
     size: size,
@@ -276,10 +257,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 1)],
-    isReact: hasReact,
   );
 
-  static Weapon igl(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon igl(WeaponSize size) => Weapon(
     code: 'IGL',
     name: 'Infantry Grenade Launcher',
     size: size,
@@ -287,10 +267,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon ilw(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon ilw(WeaponSize size) => Weapon(
     code: 'ILW',
     name: 'Infantry Laser Weapon',
     size: size,
@@ -298,10 +277,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon ilsr(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon ilsr(WeaponSize size) => Weapon(
     code: 'ILSR',
     name: 'Infantry Light Sniper Rifle',
     size: size,
@@ -309,10 +287,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.precisePlus()],
-    isReact: hasReact,
   );
 
-  static Weapon im(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon im(WeaponSize size) => Weapon(
     code: 'IM',
     name: 'Infantry Mortar',
     size: size,
@@ -320,10 +297,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
     modes: const {WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon img(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon img(WeaponSize size) => Weapon(
     code: 'IMG',
     name: 'Infantry Machine Gun',
     size: size,
@@ -331,10 +307,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 2), TraitCatalog.ai()],
-    isReact: hasReact,
   );
 
-  static Weapon imw(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon imw(WeaponSize size) => Weapon(
     code: 'IMW',
     name: 'Infantry Melee Weapon',
     size: size,
@@ -342,10 +317,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
     modes: const {WeaponMode.direct},
     primaryTraits: const [],
-    isReact: hasReact,
   );
 
-  static Weapon ir(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon ir(WeaponSize size) => Weapon(
     code: 'IR',
     name: 'Infantry Rifle',
     size: size,
@@ -353,10 +327,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 1)],
-    isReact: hasReact,
   );
 
-  static Weapon irc(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon irc(WeaponSize size) => Weapon(
     code: 'IRC',
     name: 'Infantry Rotary Cannon',
     size: size,
@@ -364,10 +337,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 2)],
-    isReact: hasReact,
   );
 
-  static Weapon iw(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon iw(WeaponSize size) => Weapon(
     code: 'IW',
     name: 'Infantry Weapon',
     size: size,
@@ -375,10 +347,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 4, m: 5, h: 6),
     modes: const {WeaponMode.direct},
     primaryTraits: const [],
-    isReact: hasReact,
   );
 
-  static Weapon lc(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon lc(WeaponSize size) => Weapon(
     code: 'LC',
     name: 'Laser Cannon',
     size: size,
@@ -386,10 +357,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon mine(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon mine(WeaponSize size) => Weapon(
     code: 'Mine',
     name: 'Mine',
     size: size,
@@ -401,10 +371,9 @@ class WeaponCatalog {
       TraitCatalog.proximity(),
       TraitCatalog.blast(),
     ],
-    isReact: hasReact,
   );
 
-  static Weapon m(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon m(WeaponSize size) => Weapon(
     code: 'M',
     name: 'Mortar',
     size: size,
@@ -412,10 +381,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon mw(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon mw(WeaponSize size) => Weapon(
     code: 'MW',
     name: 'Melee Weapon',
     size: size,
@@ -423,10 +391,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct},
     primaryTraits: const [],
-    isReact: hasReact,
   );
 
-  static Weapon p(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon p(WeaponSize size) => Weapon(
     code: 'P',
     name: 'Pistol',
     size: size,
@@ -434,10 +401,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 5, m: 6, h: 7),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon pa(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon pa(WeaponSize size) => Weapon(
     code: 'PA',
     name: 'Particle Accelerator',
     size: size,
@@ -445,10 +411,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.haywire()],
-    isReact: hasReact,
   );
 
-  static Weapon pc(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon pc(WeaponSize size) => Weapon(
     code: 'PC',
     name: 'Plasma Cannon',
     size: size,
@@ -456,10 +421,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 8, m: 9, h: 10),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.fire(level: 1)],
-    isReact: hasReact,
   );
 
-  static Weapon pl(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon pl(WeaponSize size) => Weapon(
     code: 'PL',
     name: 'Pulse Laser',
     size: size,
@@ -467,10 +431,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 1), TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon pz(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon pz(WeaponSize size) => Weapon(
     code: 'PZ',
     name: 'Panzerfaust',
     size: size,
@@ -478,10 +441,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.la(level: 1), TraitCatalog.ap(level: 2)],
-    isReact: hasReact,
   );
 
-  static Weapon rc(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon rc(WeaponSize size) => Weapon(
     code: 'RC',
     name: 'Rotary Cannon',
     size: size,
@@ -489,10 +451,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 2), TraitCatalog.auto()],
-    isReact: hasReact,
   );
 
-  static Weapon rf(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon rf(WeaponSize size) => Weapon(
     code: 'RF',
     name: 'Rifle',
     size: size,
@@ -500,10 +461,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 1)],
-    isReact: hasReact,
   );
 
-  static Weapon rg(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon rg(WeaponSize size) => Weapon(
     code: 'RG',
     name: 'Railgun',
     size: size,
@@ -516,10 +476,9 @@ class WeaponCatalog {
       m: [TraitCatalog.ap(level: 3)],
       h: [TraitCatalog.ap(level: 4)],
     ),
-    isReact: hasReact,
   );
 
-  static Weapon rl(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon rl(WeaponSize size) => Weapon(
     code: 'RL',
     name: 'Rocket Pack',
     size: size,
@@ -527,10 +486,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 2)],
-    isReact: hasReact,
   );
 
-  static Weapon rp(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon rp(WeaponSize size) => Weapon(
     code: 'RP',
     name: 'Rocket Pod',
     size: size,
@@ -538,10 +496,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.burst(level: 1)],
-    isReact: hasReact,
   );
 
-  static Weapon sc(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon sc(WeaponSize size) => Weapon(
     code: 'SC',
     name: 'Sniper Cannon',
     size: size,
@@ -549,10 +506,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 7, m: 8, h: 9),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.precisePlus()],
-    isReact: hasReact,
   );
 
-  static Weapon se(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon se(WeaponSize size) => Weapon(
     code: 'SE',
     name: 'Seeker',
     size: size,
@@ -560,10 +516,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct, WeaponMode.indirect},
     primaryTraits: [TraitCatalog.guided()],
-    isReact: hasReact,
   );
 
-  static Weapon sg(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon sg(WeaponSize size) => Weapon(
     code: 'SG',
     name: 'Shotgun',
     size: size,
@@ -571,10 +526,9 @@ class WeaponCatalog {
     damageBands: const DamageSizeBands(l: 6, m: 7, h: 8),
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.spray()],
-    isReact: hasReact,
   );
 
-  static Weapon smg(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon smg(WeaponSize size) => Weapon(
     code: 'SMG',
     name: 'Submachine Gun',
     size: size,
@@ -583,10 +537,9 @@ class WeaponCatalog {
     modes: const {WeaponMode.direct},
     primaryTraits: [TraitCatalog.burst(level: 2)],
     alternateTraits: [TraitCatalog.precise()],
-    isReact: hasReact,
   );
 
-  static Weapon tg(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon tg(WeaponSize size) => Weapon(
     code: 'TG',
     name: 'Tank Gun',
     size: size,
@@ -600,10 +553,9 @@ class WeaponCatalog {
       h: [TraitCatalog.ap(level: 5)],
     ),
     alternateTraits: [TraitCatalog.aoe(level: 2), TraitCatalog.blast()],
-    isReact: hasReact,
   );
 
-  static Weapon vb(WeaponSize size, {bool hasReact = false}) => Weapon(
+  static Weapon vb(WeaponSize size) => Weapon(
     code: 'VB',
     name: 'Vibro Blade',
     size: size,
@@ -616,6 +568,5 @@ class WeaponCatalog {
       m: [TraitCatalog.ap(level: 3)],
       h: [TraitCatalog.ap(level: 4)],
     ),
-    isReact: hasReact,
   );
 }

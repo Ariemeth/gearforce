@@ -57,107 +57,107 @@ class WeaponFactory {
     ];
   }
 
-  static Weapon? getWeaponByCode(String code, {bool hasReact = false}) {
+  static Weapon? getWeaponByCode(String code) {
     final size = WeaponSize.fromCode(code);
     switch (code.substring(1)) {
       case 'AAM':
-        return WeaponCatalog.aam(size, hasReact: hasReact);
+        return WeaponCatalog.aam(size);
       case 'AC':
-        return WeaponCatalog.ac(size, hasReact: hasReact);
+        return WeaponCatalog.ac(size);
       case 'AG':
-        return WeaponCatalog.ag(size, hasReact: hasReact);
+        return WeaponCatalog.ag(size);
       case 'AM':
-        return WeaponCatalog.am(size, hasReact: hasReact);
+        return WeaponCatalog.am(size);
       case 'APGL':
-        return WeaponCatalog.apgl(size, hasReact: hasReact);
+        return WeaponCatalog.apgl(size);
       case 'AR':
-        return WeaponCatalog.ar(size, hasReact: hasReact);
+        return WeaponCatalog.ar(size);
       case 'ATM':
-        return WeaponCatalog.atm(size, hasReact: hasReact);
+        return WeaponCatalog.atm(size);
       case 'Bomb':
-        return WeaponCatalog.bomb(size, hasReact: hasReact);
+        return WeaponCatalog.bomb(size);
       case 'Napalm':
-        return WeaponCatalog.napalm(size, hasReact: hasReact);
+        return WeaponCatalog.napalm(size);
       case 'BZ':
-        return WeaponCatalog.bz(size, hasReact: hasReact);
+        return WeaponCatalog.bz(size);
       case 'RBZ':
-        return WeaponCatalog.rbz(size, hasReact: hasReact);
+        return WeaponCatalog.rbz(size);
       case 'FLC':
-        return WeaponCatalog.flc(size, hasReact: hasReact);
+        return WeaponCatalog.flc(size);
       case 'FG':
-        return WeaponCatalog.fg(size, hasReact: hasReact);
+        return WeaponCatalog.fg(size);
       case 'FC':
-        return WeaponCatalog.fc(size, hasReact: hasReact);
+        return WeaponCatalog.fc(size);
       case 'FL':
-        return WeaponCatalog.fl(size, hasReact: hasReact);
+        return WeaponCatalog.fl(size);
       case 'GG':
-        return WeaponCatalog.gg(size, hasReact: hasReact);
+        return WeaponCatalog.gg(size);
       case 'GL':
-        return WeaponCatalog.gl(size, hasReact: hasReact);
+        return WeaponCatalog.gl(size);
       case 'HG':
-        return WeaponCatalog.hg(size, hasReact: hasReact);
+        return WeaponCatalog.hg(size);
       case 'IATM':
-        return WeaponCatalog.iatm(size, hasReact: hasReact);
+        return WeaponCatalog.iatm(size);
       case 'IC':
-        return WeaponCatalog.ic(size, hasReact: hasReact);
+        return WeaponCatalog.ic(size);
       case 'IGL':
-        return WeaponCatalog.igl(size, hasReact: hasReact);
+        return WeaponCatalog.igl(size);
       case 'ILW':
-        return WeaponCatalog.ilw(size, hasReact: hasReact);
+        return WeaponCatalog.ilw(size);
       case 'ILSR':
-        return WeaponCatalog.ilsr(size, hasReact: hasReact);
+        return WeaponCatalog.ilsr(size);
       case 'IM':
-        return WeaponCatalog.im(size, hasReact: hasReact);
+        return WeaponCatalog.im(size);
       case 'IMG':
-        return WeaponCatalog.img(size, hasReact: hasReact);
+        return WeaponCatalog.img(size);
       case 'IMW':
-        return WeaponCatalog.imw(size, hasReact: hasReact);
+        return WeaponCatalog.imw(size);
       case 'IR':
-        return WeaponCatalog.ir(size, hasReact: hasReact);
+        return WeaponCatalog.ir(size);
       case 'IRC':
-        return WeaponCatalog.irc(size, hasReact: hasReact);
+        return WeaponCatalog.irc(size);
       case 'IW':
-        return WeaponCatalog.iw(size, hasReact: hasReact);
+        return WeaponCatalog.iw(size);
       case 'LC':
-        return WeaponCatalog.lc(size, hasReact: hasReact);
+        return WeaponCatalog.lc(size);
       case 'Mine':
-        return WeaponCatalog.mine(size, hasReact: hasReact);
+        return WeaponCatalog.mine(size);
       case 'M':
-        return WeaponCatalog.m(size, hasReact: hasReact);
+        return WeaponCatalog.m(size);
       case 'MW':
-        return WeaponCatalog.mw(size, hasReact: hasReact);
+        return WeaponCatalog.mw(size);
       case 'P':
-        return WeaponCatalog.p(size, hasReact: hasReact);
+        return WeaponCatalog.p(size);
       case 'PA':
-        return WeaponCatalog.pa(size, hasReact: hasReact);
+        return WeaponCatalog.pa(size);
       case 'PC':
-        return WeaponCatalog.pc(size, hasReact: hasReact);
+        return WeaponCatalog.pc(size);
       case 'PL':
-        return WeaponCatalog.pl(size, hasReact: hasReact);
+        return WeaponCatalog.pl(size);
       case 'PZ':
-        return WeaponCatalog.pz(size, hasReact: hasReact);
+        return WeaponCatalog.pz(size);
       case 'RC':
-        return WeaponCatalog.rc(size, hasReact: hasReact);
+        return WeaponCatalog.rc(size);
       case 'RF':
-        return WeaponCatalog.rf(size, hasReact: hasReact);
+        return WeaponCatalog.rf(size);
       case 'RG':
-        return WeaponCatalog.rg(size, hasReact: hasReact);
+        return WeaponCatalog.rg(size);
       case 'RL':
-        return WeaponCatalog.rl(size, hasReact: hasReact);
+        return WeaponCatalog.rl(size);
       case 'RP':
-        return WeaponCatalog.rp(size, hasReact: hasReact);
+        return WeaponCatalog.rp(size);
       case 'SC':
-        return WeaponCatalog.sc(size, hasReact: hasReact);
+        return WeaponCatalog.sc(size);
       case 'SE':
-        return WeaponCatalog.se(size, hasReact: hasReact);
+        return WeaponCatalog.se(size);
       case 'SG':
-        return WeaponCatalog.sg(size, hasReact: hasReact);
+        return WeaponCatalog.sg(size);
       case 'SMG':
-        return WeaponCatalog.smg(size, hasReact: hasReact);
+        return WeaponCatalog.smg(size);
       case 'TG':
-        return WeaponCatalog.tg(size, hasReact: hasReact);
+        return WeaponCatalog.tg(size);
       case 'VB':
-        return WeaponCatalog.vb(size, hasReact: hasReact);
+        return WeaponCatalog.vb(size);
       default:
         return null; // Return null if no matching weapon is found
     }

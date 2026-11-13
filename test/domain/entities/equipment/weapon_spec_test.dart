@@ -22,6 +22,7 @@ void main() {
         false,
         reason: 'Should not be a combo weapon as it only has 1',
       );
+      expect(ws.isReact, false, reason: 'Default isReact should be false');
       expect(
         ws.customTraits.isEmpty,
         true,
@@ -34,11 +35,12 @@ void main() {
             'w1 should be in the SingleWeaponSpec as it was added during creation',
       );
     });
-    test('SingleWeaponSpec creation with custom traits', () {
+
+    test('SingleWeaponSpec creation with custom traits and isReact=true', () {
       // Arrange
       var w1 = wacL;
       var t1 = TraitCatalog.aa();
-      var ws = SingleWeaponSpec(weapon: w1, customTraits: [t1]);
+      var ws = SingleWeaponSpec(weapon: w1, customTraits: [t1], isReact: true);
 
       // Act & Assert
       expect(
@@ -46,6 +48,7 @@ void main() {
         false,
         reason: 'Should not be a combo weapon as it only has 1',
       );
+      expect(ws.isReact, true, reason: 'isReact should be true when set');
       expect(
         ws.customTraits.isEmpty,
         false,
@@ -69,6 +72,7 @@ void main() {
 
       // Act & Assert
       expect(ws.isCombo, true, reason: 'Should be a combo weapon');
+      expect(ws.isReact, false, reason: 'Default isReact should be false');
       expect(
         ws.customTraits.isEmpty,
         true,
@@ -87,15 +91,22 @@ void main() {
             'w2 should be in the SingleWeaponSpec as it was added during creation',
       );
     });
-    test('ComboWeaponSpec creation with custom traits', () {
+
+    test('ComboWeaponSpec creation with custom traits and isReact=true', () {
       // Arrange
       var w1 = wacL;
       var w2 = watmL;
       var t1 = TraitCatalog.aa();
-      var ws = ComboWeaponSpec(weapon1: w1, weapon2: w2, customTraits: [t1]);
+      var ws = ComboWeaponSpec(
+        weapon1: w1,
+        weapon2: w2,
+        customTraits: [t1],
+        isReact: true,
+      );
 
       // Act & Assert
       expect(ws.isCombo, true, reason: 'Should be a combo weapon');
+      expect(ws.isReact, true, reason: 'isReact should be true when set');
       expect(
         ws.customTraits.isEmpty,
         false,

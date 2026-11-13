@@ -63,3 +63,6 @@ benchmark_results_*.txt
 /android/gradlew
 /android/gradlew.bat
 /android/settings.gradle
+
+# Local documentation with machine-specific paths
+docs/rules_location.md

@@ -3,38 +3,16 @@ import 'package:gearforce/data/static/weapon_factory.dart';
 
 void main() {
   group('WeaponFactory.getWeaponByCode', () {
-    test('should return a weapon for a valid code with hasReact = false', () {
+    test('should return a weapon for a valid code', () {
       // Arrange
       const weaponCode = 'LAC'; // Light Autocannon
-      const hasReact = false;
 
       // Act
-      final weapon = WeaponFactory.getWeaponByCode(
-        weaponCode,
-        hasReact: hasReact,
-      );
+      final weapon = WeaponFactory.getWeaponByCode(weaponCode);
 
       // Assert
       expect(weapon, isNotNull);
       expect(weapon!.code, weaponCode);
-      expect(weapon.isReact, hasReact);
-    });
-
-    test('should return a weapon for a valid code with hasReact = true', () {
-      // Arrange
-      const weaponCode = 'MAC'; // Medium Autocannon
-      const hasReact = true;
-
-      // Act
-      final weapon = WeaponFactory.getWeaponByCode(
-        weaponCode,
-        hasReact: hasReact,
-      );
-
-      // Assert
-      expect(weapon, isNotNull);
-      expect(weapon!.code, weaponCode);
-      expect(weapon.isReact, hasReact);
     });
 
     test('should throw ArgumentError for an invalid weapon code', () {
