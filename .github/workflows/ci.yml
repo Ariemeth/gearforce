@@ -13,12 +13,15 @@ env:
 
 jobs:
   format:
-    name: Check Dart Code Formatting
+    name: Check Dart Code Formatting & Linting
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
+
+      - name: Set up Just
+        uses: extra-actions/setup-just@v2
 
       - name: Cache Flutter SDK
         uses: actions/cache@v6
@@ -42,10 +45,10 @@ jobs:
             pub-cache-${{ runner.os }}-
 
       - name: Install dependencies
-        run: flutter pub get
+        run: just deps
 
-      - name: Ensure dart code is formatted correctly
-        run: dart format --set-exit-if-changed .
+      - name: Check Dart code formatting and static analysis
+        run: just check
 
   test:
     name: Run Tests on Ubuntu
@@ -56,6 +59,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
+      - name: Set up Just
+        uses: extra-actions/setup-just@v2
+
       - name: Cache Flutter SDK
         uses: actions/cache@v6
         with:
@@ -78,10 +84,10 @@ jobs:
             pub-cache-${{ runner.os }}-
 
       - name: Install dependencies
-        run: flutter pub get
+        run: just deps
 
       - name: Run tests
-        run: flutter test
+        run: just test
 
   build:
     name: Build
@@ -91,9 +97,9 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            target: windows
+            target: win
           - os: ubuntu-latest
-            target: android
+            target: apk
           - os: ubuntu-latest
             target: web
 
@@ -101,13 +107,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
+      - name: Set up Just
+        uses: extra-actions/setup-just@v2
+
       - name: Setup Java JDK
-        if: matrix.target == 'android'
+        if: matrix.target == 'apk'
         uses: actions/setup-java@v6
         with:
-          distribution: "temurin" # Use the Eclipse Temurin distribution
-          java-version: "17" # Set Java version to 21
-          cache: "gradle" # Cache Gradle dependencies
+          distribution: "temurin"
+          java-version: "17"
+          cache: "gradle"
 
       - name: Cache Flutter SDK
         uses: actions/cache@v6
@@ -131,19 +140,7 @@ jobs:
             pub-cache-${{ runner.os }}-
 
       - name: Install dependencies
-        run: flutter pub get
+        run: just deps
 
-      - name: Build Windows App
-        if: matrix.target == 'windows'
-        run: flutter build windows --release
-
-      - name: Build APK
-        if: matrix.target == 'android'
-        run: flutter build apk --release
-
-      - name: Build Web App
-        if: matrix.target == 'web'
-        run: flutter build web --release
-
-      - name: Run linter
-        run: flutter analyze
+      - name: Build target
+        run: just build-${{ matrix.target }}

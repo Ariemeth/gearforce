@@ -56,6 +56,27 @@ Organized by high-level user features. Each feature folder should follow this st
 
 ---
 
+## Build Automation (`just`)
+
+Gearforce uses **[just](https://github.com/casey/just)** as a command runner to automate development workflows, code generation, testing, and release builds.
+
+### Installing `just`
+
+Install `just` via your platform package manager:
+
+* **Windows**: `winget install --id Casey.Just --exact` (or `scoop install just` / `choco install just`)
+* **macOS / Linux**: `brew install just`
+
+### Usage
+
+Run `just` or `just --list` in the root of the repository to view all available commands and their descriptions:
+
+```bash
+just
+```
+
+---
+
 ## Data-Driven Content & Schema
 
 Game data (Units, Weapons, etc.) is stored as **JSON assets** to allow for updates without changing code. See [docs/data_schema.md](docs/data_schema.md) for full JSON schema details.
@@ -67,9 +88,15 @@ New units should be added to the appropriate JSON file in `assets/data/units/` r
 
 ### Regenerating Unit Data from Excel
 
-Unit profiles can be generated or updated from the Heavy Gear Blitz profiles Excel spreadsheet using either the pure Dart generator script or the Python utility script. Both scripts require passing the path to the `.xlsx` file as an argument.
+Unit profiles can be generated or updated from the Heavy Gear Blitz profiles Excel spreadsheet using `just` (recommended), the pure Dart generator script, or the Python utility script. Both scripts require passing the path to the `.xlsx` file as an argument.
 
-**Using Dart (Recommended):**
+**Using `just` (Recommended):**
+
+```bash
+just generate-units "path/to/profiles.xlsx"
+```
+
+**Using Dart CLI:**
 
 ```bash
 dart run tool/generate_units.dart "path/to/profiles.xlsx"
@@ -133,9 +160,9 @@ User-facing strings are managed via ARB (Application Resource Bundle) files and 
    }
    ```
 
-2. Regenerate the Dart localization files:
+2. Regenerate the Dart localization files using `just` or `flutter`:
    ```bash
-   flutter gen-l10n
+   just generate-localizations  # or `just gen-l10n` / `flutter gen-l10n`
    ```
 
 3. Access localized strings in widgets via `context.l10n`:
