@@ -609,7 +609,13 @@ List<Map<String, dynamic>> parseFactionSheet(
 
   final List<Map<String, dynamic>> units = [];
   final Set<String> usedIds = {};
-  const metaKeys = {'Manufacturer:', 'Classification:', 'Subtype:', 'Crew'};
+  const metaKeys = {
+    'Manufacturer:',
+    'Classification:',
+    'Subtype:',
+    'Crew:',
+    'Crew',
+  };
 
   for (int i = 0; i < headerRows.length; i++) {
     final hRow = headerRows[i];
@@ -618,16 +624,22 @@ List<Map<String, dynamic>> parseFactionSheet(
     String manufacturer = '';
     String classification = '';
     String subtype = '';
+    int? crewSize;
 
     for (int r = hRow - 1; r >= (hRow - 10 > 1 ? hRow - 10 : 1); r--) {
       final cells = rowMap[r] ?? {};
       final aVal = cells[0] ?? '';
       final bVal = cells[1] ?? '';
-      if (metaKeys.contains(aVal)) {
+      if (metaKeys.contains(aVal) || aVal.startsWith('Crew')) {
         if (r < firstMetaRow) firstMetaRow = r;
         if (aVal == 'Manufacturer:') manufacturer = bVal;
         if (aVal == 'Classification:') classification = bVal;
         if (aVal == 'Subtype:') subtype = bVal;
+        if (aVal == 'Crew:' || aVal == 'Crew' || aVal.startsWith('Crew')) {
+          if (bVal.isNotEmpty) {
+            crewSize = parseInt(bVal);
+          }
+        }
       }
     }
 
@@ -715,6 +727,7 @@ List<Map<String, dynamic>> parseFactionSheet(
       'classification': cleanClassification(classification),
       if (subtype.isNotEmpty) 'subtype': subtype,
       if (manufacturer.isNotEmpty) 'manufacturer': manufacturer,
+      'crewSize': ?crewSize,
       if (descLines.isNotEmpty) 'description': descLines.join(' '),
       'variants': <Map<String, dynamic>>[],
       'upgrades': <Map<String, dynamic>>[],

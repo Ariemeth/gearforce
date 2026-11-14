@@ -63,6 +63,9 @@ class ModelBaseJsonParser {
           throw ArgumentError('Unknown Classification: $classificationStr'),
     );
 
+    final crewVal = json['crewSize'] ?? json['crew'];
+    final crewSize = crewVal != null ? (crewVal as num).toInt() : null;
+
     return ModelBase(
       json['name'] as String,
       unitId: json['unitId'] as String,
@@ -83,6 +86,7 @@ class ModelBaseJsonParser {
       subtype: json['subtype'] as String?,
       manufacturer: json['manufacturer'] as String?,
       description: json['description'] as String?,
+      crewSize: crewSize,
     );
   }
 }

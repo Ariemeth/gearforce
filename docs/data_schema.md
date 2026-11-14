@@ -32,6 +32,7 @@ The root of each file is a list of Unit objects.
 | classification | String             | Unit category (e.g., `"Gear"`, `"Strider"`, `"Vehicle"`, `"Infantry"`).     |
 | subtype        | String             | (Optional) Subtype description (e.g., `"Automaton"`, `"Drone"`).            |
 | manufacturer   | String             | (Optional) Unit manufacturer.                                               |
+| crewSize       | Integer            | (Optional) Number of crew members operating the unit.                       |
 | description    | String             | (Optional) Lore background text.                                            |
 | variants       | List&lt;Object&gt; | List of Variant objects (see below).                                        |
 | upgrades       | List&lt;Object&gt; | List of Upgrade objects (see below).                                        |

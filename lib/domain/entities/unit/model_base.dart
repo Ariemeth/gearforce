@@ -31,6 +31,7 @@ class ModelBase {
   final String? subtype;
   final String? manufacturer;
   final String? description;
+  final int? crewSize;
 
   const ModelBase(
     this.name, {
@@ -52,6 +53,7 @@ class ModelBase {
     this.subtype,
     this.manufacturer,
     this.description,
+    this.crewSize,
   }) : assert(name.length > 0, 'Name must not be empty or all whitespace'),
        assert(tv >= 0, 'TV must be 0 or positive');
 }

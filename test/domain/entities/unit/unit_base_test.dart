@@ -39,6 +39,7 @@ void main() {
         height: height,
         subtype: '',
         classification: Classification.gear,
+        crewSize: 1,
       );
 
       expect(baseModel.name, unitName);
@@ -53,6 +54,7 @@ void main() {
       expect(baseModel.pi.value, pi.value);
       expect(baseModel.ew.value, ew.value);
       expect(baseModel.height, height);
+      expect(baseModel.crewSize, 1);
     });
   });
 }
