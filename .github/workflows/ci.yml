@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Set up Just
-        uses: extra-actions/setup-just@v4
+        uses: extractions/setup-just@v4
 
       - name: Cache Flutter SDK
         uses: actions/cache@v6
@@ -60,7 +60,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Set up Just
-        uses: extra-actions/setup-just@v4
+        uses: extractions/setup-just@v4
 
       - name: Cache Flutter SDK
         uses: actions/cache@v6
@@ -108,7 +108,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Set up Just
-        uses: extra-actions/setup-just@v4
+        uses: extractions/setup-just@v4
 
       - name: Setup Java JDK
         if: matrix.target == 'apk'
