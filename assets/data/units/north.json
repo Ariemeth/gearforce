@@ -94,6 +94,154 @@
           "Init+",
           "Vuln:H"
         ]
+      },
+      {
+        "id": "north-hunter-swap-lac-mfc-lsmg",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC, LSMG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-hunter-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LGL, MBZ, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-hunter-swap-lac-hac-msc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: HAC, MSC, MGL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-hunter-add-lbz",
+        "name": "Add LBZ",
+        "description": "Add the following weapon: LBZ.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LBZ"
+        ]
+      },
+      {
+        "id": "north-hunter-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "north-hunter-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      },
+      {
+        "id": "north-hunter-add-him",
+        "name": "Add HIM",
+        "description": "Add the following weapon: HIM.",
+        "tv": 1,
+        "weapons": [
+          "HIM"
+        ]
+      },
+      {
+        "id": "north-hunter-add-supply",
+        "name": "Add Supply",
+        "description": "Add the following trait: Supply.",
+        "tv": 1,
+        "traits": [
+          "Supply"
+        ]
       }
     ]
   },
@@ -142,7 +290,111 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-sdHunter-swap-lac-lsmg-lrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, LRF, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-sdHunter-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LGL, MBZ, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-sdHunter-swap-lac-msc",
+        "name": "Swap LAC for MSC",
+        "description": "Swap the LAC for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      },
+      {
+        "id": "north-sdHunter-add-latm",
+        "name": "Add LATM (LA:2)",
+        "description": "Add the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      },
+      {
+        "id": "north-sdHunter-add-agile",
+        "name": "Add Agile",
+        "description": "Add the following trait: Agile.",
+        "tv": 1,
+        "traits": [
+          "Agile"
+        ]
+      }
+    ]
   },
   {
     "id": "north-paraHunter",
@@ -189,7 +441,68 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-paraHunter-swap-lac-lrf-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LRF, MFC, LBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-paraHunter-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LAC/LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "north-armoredHunter",
@@ -238,7 +551,70 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-armoredHunter-swap-lac-mfc",
+        "name": "Swap LAC for MFC",
+        "description": "Swap the LAC for the following weapon: MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MFC"
+        ]
+      },
+      {
+        "id": "north-armoredHunter-swap-lac-mac-mbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-armoredHunter-swap-lac-msc",
+        "name": "Swap LAC for MSC",
+        "description": "Swap the LAC for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      },
+      {
+        "id": "north-armoredHunter-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "north-bearhunter",
@@ -287,7 +663,63 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-bearhunter-swap-lac-mac-lgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LGL, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-bearhunter-swap-lac-msc",
+        "name": "Swap LAC for MSC",
+        "description": "Swap the LAC for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      },
+      {
+        "id": "north-bearhunter-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "north-hunterXMG",
@@ -344,6 +776,91 @@
           "ECCM",
           "Init+",
           "Vuln:H"
+        ]
+      },
+      {
+        "id": "north-hunterXMG-swap-lac-mfc",
+        "name": "Swap LAC for MFC",
+        "description": "Swap the LAC for the following weapon: MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MFC"
+        ]
+      },
+      {
+        "id": "north-hunterXMG-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LGL, MBZ, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-hunterXMG-swap-lac-msc-hac",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MSC, HAC, MGL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          }
         ]
       }
     ]
@@ -430,6 +947,135 @@
           "Init+",
           "Vuln:H"
         ]
+      },
+      {
+        "id": "north-commandoHunter-swap-lac-mfc-lbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC, LBZ, LAC/LFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          },
+          {
+            "name": "LAC/LFC",
+            "weapons": [
+              "LAC/LFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-commandoHunter-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, MBZ, LRBZ, LAC/LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-commandoHunter-swap-lac-hac-hrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: HAC, HRF, MGL, MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-commandoHunter-swap-mrp-lm",
+        "name": "Swap MRP for LM",
+        "description": "Swap the MRP for the following weapon: LM.",
+        "tv": 0,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "north-commandoHunter-add-him",
+        "name": "Add HIM",
+        "description": "Add the following weapon: HIM.",
+        "tv": 1,
+        "weapons": [
+          "HIM"
+        ]
       }
     ]
   },
@@ -492,7 +1138,87 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-wolf-swap-lac-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-wolf-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LGL, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-wolf-swap-lac-msc",
+        "name": "Swap LAC for MSC",
+        "description": "Swap the LAC for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      },
+      {
+        "id": "north-wolf-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      }
+    ]
   },
   {
     "id": "north-jaguar",
@@ -560,6 +1286,128 @@
         "ew": 4,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "north-jaguar-swap-mac-mrf-llc",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MRF, LLC, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-jaguar-swap-mac-hrf-lrc",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HRF, LRC (AA), HAC, MSC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "LRC (AA)",
+            "weapons": [
+              "LRC (AA)"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-jaguar-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "north-jaguar-swap-lrp-2XMRP-latm",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: 2 x MRPs, LATM.",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "2 x MRP",
+            "weapons": [
+              "2 x MRP"
+            ]
+          },
+          {
+            "name": "LATM",
+            "weapons": [
+              "LATM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-jaguar-swap-lrp-2XLATM",
+        "name": "Swap LRP for 2 x LATM",
+        "description": "Swap the LRP for the following weapon: 2 x LATM.",
+        "tv": 3,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "2 x LATM"
+        ]
+      },
+      {
+        "id": "north-jaguar-add-eccm",
+        "name": "Add ECCM",
+        "description": "Add the following trait: ECCM.",
+        "tv": 1,
+        "traits": [
+          "ECCM"
         ]
       }
     ]
@@ -630,6 +1478,94 @@
         "ew": 4,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "north-nemesisJaguar-swap-mac-mrf-llc",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MRF, LLC, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-nemesisJaguar-swap-mac-hrf-hac",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HRF, HAC, LRC (AA), MSC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "LRC (AA)",
+            "weapons": [
+              "LRC (AA)"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-nemesisJaguar-swap-mac-mrl",
+        "name": "Swap MAC for MRL",
+        "description": "Swap the MAC for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      },
+      {
+        "id": "north-nemesisJaguar-add-eccm",
+        "name": "Add ECCM",
+        "description": "Add the following trait: ECCM.",
+        "tv": 1,
+        "traits": [
+          "ECCM"
         ]
       }
     ]
@@ -703,6 +1639,87 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "north-jaguarundi-swap-mac-mrf-llc",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MRF, LLC, LRBZ, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-jaguarundi-swap-mac-hrf-hac",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HRF, HAC, LRC (AA), MSC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "LRC (AA)",
+            "weapons": [
+              "LRC (AA)"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-jaguarundi-add-eccm",
+        "name": "Add ECCM",
+        "description": "Add the following trait: ECCM.",
+        "tv": 1,
+        "traits": [
+          "ECCM"
+        ]
       }
     ]
   },
@@ -754,7 +1771,57 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-leopard-swap-maclfc-maclgl-maclfl",
+        "name": "Swap MAC/LFC",
+        "description": "Swap the MAC/LFC for one of the following weapons: MAC/LGL, MAC/LFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LFC"
+        ],
+        "options": [
+          {
+            "name": "MAC/LGL",
+            "weapons": [
+              "MAC/LGL"
+            ]
+          },
+          {
+            "name": "MAC/LFL",
+            "weapons": [
+              "MAC/LFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-leopard-swap-maclfc-mrl",
+        "name": "Swap MAC/LFC for MRL",
+        "description": "Swap the MAC/LFC for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LFC"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      },
+      {
+        "id": "north-leopard-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "north-tiger",
@@ -867,7 +1934,21 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-bobcat-swap-lsmg-lrc",
+        "name": "Swap LSMG for LRC",
+        "description": "Swap the LSMG for the following weapon: LRC (AA). The Bird Arrow will acquire 2 x LRC (AA).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "weapons": [
+          "LRC (AA)"
+        ]
+      }
+    ]
   },
   {
     "id": "north-lynx",
@@ -918,6 +1999,30 @@
         "name": "Armored Lynx",
         "tv": 1,
         "armor": 5
+      },
+      {
+        "id": "north-lynx-swap-lsmg-lac-lrf",
+        "name": "Swap LSMG",
+        "description": "Swap the LSMG for one of the following weapons: LAC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "options": [
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -981,7 +2086,32 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-ferret-swap-lsmg-lac-lrf",
+        "name": "Swap LSMG",
+        "description": "Swap the LSMG for one of the following weapons: LAC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "options": [
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "north-weasel",
@@ -1037,6 +2167,45 @@
         "traits": [
           "ECM+",
           "ECCM+"
+        ]
+      },
+      {
+        "id": "north-weasel-swap-lac-lsmg-lrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, LRF, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-weasel-add-init",
+        "name": "Add Init+",
+        "description": "Add the following trait: Init+.",
+        "tv": 1,
+        "traits": [
+          "Init+"
         ]
       }
     ]
@@ -1110,6 +2279,43 @@
           "TD",
           "Sensor:36"
         ]
+      },
+      {
+        "id": "north-cheetah-swap-lsmg-lac-lrf",
+        "name": "Swap LSMG",
+        "description": "Swap the LSMG for one of the following weapons: LAC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "options": [
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-cheetah-swap-lsmg-lrbz",
+        "name": "Swap LSMG for LRBZ",
+        "description": "Swap the LSMG for the following weapon: LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "weapons": [
+          "LRBZ"
+        ]
       }
     ]
   },
@@ -1166,6 +2372,59 @@
         "ew": 4,
         "traits": [
           "Sensor:24"
+        ]
+      },
+      {
+        "id": "north-metalCat-swap-lac-mfcLSMG",
+        "name": "Swap LAC for MFC, LSMG",
+        "description": "Swap the LAC for the following weapon: MFC, LSMG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MFC, LSMG"
+        ]
+      },
+      {
+        "id": "north-metalCat-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-metalCat-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
         ]
       }
     ]
@@ -1236,6 +2495,49 @@
         "traits": [
           "TD",
           "Sensor:36"
+        ]
+      },
+      {
+        "id": "north-paraCheetah-swap-lsmg-lac",
+        "name": "Swap LSMG for LAC",
+        "description": "Swap the LSMG for the following weapon: LAC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "weapons": [
+          "LAC"
+        ]
+      },
+      {
+        "id": "north-paraCheetah-swap-lsmg-mac-laclgl",
+        "name": "Swap LSMG",
+        "description": "Swap the LSMG for one of the following weapons: MAC, LAC/LGL, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
         ]
       }
     ]
@@ -1428,6 +2730,43 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "north-hunterMP-swap-mfc-lac-lrf",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: LAC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-hunterMP-swap-mfc-mac",
+        "name": "Swap MFC for MAC",
+        "description": "Swap the MFC for the following weapon: MAC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "weapons": [
+          "MAC"
+        ]
       }
     ]
   },
@@ -1478,7 +2817,32 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-cheetahMP-swap-mfc-lac-lrf",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: LAC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "north-jaguarMP",
@@ -1535,6 +2899,43 @@
         "ew": 4,
         "traits": [
           "ECCM"
+        ]
+      },
+      {
+        "id": "north-jaguarMP-swap-mfc-lac",
+        "name": "Swap MFC for LAC",
+        "description": "Swap the MFC for the following weapon: LAC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "weapons": [
+          "LAC"
+        ]
+      },
+      {
+        "id": "north-jaguarMP-swap-mfc-mac-mrf",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: MAC, MRF.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          }
         ]
       }
     ]
@@ -1596,6 +2997,93 @@
         "ew": 4,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "north-lion-swap-mac-llc-mbz",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: LLC, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-lion-swap-mac-hrf-hac",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HRF, HAC, MSC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-lion-swap-mac-hrc-mpa",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HRC, MPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HRC",
+            "weapons": [
+              "HRC"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-lion-add-eccm",
+        "name": "Add ECCM",
+        "description": "Add the following trait: ECCM.",
+        "tv": 1,
+        "traits": [
+          "ECCM"
         ]
       }
     ]
@@ -1709,6 +3197,63 @@
         "ew": 5,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "north-grizzly-swap-hac-hbz-mgl",
+        "name": "Swap HAC",
+        "description": "Swap the HAC for one of the following weapons: HBZ, MGL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "options": [
+          {
+            "name": "HBZ",
+            "weapons": [
+              "HBZ"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-grizzly-swap-hac-mlc",
+        "name": "Swap HAC for MLC",
+        "description": "Swap the HAC for the following weapon: MLC (Reflex).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "weapons": [
+          "MLC (Reflex)"
+        ]
+      },
+      {
+        "id": "north-grizzly-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "north-grizzly-add-hvb",
+        "name": "Add HVB (Reach:1)",
+        "description": "Add the following weapon: HVB (Reach:1).",
+        "tv": 2,
+        "isReact": true,
+        "weapons": [
+          "HVB (Reach:1)"
         ]
       }
     ]
@@ -1887,7 +3432,53 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "north-panda-swap-hac-hbz",
+        "name": "Swap HAC for HBZ",
+        "description": "Swap the HAC for the following weapon: HBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "weapons": [
+          "HBZ"
+        ]
+      },
+      {
+        "id": "north-panda-swap-hac-hrc",
+        "name": "Swap HAC for HRC",
+        "description": "Swap the HAC for the following weapon: HRC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "weapons": [
+          "HRC"
+        ]
+      },
+      {
+        "id": "north-panda-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "north-panda-add-2XMRP",
+        "name": "Add 2 x MRP",
+        "description": "Add the following weapon: 2 x MRPs.",
+        "tv": 1,
+        "weapons": [
+          "2 x MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "north-kodiak",
@@ -1943,6 +3534,72 @@
         "ew": 5,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "north-kodiak-swap-hac-hbz-mgl",
+        "name": "Swap HAC",
+        "description": "Swap the HAC for one of the following weapons: HBZ, MGL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "options": [
+          {
+            "name": "HBZ",
+            "weapons": [
+              "HBZ"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-kodiak-swap-hac-hrc-mpa",
+        "name": "Swap HAC",
+        "description": "Swap the HAC for one of the following weapons: HRC, MPA.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "options": [
+          {
+            "name": "HRC",
+            "weapons": [
+              "HRC"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "north-kodiak-add-mrp",
+        "name": "Add MRP",
+        "description": "Add the following weapon: MRP.",
+        "tv": 1,
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "north-kodiak-add-latm",
+        "name": "Add LATM (Precise)",
+        "description": "Add the following weapon: LATM (Precise).",
+        "tv": 3,
+        "weapons": [
+          "LATM (Precise)"
         ]
       }
     ]
@@ -2289,6 +3946,25 @@
         "id": "north-damocles-duelistLegs",
         "name": "Duelist Legs",
         "tv": 1
+      },
+      {
+        "id": "north-damocles-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
+        ]
+      },
+      {
+        "id": "north-damocles-add-hac",
+        "name": "Add HAC (Apex)",
+        "description": "Add the following weapon: HAC (Apex).",
+        "tv": 2,
+        "isReact": true,
+        "weapons": [
+          "HAC (Apex)"
+        ]
       }
     ]
   },

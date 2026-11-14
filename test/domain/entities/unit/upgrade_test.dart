@@ -21,7 +21,11 @@ import 'package:gearforce/domain/entities/equipment/weapon.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_mode.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_range.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_size.dart';
+import 'package:gearforce/data/parsers/json/model_upgrade_json_parser.dart';
+import 'package:gearforce/data/repositories/json_unit_repository.dart';
+import 'package:gearforce/domain/entities/unit/squad.dart';
 import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
+import 'package:gearforce/features/roster/bloc/roster_bloc.dart';
 
 void main() {
   group('Upgrade', () {
@@ -287,5 +291,124 @@ void main() {
         'Option 2',
       ]);
     });
+
+    test(
+      'should parse and apply weapon swap upgrades with option selection and enforce mutual exclusivity',
+      () {
+        final jsonUpgrade1 = {
+          'id': 'swap-lac-1',
+          'name': 'Swap LAC',
+          'tv': 0,
+          'isReact': true,
+          'removeWeapons': ['LAC'],
+          'options': [
+            {
+              'name': 'MFC',
+              'weapons': ['MFC'],
+            },
+            {
+              'name': 'LSMG',
+              'weapons': ['LSMG'],
+            },
+          ],
+        };
+
+        final jsonUpgrade2 = {
+          'id': 'swap-lac-2',
+          'name': 'Swap LAC',
+          'tv': 1,
+          'isReact': true,
+          'removeWeapons': ['LAC'],
+          'options': [
+            {
+              'name': 'MAC',
+              'weapons': ['MAC'],
+            },
+          ],
+        };
+
+        final upgrade1 = ModelUpgradeJsonParser.parseModelUpgrade(jsonUpgrade1);
+        final upgrade2 = ModelUpgradeJsonParser.parseModelUpgrade(jsonUpgrade2);
+
+        const baseModel = ModelBase(
+          'Hunter',
+          unitId: 'north-hunter',
+          tv: 6,
+          roles: {Role.gp},
+          movement: Movement([MovementType.walker], 6),
+          armor: Armor(6),
+          hullStructure: HullStructure(hull: 4, structure: 2),
+          actions: UnitActions(1),
+          gu: Skill(4),
+          pi: Skill(4),
+          ew: Skill(6),
+          height: 1.5,
+          classification: Classification.gear,
+          reactWeapons: [
+            SingleWeaponSpec(
+              weapon: Weapon(
+                code: 'AC',
+                name: 'Light Auto Cannon',
+                size: WeaponSize.light,
+                range: WeaponRange(minOptimal: 6, maxOptimal: 18, max: 36),
+                damageBands: DamageSizeBands(l: 7, m: 8, h: 9),
+                modes: {WeaponMode.direct},
+              ),
+            ),
+          ],
+        );
+
+        final initialModel = Model(
+          id: 1,
+          base: baseModel,
+          variant: const Variant('Stock', id: 'stock', tv: 0),
+        );
+
+        const dummySquad = Squad(
+          id: 1,
+          name: 'Squad 1',
+          primaryRole: Role.gp,
+          models: [],
+        );
+        final dummyRoster = RosterInitial(JsonUnitRepository());
+
+        // Verify base weapon has LAC
+        expect(initialModel.weapons.any((w) => w.code == 'LAC'), isTrue);
+
+        // Verify requirement checks before enabling any upgrade
+        expect(
+          upgrade1.requirementCheck(dummyRoster, dummySquad, initialModel),
+          isTrue,
+        );
+        expect(
+          upgrade2.requirementCheck(dummyRoster, dummySquad, initialModel),
+          isTrue,
+        );
+
+        // Enable upgrade 1
+        final upgradedModel = initialModel.setModelUpgradeEnabled(
+          upgrade: upgrade1,
+        );
+
+        // LAC should be replaced by MFC (isReact = true)
+        expect(upgradedModel.weapons.any((w) => w.code == 'LAC'), isFalse);
+        expect(upgradedModel.weapons.any((w) => w.code == 'MFC'), isTrue);
+        expect(
+          upgradedModel.weapons.firstWhere((w) => w.code == 'MFC').isReact,
+          isTrue,
+        );
+
+        // Re-evaluate requirement check: upgrade1 still valid for upgradedModel (because requirementCheck excludes its own ID)
+        expect(
+          upgrade1.requirementCheck(dummyRoster, dummySquad, upgradedModel),
+          isTrue,
+        );
+        // Upgrade 2 must return FALSE because LAC is missing
+        expect(
+          upgrade2.requirementCheck(dummyRoster, dummySquad, upgradedModel),
+          isFalse,
+        );
+      },
+    );
   });
 }

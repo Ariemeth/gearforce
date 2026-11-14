@@ -80,6 +80,15 @@
         "gu": 0,
         "pi": 0,
         "ew": 0
+      },
+      {
+        "id": "infantry-infantryAndCavalry-add-miatm",
+        "name": "Add MIATM",
+        "description": "Add the following weapon: MIATM.",
+        "tv": 2,
+        "weapons": [
+          "MIATM"
+        ]
       }
     ]
   },
@@ -158,6 +167,15 @@
         "gu": 0,
         "pi": 0,
         "ew": 0
+      },
+      {
+        "id": "infantry-achillusExoskeleton-add-miatm",
+        "name": "Add MIATM",
+        "description": "Add the following weapon: MIATM.",
+        "tv": 2,
+        "weapons": [
+          "MIATM"
+        ]
       }
     ]
   },
@@ -291,6 +309,16 @@
         "tv": 1,
         "hull": 8,
         "structure": 4
+      },
+      {
+        "id": "infantry-oannesPowerArmor-add-mimwHIC",
+        "name": "Add MIMW (AP:2) / HIC (AP:2)",
+        "description": "Add the following weapon: MIMW (AP:2) / HIC (AP:2).",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MIMW (AP:2) / HIC (AP:2)"
+        ]
       }
     ]
   },
@@ -359,6 +387,18 @@
         "tv": 1,
         "hull": 8,
         "structure": 4
+      },
+      {
+        "id": "infantry-emberPowerArmor-swap-him-hiatm",
+        "name": "Swap HIM for HIATM",
+        "description": "Swap the HIM for the following weapon: HIATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "HIM"
+        ],
+        "weapons": [
+          "HIATM"
+        ]
       }
     ]
   },
@@ -436,6 +476,15 @@
         "tv": 1,
         "hull": 8,
         "structure": 4
+      },
+      {
+        "id": "infantry-trooperAutomaton-add-miatm",
+        "name": "Add MIATM",
+        "description": "Add the following weapon: MIATM.",
+        "tv": 2,
+        "weapons": [
+          "MIATM"
+        ]
       }
     ]
   },
@@ -522,6 +571,15 @@
         "tv": 1,
         "hull": 10,
         "structure": 2
+      },
+      {
+        "id": "infantry-zaidu-add-miatm",
+        "name": "Add MIATM",
+        "description": "Add the following weapon: MIATM.",
+        "tv": 2,
+        "weapons": [
+          "MIATM"
+        ]
       }
     ]
   },
@@ -667,6 +725,19 @@
         "tv": 1,
         "hull": 6,
         "structure": 6
+      },
+      {
+        "id": "infantry-morganaGREL-swap-mimw-mimw",
+        "name": "Swap MIMW for MIMW",
+        "description": "Swap the MIMW for the following weapon: MIMW (AP:2).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MIMW"
+        ],
+        "weapons": [
+          "MIMW (AP:2)"
+        ]
       }
     ]
   },
@@ -873,6 +944,15 @@
         "tv": 1,
         "hull": 6,
         "structure": 6
+      },
+      {
+        "id": "infantry-sandrider-add-miatm",
+        "name": "Add MIATM",
+        "description": "Add the following weapon: MIATM.",
+        "tv": 2,
+        "weapons": [
+          "MIATM"
+        ]
       }
     ]
   },
@@ -933,6 +1013,16 @@
         "tv": 1,
         "hull": 6,
         "structure": 2
+      },
+      {
+        "id": "infantry-springer-add-ligl",
+        "name": "Add LIGL",
+        "description": "Add the following Weapon: LIGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL"
+        ]
       }
     ]
   },
@@ -993,6 +1083,25 @@
         "tv": 1,
         "hull": 4,
         "structure": 4
+      },
+      {
+        "id": "infantry-greaterPackLizard-add-ligl",
+        "name": "Add LIGL",
+        "description": "Add the following Weapon: LIGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL"
+        ]
+      },
+      {
+        "id": "infantry-greaterPackLizard-add-liatm",
+        "name": "Add LIATM",
+        "description": "Add the following Weapon: LIATM.",
+        "tv": 1,
+        "weapons": [
+          "LIATM"
+        ]
       }
     ]
   },
@@ -1062,6 +1171,16 @@
         "tv": 1,
         "hull": 4,
         "structure": 4
+      },
+      {
+        "id": "infantry-huni-add-ligl",
+        "name": "Add LIGL",
+        "description": "Add the following Weapon: LIGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL"
+        ]
       }
     ]
   },
@@ -1107,7 +1226,36 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "infantry-barnabusIguana-add-ligl",
+        "name": "Add LIGL",
+        "description": "Add the following Weapon: LIGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL"
+        ]
+      },
+      {
+        "id": "infantry-barnabusIguana-add-liatm",
+        "name": "Add LIATM",
+        "description": "Add the following Weapon: LIATM.",
+        "tv": 1,
+        "weapons": [
+          "LIATM"
+        ]
+      },
+      {
+        "id": "infantry-barnabusIguana-add-brawl2",
+        "name": "Add Brawl:2",
+        "description": "Add the following trait: Brawl:2.",
+        "tv": 1,
+        "traits": [
+          "Brawl:2"
+        ]
+      }
+    ]
   },
   {
     "id": "infantry-armadilloBeast",
@@ -1151,7 +1299,36 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "infantry-armadilloBeast-add-ligl",
+        "name": "Add LIGL",
+        "description": "Add the following Weapon: LIGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL"
+        ]
+      },
+      {
+        "id": "infantry-armadilloBeast-add-lsg",
+        "name": "Add LSG",
+        "description": "Add the following Weapon: LSG.",
+        "tv": 1,
+        "weapons": [
+          "LSG"
+        ]
+      },
+      {
+        "id": "infantry-armadilloBeast-add-liatm",
+        "name": "Add LIATM",
+        "description": "Add the following Weapon: LIATM.",
+        "tv": 1,
+        "weapons": [
+          "LIATM"
+        ]
+      }
+    ]
   },
   {
     "id": "infantry-agniHellion",
@@ -1326,6 +1503,15 @@
         "tv": 1,
         "hull": 6,
         "structure": 2
+      },
+      {
+        "id": "infantry-spitz-add-liatmMIC",
+        "name": "Add LIATM, MIC (AP:2)*",
+        "description": "Add the following Weapon: LIATM, MIC (AP:2)*.",
+        "tv": 1,
+        "weapons": [
+          "LIATM, MIC (AP:2)*"
+        ]
       }
     ]
   },
@@ -1385,6 +1571,34 @@
         "tv": 1,
         "hull": 4,
         "structure": 4
+      },
+      {
+        "id": "infantry-jackrabbit-add-liglMIMG",
+        "name": "Add LIGL, MIMG",
+        "description": "Add the following Weapon: LIGL, MIMG.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL, MIMG"
+        ]
+      },
+      {
+        "id": "infantry-jackrabbit-add-liatm",
+        "name": "Add LIATM",
+        "description": "Add the following Weapon: LIATM.",
+        "tv": 1,
+        "weapons": [
+          "LIATM"
+        ]
+      },
+      {
+        "id": "infantry-jackrabbit-add-td",
+        "name": "Add TD",
+        "description": "Add the following trait: TD.",
+        "tv": 1,
+        "traits": [
+          "TD"
+        ]
       }
     ]
   },
@@ -1451,6 +1665,15 @@
         "tv": 1,
         "hull": 4,
         "structure": 4
+      },
+      {
+        "id": "infantry-haru-add-liatm",
+        "name": "Add LIATM",
+        "description": "Add the following Weapon: LIATM.",
+        "tv": 1,
+        "weapons": [
+          "LIATM"
+        ]
       }
     ]
   },
@@ -1546,6 +1769,25 @@
         "tv": 1,
         "hull": 4,
         "structure": 4
+      },
+      {
+        "id": "infantry-hoverbike-add-ligl",
+        "name": "Add LIGL",
+        "description": "Add the following Weapon: LIGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL"
+        ]
+      },
+      {
+        "id": "infantry-hoverbike-add-liatm",
+        "name": "Add LIATM",
+        "description": "Add the following Weapon: LIATM.",
+        "tv": 1,
+        "weapons": [
+          "LIATM"
+        ]
       }
     ]
   }

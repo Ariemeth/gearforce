@@ -55,6 +55,105 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "nucoal-chasseur-swap-lac-mfc-lbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC, LBZ, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-chasseur-swap-lac-mac-lgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-chasseur-swap-lac-msc",
+        "name": "Swap LAC for MSC",
+        "description": "Swap the LAC for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      },
+      {
+        "id": "nucoal-chasseur-swap-lrp-mrp-lm",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: MRP, LM.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "MRP",
+            "weapons": [
+              "MRP"
+            ]
+          },
+          {
+            "name": "LM",
+            "weapons": [
+              "LM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-chasseur-add-jetpack6",
+        "name": "Add Jetpack:6 (Aux)",
+        "description": "Add the following trait: Jetpack:6 (Aux).",
+        "tv": 1,
+        "traits": [
+          "Jetpack:6 (Aux)"
+        ]
       }
     ]
   },
@@ -113,6 +212,72 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "nucoal-sdChasseur-swap-lac-lrf-laclfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LRF, LAC/LFC, LAC/LFL, MFC, LBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "LAC/LFC",
+            "weapons": [
+              "LAC/LFC"
+            ]
+          },
+          {
+            "name": "LAC/LFL",
+            "weapons": [
+              "LAC/LFL"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-sdChasseur-swap-lac-mac-laclgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LAC/LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -170,6 +335,69 @@
         "ew": 5,
         "traits": [
           "ECCM"
+        ]
+      },
+      {
+        "id": "nucoal-chasseurParatrooper-swap-lac-mfc-lbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC, LBZ, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-chasseurParatrooper-swap-lac-mac-laclgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LAC/LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-chasseurParatrooper-add-jetpack6",
+        "name": "Add Jetpack:6 (Aux)",
+        "description": "Add the following trait: Jetpack:6 (Aux).",
+        "tv": 1,
+        "traits": [
+          "Jetpack:6 (Aux)"
         ]
       }
     ]
@@ -231,6 +459,79 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "nucoal-chasseurMK2-swap-lac-mfc-lbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC, LBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-chasseurMK2-swap-lac-mac-lgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-chasseurMK2-swap-lac-lpa",
+        "name": "Swap LAC for LPA",
+        "description": "Swap the LAC for the following weapon: LPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "LPA"
+        ]
+      },
+      {
+        "id": "nucoal-chasseurMK2-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
       }
     ]
   },
@@ -289,6 +590,89 @@
         "ew": 4,
         "traits": [
           "ECCM"
+        ]
+      },
+      {
+        "id": "nucoal-cuirassier-swap-mac-mbz",
+        "name": "Swap MAC for MBZ",
+        "description": "Swap the MAC for the following weapon: MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MBZ"
+        ]
+      },
+      {
+        "id": "nucoal-cuirassier-swap-mac-hrf-mgl",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HRF, MGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-cuirassier-swap-mac-mrc",
+        "name": "Swap MAC for MRC",
+        "description": "Swap the MAC for the following weapon: MRC (AA).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MRC (AA)"
+        ]
+      },
+      {
+        "id": "nucoal-cuirassier-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "nucoal-cuirassier-swap-lrp-2XMRP",
+        "name": "Swap LRP for 2 x MRP",
+        "description": "Swap the LRP for the following weapon: 2 x MRPs.",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "2 x MRP"
+        ]
+      },
+      {
+        "id": "nucoal-cuirassier-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
         ]
       }
     ]
@@ -349,6 +733,60 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "nucoal-lancier-swap-lac-mfc-mfl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-lancier-swap-lac-mac-mrp",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRP, LAR.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRP",
+            "weapons": [
+              "MRP"
+            ]
+          },
+          {
+            "name": "LAR",
+            "weapons": [
+              "LAR"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -408,6 +846,73 @@
         "ew": 3,
         "traits": [
           "ECCM+"
+        ]
+      },
+      {
+        "id": "nucoal-espion-swap-lac-lsmg-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-espion-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-espion-swap-lac-mrl",
+        "name": "Swap LAC for MRL",
+        "description": "Swap the LAC for the following weapon: MRL.",
+        "tv": 3,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MRL"
         ]
       }
     ]
@@ -503,6 +1008,66 @@
           "TD",
           "Sensor:36"
         ]
+      },
+      {
+        "id": "nucoal-jerboa-swap-lrf-lsmg-lac",
+        "name": "Swap LRF",
+        "description": "Swap the LRF for one of the following weapons: LSMG, LAC, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-jerboa-swap-lrf-mac-mrf",
+        "name": "Swap LRF",
+        "description": "Swap the LRF for one of the following weapons: MAC, MRF, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -596,6 +1161,69 @@
         "traits": [
           "TD",
           "Sensor:36"
+        ]
+      },
+      {
+        "id": "nucoal-jerboaParatrooper-swap-lac-lsmg-lrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, LRF, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-jerboaParatrooper-swap-lac-laclgl-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LAC/LGL, MRF.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nucoal-jerboaParatrooper-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
         ]
       }
     ]
@@ -888,6 +1516,25 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "nucoal-voltigeur-add-lpl",
+        "name": "Add LPL (T)",
+        "description": "Add the following weapon: LPL (T).",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LPL (T)"
+        ]
+      },
+      {
+        "id": "nucoal-voltigeur-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
+        ]
       }
     ]
   },
@@ -973,6 +1620,15 @@
         "ew": 5,
         "traits": [
           "ECCM"
+        ]
+      },
+      {
+        "id": "nucoal-sampson-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
         ]
       }
     ]

@@ -278,9 +278,63 @@ class RosterCubit extends Cubit<RosterState> {
       orElse: () => model,
     );
 
+    if (enabled && !upgrade.requirementCheck(state, squad, currentModel)) {
+      return;
+    }
+
     final updatedModel = enabled
         ? currentModel.setModelUpgradeEnabled(upgrade: upgrade)
         : currentModel.removeModelUpgrade(upgrade);
+
+    final updatedSquad = squad.copyWith(
+      models: [
+        for (final m in squad.models)
+          m.id == currentModel.id ? updatedModel : m,
+      ],
+    );
+
+    emit(
+      state.copyWith(squadState: state.squadState.updateSquad(updatedSquad)),
+    );
+  }
+
+  void updateModelUpgradeOption({
+    required Squad squad,
+    required Model model,
+    required ModelUpgrade upgrade,
+    required String selectedOption,
+  }) {
+    final currentModel = squad.models.firstWhere(
+      (m) => m.id == model.id,
+      orElse: () => model,
+    );
+
+    final upgradeIndex = currentModel.selectedModelUpgrades.indexWhere(
+      (u) => u.id == upgrade.id,
+    );
+    if (upgradeIndex == -1) {
+      return;
+    }
+
+    final targetUpgrade = currentModel.selectedModelUpgrades[upgradeIndex];
+    if (targetUpgrade.upgradeOption == null) {
+      return;
+    }
+
+    final updatedUpgrade = targetUpgrade.copyWith(
+      upgradeOption: targetUpgrade.upgradeOption!.copyWith(
+        selectedOption: selectedOption,
+      ),
+    );
+
+    final updatedUpgrades = List<ModelUpgrade>.from(
+      currentModel.selectedModelUpgrades,
+    );
+    updatedUpgrades[upgradeIndex] = updatedUpgrade;
+
+    final updatedModel = currentModel.copyWith(
+      selectedModelUpgrades: updatedUpgrades,
+    );
 
     final updatedSquad = squad.copyWith(
       models: [

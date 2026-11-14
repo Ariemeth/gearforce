@@ -62,7 +62,17 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "univeh-antelopeElan-add-miatm",
+        "name": "Add MIATM (T)",
+        "description": "Add the following weapon: MIATM (T).",
+        "tv": 2,
+        "weapons": [
+          "MIATM (T)"
+        ]
+      }
+    ]
   },
   {
     "id": "univeh-fieldGun",
@@ -148,7 +158,18 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "univeh-camelTruck-add-hirc",
+        "name": "Add HIRC",
+        "description": "Add the following weapon: HIRC.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "HIRC"
+        ]
+      }
+    ]
   },
   {
     "id": "univeh-nightingale",
@@ -183,7 +204,17 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "univeh-nightingale-add-smoke",
+        "name": "Add Smoke",
+        "description": "Add the following trait: Smoke.",
+        "tv": 1,
+        "traits": [
+          "Smoke"
+        ]
+      }
+    ]
   },
   {
     "id": "univeh-saker",
@@ -339,7 +370,17 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "univeh-murdock-add-init",
+        "name": "Add Init+",
+        "description": "Add the following trait: Init+.",
+        "tv": 1,
+        "traits": [
+          "Init+"
+        ]
+      }
+    ]
   },
   {
     "id": "univeh-capricianTrike",
@@ -401,7 +442,29 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "univeh-capricianTrike-swap-lrf-lac",
+        "name": "Swap LRF for LAC",
+        "description": "Swap the LRF for the following weapon: LAC.",
+        "tv": 0,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "weapons": [
+          "LAC"
+        ]
+      },
+      {
+        "id": "univeh-capricianTrike-add-lrp",
+        "name": "Add LRP",
+        "description": "Add the following weapon: LRP.",
+        "tv": 1,
+        "weapons": [
+          "LRP"
+        ]
+      }
+    ]
   },
   {
     "id": "univeh-mastiff",
@@ -519,6 +582,83 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "univeh-sandSpider-swap-lac-mac",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "univeh-sandSpider-swap-lac-mrc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MRC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MRC",
+            "weapons": [
+              "MRC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "univeh-sandSpider-add-hiatm",
+        "name": "Add HIATM",
+        "description": "Add the following weapon: HIATM.",
+        "tv": 1,
+        "weapons": [
+          "HIATM"
+        ]
+      },
+      {
+        "id": "univeh-sandSpider-swap-hiatm-latm-lar",
+        "name": "Swap HIATM",
+        "description": "Swap the HIATM for one of the following weapons: LATM, LAR.",
+        "tv": 1,
+        "removeWeapons": [
+          "HIATM"
+        ],
+        "options": [
+          {
+            "name": "LATM",
+            "weapons": [
+              "LATM"
+            ]
+          },
+          {
+            "name": "LAR",
+            "weapons": [
+              "LAR"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "univeh-sandSpider-add-mmine",
+        "name": "Add M-Mine",
+        "description": "Add the following weapon: M-Mine.",
+        "tv": 1,
+        "weapons": [
+          "M-Mine"
+        ]
       }
     ]
   },
@@ -559,7 +699,18 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "univeh-baxter-add-himg",
+        "name": "Add HIMG",
+        "description": "Add the following weapon: HIMG.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "HIMG"
+        ]
+      }
+    ]
   },
   {
     "id": "univeh-celt",
@@ -602,7 +753,18 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "univeh-celt-add-limg",
+        "name": "Add LIMG",
+        "description": "Add the following weapon: LIMG.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIMG"
+        ]
+      }
+    ]
   },
   {
     "id": "univeh-barnabyBehemoth",
@@ -728,6 +890,16 @@
           "TD",
           "Sensor:24"
         ]
+      },
+      {
+        "id": "univeh-varis-add-lac",
+        "name": "Add LAC (AA)",
+        "description": "Add the following weapon: LAC (AA).",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LAC (AA)"
+        ]
       }
     ]
   },
@@ -786,6 +958,16 @@
         "traits": [
           "TD",
           "Sensor:24"
+        ]
+      },
+      {
+        "id": "univeh-dragonfly-add-lac",
+        "name": "Add LAC (AA)",
+        "description": "Add the following weapon: LAC (AA).",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LAC (AA)"
         ]
       }
     ]
@@ -1246,6 +1428,54 @@
         "tv": 1,
         "mountedWeapons": [
           "L-Bomb (AP:1)**"
+        ]
+      },
+      {
+        "id": "univeh-octopusDrones-swap-limw-4XLIGL-4XLIMW",
+        "name": "Swap LIMW",
+        "description": "Swap the LIMW for one of the following weapons: 4 x LIGLs, 4 x LIMW (Fire:1).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LIMW"
+        ],
+        "options": [
+          {
+            "name": "4 x LIGL",
+            "weapons": [
+              "4 x LIGL"
+            ]
+          },
+          {
+            "name": "4 x LIMW (Fire:1)",
+            "weapons": [
+              "4 x LIMW (Fire:1)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "univeh-octopusDrones-swap-limw-4XLIATM-4XLFC",
+        "name": "Swap LIMW",
+        "description": "Swap the LIMW for one of the following weapons: 4 x LIATMs, 4 x LFCs.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LIMW"
+        ],
+        "options": [
+          {
+            "name": "4 x LIATM",
+            "weapons": [
+              "4 x LIATM"
+            ]
+          },
+          {
+            "name": "4 x LFC",
+            "weapons": [
+              "4 x LFC"
+            ]
+          }
         ]
       }
     ]

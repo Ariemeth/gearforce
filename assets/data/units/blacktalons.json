@@ -36,7 +36,124 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "bt-hadesPack-swap-mrf-lrp-llc",
+        "name": "Swap MRF",
+        "description": "Swap the MRF for one of the following weapons: LRP, LLC.",
+        "tv": 0,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "options": [
+          {
+            "name": "LRP",
+            "weapons": [
+              "LRP"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-hadesPack-swap-mrf-msc-latm",
+        "name": "Swap MRF",
+        "description": "Swap the MRF for one of the following weapons: MSC, LATM, LPA, LRL.",
+        "tv": 1,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "options": [
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          },
+          {
+            "name": "LATM",
+            "weapons": [
+              "LATM"
+            ]
+          },
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          },
+          {
+            "name": "LRL",
+            "weapons": [
+              "LRL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-hadesPack-swap-lrp-mrf-llc",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: MRF, LLC.",
+        "tv": 0,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-hadesPack-swap-lrp-msc-latm",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: MSC, LATM, LPA, LRL.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          },
+          {
+            "name": "LATM",
+            "weapons": [
+              "LATM"
+            ]
+          },
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          },
+          {
+            "name": "LRL",
+            "weapons": [
+              "LRL"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "bt-aresPack",
@@ -75,7 +192,112 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "bt-aresPack-swap-mlc-mrp",
+        "name": "Swap MLC",
+        "description": "Swap the MLC for one of the following weapons: MRP.",
+        "tv": 0,
+        "removeWeapons": [
+          "MLC"
+        ],
+        "options": [
+          {
+            "name": "MRP",
+            "weapons": [
+              "MRP"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-aresPack-swap-mlc-lrg-matm",
+        "name": "Swap MLC",
+        "description": "Swap the MLC for one of the following weapons: LRG, MATM, MPA, MRL.",
+        "tv": 1,
+        "removeWeapons": [
+          "MLC"
+        ],
+        "options": [
+          {
+            "name": "LRG",
+            "weapons": [
+              "LRG"
+            ]
+          },
+          {
+            "name": "MATM",
+            "weapons": [
+              "MATM"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          },
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-aresPack-swap-mrp-mlc",
+        "name": "Swap MRP",
+        "description": "Swap the MRP for one of the following weapons: MLC.",
+        "tv": 0,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "options": [
+          {
+            "name": "MLC",
+            "weapons": [
+              "MLC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-aresPack-swap-mrp-lrg-matm",
+        "name": "Swap MRP",
+        "description": "Swap the MRP for one of the following weapons: LRG, MATM, MPA, MRL.",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "options": [
+          {
+            "name": "LRG",
+            "weapons": [
+              "LRG"
+            ]
+          },
+          {
+            "name": "MATM",
+            "weapons": [
+              "MATM"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          },
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "bt-darkWarrior",
@@ -133,6 +355,127 @@
         "traits": [
           "ECM",
           "Sensor:24 (Aux)"
+        ]
+      },
+      {
+        "id": "bt-darkWarrior-swap-laclfc-laclfl-mfc",
+        "name": "Swap LAC/LFC",
+        "description": "Swap the LAC/LFC for one of the following weapons: LAC/LFL, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC/LFC"
+        ],
+        "options": [
+          {
+            "name": "LAC/LFL",
+            "weapons": [
+              "LAC/LFL"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkWarrior-swap-laclfc-maclgl-mbz",
+        "name": "Swap LAC/LFC",
+        "description": "Swap the LAC/LFC for one of the following weapons: MAC/LGL, MBZ, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC/LFC"
+        ],
+        "options": [
+          {
+            "name": "MAC/LGL",
+            "weapons": [
+              "MAC/LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkWarrior-swap-laclfc-hac-msc",
+        "name": "Swap LAC/LFC",
+        "description": "Swap the LAC/LFC for one of the following weapons: HAC, MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC/LFC"
+        ],
+        "options": [
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkWarrior-add-lgl",
+        "name": "Add LGL",
+        "description": "Add the following weapon: LGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LGL"
+        ]
+      },
+      {
+        "id": "bt-darkWarrior-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "bt-darkWarrior-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      },
+      {
+        "id": "bt-darkWarrior-add-him",
+        "name": "Add HIM",
+        "description": "Add the following weapon: HIM.",
+        "tv": 1,
+        "weapons": [
+          "HIM"
         ]
       }
     ]
@@ -198,7 +541,57 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "bt-darkWolf-swap-lrp-mrp-2XLRP",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: MRP, 2 x LRPs.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "MRP",
+            "weapons": [
+              "MRP"
+            ]
+          },
+          {
+            "name": "2 x LRP",
+            "weapons": [
+              "2 x LRP"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkWolf-swap-lrp-latm",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "LATM (LA:2)",
+            "weapons": [
+              "LATM (LA:2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkWolf-add-jetpack6",
+        "name": "Add Jetpack:6",
+        "description": "Add the following trait: Jetpack:6.",
+        "tv": 1,
+        "traits": [
+          "Jetpack:6"
+        ]
+      }
+    ]
   },
   {
     "id": "bt-darkJaguar",
@@ -266,6 +659,103 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "bt-darkJaguar-swap-maclfc-maclgl-llc",
+        "name": "Swap MAC/LFC",
+        "description": "Swap the MAC/LFC for one of the following weapons: MAC/LGL, LLC, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LFC"
+        ],
+        "options": [
+          {
+            "name": "MAC/LGL",
+            "weapons": [
+              "MAC/LGL"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkJaguar-swap-maclfc-mac-hrf",
+        "name": "Swap MAC/LFC",
+        "description": "Swap the MAC/LFC for one of the following weapons: MAC (Silent), HRF, HAC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LFC"
+        ],
+        "options": [
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          },
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkJaguar-swap-maclfc-hrf",
+        "name": "Swap MAC/LFC for HRF",
+        "description": "Swap the MAC/LFC for the following weapon: HRF (Silent, Precise+).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LFC"
+        ],
+        "weapons": [
+          "HRF (Silent, Precise+)"
+        ]
+      },
+      {
+        "id": "bt-darkJaguar-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "bt-darkJaguar-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM.",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM"
+        ]
       }
     ]
   },
@@ -326,6 +816,104 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "bt-darkMamba-swap-mac-lgl",
+        "name": "Swap MAC for LGL",
+        "description": "Swap the MAC for the following weapon: LGL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "LGL"
+        ]
+      },
+      {
+        "id": "bt-darkMamba-swap-mac-mac-mrf",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MAC (Silent), MRF (Silent), MLC, HAC, MGL, MBZ (Precise).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          },
+          {
+            "name": "MRF (Silent)",
+            "weapons": [
+              "MRF (Silent)"
+            ]
+          },
+          {
+            "name": "MLC",
+            "weapons": [
+              "MLC"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          },
+          {
+            "name": "MBZ (Precise)",
+            "weapons": [
+              "MBZ (Precise)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkMamba-swap-mac-mrl",
+        "name": "Swap MAC for MRL",
+        "description": "Swap the MAC for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      },
+      {
+        "id": "bt-darkMamba-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "bt-darkMamba-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM.",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM"
+        ]
       }
     ]
   },
@@ -385,6 +973,97 @@
           "ECM",
           "Sensor:24"
         ]
+      },
+      {
+        "id": "bt-eagle-swap-maclgl-mbz",
+        "name": "Swap MAC/LGL for MBZ",
+        "description": "Swap the MAC/LGL for the following weapon: MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LGL"
+        ],
+        "weapons": [
+          "MBZ"
+        ]
+      },
+      {
+        "id": "bt-eagle-swap-maclgl-mac-mrf",
+        "name": "Swap MAC/LGL",
+        "description": "Swap the MAC/LGL for one of the following weapons: MAC (Silent), MRF (Silent), HAC/LGL, MLC, LPA.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LGL"
+        ],
+        "options": [
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          },
+          {
+            "name": "MRF (Silent)",
+            "weapons": [
+              "MRF (Silent)"
+            ]
+          },
+          {
+            "name": "HAC/LGL",
+            "weapons": [
+              "HAC/LGL"
+            ]
+          },
+          {
+            "name": "MLC",
+            "weapons": [
+              "MLC"
+            ]
+          },
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-eagle-swap-maclgl-mrl",
+        "name": "Swap MAC/LGL for MRL",
+        "description": "Swap the MAC/LGL for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LGL"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      },
+      {
+        "id": "bt-eagle-swap-mrp-lar-latm",
+        "name": "Swap MRP",
+        "description": "Swap the MRP for one of the following weapons: LAR, LATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "options": [
+          {
+            "name": "LAR",
+            "weapons": [
+              "LAR"
+            ]
+          },
+          {
+            "name": "LATM",
+            "weapons": [
+              "LATM"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -437,7 +1116,99 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "bt-owl-swap-mrf-maclgl-maclfc",
+        "name": "Swap MRF",
+        "description": "Swap the MRF for one of the following weapons: MAC/LGL, MAC/LFC, LRBZ, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "options": [
+          {
+            "name": "MAC/LGL",
+            "weapons": [
+              "MAC/LGL"
+            ]
+          },
+          {
+            "name": "MAC/LFC",
+            "weapons": [
+              "MAC/LFC"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-owl-swap-mrf-mac-mrf",
+        "name": "Swap MRF",
+        "description": "Swap the MRF for one of the following weapons: MAC (Silent), MRF (Silent), HAC/LGL, MLC, LPA.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "options": [
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          },
+          {
+            "name": "MRF (Silent)",
+            "weapons": [
+              "MRF (Silent)"
+            ]
+          },
+          {
+            "name": "HAC/LGL",
+            "weapons": [
+              "HAC/LGL"
+            ]
+          },
+          {
+            "name": "MLC",
+            "weapons": [
+              "MLC"
+            ]
+          },
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-owl-swap-mrf-mrl",
+        "name": "Swap MRF for MRL",
+        "description": "Swap the MRF for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      }
+    ]
   },
   {
     "id": "bt-darkCheetah",
@@ -506,6 +1277,115 @@
         "traits": [
           "TD",
           "SatUp"
+        ]
+      },
+      {
+        "id": "bt-darkCheetah-swap-lsmg-lac-mfc",
+        "name": "Swap LSMG",
+        "description": "Swap the LSMG for one of the following weapons: LAC, MFC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "options": [
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkCheetah-swap-lsmg-lsmg-maclfc",
+        "name": "Swap LSMG",
+        "description": "Swap the LSMG for one of the following weapons: LSMG (Silent), MAC/LFC, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "options": [
+          {
+            "name": "LSMG (Silent)",
+            "weapons": [
+              "LSMG (Silent)"
+            ]
+          },
+          {
+            "name": "MAC/LFC",
+            "weapons": [
+              "MAC/LFC"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkCheetah-swap-lsmg-mac-mrf",
+        "name": "Swap LSMG",
+        "description": "Swap the LSMG for one of the following weapons: MAC (Silent), MRF (Silent).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "options": [
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          },
+          {
+            "name": "MRF (Silent)",
+            "weapons": [
+              "MRF (Silent)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkCheetah-swap-lsmg-hrf",
+        "name": "Swap LSMG for HRF",
+        "description": "Swap the LSMG for the following weapon: HRF (Silent, Precise+).",
+        "tv": 3,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG"
+        ],
+        "weapons": [
+          "HRF (Silent, Precise+)"
+        ]
+      },
+      {
+        "id": "bt-darkCheetah-swap-lrp-lar",
+        "name": "Swap LRP for LAR",
+        "description": "Swap the LRP for the following weapon: LAR.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LAR"
         ]
       }
     ]
@@ -578,6 +1458,96 @@
           "TD",
           "Sensor:36"
         ]
+      },
+      {
+        "id": "bt-darkSkirmisher-swap-lac-lsmg-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, MFC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkSkirmisher-swap-lac-lsmg-maclfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG (Silent), MAC/LFC, LLC, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG (Silent)",
+            "weapons": [
+              "LSMG (Silent)"
+            ]
+          },
+          {
+            "name": "MAC/LFC",
+            "weapons": [
+              "MAC/LFC"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkSkirmisher-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC (Silent), MRF (Silent).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          },
+          {
+            "name": "MRF (Silent)",
+            "weapons": [
+              "MRF (Silent)"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -647,6 +1617,91 @@
           "SatUp",
           "TD"
         ]
+      },
+      {
+        "id": "bt-raven-swap-lrf-lsmg-mfc",
+        "name": "Swap LRF",
+        "description": "Swap the LRF for one of the following weapons: LSMG, MFC, LAC/LFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LAC/LFC",
+            "weapons": [
+              "LAC/LFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-raven-swap-lrf-lsmg-maclfc",
+        "name": "Swap LRF",
+        "description": "Swap the LRF for one of the following weapons: LSMG (Silent), MAC/LFC, LLC, LRBZ, LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "options": [
+          {
+            "name": "LSMG (Silent)",
+            "weapons": [
+              "LSMG (Silent)"
+            ]
+          },
+          {
+            "name": "MAC/LFC",
+            "weapons": [
+              "MAC/LFC"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-raven-swap-lrf-mrf",
+        "name": "Swap LRF for MRF",
+        "description": "Swap the LRF for the following weapon: MRF (Silent).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "weapons": [
+          "MRF (Silent)"
+        ]
       }
     ]
   },
@@ -706,6 +1761,38 @@
         "ew": 5,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "bt-darkCobra-swap-mar-lfg-mm",
+        "name": "Swap MAR",
+        "description": "Swap the MAR for one of the following weapons: LFG, MM.",
+        "tv": 0,
+        "removeWeapons": [
+          "MAR"
+        ],
+        "options": [
+          {
+            "name": "LFG",
+            "weapons": [
+              "LFG"
+            ]
+          },
+          {
+            "name": "MM",
+            "weapons": [
+              "MM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-darkCobra-add-mrp",
+        "name": "Add MRP",
+        "description": "Add the following weapon: MRP.",
+        "tv": 1,
+        "weapons": [
+          "MRP"
         ]
       }
     ]
@@ -767,6 +1854,54 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "bt-raptor-swap-hrc-hbz-mpa",
+        "name": "Swap HRC",
+        "description": "Swap the HRC for one of the following weapons: HBZ (Precise), MPA, LRG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HRC"
+        ],
+        "options": [
+          {
+            "name": "HBZ (Precise)",
+            "weapons": [
+              "HBZ (Precise)"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          },
+          {
+            "name": "LRG",
+            "weapons": [
+              "LRG"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bt-raptor-add-hpz",
+        "name": "Add HPZ",
+        "description": "Add the following weapon: HPZ.",
+        "tv": 1,
+        "weapons": [
+          "HPZ"
+        ]
+      },
+      {
+        "id": "bt-raptor-add-eccm",
+        "name": "Add ECCM+",
+        "description": "Add the following trait: ECCM+.",
+        "tv": 1,
+        "traits": [
+          "ECCM+"
+        ]
       }
     ]
   },
@@ -827,6 +1962,39 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "bt-darkKodiak-swap-mar-mm",
+        "name": "Swap MAR for MM",
+        "description": "Swap the MAR for the following weapon: MM.",
+        "tv": 0,
+        "removeWeapons": [
+          "MAR"
+        ],
+        "weapons": [
+          "MM"
+        ]
+      },
+      {
+        "id": "bt-darkKodiak-swap-mar-latm",
+        "name": "Swap MAR for LATM",
+        "description": "Swap the MAR for the following weapon: LATM (Precise).",
+        "tv": 1,
+        "removeWeapons": [
+          "MAR"
+        ],
+        "weapons": [
+          "LATM (Precise)"
+        ]
+      },
+      {
+        "id": "bt-darkKodiak-add-mrp",
+        "name": "Add MRP",
+        "description": "Add the following weapon: MRP.",
+        "tv": 1,
+        "weapons": [
+          "MRP"
+        ]
       }
     ]
   },
@@ -886,6 +2054,27 @@
         "ew": 4,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "bt-vulture-add-mrp",
+        "name": "Add MRP",
+        "description": "Add the following weapon: MRP.",
+        "tv": 1,
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "bt-vulture-swap-mm-matm",
+        "name": "Swap MM for MATM",
+        "description": "Swap the MM for the following weapon: MATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "MM"
+        ],
+        "weapons": [
+          "MATM"
         ]
       }
     ]
@@ -963,6 +2152,27 @@
           "ECCM",
           "Init+"
         ]
+      },
+      {
+        "id": "bt-karakara-add-mm",
+        "name": "Add MM",
+        "description": "Add the following weapon: MM.",
+        "tv": 1,
+        "weapons": [
+          "MM"
+        ]
+      },
+      {
+        "id": "bt-karakara-swap-mm-2XMM",
+        "name": "Swap MM for 2 x MM",
+        "description": "Swap the MM for the following weapon: 2 x MMs.",
+        "tv": 1,
+        "removeWeapons": [
+          "MM"
+        ],
+        "weapons": [
+          "2 x MM"
+        ]
       }
     ]
   },
@@ -1014,7 +2224,17 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "bt-darkHyenaII-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
   },
   {
     "id": "bt-darkCoyote",
@@ -1077,6 +2297,15 @@
         "traits": [
           "SatUp",
           "ECCM"
+        ]
+      },
+      {
+        "id": "bt-darkCoyote-add-init",
+        "name": "Add Init+",
+        "description": "Add the following trait: Init+.",
+        "tv": 1,
+        "traits": [
+          "Init+"
         ]
       }
     ]

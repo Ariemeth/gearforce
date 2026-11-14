@@ -85,6 +85,48 @@
           "Jetpack:6 (Aux)",
           "Stealth (Aux)"
         ]
+      },
+      {
+        "id": "cef-f616-swap-llc-mrl-mpa",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: MRL, MPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cef-f616-add-lm",
+        "name": "Add LM",
+        "description": "Add the following weapon: LM.",
+        "tv": 1,
+        "weapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "cef-f616-add-latm",
+        "name": "Add LATM (LA:2)",
+        "description": "Add the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "weapons": [
+          "LATM (LA:2)"
+        ]
       }
     ]
   },
@@ -156,7 +198,50 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f221-swap-llc-mrl-mpa",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: MRL, MPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cef-f221-add-lm",
+        "name": "Add LM",
+        "description": "Add the following weapon: LM.",
+        "tv": 1,
+        "weapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "cef-f221-add-latm",
+        "name": "Add LATM (LA:2)",
+        "description": "Add the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f8112",
@@ -232,7 +317,41 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f8112-swap-llc-mrl-mpa",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: MRL, MPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cef-f8112-add-latm",
+        "name": "Add LATM (LA:2)",
+        "description": "Add the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f99",
@@ -297,7 +416,30 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f99-swap-llc-mrl",
+        "name": "Swap LLC for MRL",
+        "description": "Swap the LLC for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      },
+      {
+        "id": "cef-f99-add-latm",
+        "name": "Add LATM (LA:2)",
+        "description": "Add the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f55",
@@ -353,7 +495,17 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f55-add-jetpack6TheJetpackCannotBeCombinedWithTheCorsairDueToTheLAR",
+        "name": "Add Jetpack:6 (Aux). The Jetpack cannot be combined with the Corsair due to the LAR",
+        "description": "Add the following trait: Jetpack:6 (Aux). The Jetpack cannot be combined with the Corsair due to the LAR.",
+        "tv": 1,
+        "traits": [
+          "Jetpack:6 (Aux). The Jetpack cannot be combined with the Corsair due to the LAR"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f207",
@@ -417,7 +569,17 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f207-add-jetpack6",
+        "name": "Add Jetpack:6 (Aux)",
+        "description": "Add the following trait: Jetpack:6 (Aux).",
+        "tv": 1,
+        "traits": [
+          "Jetpack:6 (Aux)"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f225",
@@ -490,7 +652,59 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f225-swap-llc-mrl-mpa",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: MRL, MPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cef-f225-add-lm",
+        "name": "Add LM",
+        "description": "Add the following weapon: LM.",
+        "tv": 1,
+        "weapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "cef-f225-add-latm",
+        "name": "Add LATM (LA:2)",
+        "description": "Add the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      },
+      {
+        "id": "cef-f225-add-shield",
+        "name": "Add Shield",
+        "description": "Add the following trait: Shield.",
+        "tv": 1,
+        "traits": [
+          "Shield"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f1122",
@@ -548,7 +762,21 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f1122-swap-llc-msmg",
+        "name": "Swap LLC for MSMG",
+        "description": "Swap the LLC for the following weapon: MSMG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "weapons": [
+          "MSMG"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f219",
@@ -620,7 +848,53 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "cef-f219-swap-llc-mpa-mrl",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: MPA, MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          },
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cef-f219-swap-mrp-matm",
+        "name": "Swap MRP for MATM",
+        "description": "Swap the MRP for the following weapon: MATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "MATM (LA:2)"
+        ]
+      },
+      {
+        "id": "cef-f219-add-lm",
+        "name": "Add LM (Precise)",
+        "description": "Add the following weapon: LM (Precise).",
+        "tv": 1,
+        "weapons": [
+          "LM (Precise)"
+        ]
+      }
+    ]
   },
   {
     "id": "cef-f305",
@@ -1075,6 +1349,27 @@
         "traits": [
           "ECM",
           "ECCM"
+        ]
+      },
+      {
+        "id": "cef-hc3a-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM (LA:2).",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      },
+      {
+        "id": "cef-hc3a-add-td",
+        "name": "Add TD",
+        "description": "Add the following trait: TD.",
+        "tv": 1,
+        "traits": [
+          "TD"
         ]
       }
     ]

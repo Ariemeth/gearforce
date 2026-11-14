@@ -406,6 +406,178 @@ bool isNoteLine(String? aVal) {
   return false;
 }
 
+String _generateUpgradeId(String unitId, String slug, Set<String> usedIds) {
+  final baseId = '$unitId-$slug';
+  var id = baseId;
+  int counter = 2;
+  while (usedIds.contains(id)) {
+    id = '$baseId$counter';
+    counter++;
+  }
+  usedIds.add(id);
+  return id;
+}
+
+String _stripTraitsForId(String name) {
+  return name.replaceAll(RegExp(r'\s*\([^\)]*\)'), '').trim();
+}
+
+String _cleanWeaponPart(String raw) {
+  var str = raw.trim();
+  final periodIndex = str.indexOf('. ');
+  if (periodIndex != -1) {
+    str = str.substring(0, periodIndex).trim();
+  }
+  if (str.endsWith('.')) {
+    str = str.substring(0, str.length - 1).trim();
+  }
+  return cleanWeaponCode(str);
+}
+
+Map<String, dynamic>? parseTextUpgrade(
+  String line,
+  String unitId,
+  Set<String> usedIds,
+) {
+  final trimmed = line.trim();
+  if (trimmed.isEmpty) return null;
+
+  final headerRegex = RegExp(
+    r'^(?<category>React|Mounted|Traits|Gunnery|Piloting|EW|Profile|Upgrade)?\s*\((?<tv>\d+)\s*TV\)\s*:\s*(?<detail>.+)$',
+    caseSensitive: false,
+  );
+  final match = headerRegex.firstMatch(trimmed);
+  if (match == null) return null;
+
+  final category = match.namedGroup('category')?.toUpperCase() ?? '';
+  final tv = int.tryParse(match.namedGroup('tv') ?? '0') ?? 0;
+  final detail = match.namedGroup('detail')!.trim();
+  final isReact = category == 'REACT';
+
+  // 1. Swap with multiple options: "Swap the LAC for one of the following weapons: MFC, LSMG."
+  final swapOptionsRegex = RegExp(
+    r'^Swap the\s+(?<target>[A-Za-z0-9/]+)\s+for one of the following weapons:\s*(?<options>.+?)\.?$',
+    caseSensitive: false,
+  );
+  final swapOptMatch = swapOptionsRegex.firstMatch(detail);
+  if (swapOptMatch != null) {
+    final target = swapOptMatch.namedGroup('target')!.trim();
+    final rawOptions = swapOptMatch.namedGroup('options')!;
+    final optionList = rawOptions
+        .split(RegExp(r'[,;]|\bor\b', caseSensitive: false))
+        .map((e) => _cleanWeaponPart(e))
+        .where((e) => e.isNotEmpty)
+        .toList();
+
+    final cleanTarget = _stripTraitsForId(target);
+    final slugParts = [
+      'swap',
+      cleanId(cleanTarget),
+      ...optionList.map((opt) => cleanId(_stripTraitsForId(opt))),
+    ];
+    final slug = slugParts.take(4).join('-');
+    final id = _generateUpgradeId(unitId, slug, usedIds);
+
+    return {
+      'id': id,
+      'name': 'Swap $target',
+      'description': detail,
+      'tv': tv,
+      if (isReact) 'isReact': true,
+      'removeWeapons': [target],
+      'options': optionList
+          .map(
+            (opt) => {
+              'name': opt,
+              'weapons': [opt],
+            },
+          )
+          .toList(),
+    };
+  }
+
+  // 2. Single weapon swap: "Swap the LRP for the following weapon: MRP."
+  final swapSingleRegex = RegExp(
+    r'^Swap the\s+(?<target>[A-Za-z0-9/]+)\s+for the following weapon:\s*(?<weapon>.+?)\.?$',
+    caseSensitive: false,
+  );
+  final swapSingleMatch = swapSingleRegex.firstMatch(detail);
+  if (swapSingleMatch != null) {
+    final target = swapSingleMatch.namedGroup('target')!.trim();
+    final weapon = _cleanWeaponPart(swapSingleMatch.namedGroup('weapon')!);
+
+    final cleanTarget = _stripTraitsForId(target);
+    final cleanWeaponName = _stripTraitsForId(
+      weapon.replaceAll(RegExp(r'\s*\(.*\)$'), ''),
+    );
+    final slug = 'swap-${cleanId(cleanTarget)}-${cleanId(cleanWeaponName)}';
+    final id = _generateUpgradeId(unitId, slug, usedIds);
+
+    return {
+      'id': id,
+      'name': 'Swap $target for $cleanWeaponName',
+      'description': detail,
+      'tv': tv,
+      if (isReact) 'isReact': true,
+      'removeWeapons': [target],
+      'weapons': [weapon],
+    };
+  }
+
+  // 3. Add weapon: "Add the following weapon: LBZ."
+  final addWeaponRegex = RegExp(
+    r'^Add the following weapon:\s*(?<weapon>.+?)\.?$',
+    caseSensitive: false,
+  );
+  final addWeaponMatch = addWeaponRegex.firstMatch(detail);
+  if (addWeaponMatch != null) {
+    final weapon = _cleanWeaponPart(addWeaponMatch.namedGroup('weapon')!);
+    final cleanWeaponName = _stripTraitsForId(weapon);
+
+    final id = _generateUpgradeId(
+      unitId,
+      'add-${cleanId(cleanWeaponName)}',
+      usedIds,
+    );
+
+    return {
+      'id': id,
+      'name': 'Add $weapon',
+      'description': detail,
+      'tv': tv,
+      if (isReact) 'isReact': true,
+      'weapons': [weapon],
+    };
+  }
+
+  // 4. Add trait: "Add the following trait: Supply."
+  final addTraitRegex = RegExp(
+    r'^Add the following trait:\s*(?<trait>.+?)\.?$',
+    caseSensitive: false,
+  );
+  final addTraitMatch = addTraitRegex.firstMatch(detail);
+  if (addTraitMatch != null) {
+    final trait = cleanTraitString(addTraitMatch.namedGroup('trait')!.trim());
+    final cleanTraitName = _stripTraitsForId(trait);
+
+    final id = _generateUpgradeId(
+      unitId,
+      'add-${cleanId(cleanTraitName)}',
+      usedIds,
+    );
+
+    return {
+      'id': id,
+      'name': 'Add $trait',
+      'description': detail,
+      'tv': tv,
+      'traits': [trait],
+    };
+  }
+
+  return null;
+}
+
 List<Map<String, dynamic>> parseFactionSheet(
   Sheet sheet,
   String sheetName,
@@ -589,7 +761,13 @@ List<Map<String, dynamic>> parseFactionSheet(
         continue;
       }
 
-      if (isNoteLine(aVal)) continue;
+      if (isNoteLine(aVal)) {
+        final textUpgrade = parseTextUpgrade(aVal, unitId, usedIds);
+        if (textUpgrade != null) {
+          (unit['upgrades'] as List).add(textUpgrade);
+        }
+        continue;
+      }
 
       var itemName = aVal;
       if (itemName == 'Factory Stock' || itemName == 'Base Model') {

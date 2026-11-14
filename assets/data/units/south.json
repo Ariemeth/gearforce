@@ -45,7 +45,128 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-jager-swap-lac-lbz-mfl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LBZ, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-jager-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LAC/LGL, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-jager-swap-lac-lrc-hac",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LRC (AA), HAC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LRC (AA)",
+            "weapons": [
+              "LRC (AA)"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-jager-swap-lrp-him",
+        "name": "Swap LRP for HIM",
+        "description": "Swap the LRP for the following weapon: HIM.",
+        "tv": 0,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "HIM"
+        ]
+      },
+      {
+        "id": "south-jager-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "south-jager-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      }
+    ]
   },
   {
     "id": "south-sdJager",
@@ -92,7 +213,71 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-sdJager-swap-lac-lbz-mfl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LBZ, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-sdJager-swap-lac-mac-laclgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LAC/LGL, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-sdJager-add-agile",
+        "name": "Add Agile",
+        "description": "Add the following trait: Agile.",
+        "tv": 1,
+        "traits": [
+          "Agile"
+        ]
+      }
+    ]
   },
   {
     "id": "south-paraJager",
@@ -159,7 +344,87 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-paraJager-swap-lac-lrf-mfl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LRF, MFL, LBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-paraJager-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LAC/LGL, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-paraJager-swap-lac-hac",
+        "name": "Swap LAC for HAC",
+        "description": "Swap the LAC for the following weapon: HAC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "HAC"
+        ]
+      }
+    ]
   },
   {
     "id": "south-dartjager",
@@ -227,6 +492,94 @@
         "name": "Armored Dartjager",
         "tv": 1,
         "armor": 6
+      },
+      {
+        "id": "south-dartjager-swap-lac-lsmg-lbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, LBZ, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-dartjager-swap-lac-mac-mbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-dartjager-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "south-dartjager-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "south-dartjager-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
       }
     ]
   },
@@ -276,7 +629,69 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-wasserjager-swap-lac-lsmg-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-wasserjager-swap-lac-mac-lgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-wasserjager-swap-lac-msc",
+        "name": "Swap LAC for MSC",
+        "description": "Swap the LAC for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      }
+    ]
   },
   {
     "id": "south-rattlesnake",
@@ -324,7 +739,56 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-rattlesnake-swap-lac-lsmg-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-rattlesnake-swap-lac-mac-laclgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LAC/LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "south-sidewinder",
@@ -382,6 +846,54 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "south-sidewinder-swap-mac-mrf-mbz",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MRF, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-sidewinder-swap-mrp-lm",
+        "name": "Swap MRP for LM",
+        "description": "Swap the MRP for the following weapon: LM.",
+        "tv": 0,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "south-sidewinder-swap-mrp-2XMRP",
+        "name": "Swap MRP for 2 x MRP",
+        "description": "Swap the MRP for the following weapon: 2 x MRPs.",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "2 x MRP"
+        ]
       }
     ]
   },
@@ -432,7 +944,59 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-diamondback-swap-mac-mbz",
+        "name": "Swap MAC for MBZ",
+        "description": "Swap the MAC for the following weapon: MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MBZ"
+        ]
+      },
+      {
+        "id": "south-diamondback-swap-mac-hac",
+        "name": "Swap MAC for HAC",
+        "description": "Swap the MAC for the following weapon: HAC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "HAC"
+        ]
+      },
+      {
+        "id": "south-diamondback-swap-mac-mrc",
+        "name": "Swap MAC for MRC",
+        "description": "Swap the MAC for the following weapon: MRC (AA).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MRC (AA)"
+        ]
+      },
+      {
+        "id": "south-diamondback-swap-lar-lar",
+        "name": "Swap LAR for LAR",
+        "description": "Swap the LAR for the following weapon: LAR (Guided).",
+        "tv": 1,
+        "removeWeapons": [
+          "LAR"
+        ],
+        "weapons": [
+          "LAR (Guided)"
+        ]
+      }
+    ]
   },
   {
     "id": "south-blackMamba",
@@ -496,6 +1060,150 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "south-blackMamba-swap-mac-mbz-2XLBZ",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MBZ, 2 x LBZs.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "2 x LBZ",
+            "weapons": [
+              "2 x LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-blackMamba-swap-mac-mgl-hac",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MGL, HAC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-blackMamba-swap-mac-mrl",
+        "name": "Swap MAC for MRL",
+        "description": "Swap the MAC for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      },
+      {
+        "id": "south-blackMamba-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "south-blackMamba-swap-lrp-him",
+        "name": "Swap LRP for HIM",
+        "description": "Swap the LRP for the following weapon: HIM.",
+        "tv": 0,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "HIM"
+        ]
+      },
+      {
+        "id": "south-blackMamba-swap-lrp-mrp-lm",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: MRP, LM, LAR.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "MRP",
+            "weapons": [
+              "MRP"
+            ]
+          },
+          {
+            "name": "LM",
+            "weapons": [
+              "LM"
+            ]
+          },
+          {
+            "name": "LAR",
+            "weapons": [
+              "LAR"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-blackMamba-swap-lrp-2XMRP-latm",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: 2 x MRPs, LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "2 x MRP",
+            "weapons": [
+              "2 x MRP"
+            ]
+          },
+          {
+            "name": "LATM (LA:2)",
+            "weapons": [
+              "LATM (LA:2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-blackMamba-add-shield",
+        "name": "Add Shield",
+        "description": "Add the following trait: Shield.",
+        "tv": 1,
+        "traits": [
+          "Shield"
+        ]
       }
     ]
   },
@@ -556,6 +1264,55 @@
         "traits": [
           "TD",
           "Sensor:24"
+        ]
+      },
+      {
+        "id": "south-rockMamba-swap-mac-mbz-lrbz",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MBZ, LRBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-rockMamba-swap-mac-hrf",
+        "name": "Swap MAC for HRF",
+        "description": "Swap the MAC for the following weapon: HRF.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "HRF"
+        ]
+      },
+      {
+        "id": "south-rockMamba-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
         ]
       }
     ]
@@ -627,6 +1384,43 @@
         "traits": [
           "SatUp"
         ]
+      },
+      {
+        "id": "south-waterViper-swap-mfc-mac-mrf",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: MAC, MRF.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-waterViper-swap-mfc-mgl",
+        "name": "Swap MFC for MGL",
+        "description": "Swap the MFC for the following weapon: MGL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "weapons": [
+          "MGL"
+        ]
       }
     ]
   },
@@ -684,6 +1478,69 @@
         "ew": 5,
         "traits": [
           "ECCM"
+        ]
+      },
+      {
+        "id": "south-mambaMP-swap-mfc-maclgl-mrf",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: MAC/LGL, MRF, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "MAC/LGL",
+            "weapons": [
+              "MAC/LGL"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-mambaMP-swap-mfc-mgl-hrf",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: MGL, HRF.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          },
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-mambaMP-add-shield",
+        "name": "Add Shield",
+        "description": "Add the following trait: Shield.",
+        "tv": 1,
+        "traits": [
+          "Shield"
         ]
       }
     ]
@@ -743,6 +1600,73 @@
         "traits": [
           "ECCM"
         ]
+      },
+      {
+        "id": "south-cobraMP-swap-lac-mfc",
+        "name": "Swap LAC for MFC",
+        "description": "Swap the LAC for the following weapon: MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MFC"
+        ]
+      },
+      {
+        "id": "south-cobraMP-swap-lac-mac-lgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-cobraMP-swap-lac-haclgl-mgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: HAC/LGL, MGL, HRF.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "HAC/LGL",
+            "weapons": [
+              "HAC/LGL"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          },
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -792,7 +1716,62 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-iguanaMP-swap-mfc-lsmg-lac",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: LSMG, LAC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LAC",
+            "weapons": [
+              "LAC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-iguanaMP-swap-mfc-lgl-lrbz",
+        "name": "Swap MFC",
+        "description": "Swap the MFC for one of the following weapons: LGL, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MFC"
+        ],
+        "options": [
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "south-salamander",
@@ -848,6 +1827,43 @@
         ],
         "traits": [
           "Climb"
+        ]
+      },
+      {
+        "id": "south-salamander-swap-maclfc-maclgl-maclfl",
+        "name": "Swap MAC/LFC",
+        "description": "Swap the MAC/LFC for one of the following weapons: MAC/LGL, MAC/LFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LFC"
+        ],
+        "options": [
+          {
+            "name": "MAC/LGL",
+            "weapons": [
+              "MAC/LGL"
+            ]
+          },
+          {
+            "name": "MAC/LFL",
+            "weapons": [
+              "MAC/LFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-salamander-swap-maclfc-hrf",
+        "name": "Swap MAC/LFC for HRF",
+        "description": "Swap the MAC/LFC for the following weapon: HRF.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LFC"
+        ],
+        "weapons": [
+          "HRF"
         ]
       }
     ]
@@ -906,6 +1922,32 @@
         "traits": [
           "Climb"
         ]
+      },
+      {
+        "id": "south-streetViper-swap-lrf-mfc",
+        "name": "Swap LRF for MFC",
+        "description": "Swap the LRF for the following weapon: MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "weapons": [
+          "MFC"
+        ]
+      },
+      {
+        "id": "south-streetViper-swap-lrf-lrc",
+        "name": "Swap LRF for LRC",
+        "description": "Swap the LRF for the following weapon: LRC (AA).",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "weapons": [
+          "LRC (AA)"
+        ]
       }
     ]
   },
@@ -954,7 +1996,38 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-asp-swap-lac-lsmg-lbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG (AI), LBZ, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG (AI)",
+            "weapons": [
+              "LSMG (AI)"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "south-basilisk",
@@ -1150,6 +2223,49 @@
         "traits": [
           "Brawl:1"
         ]
+      },
+      {
+        "id": "south-iguana-swap-lac-lsmg-lrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, LRF, LBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-iguana-swap-lac-mrf",
+        "name": "Swap LAC for MRF",
+        "description": "Swap the LAC for the following weapon: MRF.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MRF"
+        ]
       }
     ]
   },
@@ -1206,6 +2322,69 @@
         "traits": [
           "Sensor:24",
           "TD"
+        ]
+      },
+      {
+        "id": "south-paraIguana-swap-lac-lsmg-lrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, LRF, LBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          },
+          {
+            "name": "LBZ",
+            "weapons": [
+              "LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-paraIguana-swap-lac-mac-laclgl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LAC/LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LAC/LGL",
+            "weapons": [
+              "LAC/LGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-paraIguana-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
         ]
       }
     ]
@@ -1266,6 +2445,109 @@
           "SatUp",
           "ECCM"
         ]
+      },
+      {
+        "id": "south-ferDeLance-swap-mac-mrf-mbz",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MRF, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-ferDeLance-swap-mac-llc",
+        "name": "Swap MAC for LLC",
+        "description": "Swap the MAC for the following weapon: LLC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "LLC"
+        ]
+      },
+      {
+        "id": "south-ferDeLance-swap-mac-lpa-lrc",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: LPA, LRC (AA).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          },
+          {
+            "name": "LRC (AA)",
+            "weapons": [
+              "LRC (AA)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-ferDeLance-add-lm",
+        "name": "Add LM",
+        "description": "Add the following weapon: LM.",
+        "tv": 1,
+        "weapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "south-ferDeLance-add-mrp",
+        "name": "Add MRP",
+        "description": "Add the following weapon: MRP.",
+        "tv": 1,
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "south-ferDeLance-swap-mrp-latm",
+        "name": "Swap MRP for LATM",
+        "description": "Swap the MRP for the following weapon: LATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "LATM"
+        ]
+      },
+      {
+        "id": "south-ferDeLance-swap-mrp-matm",
+        "name": "Swap MRP for MATM",
+        "description": "Swap the MRP for the following weapon: MATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "MATM (LA:2)"
+        ]
       }
     ]
   },
@@ -1316,7 +2598,33 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-gila-swap-mrf-hsmglfc",
+        "name": "Swap MRF for HSMG/LFC",
+        "description": "Swap the MRF for the following weapon: HSMG/LFC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "weapons": [
+          "HSMG/LFC"
+        ]
+      },
+      {
+        "id": "south-gila-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "south-chameleon",
@@ -1369,7 +2677,40 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-chameleon-swap-lac-mac",
+        "name": "Swap LAC for MAC",
+        "description": "Swap the LAC for the following weapon: MAC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MAC"
+        ]
+      },
+      {
+        "id": "south-chameleon-add-lbz",
+        "name": "Add LBZ",
+        "description": "Add the following weapon: LBZ.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LBZ"
+        ]
+      },
+      {
+        "id": "south-chameleon-add-td",
+        "name": "Add TD",
+        "description": "Add the following Trait: TD.",
+        "tv": 1,
+        "traits": [
+          "TD"
+        ]
+      }
+    ]
   },
   {
     "id": "south-snakeyeBlackMamba",
@@ -1415,7 +2756,102 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-snakeyeBlackMamba-swap-mac-lsmg-maclgl",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: LSMG (Silent), MAC/LGL, MAC/LFC, 2 x LBZs.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG (Silent)",
+            "weapons": [
+              "LSMG (Silent)"
+            ]
+          },
+          {
+            "name": "MAC/LGL",
+            "weapons": [
+              "MAC/LGL"
+            ]
+          },
+          {
+            "name": "MAC/LFC",
+            "weapons": [
+              "MAC/LFC"
+            ]
+          },
+          {
+            "name": "2 x LBZ",
+            "weapons": [
+              "2 x LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-snakeyeBlackMamba-swap-mac-mac",
+        "name": "Swap MAC for MAC",
+        "description": "Swap the MAC for the following weapon: MAC (Silent).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MAC (Silent)"
+        ]
+      },
+      {
+        "id": "south-snakeyeBlackMamba-swap-mac-mlc-mrl",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MLC (Reflex), MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MLC (Reflex)",
+            "weapons": [
+              "MLC (Reflex)"
+            ]
+          },
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-snakeyeBlackMamba-add-lrp",
+        "name": "Add LRP",
+        "description": "Add the following weapon: LRP.",
+        "tv": 1,
+        "weapons": [
+          "LRP"
+        ]
+      },
+      {
+        "id": "south-snakeyeBlackMamba-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "south-greenMamba",
@@ -1464,7 +2900,86 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-greenMamba-swap-mac-mrf-lsmg",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MRF, LSMG (Silent), 2 x LBZs.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LSMG (Silent)",
+            "weapons": [
+              "LSMG (Silent)"
+            ]
+          },
+          {
+            "name": "2 x LBZ",
+            "weapons": [
+              "2 x LBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-greenMamba-swap-mac-mac-mrfSilent",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MAC (Silent), MRF (Silent, Precise+), HAC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          },
+          {
+            "name": "MRF (Silent",
+            "weapons": [
+              "MRF (Silent"
+            ]
+          },
+          {
+            "name": "Precise+)",
+            "weapons": [
+              "Precise+)"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-greenMamba-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "south-goldMamba",
@@ -1525,6 +3040,43 @@
         "ew": 4,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "south-goldMamba-swap-llc-lpa-mac",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: LPA, MAC (Silent).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          },
+          {
+            "name": "MAC (Silent)",
+            "weapons": [
+              "MAC (Silent)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-goldMamba-swap-llc-mrl",
+        "name": "Swap LLC for MRL",
+        "description": "Swap the LLC for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "weapons": [
+          "MRL"
         ]
       }
     ]
@@ -1614,6 +3166,59 @@
           "ECCM",
           "Vuln:H"
         ]
+      },
+      {
+        "id": "south-cobra-swap-hac-hrc",
+        "name": "Swap HAC for HRC",
+        "description": "Swap the HAC for the following weapon: HRC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "weapons": [
+          "HRC"
+        ]
+      },
+      {
+        "id": "south-cobra-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "south-cobra-add-mrp",
+        "name": "Add MRP",
+        "description": "Add the following weapon: MRP.",
+        "tv": 1,
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "south-cobra-swap-mrp-matm",
+        "name": "Swap MRP for MATM",
+        "description": "Swap the MRP for the following weapon: MATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "MATM"
+        ]
+      },
+      {
+        "id": "south-cobra-add-lm",
+        "name": "Add LM",
+        "description": "Add the following weapon: LM.",
+        "tv": 1,
+        "weapons": [
+          "LM"
+        ]
       }
     ]
   },
@@ -1663,7 +3268,41 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-kingCobra-swap-llc-hrc-mpa",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: HRC, MPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "HRC",
+            "weapons": [
+              "HRC"
+            ]
+          },
+          {
+            "name": "MPA",
+            "weapons": [
+              "MPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "south-kingCobra-add-mar",
+        "name": "Add MAR",
+        "description": "Add the following weapon: MAR.",
+        "tv": 2,
+        "weapons": [
+          "MAR"
+        ]
+      }
+    ]
   },
   {
     "id": "south-drake",
@@ -1748,6 +3387,25 @@
         "traits": [
           "SatUp",
           "ECCM"
+        ]
+      },
+      {
+        "id": "south-drake-add-mgl",
+        "name": "Add MGL",
+        "description": "Add the following weapon: MGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MGL"
+        ]
+      },
+      {
+        "id": "south-drake-add-mm",
+        "name": "Add MM",
+        "description": "Add the following weapon: MM.",
+        "tv": 1,
+        "weapons": [
+          "MM"
         ]
       }
     ]
@@ -2004,7 +3662,34 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "south-fireDragon-swap-mfl-lpl",
+        "name": "Swap MFL for LPL",
+        "description": "Swap the MFL for the following weapon: LPL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MFL"
+        ],
+        "weapons": [
+          "LPL"
+        ]
+      },
+      {
+        "id": "south-fireDragon-swap-mfl-msc",
+        "name": "Swap MFL for MSC",
+        "description": "Swap the MFL for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MFL"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      }
+    ]
   },
   {
     "id": "south-hun",
@@ -2275,6 +3960,15 @@
           "SatUp",
           "ECM",
           "ECCM"
+        ]
+      },
+      {
+        "id": "south-hetairoi-add-sensor24",
+        "name": "Add Sensor:24",
+        "description": "Add the following trait: Sensor:24.",
+        "tv": 1,
+        "traits": [
+          "Sensor:24"
         ]
       }
     ]

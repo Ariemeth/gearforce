@@ -44,7 +44,51 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "nj-initiate-swap-msmg-lpl-lsc",
+        "name": "Swap MSMG",
+        "description": "Swap the MSMG for one of the following weapons: LPL, LSC, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MSMG"
+        ],
+        "options": [
+          {
+            "name": "LPL",
+            "weapons": [
+              "LPL"
+            ]
+          },
+          {
+            "name": "LSC",
+            "weapons": [
+              "LSC"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nj-initiate-swap-msmg-mpc",
+        "name": "Swap MSMG for MPC",
+        "description": "Swap the MSMG for the following weapon: MPC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MSMG"
+        ],
+        "weapons": [
+          "MPC"
+        ]
+      }
+    ]
   },
   {
     "id": "nj-apostle",
@@ -91,7 +135,56 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "nj-apostle-swap-lpl-llc-lpa",
+        "name": "Swap LPL",
+        "description": "Swap the LPL for one of the following weapons: LLC, LPA.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LPL"
+        ],
+        "options": [
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nj-apostle-swap-lpl-mrl-mgl",
+        "name": "Swap LPL",
+        "description": "Swap the LPL for one of the following weapons: MRL, MGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LPL"
+        ],
+        "options": [
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "nj-disciple",
@@ -337,7 +430,43 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "nj-paladin-swap-lfg-lrg",
+        "name": "Swap LFG for LRG",
+        "description": "Swap the LFG for the following weapon: LRG.",
+        "tv": 0,
+        "removeWeapons": [
+          "LFG"
+        ],
+        "weapons": [
+          "LRG"
+        ]
+      },
+      {
+        "id": "nj-paladin-swap-lfg-2XMRC-2XMSC",
+        "name": "Swap LFG",
+        "description": "Swap the LFG for one of the following weapons: 2 x MRCs, 2 x MSCs.",
+        "tv": 1,
+        "removeWeapons": [
+          "LFG"
+        ],
+        "options": [
+          {
+            "name": "2 x MRC",
+            "weapons": [
+              "2 x MRC"
+            ]
+          },
+          {
+            "name": "2 x MSC",
+            "weapons": [
+              "2 x MSC"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "nj-hakham",
@@ -387,7 +516,54 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "nj-hakham-swap-mpl-mpa",
+        "name": "Swap MPL for MPA",
+        "description": "Swap the MPL for the following weapon: MPA.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MPL"
+        ],
+        "weapons": [
+          "MPA"
+        ]
+      },
+      {
+        "id": "nj-hakham-swap-mpl-hrl-hpc",
+        "name": "Swap MPL",
+        "description": "Swap the MPL for one of the following weapons: HRL, HPC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MPL"
+        ],
+        "options": [
+          {
+            "name": "HRL",
+            "weapons": [
+              "HRL"
+            ]
+          },
+          {
+            "name": "HPC",
+            "weapons": [
+              "HPC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nj-hakham-add-ams",
+        "name": "Add AMS",
+        "description": "Add the following trait: AMS.",
+        "tv": 1,
+        "traits": [
+          "AMS"
+        ]
+      }
+    ]
   },
   {
     "id": "nj-prioress",
@@ -713,6 +889,34 @@
         "tv": 1,
         "hull": 4,
         "structure": 4
+      },
+      {
+        "id": "nj-kwaja-add-ligl",
+        "name": "Add LIGL",
+        "description": "Add the following weapon: LIGL.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LIGL"
+        ]
+      },
+      {
+        "id": "nj-kwaja-add-liatm",
+        "name": "Add LIATM",
+        "description": "Add the following weapon: LIATM.",
+        "tv": 1,
+        "weapons": [
+          "LIATM"
+        ]
+      },
+      {
+        "id": "nj-kwaja-add-eccm",
+        "name": "Add ECCM",
+        "description": "Add the following trait: ECCM.",
+        "tv": 1,
+        "traits": [
+          "ECCM"
+        ]
       }
     ]
   },

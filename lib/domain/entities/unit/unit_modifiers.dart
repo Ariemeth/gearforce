@@ -79,4 +79,40 @@ class UnitModifiers {
   static WeaponsMod addWeapons(List<WeaponSpec> weaponsToAdd) {
     return (weapons, context) => [...weapons, ...weaponsToAdd];
   }
+
+  /// Mod function to swap weapons (remove specified codes and add new specs).
+  static WeaponsMod swapWeapons({
+    List<String> removeWeaponCodes = const [],
+    List<WeaponSpec> defaultWeaponsToAdd = const [],
+    Map<String, List<WeaponSpec>>? optionWeaponsMap,
+  }) {
+    return (weapons, context) {
+      var result = List<WeaponSpec>.from(weapons);
+
+      if (removeWeaponCodes.isNotEmpty) {
+        for (final removeCode in removeWeaponCodes) {
+          final cleanCode = removeCode.trim().toUpperCase();
+          final index = result.indexWhere((spec) {
+            if (spec.code.toUpperCase() == cleanCode) return true;
+            return spec.weapons.any((w) => w.code.toUpperCase() == cleanCode);
+          });
+          if (index != -1) {
+            result.removeAt(index);
+          }
+        }
+      }
+
+      List<WeaponSpec> weaponsToAdd = defaultWeaponsToAdd;
+      if (optionWeaponsMap != null && context.upgrade.upgradeOption != null) {
+        final selected = context.upgrade.upgradeOption!.selectedOption;
+        if (selected != null && optionWeaponsMap.containsKey(selected)) {
+          weaponsToAdd = optionWeaponsMap[selected]!;
+        } else if (optionWeaponsMap.isNotEmpty) {
+          weaponsToAdd = optionWeaponsMap.values.first;
+        }
+      }
+
+      return [...result, ...weaponsToAdd];
+    };
+  }
 }

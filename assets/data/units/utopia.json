@@ -74,6 +74,18 @@
         "traits": [
           "VTOL"
         ]
+      },
+      {
+        "id": "utopia-commandoArmiger-swap-mrp-latm",
+        "name": "Swap MRP for LATM",
+        "description": "Swap the MRP for the following weapon: LATM (LA:2).",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
       }
     ]
   },
@@ -151,6 +163,36 @@
         "traits": [
           "VTOL"
         ]
+      },
+      {
+        "id": "utopia-commandoNKIDU-add-lrp",
+        "name": "Add LRP",
+        "description": "Add the following weapon: LRP.",
+        "tv": 1,
+        "weapons": [
+          "LRP"
+        ]
+      },
+      {
+        "id": "utopia-commandoNKIDU-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP (Guided).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP (Guided)"
+        ]
+      },
+      {
+        "id": "utopia-commandoNKIDU-add-sensor24",
+        "name": "Add Sensor:24",
+        "description": "Add the following trait: Sensor:24.",
+        "tv": 1,
+        "traits": [
+          "Sensor:24"
+        ]
       }
     ]
   },
@@ -203,7 +245,53 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "utopia-recceArmiger-swap-llc-mrl-llc",
+        "name": "Swap LLC",
+        "description": "Swap the LLC for one of the following weapons: MRL, LLC (Reflex).",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LLC"
+        ],
+        "options": [
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          },
+          {
+            "name": "LLC (Reflex)",
+            "weapons": [
+              "LLC (Reflex)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "utopia-recceArmiger-swap-mrp-latm",
+        "name": "Swap MRP for LATM",
+        "description": "Swap the MRP for the following weapon: LATM (LA:2).",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
+      },
+      {
+        "id": "utopia-recceArmiger-add-resisth",
+        "name": "Add Resist:H",
+        "description": "Add the following trait: Resist:H.",
+        "tv": 1,
+        "traits": [
+          "Resist:H"
+        ]
+      }
+    ]
   },
   {
     "id": "utopia-recceNKIDU",
@@ -260,7 +348,65 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "utopia-recceNKIDU-swap-himg-hilw-lfc",
+        "name": "Swap HIMG",
+        "description": "Swap the HIMG for one of the following weapons: HILW, LFC (Silent), HIC (AP:1, Silent).",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HIMG"
+        ],
+        "options": [
+          {
+            "name": "HILW",
+            "weapons": [
+              "HILW"
+            ]
+          },
+          {
+            "name": "LFC (Silent)",
+            "weapons": [
+              "LFC (Silent)"
+            ]
+          },
+          {
+            "name": "HIC (AP:1",
+            "weapons": [
+              "HIC (AP:1"
+            ]
+          },
+          {
+            "name": "Silent)",
+            "weapons": [
+              "Silent)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "utopia-recceNKIDU-add-lrp",
+        "name": "Add LRP",
+        "description": "Add the following weapon: LRP.",
+        "tv": 1,
+        "weapons": [
+          "LRP"
+        ]
+      },
+      {
+        "id": "utopia-recceNKIDU-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP (Guided).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP (Guided)"
+        ]
+      }
+    ]
   },
   {
     "id": "utopia-supportArmiger",
@@ -309,7 +455,20 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "utopia-supportArmiger-swap-mm-matm",
+        "name": "Swap MM for MATM",
+        "description": "Swap the MM for the following weapon: MATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "MM"
+        ],
+        "weapons": [
+          "MATM"
+        ]
+      }
+    ]
   },
   {
     "id": "utopia-supportNKIDU",
@@ -366,7 +525,43 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "utopia-supportNKIDU-swap-mrp-lm",
+        "name": "Swap MRP for LM",
+        "description": "Swap the MRP for the following weapon: LM.",
+        "tv": 0,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "weapons": [
+          "LM"
+        ]
+      },
+      {
+        "id": "utopia-supportNKIDU-swap-mrp-mrp-latm",
+        "name": "Swap MRP",
+        "description": "Swap the MRP for one of the following weapons: MRP (Guided), LATM (LA:2).",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "options": [
+          {
+            "name": "MRP (Guided)",
+            "weapons": [
+              "MRP (Guided)"
+            ]
+          },
+          {
+            "name": "LATM (LA:2)",
+            "weapons": [
+              "LATM (LA:2)"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "utopia-engineeringArmiger",
@@ -408,7 +603,17 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "utopia-engineeringArmiger-add-resisth",
+        "name": "Add Resist:H",
+        "description": "Add the following trait: Resist:H.",
+        "tv": 1,
+        "traits": [
+          "Resist:H"
+        ]
+      }
+    ]
   },
   {
     "id": "utopia-engineeringNKIDU",
@@ -505,6 +710,42 @@
         "traits": [
           "Stealth (Aux)"
         ]
+      },
+      {
+        "id": "utopia-trooperApe-swap-lsmgmigl-mfl",
+        "name": "Swap LSMG/MIGL for MFL",
+        "description": "Swap the LSMG/MIGL for the following weapon: MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG/MIGL"
+        ],
+        "weapons": [
+          "MFL"
+        ]
+      },
+      {
+        "id": "utopia-trooperApe-swap-lsmgmigl-lgl",
+        "name": "Swap LSMG/MIGL for LGL",
+        "description": "Swap the LSMG/MIGL for the following weapon: LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG/MIGL"
+        ],
+        "weapons": [
+          "LGL"
+        ]
+      },
+      {
+        "id": "utopia-trooperApe-add-lrp",
+        "name": "Add LRP",
+        "description": "Add the following weapon: LRP.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LRP"
+        ]
       }
     ]
   },
@@ -561,6 +802,49 @@
         "ew": 5,
         "traits": [
           "Stealth (Aux)"
+        ]
+      },
+      {
+        "id": "utopia-supportApe-swap-mrfmigl-msmgmigl-lgl",
+        "name": "Swap MRF/MIGL",
+        "description": "Swap the MRF/MIGL for one of the following weapons: MSMG/MIGL, LGL, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF/MIGL"
+        ],
+        "options": [
+          {
+            "name": "MSMG/MIGL",
+            "weapons": [
+              "MSMG/MIGL"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "utopia-supportApe-swap-mrfmigl-mrl",
+        "name": "Swap MRF/MIGL for MRL",
+        "description": "Swap the MRF/MIGL for the following weapon: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF/MIGL"
+        ],
+        "weapons": [
+          "MRL"
         ]
       }
     ]

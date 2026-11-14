@@ -66,6 +66,120 @@
         "traits": [
           "ECM"
         ]
+      },
+      {
+        "id": "peaceriver-warrior-swap-lac-mfc-mfl",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MFC, MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "MFL",
+            "weapons": [
+              "MFL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-warrior-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LGL, MBZ, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-warrior-swap-lac-msc",
+        "name": "Swap LAC for MSC",
+        "description": "Swap the LAC for the following weapon: MSC.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MSC"
+        ]
+      },
+      {
+        "id": "peaceriver-warrior-swap-lrp-2XLRP-mrp",
+        "name": "Swap LRP",
+        "description": "Swap the LRP for one of the following weapons: 2 x LRPs, MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "options": [
+          {
+            "name": "2 x LRP",
+            "weapons": [
+              "2 x LRP"
+            ]
+          },
+          {
+            "name": "MRP",
+            "weapons": [
+              "MRP"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-warrior-swap-lrp-latm",
+        "name": "Swap LRP for LATM",
+        "description": "Swap the LRP for the following weapon: LATM (LA:2).",
+        "tv": 2,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "LATM (LA:2)"
+        ]
       }
     ]
   },
@@ -145,6 +259,99 @@
         "gu": 0,
         "pi": 0,
         "ew": 0
+      },
+      {
+        "id": "peaceriver-warriorIV-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LLC, LGL, MBZ, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-warriorIV-swap-lac-mrl",
+        "name": "Swap LAC for MRL",
+        "description": "Swap the LAC for the following weapon: MRL.",
+        "tv": 3,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MRL"
+        ]
+      },
+      {
+        "id": "peaceriver-warriorIV-swap-mrp-2XMRP-latm",
+        "name": "Swap MRP",
+        "description": "Swap the MRP for one of the following weapons: 2 x MRPs, LATM (LA:2).",
+        "tv": 1,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "options": [
+          {
+            "name": "2 x MRP",
+            "weapons": [
+              "2 x MRP"
+            ]
+          },
+          {
+            "name": "LATM (LA:2)",
+            "weapons": [
+              "LATM (LA:2)"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-warriorIV-add-jetpack6",
+        "name": "Add Jetpack:6",
+        "description": "Add the following trait: Jetpack:6.",
+        "tv": 1,
+        "traits": [
+          "Jetpack:6"
+        ]
       }
     ]
   },
@@ -207,7 +414,102 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "peaceriver-jackal-swap-lac-lsmg-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, MFC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-jackal-swap-lac-mac-mbz",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-jackal-swap-laclgl-mrl",
+        "name": "Swap LAC/LGL",
+        "description": "Swap the LAC/LGL for one of the following weapons: MRL.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC/LGL"
+        ],
+        "options": [
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-jackal-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "peaceriver-jackal-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      }
+    ]
   },
   {
     "id": "peaceriver-gladiator",
@@ -255,7 +557,81 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "peaceriver-gladiator-swap-mac-mbz-lrbz",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MBZ, LRBZ",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-gladiator-swap-mac-2XMAC-hac",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: 2 x MACs, HAC, MSC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "2 x MAC",
+            "weapons": [
+              "2 x MAC"
+            ]
+          },
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-gladiator-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "peaceriver-gladiator-add-shield",
+        "name": "Add Shield",
+        "description": "Add the following trait: Shield.",
+        "tv": 1,
+        "traits": [
+          "Shield"
+        ]
+      }
+    ]
   },
   {
     "id": "peaceriver-pitBull",
@@ -314,6 +690,49 @@
         "traits": [
           "ECM",
           "Sensor:24 (Aux)"
+        ]
+      },
+      {
+        "id": "peaceriver-pitBull-swap-lac-lsmg-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, MFC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-pitBull-swap-lac-lrbz",
+        "name": "Swap LAC for LRBZ",
+        "description": "Swap the LAC for the following weapon: LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "LRBZ"
         ]
       }
     ]
@@ -386,6 +805,52 @@
         "traits": [
           "TD",
           "Sensor:36"
+        ]
+      },
+      {
+        "id": "peaceriver-harrier-swap-mrf-llc",
+        "name": "Swap MRF for LLC",
+        "description": "Swap the MRF for the following weapon: LLC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "weapons": [
+          "LLC"
+        ]
+      },
+      {
+        "id": "peaceriver-harrier-swap-mrf-hrf-lpa",
+        "name": "Swap MRF",
+        "description": "Swap the MRF for one of the following weapons: HRF, LPA.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF"
+        ],
+        "options": [
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-harrier-add-jetpack6",
+        "name": "Add Jetpack:6",
+        "description": "Add the following trait: Jetpack:6.",
+        "tv": 1,
+        "traits": [
+          "Jetpack:6"
         ]
       }
     ]
@@ -499,7 +964,32 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "peaceriver-stalker-swap-maclgl-llc-lrbz",
+        "name": "Swap MAC/LGL",
+        "description": "Swap the MAC/LGL for one of the following weapons: LLC, LRBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC/LGL"
+        ],
+        "options": [
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "peaceriver-skirmisher",
@@ -590,6 +1080,36 @@
         "gu": 0,
         "pi": 0,
         "ew": 0
+      },
+      {
+        "id": "peaceriver-skirmisher-swap-lac-mac-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, MRF, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -656,6 +1176,66 @@
         "traits": [
           "TD",
           "Sensor:36"
+        ]
+      },
+      {
+        "id": "peaceriver-perseus-swap-lac-lsmg-mfc",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LSMG, MFC, LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LSMG",
+            "weapons": [
+              "LSMG"
+            ]
+          },
+          {
+            "name": "MFC",
+            "weapons": [
+              "MFC"
+            ]
+          },
+          {
+            "name": "LRF",
+            "weapons": [
+              "LRF"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-perseus-swap-lac-lrbz-mrf",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: LRBZ, MRF, MAC/LFC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          },
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "MAC/LFC",
+            "weapons": [
+              "MAC/LFC"
+            ]
+          }
         ]
       }
     ]
@@ -738,6 +1318,142 @@
         "traits": [
           "Brawl:1"
         ]
+      },
+      {
+        "id": "peaceriver-shinobi-swap-lac-mfc",
+        "name": "Swap LAC for MFC",
+        "description": "Swap the LAC for the following weapon: MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MFC"
+        ]
+      },
+      {
+        "id": "peaceriver-shinobi-swap-lac-mac-lrfPrecise",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC, LRF (Precise+, Silent), LLC, LRBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC",
+            "weapons": [
+              "MAC"
+            ]
+          },
+          {
+            "name": "LRF (Precise+",
+            "weapons": [
+              "LRF (Precise+"
+            ]
+          },
+          {
+            "name": "Silent)",
+            "weapons": [
+              "Silent)"
+            ]
+          },
+          {
+            "name": "LLC",
+            "weapons": [
+              "LLC"
+            ]
+          },
+          {
+            "name": "LRBZ",
+            "weapons": [
+              "LRBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-shinobi-swap-lac-macReflex-silent",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: MAC (Reflex, Silent), LPA.",
+        "tv": 2,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "MAC (Reflex",
+            "weapons": [
+              "MAC (Reflex"
+            ]
+          },
+          {
+            "name": "Silent)",
+            "weapons": [
+              "Silent)"
+            ]
+          },
+          {
+            "name": "LPA",
+            "weapons": [
+              "LPA"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-shinobi-swap-lac-hrfPrecise-silent",
+        "name": "Swap LAC",
+        "description": "Swap the LAC for one of the following weapons: HRF (Precise+, Silent), MRL.",
+        "tv": 3,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "options": [
+          {
+            "name": "HRF (Precise+",
+            "weapons": [
+              "HRF (Precise+"
+            ]
+          },
+          {
+            "name": "Silent)",
+            "weapons": [
+              "Silent)"
+            ]
+          },
+          {
+            "name": "MRL",
+            "weapons": [
+              "MRL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-shinobi-swap-lrp-mrp",
+        "name": "Swap LRP for MRP",
+        "description": "Swap the LRP for the following weapon: MRP.",
+        "tv": 1,
+        "removeWeapons": [
+          "LRP"
+        ],
+        "weapons": [
+          "MRP"
+        ]
+      },
+      {
+        "id": "peaceriver-shinobi-add-td",
+        "name": "Add TD",
+        "description": "Add the following trait: TD.",
+        "tv": 1,
+        "traits": [
+          "TD"
+        ]
       }
     ]
   },
@@ -797,6 +1513,39 @@
           "ECM",
           "Sensor:24"
         ]
+      },
+      {
+        "id": "peaceriver-spartan-swap-hac-hrf-mgl",
+        "name": "Swap HAC",
+        "description": "Swap the HAC for one of the following weapons: HRF, MGL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "options": [
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          },
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-spartan-add-lm",
+        "name": "Add LM",
+        "description": "Add the following weapon: LM.",
+        "tv": 1,
+        "weapons": [
+          "LM"
+        ]
       }
     ]
   },
@@ -848,7 +1597,51 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "peaceriver-mustang-swap-mac-mbz",
+        "name": "Swap MAC for MBZ",
+        "description": "Swap the MAC for the following weapon: MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "weapons": [
+          "MBZ"
+        ]
+      },
+      {
+        "id": "peaceriver-mustang-swap-mac-hac-msc",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HAC, MSC, HBZ.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HAC",
+            "weapons": [
+              "HAC"
+            ]
+          },
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          },
+          {
+            "name": "HBZ",
+            "weapons": [
+              "HBZ"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "peaceriver-myrmidon",
@@ -954,7 +1747,54 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "peaceriver-crusader-swap-hac-msc-lfg",
+        "name": "Swap HAC",
+        "description": "Swap the HAC for one of the following weapons: MSC, LFG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "options": [
+          {
+            "name": "MSC",
+            "weapons": [
+              "MSC"
+            ]
+          },
+          {
+            "name": "LFG",
+            "weapons": [
+              "LFG"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-crusader-add-mvb",
+        "name": "Add MVB",
+        "description": "Add the following weapon: MVB.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "MVB"
+        ]
+      },
+      {
+        "id": "peaceriver-crusader-swap-lm-mm",
+        "name": "Swap LM for MM",
+        "description": "Swap the LM for the following weapon: MM.",
+        "tv": 1,
+        "removeWeapons": [
+          "LM"
+        ],
+        "weapons": [
+          "MM"
+        ]
+      }
+    ]
   },
   {
     "id": "peaceriver-agamemnon",
@@ -1002,7 +1842,44 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "peaceriver-agamemnon-swap-lrg-hbz-lfg",
+        "name": "Swap LRG",
+        "description": "Swap the LRG for one of the following weapons: HBZ, LFG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LRG"
+        ],
+        "options": [
+          {
+            "name": "HBZ",
+            "weapons": [
+              "HBZ"
+            ]
+          },
+          {
+            "name": "LFG",
+            "weapons": [
+              "LFG"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peaceriver-agamemnon-swap-mm-matm",
+        "name": "Swap MM for MATM",
+        "description": "Swap the MM for the following weapon: MATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "MM"
+        ],
+        "weapons": [
+          "MATM"
+        ]
+      }
+    ]
   },
   {
     "id": "peaceriver-argos",
@@ -1056,6 +1933,65 @@
         "ew": 4,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "peaceriver-argos-swap-msc-hbz",
+        "name": "Swap MSC for HBZ",
+        "description": "Swap the MSC for the following weapon: HBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MSC"
+        ],
+        "weapons": [
+          "HBZ"
+        ]
+      },
+      {
+        "id": "peaceriver-argos-swap-msc-hrc",
+        "name": "Swap MSC for HRC",
+        "description": "Swap the MSC for the following weapon: HRC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MSC"
+        ],
+        "weapons": [
+          "HRC"
+        ]
+      },
+      {
+        "id": "peaceriver-argos-add-hrp",
+        "name": "Add HRP",
+        "description": "Add the following weapon: HRP.",
+        "tv": 1,
+        "weapons": [
+          "HRP"
+        ]
+      },
+      {
+        "id": "peaceriver-argos-swap-hrp-mar",
+        "name": "Swap HRP for MAR",
+        "description": "Swap the HRP for the following weapon: MAR.",
+        "tv": 0,
+        "removeWeapons": [
+          "HRP"
+        ],
+        "weapons": [
+          "MAR"
+        ]
+      },
+      {
+        "id": "peaceriver-argos-swap-hrp-matm",
+        "name": "Swap HRP for MATM",
+        "description": "Swap the HRP for the following weapon: MATM.",
+        "tv": 1,
+        "removeWeapons": [
+          "HRP"
+        ],
+        "weapons": [
+          "MATM"
         ]
       }
     ]
@@ -1117,6 +2053,44 @@
         "traits": [
           "ECCM",
           "Init+"
+        ]
+      },
+      {
+        "id": "peaceriver-cataphract-swap-hrc-mrg",
+        "name": "Swap HRC for MRG",
+        "description": "Swap the HRC for the following weapon: MRG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HRC"
+        ],
+        "weapons": [
+          "MRG"
+        ]
+      },
+      {
+        "id": "peaceriver-cataphract-swap-hrc-mtg",
+        "name": "Swap HRC for MTG",
+        "description": "Swap the HRC for the following weapon: MTG.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "HRC"
+        ],
+        "weapons": [
+          "MTG"
+        ]
+      },
+      {
+        "id": "peaceriver-cataphract-swap-mm-latm",
+        "name": "Swap MM for LATM",
+        "description": "Swap the MM for the following weapon: LATM (Precise).",
+        "tv": 1,
+        "removeWeapons": [
+          "MM"
+        ],
+        "weapons": [
+          "LATM (Precise)"
         ]
       }
     ]
@@ -1230,7 +2204,17 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "peaceriver-hyenaII-add-satup",
+        "name": "Add SatUp",
+        "description": "Add the following trait: SatUp.",
+        "tv": 1,
+        "traits": [
+          "SatUp"
+        ]
+      }
+    ]
   },
   {
     "id": "peaceriver-coyote",
@@ -1286,6 +2270,15 @@
         "traits": [
           "SatUp",
           "ECCM"
+        ]
+      },
+      {
+        "id": "peaceriver-coyote-add-init",
+        "name": "Add Init+",
+        "description": "Add the following trait: Init+.",
+        "tv": 1,
+        "traits": [
+          "Init+"
         ]
       }
     ]

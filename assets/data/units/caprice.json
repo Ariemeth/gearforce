@@ -45,7 +45,32 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "caprice-f32Maru-swap-lrf-lsmg-lsc",
+        "name": "Swap LRF",
+        "description": "Swap the LRF for one of the following weapons: LSMG (AI), LSC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LRF"
+        ],
+        "options": [
+          {
+            "name": "LSMG (AI)",
+            "weapons": [
+              "LSMG (AI)"
+            ]
+          },
+          {
+            "name": "LSC",
+            "weapons": [
+              "LSC"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "caprice-f55Zikru",
@@ -105,6 +130,32 @@
           "ECCM",
           "Sensor:36"
         ]
+      },
+      {
+        "id": "caprice-f55Zikru-swap-lac-mfc",
+        "name": "Swap LAC for MFC",
+        "description": "Swap the LAC for the following weapon: MFC.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "MFC"
+        ]
+      },
+      {
+        "id": "caprice-f55Zikru-swap-lac-lgl",
+        "name": "Swap LAC for LGL",
+        "description": "Swap the LAC for the following weapon: LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LAC"
+        ],
+        "weapons": [
+          "LGL"
+        ]
       }
     ]
   },
@@ -156,7 +207,32 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "caprice-f112Rabbu-swap-mac-hsmg-hrf",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: HSMG, HRF.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "HSMG",
+            "weapons": [
+              "HSMG"
+            ]
+          },
+          {
+            "name": "HRF",
+            "weapons": [
+              "HRF"
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "caprice-f27Sarru",
@@ -207,7 +283,34 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "caprice-f27Sarru-swap-hac-lrg",
+        "name": "Swap HAC for LRG",
+        "description": "Swap the HAC for the following weapon: LRG.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "weapons": [
+          "LRG"
+        ]
+      },
+      {
+        "id": "caprice-f27Sarru-swap-hac-hrc",
+        "name": "Swap HAC for HRC",
+        "description": "Swap the HAC for the following weapon: HRC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "HAC"
+        ],
+        "weapons": [
+          "HRC"
+        ]
+      }
+    ]
   },
   {
     "id": "caprice-acco",
@@ -392,7 +495,17 @@
         ]
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "caprice-aphek-add-lm",
+        "name": "Add LM",
+        "description": "Add the following weapon: LM.",
+        "tv": 1,
+        "weapons": [
+          "LM"
+        ]
+      }
+    ]
   },
   {
     "id": "caprice-anab",
@@ -486,7 +599,21 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "caprice-kadesh-swap-mrc-mpa",
+        "name": "Swap MRC for MPA",
+        "description": "Swap the MRC for the following weapon: MPA.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MRC"
+        ],
+        "weapons": [
+          "MPA"
+        ]
+      }
+    ]
   },
   {
     "id": "caprice-meggido",
@@ -607,7 +734,17 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "caprice-ammon-add-ecm",
+        "name": "Add ECM",
+        "description": "Add the following trait: ECM.",
+        "tv": 1,
+        "traits": [
+          "ECM"
+        ]
+      }
+    ]
   },
   {
     "id": "caprice-moab",

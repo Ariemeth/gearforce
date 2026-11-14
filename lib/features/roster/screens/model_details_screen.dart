@@ -230,42 +230,107 @@ class _ModelUpgradesSection extends StatelessWidget {
               else
                 ...availableUpgrades.map((upgrade) {
                   final isEnabled = model.hasModelUpgrade(upgrade.id);
+                  final rosterState = context.watch<RosterCubit>().state;
+                  final meetsRequirement = upgrade.requirementCheck(
+                    rosterState,
+                    squad,
+                    model,
+                  );
+
+                  // Retrieve current active upgrade instance on model (which holds option state)
+                  final activeUpgrade = isEnabled
+                      ? model.selectedModelUpgrades.firstWhere(
+                          (u) => u.id == upgrade.id,
+                          orElse: () => upgrade,
+                        )
+                      : upgrade;
+
                   final summary = _buildUpgradeChangeSummary(
                     model: model,
-                    upgrade: upgrade,
+                    upgrade: activeUpgrade,
                   );
 
                   final subtitleParts = <String>[
+                    if (!meetsRequirement && !isEnabled)
+                      'Prerequisites not met',
                     if (summary.inlineSummary.isNotEmpty) summary.inlineSummary,
                     if (upgrade.description.isNotEmpty) upgrade.description,
                   ];
 
-                  return CheckboxListTile(
-                    value: isEnabled,
-                    dense: true,
-                    contentPadding: EdgeInsets.zero,
-                    controlAffinity: ListTileControlAffinity.leading,
-                    title: Text(upgrade.name),
-                    subtitle: subtitleParts.isEmpty
-                        ? null
-                        : Text(subtitleParts.join(' • ')),
-                    secondary: Tooltip(
-                      message: summary.tooltip,
-                      waitDuration: const Duration(milliseconds: 300),
-                      child: const Icon(Icons.info_outline, size: 18),
-                    ),
-                    onChanged: (value) {
-                      if (value == null) {
-                        return;
-                      }
+                  final upgradeOption = activeUpgrade.upgradeOption;
+                  final availableOptions =
+                      upgradeOption?.optionsGenerator() ?? [];
 
-                      context.read<RosterCubit>().updateModelUpgradeEnabled(
-                        squad: squad,
-                        model: model,
-                        upgrade: upgrade,
-                        enabled: value,
-                      );
-                    },
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CheckboxListTile(
+                        value: isEnabled,
+                        dense: true,
+                        enabled: isEnabled || meetsRequirement,
+                        contentPadding: EdgeInsets.zero,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: Text(upgrade.name),
+                        subtitle: subtitleParts.isEmpty
+                            ? null
+                            : Text(subtitleParts.join(' • ')),
+                        secondary: Tooltip(
+                          message: summary.tooltip,
+                          waitDuration: const Duration(milliseconds: 300),
+                          child: const Icon(Icons.info_outline, size: 18),
+                        ),
+                        onChanged: (value) {
+                          if (value == null) {
+                            return;
+                          }
+
+                          context.read<RosterCubit>().updateModelUpgradeEnabled(
+                            squad: squad,
+                            model: model,
+                            upgrade: upgrade,
+                            enabled: value,
+                          );
+                        },
+                      ),
+                      if (isEnabled && availableOptions.length > 1)
+                        Padding(
+                          padding: const EdgeInsets.only(left: 32, bottom: 8),
+                          child: Row(
+                            children: [
+                              const Text(
+                                'Option: ',
+                                style: AppTheme.subtitleStyle,
+                              ),
+                              DropdownButton<String>(
+                                value:
+                                    availableOptions.contains(
+                                      upgradeOption?.selectedOption,
+                                    )
+                                    ? upgradeOption?.selectedOption
+                                    : availableOptions.first,
+                                isDense: true,
+                                items: availableOptions.map((opt) {
+                                  return DropdownMenuItem<String>(
+                                    value: opt,
+                                    child: Text(opt),
+                                  );
+                                }).toList(),
+                                onChanged: (newOption) {
+                                  if (newOption == null) return;
+                                  context
+                                      .read<RosterCubit>()
+                                      .updateModelUpgradeOption(
+                                        squad: squad,
+                                        model: model,
+                                        upgrade: activeUpgrade,
+                                        selectedOption: newOption,
+                                      );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                    ],
                   );
                 }),
             ],
@@ -290,6 +355,10 @@ _UpgradeSummary _buildUpgradeChangeSummary({
 
   void addNumericDelta(String label, int before, int after) {
     if (before == after) {
+      if (label == 'TV') {
+        inlineParts.add('TV 0');
+        tooltipLines.add('TV: 0');
+      }
       return;
     }
 
@@ -342,28 +411,23 @@ _UpgradeSummary _buildUpgradeChangeSummary({
   final removedTraits = baseTraits.difference(upgradedTraits).toList()..sort();
 
   if (addedTraits.isNotEmpty) {
-    final added = addedTraits.take(2).join(', ');
-    inlineParts.add('+Traits: $added${addedTraits.length > 2 ? ', …' : ''}');
-    tooltipLines.add('Added traits: ${addedTraits.join(', ')}');
+    final added = addedTraits.join(', ');
+    inlineParts.add('+Traits: $added');
+    tooltipLines.add('Added traits: $added');
   }
 
   if (removedTraits.isNotEmpty) {
-    final removed = removedTraits.take(2).join(', ');
-    inlineParts.add(
-      '-Traits: $removed${removedTraits.length > 2 ? ', …' : ''}',
-    );
-    tooltipLines.add('Removed traits: ${removedTraits.join(', ')}');
+    final removed = removedTraits.join(', ');
+    inlineParts.add('-Traits: $removed');
+    tooltipLines.add('Removed traits: $removed');
   }
 
   if (inlineParts.isEmpty) {
-    return const _UpgradeSummary(
-      inlineSummary: 'No stat changes detected',
-      tooltip: 'No stat changes detected for this upgrade.',
-    );
+    return const _UpgradeSummary(inlineSummary: 'TV 0', tooltip: 'TV cost: 0.');
   }
 
   return _UpgradeSummary(
-    inlineSummary: inlineParts.take(3).join(' · '),
+    inlineSummary: inlineParts.join(' · '),
     tooltip: tooltipLines.join('\n'),
   );
 }

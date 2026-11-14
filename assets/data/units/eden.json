@@ -51,6 +51,42 @@
           "Airdrop",
           "Stealth (Aux)"
         ]
+      },
+      {
+        "id": "eden-constable-swap-lsmgmigl-mfl",
+        "name": "Swap LSMG/MIGL for MFL",
+        "description": "Swap the LSMG/MIGL for the following weapon: MFL.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG/MIGL"
+        ],
+        "weapons": [
+          "MFL"
+        ]
+      },
+      {
+        "id": "eden-constable-swap-lsmgmigl-lgl",
+        "name": "Swap LSMG/MIGL for LGL",
+        "description": "Swap the LSMG/MIGL for the following weapon: LGL.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG/MIGL"
+        ],
+        "weapons": [
+          "LGL"
+        ]
+      },
+      {
+        "id": "eden-constable-add-lrp",
+        "name": "Add LRP",
+        "description": "Add the following weapon: LRP.",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "LRP"
+        ]
       }
     ]
   },
@@ -109,6 +145,49 @@
           "Airdrop",
           "Stealth (Aux)"
         ]
+      },
+      {
+        "id": "eden-manAtArms-swap-mrfmigl-msmgmigl-lgl",
+        "name": "Swap MRF/MIGL",
+        "description": "Swap the MRF/MIGL for one of the following weapons: MSMG/MIGL, LGL, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF/MIGL"
+        ],
+        "options": [
+          {
+            "name": "MSMG/MIGL",
+            "weapons": [
+              "MSMG/MIGL"
+            ]
+          },
+          {
+            "name": "LGL",
+            "weapons": [
+              "LGL"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "eden-manAtArms-swap-mrfmigl-msc",
+        "name": "Swap MRF/MIGL for MSC",
+        "description": "Swap the MRF/MIGL for the following weapon: MSC.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MRF/MIGL"
+        ],
+        "weapons": [
+          "MSC"
+        ]
       }
     ]
   },
@@ -159,7 +238,41 @@
         "tv": 0
       }
     ],
-    "upgrades": []
+    "upgrades": [
+      {
+        "id": "eden-centaur-swap-mac-mrf-mbz",
+        "name": "Swap MAC",
+        "description": "Swap the MAC for one of the following weapons: MRF, MBZ.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "MAC"
+        ],
+        "options": [
+          {
+            "name": "MRF",
+            "weapons": [
+              "MRF"
+            ]
+          },
+          {
+            "name": "MBZ",
+            "weapons": [
+              "MBZ"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "eden-centaur-add-brawl1",
+        "name": "Add Brawl:1",
+        "description": "Add the following trait: Brawl:1.",
+        "tv": 1,
+        "traits": [
+          "Brawl:1"
+        ]
+      }
+    ]
   },
   {
     "id": "eden-griffin",
@@ -216,6 +329,15 @@
         "ew": 4,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "eden-griffin-add-brawl1",
+        "name": "Add Brawl:1",
+        "description": "Add the following trait: Brawl:1.",
+        "tv": 1,
+        "traits": [
+          "Brawl:1"
         ]
       }
     ]
@@ -274,6 +396,40 @@
         "ew": 5,
         "traits": [
           "SatUp"
+        ]
+      },
+      {
+        "id": "eden-doppel-swap-mrp-mgl-latm",
+        "name": "Swap MRP",
+        "description": "Swap the MRP for one of the following weapons: MGL, LATM.",
+        "tv": 1,
+        "isReact": true,
+        "removeWeapons": [
+          "MRP"
+        ],
+        "options": [
+          {
+            "name": "MGL",
+            "weapons": [
+              "MGL"
+            ]
+          },
+          {
+            "name": "LATM",
+            "weapons": [
+              "LATM"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "eden-doppel-add-hvb",
+        "name": "Add HVB (Reach:1)",
+        "description": "Add the following weapon: HVB (Reach:1).",
+        "tv": 1,
+        "isReact": true,
+        "weapons": [
+          "HVB (Reach:1)"
         ]
       }
     ]
@@ -338,6 +494,19 @@
         "traits": [
           "ECM",
           "ECCM"
+        ]
+      },
+      {
+        "id": "eden-warlock-swap-lsmgmigl-lrf",
+        "name": "Swap LSMG/MIGL for LRF",
+        "description": "Swap the LSMG/MIGL for the following weapon: LRF.",
+        "tv": 0,
+        "isReact": true,
+        "removeWeapons": [
+          "LSMG/MIGL"
+        ],
+        "weapons": [
+          "LRF"
         ]
       }
     ]

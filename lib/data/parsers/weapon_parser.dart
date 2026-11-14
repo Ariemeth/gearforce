@@ -14,6 +14,39 @@ class WeaponParser {
     bool hasReact = false,
   }) {
     final trimmedInput = input.trim();
+    if (trimmedInput.isEmpty) return const [];
+
+    // Split on commas outside parentheses (e.g. "MFC, LSMG")
+    final List<String> subInputs = [];
+    final List<String> current = [];
+    int parenDepth = 0;
+
+    for (int i = 0; i < trimmedInput.length; i++) {
+      final char = trimmedInput[i];
+      if (char == '(') {
+        parenDepth++;
+        current.add(char);
+      } else if (char == ')') {
+        if (parenDepth > 0) parenDepth--;
+        current.add(char);
+      } else if (char == ',' && parenDepth == 0) {
+        final part = current.join().trim();
+        if (part.isNotEmpty) subInputs.add(part);
+        current.clear();
+      } else {
+        current.add(char);
+      }
+    }
+    if (current.isNotEmpty) {
+      final part = current.join().trim();
+      if (part.isNotEmpty) subInputs.add(part);
+    }
+
+    if (subInputs.length > 1) {
+      return subInputs
+          .expand((sub) => parseWeaponString(sub, hasReact: hasReact))
+          .toList();
+    }
 
     final quantityRegex = RegExp(
       r'^(?<count>\d+)\s*x\s*',
