@@ -6,6 +6,7 @@ import 'package:gearforce/domain/rules/factions/black_talons/black_talon_rule_se
 import 'package:gearforce/domain/rules/factions/caprice/caprice_rule_set.dart';
 import 'package:gearforce/domain/rules/factions/cef/cef_rule_set.dart';
 import 'package:gearforce/domain/rules/factions/eden/eden_rule_set.dart';
+import 'package:gearforce/domain/rules/factions/new_jerusalem/new_jerusalem_rule_set.dart';
 import 'package:gearforce/domain/rules/factions/north/north_rule_set.dart';
 import 'package:gearforce/domain/rules/factions/nucoal/nucoal_rule_set.dart';
 import 'package:gearforce/domain/rules/factions/peaceriver/peaceriver_rule_set.dart';
@@ -39,5 +40,9 @@ RuleSet getSubfactionRuleSet(
     Faction.caprice => getCapriceSubfactionRuleSet(subfaction, unitRepository),
     Faction.utopia => getUtopiaSubfactionRuleSet(subfaction, unitRepository),
     Faction.eden => getEdenSubfactionRuleSet(subfaction, unitRepository),
+    Faction.newJerusalem => getNewJerusalemSubfactionRuleSet(
+      subfaction,
+      unitRepository,
+    ),
   };
 }

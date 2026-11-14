@@ -856,7 +856,7 @@
     "ew": 6,
     "reactWeapons": [
       "LIW",
-      "LICW"
+      "LIC"
     ],
     "traits": [
       "VTOL"
@@ -943,7 +943,7 @@
     "ew": 6,
     "reactWeapons": [
       "LIW",
-      "LICW"
+      "LIC"
     ],
     "mountedWeapons": [
       "2 x MIMG (Link)"

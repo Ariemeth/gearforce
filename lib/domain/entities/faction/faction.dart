@@ -30,6 +30,12 @@ enum Faction {
     Subfaction.nobleShareholders,
     Subfaction.adHocKingdomOrConsortium,
   ]),
+  newJerusalem('New Jerusalem', 'F10', [
+    Subfaction.newJerusalemDefault,
+    Subfaction.orderOfSaintMichael,
+    Subfaction.orderOfSaintGeorge,
+    Subfaction.orderOfSaintJoshua,
+  ]),
   north('North', 'F5', [
     Subfaction.northDefault,
     Subfaction.norguard,

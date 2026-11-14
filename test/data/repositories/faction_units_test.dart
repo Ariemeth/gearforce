@@ -26,7 +26,8 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   // TODO Update to include each factions units once they are available
-  const factions = [Faction.blackTalons, Faction.north];
+  // TODO Update to include each factions units once they are available
+  const factions = [Faction.blackTalons, Faction.north, Faction.newJerusalem];
 
   for (final faction in factions) {
     group('${faction.name} Units', () {

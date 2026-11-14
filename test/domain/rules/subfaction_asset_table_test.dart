@@ -43,6 +43,9 @@ import 'package:gearforce/domain/rules/factions/eden/subfactions/ak.dart';
 import 'package:gearforce/domain/rules/factions/eden/subfactions/mc.dart';
 import 'package:gearforce/domain/rules/factions/eden/subfactions/ns.dart';
 import 'package:gearforce/domain/rules/factions/eden/subfactions/se.dart';
+import 'package:gearforce/domain/rules/factions/new_jerusalem/subfactions/osg.dart';
+import 'package:gearforce/domain/rules/factions/new_jerusalem/subfactions/osj.dart';
+import 'package:gearforce/domain/rules/factions/new_jerusalem/subfactions/osm.dart';
 
 class _FakeUnitRepository implements UnitRepository {
   @override
@@ -215,6 +218,19 @@ void main() {
       final ahkc = EdenRuleSetAhkc(unitRepository);
 
       for (final ruleSet in [se, ak, mc, ns, ahkc]) {
+        expect(ruleSet.assetTable.greenSquads, 1);
+        expect(ruleSet.assetTable.regularSquads, 1);
+        expect(ruleSet.assetTable.veteranSquads, 1);
+        expect(ruleSet.assetTable.eliteSquads, 1);
+      }
+    });
+
+    test('New Jerusalem subfactions use AssetTable.one()', () {
+      final osm = NewJerusalemRuleSetOsm(unitRepository);
+      final osg = NewJerusalemRuleSetOsg(unitRepository);
+      final osj = NewJerusalemRuleSetOsj(unitRepository);
+
+      for (final ruleSet in [osm, osg, osj]) {
         expect(ruleSet.assetTable.greenSquads, 1);
         expect(ruleSet.assetTable.regularSquads, 1);
         expect(ruleSet.assetTable.veteranSquads, 1);
