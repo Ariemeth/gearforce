@@ -7,7 +7,6 @@ import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
 import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
 import 'package:gearforce/domain/entities/unit/unit_modifiers.dart';
 import 'package:gearforce/domain/entities/unit/upgrade_type.dart';
-import 'package:gearforce/domain/modifiers/mod_functions.dart';
 
 class ModelUpgradeJsonParser {
   static ModelUpgrade parseModelUpgrade(Map<String, dynamic> json) {
@@ -67,7 +66,7 @@ class ModelUpgradeJsonParser {
       description: description,
       tvMod: tvAdjustment == null
           ? UnitModifiers.defaultIntMod
-          : createIntAdjustmentMod(tvAdjustment),
+          : UnitModifiers.adjustInt(tvAdjustment),
       rolesMod: parsedRoles == null
           ? UnitModifiers.defaultRolesMod
           : (value, context) => parsedRoles,
@@ -79,25 +78,25 @@ class ModelUpgradeJsonParser {
           : (value, context) => value.copyWith(value: armor),
       hullStructureMod: (hull == null || structure == null)
           ? UnitModifiers.defaultHullStructureMod
-          : createHullStructureSetMod(h: hull, s: structure),
+          : UnitModifiers.setHullStructure(h: hull, s: structure),
       actionsMod: actions == null
           ? UnitModifiers.defaultUnitActionsMod
           : (value, context) => value.copyWith(value: actions),
       guMod: gu == null
           ? UnitModifiers.defaultSkillMod
-          : createSkillAdjustmentMod(gu),
+          : UnitModifiers.setSkill(gu),
       piMod: pi == null
           ? UnitModifiers.defaultSkillMod
-          : createSkillAdjustmentMod(pi),
+          : UnitModifiers.setSkill(pi),
       ewMod: ew == null
           ? UnitModifiers.defaultSkillMod
-          : createSkillAdjustmentMod(ew),
+          : UnitModifiers.setSkill(ew),
       weaponsMod: weaponsToAdd.isEmpty
           ? UnitModifiers.defaultWeaponsMod
-          : createAddWeaponsMod(weaponsToAdd),
+          : UnitModifiers.addWeapons(weaponsToAdd),
       traitsMod: traitsToAdd.isEmpty
           ? UnitModifiers.defaultTraitsMod
-          : createAddTraitsMod(traitsToAdd),
+          : UnitModifiers.addTraits(traitsToAdd),
     );
   }
 

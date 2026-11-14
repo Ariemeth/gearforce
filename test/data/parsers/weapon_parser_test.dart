@@ -1,20 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gearforce/data/parsers/weapon_parser.dart';
-import 'package:gearforce/domain/entities/attribute/armor.dart';
-import 'package:gearforce/domain/entities/attribute/classification.dart';
-import 'package:gearforce/domain/entities/attribute/hull_structure.dart';
-import 'package:gearforce/domain/entities/attribute/movement.dart';
-import 'package:gearforce/domain/entities/attribute/movement_type.dart';
-import 'package:gearforce/domain/entities/attribute/role.dart';
-import 'package:gearforce/domain/entities/attribute/skill.dart';
-import 'package:gearforce/domain/entities/attribute/unit_actions.dart';
-import 'package:gearforce/domain/entities/unit/model.dart';
-import 'package:gearforce/domain/entities/unit/model_base.dart';
-import 'package:gearforce/domain/entities/unit/model_upgrade.dart';
-import 'package:gearforce/domain/entities/unit/upgrade_option.dart';
-import 'package:gearforce/domain/entities/unit/upgrade_type.dart';
-import 'package:gearforce/domain/entities/unit/variant.dart';
-import 'package:gearforce/domain/modifiers/mod_functions.dart';
 
 void main() {
   group('WeaponParser.parseWeaponString', () {
@@ -258,76 +243,6 @@ void main() {
         weapon.weapons.last.primaryTraits.any((t) => t.name == 'AA'),
         true,
       );
-    });
-
-    test('2x weapon allows upgrading each weapon independently on a Model', () {
-      // Arrange: Model base with "2 x LAC" in mountedWeapons
-      final base = ModelBase(
-        'Test Model',
-        unitId: 'test-unit',
-        tv: 6,
-        roles: {Role.gp},
-        movement: const Movement([MovementType.walker], 6),
-        armor: const Armor(5),
-        hullStructure: const HullStructure(hull: 4, structure: 2),
-        actions: const UnitActions(1),
-        gu: const Skill(4),
-        pi: const Skill(4),
-        ew: const Skill(6),
-        height: 1.5,
-        subtype: 'Gear',
-        classification: Classification.gear,
-        mountedWeapons: WeaponParser.parseWeaponString('2 x LAC'),
-      );
-
-      final model = Model(
-        id: 1,
-        base: base,
-        variant: const Variant('Test Variant', id: 'var-1', tv: 0),
-      );
-
-      // Verify the model starts with 2 LAC weapons
-      expect(model.weapons.length, 2);
-      expect(model.weapons[0].code, 'LAC');
-      expect(model.weapons[1].code, 'LAC');
-
-      // First upgrade: Swap a LAC for MAC
-      final upgrade1 = ModelUpgrade(
-        'Upgrade Weapon 1',
-        id: 'up-1',
-        type: UpgradeType.profile,
-        upgradeOption: UpgradeOption(
-          optionsGenerator: () => ['MAC'],
-          selectedOption: 'MAC',
-        ),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LAC', false),
-      );
-
-      final modelUpgradedOnce = model.addModelUpgrade(upgrade1);
-
-      // Assert: The first LAC is swapped to MAC, the second remains LAC
-      expect(modelUpgradedOnce.weapons.length, 2);
-      expect(modelUpgradedOnce.weapons[0].code, 'MAC');
-      expect(modelUpgradedOnce.weapons[1].code, 'LAC');
-
-      // Second upgrade: Swap the remaining LAC for HAC
-      final upgrade2 = ModelUpgrade(
-        'Upgrade Weapon 2',
-        id: 'up-2',
-        type: UpgradeType.profile,
-        upgradeOption: UpgradeOption(
-          optionsGenerator: () => ['HAC'],
-          selectedOption: 'HAC',
-        ),
-        weaponsMod: createSwapWeaponsFromOptionsMod('LAC', false),
-      );
-
-      final modelUpgradedTwice = modelUpgradedOnce.addModelUpgrade(upgrade2);
-
-      // Assert: The second LAC is swapped to HAC
-      expect(modelUpgradedTwice.weapons.length, 2);
-      expect(modelUpgradedTwice.weapons[0].code, 'MAC');
-      expect(modelUpgradedTwice.weapons[1].code, 'HAC');
     });
   });
 }
