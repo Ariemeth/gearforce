@@ -1,7 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:gearforce/core/widgets/unit_attribute_widgets.dart';
-import 'package:gearforce/domain/entities/equipment/trait.dart' show Trait;
-import 'package:gearforce/domain/entities/equipment/weapon_spec.dart';
+import 'package:gearforce/versions/v4/domain/entities/equipment/trait.dart'
+    show Trait;
+import 'package:gearforce/versions/v4/domain/entities/equipment/weapon_spec.dart';
 
 /// Builds a list of comma-separated [UnitAttributeValue] chips for weapons.
 ///

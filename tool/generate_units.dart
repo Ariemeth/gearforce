@@ -18,7 +18,7 @@ void main(List<String> args) {
 
   final scriptDir = File(Platform.script.toFilePath()).parent;
   final projectRoot = scriptDir.parent;
-  final outputDir = Directory('${projectRoot.path}/assets/data/units');
+  final outputDir = Directory('${projectRoot.path}/assets/v4/data/units');
 
   if (!outputDir.existsSync()) {
     outputDir.createSync(recursive: true);

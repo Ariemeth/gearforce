@@ -5,8 +5,8 @@ import 'package:gearforce/core/routing/app_router.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/core/utils/platform_utils.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
+import 'package:gearforce/versions/v4/features/settings/bloc/app_settings_bloc.dart';
+import 'package:gearforce/versions/v4/features/settings/bloc/app_settings_state.dart';
 
 class Gearforce extends StatelessWidget {
   const Gearforce({super.key});

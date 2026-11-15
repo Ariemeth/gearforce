@@ -1,0 +1,112 @@
+import 'dart:convert';
+import 'dart:io';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:gearforce/versions/v4/data/repositories/json_unit_repository.dart';
+import 'package:gearforce/versions/v4/domain/entities/unit/model.dart';
+
+/// A test subclass that exposes [parseUnit] for direct testing.
+class TestableUnitRepository extends JsonUnitRepository {
+  void testParseUnit(Map<String, dynamic> json) {
+    parseUnit(json);
+  }
+}
+
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  late TestableUnitRepository unitRepository;
+
+  setUp(() {
+    unitRepository = TestableUnitRepository();
+  });
+
+  group('JsonUnitRepository.parseUnit', () {
+    test('parses unit with nested base object', () {
+      final file = File('assets/v4/data/units/north.json');
+      final jsonString = file.readAsStringSync();
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
+
+      // Use the first unit from real data
+      expect(jsonData, isNotEmpty);
+
+      final firstUnitJson = jsonData.first as Map<String, dynamic>;
+      final unit = unitRepository.parseUnit(firstUnitJson);
+
+      expect(unit.id, isNotEmpty);
+      expect(unit.name, isNotEmpty);
+      expect(unit.base.tv, greaterThanOrEqualTo(0));
+    });
+
+    test('parses all north units without error', () {
+      final file = File('assets/v4/data/units/north.json');
+      final jsonString = file.readAsStringSync();
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
+
+      final units = jsonData.map((data) {
+        return unitRepository.parseUnit(data as Map<String, dynamic>);
+      }).toList();
+
+      expect(units, isNotEmpty);
+      // Verify all units have valid IDs
+      for (final unit in units) {
+        expect(unit.id, isNotEmpty, reason: 'Unit ${unit.name} has empty ID');
+      }
+    });
+
+    test('parses unit with variants', () {
+      final file = File('assets/v4/data/units/north.json');
+      final jsonString = file.readAsStringSync();
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
+
+      // Find a unit that has variants
+      final unitWithVariants = jsonData.firstWhere(
+        (data) =>
+            (data as Map<String, dynamic>)['variants'] != null &&
+            ((data)['variants'] as List).isNotEmpty,
+        orElse: () => null,
+      );
+
+      if (unitWithVariants != null) {
+        final unit = unitRepository.parseUnit(
+          unitWithVariants as Map<String, dynamic>,
+        );
+        expect(unit.variants, isNotEmpty);
+        for (final variant in unit.variants) {
+          expect(variant.id, isNotEmpty);
+        }
+      }
+    });
+
+    test('parses unit with upgrades', () {
+      final file = File('assets/v4/data/units/north.json');
+      final jsonString = file.readAsStringSync();
+      final List<dynamic> jsonData = json.decode(jsonString) as List<dynamic>;
+
+      // Find a unit that has upgrades
+      final unitWithUpgrades = jsonData.firstWhere(
+        (data) =>
+            (data as Map<String, dynamic>)['upgrades'] != null &&
+            ((data)['upgrades'] as List).isNotEmpty,
+        orElse: () => null,
+      );
+
+      if (unitWithUpgrades != null) {
+        final unit = unitRepository.parseUnit(
+          unitWithUpgrades as Map<String, dynamic>,
+        );
+        expect(unit.availableProfileUpgrades, isNotEmpty);
+
+        final model = Model(
+          id: 1,
+          base: unit.base,
+          variant: unit.variants.first,
+        );
+
+        final upgrade = unit.availableProfileUpgrades.first;
+        final upgradedModel = model.addModelUpgrade(upgrade);
+
+        expect(upgradedModel.tv, greaterThanOrEqualTo(model.tv));
+      }
+    });
+  });
+}

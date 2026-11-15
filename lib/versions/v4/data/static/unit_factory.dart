@@ -1,0 +1,27 @@
+import 'package:gearforce/versions/v4/domain/entities/faction/faction.dart';
+import 'package:gearforce/versions/v4/domain/entities/unit/unit.dart';
+import 'package:gearforce/versions/v4/domain/repositories/unit_repository.dart';
+
+class UnitFactory {
+  static Future<List<Unit>> getUnitsForFaction(
+    UnitRepository unitRepository,
+    Faction faction,
+  ) async {
+    return await unitRepository.getUnitsByFaction(faction);
+  }
+
+  static Future<Unit?> getUnitByName(
+    UnitRepository unitRepository,
+    Faction faction,
+    String unitName,
+  ) async {
+    final unitList = await getUnitsForFaction(unitRepository, faction);
+    try {
+      return unitList.firstWhere(
+        (unit) => unit.name.toLowerCase() == unitName.toLowerCase(),
+      );
+    } catch (e) {
+      return null;
+    }
+  }
+}

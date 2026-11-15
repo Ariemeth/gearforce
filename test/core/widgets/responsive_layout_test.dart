@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';
 import 'package:shared_preferences_platform_interface/shared_preferences_async_platform_interface.dart';
 import 'package:gearforce/core/widgets/responsive_layout.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_repository.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
+import 'package:gearforce/versions/v4/features/settings/bloc/app_settings_bloc.dart';
+import 'package:gearforce/versions/v4/features/settings/bloc/app_settings_repository.dart';
+import 'package:gearforce/versions/v4/features/settings/bloc/app_settings_state.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

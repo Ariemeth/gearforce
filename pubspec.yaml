@@ -38,4 +38,5 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/data/units/
+    - assets/v3/data/
+    - assets/v4/data/units/

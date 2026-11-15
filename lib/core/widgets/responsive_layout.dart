@@ -1,8 +1,8 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gearforce/core/widgets/responsive_size.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_bloc.dart';
-import 'package:gearforce/features/settings/bloc/app_settings_state.dart';
+import 'package:gearforce/versions/v4/features/settings/bloc/app_settings_bloc.dart';
+import 'package:gearforce/versions/v4/features/settings/bloc/app_settings_state.dart';
 
 /// A reusable layout widget that selects between [compact], [medium], and
 /// [expanded] child widgets based on user settings override or screen width.
