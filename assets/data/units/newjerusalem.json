@@ -36,6 +36,7 @@
     "classification": "Gear",
     "subtype": "General Purpose Angel",
     "manufacturer": "Basilica of Archangels",
+    "crewSize": 1,
     "description": "The Initiate is Sanctuary’s general-purpose angel. Initiates are seen in a variety of roles from security to field operations. Performance-wise, they are similar to a Hunter. Energy weapons such as the plasma cannon provide this unit with more punch than the average Hunter.",
     "variants": [
       {
@@ -127,6 +128,7 @@
     "classification": "Gear",
     "subtype": "Strike Angel",
     "manufacturer": "Basilica of Archangels",
+    "crewSize": 1,
     "description": "The Apostle has seen centuries of service. It was the first mass production angel to see combat. It’s designed as a high-performance angel and is used in assaults. Continued updates and overhauls keep this design in its place as the flagship angel in the Shepherds arsenal.",
     "variants": [
       {
@@ -226,6 +228,7 @@
     "classification": "Gear",
     "subtype": "EW Angel",
     "manufacturer": "Basilica of Archangels",
+    "crewSize": 1,
     "description": "The Disciple is Sanctuary’s Electronic Warfare (EW) angel. The base model comes with everything an EW specialist needs for basic operations. The Abdias upgrade and a few other options enhance this even further. A fully supped-up Disciple is capable of taking on Iguanas.",
     "variants": [
       {
@@ -287,6 +290,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Angel",
     "manufacturer": "13th tower",
+    "crewSize": 1,
     "description": "The Ghazi is used by special forces for assassination, strike and sabotage missions. The Ghazi’s signature wings are actually directable thrusters allowing the machine to perform sudden adjustments to speed and direction. While they are not jetpacks, they do give the machine an archangel’s vibe.",
     "variants": [
       {
@@ -365,6 +369,7 @@
     "classification": "Gear",
     "subtype": "Close Combat Angel",
     "manufacturer": "13th Tower",
+    "crewSize": 1,
     "description": "Templars are piloted by what most Shepherds consider the insane. Templars have no organic ranged weapons and operate as a type of shock-trooper. The Shepherds use melee combat for breaking assaults. And since Templars are able to minimize collateral damage, they are also popular on capital ships.",
     "variants": [
       {
@@ -422,6 +427,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Angel",
     "manufacturer": "Basilica of Archangels",
+    "crewSize": 1,
     "description": "The Paladin is Sanctuary’s premier fire support angel. Its main weaponry is considered its shoulder-mounted cannons, indicating its namesake as fire support. The pistols are sneakily quite capable. Many an enemy has closed in on a Paladin to strike at it with heavy weaponry only to get shot to pieces by pistols akimbo.",
     "variants": [
       {
@@ -508,6 +514,7 @@
     "classification": "Gear",
     "subtype": "Command Angel",
     "manufacturer": "13th Tower",
+    "crewSize": 1,
     "description": "The Hakham is fundamentally a command angel. More conventionally armed compared to the Paladin, the Hakham sports a communications suite with a focus on communications security. The machine can be further upgraded with and improved ECCM, sensors and even an Anti-Missile System (AMS).",
     "variants": [
       {
@@ -597,6 +604,7 @@
     "classification": "Strider",
     "subtype": "Medium Seraphim",
     "manufacturer": "Avadat Shalom",
+    "crewSize": 0,
     "description": "The Prioress is the equivalent of a medium strider found on Terra Nova. It operates as Sanctuary’s main battle tank in many ways. It can take a hit while being faster than anything that outguns it or outgunning anything faster than it. They are often found taking part in heavy assaults.",
     "variants": [
       {
@@ -653,6 +661,7 @@
     "classification": "Strider",
     "subtype": "Heavy Seraphim",
     "manufacturer": "Avadat Shalom",
+    "crewSize": 0,
     "description": "The Abbess serves as Sanctuary’s heavy seraphim. It features heavier weapons than the Prioress but is also slower than it too. It lumbers around. However, the six legs provide a very smooth ride overall. The stability also allows the predictive fire control system in the rail guns improved accuracy.",
     "variants": [
       {
@@ -708,6 +717,7 @@
     "classification": "Strider",
     "subtype": "Superheavy Seraphim",
     "manufacturer": "Avadat Shalom",
+    "crewSize": 0,
     "description": "While the Abbes lumbers, the Prophet ponders. This seraphim is the largest in production. Its weapons are rather modular for a vehicle of this size. Weapon modules are mostly artillery centric. Though, the Kibush modules provide varying layers of electronic warfare capabilities.",
     "variants": [
       {
@@ -787,6 +797,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Avadat Shalom",
+    "crewSize": 0,
     "description": "The Tenet is a simple, rugged, wheeled design. It is a cost-effective APC with variants for use as a field ambulance or engineering asset. The main weapon is the equivalent of a handheld, gear-sized submachinegun. Tenets are not intended to go toe to toe with seraphim. Their primary use is movement of troops.",
     "variants": [
       {
@@ -864,6 +875,7 @@
     "height": 1,
     "classification": "Cavalry",
     "subtype": "Light Hoverbike",
+    "crewSize": 0,
     "description": "The hoverbike racing scene is popular across New Jerusalem. Even lower tech nations take part with their own lower grade racing circuits. The Kwaja has become a staple in Sanctuary’s military. Built with the high performance hoverbike technology Sanctuary is known for, they make excellent scouting tools.",
     "variants": [
       {
@@ -954,6 +966,7 @@
     "height": 1.5,
     "classification": "Cavalry",
     "subtype": "Patrol Hoverbike",
+    "crewSize": 1,
     "description": "The Zealot is a heavier hoverbike made for military use in arial assaults. These heavy-but-compact machines can provide a level of close air support even in densely populated metropolitan zones. They’re frequently deployed from a transport, providing them strategic reach during operations.",
     "variants": [
       {

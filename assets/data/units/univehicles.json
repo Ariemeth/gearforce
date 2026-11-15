@@ -28,6 +28,7 @@
     "classification": "Gear",
     "subtype": "Utility Vehicle",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "Antelopes and Elans are common off road military vehicles. Their Technical variants include a few additional crew members to operate weaponry from the armored deck on the back. They are used regularly for scouting, patrolling, special operations, reconnaissance, and a myriad of other tasks.",
     "variants": [
       {
@@ -107,6 +108,7 @@
     "classification": "Gear",
     "subtype": "Towed Field Gun",
     "manufacturer": "Various",
+    "crewSize": 2,
     "description": "Several companies manufacture a variety of field guns, most of which follow similar specifications. They combine excellent firepower and good range with broad availability. Almost any vehicle with sufficient engine power can tow one through a standard towing attachment.",
     "variants": [
       {
@@ -150,6 +152,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "The Camel is a large and sturdy transport truck frequently used by military, paramilitary and even civilian groups. Large numbers have been sold all over Terra Nova. They are commonly seen in caravans as supply vehicles. Some variants come armed with strategically important weapons.",
     "variants": [
       {
@@ -196,6 +199,7 @@
     "classification": "Gear",
     "subtype": "Medium Vehicle",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "The Nightingale is a highly advanced ambulance developed to support casualty receiving and evacuation. It contains four beds and an operating room. The vehicle is also equipped with a full lab featuring the latest in pathogenic testing equipment, allowing technicians to perform advanced testing on the spot.",
     "variants": [
       {
@@ -250,6 +254,7 @@
     "classification": "Gear",
     "subtype": "Light Hovervehicle",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "With much of the planet covered by water, the evolution of the Saker was almost inevitable. It is a cheap and effective asset that can transition between maritime and land operations in the blink of an eye. All of the kingdoms use them for littoral patrols while some of the more unscrupulous privateers use them for raids.",
     "variants": [
       {
@@ -318,6 +323,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Hansen's Electronics",
+    "crewSize": 0,
     "description": "The Seeker has a large sensor array, stealth system and electronic warfare assets to listen in or even interfere with enemy transmissions. Two technicians operate the equipment from workstations placed in a roomy compartment in the back. The vehicle has a roof-mounted machine gun and rocket pack for defense.",
     "variants": [
       {
@@ -362,6 +368,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Hansen's Electronics",
+    "crewSize": 0,
     "description": "The Murdock is designed as a mobile field HQ and C3 (Command, Control and Communication). It was commissioned in TN 1898 by General Jenke Murdock, a famous figure during the Sandstorm Strikes (TN 1896-1905). The vehicle rests on a sturdy six-wheeled chassis, each wheel having its own independent suspension.",
     "variants": [
       {
@@ -411,6 +418,7 @@
     "classification": "Gear",
     "subtype": "Trike",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "Caprician forces sent to Terra Nova requested something to use as an outrider and patrol vehicle. There are many competing buggies and off-road vehicles on the Caprician market. The Reubeni variant used to be made by Hakkar. Now it’s more of a popular trike conversion sold by the Liberati.",
     "variants": [
       {
@@ -495,6 +503,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Paxton",
+    "crewSize": 0,
     "description": "The Peace Officer Corps fields a number of modified armored personnel carriers for crowd control and emergency situations. These transports are often deployed for anti-rovers operations. Compared to the Hoplite there is not much reason for conventional forces to use them other than the fact that they are cheaper to produce.",
     "variants": [
       {
@@ -565,6 +574,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Paxton",
+    "crewSize": 0,
     "description": "Originally, the Sand Spider’s low-profile and camouflage were considered sufficient for concealment. Paxton incorporated stealth options to further enhance the Sand Spider’s ability to conceal itself. It is one of the few stealth capable exports sold on Terra Nova’s open market.",
     "variants": [
       {
@@ -692,6 +702,7 @@
     "height": 1,
     "classification": "Gear",
     "subtype": "Light Tank",
+    "crewSize": 0,
     "variants": [
       {
         "id": "univeh-baxter-stock",
@@ -746,6 +757,7 @@
     "height": 1,
     "classification": "Gear",
     "subtype": "Light Vehicle",
+    "crewSize": 0,
     "variants": [
       {
         "id": "univeh-celt-stock",
@@ -801,6 +813,7 @@
     "classification": "Gear",
     "subtype": "Heavy Vehicle",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "Created during the War of the Alliance to replace the then-obsolete Mother Springer. the Barnaby was noticeably sturdier and faster than its predecessor. Its tempered steel armor, while extremely cheap and cost efficient, was replaced with the more standard durasheet plating that is the trademark of the late 19th and 20th century military vehicles. The Behemoth gear transport was designed in TN 1706 by Northco. Gear transports were already being used to transport engineering and construction gears to and from work sites. Taking the basic frame of one design named the Hunchback and modifying it for military use was seamlessly accomplished by the Northco engineers.",
     "variants": [
       {
@@ -862,6 +875,7 @@
     "classification": "Gear",
     "subtype": "Hopper",
     "manufacturer": "Tsi Heavy Industries",
+    "crewSize": 2,
     "description": "The Varis was adopted by all forces as one of their available hoppers (vectored thrust aerodyne). Its simple but effective design was favored by many. Their employment is sometimes limited as many field commanders simply favor infantry, gears and tanks more.",
     "variants": [
       {
@@ -933,6 +947,7 @@
     "classification": "Gear",
     "subtype": "Hopper",
     "manufacturer": "Paxton",
+    "crewSize": 2,
     "description": "One of the most innovative military vehicles, hoppers (vectored thrust aerodynes) are as agile as helicopters, but tend to be sturdier and can achieve higher speeds. A battle tested, reliable model, the Dragonfly is both fast and maneuverable, characteristics that make it perfect for anti-gear operations.",
     "variants": [
       {
@@ -1006,6 +1021,7 @@
     "classification": "Gear",
     "subtype": "Stealth Hopper",
     "manufacturer": "Paxton",
+    "crewSize": 2,
     "description": "The Black Wind is another design acquired by the Talon project. At its core it is a very fast and agile hopper with a weapon loadout similar to a Dragonfly. The Talon project takes it one step further and adds some of the latest in stealth technology and a new ECM device to further reduce the ability to track and target this craft.",
     "variants": [
       {
@@ -1070,6 +1086,7 @@
     "classification": "Gear",
     "subtype": "Attack VTOL",
     "manufacturer": "Gallot Enterprises",
+    "crewSize": 2,
     "description": "Gallot Enterprises won the bid to develop the Type 42 Peregrine Gunship for the CEF. This VTOL has low-bypass turbofans that are well suited for intense atmospheric effects found on Caprice and some of the other colony worlds. They are also quite useful for patrolling in and around the tight spaces of Gomorrah City on Caprice.",
     "variants": [
       {
@@ -1136,6 +1153,7 @@
     "classification": "Gear",
     "subtype": "Attack Chopper",
     "manufacturer": "Northco",
+    "crewSize": 2,
     "description": "Gear pilots that survive an encounter with a Scorpion gunship often have traumatic responses to the characteristic sounds of its counter rotating blades.  The propulsion system is highly resistant to damage and Scorpions have been known to return to base with over 40% damage to their lift surfaces.",
     "variants": [
       {
@@ -1191,6 +1209,7 @@
     "classification": "Gear",
     "subtype": "Attack Chopper",
     "manufacturer": "Marshall Avionics",
+    "crewSize": 2,
     "description": "Classified as an attack helicopter, the Titan is often used to airlift elite infantry cadres into position to capture objectives. Once its cargo is safely delivered, the Titan will either provide the ground team with air support or leave for other tasks. A squadron of Titans in the air is usually a signal that a ground offensive is coming.",
     "variants": [
       {
@@ -1239,6 +1258,7 @@
     "classification": "Gear",
     "subtype": "Medium Lift Helicopter",
     "manufacturer": "Skycorp Ltd.",
+    "crewSize": 0,
     "description": "The Rock Beetle was developed by Skycorp Ltd., a well-known United Mercantile Federation helicopter manufacturer. The helicopter's engines are geared for torque, not speed, which allows the Rock Beetle to carry an incredible amount of material. More recent configurations have included limited ground attack weapons.",
     "variants": [
       {
@@ -1506,6 +1526,7 @@
     "classification": "Counter",
     "subtype": "Air Support",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "From Northco’s G-7 Redjacket to the CEF’s TAAF-54, airstrikes are standard for every military on every planet. Your strike fighters are on hot standby, ready to drop bombs on enemies your ground units mark out for them. You will use Forward Observations to initiate airstrikes.",
     "variants": [
       {
@@ -1547,6 +1568,7 @@
     "classification": "Counter",
     "subtype": "Artillery Support",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "Long range artillery can be called in by Forward Observers. Depending on how far out they are, you may even hear the shout-out. It’s a quieter, duller thump, easily missed when you're in the middle of a firefight. It’s followed by ground shaking eruptions when the artillery strikes. You’re sure to not miss the second thump.",
     "variants": [
       {

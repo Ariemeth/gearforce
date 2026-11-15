@@ -34,6 +34,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Keimuri Gears",
+    "crewSize": 1,
     "description": "Originally a companion gear to the Hunter, it quickly fell out of favor as pilots preferred the Hunter’s better armor and previously reduced fire control systems. Keimuri Gears would find a new market with the WFP where the cheaper and more rugged design was appreciated. Today the Wildcat can often be seen defending Badlands communities against rovers.",
     "variants": [
       {
@@ -224,6 +225,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Copperhead has gone through many revisions since its origins as a light trooper gear. Its evolution has allowed it to be an alternate option to a Jager. While many would prefer a Jager, more melee oriented pilots prefer the Copperhead.  It’s not uncommon to see one or two Copperheads mixed in with Jagers.",
     "variants": [
       {
@@ -337,6 +339,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "Mandeers Heavy Industries",
+    "crewSize": 1,
     "description": "The Desert Viper was built as a no-nonsense machine, using a general configuration similar to that of the Northern Razorback. This aging gear finds a niche wherever a cheap and easily replaceable rough terrain gear is needed. Easily modified, the Viper Chassis has been a test bed for the south since its inception.",
     "variants": [
       {
@@ -444,6 +447,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Dynamic Systems",
+    "crewSize": 1,
     "description": "The Black Adder has been proclaimed \"the safest gear ever designed.\" Thick armor plates surround the torso and cockpit areas.  Under all of the additional armor plates on the torso, the Black Adder uses the same basic chassis as the Sidewinder and features an entirely redesigned main body.",
     "variants": [
       {
@@ -553,6 +557,7 @@
     "classification": "Gear",
     "subtype": "Recon Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Anolis is one of Territorial Arm's economic recon gears. Original Anoles quickly replaced Recon Jagers (now SD Jagers) when they first came out. Later, the Anolis R (Refit) started seeing wide distribution. Because Anoles have always been popular for their low costs, other packaged deals saw Anoles loaded for light combat.",
     "variants": [
       {
@@ -676,6 +681,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Bear was designed for long range engagements and was the CNCS's first fire support gear. The guided mortar has a long reach and a deadly punch, while the twin medium rocket packs mounted on its shoulders also allow it to be used in an assault role. The Bear was so successful that it went on to inspire other gears.",
     "variants": [
       {
@@ -725,6 +731,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Razorback is ruggedly constructed and its snub cannon can make short work of any tank, while the heavy rotary cannon variant can mince gears wholesale. Despite being almost as old as the Hunter, the Razorback is still employed in UMF and WFP regiments for missions where heavy armor and weapons are required.",
     "variants": [
       {
@@ -781,6 +788,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Western Armories",
+    "crewSize": 1,
     "description": "The Mad Dog uses a similar drive system to the Bear. While the aging gear is quickly becoming a rare sight, the Mad Dog is a common trooper gear in the WFP where cost is a major concern. Many famous pilots, such as Kyle Trudel, have piloted a Mad Dog in arena championships simply because opponents underestimate it.",
     "variants": [
       {
@@ -880,6 +888,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Mandeers Heavy Industries",
+    "crewSize": 1,
     "description": "Pythons are one of the biggest exports from the South. Many became surplus after they were replaced by Cobras. A powerful gear that comes with many assorted loadouts, they are frequently used by rovers and security forces alike as supply caravans snake through hostile Badlands.",
     "variants": [
       {
@@ -995,6 +1004,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Mandeers Heavy Industries",
+    "crewSize": 1,
     "description": "Mandeers designed the Boa to be the most well-protected gear on the planet. The added armor made the Boa less useful for support roles since it could not carry as many heavy weapons. Neil Motorworks is licensed to make and distribute them, and this is part of why Boas are seen in Khayr ad-Din arenas frequently.",
     "variants": [
       {
@@ -1066,6 +1076,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 1,
     "variants": [
       {
         "id": "unigear-g16-phantom",
@@ -1198,6 +1209,7 @@
     "classification": "Gear",
     "subtype": "Engineering Golem",
     "manufacturer": "Excalibur Inc",
+    "crewSize": 1,
     "description": "The Druid started as a submersible golem used for mining methane hydrate in Eden's vast oceans. It has since received many upgrades and only loosely resembles its origins. As one of the few combat engineering assets that the CEF has direct access to, they have heavily supported its mass production and even use them amongst their own forces.",
     "variants": [
       {
@@ -1256,6 +1268,7 @@
     "classification": "Gear",
     "subtype": "Engineering Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "Peace River’s Engineer Corps is mainly comprised of three gears. Foremost among these is the Valence. Though unremarkable as a combat vehicle, the Valence is very good at being cheap. A popular choice throughout Terra Nova, the Valence has a reputation for being one of the most comfortable rides allowing engineers to operate for longer periods of time.",
     "variants": [
       {
@@ -1336,6 +1349,7 @@
     "classification": "Gear",
     "subtype": "Engineering Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "Sharing the same chassis as the Lancier, the Chargeur has seen active use in both civilian and peacekeeping capacity. The NuCoal Marshal Service uses them for anti-rover operations. Other applications include hauling, loading and general construction.",
     "variants": [
       {
@@ -1391,6 +1405,7 @@
     "classification": "Gear",
     "subtype": "Engineering Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Bricklayer Engineering Gear is based off the popular Hunter chassis. It has a roll bar canopy and no head assembly. The pilot sits slightly higher than in the Hunter and is protected only by a sturdy steel roll cage. When needed, Bricklayers can be used as light trooper gears in combat engineering squads.",
     "variants": [
       {
@@ -1481,6 +1496,7 @@
     "classification": "Gear",
     "subtype": "Engineering Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Although the Stonemason shares the same basic frame as the Jager, considerable modifications have been made to improve its capabilities in the engineering role. A set of tool arms on the back of the gear are equipped with a simple set of grasping claws that are often used in melee combat to great effect.",
     "variants": [
       {
@@ -1560,6 +1576,7 @@
     "classification": "Gear",
     "subtype": "Engineering Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "Based off of the Chevalier, the Sapeur is a common sight in and around the ever-expanding townships of NuCoal. Often assigned to engineering squads, with ratio of 1 Sapeur for every 4 Chargeurs, this gear is used as an earth mover or recovery vehicle.",
     "variants": [
       {
@@ -1643,6 +1660,7 @@
     "classification": "Gear",
     "subtype": "Engineering Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Engineering Grizzly is a field engineering gear based on the basic frame and chassis of the Grizzly fire support gear. The Engineering Grizzly's hands come semi-modular. A skilled maintenance team can add or remove Demolisher Hands in 15 minutes.",
     "variants": [
       {
@@ -1737,6 +1755,7 @@
     "classification": "Gear",
     "subtype": "Engineering Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Engineering Cobra has already proven its worth as a military engineering and maintenance unit. A large and powerful frame allows it to lift and bear extremely heavy loads. Pilots often use the gear to batter enemy gears in melee when they get too close.",
     "variants": [
       {

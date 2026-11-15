@@ -38,6 +38,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "The Chasseur can trace its lineage back to the Jager from Territorial Arms.  Following the rejection of the Chasseur by the SRA, the city-state of Nineveh purchased and perfected the gear. The CEF so admired the Chasseur during the first invasion, that it would later inspire future CEF frame design.",
     "variants": [
       {
@@ -195,6 +196,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "Inspired by southern Stripped-Down (SD) Jagers, the engineers at Neil Motorworks originally developed the SD Chasseur as an unofficial modification of the Chasseur. With NuCoalian doctrine emphasizing speed, the SD Chasseur became immediately popular with commanders and pilots everywhere.",
     "variants": [
       {
@@ -319,6 +321,7 @@
     "classification": "Gear",
     "subtype": "Paratrooper Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "The Chasseur Paratroopers fielded by NuCoal feature modified weapons configurations so that they can be equipped with gear sized parachutes. In addition to the frame and shock absorber modifications that allow them to survive the impact of a landing, the jetpacks give these gears an additional control during descent.",
     "variants": [
       {
@@ -442,6 +445,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "Although the Mk2 has seen limited distribution due to the complexities of manufacturing, those units so equipped have shown impressive results against CEF forces. Hastily deployed in only a red ochre primer, Colonel Arthur’s Wolf Brigade earned numerous battle honors and a fearsome reputation with these gears.",
     "variants": [
       {
@@ -574,6 +578,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "The strike gear that has served the HAPF since the Interpolar War, the Cuirassier is well loved by the league's elite units. In the NuCoal SDF regiments, the gear is a popular alternative to the Chasseur Mk2. It turns out that many Terra Novan pilots appreciate the more standard movement systems of the Cuirassier.",
     "variants": [
       {
@@ -716,6 +721,7 @@
     "classification": "Gear",
     "subtype": "Mountaineering Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "While originally designed for mountaineering, they are excellent melee specialists as the shoulder mounted grappling hooks have more than enough punch to pierce the armor of a typical gear. Lanciers have met with considerable combat success since their adoption by the NSDF do to their simple yet effective design choices.",
     "variants": [
       {
@@ -830,6 +836,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "Javelin Systems",
+    "crewSize": 1,
     "description": "The Espion is a no-nonsense special forces gear. Like many advanced stealth gears, it has remarkable agility, good speed, effective weapon configurations and specialized armor to reduce sensor detection. Although as far as stealth gears go, its high price and specialized parts make accruing a large number of them hard to do.",
     "variants": [
       {
@@ -956,6 +963,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Verton Tech",
+    "crewSize": 1,
     "description": "The Jerboa has seen wide deployment throughout the New Coalition, replacing many of the older Ferrets. The Jerboa is considered a superior unit to the Ferret due to the rocket engines which propel it even faster. It also boasts an increased level of comfort above the Ferret.",
     "variants": [
       {
@@ -1110,6 +1118,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Verton Tech",
+    "crewSize": 1,
     "description": "Jerboa Paratroopers also shed the shoulder mounted rocket pack for both weight and safety purposes. On the Jerboa, this is offset by the use of the standard paratrooper assault rifle which combines an autocannon and light grenade launcher. However, the Jerboa’s main task of electronic warfare remains its priority.",
     "variants": [
       {
@@ -1266,6 +1275,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "The Chevalier has a good variety of weapons, making this gear very versatile on the field. Chevalier pilots represent a small subset of the NuCoal population who prefer firepower over speed. The Chevalier Spear is one of the most popular variants. The amount of rockets it can fire at once is spectacular for a gear.",
     "variants": [
       {
@@ -1316,6 +1326,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 1,
     "description": "Since NuCoal forces generally utilize tactics that require fast machines, the more traditional fire support gears find themselves struggling to keep pace.  The answer is the hover capable Arbalestier from Neil Motorworks, sporting speeds normally only attained by smaller gears such as Jaguars and Black Mambas.",
     "variants": [
       {
@@ -1360,6 +1371,7 @@
     "classification": "Strider",
     "subtype": "Gear-Strider",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 2,
     "description": "Designed by Humanist Engineers, the Hussar is a variation of the gear-strider concept. Initially fraught with difficulties at the time of its conception, Humanist, PAK and NuCoal engineers worked together to allow the design to see the light of day. Although popular, the Hussar is considered to be one of the most complex combat machines ever built.",
     "variants": [
       {
@@ -1442,6 +1454,7 @@
     "classification": "Gear",
     "subtype": "Light Hovertank",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 0,
     "description": "The Fusilier has proved itself well against its CEF counterparts. The simplicity of the design gives this light hovertank staying power on the field. During one campaign, 43 Fusiliers were heavily damaged in fierce fighting. By the time the major battles were over, 41 of the Fusiliers were already back in operation.",
     "variants": [
       {
@@ -1488,6 +1501,7 @@
     "classification": "Gear",
     "subtype": "Heavy Tank",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 0,
     "description": "The Voltigeur is uniquely NuCoalian. Its secondary artillery missiles are not a common sight on Terra Novan main battle tanks. However, similar to Visigoths, the design features two main weapon options between the Anvil and Hammer variants. While not nearly as fast as NuCoal’s hovertanks, this beast excels at holding the line.",
     "variants": [
       {
@@ -1567,6 +1581,7 @@
     "classification": "Gear",
     "subtype": "Light Hovervehicle",
     "manufacturer": "Neil Motorworks",
+    "crewSize": 0,
     "description": "Inspired by CEF designs, the Sampson does everything the HPC-64 can do and then some. Although primarily an APC, its heavier armor allows it to be pressed into service as a light cavalry vehicle. Troops have also found the large slab-sided armor is a perfect canvas for all kinds of nose art and nicknames.",
     "variants": [
       {

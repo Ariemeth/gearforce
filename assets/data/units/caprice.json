@@ -37,6 +37,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "Small and wide-footed, the F-32 can easily make its way across both the urban jungle of Gomorrah or the broken ground of Caprice's landscape. While initially employed as a civil policing unit, the F-32 has been updated with heavier armaments for combat operations.",
     "variants": [
       {
@@ -111,6 +112,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "Like the F-27 and F-32, the pads on the F-55’s hands and feet utilize “Lacerta-tech”, produced by Lysander Incorporated, which can be engaged to produce van der Waals forces. This Lacerta-tech, combined with additional climbing equipment makes these frames excellent climbers.",
     "variants": [
       {
@@ -199,6 +201,7 @@
     "classification": "Gear",
     "subtype": "Interceptor Frame",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "The F-112 is an F-55 with four legs. All four legs are tipped with a wheeled secondary movement system that provides increased speed and mobility on pavement and most level surfaces. While it is capable of working in off road conditions, they tend to be favored in urban environments.",
     "variants": [
       {
@@ -275,6 +278,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Frame",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "The F-27’s Rocket-Assisted Hammer 5000 (RAH-5000), trademarked by Hakkar, is an evolved rock hammer with a fearsome reputation amongst arena fighters on Caprice. No other arena weapon has been credited with more one-hit victories than the RAH-5000.",
     "variants": [
       {
@@ -348,6 +352,7 @@
     "classification": "Gear",
     "subtype": "Utility Mount",
     "manufacturer": "Kinzler Industries",
+    "crewSize": 1,
     "description": "The first purely military mount developed on Caprice, the Acco is now a workhorse used by police and military. Developed by Kinzler Industries to be an exceptional climber, they can easily hang upside down from rock ceilings. Hakkar was so impressed they poached some of the key engineers involved with its development.",
     "variants": [
       {
@@ -410,6 +415,7 @@
     "classification": "Strider",
     "subtype": "Light Mount",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "The Bashan is Hakkar’s electronic warfare answer for mounts. Their electronics suite is impressive, allowing the machine to be an acceptable command and control mount, even without the added features from the command upgrade. Bashans are regularly tasked with reconnaissance.",
     "variants": [
       {
@@ -466,6 +472,7 @@
     "classification": "Strider",
     "subtype": "Light Mount",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "Caprice uses Apheks in a similar manner that Terra Novans use light tanks. However, they come with some features that allow them more tactical diversity. They can climb extremely well and are able to use their scorpion-like appendage to direct weapons from around cover.",
     "variants": [
       {
@@ -544,6 +551,7 @@
     "classification": "Strider",
     "subtype": "Medium Mount",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "Performance reports on Caprician mounts continue to note how they tend to lack strategic options, especially outside of mountainous environments. One of Hakkar’s responses was to develop a mount to bring a specific option currently lacking from many of their mounts: artillery.",
     "variants": [
       {
@@ -591,6 +599,7 @@
     "classification": "Strider",
     "subtype": "Medium Mount",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "As Hakkar’s first entry into heavy mounts, the Kadesh is a bit of a multi-tool. It has an ECM device for electronic warfare and jet assisted jumping capabilities, all in addition to its climbing pistons, good armor and exceptional weapon choices.",
     "variants": [
       {
@@ -650,6 +659,7 @@
     "classification": "Strider",
     "subtype": "Medium Mount",
     "manufacturer": "Hakkar",
+    "crewSize": 1,
     "description": "Hakkar’s second entry into the heavy combat mount class of vehicles is a favorite amongst many pilots. The Meggido marries popular features found on the Aphek with features from the Kadesh. Its advanced computers assist the pilot with several functions, allowing many features to be initiated by voice commands.",
     "variants": [
       {
@@ -726,6 +736,7 @@
     "classification": "Strider",
     "subtype": "Heavy Mount",
     "manufacturer": "Hakkar",
+    "crewSize": 2,
     "description": "The Ammon is built like a main battle tank and has exceptional mobility for its size within rocky environments, such as the Cat’s Eye Trench. Like most mounts, it is usually frowned upon for them to climb buildings within the city of Gomorrah, due to the giant holes their climbing pistons leave in the walls of buildings.",
     "variants": [
       {
@@ -776,6 +787,7 @@
     "classification": "Strider",
     "subtype": "Heavy Mount",
     "manufacturer": "Hakkar",
+    "crewSize": 0,
     "description": "The Moab was one of the first mounts. It is almost 200 years old and was initially developed as a very heavy all-terrain vehicle. It has been upgraded hundreds of times to stay modernized. Hakkar used the design to inspire the Ammon and allows other corporations to manufacture them, for a fee of course.",
     "variants": [
       {
@@ -814,6 +826,7 @@
     "classification": "Strider",
     "subtype": "Fire Support Frame",
     "manufacturer": "Hakkar",
+    "crewSize": 2,
     "description": "The Ba'alim Heavy Frame is an adaptation of the Moab. While it is lighter than the Moab, both share a similar main body and powerplant design. The Ba'alim has only two legs, built around a digitigrade stance that makes it easier to absorb the shock of running and jumping at higher speeds.",
     "variants": [
       {
@@ -854,6 +867,7 @@
     "classification": "Strider",
     "subtype": "Medium Mount",
     "manufacturer": "Kinzler Industries",
+    "crewSize": 0,
     "description": "The Hamath APC is an armed and armored version of a transport commonly used to get miners to and from sites wheeled, or even treaded vehicles normally can’t go. The corporations use them within the city limits of Gomorrah to transport fire, EMS and police response units.",
     "variants": [
       {

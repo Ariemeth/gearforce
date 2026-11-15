@@ -35,6 +35,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Warrior is Peace River’s main trooper gear. It is deployed throughout the Badlands and is often used to deal with rover threats. Though similar to the Hunter or Jager in many ways, the Warrior includes a standard ECM suite sufficient to disrupt rover communications as a prelude to an assault.",
     "variants": [
       {
@@ -221,6 +222,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Warrior IV has seen wide scale deployment throughout the Badlands. Tasked primarily with defending the Alpha Maglev line, they have mounted an effective campaign against CEF saboteurs. The heavier rocket payload makes it a decent deterrent against the invaders armor columns even in its standard configuration.",
     "variants": [
       {
@@ -392,6 +394,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Jackal has a few features not found on the Warrior. It has a larger melee weapon available and a variant with a sleek new Medium Rotary Laser (MRL). But most importantly, it’s reliable and cheap. The Jackal has proved to be an economic boon, allowing Paxton a significant source of income during the reconstruction period.",
     "variants": [
       {
@@ -549,6 +552,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Gladiator was originally an expansion on the Warrior chassis. Over the design process though, the Gladiator developed into an extremely high end gear. The Gladiator has excelled in operations against rovers. The gear is devastating at close ranges and able to cleave its way through targets with its vibro-axe.",
     "variants": [
       {
@@ -673,6 +677,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "Much like the Warrior on which it is based, the Pit Bull has undergone many revisions. It was first produced in the TN 1870s as a police gear for the Peace Officer Corps (POC). It has sold much better than the Warrior thanks to its low cost, distinctive role, appearance, and great service record.",
     "variants": [
       {
@@ -778,6 +783,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Harrier is the offspring of a Cheetah and Chasseur. Engineers at Paxton were so impressed by the NuCoal gear that they immediately lobbied for the opportunity to develop something similar. The Harrier is the preferred gear for recon specialists who need to be able to extract themselves from any situation quickly.",
     "variants": [
       {
@@ -896,6 +902,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Greyhound uses advanced computational systems that automate many communication functions for the pilot, allowing them to focus more on the battle and tasks needing to be performed. While the stock Greyhound can be used by anyone, the Chieftain is normally reserved for commanders.",
     "variants": [
       {
@@ -956,6 +963,7 @@
     "classification": "Gear",
     "subtype": "Command Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The PRDF took delivery of its first Stalker in the Spring of TN 1932. Since then, Paxton Arms has built over one hundred of these gears. While some have been deployed in front line regiments, most were never fielded. Where these gears are now is anyone’s guess. At least one is used by a duelist in the Khayr ad-Din dueling circuits.",
     "variants": [
       {
@@ -1032,6 +1040,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Skirmisher is a long range reconnaissance gear and the result of the Protectorate Defense Plan to field exclusively Paxton-made models. It’s maximized in as many ways as it can be, with research budgets being the only restriction. This gear offers more customization options that any other recon gear on the market. The Skirmisher’s flexibility allows it to be outfitted for many roles. When not interdicting communications, coordinating the battlefield via satellite uplink or breaking through enemy ECM, the Skirmisher is often found tagging targets for other units standing by to unleash long range indirect fire.",
     "variants": [
       {
@@ -1151,6 +1160,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "Despite NuCoalian claims, the Perseus was actually the first hover-gear on Terra Nova. This gear spent many cycles in development and only went into full production for a short period of time before evolving into the Raven. The remaining Perseus can still be found in Paxton facilities and a few other locations.",
     "variants": [
       {
@@ -1279,6 +1289,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Shinobi is one of the secret results from Project Talon. Aided by captured CEF tech and Paxton’s knowledge of covert operations, the Shinobi project breaks typical research budgets in an attempt to make the best stealth gear available. While the design is extremely good, some debate if the price was worth it.",
     "variants": [
       {
@@ -1496,6 +1507,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "Like the Jackal, the Spartan is part of the Paxton Arms “A gear for everyone” initiative. In order to maintain a market presence after 1939, Paxton Arms revealed a range of budget gears which would be more affordable than their existing line of high end military gears. The Spartan fills the role of an affordable heavy trooper.",
     "variants": [
       {
@@ -1589,6 +1601,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "Mustangs are favored by the POC for anti-Rover operations. Artillery rockets and mortars are key assets when taking on massed infantry, whether they’re on the move or dug in. These same weapons can also take on gears Rovers typically use. And if they want to come closer, the Mustang has answers for that too.",
     "variants": [
       {
@@ -1682,6 +1695,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Myrmidons were initially armed with the Banshee, a prototype 45-millimeter rotary cannon at the time. Both Myrmidons and Banshee Heavy Rotary Cannons (HRCs) are now well known for their smooth response and rugged durability. Two good qualities for any machine on Terra Nova.",
     "variants": [
       {
@@ -1731,6 +1745,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Crusader is Paxton’s initial response to developing a gear relative the polar forces’ Grizzly and Cobra. It does perform much like its competition and even has a few advantages. One disadvantage is the weakness towards particle accelerators, but the Crusader V overcomes this problem.",
     "variants": [
       {
@@ -1834,6 +1849,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "At the time of Peace River City's destruction, the Agamemnon was in an early prototype stage. The Agamemnon development team then worked with notable fervor, revenge being the topic of every day. Some of the Agamemnon’s are reported to have ONNets programmed with a distinct hatred for CEF units.",
     "variants": [
       {
@@ -1917,6 +1933,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "Despite its massive bulk, the Argos is very easy to operate and carries a fearsome payload of weapons. It’s reserved for some of the most experienced pilots. After someone is selected to become an Argos pilot they must then complete a significant training period to include melee tactics.",
     "variants": [
       {
@@ -2037,6 +2054,7 @@
     "classification": "Strider",
     "subtype": "Gear-Strider",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The original gear-strider, the Cataphract has a glorious history of dealing with CEF hovertanks and polar forces. The Cataphract carries weapons normally seen on tanks, such as rail guns and tank guns and has one of the largest melee swords ever constructed. It has a fearsome reputation amongst Peace Riverans and their enemies.",
     "variants": [
       {
@@ -2137,6 +2155,7 @@
     "classification": "Strider",
     "subtype": "Gear-Strider",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "The Uhlan is bristling with weapons and has been called – the walking pill box. A single Uhlan is capable of laying down a withering stream of fire that can tear any gear to pieces. Defensively it couples very heavy armor with an efficient anti-missile system, allowing it to withstand even the fiercest enemy assaults.",
     "variants": [
       {
@@ -2196,6 +2215,7 @@
     "classification": "Gear",
     "subtype": "Light Tank",
     "manufacturer": "Paxton",
+    "crewSize": 1,
     "description": "When the original Hyena factory was destroyed in the Peace River City bombing, all data pertaining to it was also destroyed. The Coyote was then gradually modified over time until it filled the Hyena’s previous role as a medium tank-strider. When the Hyena was finally recreated, it was redesigned to take position as a light tank with an advanced suspension system instead of true-legs.",
     "variants": [
       {
@@ -2254,6 +2274,7 @@
     "classification": "Strider",
     "subtype": "Medium Tank-Strider",
     "manufacturer": "Paxton",
+    "crewSize": 2,
     "description": "The Coyote Medium Tank-Strider was built from the ground up after the success of the Red Bull II. It is a daring exploration of the middle ground between tanks and striders. Paxton spent a generous amount of money on R&D in order to produce it. To say they succeeded would be an understatement.",
     "variants": [
       {
@@ -2318,6 +2339,7 @@
     "classification": "Strider",
     "subtype": "Heavy Strider",
     "manufacturer": "Paxton",
+    "crewSize": 0,
     "description": "The Red Bull was Terra Nova’s first tank-strider. It’s performance has proven the concept’s viability by presenting a platform with heavy tank like armor and strider-esque flexibility. These lumbering titans provide the armies of Peace River with heavy direct and indirect supporting fire.",
     "variants": [
       {
@@ -2399,6 +2421,7 @@
     "classification": "Gear",
     "subtype": "Infantry Fighting Vehicle",
     "manufacturer": "Paxton",
+    "crewSize": 2,
     "description": "The Mameluk is an experiment in itself. It has an extremely low profile for a combat vehicle and uses treads for mobility across rough terrain. It barely fits two; driver and gunner. But the infantry have taken to it rather well because its weapons can challenge gears and other targets better than many of their man-portable options.",
     "variants": [
       {
@@ -2439,6 +2462,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Paxton",
+    "crewSize": 0,
     "description": "The Hoplite APC is the workhorse of Peace River’s military regiments, carrying two cadres of infantry. Different variants offer a wide selection of weapon options that the commander can use to tailor how the Hoplite supports infantry.",
     "variants": [
       {

@@ -37,6 +37,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The oldest and most basic gear fielded by the South, the Jager began its existence as a shameless copy of the Hunter.  Indeed, Republican commandos stole a Hunter prototype and engineers were able to create a near-exact copy for operations which led to the creation of the Allied Southern Territories.",
     "variants": [
       {
@@ -205,6 +206,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Almost as soon as the North deployed the Stripped-Down (SD) Hunter, Southern patrol forces absconded with one of the gears for Territorial Arms to reverse engineer it. The efficiency at which the South is able to perform such actions is remarkable and Northern commanders everywhere curse it.",
     "variants": [
       {
@@ -313,6 +315,7 @@
     "classification": "Gear",
     "subtype": "Paratrooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Normally, air deployment precludes the availability of heavier weapons. But the inexpensive Jager Paratrooper can be equipped with a selection of effective weapons without adversely affecting its aerodynamics. This extra punch has allowed this gear to help turn the tide in many engagements.",
     "variants": [
       {
@@ -459,6 +462,7 @@
     "classification": "Gear",
     "subtype": "Rapid Response Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Dartjager, nicknamed - Bug Head - by pilots, is designed to serve as a Rapid Response Vehicle (RRV). The SRA uses squads of RRVs to quickly deploy and engage enemy contacts while more comprehensive plans are drawn up. It is dangerous work indeed as they take on any and all comers.",
     "variants": [
       {
@@ -621,6 +625,7 @@
     "classification": "Gear",
     "subtype": "Submersible Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "As the first amphibious gear on Terra Nova, several weapons were developed for the Wasserjager, such as the watertight, hand-held, 30mm, PR-55 autocannon. Shoulder-mounted Standard-XII torpedo pods grant the Wasserjager considerable underwater punch. An HLB-16 APGL and a HHVB-3 vibro-knife round out its abilities.",
     "variants": [
       {
@@ -731,6 +736,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Rattlesnake is another older southern design which continues to be relevant. Its main selling point is the price tag associated with a Medium Rocket Pod (MRP). Other gears with the same weapon are typically more expensive. This is a good option for commanders who are not as concerned with their pilots' survivability.",
     "variants": [
       {
@@ -829,6 +835,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Sidewinder was designed for when the survival of carefully trained gear pilots is deemed a priority to an understaffed Republican military. The torso and head armor is thicker around the cockpit, forming a heavily protected – box – which surrounds the pilot, making this gear popular with pilots.",
     "variants": [
       {
@@ -936,6 +943,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Mandeers Heavy Industries",
+    "crewSize": 1,
     "description": "The latest design to be produced by Mandeers Heavy Industries and the engineering experts of Dynamic Systems, the Diamondback Gear is a culmination of two decades of development. The result is a heavier trooper gear that can outlast any other gear in its class without compromising weapons.",
     "variants": [
       {
@@ -1037,6 +1045,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The current cutting edge in Southern gear design, the Black Mamba is a relatively recent gear that has had a serious impact on the Terra Novan military scene. The Mamba is the result of the modernization program that swept the Southern military just before the War of the Alliance.",
     "variants": [
       {
@@ -1248,6 +1257,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Southern Republic is always interested in expanding its ability to dominate the mountainous areas of Terra Nova in general and of the Badlands in particular. Rock Mambas lead the way in these endeavors with loadout sets task built for rugged terrain operations.",
     "variants": [
       {
@@ -1355,6 +1365,7 @@
     "classification": "Gear",
     "subtype": "Submersible Strike Gear",
     "manufacturer": "Mandeers Heavy Industries",
+    "crewSize": 1,
     "description": "On a planet where most combat takes place on dry land, the Water Viper has a very niche market. However, the SRA has made significant purchases of the design to strengthen their swamp and jungle fighting units. The Water Viper Silent Running (SR) is further equipped with an ECM pod while its turbines are retrofitted to reduce cavitation.",
     "variants": [
       {
@@ -1462,6 +1473,7 @@
     "classification": "Gear",
     "subtype": "Military Police Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Military Police gears (MP gears) are typically built for dealing with human targets, lightly armored vehicles, and other gears. Their primary weapon of choice tends to be frag cannons, capable of being loaded with non-lethal or lethal projectiles. Other weaponry, to include bazookas are available for heavier targets.",
     "variants": [
       {
@@ -1583,6 +1595,7 @@
     "classification": "Gear",
     "subtype": "Military Police Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "MP gears are commonly found in the Mekong Dominion or in areas where MILICIA regiments are active. For the Mekonese, these gears embody the Peacekeeper's mythos they have fashioned for themselves. Cobra MPs are fielded both for riot control and anti-rover duties. And, they excel at both.",
     "variants": [
       {
@@ -1708,6 +1721,7 @@
     "classification": "Gear",
     "subtype": "Military Police Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Iguana MPs can be found on all major southern military bases and quite a few minor ones. The Iguana MP is often preferred to the larger Mamba MP by pilots who find themselves undertaking operations in tight urban conditions. The lower profile of the Iguana allows it to work comfortably inside warehouses or in small alleys.",
     "variants": [
       {
@@ -1809,6 +1823,7 @@
     "classification": "Gear",
     "subtype": "Military Police Gear",
     "manufacturer": "Mandeers Heavy Industries",
+    "crewSize": 1,
     "description": "As a popular rally gear the Salamander has a reputation for speed-with-firepower. As an urban police gear, the Salamander is extensively used in city-states across the South. Since there is no rocket pack, Salamanders usually come armed with an autocannon that has an underslung secondary weapon.",
     "variants": [
       {
@@ -1903,6 +1918,7 @@
     "classification": "Gear",
     "subtype": "Military Police Gear",
     "manufacturer": "Mandeers Heavy Industries",
+    "crewSize": 1,
     "description": "This low cost gear has options for police equipment. The cockpit was redesigned by Dynamic Systems to be more ergonomic, making the gear extremely comfortable for extended operations. The Street Viper is found in city militias and is popular with police forces as an interception unit.",
     "variants": [
       {
@@ -1988,6 +2004,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Asp was officially developed to be a low-cost garrison gear. In truth, it’s an attempted deterrent to separatist movements, rovers and other dissidents. It’s armed and armored too lightly for most commanders' preferences. However, its frontal plates are reinforced, giving the pilot better protection than expected.",
     "variants": [
       {
@@ -2065,6 +2082,7 @@
     "classification": "Gear",
     "subtype": "Advanced Trooper Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Basilisk is basically a Jager with advanced sensors and other added electronics. The sensor array is very useful when firing indirectly with its rocket pack, which adds some diversity to the options available to trooper gears. Although its original duties have been mostly replaced by more advanced EW gears, it is still a great choice for its cost.",
     "variants": [
       {
@@ -2114,6 +2132,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Territorial Arms claims the Silverscale is the finest EW gear on Terra Nova today. Based on the Basilisk trooper gear, the Silverscale comes equipped with an even more advanced communications and electronic warfare suite. The target designator can extend out from a sensor boom and be used to peer around corners.",
     "variants": [
       {
@@ -2158,6 +2177,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Since its introduction, the Iguana has proven itself to be an extremely successful design. The Iguana saw extensive action in the War of the Alliance, where it was deployed as a recon, light trooper, and commando gear. The flexibility of this gear’s design was so apparent that it has even served as a command platform.",
     "variants": [
       {
@@ -2306,6 +2326,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "The Para Iguana has been in service since TN 1894. It's has proven its worth in the toughest commando and extraction missions, demonstrating that even a small machine can do the most dangerous jobs. This success can be traced back to the training for these pilots as it is some of the most rigorous around.",
     "variants": [
       {
@@ -2428,6 +2449,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "SRWI / Dynamic Systems",
+    "crewSize": 1,
     "description": "Sporting a wide array of lethal weapons, the Fer de Lance is an elegant fighting machine reserved for only the best. Based on the Sidewinder chassis, the engineers of the Fer de Lance made a number of internal changes by borrowing the actuator design and combat computer from Diamondbacks.",
     "variants": [
       {
@@ -2590,6 +2612,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Developed as an upgraded variant of the highly successful Iguana, the Gila design focuses on the potential lethality of an Iguana in an assault role. The Gila is frequently sold with a unique Heavy Submachine Gun (HSMG) that comes with an integrated Light Frag Cannon (LFC) underslung.",
     "variants": [
       {
@@ -2669,6 +2692,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "TA Skunk Works",
+    "crewSize": 1,
     "description": "As its name indicates, the Chameleon is specifically designed to disappear. At first glance, the Chameleon looks simply like a modified Iguana with slightly blockier armor plates. This impression soon vanishes when examining the intricate cockpit with even more advanced electronics than an Iguana.",
     "variants": [
       {
@@ -2748,6 +2772,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "TA Skunk Works",
+    "crewSize": 1,
     "description": "The Snakeye variant of the Black Mamba fulfills the need for a high performance, stealth gear built for covert operations, assassinations, and lightning raids. The hybrid propulsion system gives the pilot the option of switching to – whisper – mode by shutting down the turbine and only using the energy stored in the battery.",
     "variants": [
       {
@@ -2892,6 +2917,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "TA Skunk Works",
+    "crewSize": 1,
     "description": "The Green Mamba is another exceptional stealth gear. It strikes a happy medium between performance and cost by using more conventional weapons systems. One major benefit is that its weapons do not need to be recharged and the required ammunition is readily available just about anywhere on Terra Nova.",
     "variants": [
       {
@@ -3024,6 +3050,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "TA Skunk Works",
+    "crewSize": 1,
     "description": "The Gold Mamba is one of the most expensive gears ever developed. Produced simultaneously with the Rock Mamba, the Gold Mamba was allowed a larger budget and is considered by many to be the ultimate Mamba. They are usually only entrusted to the best gear pilots.",
     "variants": [
       {
@@ -3119,6 +3146,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Territorial Arms",
+    "crewSize": 1,
     "description": "Armed to the teeth and sporting armor to match, the Cobra is the AST’s main fire support gear. Highly modular, the Cobra can be fitted in various configurations that are each capable of filling a variety roles. Its ferocious reputation means that many Northern gear pilots treat the sighting of Cobras as a prelude to an assault.",
     "variants": [
       {
@@ -3260,6 +3288,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "TA Skunk Works",
+    "crewSize": 1,
     "description": "The King Cobra is often considered one of the most powerful gears ever commissioned and has repeatedly proven itself to be one of the most devastating weapons in the Southern arsenal. Heavy armor and a powerful and flexible armament allow it to function equally well as an assault or fire support gear.",
     "variants": [
       {
@@ -3344,6 +3373,7 @@
     "classification": "Strider",
     "subtype": "Gear-Strider",
     "manufacturer": "Avesta Group",
+    "crewSize": 1,
     "description": "Carrying a virtual arsenal, this behemoth is capable of destroying any target. Like many of the AST’s designs, the Drake is considered to be a marvel of technology and design. Used for support or assault, this Strider’s offensive capabilities are only matched by its frightening array of defensive measures.",
     "variants": [
       {
@@ -3443,6 +3473,7 @@
     "classification": "Strider",
     "subtype": "Fire Support Strider",
     "manufacturer": "Republican Heavy Industries",
+    "crewSize": 2,
     "description": "The Naga is currently one of the premier striders of the Southern military and is a common sight guarding nearly every military installation. Serving with distinction since its introduction, it proved its worth during the War of the Alliance, where its powerful guided missiles were used with great effect against the hovertanks of the CEF.",
     "variants": [
       {
@@ -3565,6 +3596,7 @@
     "classification": "Strider",
     "subtype": "Submersible Strider",
     "manufacturer": "Republican Heavy Industries",
+    "crewSize": 1,
     "description": "The Hydra is a specialized Strider that is capable of operating in the swampy regions prevalent in the South. Deployed by the Humanist Alliance, Eastern Sun Emirates, and in the jungles of the Mekong, Hydras are often tasked with ambush attacks. A Hydra, rising without warning from the swamp, is often the last sight many pilots see.",
     "variants": [
       {
@@ -3608,6 +3640,7 @@
     "classification": "Strider",
     "subtype": "Submersible Strider",
     "manufacturer": "Allied Defense Works",
+    "crewSize": 2,
     "description": "The Sagittarius is a heavily armored weapons platform that is capable of laying down impressive firepower. The Sagittarius comes in a variety of variants including anti-armor, anti-gear, and artillery. Some variants eschew rocket or missile weapons altogether and instead operate as advanced weapon platforms.",
     "variants": [
       {
@@ -3654,6 +3687,7 @@
     "classification": "Strider",
     "subtype": "Heavy Strider",
     "manufacturer": "HA Armor Werks",
+    "crewSize": 0,
     "description": "The Dragon represents one of the most successful strider designs on Terra Nova. It is heavily armored and packs a fearsome array of weapons that is more than capable of reducing its targets to scrap. Developed by the Humanist Alliance, the success of the design saw it quickly adopted by all the armies of the AST.",
     "variants": [
       {
@@ -3721,6 +3755,7 @@
     "classification": "Gear",
     "subtype": "Light Tank",
     "manufacturer": "Various",
+    "crewSize": 0,
     "description": "The main light tank employed by the South, the Hun is a dependable and effective design. Chosen in part due to its versatility, the Hun has been a part of the AST’s arsenal for over a century. Its flexible design allows it to be adapted to a variety of roles ranging from a frontline fighting unit to a heavy APC. The Hun can also be fielded as an artillery unit with the Ballista variant serving as an artillery rocket platform and the Ostrogoth as an artillery gun platform. Tank units comprising exclusively of Hun tank variants are popular for garrison duty as their maintenance costs are much lower than a unit of gears.",
     "variants": [
       {
@@ -3841,6 +3876,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Brok Enterprises",
+    "crewSize": 0,
     "description": "The Caiman is a sturdy, tracked vehicle equipped with good overall armor protection and is cheap enough to be fielded in large numbers. The fact that it’s amphibious is a plus as the South has many wetlands. The Caiman has built a solid reputation for itself and has been used in every Southern conflict since its introduction in TN1829.",
     "variants": [
       {
@@ -3915,6 +3951,7 @@
     "classification": "Gear",
     "subtype": "Medium Hovertank",
     "manufacturer": "Humanist Alliance",
+    "crewSize": 3,
     "description": "Another Humanist design to be adopted by the AST, the Hetairoi represents the pinnacle of Terra Novan efforts at building their own combat hover vehicles. As a combat platform the Hetairoi offers an unparalleled degree of maneuverability, agility, and firepower. The Spark variant compares favorably to CEF hovertanks and shares a common hunter-killer role. These hovertanks have seen constant combat in the current invasion and have been instrumental in countering hostile CEF forces.",
     "variants": [
       {
@@ -4005,6 +4042,7 @@
     "classification": "Gear",
     "subtype": "Heavy Tank",
     "manufacturer": "Republican Tank Arsenal",
+    "crewSize": 2,
     "description": "The Artemis serves as a rugged field air interdiction platform. Enhanced targeting computers allow the Artemis to lay down accurate fire even while on the move, increasing its survival rate against airstrikes and long range artillery fire. It is also very capable of taking out enemy gears.",
     "variants": [
       {
@@ -4052,6 +4090,7 @@
     "classification": "Gear",
     "subtype": "Heavy Tank",
     "manufacturer": "Republican Tank Arsenal",
+    "crewSize": 0,
     "description": "For over a century and a half, the South’s main battle tank has been the reliable, powerful Visigoth. A 140mm tank gun is the centerpiece of the Visigoth’s armament, with additional options to increase its versatility. The Visigoth Khan command tank has an electronic suite that is the envy of many commanders.",
     "variants": [
       {

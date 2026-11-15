@@ -33,6 +33,7 @@
     "classification": "Gear",
     "subtype": "Combat Golem",
     "manufacturer": "Various",
+    "crewSize": 1,
     "description": "The Constable Golems were hand-crafted artisan armor up until about 70 years ago when mass production of them resumed. Recently, Utopian and Edenite engineers shared their designs of the APE and golem suits. This resulted in the two becoming nearly identical. Despite this, Edenite artificers are quick to claim that their designs are better.",
     "variants": [
       {
@@ -127,6 +128,7 @@
     "classification": "Gear",
     "subtype": "Combat Golem",
     "manufacturer": "Various",
+    "crewSize": 1,
     "description": "An upgrade to the original golem, the Man At Arms is a newer addition for Eden that came from Utopia. Similar to the Constable, the Man at Arms Golem adds additional firepower and armor for use against heavy targets. While it’s running speed is pretty average for a machine of this size, its jetpack enables it to jet around at high speed or even leap over obstacles rather easily.",
     "variants": [
       {
@@ -230,6 +232,7 @@
     "classification": "Gear",
     "subtype": "Cavalry Golem",
     "manufacturer": "Lionheart Heavy Industries",
+    "crewSize": 1,
     "description": "The Centaur’s hover system makes it ideal for traversing Eden’s vast oceans. It excels as a high-speed cavalry machine, which the noble houses are very enthusiastic about. Nobles periodically hold jousting tournaments to entertain the masses. This golem is featured in almost every event because they are relatively inexpensive compared to other designs.",
     "variants": [
       {
@@ -313,6 +316,7 @@
     "classification": "Gear",
     "subtype": "Combat Golem",
     "manufacturer": "Quedd Merchants",
+    "crewSize": 1,
     "description": "Developed with Eden’s privateer consortiums in mind, the Quedd Merchants designed the Griffins with ship to ship actions in mind. They can be launched from a significant distance compared to other golems that rely on jetpacks. Their imposing disposition and unorthodox melee weapons are rather distasteful in the eyes of most nobles.",
     "variants": [
       {
@@ -380,6 +384,7 @@
     "classification": "Gear",
     "subtype": "Strike Golem",
     "manufacturer": "Lionheart Heavy Industries",
+    "crewSize": 1,
     "description": "Edenite children who dream of being champions for their kingdom first think of Doppels. Galant, strong and fierce are the associations. They can do anything a true knight would need. They can duel with a sword and shield. They can launch forward and joust. Or they can unleash with an effective selection of weaponry. To military commanders and adult pilots, they follow through with every promise.",
     "variants": [
       {
@@ -469,6 +474,7 @@
     "classification": "Gear",
     "subtype": "EW Golem",
     "manufacturer": "Excalibur Inc.",
+    "crewSize": 1,
     "description": "The Warlock is Eden’s first true electronic warfare specialist golem. Its modular design allows commanders and operators to arm it in relation to upcoming missions. All types of EW operators appreciate the Warlock’s exceptional sensors, which further enhance everything from spotting duties to jamming and hacking. The CEF has even purchased some of them to test as an – expendable – E-war option.",
     "variants": [
       {
@@ -549,6 +555,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Golem",
     "manufacturer": "Lionheart Heavy Industries",
+    "crewSize": 1,
     "description": "The Animus is Eden’s first steps into truly heavy golems. The project is officially supported by the CEF. The guided mortar is even a direct adaptation of CEF mortars. However, this design troubles CEF command because of features consistent with Terra Novan fire support gears, such as the torso mounted heavy machinegun.",
     "variants": [
       {
@@ -599,6 +606,7 @@
     "classification": "Strider",
     "subtype": "Golem-Strider",
     "manufacturer": "Quedd Merchants",
+    "crewSize": 1,
     "description": "Gargoyles are not considered golems. They are deemed a class of their own and more analogous to Terra Novan striders. The Quedd Merchants took criticism about their Griffins not being intimidating enough very seriously. The result is something that proper nobles publicly scuff at, while they also secretly consider how to purchase some without their friends and families knowing.",
     "variants": [
       {
@@ -643,6 +651,7 @@
     "classification": "Gear",
     "subtype": "Medium Hovertank",
     "manufacturer": "Victory Enterprises",
+    "crewSize": 0,
     "description": "CEF command considers Serpentina Hovertanks lesser versions of their own hovertanks. However, resistance cells performing hit and run strikes against the CEF have been using them to increasing effect as time goes on. Where the resistance has been obtaining them has not yet been discovered. But it’s only a matter of time before a Serpentina faces off with a 68 or 72 for the first time.",
     "variants": [
       {
@@ -708,6 +717,7 @@
     "classification": "Gear",
     "subtype": "Patrol Craft",
     "manufacturer": "MHK",
+    "crewSize": 0,
     "description": "The Baroness is commonly seen patrolling the littoral waters around Eden’s ports of call. They can operate in the water as a ship, or take to the air as a VTOL. Other uses include anti-piracy operations and long range patrols. When not in use they are generally landed in the water and moored to the pier.",
     "variants": [
       {

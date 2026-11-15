@@ -42,6 +42,7 @@
     "classification": "Gear",
     "subtype": "Commando Ape",
     "manufacturer": "Kogland",
+    "crewSize": 1,
     "description": "Commando Armigers have been observed being used for headhunting missions and is often accompanied by Commando N-KIDUs. It appears that the pilots chosen for Commando Armigers are some of the more experienced pilots Utopia has to offer. Some of them appear to be on the level of Black Talon pilots and that’s a bit concerning.",
     "variants": [
       {
@@ -237,6 +238,7 @@
     "classification": "Gear",
     "subtype": "Recce Ape",
     "manufacturer": "Kogland",
+    "crewSize": 1,
     "description": "The Recce Armiger comes with some of the most advanced electronic warfare technology available. It has a hover system it can use to travel quickly and a stealth coating to keep it hidden. Its main armament is either a laser cannon for sniping out targets or a rotary laser for a more direct approach.",
     "variants": [
       {
@@ -447,6 +449,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Ape",
     "manufacturer": "Kogland",
+    "crewSize": 1,
     "description": "While sharing the base chassis of all armiger units, the Support Armiger swaps the legs and hover systems for a pair of tracks. This allows the unit to mount heavier weapons. Utopian pilots who are assigned to Support Armigers generally prefer to use it in a very direct manner. Although they also have very effective indirect options as well.",
     "variants": [
       {
@@ -595,6 +598,7 @@
     "classification": "Gear",
     "subtype": "Engineering Ape",
     "manufacturer": "Kogland",
+    "crewSize": 1,
     "description": "Utopia’s constant state of war proved useful in spinning up an invasion force to support the CEF. Decades of logistics and tactics were supplamented by novel designs to aid the drone formation. One example is the Utopian trend to recycle and reuse. The Engineering Armiger is a battlefield recovery unit deisgned to recover equipment.",
     "variants": [
       {
@@ -693,6 +697,7 @@
     "classification": "Gear",
     "subtype": "Combat Ape",
     "manufacturer": "Various",
+    "crewSize": 1,
     "description": "Developed in Ankara hundreds of years ago, the original APES were a patented design based on engineering machines at the time. When Kogland invaded, they took to the design, which also removed it as a source of income for Ankara. Now the term APES has become colloquially ‘apes’ and everyone makes them.",
     "variants": [
       {
@@ -786,6 +791,7 @@
     "classification": "Gear",
     "subtype": "Combat Ape",
     "manufacturer": "Various",
+    "crewSize": 1,
     "description": "When the situation demands heavier weapons the Support Apes are called to action. Like the Trooper Ape, this combat ape can easily swap weapon loadouts as the situation demands. The Bulwark Support Ape, with a medium rotary laser, is the newest variant weapon and pilots are sometimes seen arguing over who has the right to pilot them.",
     "variants": [
       {
@@ -885,6 +891,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Ape",
     "manufacturer": "Kogland",
+    "crewSize": 0,
     "description": "MAR-DKs are devastatingly efficient at laying down large volumes of fire. They are often operated by advanced humanoid automatons, though cheaper autos can be used. Human ape pilots may pilot them as well. Human pilots are fewer in number but take priority when they are around.",
     "variants": [
       {
@@ -957,6 +964,7 @@
     "classification": "Gear",
     "subtype": "Super Tank",
     "manufacturer": "Kogland",
+    "crewSize": 0,
     "description": "The Gilgamesh is the center piece of any Utopian battlefield. These tanks operate surrounded by an army of automatons and other units. They are crewed by four humans or automatons, and they are assisted by a fifth member, the Gilgamesh’s highly advanced artificial intelligence.",
     "variants": [
       {

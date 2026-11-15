@@ -29,6 +29,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Hunter Gear was the first purpose-built combat walker on Terra Nova. It is THE forerunner for all other gear designs on the planet. It remains among the most produced gears still in active service. Refitted several times to keep it competitive, its greatest strengths have always been simplicity and ruggedness.",
     "variants": [
       {
@@ -282,6 +283,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Stripped-Down (SD) Hunter was developed before the era of advanced reconnaissance gears and was originally intended for recon duties. Its increased speed and lower maintenance costs made it popular in places such as the WFP even after the advent of more advanced recon gears.",
     "variants": [
       {
@@ -433,6 +435,7 @@
     "classification": "Gear",
     "subtype": "Paratrooper Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "Originally, Norguard high command requested a Hunter variant be developed exclusively for paratrooper duties. The base chassis was readily available and easy to modify. As it is still basically a Hunter, the paratrooper variant is still cheap enough to field in quantities sufficient to be a significant threat.",
     "variants": [
       {
@@ -543,6 +546,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Armored Hunter, also known as – the armored can – is one of the rarest Hunter variants of all. The special program was an attempt to create a new type of Hunter able to survive anything short of the firepower of a tank. Although the resulting armored shell was fairly resistant to gear-class weaponry, its lack of mobility would also get it into trouble.",
     "variants": [
       {
@@ -655,6 +659,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Bearhunter has an uncommon origin. During a field exercise, a Bear technician happened to end up working on an Armored Hunter’s engine. While a bit smaller, the Armored Hunter’s engine had a very similar layout to the Bear’s Engine. Some tooling took place to get the Armored Hunter’s engine replaced with the Bear’s engine. The consequent improvement in performance was startling, and the Bearhunter was born.",
     "variants": [
       {
@@ -758,6 +763,7 @@
     "classification": "Gear",
     "subtype": "Advanced Trooper Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "Success is a good place to start when building the future’s next gear. And there's no better place to start than the original Hunter. The XMG represents a leap in capabilities with improvements in fire control and maneuverability. The high fuel consumption rates of the XMG don’t worry the commanders, but the supply officers don’t like it.",
     "variants": [
       {
@@ -903,6 +909,7 @@
     "classification": "Gear",
     "subtype": "Commando Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Commando Hunters are some of the most recognizable of the Hunter variants. It was designed as the first northern gear to be fully airdroppable and are made to undertake raids and other missions deep within enemy territory. The Wild Commando was also the first airborne electronic warfare gear.",
     "variants": [
       {
@@ -1114,6 +1121,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Western Armories",
+    "crewSize": 1,
     "description": "The lesser-known Wolf began as a contemporary trooper gear in competition with the Hunter. Mismanagement saw its production collapse. However, Western Armories purchased the rights from M-Corp to meet local demands for climbing gears, and gears which just cost less than Hunters.",
     "variants": [
       {
@@ -1258,6 +1266,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "One of the most advanced gears in the Northern armed forces, the Jaguar was developed by Northco in the early 1900s as a possible successor of the Hunter. Only the high cost of the machine prevented this from happening. The Jaguar features an exceptional balance of speed, firepower, and agility.",
     "variants": [
       {
@@ -1451,6 +1460,7 @@
     "classification": "Gear",
     "subtype": "Dueling Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Nemesis Jaguar is more of an unapproved field variant some commanders choose to allow. They argue dueling capabilities are a tool which can both enhance the performance of the surrounding troops and intimidate the enemy at the same time. Nemesis Jaguars are typically piloted by the platoon's premier duelist.",
     "variants": [
       {
@@ -1610,6 +1620,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Jaguarundi is a Jaguar with reduced armor for increasing speed. The Jaguarundi can’t take hits like a Jaguar, but it moves more similar to a Cheetah. The pilots who love their Jaguarundis, love them and wouldn’t trade them for anything. Jaguarundis are common around dueling scenes.",
     "variants": [
       {
@@ -1763,6 +1774,7 @@
     "classification": "Gear",
     "subtype": "Mountaineering Gear",
     "manufacturer": "Shaian Mechanics",
+    "crewSize": 1,
     "description": "Originally conceived as a rally/arena gear, the Leopard has found its home within the ranks of the CNCS. The Leopard’s light weight and air-droppable design along with the later addition of climbing equipment has created a great mountaineering gear able to traverse any terrain with ease. Deployable by land or air, the Leopard can respond to any threat.",
     "variants": [
       {
@@ -1860,6 +1872,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "An advanced design with more armor and better fire control than the Hunter, the Tiger was developed by Northco. Used by the armies of the Northern hemisphere as a shock trooper and line breaker, the design neither uses nor requires many of the technological advances that have occurred since its entry into military service.",
     "variants": [
       {
@@ -1905,6 +1918,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "An early recon gear, the Bobcat’s unique SMS design requires the gear to kneel down to engage its wheels. This configuration improves handling but also prevents its legs from being properly armored. Bobcats are often paired with Wildcats in the WFP and despite their perceived obsolescence they perform admirably.",
     "variants": [
       {
@@ -1985,6 +1999,7 @@
     "classification": "Gear",
     "subtype": "Light Patrol Gear",
     "manufacturer": "Western Armories",
+    "crewSize": 1,
     "description": "Although officially designated as a gear, many would consider the Lynx to be more akin to a transformable power armor system. They are commonly used as rapid response gears attached directly to Infantry companies. Infantry commanders appreciate having Lynxes organic to them as they can respond faster than most gears.",
     "variants": [
       {
@@ -2060,6 +2075,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Keimuri Gears",
+    "crewSize": 1,
     "description": "The Ferret serves the Northern armies as an effective electronic warfare gear. Its low cost matched with a good track record has allowed this aging design to endure. Ferret pilots tend to avoid high-intensity combat and concentrate on recon duties, operating the gear in its SMS mode, racing across the landscape as it scans for trouble.",
     "variants": [
       {
@@ -2150,6 +2166,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Keimuri Gears",
+    "crewSize": 1,
     "description": "This electronic warfare specialist gear is an upgrade of the venerable Ferret design. It retains the basic torso of the Ferret, but employs a more standard leg and drive assembly. The Weasel’s electronic systems are one of the most powerful of any Northern gear design. Pilots are encouraged to avoid combat and support from the rear.",
     "variants": [
       {
@@ -2248,6 +2265,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Shaian Mechanics",
+    "crewSize": 1,
     "description": "Packed with the best electronics available, the Cheetah is the gear of choice for reconnaissance and electronic warfare within the CNCS. Popular with pilots, the Cheetah’s Surveillance and Target Acquisition (STA) package makes them popular around FS Gears too.",
     "variants": [
       {
@@ -2356,6 +2374,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Shaian Mechanics",
+    "crewSize": 1,
     "description": "the Metal Cat is essentially an armored-up Cheetah with the high-end electronics stripped out. Metal Cats have seen wide use within the NLC, who seeks to reduce their reliance on Northco. Some gear jocks favor Metal Cats over Hunters due to their smaller size, agility and increased speed.",
     "variants": [
       {
@@ -2465,6 +2484,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Shaian Mechanics",
+    "crewSize": 1,
     "description": "Given the vast distances to cover and the importance of a quick reaction force, it was inevitable that a Cheetah Paratrooper would come to be. Just as with the base Cheetah, this cat can strike hard and disappear before the enemy knows what hit them. Cheetah pilots are usually very happy with their assignment to this gear.",
     "variants": [
       {
@@ -2582,6 +2602,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "Shaian Mechanics",
+    "crewSize": 1,
     "description": "The Black Cat is built from the ground up for stealth, making it an excellent commando and covert operations machine. The existence of the Black Cat is such a well-guarded secret that most intelligence officers from rival powers consider its existence to be a myth. Black Cats are usually deployed in a supporting role to Panthers.",
     "variants": [
       {
@@ -2655,6 +2676,7 @@
     "classification": "Gear",
     "subtype": "Special Forces Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Panther stealth gear is only available in small numbers. Its advanced systems include a Racetech rubberized absorbent coating, an electric battery/turbine for silent-running power, and a silenced 40mm Heavy Rifle. The Panther brings death to enemies of the CNCS, striking in utter silence.",
     "variants": [
       {
@@ -2713,6 +2735,7 @@
     "classification": "Gear",
     "subtype": "Police Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "Northern heavy gear military police regiments make sure discipline is maintained throughout the Northern Guard. The gear-sized shotgun has a distinct sound when racking a round. It's usually more than enough to calm most situations down.",
     "variants": [
       {
@@ -2809,6 +2832,7 @@
     "classification": "Gear",
     "subtype": "Police Gear",
     "manufacturer": "Shaian Mechanics",
+    "crewSize": 1,
     "description": "The Northern MPs have their own agenda and are granted significant freedom in carrying out their duties. Their license to kill, for one thing, makes them respected throughout all the Northern forces. Cheetah MPs paired with Jaguar MPs usually means something is about to go down.",
     "variants": [
       {
@@ -2883,6 +2907,7 @@
     "classification": "Gear",
     "subtype": "Police Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Jaguar MP entered wide distribution after the War of the Alliance. Only some UMFA units had them in the pre-war cycles. They are now frequently used in Counter Insurgency (COIN) operations. Insurgencies are less prevalent in the North than in the South, but that’s only saying so much.",
     "variants": [
       {
@@ -2981,6 +3006,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "A fire support gear designed by Northco, the Lion uses lessons learned from Jaguars and Kodiaks. It is fast for a machine of its size and has remarkable agility for a large gear due to the latest gyro designs. While access to the Lion has been somewhat limited, Northco hopes to meet the growing demand soon.",
     "variants": [
       {
@@ -3127,6 +3153,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Grizzly has been the most common Northern fire support gear since the War of the Alliance. A big, brutal, and obnoxious creature like its namesake, the Grizzly is capable of both long range fire support and heavy assault. It can also be a devastating anti-anything weapon if screened well by lighter units.",
     "variants": [
       {
@@ -3297,6 +3324,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Koala started as a design to upgrade the aging Bear fire support gear. The Koala, or – Drop Bear – as pilots like to call it, provides paratrooper squads with access to heavier firepower allowing them to undertake a wider range of missions.",
     "variants": [
       {
@@ -3346,6 +3374,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Western Armories",
+    "crewSize": 1,
     "description": "The Dingo saw extensive use during the Polar War and postwar anti-rover operations. These were some of the first airdroppable fire support gears on the northern market. Squads of Dingoes have been used to drop into enemy sectors and begin suppressing entire platoons. They are quite good at this.",
     "variants": [
       {
@@ -3396,6 +3425,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "Northern Guard High Command commissioned Northco for an fire support gear based on the Grizzly they had already done. They asked for a faster-stronger-better Grizzly, all of which made the engineers frown. However, what they did do is considered by many to be superior to the Grizzly.",
     "variants": [
       {
@@ -3518,6 +3548,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "Northco",
+    "crewSize": 1,
     "description": "The Kodiak was developed during the War of the Alliance as a counter to CEF Light Hovertanks. It sports tougher armor than the Grizzly and its light anti-tank missile is an upgraded version of the Badger's tried and true anti-tank missile system. It is a badge of honor for any CNCS gear pilot to be assigned to a Kodiak.",
     "variants": [
       {
@@ -3644,6 +3675,7 @@
     "classification": "Strider",
     "subtype": "Gear-Strider",
     "manufacturer": "Northco",
+    "crewSize": 2,
     "description": "Sponsored by the Revisionist Church, the Scimitar is the first gear-strider of the CNCS. Designed with the mountainous terrain of the North in mind it is outfitted with climbing equipment that also functions in close combat. Powerful weaponry and heavy armor makes it a fearsome gear-strider indeed.",
     "variants": [
       {
@@ -3696,6 +3728,7 @@
     "classification": "Strider",
     "subtype": "Assault Strider",
     "manufacturer": "Hartmore Motor Company",
+    "crewSize": 2,
     "description": "The oldest strider used by the CNCS forces, the Mammoth has been in service for almost 100 cycles. Northerners everywhere beam with pride when they spot a Mammoth because of its rich history. All variants are armed with a battery of heavy weapons. And if needed, they can replace the automated machine guns with anti-personnel grenade launchers.",
     "variants": [
       {
@@ -3852,6 +3885,7 @@
     "classification": "Strider",
     "subtype": "Artillery Strider",
     "manufacturer": "Hartmore Motor Company",
+    "crewSize": 2,
     "description": "The Damocles Artillery Strider is built from the highly successful Mammoth Assault Strider. Initially it featured the massive KLG-675 Artillery Gun with no arms as its mission did not call for it. As time progressed the A2 variant with arms naturally became more common.",
     "variants": [
       {
@@ -4001,6 +4035,7 @@
     "classification": "Strider",
     "subtype": "Heavy Assault Strider",
     "manufacturer": "Hartmore Motor Company",
+    "crewSize": 2,
     "description": "The Mastodon started as a request from Norlight high command. While the request was a convoluted mess of every privileged commander’s wish list, to include very specific cup holders for some reason… The end result is a more armored, albeit slower, Mammoth.",
     "variants": [
       {
@@ -4144,6 +4179,7 @@
     "classification": "Strider",
     "subtype": "Heavy Strider",
     "manufacturer": "Northco",
+    "crewSize": 2,
     "description": "The Thunderhammer is a four-legged field heavy strider used by Northern forces for heavy fire support. Its legs and large feet allow it to traverse regions normally impassable by other vehicles. Many of the subsystems are automated so it functions very efficiently even with only one pilot and one gunner.",
     "variants": [
       {
@@ -4228,6 +4264,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Shaian Mechanics",
+    "crewSize": 0,
     "description": "The Badger Armored Personnel Carrier is ubiquitous in the armies of the CNCS. Good speed, armor, and reliable armament have made it a staple of all Northern infantry regiments. Its sturdy eight-wheeled design can transport up to twenty fully equipped troopers to battle through almost any terrain.",
     "variants": [
       {
@@ -4336,6 +4373,7 @@
     "classification": "Gear",
     "subtype": "Light Tank",
     "manufacturer": "Norlight Industries",
+    "crewSize": 0,
     "description": "The Klemm is a light tank that is armed with a bank of six anti-tank missiles that allows it to punch above its weight against heavier enemy armor or provide fire support for spotter units equipped with target designators. The chassis is very modular which allows a significant variety of variants.",
     "variants": [
       {
@@ -4465,6 +4503,7 @@
     "classification": "Gear",
     "subtype": "Heavy Tank",
     "manufacturer": "Western Armories",
+    "crewSize": 0,
     "description": "The WFP looked to Western Armories to produce a cheap self propelled gun. The Victor, named after Victor Cristobal, a historic clan head from the Cristobal clan, was the answer. The cost savings on forgoing the use of a turret and several other features make this tank cheap. Its reputation against much more advanced tanks make it popular.",
     "variants": [
       {
@@ -4511,6 +4550,7 @@
     "classification": "Gear",
     "subtype": "Heavy Tank",
     "manufacturer": "Brok Enterprises",
+    "crewSize": 0,
     "description": "The Aller is an advanced main battle tank designed to excel at combat with other armored units. All variants of the Aller carry heavy weaponry and are used to dominate open battlefields. The Naval Support Aller adds a battery of heavy anti-tank missiles and the Hardy Aller replaces the rail gun with a more reliable tank gun.",
     "variants": [
       {
@@ -4557,6 +4597,7 @@
     "classification": "Gear",
     "subtype": "Heavy Tank",
     "manufacturer": "Brok Enterprises",
+    "crewSize": 0,
     "description": "The Verder is a heavy self-propelled gun based on the hull and drive train of the Aller main battle tank. The upper hull of the MBT accommodates the characteristic 200 mm artillery gun and its associated machinery. The Verder is the pride of several Northern artillery units and the terror of its foes.",
     "variants": [
       {

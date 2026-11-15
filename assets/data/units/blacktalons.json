@@ -338,6 +338,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "Talon commanders have noticed a need to have the option to at least hold territory for extended periods of time. So, they looked at more mass produced option so that they can get the numbers needed to hold positions without utilizing some of their higher end assets. The Dark Warrior does this in spades.",
     "variants": [
       {
@@ -517,6 +518,7 @@
     "classification": "Gear",
     "subtype": "Trooper Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The Talons are noted for their tech, including advanced jetpacks. However, when stealth is a requirement, climbing gears are actually one of the top choices. When Western Armories reanimated the Wolf program, Talon Werks engineers jumped at the opportunity to modify them.",
     "variants": [
       {
@@ -633,6 +635,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "An upgrade of the Northern Jaguar, this gear is used by Black Talon combat units in their standard operations. Despite an active stealth system, advanced actuators and improved power plant the gear is relatively unchanged. This gear is used in Talon squads operating in System and are often Terra Nova’s first responders to the CEF threat.",
     "variants": [
       {
@@ -799,6 +802,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The Black Mamba is the South’s primary strike gear and the many years of use have been influential in developing strategies and tactics that synergize its many advantages. The Dark Mamba is a fearsome combat unit harmoniously marrying the deadly trinity of performance, firepower and survivability in a single package.",
     "variants": [
       {
@@ -956,6 +960,7 @@
     "classification": "Gear",
     "subtype": "Strike Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The primary strike gear used by the Black Talons, the Eagle was also the first of the Claw series to roll off the assembly line. Based off Paxton’s Warrior Elite program, the Eagle incorporated numerous technological advancements developed for the high risk missions undertaken by Talon operatives.",
     "variants": [
       {
@@ -1108,6 +1113,7 @@
     "classification": "Gear",
     "subtype": "Command Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The Owl was designed as a command gear from the ground up and incorporates the latest in electronic technologies. Exclusively used by commanders, the Owl features a networked logic engine which assists in decision making by analyzing sensor and targeting data from all gears in the squad.",
     "variants": [
       {
@@ -1252,6 +1258,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The Dark Cheetah occupies a role similar to that of its CNCS variant. It is an excellent recon gear with powerful sensors and communications equipment. Though initially competing with the Dark Iguana, Dark Cheetahs were chosen due to the slightly better maneuverability, smaller size and lower tonnage.",
     "variants": [
       {
@@ -1431,6 +1438,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The Dark Skirmisher was chosen for the Black Talons because of its sterling record of reliability in the field, low maintenance requirements and its ability to easily fill multiple mission profiles. It retains its advanced ECM suite allowing it to wreak havoc by disrupting comms, targeting systems or other voodoo tricks.",
     "variants": [
       {
@@ -1591,6 +1599,7 @@
     "classification": "Gear",
     "subtype": "EW Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "Like all Claw series gears, The Raven originated from the dark depths of the Paxton Karaq Wastes Research and Development facility. It’s in this facility that Terra Novan technology was challenged and taken to the next level with the ultimate endeavor of defeating the CEF. The Raven is the most advanced EW gear from Terra Nova.",
     "variants": [
       {
@@ -1745,6 +1754,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The Dark Cobra is Armed with an array of short and long ranged weapons. These loadouts allow the pilots to work as a hammer or go in with more finesse. Famed gear pilot Miranda Petite pilots a Dark Cobra, Julius. It is rumored she helped develop the variant loadouts with the Talon Werks Team.",
     "variants": [
       {
@@ -1837,6 +1847,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The Raptor is used when the Black Talons are tasked with assaulting fortified enemy positions. Like its namesake, the Raptor is a merciless predator and is equipped with a wide array of tools for quickly dismantling its prey. An unusually high number of Raptor pilots have dueling experience.",
     "variants": [
       {
@@ -1945,6 +1956,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "The mission profile of the Dark Kodiak remains unchanged from its CNCS forbearer. Armed with a variety of tank busting weaponry the gear is often used in an assault capacity. Due to its reliance on CNCS manufacturing facilities for components and replacement parts, the Dark Kodiak is gradually being phased out in favor of its Claw counterparts.",
     "variants": [
       {
@@ -2038,6 +2050,7 @@
     "classification": "Gear",
     "subtype": "Assault Gear",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "Originally called the Agamemnon, the Vulture is easily the most advanced fire support gear to come out of Paxton’s hidden Karaq Wastes R&D facility. It’s arguably the most powerful fire support gear ever made and it makes engineers everywhere wonder what Paxton did to evolve their gears to this level.",
     "variants": [
       {
@@ -2120,6 +2133,7 @@
     "classification": "Strider",
     "subtype": "Gear-Strider",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "Deep in the hidden Karaq Waste facility, Talon Werks has been busy developing the most advanced strider Terra Nova has ever known. With lessons learned from engagements with the CEF and other colonies, Paxton has taken major design elements from the Cataphract and added new and improved capabilities.",
     "variants": [
       {
@@ -2216,6 +2230,7 @@
     "classification": "Gear",
     "subtype": "Light Tank",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 1,
     "description": "As soon as the Hyena II started rolling off the assembly lines, Talon operatives clamored for its inclusion into their arsenal. Faster than the average strider, and carrying some high-tech weaponry, Hyena IIs fall into the special operations of the Talons like they were made for it.",
     "variants": [
       {
@@ -2272,6 +2287,7 @@
     "classification": "Strider",
     "subtype": "Medium Tank-Strider",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 2,
     "description": "The Dark Coyote was a top pick for Black Talon operations because they can easily adapt to running battles. So, Black Talon engineers got to work improving Coyotes to the best of their abilities. They improved the armor, targeting systems and even added a stealthy skin.",
     "variants": [
       {
@@ -2344,6 +2360,7 @@
     "classification": "Strider",
     "subtype": "Fire Support Strider",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 2,
     "description": "Black Talon uses Nagas for assaulting targets with direct and indirect firepower. When indirect firepower is called for, then its sensor booms may come into play. Sensor booms that can stealthily peer around corners paired with indirect weapons make the Dark Naga perfect for ambushes.",
     "variants": [
       {
@@ -2470,6 +2487,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 0,
     "description": "The Dark Mastiff is the same APC used by Peace River. They are upgraded with reinforced shocks to allow airdropping, as well as new sensor absorbing skin. The fact that it can only carry one cadre is perfect for infiltration work.",
     "variants": [
       {
@@ -2540,6 +2558,7 @@
     "classification": "Gear",
     "subtype": "Light Vehicle",
     "manufacturer": "Black Talon Werks",
+    "crewSize": 0,
     "description": "The Dark Hoplite is a robust APC that can carry two infantry cadres. Very similar to Peace River’s regular Hoplite it has a wide selection of variants and options that allow commanders to customize. And like the Dark Mastiff they are upgraded with reinforced shocks to allow airdropping, as well as new sensor absorbing skin.",
     "variants": [
       {

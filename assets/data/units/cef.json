@@ -33,6 +33,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 1,
     "description": "All CEF frames are a result of reverse engineering captured gears from Terra Nova. Using powerful hover technology, CEF frames can easily keep pace with the hovertanks. They often work together, trading duties flanking the enemy. Jan class GREL are sometimes found in the F6-16 when they come with the upgraded command and control suite.",
     "variants": [
       {
@@ -164,6 +165,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 1,
     "description": "A similar design to the F6-16, the F2-21 are commonly piloted by a GREL. Terra Novan intelligence has not been able to confirm why GREL are more likely to pilot the F2-21. For the CEF, the reasons are simply unspoken and more cultural in nature.",
     "variants": [
       {
@@ -283,6 +285,7 @@
     "classification": "Gear",
     "subtype": "Mountaineering Frame",
     "manufacturer": "Kadellie Weapon Systems",
+    "crewSize": 1,
     "description": "As an early frame, Kadellie engineers determined the primary requirement for the F81-12 would be mobility rather than armor or firepower. Their rationale being this frame would need to get to advantageous locations fast and many such locations would not be easy to reach by walking alone.",
     "variants": [
       {
@@ -391,6 +394,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Kadellie Weapon Systems",
+    "crewSize": 1,
     "description": "The F-99 Frame is intended for patrolling around space facilities and supporting boarding actions. Certainly, Black Talon operations against critical assets motivated CEF command to rush development of these. Many of the top pilots are Minerva with key cybernetic enhancements provided by Caprice.",
     "variants": [
       {
@@ -476,6 +480,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 1,
     "variants": [
       {
         "id": "cef-f55-fury",
@@ -541,6 +546,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 1,
     "description": "While the Terra Novan gears excel in denser environments, these same environments limit large vehicles, such as hovertanks and hover APCs. This ultimately reduces the deploy-ability of weapon systems, including artillery support. The F2-07 is one overpriced fire support answer, but an answer none-the-less.",
     "variants": [
       {
@@ -618,6 +624,7 @@
     "classification": "Gear",
     "subtype": "Advanced Frame",
     "manufacturer": "Kadellie Weapon Systems",
+    "crewSize": 1,
     "description": "First observed on Eden by Black Talon teams, the F2-25 was suspected of being a dedicated black ops vehicle but it is now widely known that the 25 was designed for recon missions and is only incidentally used for headhunter or espionage missions. That said, it is very fast and comes with many features found only on SF gears.",
     "variants": [
       {
@@ -741,6 +748,7 @@
     "classification": "Gear",
     "subtype": "Combat Frame",
     "manufacturer": "Kadellie Weapon Systems",
+    "crewSize": 1,
     "description": "The F11-22 proved too fragile for the sort of frontline assault duties Ground Command had in mind. Unwilling to accept failure, the executives at Moscow Heavy Industries decided to pursue an independent schedule for the development of something the Colonial Expeditionary Force needed but hadn't asked for. A scout.",
     "variants": [
       {
@@ -811,6 +819,7 @@
     "classification": "Gear",
     "subtype": "Fire Support Frame",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 1,
     "description": "A heavier frame than the 6-16 or the 2-21, the F2-19 carries the heaviest weapons of all known frame designs. These 2-19s are very fast for a frame of their size and can outflank many Terra Novan fire support gears very quickly.",
     "variants": [
       {
@@ -930,6 +939,7 @@
     "classification": "Gear",
     "subtype": "Engineering Frame",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 1,
     "description": "The F-305 is the CEF’s engineering frame. It features two main variants, a standard combat engineering frame and a mine layer. During the opening shots of the current invasion a platoon of 305s tasked with setting up an airfield repelled an attack from a proxy force of Badland irregulars backed by Peace River.",
     "variants": [
       {
@@ -971,6 +981,7 @@
     "classification": "Gear",
     "subtype": "Light Hovertank",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 3,
     "description": "The first hovertanks that polar forces encountered during the first CEF invasion of Terra Nova were LHT-67 Hovertanks. Fast and nimble, the LHT- 67 can strike quickly from a flanking position and then dart away before a response can be coordinated.",
     "variants": [
       {
@@ -1036,6 +1047,7 @@
     "classification": "Gear",
     "subtype": "Light Hovertank",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 0,
     "description": "The LHT-71 marks advancements beyond the LHT-67. It’s faster and better armored, but it comes at a higher cost.  Carrying a range of weapons to suit different tactical situations, this light hovertank is more than capable of dueling at range with any gear that Terra Novan armies can field.",
     "variants": [
       {
@@ -1125,6 +1137,7 @@
     "classification": "Gear",
     "subtype": "Light Hovertank",
     "manufacturer": "Kadellie Weapon Systems",
+    "crewSize": 0,
     "description": "The LHT-95 marks a change in design from the other fast hovertanks. It steadily advances and pins the enemy with its main weapons while other elements flank and close in for the kill. Previously only available to CEF forces, several examples of the LHT-95 were appropriated by the Port Arthur Korps and reverse engineered.",
     "variants": [
       {
@@ -1194,6 +1207,7 @@
     "classification": "Gear",
     "subtype": "Medium Hovertank",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 3,
     "description": "The MHT-68 provides a heavy punch to the forces of the CEF. It’s tough enough to press right down the middle, but fast enough to escape most things it cannot kill. It took Terra Novan military forces a while to become proficient at countering them. The price they paid in order to learn is hard to forget.",
     "variants": [
       {
@@ -1253,6 +1267,7 @@
     "classification": "Gear",
     "subtype": "Medium Hovertank",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 0,
     "description": "The MHT-72 marks more advancements made in hovertank technology. Slightly improved armor and jump jets, plus a few other features makes this hovertank more expensive too. The cost doesn’t seem to be an issue for the CEF as they send wave after wave of 72s to assault heavily fortified positions.",
     "variants": [
       {
@@ -1333,6 +1348,7 @@
     "classification": "Gear",
     "subtype": "Light Hovervehicle",
     "manufacturer": "Kadellie Weapon Systems",
+    "crewSize": 0,
     "description": "An old but reliable design, the HC-3 first saw action on the battlefields of Earth as a spotter for artillery units. The HC-3 in its current iteration has been designated as a high priority target by Terra Novan forces, so much so bounties have been placed on them for destruction or capture.",
     "variants": [
       {
@@ -1403,6 +1419,7 @@
     "classification": "Gear",
     "subtype": "Light Hovervehicle",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 0,
     "description": "The HPC-64 can carry two fully armed cadres of infantry. Its stock configuration comes with a rotary laser, which already outclasses many Terra Novan APC weaponry. If needed, the HPC can mount an artillery rocket system, allowing it to support advancing troops with indirect fire. These usually follow just behind the main force.",
     "variants": [
       {
@@ -1488,6 +1505,7 @@
     "classification": "Gear",
     "subtype": "Super Tank",
     "manufacturer": "Moscow Heavy Industries",
+    "crewSize": 6,
     "description": "The HHT-90 represents the pinnacle of CEF hover technology. Purpose-built to engage and destroy Terra Novan landships, it is the king of the battlefield. Its main weapons are scaled down naval guns and its chassis can withstand severe punishment while transporting four cadres of GREL.",
     "variants": [
       {
