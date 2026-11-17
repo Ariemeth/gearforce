@@ -172,7 +172,7 @@ class SquadDisplay extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          context.push('/squad/${squad.id}');
+                          context.push('/v4/squad/${squad.id}');
                         },
                       ),
                     );

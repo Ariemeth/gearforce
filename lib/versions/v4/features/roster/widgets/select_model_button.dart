@@ -21,7 +21,7 @@ class SelectModelButton extends StatelessWidget {
         return ElevatedButton(
           onPressed: canAddUnits
               ? () {
-                  context.push('/select-unit', extra: updatedSquad);
+                  context.push('/v4/select-unit', extra: updatedSquad);
                 }
               : null,
           child: Text(

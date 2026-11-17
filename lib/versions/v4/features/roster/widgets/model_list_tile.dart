@@ -22,7 +22,7 @@ class ModelListTile extends StatelessWidget {
     return ListTile(
       title: Text(model.name, style: AppTheme.squadUnitNameStyle),
       onTap: () {
-        context.push('/squad/${squad.id}/model/${model.id}');
+        context.push('/v4/squad/${squad.id}/model/${model.id}');
       },
       subtitle: Row(
         mainAxisAlignment: MainAxisAlignment.end,
