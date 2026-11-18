@@ -26,7 +26,7 @@ class VersionSelector extends StatelessWidget {
       onChanged: (RuleVersion? newVersion) {
         if (newVersion != null && newVersion != currentVersion) {
           context.read<AppSettingsCubit>().updateRuleVersion(newVersion);
-          context.go(newVersion.routePath);
+          context.goNamed(newVersion.routeName);
         }
       },
     );

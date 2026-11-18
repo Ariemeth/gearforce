@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gearforce/core/routing/app_route_names.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/versions/v4/domain/entities/unit/squad.dart';
 import 'package:gearforce/versions/v4/features/roster/bloc/roster_bloc.dart';
@@ -21,7 +22,10 @@ class SelectModelButton extends StatelessWidget {
         return ElevatedButton(
           onPressed: canAddUnits
               ? () {
-                  context.push('/v4/select-unit', extra: updatedSquad);
+                  context.pushNamed(
+                    V4RouteNames.selectUnit,
+                    extra: updatedSquad,
+                  );
                 }
               : null,
           child: Text(

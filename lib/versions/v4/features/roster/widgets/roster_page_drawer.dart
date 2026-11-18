@@ -1,8 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gearforce/core/routing/app_route_names.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
-import 'package:gearforce/versions/v4/features/settings/screens/app_settings_screen.dart';
-import 'package:gearforce/versions/v4/features/roster/screens/weapon_display_screen.dart';
 import 'package:gearforce/core/theme/app_theme.dart';
 
 const _drawerHeaderHeight = 60.0;
@@ -33,7 +32,7 @@ class RosterPageDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
-              context.push(WeaponDisplayScreen.routeName);
+              context.pushNamed(V4RouteNames.weapons);
             },
           ),
           ListTile(
@@ -43,7 +42,7 @@ class RosterPageDrawer extends StatelessWidget {
             ),
             onTap: () {
               Navigator.pop(context);
-              context.push(AppSettingScreen.routeName);
+              context.pushNamed(AppRouteNames.settings);
             },
           ),
           AboutListTile(

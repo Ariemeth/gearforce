@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gearforce/core/routing/app_route_names.dart';
 import 'package:gearforce/core/widgets/version_selector.dart';
 import 'package:gearforce/versions/v4/domain/entities/unit/squad.dart';
 import 'package:gearforce/versions/v4/features/roster/screens/model_details_screen.dart';
@@ -14,12 +15,23 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(path: '/', redirect: (context, state) => '/v4'),
     GoRoute(
+      path: '/settings',
+      name: AppRouteNames.settings,
+      builder: (context, state) => const AppSettingScreen(),
+    ),
+    GoRoute(
       path: '/v4',
-      name: RosterScreen.routeName,
+      name: V4RouteNames.roster,
       builder: (context, state) => const RosterScreen(),
       routes: [
         GoRoute(
+          path: 'weapons',
+          name: V4RouteNames.weapons,
+          builder: (context, state) => const WeaponDisplayScreen(),
+        ),
+        GoRoute(
           path: 'squad/:squadId',
+          name: V4RouteNames.squadDetails,
           builder: (context, state) {
             final squadId = int.parse(state.pathParameters['squadId']!);
             return SquadDetailsScreen(squadId: squadId);
@@ -27,6 +39,7 @@ final GoRouter appRouter = GoRouter(
           routes: [
             GoRoute(
               path: 'model/:modelId',
+              name: V4RouteNames.modelDetails,
               builder: (context, state) {
                 final squadId = int.parse(state.pathParameters['squadId']!);
                 final modelId = int.parse(state.pathParameters['modelId']!);
@@ -37,6 +50,7 @@ final GoRouter appRouter = GoRouter(
         ),
         GoRoute(
           path: 'select-unit',
+          name: V4RouteNames.selectUnit,
           builder: (context, state) {
             final squad = state.extra as Squad;
             return UnitSelectionScreen(updatedSquad: squad);
@@ -46,6 +60,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: '/v3',
+      name: V3RouteNames.roster,
       builder: (context, state) => Scaffold(
         appBar: AppBar(
           title: const Text('Gearforce v3.1'),
@@ -75,14 +90,6 @@ final GoRouter appRouter = GoRouter(
           ),
         ),
       ),
-    ),
-    GoRoute(
-      path: WeaponDisplayScreen.routeName,
-      builder: (context, state) => const WeaponDisplayScreen(),
-    ),
-    GoRoute(
-      path: AppSettingScreen.routeName,
-      builder: (context, state) => const AppSettingScreen(),
     ),
   ],
 );

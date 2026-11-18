@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gearforce/core/routing/app_route_names.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/versions/v4/domain/entities/unit/model.dart';
 import 'package:gearforce/versions/v4/domain/entities/unit/squad.dart';
@@ -22,7 +23,10 @@ class ModelListTile extends StatelessWidget {
     return ListTile(
       title: Text(model.name, style: AppTheme.squadUnitNameStyle),
       onTap: () {
-        context.push('/v4/squad/${squad.id}/model/${model.id}');
+        context.pushNamed(
+          V4RouteNames.modelDetails,
+          pathParameters: {'squadId': '${squad.id}', 'modelId': '${model.id}'},
+        );
       },
       subtitle: Row(
         mainAxisAlignment: MainAxisAlignment.end,

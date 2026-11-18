@@ -9,8 +9,6 @@ import 'package:gearforce/core/widgets/constrained_content.dart';
 const double _maxContentWidth = 1200;
 
 class WeaponDisplayScreen extends StatefulWidget {
-  static const routeName = '/weapons';
-
   const WeaponDisplayScreen({super.key});
 
   @override

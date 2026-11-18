@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:gearforce/core/routing/app_route_names.dart';
 import 'package:gearforce/core/utils/l10n_extension.dart';
 import 'package:gearforce/versions/v4/domain/entities/unit/squad.dart';
 import 'package:gearforce/versions/v4/features/roster/bloc/roster_bloc.dart';
@@ -172,7 +173,10 @@ class SquadDisplay extends StatelessWidget {
                           ],
                         ),
                         onTap: () {
-                          context.push('/v4/squad/${squad.id}');
+                          context.pushNamed(
+                            V4RouteNames.squadDetails,
+                            pathParameters: {'squadId': '${squad.id}'},
+                          );
                         },
                       ),
                     );

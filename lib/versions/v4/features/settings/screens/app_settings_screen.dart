@@ -11,8 +11,6 @@ const double _maxContentWidth = 600;
 class AppSettingScreen extends StatelessWidget {
   const AppSettingScreen({super.key});
 
-  static const routeName = '/app_settings';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

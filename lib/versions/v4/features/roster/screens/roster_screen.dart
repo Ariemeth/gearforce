@@ -12,8 +12,6 @@ const _pagePadding = EdgeInsets.fromLTRB(2, 1, 5, 6);
 class RosterScreen extends StatelessWidget {
   const RosterScreen({super.key});
 
-  static const routeName = '/roster';
-
   @override
   Widget build(BuildContext context) {
     final title = context.l10n.appTitle;

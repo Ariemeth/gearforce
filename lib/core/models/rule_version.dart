@@ -1,11 +1,19 @@
-enum RuleVersion {
-  v3_1('3.1', 'v3', '/v3'),
-  v4_0('4.0', 'v4', '/v4');
+import 'package:gearforce/core/routing/app_route_names.dart';
 
-  const RuleVersion(this.versionName, this.code, this.routePath);
+enum RuleVersion {
+  v3_1('3.1', 'v3', V3RouteNames.roster, '/v3'),
+  v4_0('4.0', 'v4', V4RouteNames.roster, '/v4');
+
+  const RuleVersion(
+    this.versionName,
+    this.code,
+    this.routeName,
+    this.routePath,
+  );
 
   final String versionName;
   final String code;
+  final String routeName;
   final String routePath;
 
   static RuleVersion fromCode(String code) {
